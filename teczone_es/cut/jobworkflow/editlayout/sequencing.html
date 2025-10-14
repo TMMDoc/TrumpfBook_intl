@@ -1,0 +1,614 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../res/bento.css">
+  <link rel="stylesheet" href="../../../res/site.css">
+  <link rel="stylesheet" href="../../../res/tree.css">
+  <link rel="stylesheet" href="../../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../../img/trumpf-icon.png">
+  <title>Secuenciación</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../../index.html">Bienvenido a TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../intro/index.html">Introducción</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../intro/install.html">Instalación del software</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/clarity.html">La interfaz de usuario</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/workflow.html">Flujo de trabajo de piezas</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/2dimport/index.html">Importación 2D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/2dimport/2dcleanup.html">Limpieza 2D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/3dimport/index.html">Importación 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prep3dmodel.html">Importar modelo 3D</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prepassembly.html">Importar grupo de módulos</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/formdetect.html">Detección de forma</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/componentdetect.html">Detección de componentes</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../cad/sketch.html">Modificación de la geometría</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../../index.html">Láser CAM</a>
+   <ul>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../partworkflow/index.html">Flujo de trabajo de piezas</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../partworkflow/panels/index.html">Paneles de edición</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../partworkflow/panels/lasercut/index.html">Corte por láser</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../partworkflow/panels/lasercut/approach.html">Aproximación</a></li>
+          <li><button class="tree blank"></button><a href="../../partworkflow/panels/lasercut/withdrawal.html">Retroceso</a></li>
+          <li><button class="tree blank"></button><a href="../../partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../../partworkflow/panels/lasercut/advanced.html">Avanzado</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../partworkflow/panels/contour.html">Contorno</a></li>
+        <li><button class="tree blank"></button><a href="../../partworkflow/panels/scrapcut.html">Corte de desperdicios</a></li>
+        <li><button class="tree blank"></button><a href="../../partworkflow/panels/part.html">Pieza</a></li>
+        <li><button class="tree blank"></button><a href="../../partworkflow/panels/cornertreatment.html">Tratamiento de esquinas</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../partworkflow/quicknest.html">Nesting rápido</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="../index.html">Flujo de trabajo de tarea</a>
+     <ul>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../jobpanel/index.html">Panel de tareas</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../jobpanel/sheets.html">Pestaña Chapas</a></li>
+        <li><button class="tree blank"></button><a href="../jobpanel/parts.html">Pestaña Piezas</a></li>
+        <li><button class="tree blank"></button><a href="../jobpanel/layouts.html">Pestaña Diseños</a></li>
+        <li><button class="tree blank"></button><a href="../jobpanel/summary.html">Pestaña Resumen</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree open"></button>
+       <a href="index.html">Editar layout</a>
+       <ul>
+        <li><button class="tree blank"></button><a href="nestingmodes.html">Modos de nesting</a></li>
+        <li><button class="tree blank"></button><a href="placementpanel.html">Panel de colocación</a></li>
+        <li><button class="tree blank"></button><a class="active" href="sequencing.html">Secuenciación</a></li>
+        <li><button class="tree blank"></button><a href="slicesheet.html">Chapa de corte</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bevelcut/index.html">Corte biselado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bevelcut/opencontours.html">Contornos abiertos</a></li>
+      <li><button class="tree blank"></button><a href="../../bevelcut/variablebevel.html">Chaflán variable</a></li>
+      <li><button class="tree blank"></button><a href="../../bevelcut/miscellaneous.html">Varios</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../advanced/index.html">Avanzado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../advanced/finishingrules.html">Reglas de acabado</a></li>
+      <li><button class="tree blank"></button><a href="../../advanced/editltt.html">Editar TTL</a></li>
+      <li><button class="tree blank"></button><a href="../../advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../advanced/twinline/strategies.html">Estrategia</a></li>
+        <li><button class="tree blank"></button><a href="../../advanced/twinline/microjoints.html">Microjoints</a></li>
+        <li><button class="tree blank"></button><a href="../../advanced/twinline/stability.html">Ajustes adicionales</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bend/index.html">CAM de plegado</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">Crear datos de plegado</a></li>
+    <li><button class="tree blank"></button><a href="../../../bend/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/editing/index.html">Editar datos de plegado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editbend.html">Editar un plegado</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editmount.html">Editar un soporte de útil</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editsetup.html">Editar una configuración de plegado</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editgauge.html">Editar los dedos de tope</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editacb.html">Editar medición de ángulo</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/bendsheet.html">Hoja de cálculo de plegados</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/sequencing.html">Cambio de la secuencia</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/addsetup.html">Adición de configuraciones y estaciones</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/advanced/index.html">Avanzado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/anglemeasurement.html">Medición de ángulo</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/batchprocess.html">Proceso por lotes</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/recompute.html">Recalcular solución</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">Comprobación de tonelaje</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bcell/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/pickup/index.html">Recogida de piezas</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/frompallet.html">Recogida desde bandeja</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/fromdispenser.html">Recogida del dispensador</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/bending/index.html">Plegado robótico</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/insertion.html">Inserción</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/bending.html">Plegado</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/extraction.html">Extracción</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/regrip/index.html">Agarre posterior</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/regrippanel.html">Panel de agarre posterior</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/addregrip.html">Añadir agarre posterior</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/editregrip.html">Editar agarre posterior</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/jawregrip.html">Agarre posterior con mordaza</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/rgstationpanel.html">Panel de la estación de giro de agarre</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/deposit/index.html">Depósito de pieza</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/patterns.html">Patrones de depósito</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/repeat.html">Repetir y secuenciar</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/separatorsheet.html">Chapa separadora</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/advanced/index.html">Avanzado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/cellconfig.html">Configuración de celda</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb.html">Base de datos de pinzas</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/reports.html">Informes</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../fold/index.html">CAM de doblado</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../fold/createfolddata.html">Crear datos de plegado</a></li>
+    <li><button class="tree blank"></button><a href="../../../fold/foldview.html">La vista de plegado</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/editing/index.html">Edición de datos de plegado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbend.html">Editar un plegado</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editside.html">Editar un lado/sección</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editseq.html">Cambiar la secuencia</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbh.html">Editar los pisadores</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editgauge.html">Editar los topes</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editblade.html">Editar las cuchillas</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editload.html">Editar la carga</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editunload.html">Editar la descarga</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../fold/toolinventory.html">Inventario de útiles</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/advanced/index.html">Avanzado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/airgaptables.html">Tablas personalizadas de espacio de aire</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/manualbend.html">Finalización del plegado manual</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/minflangelength.html">Longitud del ala requerida</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../settings/index.html">Ajustes</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/drawing/index.html">Dibujo</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/layers.html">Niveles</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/dimensions.html">Medidas</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/view.html">Vista</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/bendcam/index.html">CAM de plegado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/benddefaults.html">Valores predeterminados de máquina</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendoutputs.html">Salidas de plegado</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendview.html">Vista de plegado</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendcell.html">Célula de plegado</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/cutcam/index.html">CAM de corte</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/layout/index.html">Layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/nesting.html">Ajustes de nesting</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheet.html">Chapa</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheethandling.html">Manipulación de chapa</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/skeletoncuts.html">Cortes de rejilla</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/worksupport.html">Soporte de trabajo</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/lasercam/index.html">Láser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/lasercam/sequence.html">Secuencia</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutoutputs.html">Salidas de corte</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutview.html">Vista de corte</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/foldcam/index.html">Plegado basculante</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/defaults.html">Valores predeterminados</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/zbwcarriers.html">Piezas de soporte ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/foldoutputs.html">Salidas</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/reports/index.html">Informes</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/reports/itemdefaults.html">Asignaciones previas de artículos</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../settings/importexport.html">Importar/Exportar</a></li>
+    <li><button class="tree blank"></button><a href="../../../settings/environment.html">Entorno</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../database/index.html">Base de datos</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../database/materials.html">Materiales</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/machines.html">Máquinas</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendtools.html">Útiles de plegado</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">Pinzas para doblar</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Moldes/Componentes</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../report/index.html">Informes</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/fields.html">Campos, imágenes y tablas</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/bands.html">Bandas (subinformes)</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/labels.html">Etiquetas, mapas de bits y formas</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../appendix/index.html">Apéndice</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">Formatos 3D admitidos</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">DXF de chapa de separador</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">Útil de plegado DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../../impressum.html">Aviso legal</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../../index.html">Láser CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="../index.html">Flujo de trabajo de tarea</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Editar layout</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="sequencing.html">Secuenciación</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Secuenciación</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cuando se mecaniza una pieza láser (véase <a href="../../partworkflow/index.html">Flujo de trabajo de piezas</a>), TecZone Laser calcula un <strong>Secuencia de plegado</strong> en el que se debe cortar el útil para la pieza. En un nivel básico, primero hay que cortar los agujeros de la pieza antes de cortar el contorno exterior.Cuando se compone un diseño, ya sea mediante el motor de nesting o de forma interactiva añadiendo o editando partes en un diseño, TecZone Laser calcula una secuencia en la que se procesan todos los útiles de todas las partes del diseño. Una opción habitual es que los útiles se procesen <em>pieza por pieza</em> (los útiles internos y el contorno externo de una pieza se cortan antes de pasar a la siguiente pieza). También hay otras opciones de secuenciación, que se pueden controlar mediante los ajustes de <a href="../../../settings/cutcam/lasercam/sequence.html">Secuencia láser</a>.Esta secuencia calculada automáticamente (ya sea para una pieza o para un diseño) se puede inspeccionar o modificar utilizando el <strong>Navegador de secuencias</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_navegador_de_secuencias">Navegador de secuencias<a id="h000336"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>El <strong>Navegador de secuencias</strong> aparece a lo largo del borde derecho de la ventana TecZone Laser cuando estamos trabajando con una pieza o diseño láser. Puede abrirlo o cerrarlo utilizando la tecla <kbd>Z</kbd>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/sequence1.png" alt="Sequence" width="557">
+</div>
+</div>
+<div class="paragraph">
+<p>En esta imagen, se está utilizando el navegador de secuencias para editar la secuencia de un diseño. Aquí, se ha calculado una secuencia pieza por pieza y se puede ver el orden en el que se van a procesar las piezas.Puede <em>abrir</em> uno de estos nodos de piezas (como el nodo <strong>1 (lyly) 4</strong> que se ha abierto), y ver los cortes láser individuales dentro de esa pieza. El corte láser en el que hemos hecho clic (marcado con el número de secuencia <strong>66</strong> en la imagen) aparece resaltado en azul. Todos los útiles que se han cortado antes de esto se muestran rellenas en blanco o rosa (los rellenos rosas indican que el útil es inestable y puede caerse a través de los listones de apoyo).Se muestran tanto la línea transversal desde el útil <em>anterior</em> hasta el seleccionado como la línea transversal desde este útil hasta el <em>siguiente</em> para contextualizar.</p>
+</div>
+<div class="sect2">
+<h3 id="_reordenar_utillaje">Reordenar utillaje<a id="h000337"></a></h3>
+<div class="paragraph">
+<p>Puede hacer clic en un nodo que represente una pieza completa o en un nodo que represente un corte láser individual y arrastrarlo hacia arriba o hacia abajo para reordenar los útiles. Al hacerlo, se calcula y actualiza inmediatamente <strong>Tiempo transversal</strong>, y se muestra en la parte inferior del navegador de secuencias. Puede volver a la secuencia original haciendo clic en el icono <strong>Revertir todos los cambios</strong> del navegador de secuencias.</p>
+</div>
+<div class="paragraph">
+<p>También puede utilizar el botón <strong>Secuencia interactiva</strong> para cambiar el orden de los útiles:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/interactivesequence1.png" alt="Interactive sequence" width="436">
+</div>
+</div>
+<div class="paragraph">
+<p>Para configurar una secuencia, simplemente haga <strong><kbd>Ctrl</kbd>+Clic</strong> en los números en el orden en que desea procesarlos. A menudo, solo se desea cambiar una parte localizada de la secuencia, y eso también es posible. En la ilustración siguiente, queremos mantener la secuencia hasta el elemento 8 y, a continuación, cambiar solo la parte posterior.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/interactivesequence2.png" alt="Click Sequencing" width="484">
+</div>
+</div>
+<div class="paragraph">
+<p>Para hacerlo fácilmente, primero puede hacer clic en el <strong>8</strong> (sin mantenerlo pulsado <kbd>Ctrl</kbd>) y se aceptará la secuencia hasta ese punto (que se muestra como círculos grises). A continuación, puede <kbd>Ctrl</kbd>+Clic en números posteriores para añadirlos a la secuencia en ese orden. Puede ver una secuencia modificada que se establece con los clics posteriores arriba.También puede dibujar una línea aproximada que indique el <em>flujo</em> aproximado a lo largo del cual desea que se corten las piezas. Para ello, haga <kbd>Alt</kbd>+Clic en la chapa y arrastre el ratón para crear una curva (como se muestra en la imagen inferior izquierda).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/interactivesequence3.png" alt="Drag Sequencing" width="484">
+</div>
+</div>
+<div class="paragraph">
+<p>Una vez que haya terminado de dibujar la curva de secuencia, haga clic una vez más y las piezas se secuenciarán para seguir el trazo que ha dibujado (como se muestra en la imagen superior derecha).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_iconos_de_secuencia">Iconos de secuencia<a id="h000338"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/warnings.png" alt="Warnings" width="233">
+</div>
+</div>
+<div class="paragraph">
+<p>El indicador <strong>Advertencias</strong> en la parte inferior aparece si hay alguna advertencia. Haga clic en este indicador repetidamente para resaltar cada una de las advertencias.El indicador de <strong>contornos inclinados</strong> muestra los contornos que podrían caer a través de los listones de apoyo. Haga clic repetidamente en este indicador para resaltar todos los contornos que podrían inclinarse.Estos son los demás símbolos que aparecen en el navegador de secuencias. Se utilizan para ajustar la vista jerárquica de los elementos de útiles, simular la secuencia y ajustarla de otras maneras.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Icono</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Significado</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/play.png" alt="Play" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reproducir</strong> la simulación.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/stop.png" alt="Stop" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tope</strong> la simulación en su posición actual.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/skip-to-start.png" alt="Rewind" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Rebobinar</strong> la simulación hasta el principio.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/expand-right-gray.png" alt="Collapse" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contraer</strong> el navegador de secuencias hacia la derecha.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/expand-left-gray.png" alt="Expand" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Expandir</strong> el navegador de secuencias hacia la izquierda.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/reverse.png" alt="Revert" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Revertir</strong> todos los cambios realizados en la secuencia y restablecerla a la original.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/sorting.png" alt="Sorting" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Este es un modo especial para editar interactivamente la secuencia. Haz clic en el icono para activarlo.<br>
+<strong><kbd>Ctrl</kbd>+Clic</strong> en un número que debe cortarse a continuación.<br>
+<strong><kbd>Alt</kbd>+Clic</strong> y mueva el ratón para comenzar a dibujar una ruta de secuencia a mano alzada.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/expand-all.png" alt="Expand all" width="16"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Expandir</strong> todas las secuencias de equipamiento para todas las piezas. Esto permite una fácil visualización de qué equipamiento se está llevando a cabo. Por ejemplo, marcado o contorno interior.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/collapse-all.png" alt="Collapse All" width="16"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contraer</strong> todas las secuencias de equipamiento abiertas.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/link.png" alt="Link" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cuando se selecciona la opción de <strong>enlace</strong>, los cambios realizados en la secuencia o trazado realizados en un lugar se repiten automáticamente en otros lugares idénticos. Es mejor activarlo si es preferible que los cambios que se realicen dentro de una pieza se copien automáticamente a otras instancias de la misma pieza con equipamiento y secuencia idénticas.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/headdown.png" alt="Head down" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cabezal láser hacia abajo.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/headuppp.png" alt="Ping pong" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cabezal láser con movimiento láser de ping-pong, también movimiento Z síncrono. Cuando está activo, el recorrido está marcado en violeta en la chapa. Se desactivará en ciertos casos para reducir el peligro de inclinación y colisiones.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/headup.png" alt="Head Up" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cabezal elevado, sin movimientos de vaivén. TecZone Laser elige este movimiento cuando el cabezal elevado con movimientos de vaivén podría dar lugar a incidentes de inclinación.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/gas-on.png" alt="Gas On" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">El trayecto al siguiente corte ocurre con el gas auxiliar encendido.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/gas-off.png" alt="Gas Off" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">El trayecto al siguiente corte ocurre con el gas auxiliar apagado.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/fall-thru-slats.png" alt="Through Slats" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La pieza se cae por los listones de apoyo.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/stable-on-slats.png" alt="Stable on slats" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La pieza permanece en los listones de apoyo.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/tilting-on-slats.png" alt="Tilting on Slats" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La pieza se inclina y se queda atascada entre los listones de apoyo.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/asterisk2.png" alt="Pierce" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Solo penetración</strong>. Se aplica cuando <strong>Secuencia de procesado láser</strong> se establece en una condición en la que la penetración para todos los contornos se realiza primero (es decir <strong>Penetrar, después cortar</strong>, <strong>Penetrar &gt; Marcar &gt; Cortar</strong> o <strong>Marcar &gt; Penetrar &gt; Cortar</strong>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/inner.png" alt="Inner" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contorno interior.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/outer.png" alt="Outer" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contorno exterior.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_navegador_de_secuencias">Navegador de secuencias</a>
+  </li>
+  <li level="2">
+   <a href="#_reordenar_utillaje">Reordenar utillaje</a>
+  </li>
+  <li level="2">
+   <a href="#_iconos_de_secuencia">Iconos de secuencia</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="placementpanel.html">Panel de colocación</a></span>
+ <span class="next"><a href="slicesheet.html">Chapa de corte</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../../res/index.js"></script>
+    <script src="../../../res/files.js"></script>
+    <script src="../../../res/site.js"></script>
+
+    
+</body>
+</html>

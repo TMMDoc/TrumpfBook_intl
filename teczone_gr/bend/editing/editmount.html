@@ -1,0 +1,819 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Επεξεργασία μιας βάσης εργαλείου</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Καλώς ήρθατε στο TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Εισαγωγή</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">Εγκατάσταση του λογισμικού</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">Η επιφάνεια χειρισμού</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Ροή εργασιών τεμαχίου</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">Εισαγωγή 2-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">Εκκαθάριση 2-D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">Εισαγωγή 3-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">Εισαγωγή μοντέλου 3D</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Εισαγωγή συγκροτήματος</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Ανίχνευση μορφής</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Ανίχνευση στοιχείων</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">Τροποποίηση της γεωμετρίας</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">CAM Λέιζερ</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Ροή εργασιών τεμαχίου</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Πίνακες επεξεργασίας</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Κοπή με λέιζερ</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Προσέγγιση</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Απόσυρση</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Για προχωρημένους</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Περίγραμμα</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Κοπή αχρήστων</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Τεμάχιο</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Αντιμετώπιση γωνιών</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Quick-Nest (Γρήγορη κατανομή)</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">Ροή εργασιών έργου</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Πίνακας εργασίας</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Καρτέλα μεταλλικών πλακών</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Καρτέλα Τεμάχια</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Καρτέλα Διατάξεις</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Καρτέλα σύνοψης</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Επεξεργασία διάταξης</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Λειτουργίες κατανομής</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Πίνακας τοποθέτησης</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Αλληλουχία</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Τεμαχισμός μεταλλικής πλάκας</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Λοξή κοπή</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Ανοικτά περιγράμματα</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Μεταβλητή λοξοτομή</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Διάφορα</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Για προχωρημένους</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Κανόνες ολοκλήρωσης</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">Επεξεργασία LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">Διπλή γραμμή (TwinLine)</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Στρατηγική</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Microjoint</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">Περαιτέρω ρυθμίσεις</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">Κάμψη CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../createbenddata.html">Δημιουργία δεδομένων κάμψης</a></li>
+    <li><button class="tree blank"></button><a href="../navigator.html">Πλοηγός κάμψης</a></li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Επεξεργασία δεδομένων κάμψης</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="editbend.html">Επεξεργασίας μιας κάμψης</a></li>
+      <li><button class="tree blank"></button><a class="active" href="editmount.html">Επεξεργασία μιας βάσης εργαλείου</a></li>
+      <li><button class="tree blank"></button><a href="editsetup.html">Επεξεργασία ρυθμίσεων κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="editgauge.html">Επεξεργασία των πίσω αναστολέων</a></li>
+      <li><button class="tree blank"></button><a href="editacb.html">Επεξεργασία μέτρησης γωνιών</a></li>
+      <li><button class="tree blank"></button><a href="bendsheet.html">Υπολογιστικό φύλλο Κάμψεις</a></li>
+      <li><button class="tree blank"></button><a href="sequencing.html">Αλλαγή της αλληλουχίας</a></li>
+      <li><button class="tree blank"></button><a href="addsetup.html">Προσθήκη ρυθμίσεων και σταθμών</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../advanced/index.html">Για προχωρημένους</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../advanced/anglemeasurement.html">Μέτρηση γωνίας</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/batchprocess.html">Διαδικασία παρτίδας</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/recompute.html">Επανυπολογισμός λύσης</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/tonnage.html">Έλεγχος φορτίου</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">Πλοηγός κάμψης</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">Παραλαβή τεμαχίου</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">Παραλαβή από παλέτα</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">Παραλαβή από τον διανομέα</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">Ρομποτική κάμψη</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">Εισαγωγή</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">Κάμψη</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Εξαγωγή</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Εκ νέου σύλληψη</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Πίνακας εκ νέου σύλληψης</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Προσθήκη εκ νέου σύλληψης</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Επεξεργασία εκ νέου σύλληψης</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Εκ νέου σύλληψη με σιαγόνα</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Πίνακας σταθμού εκ νέου σύλληψης</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Απόθεση τεμαχίου</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Μοτίβα απόθεσης</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Επανάληψη και ακολουθία</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Διαχωριστικό φύλλο</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Για προχωρημένους</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Σημεία πορείας</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Διαμόρφωση κελιών</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Βάση δεδομένων στοιχείων αρπάγης</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Αναφορές</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">Δίπλωση CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Δημιουργία δεδομένων δίπλωσης</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">Η προβολή δίπλωσης</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Επεξεργασία δεδομένων δίπλωσης</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Επεξεργασίας μιας κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Επεξεργασία πλευράς/τμήματος</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">Αλλαγή της αλληλουχίας</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">Επεξεργασία των συγκρατητήρων</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">Επεξεργασία των αναστολέων</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">Επεξεργασία των λαμών</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">Επεξεργασία της φόρτωσης</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">Επεξεργασία της απόρριψης</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Απόθεμα εργαλείων</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Για προχωρημένους</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Προσαρμοσμένοι πίνακες διακένου</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">Ολοκλήρωση χειροκίνητης κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Απαιτούμενο μήκος φλάντζας</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Ρυθμίσεις</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Σχέδιο</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Επίπεδα</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Διαστάσεις</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Προβολή</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">Κάμψη CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Προεπιλογές μηχανήματος</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Αποτελέσματα κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Προβολή κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Κελί κάμψης</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">Κοπή CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Διάταξη</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Ρυθμίσεις κατανομής</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Μεταλλική πλάκα</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Χειρισμός μεταλλικής πλάκας</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Κοπές σκελετού</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Υποστήριξη εργασίας</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">CAM Λέιζερ</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Αλληλουχία</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Αποτελέσματα κοπής</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Προβολή κοπής</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Κάμψη πάνελ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Προεπιλογές</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">Φορείς πρόσθετου εργαλείου κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Αποτελέσματα</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Αναφορές</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Προεπιλογές στοιχείου</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Εισαγωγή/Εξαγωγή</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Περιβάλλον</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Βάση δεδομένων</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Υλικά</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Μηχανήματα</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Εργαλεία κάμψης</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Στοιχεία αρπάγης κάμψης</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Μορφές/στοιχεία</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Αναφορές</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Σχεδιαστής αναφορών</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Πεδία, εικόνες και πίνακες</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Ζώνες (δευτερεύουσες αναφορές)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Ετικέτες, Bitmap και σχήματα</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Παράρτημα</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Υποστηριζόμενες τρισδιάστατες μορφές</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Διαχωριστικό φύλλο DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bend Tool DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Νομική ανακοίνωση</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">Κάμψη CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Επεξεργασία δεδομένων κάμψης</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="editmount.html">Επεξεργασία μιας βάσης εργαλείου</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Επεξεργασία μιας βάσης εργαλείου</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Όταν κάνετε κλικ σε μια βάση εργαλείων, εμφανίζεται ο πίνακας <strong>Βάση κάμψης</strong> και μπορεί να
+χρησιμοποιηθεί για την επεξεργασία διαφόρων ρυθμίσεων της βάσης κάμψης και για την εκτέλεση πολλών διαδικασιών.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ο_πίνακας_βάση_κάμψης">Ο πίνακας Βάση κάμψης<a id="h000207"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/edit-mount.png" alt="Bend Mount" width="140">
+</div>
+</div>
+<div class="paragraph">
+<p>Ο πίνακας Βάση κάμψης μοιάζει με την παρακείμενη εικόνα. Οι ακριβείς ρυθμίσεις και λειτουργίες
+που είναι διαθέσιμες ποικίλουν, ανάλογα με το αν κάνετε κλικ σε βάση στιγέα, μήτρας ή
+προσαρμογέα. Επιπλέον, ορισμένες ρυθμίσεις ενδέχεται να είναι διαθέσιμες ή να μην είναι διαθέσιμες ανάλογα με
+δυνατότητες του μηχανήματος.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Κάνετε κλικ στο κουμπί <strong>Αλλαγή τύπου εργαλείου</strong> για να αντικαταστήσετε το εργαλείο που χρησιμοποιείται για την
+επιλεγμένη βάση με διαφορετικό εργαλείο. (Ανατρέξτε στην παρακάτω ενότητα για περισσότερες λεπτομέρειες σχετικές με
+τον <em>επιλογέα εργαλείου</em> που χρησιμοποιείται για την επιλογή ενός ανταλλακτικού εργαλείου).</p>
+</li>
+<li>
+<p>Η καταχώριση <strong>Μήκος</strong> χρησιμοποιείται για τη ρύθμιση του μήκους του σταθμού. Όταν
+  πληκτρολογείτε μια νέα τιμή εδώ, το TecZone Bend συνθέτει ξανά το σταθμό χρησιμοποιώντας ένα
+  κατάλληλο σύνολο <em>τμημάτων</em> για να επιχειρήσει να ταιριάξει το ζητούμενο μήκος όσο το δυνατόν
+περισσότερο. Μπορείτε να ελέγξετε οπτικά τα τμήματα που χρησιμοποιούνται εξετάζοντας τις
+  γραμμές των ορίων του τμήματος που εμφανίζονται στη βάση κάμψης.</p>
+</li>
+<li>
+<p>Η καταχώριση <strong>Θέση</strong> χρησιμοποιείται για τη ρύθμιση της θέσης του <em>αριστερού άκρου</em>
+της βάση κατά μήκος του τραπεζιού ή της μπάρας του μηχανήματος. Η θέση μπορεί επίσης να ρυθμιστεί
+με <em>σύρσιμο</em> της βάσης προς αριστερά ή τα δεξιά. (Ανατρέξτε στην παρακάτω ενότητα σχετικά με το σύρσιμο της βάσης).</p>
+</li>
+<li>
+<p>Ο επιλογέας <strong>Πτέρνα</strong> (εμφανίζεται μόνο για βάσεις στιγέα) μπορεί να χρησιμοποιηθεί για
+να εξαναγκάζει το TecZone Bend να χρησιμοποιεί το αριστερό ή/και το δεξί ear<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> τεμάχια στη σύνθεση).</p>
+</li>
+<li>
+<p>Το <strong>Περιστροφή εργαλείου</strong> χρησιμοποιείται για την κατόπτριση του εργαλείου (από εμπρός προς τα πίσω). Εμφανίζεται
+  όταν επεξεργάζεστε μια βάση που χρησιμοποιεί ένα <em>ασύμμετρο</em> εργαλείο (όπως ένα
+  κυρτωμένο εργαλείο, για παράδειγμα). Η λειτουργία κατόπτρισης είναι αρκετά έξυπνη για να υπολογίσει
+  εάν πρέπει να κατοπτριστούν επιπλέον βάσεις και εργαλεία για διατήρηση της συνεκτικότητας.
+  Για παράδειγμα, στην παρακάτω εικόνα, η κατόπτριση του στιγέα <strong>OW_Z4</strong> (που χρησιμοποιείται για την κάμψη Z)
+  κατοπτρίζει επίσης τη μήτρα, τη βάση, ακόμη και το τεμάχιο για τη διατήρηση της συνεκτικότητας:<br>
+<span class="image"><img src="img/flip-tool.png" alt="Flip Tool" width="550"></span></p>
+</li>
+<li>
+<p>Το <strong>Προσθήκη προσαρμογέα</strong> χρησιμοποιείται για την προσθήκη μιας <em>επέκτασης</em> για την αύξηση του ύψους
+  του στιγέα ή της μήτρας. Όταν προσθέτετε έναν προσαρμογέα, αυτός επιλέγεται και
+  εμφανίζεται το πλαίσιο για τον προσαρμογέα (αυτό σας παρέχει τη δυνατότητα να αλλάξετε τον πραγματικό προσαρμογέα
+  που χρησιμοποιείται ή για την αφαίρεσή του).<br>
+<span class="image"><img src="img/addadapter.png" alt="Add Adapter" width="460"></span></p>
+</li>
+<li>
+<p>Το <strong>Προσθήκη διάκενου</strong> χρησιμοποιείται για την προσθήκη ενός διακένου στη βάση εργαλείων για να επιτρέψει σε μια φλάντζα
+για να διέλθει χωρίς συγκρούσεις (βλ. την παρακάτω ενότητα Προσθήκη διακένου για περισσότερες
+σχετικές λεπτομέρειες).</p>
+</li>
+<li>
+<p>Το <strong>Μεγαλ. ύψος εργαλείου</strong> χρησιμοποιείται για την αντικατάσταση των επιλεγμένων εργαλείων με διαφορετικά
+μεγαλύτερου ύψους εργαλεία από την ίδια σειρά.</p>
+</li>
+<li>
+<p>Κάνετε κλικ στο κουμπί <strong>Αφαίρεση</strong> για να αφαιρέσετε τη βάση του εργαλείου. Θα προβληθεί ένα σφάλμα <em>απουσίας στιγέα</em>
+ή <em>απουσίας μήτρας</em> στον πλοηγό κάμψης για τις κάμψεις που χρησιμοποιούν αυτό το
+σταθμό και αυτό μπορεί να αντιμετωπιστεί με τη χρήση του κουμπιού <strong>Προσθήκη</strong> στη γραμμή εντολών στην αριστερή
+πλευρά για την προσθήκη μιας νέας βάσης.</p>
+</li>
+<li>
+<p>Ο επιλογέας <strong>Εργαλείο αισθητήρα</strong> χρησιμοποιείται για την εναλλαγή μεταξύ των διαφορετικών ζευγών δίσκων
+αισθητήρων ACB που μπορούν να χρησιμοποιηθούν για αυτό το τεμάχιο. Η επιλογή εξαρτάται από το
+πάχος της μεταλλικής πλάκας και το χρησιμοποιούμενο στιγέα.</p>
+</li>
+<li>
+<p>Εάν είναι το πλαίσιο επιλογής <strong>Έλεγχος αριθμού τεμαχίων</strong>, τα τμήματα
+  που χρησιμοποιούνται ελέγχονται έναντι του διαθέσιμου <em>αποθέματος</em> τεμαχίων (τα οποία μπορούν να υποβληθούν σε επεξεργασία
+  με κλικ στο σύνδεσμο <strong>Διαχείριση εργαλείων…</strong>). Όταν χρησιμοποιούνται τεμάχια που δεν περιλαμβάνονται
+  στο απόθεμα, σχεδιάζεται ένα ειδικό σύμβολο τριφυλλιού σε αυτά, όπως μπορείτε να δείτε
+  στην παρακάτω εικόνα για τα τεμάχια 40 mm και 45 mm κοντά στο κέντρο του στιγέα
+  παρακάτω:<br>
+<span class="image"><img src="img/inventoryerror.png" alt="Inventory Error" width="253"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Όταν επεξεργάζεστε μια βάση εργαλείων χρησιμοποιώντας οποιαδήποτε από αυτές τις ρυθμίσεις και διαδικασίες, το TecZone Bend
+επαληθεύει αμέσως την κατάσταση όλων των διαδικασιών κάμψης, διεξάγοντας διάφορους ελέγχους
+όπως σύγκρουσης, καταλληλότητας εργαλείου κ.λπ. Η κατάσταση του πλοηγού κάμψης ενημερώνεται αμέσως και
+σε πραγματικό χρόνο, καθιστώντας πολύ εύκολο τον πειραματισμό με διάφορες ρυθμίσεις με άμεση
+και ακριβή ανατροφοδότηση.</p>
+</div>
+<div class="sect2">
+<h3 id="_το_παράθυρο_αντικατάσταση_εργαλείου">Το παράθυρο Αντικατάσταση εργαλείου<a id="h000208"></a></h3>
+<div class="paragraph">
+<p>Όταν κάνετε κλικ στο κουμπί <strong>Αλλαγή τύπου εργαλείου</strong>, εμφανίζεται το παράθυρο εργαλείο <strong>Αντικατάσταση
+εργαλείου</strong>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/tool-replace.png" alt="Tool replacer" width="750">
+</div>
+</div>
+<div class="paragraph">
+<p>Σε αυτό το παράθυρο προβάλλονται όλα τα πιθανά εργαλεία αντικατάστασης.</p>
+</div>
+<div id="h000209" class="ulist">
+<ul>
+<li>
+<p>Χρησιμοποιήστε την ιεραρχία στα αριστερά για να περιορίσετε τις επιλογές - για παράδειγμα, θα μπορούσατε
+να επιλέξτε να εμφανίζονται μόνο τα κυρτωμένα εργαλεία, για να διευκολύνετε την επιλογή.</p>
+</li>
+<li>
+<p>Χρησιμοποιήστε τον επιλογέα <strong>Ταξινόμηση</strong> στην κορυφή για να ταξινομήσετε τα εργαλεία κατ' όνομα, ύψος, ακτίνα ή
+άλλα κριτήρια ταξινόμησης (το ακριβές σύνολο κριτηρίων ταξινόμησης εξαρτάται από το αν
+αντικαθιστάτε ένα στιγέα, μια μήτρα ή έναν προσαρμογέα).</p>
+</li>
+<li>
+<p>Μπορείτε να πληκτρολογήσετε ένα όνομα εργαλείου (ή μια συντομογραφία) στο πλαίσιο <strong>Αναζήτηση</strong> για να περιορίσετε
+γρήγορα τη λίστα. Η πληκτρολόγηση ενός μερικού ονόματος εργαλείου επίσης εντάξει - για παράδειγμα, το <strong>OW200</strong>
+ταιριάζει με τα εργαλεία OW200, OW200/S και OW200/K.</p>
+</li>
+<li>
+<p>Χρησιμοποιήστε το συρόμενο ρυθμιστή <strong>Κλίμακα</strong> για να προσαρμόσετε τα μεγέθη των εικόνων των εργαλείων. Το εργαλείο που
+χρησιμοποιείται επί του παρόντος προβάλλεται με μπλε φόντο και ένα παχύ περίγραμμα. Η ανοιχτή μπλε γράμμωση
+σηματοδοτεί <em>άλλα εργαλεία</em> που χρησιμοποιούνται σε αυτό το τεμάχιο.</p>
+</li>
+<li>
+<p>Απενεργοποιήστε το πλαίσιο επιλογής <strong>Φίλτρο</strong> για να προβάλλεται όλα τα εργαλεία χωρίς περιορισμούς (ανεξάρτητα
+  από το αν είναι κατάλληλα ή όχι). Σε αυτήν την προβολή, τα εργαλεία που δεν είναι κατάλληλα
+  προβάλλονται με γκρι χρώμα και όταν μετακινείτε το ποντίκι επάνω από κάποιο από αυτά τα εργαλεία επισημαίνεται <em>γιατί</em> αυτό
+  δεν είναι διαθέσιμο προς επιλογή:<br>
+<span class="image"><img src="img/tool-replace2.png" alt="Tool error" width="650"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Καθώς μετακινείτε το ποντίκι επάνω από τις εικόνες των εργαλείων,
+ το TecZone Bend <em>επανυπολογίζει</em> άμεσα τις
+επιλεγμένες βάσεις εργαλείων χρησιμοποιώντας το πρόσφατα επιλεγμένο εργαλείο και μπορείτε να δείτε σε πραγματικό χρόνο
+εάν το εργαλείο που εξετάζετε θα προκαλέσει προβλήματα σύγκρουσης ή όχι (οι
+αντίστοιχες κάμψεις στον πλοηγό κάμψης ανάβουν άμεσα με κόκκινο χρώμα εάν υπάρχει
+σύγκρουση). Αυτή η προεπισκόπηση σε πραγματικό χρόνο σάς διευκολύνει πολύ να πειραματιστείτε
+με διάφορες επιλογές εργαλείων μέχρι να βρείτε μια λειτουργική λύση.</p>
+</div>
+<div class="paragraph">
+<p>Εάν κάνετε <strong>κλικ</strong> σε ένα από τα εργαλεία, το επιλέγετε και το νέο εργαλείο εφαρμόζεται
+στο τεμάχιο. Εάν πατήσετε το <kbd>Esc</kbd> αντ 'αυτού, οι επιλογές προεπισκόπησης που έχει κάνει
+επαναφέρονται και το αρχικό εργαλείο παραμένει αμετάβλητο.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_πλοήγηση_και_επιλογή">Πλοήγηση και επιλογή<a id="h000214"></a></h3>
+<div class="paragraph">
+<p>Ο πίνακας βάσης κάμψης προβάλλει διάφορα κουμπιά στους δευτερεύοντες πίνακες <em>πλοήγησης</em> και
+<em>επιλογής</em>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Χρησιμοποιήστε το κουμπί πλοήγησης <strong>Συναρμογή</strong> για να προχωρήσετε στην επεξεργασία όλων των
+ρυθμίσεων κάμψης. Ανατρέξτε στη σελίδα του ]προγράμματος επεξεργασίας ρυθμίσεωνxref:EditSetup#[ για περισσότερες σχετικές λεπτομέρειες.</p>
+</li>
+<li>
+<p>Χρησιμοποιήστε τα κουμπιά <strong>Συνέχεια</strong> και <strong>Πίσω</strong> για να ολοκληρώσετε την επεξεργασία των
+διαφορετικών βάσεων εργαλείων σε αυτές τις ρυθμίσεις.</p>
+</li>
+<li>
+<p>Χρησιμοποιήστε το κουμπί πλοήγησης <strong>Διαχωρισμός</strong> για να μετακινηθείτε προς τα κάτω κατά ένα επίπεδο
+και επεξεργαστείτε τα <em>επιμέρους τμήματα</em> που αποτελούν αυτήν τη βάση. Η παρακάτω ενότητα για
+την επεξεργασία τμημάτων βάσης εργαλείου παρέχει περισσότερες σχετικές πληροφορίες.</p>
+</li>
+<li>
+<p>Χρησιμοποιήστε τον επιλογέα <strong>Σταθμός εργαλείου</strong> για να επιλέξετε όλες τις βάσεις εργαλείων
+που αποτελούν αυτόν το <em>σταθμό</em>. Έτσι επιλέγονται όλοι οι στιγείς, οι μήτρες και οι συγκρατητήρες
+που αντιστοιχίζονται με την επιλεγμένη βάση προκειμένου να μπορούν να υποβληθούν σε επεξεργασία ή τα μετακινηθούν όλα τα στοιχεία.</p>
+</li>
+<li>
+<p>Χρησιμοποιήστε τον επιλογέα <strong>Ίδιο εργαλείο</strong> για να επιλέξετε άλλες βάσεις εργαλείων που
+χρησιμοποιούν το ίδιο εργαλείο. Αυτό είναι συχνά χρήσιμο πριν από τη χρήση μιας διαδικασίας <em>αντικατάστασης εργαλείου</em>.
+Με την επιλογή όλων των σταθμών που χρησιμοποιούν το ίδιο εργαλείο διευρύνεται η διαθέσιμη επιλογή
+εργαλείων αντικατάστασης.<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_επεξεργασία_πολλαπλών_βάσεων">Επεξεργασία πολλαπλών βάσεων<a id="h000215"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/edit-mounts.png" alt="Multiple mounts" width="138">
+</div>
+</div>
+<div class="paragraph">
+<p>Εάν επιλέξετε πολλές βάσεις χρησιμοποιώντας το <kbd>Shift</kbd>+Κλικ σε όλες, όλες μπορούν να υποβληθούν σε
+επεξεργασία από κοινού. Μόνο οι ρυθμίσεις και οι διαδικασίες που είναι κοινές σε όλες τις βάσεις είναι
+διαθέσιμες για επεξεργασία.</p>
+</div>
+<div class="paragraph">
+<p>Πεδία όπως το <strong>Μήκος</strong> ή το <strong>Θέση</strong> εμφανίζονται για
+επεξεργασία, μόνο εάν είναι ίδιες για όλες τις βάσεις.</p>
+</div>
+<div class="paragraph">
+<p>Εάν διαθέτετε πολλούς σταθμούς, είναι χρήσιμο να επιλέξετε όλους τους στιγείς ή όλες τις
+μήτρες πριν από την εκτέλεση μιας διαδικασία <strong>αντικατάστασης εργαλείου</strong>. Σε αυτή την περίπτωση, η επιλογή των διαθέσιμων
+εργαλείων αντικατάστασης είναι πιο εκτενής (δεδομένου ότι δεν υπάρχει κίνδυνος στιγέων και μητρών
+διαφορετικού ύψους που προκαλεί σύγκρουση).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_σύρσιμο_μιας_βάσης_εργαλείου_κάμψης">Σύρσιμο μιας βάσης εργαλείου κάμψης<a id="h000216"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/drag-mount.png" alt="Dragging a mount" width="450">
+</div>
+</div>
+<div class="paragraph">
+<p>Η καταχώριση <strong>Θέση</strong> μπορεί να χρησιμοποιηθεί για τη ρύθμιση μιας ακριβούς θέσης για μια βάση.
+Ορισμένες φορές, είναι πιο εύκολο να σύρετε απλώς μια βάση κάμψης σε νέα θέση. Για να το κάνετε αυτό:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Κάνετε κλικ στη βάση κάμψης για να την επιλέξετε (επιλέξτε πολλαπλές βάσεις χρησιμοποιώντας <kbd>Shift</kbd>+Κλικ)</p>
+</li>
+<li>
+<p>Κάνετε κλικ και αρχίστε να σύρετε προς τα αριστερά/δεξιά για να μετακινήσετε την επιλεγμένη βάση.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Όπως παρουσιάζεται στην παραπάνω εικόνα, όταν μετακινείτε το ποντίκι επάνω από μια επιλεγμένη βάση, προβάλλεται η
+κεφαλή του βέλους που σηματοδοτεί ότι μπορείτε να σύρετε την επιλεγμένη βάση. Όταν
+σύρετε τη βάση, ενδείξεις κουμπώματος σάς παρέχουν τη δυνατότητα να ευθυγραμμίσετε εύκολα τη βάση
+με άλλες υφιστάμενες βάσεις.</p>
+</div>
+<div class="paragraph">
+<p>Εάν <em>παραλάβετε</em> μια βάση κοντά στο αριστερό της άκρο, τότε τα αριστερά άκρα όλων των βάσεων
+χρησιμοποιούνται για το κούμπωμα. Εάν παραλάβετε μια βάση από το κέντρο, τότε η κεντρική γραμμή
+χρησιμοποιείται για το κούμπωμα και ούτω καθεξής.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_διαδικασίες_για_προχωρημένους">Διαδικασίες για προχωρημένους<a id="h000218"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ακολουθούν μερικές πιο προηγμένες διαδικασίες με τον πίνακα επεξεργασίας βάσης κάμψης.</p>
+</div>
+<div class="sect2">
+<h3 id="_επεξεργασία_τμημάτων_βάσης_εργαλείου">Επεξεργασία τμημάτων βάσης εργαλείου<a id="h000219"></a></h3>
+<div class="paragraph">
+<p>Με κλικ στο κουμπί πλοήγησης <strong>Τμήματα</strong> κατά την επεξεργασία μιας βάσης εργαλείου κάμψης
+ανοίγει ο πίνακας <em>Τμήμα εργαλείου</em> που εμφανίζεται όπως η παρακείμενη εικόνα.
+<span class="image right"><img src="img/edit-mount2.png" alt="Edit tool Segments" width="525"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ο επιλογέας <strong>Εργαλείο</strong> χρησιμοποιείται για την αντικατάσταση του επιλεγμένου τμήματος εργαλείου
+με ένα τεμάχιο μεγαλύτερου ή μικρότερου μήκους ή έναν διαφορετικό τύπο τεμαχίου.</p>
+</li>
+<li>
+<p>Τα κουμπιά <strong>Μετακίνηση &gt;</strong> και <strong>&lt; Μετακίνηση</strong> χρησιμοποιούνται για
+μετατόπιση του επιλεγμένου τμήματος προς τα αριστερά ή προς τα δεξιά στη σύνθεση. Έτσι δεν αλλάζει
+το συνολικό μήκος της σύνθεσης, αλλά η μετακίνηση ενός τεμαχίου αισθητήρα αναστολέα
+προς τα αριστερά or ή δεξιά είναι χρήσιμη για την αποφυγή οπών, για παράδειγμα.</p>
+</li>
+<li>
+<p>Τα κουμπιά <strong>Αφαίρεση</strong> και <strong>Προσθήκη</strong> χρησιμοποιούνται για την προσθήκη
+νέων τμημάτων στη σύνθεση ή για την αφαίρεση του επιλεγμένου τμήματος.</p>
+</li>
+<li>
+<p>Τα κουμπιά <strong>Πίσω</strong> και <strong>Συνέχεια</strong> πλοήγησης χρησιμοποιούνται για τη μετακίνηση
+στην επεξεργασία των διαφόρων τμημάτων στη βάση κάμψης. Όπως παρουσιάζεται στην παραπάνω εικόνα,
+το τμήμα εργαλείου που υποβάλλεται σε επεξεργασία επισημαίνεται με μπλε χρώμα.</p>
+</li>
+<li>
+<p>Το κουμπί πλοήγησης <strong>Σύνδεση</strong> χρησιμοποιείται για τη μετακίνηση προς τα επάνω κατά ένα επίπεδο και
+την επεξεργασία ολόκληρης της βάσης κάμψης αντί μεμονωμένων τμημάτων.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_προσθήκη_διακένου_σε_μια_βάση">Προσθήκη διακένου σε μια βάση<a id="h000220"></a></h3>
+<div class="paragraph">
+<p>Ορισμένες φορές είναι χρήσιμο να προσθέσετε ένα μικρό <em>διάκενο</em> σε μια βάση εργαλείων, συνήθως για να επιτρέψετε
+στη φλάντζα να διέλθει χωρίς σύγκρουση. Για το σκοπό αυτό, κάνετε κλικ στο
+<strong>κουμπί Προσθήκη διάκενου</strong> (το οποίο εμφανίζεται εάν το μήκος της βάσης του εργαλείου είναι επαρκές). Ανοίγει
+ένα μικτό τμήμα στον πίνακα, με ένα σετ διασυνδεδεμένων καταχωρίσεων για τη ρύθμιση του
+αριστερού περιθωρίου, του δεξιού περιθωρίου και του ουσιαστικού διακένου. Δεδομένου ότι το άθροισμα αυτών των τριών τιμών πρέπει να είναι
+το μήκος της βάσης του εργαλείου, η επεξεργασία δύο από αυτές τις τιμές θα ορίσει αυτόματα την
+τρίτη.</p>
+</div>
+<div class="paragraph">
+<p>Στην παρακάτω εικόνα παρουσιάζεται αυτή η διαδικασία σε εξέλιξη. Έχουμε μια φλάντζα που συγκρούεται
+με το στιγέα και ρυθμίζουμε το αριστερό/δεξιό περιθώριο μέχρι το σημείο όπου το προτεινόμενο διάκενο
+ευθυγραμμίζεται με το σημείο όπου η φλάντζα διασταυρώνεται με το στιγέα (μπορείτε να δείτε το προτεινόμενο διάκενο
+που προβάλλεται υπό μορφή δύο πορτοκαλί γραμμών σχεδιασμένων στη βάση κάμψης).<br>
+<span class="image"><img src="img/add-gap1.png" alt="Adding a gap"></span></p>
+</div>
+<div class="paragraph">
+<p>Όταν κάνετε κλικ στο κουμπί <strong>ΟΚ</strong> σε αυτόν το δευτερεύοντα πίνακα, δημιουργείται το διάκενο και μπορείτε να δείτε
+ότι το σφάλμα σύγκρουσης έχει πλέον αποκατασταθεί:<br>
+<span class="image"><img src="img/add-gap2.png" alt="Adding a gap"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Κατά την επεξεργασία ενός σταθμού που χρησιμοποιεί βάση στιγέα, το TecZone Bend ρωτά εάν το διάκενο
+θα πρέπει να εισάγεται μόνο για το <strong>στιγέα</strong> ή τόσο για το <strong>στιγέα</strong> όσο και για το <strong>συγκρατητήρα</strong>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_χρήση_προσαρμογέα_διπλού_v">Χρήση προσαρμογέα διπλού V<a id="h000221"></a></h3>
+<div class="paragraph">
+<p>Μπορείτε να χρησιμοποιήσετε έναν προσαρμογέα διπλού V για να τοποθετήσετε δύο μήτρες τη μια δίπλα στην άλλη. Για
+να το κάνετε αυτό χειροκίνητα, χρησιμοποιήστε το κουμπί <strong>Προσθήκη προσαρμογέα</strong> για να προσθέσετε έναν προσαρμογέα
+σε μια μήτρα και μετά χρησιμοποιήστε το κουμπί <strong>Αλλαγή τύπου εργαλείου</strong> για να αλλάξετε αυτόν τον
+προσαρμογέα σε έναν προσαρμογέα διπλού V. Τώρα, είναι δυνατό να προσθέσετε μια δεύτερη μήτρα στην άλλη
+υποδοχή του προσαρμογέα διπλού-V χρησιμοποιώντας την εντολή <strong>Προσθήκη</strong> από τη γραμμή εντολών και
+επιλέγοντας μια βάση μήτρας.</p>
+</div>
+<div class="paragraph">
+<p>Όταν έχετε μια μήτρα εγκαταστημένη σε μία υποδοχή ενός συγκρατητήρα διπλού V, μπορείτε να την μετακινήσετε στην
+άλλη υποδοχή κάνοντας κλικ στο κουμπί <strong>Αλλαγή άξονα I</strong> που εμφανίζεται:<br>
+<span class="image"><img src="img/dv-shift.png" alt="Double-V Shift" width="465"></span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Αυτά είναι μερικές φορές επίσης γνωστά ως τεμάχια <em>πατούρας</em>.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Π.χ., εάν εκτελείτε μια διαδικασία <strong>αντικατάστασης εργαλείου</strong> σε ένα μόνο σταθμό στιγέα και υπάρχουν πολλοί σταθμοί στιγέα, τότε θα περιοριστείτε στην επιλογή μόνο άλλων εργαλείων στιγέα του <em>ιδίου ύψους</em> προκειμένου να αποφύγετε συγκρούσεις στιγέα-μήτρα λόγω ανομοιόμορφων διακένων.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_ο_πίνακας_βάση_κάμψης">Ο πίνακας Βάση κάμψης</a>
+  </li>
+  <li level="2">
+   <a href="#_το_παράθυρο_αντικατάσταση_εργαλείου">Το παράθυρο Αντικατάσταση εργαλείου</a>
+  </li>
+  <li level="2">
+   <a href="#_πλοήγηση_και_επιλογή">Πλοήγηση και επιλογή</a>
+  </li>
+  <li level="2">
+   <a href="#_επεξεργασία_πολλαπλών_βάσεων">Επεξεργασία πολλαπλών βάσεων</a>
+  </li>
+  <li level="2">
+   <a href="#_σύρσιμο_μιας_βάσης_εργαλείου_κάμψης">Σύρσιμο μιας βάσης εργαλείου κάμψης</a>
+  </li>
+  <li level="1">
+   <a href="#_διαδικασίες_για_προχωρημένους">Διαδικασίες για προχωρημένους</a>
+  </li>
+  <li level="2">
+   <a href="#_επεξεργασία_τμημάτων_βάσης_εργαλείου">Επεξεργασία τμημάτων βάσης εργαλείου</a>
+  </li>
+  <li level="2">
+   <a href="#_προσθήκη_διακένου_σε_μια_βάση">Προσθήκη διακένου σε μια βάση</a>
+  </li>
+  <li level="2">
+   <a href="#_χρήση_προσαρμογέα_διπλού_v">Χρήση προσαρμογέα διπλού V</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="editbend.html">Επεξεργασίας μιας κάμψης</a></span>
+ <span class="next"><a href="editsetup.html">Επεξεργασία ρυθμίσεων κάμψης</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

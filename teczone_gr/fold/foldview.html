@@ -1,0 +1,829 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>Η προβολή δίπλωσης</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Καλώς ήρθατε στο TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">Εισαγωγή</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">Εγκατάσταση του λογισμικού</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">Η επιφάνεια χειρισμού</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">Ροή εργασιών τεμαχίου</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">Εισαγωγή 2-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">Εκκαθάριση 2-D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">Εισαγωγή 3-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">Εισαγωγή μοντέλου 3D</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">Εισαγωγή συγκροτήματος</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">Ανίχνευση μορφής</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">Ανίχνευση στοιχείων</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">Τροποποίηση της γεωμετρίας</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">CAM Λέιζερ</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Ροή εργασιών τεμαχίου</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Πίνακες επεξεργασίας</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Κοπή με λέιζερ</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Προσέγγιση</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Απόσυρση</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Για προχωρημένους</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Περίγραμμα</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Κοπή αχρήστων</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Τεμάχιο</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Αντιμετώπιση γωνιών</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Quick-Nest (Γρήγορη κατανομή)</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Ροή εργασιών έργου</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Πίνακας εργασίας</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Καρτέλα μεταλλικών πλακών</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Καρτέλα Τεμάχια</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Καρτέλα Διατάξεις</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Καρτέλα σύνοψης</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Επεξεργασία διάταξης</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Λειτουργίες κατανομής</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Πίνακας τοποθέτησης</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Αλληλουχία</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Τεμαχισμός μεταλλικής πλάκας</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Λοξή κοπή</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Ανοικτά περιγράμματα</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Μεταβλητή λοξοτομή</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Διάφορα</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Για προχωρημένους</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Κανόνες ολοκλήρωσης</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">Επεξεργασία LTT</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">Διπλή γραμμή (TwinLine)</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Στρατηγική</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Microjoint</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Περαιτέρω ρυθμίσεις</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Κάμψη CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Δημιουργία δεδομένων κάμψης</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Πλοηγός κάμψης</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Επεξεργασία δεδομένων κάμψης</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Επεξεργασίας μιας κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Επεξεργασία μιας βάσης εργαλείου</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Επεξεργασία ρυθμίσεων κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Επεξεργασία των πίσω αναστολέων</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Επεξεργασία μέτρησης γωνιών</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Υπολογιστικό φύλλο Κάμψεις</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Αλλαγή της αλληλουχίας</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Προσθήκη ρυθμίσεων και σταθμών</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Για προχωρημένους</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Μέτρηση γωνίας</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Διαδικασία παρτίδας</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Επανυπολογισμός λύσης</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Έλεγχος φορτίου</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Πλοηγός κάμψης</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Παραλαβή τεμαχίου</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Παραλαβή από παλέτα</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Παραλαβή από τον διανομέα</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Ρομποτική κάμψη</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Εισαγωγή</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Κάμψη</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Εξαγωγή</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Εκ νέου σύλληψη</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Πίνακας εκ νέου σύλληψης</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Προσθήκη εκ νέου σύλληψης</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Επεξεργασία εκ νέου σύλληψης</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Εκ νέου σύλληψη με σιαγόνα</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Πίνακας σταθμού εκ νέου σύλληψης</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Απόθεση τεμαχίου</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Μοτίβα απόθεσης</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Επανάληψη και ακολουθία</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Διαχωριστικό φύλλο</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Για προχωρημένους</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Σημεία πορείας</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Διαμόρφωση κελιών</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">Βάση δεδομένων στοιχείων αρπάγης</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">Αναφορές</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Δίπλωση CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="createfolddata.html">Δημιουργία δεδομένων δίπλωσης</a></li>
+    <li><button class="tree blank"></button><a class="active" href="foldview.html">Η προβολή δίπλωσης</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="editing/index.html">Επεξεργασία δεδομένων δίπλωσης</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="editing/editbend.html">Επεξεργασίας μιας κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="editing/editside.html">Επεξεργασία πλευράς/τμήματος</a></li>
+      <li><button class="tree blank"></button><a href="editing/editseq.html">Αλλαγή της αλληλουχίας</a></li>
+      <li><button class="tree blank"></button><a href="editing/editbh.html">Επεξεργασία των συγκρατητήρων</a></li>
+      <li><button class="tree blank"></button><a href="editing/editgauge.html">Επεξεργασία των αναστολέων</a></li>
+      <li><button class="tree blank"></button><a href="editing/editblade.html">Επεξεργασία των λαμών</a></li>
+      <li><button class="tree blank"></button><a href="editing/editload.html">Επεξεργασία της φόρτωσης</a></li>
+      <li><button class="tree blank"></button><a href="editing/editunload.html">Επεξεργασία της απόρριψης</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="toolinventory.html">Απόθεμα εργαλείων</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="advanced/index.html">Για προχωρημένους</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="advanced/airgaptables.html">Προσαρμοσμένοι πίνακες διακένου</a></li>
+      <li><button class="tree blank"></button><a href="advanced/manualbend.html">Ολοκλήρωση χειροκίνητης κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="advanced/minflangelength.html">Απαιτούμενο μήκος φλάντζας</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Ρυθμίσεις</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Σχέδιο</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Επίπεδα</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Διαστάσεις</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Προβολή</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Κάμψη CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Προεπιλογές μηχανήματος</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Αποτελέσματα κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Προβολή κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Κελί κάμψης</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Κοπή CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Διάταξη</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Ρυθμίσεις κατανομής</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Μεταλλική πλάκα</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Χειρισμός μεταλλικής πλάκας</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Κοπές σκελετού</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Υποστήριξη εργασίας</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">CAM Λέιζερ</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Αλληλουχία</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Αποτελέσματα κοπής</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Προβολή κοπής</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Κάμψη πάνελ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Προεπιλογές</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">Φορείς πρόσθετου εργαλείου κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Αποτελέσματα</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Αναφορές</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Προεπιλογές στοιχείου</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Εισαγωγή/Εξαγωγή</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Περιβάλλον</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Βάση δεδομένων</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Υλικά</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Μηχανήματα</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Εργαλεία κάμψης</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Στοιχεία αρπάγης κάμψης</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Μορφές/στοιχεία</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Αναφορές</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Σχεδιαστής αναφορών</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Πεδία, εικόνες και πίνακες</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Ζώνες (δευτερεύουσες αναφορές)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Ετικέτες, Bitmap και σχήματα</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">Παράρτημα</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Υποστηριζόμενες τρισδιάστατες μορφές</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">Διαχωριστικό φύλλο DXF</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Bend Tool DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Νομική ανακοίνωση</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Δίπλωση CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="foldview.html">Η προβολή δίπλωσης</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Η προβολή δίπλωσης</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Όταν μεταβείτε στη λειτουργία δίπλωσης CAM, στο χώρο εργασίας εμφανίζεται η <em>προβολή δίπλωσης</em>.
+Σε αυτήν προβάλλεται μια εικόνα 3D της διπλωτικής μηχανής πάνελ με το τεμάχιο επεξεργασίας. Αυτός είναι ο τρόπος με τον οποίο θα
+αναζητήσετε το μηχάνημα <strong>TBC-5030</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/mcisometric.png" alt="Fold View" width="490">
+</div>
+</div>
+<div class="paragraph">
+<p>Η διπλωτική μηχανή πάνελ είναι ένα μεγάλο μηχάνημα με ένα τραπέζι μήκους συνήθως άνω των 3
+μέτρων. Η προβολή ολόκληρου του μηχανήματος θα ελαχιστοποιούσε το τεμάχιο επεξεργασίας δυσχεραίνοντας
+την απεικόνιση της διαδικασίας κάμψης. Συνεπώς, η προβολή κάμψης
+προβάλλει μια <em>συντομευμένη προβολή</em> του μηχανήματος. Διάφορα στοιχεία όπως το
+οι λάμες δίπλωσης και οι κάτω συγκρατητήρες προβάλλονται μόνο στα μήκη
+που απαιτούνται για την κάλυψη της <em>περιοχής ενδιαφέροντος</em>. Προβάλλονται μόνο τα τμήματα των επάνω
+συγκρατητήρων που χρησιμοποιούνται πραγματικά για την επεξεργασία. Προβάλλονται μόνο
+ορισμένα πλαίσια του τραπεζιού στήριξης και ορισμένες από τις διατάξεις χειρισμού
+του τεμαχίου. Αυτή η συντομευμένη προβολή διευκολύνει την παρακολούθηση της πραγματικής
+επεξεργασίας.</p>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/mcsideview.png" alt="C-Frame" width="235">
+</div>
+</div>
+<div class="paragraph">
+<p>Το <strong>πλαίσιο C</strong> στο οποίο είναι εγκαταστημένες οι λάμες, δεν προβάλλεται συνήθως στην προβολή 3D
+επειδή θα παρεμπόδιζε το μεγαλύτερο μέρος της προβολής των διαδικασιών δίπλωσης.
+Ωστόσο, όταν περιστρέφετε την προβολή 3D για να την ευθυγραμμίσετε με έναν ακραίο προσανατολισμό,
+το πλαίσιο C προβάλλεται ως περίγραμμα (βλ. παρακείμενη εικόνα). Έτσι
+μπορείτε να δείτε πιο εύκολα τον τρόπο με τον οποίο η γεωμετρία του τεμαχίου ταιριάζει σε σχέση με το πλαίσιο C.
+Όταν περιστρέφετε την προβολή 3D σε διαφορετικό προσανατολισμό, το πλαίσιο C
+αποκρύπτεται.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fold-navigator">Ο πλοηγός δίπλωσης<a id="h000429"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Όταν βρίσκεστε στην <em>προβολή δίπλωσης</em>, εμφανίζεται ο πίνακας <strong>Πλοηγός δίπλωσης</strong> κατά μήκος του επάνω
+άκρου του παραθύρου TecZone Fold. Αυτός ο πλοηγός παρέχει έναν γρήγορο τρόπο πλοήγησης
+μέσω διαφόρων διαδικασιών κάμψης, καθώς και άμεση προβολή σε διάφορους
+ελέγχους κατάστασης για κάθε κάμψη. Παρέχει στοιχεία ελέγχου για την προβολή ή τη διακοπή της
+προσομοίωσης δίπλωσης. Εδώ παρατίθεται ένα παράδειγμα της εμφάνισης του πλοηγού δίπλωσης:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/foldnavigator.png" alt="Navigator" width="550">
+</div>
+</div>
+<div class="paragraph">
+<p>Ο πλοηγός προβάλλει διάφορα χρώματα για κάμψεις που φέρουν κάποιες προειδοποιήσεις ή
+σφάλματα. Η τρέχουσα κάμψη προβάλλεται με ένα πλαίσιο με περίγραμμα και οι σκούρες
+γραμμές μεγάλου πλάτους μεταξύ ορισμένων κάμψεων αντιπροσωπεύουν πλευρικά όρια (όπου ο
+χειριστής πρέπει να περιστρέψει το τεμάχιο για να συνεχίσει την επεξεργασία).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_στοιχεία_ελέγχου_προσομοίωσης">Στοιχεία ελέγχου προσομοίωσης<a id="h000430"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Όταν μετακινείτε το ποντίκι κοντά στον πλοηγό δίπλωσης, εμφανίζονται <strong>στοιχεία ελέγχου προσομοίωσης</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/simcontrols.png" alt="Controls" width="550">
+</div>
+</div>
+<div id="h000431" class="ulist">
+<ul>
+<li>
+<p>Ο <strong>συρόμενος ρυθμιστής</strong> μπορεί να χρησιμοποιηθεί για τη μετακίνηση της τρέχουσας κάμψης σε διάφορα στάδια της
+διαδικασίας δίπλωσης (τροφοδότηση του τεμαχίου στη θέση κάμψης, σύσφιξη με
+συγκρατητήρα, μετακίνηση της λάμας δίπλωσης κλπ.). Καθώς μετακινείται ο συρόμενος ρυθμιστής, η
+συμβουλή εργαλείου προβάλλει το τρέχον στάδιο της δίπλωσης και διάφορα μέρη του
+μηχανήματος μετακινούνται στην προσομοίωση. Εάν υπάρχουν συγκρούσεις, αυτά
+τα μέρη προβάλλονται με κόκκινο χρώμα για να επισημανθεί σαφώς η σύγκρουση.</p>
+</li>
+<li>
+<p>Τα <strong>στοιχεία ελέγχου αναπαραγωγής</strong> κοντά στην αριστερή πλευρά μπορούν να χρησιμοποιηθούν για την έναρξη, τη διακοπή
+ή την επαναφορά της προσομοίωσης στην αρχή. (<strong>Συμβουλή</strong>: Μπορείτε επίσης να πατήσετε το <kbd>Space</kbd> για
+να ξεκινήστε ή να διακόψετε την αναπαραγωγή της προσομοίωσης δίπλωσης).</p>
+</li>
+<li>
+<p>Το κουμπί Αναπαραγωγή μίας μπορεί να χρησιμοποιηθεί για την αναπαραγωγή μόνο μίας κάμψης. Πατήστε το επανειλημμένα για
+να προβάλλεται την προσομοίωση όλων των κάμψεων. (<strong>Συμβουλή</strong>: μπορείτε να πατήσετε
+το <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Space</kbd></span> για να αναπαράγετε μόνο μία κάμψη).</p>
+</li>
+<li>
+<p>Το στραμμένο προς τα κάτω σύμβολο διπλού βέλους κοντά στο μέσο μπορεί να χρησιμοποιηθεί για την ανάπτυξη του πλοηγού
+δίπλωσης για την προβολή αναλυτικότερων πληροφοριών για τα σφάλματα και
+τις προειδοποιήσεις διαφόρων κάμψεων. (<strong>Συμβουλή</strong>: μπορείτε επίσης να πατήσετε το <kbd>Z</kbd> για
+να αναπτύξετε/συμπτύξετε την προβολή του πλοηγού δίπλωσης).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_πλοηγός_δίπλωσης_εκτεταμένη_προβολή">Πλοηγός δίπλωσης: εκτεταμένη προβολή<a id="h000435"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Όταν ανοίγετε τον πλοηγό δίπλωσης κάνοντας κλικ στο κουμπί ανοίγματος ή πατώντας το
+πλήκτρο <kbd>Z</kbd>, αυτό είναι ό,τι βλέπετε:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/navexpanded.png" alt="Navigator Open" width="700">
+</div>
+</div>
+<div class="paragraph">
+<p>Για κάθε κάμψη, ο πλοηγός προβάλλει τώρα ένα σύνολο εικονιδίων κατάστασης. Κάθε έγχρωμο
+εικονίδιο αντιπροσωπεύει ένα σφάλμα ή μια προειδοποίηση. Μετακινώντας το ποντίκι επάνω από τα έγχρωμα
+κελιά προβάλλει περισσότερες πληροφορίες για το ποιο είναι το σφάλμα ή η προειδοποίηση (όπως
+μπορείτε να δείτε στην παραπάνω εικόνα).</p>
+</div>
+<div class="paragraph">
+<p>Με κλικ σε ένα κελί που προβάλλει κάποιο σφάλμα, η προσομοίωση τοποθετείται κατά τρόπον
+που είναι άμεσα προφανές το σφάλμα. Για παράδειγμα, με κλικ σε ένα κελί που
+προβάλλει ένα σφάλμα <strong>σύγκρουσης λάμας</strong> μετακινεί την προσομοίωση στο στάδιο
+προσομοίωσης όπου η λάμα συγκρούεται με το τεμάχιο επεξεργασίας.</p>
+</div>
+<div class="sect2">
+<h3 id="_εικονίδια_κατάστασης">Εικονίδια κατάστασης<a id="h000436"></a></h3>
+<div class="paragraph">
+<p>Υπάρχουν πολλά διαφορετικά εικονίδια κατάστασης που προβάλλονται σε διαφορετικές σειρές του πλοηγού
+δίπλωσης. Οι παρακάτω ενότητες επεξηγούν τη σημασία αυτών των εικονιδίων. Λάβετε υπόψη ότι μπορείτε
+πάντοτε να λάβετε περισσότερες πληροφορίες για τη σημασία του εικονιδίου μετακινώντας απλώς το ποντίκι επάνω από
+το εικονίδιο.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_η_γραμμή_φλάντζα">Η γραμμή <strong>Φλάντζα</strong><a id="h000437"></a></h3>
+<div class="paragraph">
+<p>Η γραμμή Φλάντζα του πλοηγού δίπλωσης προβάλλει πληροφορίες για συγκρούσεις εντός
+του τεμαχίου (μια φλάντζα του μοντέλου συγκρούεται με μια άλλη). Το TecZone Fold επιχειρεί
+να το αποφύγει αυτό όπου είναι δυνατόν αλλάζοντας την αλληλουχία. Αυτά είναι τα εικονίδια
+που μπορείτε να δείτε στη γραμμή Φλάντζα:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Εικονίδιο</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σημασία</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Κανένα σφάλμα, κατάσταση OK</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μια σύγκρουση μεταξύ δύο φλαντζών συμβαίνει κατά τη διάρκεια της κάμψης</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/skipped-bend.png" alt="skipped bend" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Αυτή η κάμψη έχει παραλειφθεί (καμία επεξεργασία για αυτήν την κάμψη)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_η_γραμμή_αναστολείς">Η γραμμή <strong>Αναστολείς</strong><a id="h000438"></a></h3>
+<div class="paragraph">
+<p>Η γραμμή <em>Αναστολείς</em> του πλοηγού δίπλωσης προβάλλει την κατάσταση των αναστολέων. Επειδή η αναστολή
+χρησιμοποιούνται μόνο για την πρώτη κάμψη σε μια πλευρά, όλες οι άλλες κάμψεις σε μια πλευρά
+προβάλλουν ένα εικονίδιο κοίλου κύκλου (που σηματοδοτεί ότι αυτή η κάμψη δεν απαιτεί καμία
+διαδικασία αναστολής).</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Εικονίδιο</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σημασία</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Κανένα σφάλμα, η αναστολή έχει υπολογιστεί σωστά</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σφάλμα</strong>: Ο πίσω αναστολέας συγκρούεται με το τεμάχιο κατά τη λειτουργία αναστολής</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/exclaim.png" alt="exclaim" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σφάλμα</strong>: Δεν ήταν δυνατός ο υπολογισμός της αναστολής για αυτήν την πλευρά</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/missing.png" alt="missing" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Πληροφορίες</strong>: Αυτή δεν είναι η πρώτη κάμψη σε αυτήν την πλευρά.
+  Δεν απαιτείται αναστολή</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_η_γραμμή_συγκρατητήρας">Η γραμμή <strong>Συγκρατητήρας</strong><a id="h000439"></a></h3>
+<div class="paragraph">
+<p>Αυτή η γραμμή του πλοηγού δίπλωσης προβάλλει πληροφορίες κατάστασης για το
+συγκρατητήρα. Αυτά είναι τα πιθανά σφάλματα ή τα εικονίδια προειδοποίησης που μπορεί να δείτε
+σε αυτή τη στήλη. Ορισμένα εικονίδια χρησιμοποιούνται τόσο για σφάλματα ή προειδοποιήσεις και
+η διάκριση μεταξύ των δύο γίνεται με βάση το χρώμα του φόντου του
+κελιού (κίτρινο για προειδοποιήσεις, πορτοκαλί-κόκκινο για σφάλματα).</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Εικονίδιο</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σημασία</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Κανένα σφάλμα - ο συγκρατητήρας έχει υπολογιστεί σωστά και
+  δεν έχει συγκρούσεις</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σφάλμα</strong>: Το τεμάχιο συγκρούεται με το συγκρατητήρα<br>
+<strong>Προειδοποίηση</strong>: Το τεμάχιο συγκρούεται με το συγκρατητήρα κατά την υπερβολική κάμψη</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/span-short.png" alt="span short" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σφάλμα</strong>: Το διάστημα του συγκρατητήρα είναι πολύ μικρό (υπάρχει
+  προεξοχή περίπου άνω των 10 mm της γραμμής κάμψης πέραν του συγκρατητήρα).<br>
+<strong>Προειδοποίηση</strong>: Το διάστημα του συγκρατητήρα είναι ελαφρώς μικρό (υπάρχει προεξοχή μεταξύ 5 και 10 mm
+  της γραμμής κάμψης πέραν του συγκρατητήρα)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/enw-tool.png" alt="enw tool" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Πληροφορίες</strong>: Αυτή η κάμψη χρησιμοποιεί ένα εισερχόμενο εργαλείο συγκράτησης
+  (με μετακίνηση του ποντικιού επάνω από το κελί παρέχονται περισσότερες λεπτομέρειες)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_η_γραμμή_λάμα">Η γραμμή <strong>Λάμα</strong><a id="h000440"></a></h3>
+<div class="paragraph">
+<p>Αυτή η γραμμή παρέχει πληροφορίες σχετικές με τη λάμα δίπλωσης που χρησιμοποιείται για αυτήν την κάμψη. Η
+παρακάτω λίστα προβάλλει τα πιθανά εικονίδια που μπορείτε να δείτε σε αυτήν τη στήλη:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Εικονίδιο</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σημασία</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Κανένα σφάλμα - η λάμα δίπλωσης έχει υπολογιστεί
+  σωστά και δεν έχει συγκρούσεις</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σφάλμα</strong>: Το τεμάχιο συγκρούεται με τη λάμα δίπλωσης</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/span-short.png" alt="span short" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σφάλμα</strong>: Το διάστημα μήκους της λάμας είναι πολύ μικρό
+  (υπάρχει προεξοχή άνω των περίπου 10 mm της γραμμής κάμψης πέραν της λάμας).
+  Αυτό συμβαίνει μόνον όταν χρησιμοποιείται μια λάμα ZBW (πρόσθετου εργαλείου κάμψης).<br>
+<strong>Προειδοποίηση</strong>: Το μήκος της λάμας είναι ελαφρώς μικρό (υπάρχει προεξοχή μεταξύ 5 και 10 mm
+  της γραμμής κάμψης πέραν της λάμας).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/airgap.png" alt="airgap" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Προειδοποίηση</strong>: Ένα μη βασικό διάκενο χρησιμοποιείται για την αποφυγή
+  μιας σύγκρουσης της λάμας</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/overtravel.png" alt="overtravel" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σφάλμα</strong>: Υπέρβαση της διαδρομής του φορέα πρόσθετου εργαλείου κάμψης ZBW πέραν των ορίων του άξονα</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/overload.png" alt="overload" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σφάλμα</strong>: Υπερφόρτωση - η απαιτούμενη δύναμη κάμψης είναι
+  υπερβολική (το διάκενο μπορεί να χρειαστεί να αυξηθεί)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_η_γραμμή_χειρισμός_τεμαχίου">Η γραμμή <strong>Χειρισμός τεμαχίου</strong><a id="h000441"></a></h3>
+<div class="paragraph">
+<p>Αυτή η γραμμή προβάλλει πληροφορίες σχετικές με την κατάσταση του χειρισμού του τεμαχίου με στοιχεία αρπάγης κενού
+ή μαγνητικά στοιχεία αρπάγης. Αυτά είναι τα εικονίδια που θα μπορούσαν να εμφανιστούν
+εδώ:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Εικονίδιο</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σημασία</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Δεν παρατηρήθηκαν προβλήματα με τον χειρισμό του τεμαχίου</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σφάλμα</strong>: Το τεμάχιο συγκρούεται με τον τραπέζι στήριξης
+  (για παράδειγμα, υπάρχει μια προς τα κάτω φλάντζα που θα προεξείχε κάτω στο τραπέζι στήριξης)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/front-grip.png" alt="front grip" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Πληροφορίες</strong>: Το τεμάχιο συλλαμβάνεται από το στοιχείο αρπάγης με τη
+  μπροστινή επιφάνεια του στοιχείου αρπάγης</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/bottom-grip.png" alt="bottom grip" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Πληροφορίες</strong>: Το τεμάχιο συλλαμβάνεται από το στοιχείο αρπάγης με την
+  κάτω επιφάνεια του στοιχείου αρπάγης</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/weak-grip.png" alt="weak grip" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Προειδοποίηση</strong>: Το στοιχείο αρπάγης μπορεί να έχει μόνο ελάχιστη
+  επικάλυψη με το τεμάχιο</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/invalid-grip.png" alt="invalid grip" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σφάλμα</strong>: Δεν ήταν δυνατός ο υπολογισμός της σύλληψης με στοιχείο αρπάγης - δεν υπήρχε καμία
+  επιφάνεια του τεμαχίου κατάλληλη για την τοποθέτηση του στοιχείου αρπάγης σε αυτήν</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/flip-vertical.png" alt="flip vertical" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Προειδοποίηση</strong>: Το τεμάχιο πρέπει να κατοπτριστεί
+  από το χειριστή στην αρχή αυτής της πλευράς</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/hand.png" alt="hand" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Το τεμάχιο πρέπει να εξαχθεί χειροκίνητα στο τέλος αυτής
+  της πλευράς (η αυτόματη εξαγωγή από το στοιχείο αρπάγης δεν είναι δυνατή λόγω σύγκρουσης
+  του τεμαχίου με το συγκρατητήρα)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Καθώς κάνετε αλλαγές στις διαμορφώσεις του συγκρατητήρα, των λαμών, του στοιχείου αρπάγης ή του πίσω αναστολέα,
+ο πλοηγός δίπλωσης ενημερώνεται άμεσα με τη νέα κατάσταση. Αυτή η άμεση ανατροφοδότηση καθιστά πολύ εύκολο
+των πειραματισμό με διάφορες διαμορφώσεις χωρίς να χρειάζεται να εκδίδετε μια εντολή <strong>επανυπολογισμού</strong>
+κάθε φορά.</p>
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#fold-navigator">Ο πλοηγός δίπλωσης</a>
+  </li>
+  <li level="1">
+   <a href="#_στοιχεία_ελέγχου_προσομοίωσης">Στοιχεία ελέγχου προσομοίωσης</a>
+  </li>
+  <li level="1">
+   <a href="#_πλοηγός_δίπλωσης_εκτεταμένη_προβολή">Πλοηγός δίπλωσης: εκτεταμένη προβολή</a>
+  </li>
+  <li level="2">
+   <a href="#_εικονίδια_κατάστασης">Εικονίδια κατάστασης</a>
+  </li>
+  <li level="2">
+   <a href="#_η_γραμμή_φλάντζα">Η γραμμή <strong>Φλάντζα</strong></a>
+  </li>
+  <li level="2">
+   <a href="#_η_γραμμή_αναστολείς">Η γραμμή <strong>Αναστολείς</strong></a>
+  </li>
+  <li level="2">
+   <a href="#_η_γραμμή_συγκρατητήρας">Η γραμμή <strong>Συγκρατητήρας</strong></a>
+  </li>
+  <li level="2">
+   <a href="#_η_γραμμή_λάμα">Η γραμμή <strong>Λάμα</strong></a>
+  </li>
+  <li level="2">
+   <a href="#_η_γραμμή_χειρισμός_τεμαχίου">Η γραμμή <strong>Χειρισμός τεμαχίου</strong></a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="createfolddata.html">Δημιουργία δεδομένων δίπλωσης</a></span>
+ <span class="next"><a href="editing/index.html">Επεξεργασία δεδομένων δίπλωσης</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,519 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../res/bento.css">
+  <link rel="stylesheet" href="../../../res/site.css">
+  <link rel="stylesheet" href="../../../res/tree.css">
+  <link rel="stylesheet" href="../../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../../img/trumpf-icon.png">
+  <title>Kontur</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../../index.html">Velkommen til TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../intro/index.html">Introduktion</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../intro/install.html">Installation af softwaren</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/clarity.html">Brugerfladen</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/workflow.html">Arbejdsgang for del</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/2dimport/index.html">2-D-import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/2dimport/2dcleanup.html">2-D oprydning</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/3dimport/index.html">3-D-import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prep3dmodel.html">Importér 3D-model</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prepassembly.html">Importér montering</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/formdetect.html">Formregistrering</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/componentdetect.html">Komponentregistrering</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../cad/sketch.html">Ændring af geometrien</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../../index.html">Laser CAM</a>
+   <ul>
+    <li>
+     <button class="tree open"></button>
+     <a href="../index.html">Arbejdsgang for del</a>
+     <ul>
+      <li>
+       <button class="tree open"></button>
+       <a href="index.html">Redigering af paneler</a>
+       <ul>
+        <li>
+         <button class="tree closed"></button>
+         <a href="lasercut/index.html">Laserskæring</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="lasercut/approach.html">Tilgang</a></li>
+          <li><button class="tree blank"></button><a href="lasercut/withdrawal.html">Tilbagetrækning</a></li>
+          <li><button class="tree blank"></button><a href="lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="lasercut/advanced.html">Avanceret</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a class="active" href="contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="scrapcut.html">Skrotskæring</a></li>
+        <li><button class="tree blank"></button><a href="part.html">Del</a></li>
+        <li><button class="tree blank"></button><a href="cornertreatment.html">Hjørnebehandling</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../quicknest.html">Hurtig indlejring</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../jobworkflow/index.html">Arbejdsgang for job</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../jobworkflow/jobpanel/index.html">Jobpanel</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../jobworkflow/jobpanel/sheets.html">Fanen Plader</a></li>
+        <li><button class="tree blank"></button><a href="../../jobworkflow/jobpanel/parts.html">Fanen Dele</a></li>
+        <li><button class="tree blank"></button><a href="../../jobworkflow/jobpanel/layouts.html">Fanen Layouts</a></li>
+        <li><button class="tree blank"></button><a href="../../jobworkflow/jobpanel/summary.html">Fanen Resumé</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../jobworkflow/editlayout/index.html">Redigér layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../jobworkflow/editlayout/nestingmodes.html">Indlejringstilstande</a></li>
+        <li><button class="tree blank"></button><a href="../../jobworkflow/editlayout/placementpanel.html">Placeringspanel</a></li>
+        <li><button class="tree blank"></button><a href="../../jobworkflow/editlayout/sequencing.html">Rækkefølgeopdeling</a></li>
+        <li><button class="tree blank"></button><a href="../../jobworkflow/editlayout/slicesheet.html">Pladeskæring</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bevelcut/index.html">Skråskær</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bevelcut/opencontours.html">Åbn konturer</a></li>
+      <li><button class="tree blank"></button><a href="../../bevelcut/variablebevel.html">Variabel affasning</a></li>
+      <li><button class="tree blank"></button><a href="../../bevelcut/miscellaneous.html">Diverse</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../advanced/finishingrules.html">Finish-regler</a></li>
+      <li><button class="tree blank"></button><a href="../../advanced/editltt.html">Redigér LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../advanced/twinline/strategies.html">Strategi</a></li>
+        <li><button class="tree blank"></button><a href="../../advanced/twinline/microjoints.html">Microjoints</a></li>
+        <li><button class="tree blank"></button><a href="../../advanced/twinline/stability.html">Yderligere indstillinger</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bend/index.html">Bukning CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">Opret bukningsdata</a></li>
+    <li><button class="tree blank"></button><a href="../../../bend/navigator.html">Bukningsnavigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/editing/index.html">Redigér bukningsdata</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editbend.html">Redigér en bukning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editmount.html">Redigér en værktøjsmontering</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editsetup.html">Redigér en bukningsopsætning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editgauge.html">Redigér anslagsfingrene</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editacb.html">Redigér vinkelmåling</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/bendsheet.html">Bukninger, regneark</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/sequencing.html">Ændring af rækkefølgen</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/addsetup.html">Tilføjelse af opsætninger og stationer</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/anglemeasurement.html">Vinkelmåling</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/batchprocess.html">Batchproces</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/recompute.html">Genberegn løsning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bcell/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/pickup/index.html">Delopsamling</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/frompallet.html">Opsamling fra palle</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/fromdispenser.html">Opsamling fra dispenser</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/bending/index.html">Robotbukning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/insertion.html">Ilægning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/bending.html">Bukning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/extraction.html">Udtagning</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/patterns.html">Aflejringsmønstre</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/repeat.html">Gentagelse og rækkefølge</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/separatorsheet.html">Separatorplade</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb.html">Griberdatabase</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/reports.html">Rapporter</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../fold/index.html">Falsning CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../fold/createfolddata.html">Opret falsedata</a></li>
+    <li><button class="tree blank"></button><a href="../../../fold/foldview.html">Visningen Falsning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/editing/index.html">Redigering af Falsedata</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbend.html">Redigér en bukning</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editside.html">Redigér en side/et afsnit</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editseq.html">Ændring af rækkefølgen</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbh.html">Redigér nedholderne</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editgauge.html">Redigér anslaget</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editblade.html">Redigér klingerne</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editload.html">Redigér ilægningen</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editunload.html">Redigér udtagningen</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../fold/toolinventory.html">Værktøjsbeholdning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/airgaptables.html">Brugertilpassede luftspaltetabeller</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/manualbend.html">Manuel færdiggørelse af bukning</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/minflangelength.html">Nødvendig flangelængde</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../settings/index.html">Indstillinger</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/drawing/index.html">Tegning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/layers.html">Lag</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/dimensions.html">Dimensioner</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/view.html">Visning</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/bendcam/index.html">Bukning CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/benddefaults.html">Maskinens standardindstillinger</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendoutputs.html">Bukningsudgange</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendview.html">Bukningsvisning</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendcell.html">Bukningscelle</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/cutcam/index.html">Skæring CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/layout/index.html">Layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/nesting.html">Indlejringsindstillinger</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheet.html">Plade</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheethandling.html">Pladehåndtering</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/skeletoncuts.html">Skeletskæringer</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/worksupport.html">Arbejdsstøtte</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/lasercam/sequence.html">Rækkefølge</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutoutputs.html">Skæreoutputs</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutview.html">Skæringsvisning</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/foldcam/index.html">Drejebukning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/defaults.html">Standardindstillinger</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/zbwcarriers.html">ZBW-konsoller</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/foldoutputs.html">Udgange</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/reports/index.html">Rapporter</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/reports/itemdefaults.html">Artiklens standardindstillinger</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../settings/importexport.html">Import/eksport</a></li>
+    <li><button class="tree blank"></button><a href="../../../settings/environment.html">Miljø</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../database/index.html">Database</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../database/materials.html">Materialer</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/machines.html">Maskiner</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">Bukningsgribere</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Forme/komponenter</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../report/index.html">Rapporter</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../report/designer.html">Rapportdesigner</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/fields.html">Felter, billeder og tabeller</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/bands.html">Bånd (underrapporter)</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/labels.html">Etiketter, bitmaps og former</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../appendix/index.html">Appendiks</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../../impressum.html">Juridisk meddelelse</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../../index.html">Laser CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="../index.html">Arbejdsgang for del</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Redigering af paneler</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="contour.html">Kontur</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Kontur</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/contourpanel.png" alt="Contour Panel" width="155">
+</div>
+</div>
+<div class="paragraph">
+<p>Panelet <strong>Contour</strong> bruges til arbejdsgange på <em>alle</em> laserskæringer på en bestemt kontur. For eksempel kan der tilføjes microjoints for at opdele en laserskæring i to, eller joints kan fjernes for at kombinere to på hinanden følgende laserskæringer på den samme kontur til én.</p>
+</div>
+<div class="paragraph">
+<p>For at få adgang til denne panel, klik på en laserskæring for at få vist
+<strong>panelet Laser Cut</strong>, og klik derefter på navigationsknappen <strong>Contour</strong> nær bunden for at åbne konturpanelet.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Slet</strong>: Slet alle laserskæringer på denne kontur.</p>
+</li>
+<li>
+<p><strong>Copy Tooling</strong>: Kopierer laserskæringerne på denne kontur til andre lignende konturer.</p>
+</li>
+<li>
+<p><strong>Microjoint</strong>: Indstillingerne i dette afsnit bruges for at tilføje eller fjerne microjoints på konturen.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Tilføj</strong>: Klik her for at tilføje flere microjoints på konturen. Hver gang der tilføjes en microjoint, flyttes de eksisterende joints for at gøre alle laserskæringer omtrent lige lange. Billedet nedenfor viser resultaterne efter gentagne klik på knappen <strong>Tilføj</strong>. (Bemærk, at mellem første og anden option er antallet af laserskæringer ikke øget, men der er tilføjet en microjoint i slutningen af skæringen).<br>
+<span class="image"><img src="img/addjoints.png" alt="Add Joints" width="408"></span></p>
+</li>
+<li>
+<p><strong>Reduce</strong>: Reducér antallet af microjoints ved at kombinere to laserskæringer sammen.</p>
+</li>
+<li>
+<p><strong>Remove All</strong>: Fjerner alle microjoints på denne kontur (hvilket resulterer i en enkelt laserskæring, der skærer hele konturen).</p>
+</li>
+<li>
+<p><strong>Scrap</strong>: Dette afsnit vises, hvis et hul inspiceres (indvendig kontur), og bruges til at tilføje <a href="scrapcut.html">Skrotskæringer</a> for at skære stanseklumpen skabt af hullet, eller for at fjerne skrotskæringer, hvis de er blevet tilføjet tidligere.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_split_tooling">Split Tooling</h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/splittooling.png" alt="Split Tooling" width="149">
+</div>
+</div>
+<div class="paragraph">
+<p>Ved klik på <strong>Split Tooling</strong> skifter dette panel til en specialtilstand, hvor laserskæringer kan opdeles eller to på hinanden følgende laserskæringer kan flettes sammen interaktivt.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Corner offset</strong>: Indtast en værdi her for at oprette en opdeling i en præcis afstand fra et hjørne. Ved bevægelse mod dette punkt, fremkommer der en snapindikator for at hjælpe med at placere opdelingen.<br>
+<span class="image"><img src="img/split1.png" alt="Corner Offset" width="431"></span></p>
+</li>
+<li>
+<p><strong>Microjoint</strong>: Hvis denne er aktiveret, oprettes der en microjoint ved opdelingspunktet hver gang der laves en ny laserskæring. Her er et eksempel på en microjoint, der tilføjes (da vi er ved et hjørne,
+<strong>vises der en corner joint</strong> snapindikator).<br>
+<span class="image"><img src="img/split2.png" alt="Corner Joint" width="455"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Musen kan flyttes over en microjoint mellem to skæringer, og snapindikatoren skifter til <strong>merge</strong>. Klik vil nu fjerne denne joint og flette to tilstødende laserskæringer sammen til en enkelt.<br>
+<span class="image"><img src="img/merge.png" alt="Merge" width="429"></span></p>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_split_tooling">Split Tooling</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="lasercut/advanced.html">Avanceret</a></span>
+ <span class="next"><a href="scrapcut.html">Skrotskæring</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../../res/index.js"></script>
+    <script src="../../../res/files.js"></script>
+    <script src="../../../res/site.js"></script>
+
+    
+</body>
+</html>

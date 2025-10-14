@@ -1,0 +1,786 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>Ændring af geometrien</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Velkommen til TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">Introduktion</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">Installation af softwaren</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">Brugerfladen</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">Arbejdsgang for del</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">CAD</a>
+   <ul>
+    <li>
+     <button class="tree closed"></button>
+     <a href="2dimport/index.html">2-D-import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="2dimport/2dcleanup.html">2-D oprydning</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="3dimport/index.html">3-D-import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="3dimport/prep3dmodel.html">Importér 3D-model</a></li>
+      <li><button class="tree blank"></button><a href="3dimport/prepassembly.html">Importér montering</a></li>
+      <li><button class="tree blank"></button><a href="3dimport/formdetect.html">Formregistrering</a></li>
+      <li><button class="tree blank"></button><a href="3dimport/componentdetect.html">Komponentregistrering</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a class="active" href="sketch.html">Ændring af geometrien</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Laser CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Arbejdsgang for del</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Redigering af paneler</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Laserskæring</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Tilgang</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Tilbagetrækning</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Avanceret</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Skrotskæring</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Del</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Hjørnebehandling</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Hurtig indlejring</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Arbejdsgang for job</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Jobpanel</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Fanen Plader</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Fanen Dele</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Fanen Layouts</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Fanen Resumé</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Redigér layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Indlejringstilstande</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Placeringspanel</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Rækkefølgeopdeling</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Pladeskæring</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Skråskær</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Åbn konturer</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Variabel affasning</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Diverse</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Finish-regler</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">Redigér LTT</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Strategi</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Microjoints</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Yderligere indstillinger</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Bukning CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Opret bukningsdata</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Bukningsnavigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Redigér bukningsdata</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Redigér en bukning</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Redigér en værktøjsmontering</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Redigér en bukningsopsætning</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Redigér anslagsfingrene</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Redigér vinkelmåling</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Bukninger, regneark</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Ændring af rækkefølgen</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Tilføjelse af opsætninger og stationer</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Vinkelmåling</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Batchproces</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Genberegn løsning</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Delopsamling</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Opsamling fra palle</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Opsamling fra dispenser</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Robotbukning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Ilægning</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Bukning</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Udtagning</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Aflejringsmønstre</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Gentagelse og rækkefølge</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Separatorplade</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">Griberdatabase</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">Rapporter</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">Falsning CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Opret falsedata</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">Visningen Falsning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Redigering af Falsedata</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Redigér en bukning</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Redigér en side/et afsnit</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">Ændring af rækkefølgen</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">Redigér nedholderne</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Redigér anslaget</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">Redigér klingerne</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Redigér ilægningen</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Redigér udtagningen</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Værktøjsbeholdning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Brugertilpassede luftspaltetabeller</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Manuel færdiggørelse af bukning</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Nødvendig flangelængde</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Indstillinger</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Tegning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Lag</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Dimensioner</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Visning</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Bukning CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Maskinens standardindstillinger</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Bukningsudgange</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Bukningsvisning</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Bukningscelle</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Skæring CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Indlejringsindstillinger</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Plade</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Pladehåndtering</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Skeletskæringer</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Arbejdsstøtte</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Rækkefølge</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Skæreoutputs</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Skæringsvisning</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Drejebukning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Standardindstillinger</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">ZBW-konsoller</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Udgange</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Rapporter</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Artiklens standardindstillinger</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Import/eksport</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Miljø</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Database</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Materialer</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Maskiner</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Bukningsgribere</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Forme/komponenter</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Rapporter</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Rapportdesigner</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Felter, billeder og tabeller</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Bånd (underrapporter)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Etiketter, bitmaps og former</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">Appendiks</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Understøttede 3D-formater</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Juridisk meddelelse</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">CAD</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="sketch.html">Ændring af geometrien</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Ændring af geometrien</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>I appen TecZone Bukning har man en kraftfuld 2D-skitseeditor til at ændre, rydde op i eller tilføje til geometrien. Brug genvejstasten <kbd>S</kbd> til at komme i skitsetilstand. Editoren viser delen i udfoldningsvisning.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/unfold2d.png" alt="image" width="528" height="243">
+</div>
+</div>
+<div class="paragraph">
+<p>I udviklet visning, klik på <strong>Rengøring</strong> ikonet <span class="image"><img src="img/pencil.png" alt="Sketch" width="16"></span> eller tryk på genvejstasten <kbd>S</kbd>.</p>
+</div>
+<div class="paragraph">
+<p>En menu åbnes med forskellige ikoner til behandling af udfoldelsen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/movepanel.png" alt="movepanel">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_skitsepanel">Skitsepanel</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Ikon</th>
+<th class="tableblock halign-left valign-top">Symbol</th>
+<th class="tableblock halign-left valign-top">Betydning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/pick.png" alt="pick" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vælg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vælg objekter, linjer, indgange etc.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/line.png" alt="line" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linje</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitsér en linje</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/lines.png" alt="lines" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forbundne linjer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer et vilkårligt antal linjer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/parallel.png" alt="parallel" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parallel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer en parallel til en linje</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/lineperpendicular.png" alt="lineperpendicular" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Normal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer en tangent til en kurve</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/bendline.png" alt="bendline" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bukkekant</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer en normal linje til en linje</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arc.png" alt="arc" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Centrumcirkelbue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitsér en bukkekant</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arc2p.png" alt="arc2p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2-punkt-cirkelbue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer en cirkelbue fra et midterpunkt, startpunkt og slutpunkt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arc3p.png" alt="arc3p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3-punkt-cirkelbue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer en cirkelbue gennem to definerede punkter (start- og slutpunkt)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arctangent.png" alt="arctangent" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tangential cirkelbue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer en cirkelbue, der er tangentiel til skitseelementerne</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rect.png" alt="rect" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rektangel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer et rektangel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rectcenter.png" alt="rectcenter" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Centrum-rektangel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer et rektangel fra midten</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle.png" alt="circle" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cirkel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer en cirkel. Vælg cirklens midtpunkt, og træk markøren for at definere radius eller indtast en værdi for radius</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle2p.png" alt="circle2p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Omkreds med 2 punkter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer en cirkel svarende til omkredsen. Vælg et punkt på omkredsen, derefter et andet punkt og et tredje punkt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle3p.png" alt="circle3p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Omkreds med 3 punkter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer en cirkel svarende til omkredsen. Vælg et punkt på omkredsen, derefter et andet punkt og et tredje punkt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle2t.png" alt="circle2t" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cirkel med 2 tangenter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer en cirkel med to tangenter. Indtast cirkeldiameteren, vælg derefter den første tangent og derefter den anden tangent.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle3t.png" alt="circle3t" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cirkel med 3 tangenter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer en cirkel med tre tangenter. Indtast cirkeldiameteren, og vælg derefter første tangent, så den anden tangent og så den tredje tangent.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polygonins.png" alt="polygonins" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Polygon centrum - hjørnepunkt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer en cirkel med tre tangenter. Indtast cirkeldiameteren, og vælg derefter første tangent, så den anden tangent og så den tredje tangent.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polygoncircum.png" alt="polygoncircum" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Polygon centrum - midte sidekant</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer en polygon. Angiv antal sider og vælg et midterpunkt og midten af en sidekant</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polygonedge.png" alt="polygonedge" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Polygon med sidekant</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skitserer en polygon. Angiv antal sider og definér startpunktet og slutpunktet på en side.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/fillet.png" alt="fillet" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Afrunding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Runder hjørnet i hjørnepunktet af to skitseelementer med en indtastet radius, hvorved der skabes en tangentiel cirkelbue</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/chamfer.png" alt="chamfer" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opretter en facet på hjørnet af skæringspunktet mellem to skitseelementer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/infillet.png" alt="infillet" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hjørnetrimning rund</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beskærer hjørnet ved skæringspunktet mellem to skitseelementer med en indtastet radius</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/cornerstep.png" alt="cornerstep" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hjørnetrimning kantet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beskærer hjørnet ved skæringspunktet mellem to skitseelementer med et rektangel. Størrelsen af rektanglet kan indtastes på forhånd.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/edgerecess.png" alt="edgerecess" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Frit snit kvadratisk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opretter et rektangulært, frit snit. Der skal indtastes en hjørneværdi, fri skæredybde og derefter vælges et hjørne.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/edgeu.png" alt="edgeu" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Frit snit langhul</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skaber et aflangt, hulformet frisnit. Der skal indtastes hjørneafstand, fri skærebredde, fri skæredybde og derefter vælges et hjørne.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/edgev.png" alt="edgev" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Frit snit trekantet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opretter en trekantet friskæring. Der skal indtastes hjørneafstand, fri skærebredde, fri skæredybde og derefter vælges et hjørne.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/keyslot.png" alt="keyslot" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nøglehul</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opretter et nøglehul i en cirkel med de indtastede værdier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/fillet3seg.png" alt="fillet3seg" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Komplet afrunding 3 segmenter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Runder tre tilsluttede skitseelementer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/extend.png" alt="extend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forlæng element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vælg det skitseelement, der skal udvides<br>
+<kbd>ctrl</kbd> Vælg grænse<br>
+<kbd>Shift</kbd> Forbind<br>
+<kbd>Alt</kbd> Træk</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/trim.png" alt="trim" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trim element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vælg det skitseelement, der skal beskæres<br>
+<kbd>Ctrl</kbd> Vælg grænse<br>
+<kbd>Shift</kbd> Slet element<br>
+<kbd>Alt</kbd> Slet polylinje<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/join.png" alt="join" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sammensmelt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bruges til at beskære og samle flere separate polylinjer i én</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/offset.png" alt="offset" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Offset elementer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forskyd et eller flere skitseelementer, skitserede modelkanter eller modelflader med en specificeret afstand</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/move.png" alt="move" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forskyd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vælg et skitseelement med <kbd>ctrl</kbd> vælg et referencepunkt, og flyt skitseelementet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rotate.png" alt="rotate" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Drej</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vælg et skitseelement med <kbd>ctrl</kbd>, vælg et drejningsmidtpunkt, derefter et startpunkt og et slutpunkt for at dreje skitseelementet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/scale.png" alt="scale" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skalér</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vælg et skitseelement med <kbd>ctrl</kbd>, vælg et basispunkt, derefter et startreferencepunkt og et slutreferencepunkt til at skalere skitseelementet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/mirror.png" alt="mirror" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spejl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vælg et skitseelement med <kbd>ctrl</kbd>, derefter starten af spejllinjen og derefter enden af spejllinjen for at spejle skitseelementet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rectarray.png" alt="rectarray" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lineært mønster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brug lineære mønstre til at oprette flere referentierede kopier af en eller flere skitseelementer, som kan placeres i lige store afstande langs en eller to lineære stier. Klik på det lineære mønster og indtast de ønskede værdier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polararray.png" alt="polararray" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cirkelmønster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brug cirkulære mønstre til at oprette flere referentierede kopier af en eller flere skitser  elementer, som kan placeres i lige store afstande omkring en akse. Klik på cirkulære mønstre og indtast de ønskede værdier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/union.png" alt="union" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kombinér flader</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vælg to eller flere lukkede, skitserede elementer for at kombinere overflader med hinanden</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/intersection.png" alt="intersection" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snitflade</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vælg to eller flere lukkede, skitseelementer for at generere et skæreområde af valgte elementer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/subtraction.png" alt="subtraction" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trim flade</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vælg to eller flere lukkede skitseelementer for at beskære overfladen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/copynotch.png" alt="copynotch" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kopiér frit snit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der kan laves flere kopier af en kærv langs en kant ved brug af dette værktøj. Først indtastes afstanden mellem kopierne og antallet af kopier af den kærv, der ønskes lavet. Vælg derefter kærven ved at klikke på de to linjesegmenter, der støder op til kærven</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/deletenotch.png" alt="deletenotch" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Slet frit snit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">En kærv kan slettes ved et hjørne eller langs et linjesegment ved brug af dette værktøj. Klik på de to-linjede segmenter, der støder op til kærven, og kærven fjernes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/mirrornotch.png" alt="mirrornotch" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spejl frit snit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">En kærv kan spejles ved et hjørne eller langs et linjesegment ved brug af dette værktøj. Klik på de to-linjede segmenter, der støder op til kærven, og kærven spejles</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/spline.png" alt="spline" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kurvetræk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For at starte en ny spline, klik på startpunktet, og når der klikkes på efterfølgende punkter, vil splinen blive oprettet. Hvis splinen skal lukkes, tryk på tasten ALT og klik derefter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/profile.png" alt="profile" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profil</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indtast bundlængde, flangehøjde, tykkelse, flangevinkel, indre radius og tryk på enter for at oprette en profil</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/text.png" alt="text" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tekst</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bruges til at tegne tekst, der vil blive markeret på den del af lasermaskinen. Når der klikkes på denne værktøjsknap, viser indtastningsfeltet indtastningsfelter for teksten, størrelsen og drejningsvinklen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/truetype.png" alt="truetype" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tekst</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bruges til at tage formerne af tegn i enhver TrueType-skrifttype og konvertere dem til polylinjer. Laserklargøring kan derefter anvendes på disse polylinjer, og de kan skæres.
+  Første gang der klikkes på denne knap, vises dialogen Skrifttype, som giver mulighed for at vælge den skrifttype, der skal bruges til teksten.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/commonshape.png" alt="commonshape" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardforme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bruges til at oprette flere almindelige former og indsætte dem i tegningen. Når der klikkes på denne knap, vises dialogen Opret form, så der kan vælges fra paletten af almindelige former, der er angivet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dsimple.png" alt="dsimple" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enkel måleangivelse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vælg det første dimensioneringspunkt, derefter det andet dimensioneringspunkt, og positionér dimensioneringslinjen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dbaseline.png" alt="dbaseline" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Referencemåleangivelse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vælg det første dimensioneringspunkt, derefter det andet dimensioneringspunkt, og positionér dimensioneringslinjen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dcontinue.png" alt="dcontinue" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Målekæde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vælg det første dimensioneringspunkt, derefter det andet dimensioneringspunkt, positionér dimensioneringslinjen og vælg næste dimensioneringspunkt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dhorzordinate.png" alt="dhorzordinate" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Horisontalt ordinatmål</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ordinatdimensioner er et sæt dimensioner, der måles fra ordinaten nul i tegningen. Vælg et referencepunkt og positionér dimensioneringen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dvertordinate.png" alt="dvertordinate" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vertikalt ordinatmål</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ordinatdimensioner er et sæt dimensioner, der måles fra ordinaten nul i tegningen. Vælg et referencepunkt og positionér dimensioneringen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dangular.png" alt="dangular" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vinkel måleangivelse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opretter en dimensionering for en vinkel. Vælg den første linje og derefter den anden linje hvorpå vinklen ønskes dimensioneret</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dradius.png" alt="dradius" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Radius måleangivelse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opretter en dimensionering for en radius. Vælg den cirkel, hvorpå radius skal dimensioneres. Dimensionér diameteren med <kbd>ctrl</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dradius.png" alt="dradius" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Radius måleangivelse med gennemgående henvisningslinje</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opretter en dimensionering med kontinuerlig leder for en radius. Vælg den cirkel, hvorpå radius skal dimensioneres. Dimensionér diameteren med <kbd>ctrl</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dcallout.png" alt="dcallout" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påskrift</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brug til at tilføje noter til tegningen i form af billedforklaringer. For at oprette en billedforklaring, indtast den tekst, der skal vises, klik for at angive, hvor pilen skal pege, og klik igen for at angive, hvor teksten skal placeres.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dsegment.png" alt="dsegment" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Segment måleangivelse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bruges til at tilføje dimensionering for lige linjer og buede segmenter. Klik på segmentet, der skal dimensioneres, og klik igen for at positionere dimensionen. Eller hold <kbd></kbd> og klik på et segment for at positionere dimensionen automatisk.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_skitsepanel">Skitsepanel</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="3dimport/componentdetect.html">Komponentregistrering</a></span>
+ <span class="next"><a href="../cut/index.html">Laser CAM</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

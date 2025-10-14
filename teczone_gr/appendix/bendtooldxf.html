@@ -1,0 +1,1379 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>Bend Tool DXF</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Καλώς ήρθατε στο TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">Εισαγωγή</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">Εγκατάσταση του λογισμικού</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">Η επιφάνεια χειρισμού</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">Ροή εργασιών τεμαχίου</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">Εισαγωγή 2-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">Εκκαθάριση 2-D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">Εισαγωγή 3-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">Εισαγωγή μοντέλου 3D</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">Εισαγωγή συγκροτήματος</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">Ανίχνευση μορφής</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">Ανίχνευση στοιχείων</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">Τροποποίηση της γεωμετρίας</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">CAM Λέιζερ</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Ροή εργασιών τεμαχίου</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Πίνακες επεξεργασίας</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Κοπή με λέιζερ</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Προσέγγιση</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Απόσυρση</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Για προχωρημένους</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Περίγραμμα</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Κοπή αχρήστων</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Τεμάχιο</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Αντιμετώπιση γωνιών</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Quick-Nest (Γρήγορη κατανομή)</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Ροή εργασιών έργου</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Πίνακας εργασίας</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Καρτέλα μεταλλικών πλακών</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Καρτέλα Τεμάχια</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Καρτέλα Διατάξεις</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Καρτέλα σύνοψης</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Επεξεργασία διάταξης</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Λειτουργίες κατανομής</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Πίνακας τοποθέτησης</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Αλληλουχία</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Τεμαχισμός μεταλλικής πλάκας</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Λοξή κοπή</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Ανοικτά περιγράμματα</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Μεταβλητή λοξοτομή</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Διάφορα</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Για προχωρημένους</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Κανόνες ολοκλήρωσης</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">Επεξεργασία LTT</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">Διπλή γραμμή (TwinLine)</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Στρατηγική</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Microjoint</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Περαιτέρω ρυθμίσεις</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Κάμψη CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Δημιουργία δεδομένων κάμψης</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Πλοηγός κάμψης</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Επεξεργασία δεδομένων κάμψης</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Επεξεργασίας μιας κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Επεξεργασία μιας βάσης εργαλείου</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Επεξεργασία ρυθμίσεων κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Επεξεργασία των πίσω αναστολέων</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Επεξεργασία μέτρησης γωνιών</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Υπολογιστικό φύλλο Κάμψεις</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Αλλαγή της αλληλουχίας</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Προσθήκη ρυθμίσεων και σταθμών</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Για προχωρημένους</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Μέτρηση γωνίας</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Διαδικασία παρτίδας</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Επανυπολογισμός λύσης</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Έλεγχος φορτίου</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Πλοηγός κάμψης</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Παραλαβή τεμαχίου</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Παραλαβή από παλέτα</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Παραλαβή από τον διανομέα</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Ρομποτική κάμψη</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Εισαγωγή</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Κάμψη</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Εξαγωγή</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Εκ νέου σύλληψη</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Πίνακας εκ νέου σύλληψης</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Προσθήκη εκ νέου σύλληψης</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Επεξεργασία εκ νέου σύλληψης</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Εκ νέου σύλληψη με σιαγόνα</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Πίνακας σταθμού εκ νέου σύλληψης</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Απόθεση τεμαχίου</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Μοτίβα απόθεσης</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Επανάληψη και ακολουθία</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Διαχωριστικό φύλλο</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Για προχωρημένους</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Σημεία πορείας</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Διαμόρφωση κελιών</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">Βάση δεδομένων στοιχείων αρπάγης</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">Αναφορές</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">Δίπλωση CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Δημιουργία δεδομένων δίπλωσης</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">Η προβολή δίπλωσης</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Επεξεργασία δεδομένων δίπλωσης</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Επεξεργασίας μιας κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Επεξεργασία πλευράς/τμήματος</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">Αλλαγή της αλληλουχίας</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">Επεξεργασία των συγκρατητήρων</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Επεξεργασία των αναστολέων</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">Επεξεργασία των λαμών</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Επεξεργασία της φόρτωσης</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Επεξεργασία της απόρριψης</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Απόθεμα εργαλείων</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Για προχωρημένους</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Προσαρμοσμένοι πίνακες διακένου</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Ολοκλήρωση χειροκίνητης κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Απαιτούμενο μήκος φλάντζας</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Ρυθμίσεις</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Σχέδιο</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Επίπεδα</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Διαστάσεις</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Προβολή</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Κάμψη CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Προεπιλογές μηχανήματος</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Αποτελέσματα κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Προβολή κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Κελί κάμψης</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Κοπή CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Διάταξη</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Ρυθμίσεις κατανομής</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Μεταλλική πλάκα</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Χειρισμός μεταλλικής πλάκας</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Κοπές σκελετού</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Υποστήριξη εργασίας</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">CAM Λέιζερ</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Αλληλουχία</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Αποτελέσματα κοπής</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Προβολή κοπής</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Κάμψη πάνελ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Προεπιλογές</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">Φορείς πρόσθετου εργαλείου κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Αποτελέσματα</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Αναφορές</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Προεπιλογές στοιχείου</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Εισαγωγή/Εξαγωγή</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Περιβάλλον</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Βάση δεδομένων</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Υλικά</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Μηχανήματα</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Εργαλεία κάμψης</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Στοιχεία αρπάγης κάμψης</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Μορφές/στοιχεία</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Αναφορές</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Σχεδιαστής αναφορών</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Πεδία, εικόνες και πίνακες</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Ζώνες (δευτερεύουσες αναφορές)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Ετικέτες, Bitmap και σχήματα</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Παράρτημα</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="3dformats.html">Υποστηριζόμενες τρισδιάστατες μορφές</a></li>
+    <li><button class="tree blank"></button><a href="bseparatordxf.html">Διαχωριστικό φύλλο DXF</a></li>
+    <li><button class="tree blank"></button><a class="active" href="bendtooldxf.html">Bend Tool DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Νομική ανακοίνωση</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Παράρτημα</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="bendtooldxf.html">Bend Tool DXF</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Bend Tool DXF</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Το Flux διαθέτει μεγάλη ποικιλία καταλόγων εργαλείων κάμψης (όπως Trumpf, Wila, Wilson,
+Rolleri, Amada κλπ). Εάν χρησιμοποιείτε εργαλεία από οποιοδήποτε από τους περίπου 40 διαφορετικούς
+καταλόγους εργαλείων που παρέχει το Flux, μπορείτε απλώς να εγκαταστήσετε τον κατάλογο και να αρχίσετε να χρησιμοποιείτε
+τα εργαλεία. Περιστασιακά, είναι απαραίτητο να δημιουργήσετε ένα μοντέλο προσαρμοσμένου εργαλείου ή ένα εργαλείο που προέρχεται
+από έναν κατάλογο που δεν παρουσιάζεται από το Flux.</p>
+</div>
+<div class="paragraph">
+<p>Το <strong>Bend-Tool DXF Format</strong> είναι ο βασικός μηχανισμός με τον οποίο γίνεται αυτό. Το Flux μπορεί
+τώρα εξάγει εργαλεία κάμψης σε μορφή DXF και μπορεί επίσης να εισαγάγει εργαλεία κάμψης από μορφή DXF.Τα αρχεία DXF που χρησιμοποιούνται για την αναπαράσταση εργαλείων κάμψης πρέπει να ακολουθούν ορισμένους κανόνες, ώστε το Flux να μπορεί να συγκεντρώσει
+όλες τις πληροφορίες που χρειάζεται. Πολύ συχνά, ένας γρήγορος τρόπος δημιουργίας ενός εργαλείου κάμψης είναι να χρησιμοποιήσετε τη
+λειτουργία Εξαγωγή σε DXF για τη δημιουργία ενός αρχείου DXF από ένα υπάρχον εργαλείο. Στη συνέχεια, το DXF μπορεί να
+υποβληθεί σε επεξεργασία (είτε στο Flux είτε σε οποιοδήποτε άλλο σύστημα 2D CAD). Τέλος, το τροποποιημένο DXF μπορεί να
+εισαχθεί και πάλι στο Flux με τη λειτουργία Εισαγωγή από DXF.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_παράδειγμα_dxf">Παράδειγμα DXF<a id="h000015"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Εδώ παρατίθεται ένα παράδειγμα εργαλείου κάμψης DXF που δημιουργήθηκε χρησιμοποιώντας την εντολή Εξαγωγή σε DXF:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name2013.png" alt="Name2013" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Το εργαλείο DXF πρέπει να περιλαμβάνει:</p>
+</div>
+<div id="h000016" class="ulist">
+<ul>
+<li>
+<p>Ένα κλειστό σχήμα (κατασκευασμένο από γραμμές, τόξα, πολλαπλές γραμμές) που καθορίζει το _πλευρικό προφίλ
+_του εργαλείου. Αυτό το προφίλ πρέπει να είναι η ακραία αριστερή κλειστή ΠΟΛΛΑΠΛΗ ΓΡΑΜΜΗ στο σχέδιο
+(βλ. σχήμα παραπάνω).</p>
+</li>
+<li>
+<p>Μια ΣΗΜΕΙΑΚΗ οντότητα που σηματοδοτεί το σημείο αναφοράς του εργαλείου. Αυτή η σημειακή οντότητα πρέπει να βρίσκεται
+κάπου μέσα στην πολλαπλή γραμμή του κλειστού προφίλ και σηματοδοτεί το σημείο από το οποίο
+προσδιορίζεται το ύψος του εργαλείου (βλ. εικόνα παραπάνω).</p>
+</li>
+<li>
+<p>Για κάθε τεμάχιο εργαλείου που δεν είναι ένα απλό ορθογώνιο στη μπροστινή όψη, απαιτείται ένα <em>σχέδιο
+ μπροστινής όψης</em>. Αυτά είναι συνήθως τεμάχια αριστερού ή δεξιού αυτιού, αλλά θα μπορούσαν να είναι επίσης προσαρμοσμένα
+τεμάχια συμπεριλαμβανομένων τεμαχίων <em>παραθύρων</em>.</p>
+</li>
+<li>
+<p>Κάθε σχέδιο μπροστινής όψης πρέπει να εμφανίζεται στα δεξιά του σχεδίου προφίλ και πρέπει
+να είναι οριζόντια ευθυγραμμισμένο με αυτό. Κάθε μπροστινή όψη πρέπει να έχει ακριβώς το ίδιο ύψος
+όπως το σχέδιο πλευρικού προφίλ, διαφορετικά δεν λαμβάνεται υπόψη. Η παραπάνω εικόνα παρουσιάζει
+ένα χαρακτηριστικό παράδειγμα με ένα αριστερό και ένα δεξί αυτί.</p>
+</li>
+<li>
+<p>Άλλες πληροφορίες για το εργαλείο επισημαίνονται με συμβολοσειρές κειμένου (βλ. παρακάτω σημειώσεις).</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_μεταδεδομένα_σε_οντότητες_κειμένου">Μεταδεδομένα σε οντότητες κειμένου<a id="h000021"></a></h3>
+<div class="paragraph">
+<p>Τυχόν συμβολοσειρές κειμένου με μορφή <strong>ΠΛΗΚΤΡΟ=τιμή</strong> διαβάζονται από το πρόγραμμα εξαγωγής εργαλείων
+και αναλύονται για να ληφθούν πρόσθετες πληροφορίες για το εργαλείο. Αυτά είναι τα κλειδιά που
+υποστηρίζονται τώρα:</p>
+</div>
+<div id="h000022" class="paragraph">
+<p><strong>NAME=OW200/K R3.2/86 CUSTOM-A</strong><br>
+Καθορίζει το όνομα του εργαλείου. Αυτό είναι υποχρεωτικό.</p>
+</div>
+<div id="h000023" class="paragraph">
+<p>*TONNAGE=800<br>
+Καθορίζει τη μέγιστη φόρτωση του εργαλείου, σε kN/m. Αυτό είναι υποχρεωτικό, αν θέλετε να
+αποφύγετε την εμφάνιση σφαλμάτων ψευδούς υπερφόρτωσης εργαλείων.</p>
+</div>
+<div id="h000024" class="paragraph">
+<p><strong>UPPER=PTrumpf</strong><br>
+Αυτό είναι απαραίτητο για τους στιγείς και καθορίζει τον τύπο του κουμπωτού συνδετήρα (τον τύπο τοποθέτησης αυτού
+του εργαλείου στη μπάρα πρεσαρίσματος). Οι υποστηριζόμενοι τύποι σύνδεσης παρατίθενται παρακάτω:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Όνομα</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Σημασία</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PTrumpf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Στιγέας Trumpf (κουμπωτός συνδετήρας Modufix)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PAmada</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Στιγέας Amada</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PWila</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Στιγέας Wila classic</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PWilaNS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Στιγέας Wila New-Standard</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PAmerican</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Αμερικανικός στιγέας (τύπου ΗΠΑ)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PEHT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Στιγέας EHT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Στιγέας LVD μεγέθους A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Στιγέας LVD μεγέθους Β</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Στιγέας LVD μεγέθους C</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Στιγέας LVD μεγέθους D</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PGasparini</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Στιγέας Gasparini</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PBayelerR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Στιγέας Bayeler τύπου R</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PBayelerS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Στιγέας Bayeler τύπου S</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUrsviken</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Στιγέας ΚΑΕ Ursviken</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PBayelerEuro</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Στιγέας Euro Bayeler</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PColgar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Στιγέας Colgar</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PKomatsu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Στιγέας Komatsu</p></td>
+</tr>
+</tbody>
+</table>
+<div id="h000025" class="paragraph">
+<p><strong>LOWER=DTrumpf</strong><br>
+Αυτό είναι απαραίτητο για μήτρες και καθορίζει τον τύπο του κουμπωτού συνδετήρα (ο τύπος
+εγκατάστασης αυτού του εργαλείου στην κλίνη της μήτρας). Οι υποστηριζόμενοι τύποι σύνδεσης παρατίθενται παρακάτω:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Όνομα</th>
+<th class="tableblock halign-left valign-top">Σημασία</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DTrumpf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μήτρα Trumpf</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μήτρα Amada, πλάτος 30 mm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada60</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μήτρα Amada, πλάτος 60 mm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmadaF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μήτρα Amada, επίπεδη</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada2V</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μήτρα Amada 2-V</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmadaQuick</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μήτρα ταχείας αντικατάστασης Amada</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada90</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μήτρα Amada, πλάτος 90 mm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DEHT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μήτρα EHT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada120</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μήτρα Amada, πλάτος 120 mm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DWeinbrenner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μήτρα Weinbrenner</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DWila</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μήτρα Wila</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DKomatsu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μήτρα Komatsu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DBeyeler110</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μήτρα Beyeler 110 mm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DLVD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μήτρα LVD</p></td>
+</tr>
+</tbody>
+</table>
+<div id="h000026" class="paragraph">
+<p><strong>PIECES=2x25,30,45,50,2x100,200,4x500</strong><br>
+Αυτό καθορίζει τα τυποποιημένα τεμάχια για αυτό το εργαλείο (τα τεμάχια αριστερού και δεξιού αυτιού
+έχουν ήδη καθοριστεί με το σχεδιασμό των προφίλ τους). Η λίστα είναι ένα σύνολο διαχωρισμένων με κόμμα
+μηκών τεμαχίου και, προαιρετικά, κάθε μήκος μπορεί να έχει έναν <em>πολλαπλασιαστή ποσότητας</em> μπροστά
+του. Έτσι, η παραπάνω λίστα ορίζει ότι υπάρχουν 2 τεμάχια των 25 mm, 1 τεμάχιο των 30 mm,
+4 τεμάχια των 500 mm κ.λπ.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Εάν θέλετε έναν πολλαπλασιαστή ποσότητας για τα ειδικά διαμορφωμένα τεμάχια (όπως τα τεμάχια αυτιού),
+προσθέστε απλώς μια οντότητα κειμένου της μορφής 2x μέσα στο περίγραμμα αυτού του τεμαχίου:
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name20132.png" alt="Name20132" width="400">
+</div>
+</div>
+<div id="h000027" class="paragraph">
+<p><strong>VWIDTHTYPE=Sharp</strong><br>
+Αυτό είναι απαραίτητο για μήτρες των οποίων ο ορισμός του πλάτους V δεν ταυτίζεται με την Trumpf (βλ.
+εικόνα παρακάτω):</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Όνομα</th>
+<th class="tableblock halign-left valign-top">Σημασία</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Φάλτσο</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Θεωρητικό φάλτσο της μήτρας</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Εφαπτομένη</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Σημείο άνω εφαπτομένης</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="img/vwidthtype.png" alt="vwidthtype" width="400">
+</div>
+</div>
+<div id="h000028" class="paragraph">
+<p><strong>ISUPPERTOOL=0</strong><br>
+Καθορίζει εάν το εργαλείο είναι επάνω ή κάτω εργαλείο. Για το επάνω εργαλείο, η τιμή πρέπει να είναι 1
+και για το κάτω εργαλείο θα πρέπει να είναι μηδέν. Αυτό είναι απαραίτητο για εργαλεία που πρέπει να
+εισάγονται με μηδενικό ύψος (βλ. παρακάτω εικόνα):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/isuppertool.png" alt="isuppertool" width="250">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_αναγνώριση_σχήματος">Αναγνώριση σχήματος<a id="h000029"></a></h3>
+<div class="paragraph">
+<p>Στη μορφή DXF του εργαλείου κάμψης, λάβετε υπόψη ότι δεν είναι απαραίτητο να καθορίσετε ορισμένες κρίσιμες
+παραμέτρους στιγέα/μήτρας, όπως το ύψος, η ακτίνα, η γωνία ή το πλάτος V. Το Flux
+αναλύει το σχέδιο του εργαλείου και εξάγει αυτόματα αυτές τις παραμέτρους. Για ένα στιγέα,
+το Flux αναμένει να βρει ένα καμπύλο τμήμα στο κάτω μέρος (bc) που πλαισιώνεται από ευθείες γραμμές (ab και cd).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name20133.png" alt="Name20133" width="350">
+</div>
+</div>
+<div class="paragraph">
+<p>Από αυτά τα τρία τμήματα αναγνωρίζονται αυτόματα η γωνία και η ακτίνα του στιγέα.Για μια μήτρα, το Flux εξετάζει την αριστερή πατούρα για να εξαγάγει τις παραμέτρους. Αναμένει να
+βρει ένα καμπύλο τμήμα πατούρας (bc) που πλαισιώνεται από μια οριζόντια κορυφή (ab) και το κεκλιμένο
+γωνιακό τμήμα (cd).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name20134.png" alt="Name20134" width="350">
+</div>
+</div>
+<div class="paragraph">
+<p>Εάν ο στιγέας ή η μήτρα δεν πληρούν αυτές τις απαιτήσεις αναγνώρισης σχήματος, το Flux δεν
+είναι σε θέση να αναγνωρίσει το σχήμα ως στιγέα ή μήτρα.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_πρόσθετες_πληροφορίες">Πρόσθετες πληροφορίες:<a id="h000030"></a></h3>
+<div id="h000031" class="ulist">
+<ul>
+<li>
+<p>Το προφίλ εργαλείου μπορεί να εμφανίζεται οπουδήποτε στο σχέδιο – η ακριβής θέση δεν είναι
+σημαντική δεδομένου ότι η οντότητα του σημειακού δείκτη χρησιμοποιείται για να παρέχει το σημείο αναφοράς του εργαλείου.</p>
+</li>
+<li>
+<p>Εκτός από τις οντότητες που αναφέρονται παραπάνω, δεν θα πρέπει να υπάρχουν άλλες οντότητες στο
+σχέδιο. Ειδικότερα, δεν πρέπει να υπάρχει μπλοκ τίτλου ή κλειστές πολλαπλές γραμμές στο
+σχέδιο.</p>
+</li>
+<li>
+<p>Το σχέδιο πρέπει να είναι πάντοτε σε μετρικές μονάδες (ανεξάρτητα από την τρέχουσα λειτουργία
+του Flux).</p>
+</li>
+<li>
+<p>Ενώ η εντολή είναι Εισαγωγή από DXF, το Flux αποδέχεται επίσης ένα αρχείο GEO,
+υπό την προϋπόθεση ότι ακολουθεί τις ίδιες συμβάσεις που αναφέρονται παραπάνω.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ειδικά_εργαλεία">Ειδικά εργαλεία<a id="h000035"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Το πρόγραμμα εισαγωγής εργαλείων μπορεί να αναγνωρίσει ορισμένους τύπους <em>ειδικών εργαλείων</em>. Αυτά πρέπει να
+ταυτοποιούνται με ένα κείμενο μορφής <strong>FLAVOR=XYX</strong> στο αρχείο DXF.</p>
+</div>
+<div class="sect2">
+<h3 id="_στιγείς_δίπλωσης">Στιγείς δίπλωσης<a id="h000036"></a></h3>
+<div class="paragraph">
+<p>Για ένα στιγέα δίπλωσης απαιτούνται οι ακόλουθες πρόσθετες καταχωρίσεις:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Το κείμενο <strong>FLAVOR=HemPunch</strong> σηματοδοτεί αυτό ως εργαλείο δίπλωσης.</p>
+</li>
+<li>
+<p>Το κείμενο <strong>PARAMS=-1,12.15,70</strong> παρέχει ορισμένα μετρικά στοιχεία που απαιτούνται για τη σωστή
+προσομοίωση.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hempunch.png" alt="HemPunch" width="300">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hempunch2.png" alt="HemPunch2" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>Υπάρχουν τρεις παράμετροι που απαιτούνται για τον ορισμό της διαδικασίας δίπλωσης. Αυτά μπορείτε να τα δείτε
+ως τιμές A, B και C στην παραπάνω εικόνα. Η πρώτη (-1 mm σε αυτό το παράδειγμα) καθορίζει πόσο
+πίσω από τη γραμμή κάμψης βρίσκεται η επίπεδη κατακόρυφη επιφάνεια του στιγέα. Στην περίπτωση αυτή, δεδομένου ότι η επίπεδη
+κατακόρυφη επιφάνεια είναι μπροστά από τη γραμμή κάμψης, η τιμή είναι -1. Η δεύτερη παράμετρος (εδώ 12,15 mm)
+καθορίζει πόσο μπροστά από τη γραμμή κάμψης βρίσκεται το η κορυφή δίπλωσης. Η τελευταία παράμετρος (εδώ 70 mm)
+είναι η κατακόρυφη απόσταση από την κορυφή του στιγέα έως το σημείο της κορυφής δίπλωσης.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_μήτρες_μπλοκ_δίπλωσης">Μήτρες μπλοκ δίπλωσης<a id="h000037"></a></h3>
+<div class="paragraph">
+<p>Το μπλοκ δίπλωσης είναι ένα εξάρτημα που τοποθετείται μπροστά ή πίσω από τη μήτρα για τη δίπλωση.
+Έτσι παρέχεται μια επίπεδη επιφάνεια, κόντρα στην οποία μπορεί να συμπλακεί μια δίπλωση προκειμένου να εξασφαλιστεί ένα ομαλό άκρο δίπλωσης.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hemblock.png" alt="HemBlock" width="270">
+</div>
+</div>
+<div class="paragraph">
+<p>Για ένα μπλοκ δίπλωσης απαιτούνται οι ακόλουθες πρόσθετες καταχωρίσεις:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Το κείμενο <strong>FLAVOR=HemBlock</strong> σηματοδοτεί αυτό ως μπλοκ δίπλωσης.</p>
+</li>
+<li>
+<p>Το κείμενο <strong>PARAMS=0,13.9</strong> παρέχει ορισμένες μετρήσεις που απαιτούνται για τη σωστή προσομοίωση.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hemblock2.png" alt="Hemblock2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Για τον ορισμό του μπλοκ δίπλωσης απαιτούνται δύο παράμετροι. Η πρώτη παράμετρος ορίζει τη θέση
+δίπλωσης, εάν αυτό το μπλοκ πρέπει να χρησιμοποιείται μπροστά από τη μήτρα ή πίσω από τη μήτρα.
+0 = εμπρός και 1 = πίσω. Το παραπάνω παράδειγμα δείχνει ότι το μπλοκ μπορεί να χρησιμοποιηθεί μπροστά από τη μήτρα.
+Η άλλη παράμετρος είναι η μετατόπιση της δίπλωσης που είναι η κίνηση του άξονα Ι. Αυτό παρουσιάζεται
+ως Β στην παραπάνω εικόνα.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_μήτρες_κάμψης_z">Μήτρες κάμψης Z<a id="h000038"></a></h3>
+<div class="paragraph">
+<p>Για μια μήτρα κάμψης Z θα πρέπει να υπάρχει μια καταχώριση κειμένου όπως αυτή στο αρχείο DXF: <strong>FLAVOR=ZBendDie</strong></p>
+</div>
+<div class="paragraph">
+<p>Επιπλέον, το εργαλείο θα πρέπει να σχεδιαστεί έτσι ώστε το κεντρικό επίπεδο διάστημα να αρχίζει από
+κάτω αριστερά προς τα επάνω δεξιά. Με άλλα λόγια, ο προσανατολισμός θα πρέπει να είναι όπως παρουσιάζεται στην
+παρακάτω εικόνα και όχι ο <em>αναστραμμένος</em> προσανατολισμός αυτού:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/zdie.png" alt="ZDie" width="350">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_στιγείς_κάμψης_z">Στιγείς κάμψης Z<a id="h000039"></a></h3>
+<div class="paragraph">
+<p>Για ένα στιγέα κάμψης Z θα πρέπει να υπάρχει μια καταχώριση κειμένου όπως αυτή στο αρχείο DXF: <strong>FLAVOR=ZBendPunch</strong></p>
+</div>
+<div class="paragraph">
+<p>Επιπλέον, το εργαλείο θα πρέπει να σχεδιαστεί έτσι ώστε το κεντρικό επίπεδο διάστημα να αρχίζει από
+κάτω αριστερά προς τα επάνω δεξιά. Με άλλα λόγια, ο προσανατολισμός θα πρέπει να είναι όπως παρουσιάζεται στην
+παρακάτω εικόνα και όχι ο <em>αναστραμμένος</em> προσανατολισμός αυτού:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/zpunch.png" alt="ZPunch" width="350">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_στιγείς_ακτίνας">Στιγείς  ακτίνας<a id="h000040"></a></h3>
+<div class="paragraph">
+<p>Αυτός είναι ένας άξονας ακτίνας που χρειάζεται στήριγμα ακτίνας.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/radiuspunch.png" alt="RadiusPunch" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Για τέτοιους στιγείς απαιτούνται οι ακόλουθες πρόσθετες καταχωρίσεις:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Το κείμενο <strong>FLAVOR=RShaft</strong> επισημαίνει αυτό ως άξονα ακτίνας.</p>
+</li>
+<li>
+<p>Το κείμενο <strong>PARAMS=80</strong> είναι το ύψος του εργαλείου που θα εξαχθεί στο πρόγραμμα NC.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Η ΣΗΜΕΙΑΚΗ οντότητα είναι το σημείο αναφοράς του εργαλείου.
+Το εργαλείο πρέπει να σχεδιαστεί έτσι ώστε το σημείο αναφοράς να είναι εκεί όπου βρίσκεται η κορυφή του ανεστραμμένου V του
+στηρίγματος.
+</td>
+</tr>
+</table>
+</div>
+<div id="h000041" class="ulist">
+<ul>
+<li>
+<p>Σχεδιάστε το ένθετο ακτίνας με το σχετικό στήριγμα καθώς είναι τοποθετημένο στο μηχάνημα όπως παρουσιάζεται παρακάτω.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/radiuspunch3.png" alt="RadiusPunch3" width="250">
+</div>
+</div>
+<div id="h000042" class="ulist">
+<ul>
+<li>
+<p>Αφαιρέστε την πλάκα στηρίγματος και αποθηκεύστε το ένθετο ακτίνας dxf. Μόνο η ΣΗΜΕΙΑΚΗ οντότητα στην
+κορυφή του ανεστραμμένου V του στηρίγματος και το πλάκα ενθέτου, λίγο κάτω από το ΣΗΜΕΙΟ
+θα αποτελούν το προφίλ dxf για αυτό το ένθετο.</p>
+</li>
+<li>
+<p>Το ύψος αυτού του εργαλείου προσδιορίζεται από τη ΣΗΜΕΙΑΚΗ οντότητα. Αυτό παρουσιάζεται ως Α στην
+παρακάτω εικόνα.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/radiuspunch2.png" alt="RadiusPunch2" width="250">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_μήτρες_δίπλωσης_ev_f">Μήτρες δίπλωσης EV-F<a id="h000044"></a></h3>
+<div class="paragraph">
+<p>Αυτά είναι εργαλεία EV-F που χρησιμοποιούνται για τη δίπλωση χωρίς μετατόπιση. Μια τέτοια μήτρα
+χαρακτηρίζεται ως I0HemDie.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hemdie.png" alt="I0HemDie" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Για τέτοιες μήτρες, απαιτούνται οι ακόλουθες πρόσθετες καταχωρίσεις:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Το κείμενο <strong>FLAVOR=I0HemDie το</strong> χαρακτηρίζει αυτό ως I0HemDie.</p>
+</li>
+<li>
+<p>Το κείμενο <strong>PARAMS=8.5,95.5</strong> παρέχει ορισμένες μετρήσεις που απαιτούνται για τη σωστή προσομοίωση.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hemdie2.png" alt="I0HemDie2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Δύο παράμετροι καθορίζουν αυτήν τη μήτρα δίπλωσης. Αυτές μπορούν να θεωρηθούν ως οι τιμές Α και Β
+στην παραπάνω εικόνα. Η πρώτη παράμετρος (8,5 mm σε αυτό το παράδειγμα) καθορίζει την απόσταση
+του τμήματος από την κεντρική γραμμή κατά τη δίπλωση. Η δεύτερη παράμετρος (εδώ 95,5 mm) ορίζει
+την κατακόρυφη απόσταση από το σημείο όπου βρίσκεται το τμήμα κατά τη δίπλωση μέχρι το κάτω μέρος της μήτρας.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_στιγείς_δίπλωσης_ev_f">Στιγείς δίπλωσης EV-F<a id="h000045"></a></h3>
+<div class="paragraph">
+<p>Αυτοί είναι στιγείς EV-F που χρησιμοποιούνται για τη δίπλωση χωρίς μετατόπιση. Ένας τέτοιος στιγέας
+χαρακτηρίζεται ως I0HemPunch.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hempunch.png" alt="I0HemPunch" width="450">
+</div>
+</div>
+<div class="paragraph">
+<p>Για τέτοιους στιγείς απαιτούνται οι ακόλουθες πρόσθετες καταχωρίσεις:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Το κείμενο <strong>FLAVOR=I0HemPunch</strong> που χαρακτηρίζει αυτό ως a I0HemPunch.</p>
+</li>
+<li>
+<p>Το κείμενο <strong>PARAMS=-8,16,57.5</strong> παρέχει ορισμένες μετρήσεις που απαιτούνται για τη σωστή
+προσομοίωση.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hempunch2.png" alt="I0HemPunch2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Υπάρχουν τρεις παράμετροι που απαιτούνται για τον ορισμό της διαδικασίας δίπλωσης. Αυτά μπορείτε να τα δείτε
+ως τιμές A, B και C στην παραπάνω εικόνα. Αυτές οι παράμετροι είναι ίδιες με εκείνες
+που ορίζονται στο HemPunch.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_κάμψης_με_κύλιση">κάμψης με κύλιση<a id="h000046"></a></h3>
+<div class="paragraph">
+<p>Η μήτρα κάμψης με κύλιση ονομάζεται μήτρα πτέρυγας.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rollbenddie.png" alt="RollbendDie" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Αυτό το εργαλείο απαιτεί τις ακόλουθες πρόσθετες καταχωρίσεις:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Το κείμενο <strong>FLAVOR=WingDie</strong> που σηματοδοτεί αυτό ως εργαλείο πτέρυγας.</p>
+</li>
+<li>
+<p>Το κείμενο <strong>PARAMS=10.49,100</strong> παρέχει ορισμένες μετρήσεις που απαιτούνται για τη σωστή
+προσομοίωση των πτερύγων.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rollbenddie2.png" alt="RollbendDie2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Υπάρχουν δύο παράμετροι που καθορίζουν την κίνηση των τεμαχίων κάμψης πτέρυγας. Η πρώτη
+παράμετρος είναι η οριζόντια απόσταση από την κεντρική γραμμή της μήτρας στο κεντρικό σημείο
+περιστροφής μιας από τις πτέρυγες. Αυτό παρουσιάζεται ως Α στην παραπάνω εικόνα. Η δεύτερη
+παράμετρος είναι η κατακόρυφη απόσταση από το κάτω μέρος της μήτρας στο κεντρικό σημείο
+περιστροφής των πτερύγων. Αυτό παρουσιάζεται ως Β στην παραπάνω εικόνα. Κανονικά, η τιμή Β και
+το ύψος είναι ένα και το αυτό.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_μήτρες_αυτόματης_δίπλωσης">Μήτρες αυτόματης δίπλωσης<a id="h000047"></a></h3>
+<div class="paragraph">
+<p>Αυτές είναι μήτρες V που διαθέτουν επίσης ένα ανεξάρτητο τραπέζι δίπλωσης όπως στην παρακάτω εικόνα.
+Για αυτήν τη μήτρα θα πρέπει να υπάρχει μια καταχώριση κειμένου όπως αυτή στο αρχείο DXF: *FLAVOR=SelfHemDie
+*image::SelfHemDie.png[,200]</p>
+</div>
+<div class="paragraph">
+<p>Επιπλέον, απαιτείται η καταχώριση <strong>PARAMS</strong> η οποία έχει δύο τιμές.
+Αυτές οι δύο παράμετροι είναι ίδιες με αυτές του I0HemDie.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/selfhemdie2.png" alt="SelfHemDie2" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p>Αυτές μπορούν να θεωρηθούν ως οι τιμές Α και Β στην παραπάνω εικόνα. Η πρώτη παράμετρος ορίζει
+πόσο απέχει το τμήμα κατά τη δίπλωση από την κεντρική γραμμή. Η δεύτερη παράμετρος ορίζει την
+κατακόρυφη απόσταση από το σημείο όπου βρίσκεται το τμήμα κατά τη δίπλωση στο κάτω μέρος της μήτρας.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_μήτρες_διπλού_v">Μήτρες διπλού V<a id="h000048"></a></h3>
+<div class="paragraph">
+<p>Οι μήτρες με πολλαπλά πλάτη V που χρειάζονται IAxis για να χρησιμοποιήσουν το άλλο V χαρακτηρίζονται
+ως μήτρες διπλού V. Υπάρχουν ορισμένοι κανόνες που πρέπει να τηρείτε:</p>
+</div>
+<div id="h000049" class="ulist">
+<ul>
+<li>
+<p>Δημιουργήστε dxf για μήτρες με τη ρύθμιση <strong>FLAVOR=DoubleV</strong>, μία για κάθε πλάτος V</p>
+</li>
+<li>
+<p>Ρυθμίστε την ίδια τιμή <strong>ORDERNO</strong> και για τις δύο μήτρες (αυτή μπορεί να είναι οποιαδήποτε μη κενή συμβολοσειρά)</p>
+</li>
+<li>
+<p>Ορίστε την τιμή <strong>YSHIFT</strong> στη σωστή τιμή IAxis που θα χρησιμοποιηθεί</p>
+</li>
+<li>
+<p>Σχεδιάστε ένα σημειακό δείκτη στο κάτω μέρος της μήτρας, κεντραρισμένο κάτω από το V για να επισημάνετε
+που βρίσκεται η γεωμετρία διαμόρφωσης</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Για παράδειγμα, μια μήτρα με πλάτος V 12 και 6 πρέπει να δημιουργηθεί ως δύο dxf όπως παρουσιάζεται
+στην παρακάτω εικόνα:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/doublevdie.png" alt="DoubleVdie" width="300">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ελατηριωτές_μήτρες_δίπλωσης_μήτρες_δίπλωσης_φτερών">Ελατηριωτές μήτρες δίπλωσης (μήτρες δίπλωσης φτερών)<a id="h000053"></a></h3>
+<div class="paragraph">
+<p>Για μια ελατηριωτή μήτρα δίπλωσης θα πρέπει να υπάρχει μια καταχώριση κειμένου όπως αυτή στο DXF
+αρχείο: <strong>FLAVOR=SpringHem</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/springhemdie.png" alt="SpringHemDie" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Επιπλέον, απαιτείται η ακόλουθη πρόσθετη καταχώριση:</p>
+</div>
+<div id="h000054" class="ulist">
+<ul>
+<li>
+<p>Το κείμενο <strong>PARAMS=-2,30,10</strong> παρέχει ορισμένες μετρήσεις που απαιτούνται για τη σωστή προσομοίωση.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/springhemdie2.png" alt="SpringHemDie2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Αυτή η μήτρα είναι μια μήτρα δύο τμημάτων που διαθέτει ένα επάνω τμήμα το οποίο κινείται προς τα κάτω για να ισοπεδώσει τη
+δίπλωση. Υπάρχουν τρεις παράμετροι που καθορίζουν την εγκοπή ισοπέδωσης. Η πρώτη παράμετρος
+είναι η απόσταση από την κεντρική γραμμή της μήτρας για το τμήμα κατά τη δίπλωση. Η τιμή A +ve
+σημαίνει ότι βρίσκεται στο μπροστινό μέρος της κεντρικής γραμμής και η τιμή -ve σημαίνει ότι βρίσκεται
+στο πίσω μέρος της κεντρικής γραμμής. Αυτό παρουσιάζεται ως Α στην παραπάνω εικόνα. Η δεύτερη παράμετρος
+είναι η θέση της εγκοπής ισοπέδωσης από τη βάση της μήτρας για το τμήμα κατά τη
+δίπλωση. Αυτό παρουσιάζεται ως Β στην παραπάνω εικόνα. Η τρίτη παράμετρος είναι το διάκενο
+ελατηρίου που είναι το ύψος της εγκοπής. Αυτό παρουσιάζεται ως C στην παραπάνω εικόνα.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_προσαρμογείς_στιγέων">Προσαρμογείς στιγέων<a id="h000055"></a></h3>
+<div class="paragraph">
+<p>Το πρόγραμμα εισαγωγής εργαλείων μπορεί να εισάγει <em>προσαρμογείς στιγέων</em>. Για να αναγνωρίσει σωστά το Flux ότι το
+σχέδιο είναι ένας προσαρμογέας στιγέα, θα πρέπει να υπάρχουν οι ακόλουθες οντότητες κειμένου στο αρχείο:</p>
+</div>
+<div id="h000056" class="ulist">
+<ul>
+<li>
+<p>Ένα κείμενο όπως <strong>UPPER=PTrumpf</strong> που σηματοδοτεί τον επάνω τύπο εγκατάστασης (συνήθως, αυτό είναι
+PTrumpf εάν ο προσαρμογέας πρόκειται να εγκατασταθεί σε μηχανή Trumpf).</p>
+</li>
+<li>
+<p>Ένα κείμενο όπως το <strong>LOWER=PEHT</strong> που σηματοδοτεί  τον κάτω τύπο εγκατάστασης (αυτός είναι ο τύπος του στιγέα
+που μπορεί να εγκατασταθεί στον προσαρμογέα).</p>
+</li>
+<li>
+<p>Ένα κείμενο όπως <strong>ΤΟ HEIGHT=64</strong> που χαρτογραφεί το αποτελεσματικό ύψος εργασίας του προσαρμογέα. Αυτό
+είναι απαραίτητο, καθώς το Flux δεν μπορεί να συμπεράνει αυτόματα το ύψος του προσαρμογέα.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ακολουθεί μια εικόνα ενός προσαρμογέα στιγέα που μπορεί να εισαχθεί από το DXF:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/padapter.png" alt="PAdapter" width="300">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_συγκρατητήρες_λαμών">Συγκρατητήρες λαμών<a id="h000059"></a></h3>
+<div class="paragraph">
+<p>Το πρόγραμμα εισαγωγής εργαλείων μπορεί να εισάγει <em>συγκρατητήρες λαμών</em>. Ορισμένοι συγκρατητήρες λαμών (για παράδειγμα, εκείνες
+που είναι παρόμοιοι με το OW209/S) είναι επίσης στιγείς δίπλωσης που χρησιμοποιούνται για να ισοπεδώσουν μια δίπλωση. Για τέτοιους
+συγκρατητήρες λαμών, απαιτούνται ορισμένα πρόσθετα δεδομένα</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bholder1.png" alt="BHolder1" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>Οι υποχρεωτικές παράμετροι UPPER, LOWER, HEIGHT (ΑΝΩ, ΚΑΤΩ ΥΨΟΣ) επεξηγούνται στην παραπάνω ενότητα
+για τους Προσαρμογείς στιγέα και έχουν την ίδια σημασία. Επιπλέον, για να βοηθηθεί το Flux να
+χρησιμοποιήσει το συγκρατητήρα ως εργαλείο δίπλωσης, απαιτούνται οι ακόλουθες πρόσθετες καταχωρίσεις:</p>
+</div>
+<div id="h000060" class="ulist">
+<ul>
+<li>
+<p>Το κείμενο <strong>SPLFLAVOR=HemPunch</strong> σηματοδοτεί τον προσαρμογέα ως εργαλείο δίπλωσης.</p>
+</li>
+<li>
+<p>Το κείμενο <strong>PARAMS=-6,18,60</strong> παρέχει ορισμένες μετρήσεις που απαιτούνται για τη σωστή
+προσομοίωση της διαδικασίας δίπλωσης.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bholder2.png" alt="BHolder2" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>Υπάρχουν τρεις παράμετροι που απαιτούνται για τον ορισμό της διαδικασίας δίπλωσης. Αυτές παρουσιάζονται
+ως οι τιμές A, B και C στην παραπάνω εικόνα. Η πρώτη (-6mm σε αυτό το παράδειγμα)
+καθορίζει την απόσταση πίσω από τη γραμμή κάμψης που βρίσκεται η επίπεδη κατακόρυφη επιφάνεια του στιγέα.
+Σε αυτήν την περίπτωση, δεδομένου ότι η επίπεδη κατακόρυφη επιφάνεια είναι μπροστά από τη γραμμή κάμψης, η τιμή
+είναι -6. Η δεύτερη παράμετρος (εδώ 18 mm) καθορίζει την απόσταση μπροστά από τη γραμμή κάμψης
+βρίσκεται η κορυφή της δίπλωσης. Η τελευταία παράμετρος (εδώ 60 mm) είναι η κατακόρυφη απόσταση από την
+κορυφή του στιγέα έως την κορυφή της κάμψης.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_συγκρατητήρες_ακτίνας">Συγκρατητήρες ακτίνας<a id="h000062"></a></h3>
+<div class="paragraph">
+<p>Αυτός είναι ο συγκρατητήρας για εργαλεία άξονα ακτίνας.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rholder.png" alt="Rholder" width="220">
+</div>
+</div>
+<div class="paragraph">
+<p>Απαιτούνται οι ακόλουθες πρόσθετες καταχωρίσεις:</p>
+</div>
+<div id="h000063" class="ulist">
+<ul>
+<li>
+<p>Το κείμενο <strong>FLAVOR=RHolder</strong> επισημαίνει τον προσαρμογέα ως συγκρατητήρα άξονα ακτίνας.</p>
+</li>
+<li>
+<p>Το κείμενο <strong>PARAMS=100</strong> είναι το ύψος του εργαλείου που θα εξαχθεί στο πρόγραμμα NC.</p>
+</li>
+<li>
+<p>Το ύψος αυτού του εργαλείου προσδιορίζεται από την αρχή έως το ανεστραμμένο V του συγκρατητήρα.
+Αυτό παρουσιάζεται ως Α στην παρακάτω εικόνα.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rholder2.png" alt="RHolder2" width="220">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_διπλοί_συγκρατητήρες_v">Διπλοί συγκρατητήρες V<a id="h000066"></a></h3>
+<div class="paragraph">
+<p>Αυτοί είναι οι συγκρατητήρες μήτρας που μπορούν να συγκρατήσουν 2 μήτρες.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/dvholder.png" alt="DVHolder" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Απαιτούνται οι ακόλουθες πρόσθετες καταχωρίσεις:</p>
+</div>
+<div id="h000067" class="ulist">
+<ul>
+<li>
+<p>Το κείμενο <strong>FLAVOR=DVHolder</strong> επισημαίνει τον προσαρμογέα ως συγκρατητήρα DVHolder.</p>
+</li>
+<li>
+<p>Το κείμενο <strong>PARAMS=0,36.2</strong> παρέχει μετρήσεις για τη μετατόπιση της μήτρας στην άλλη υποδοχή του συγκρατητήρα.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/dvholder2.png" alt="DVHolder2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Για τον ορισμό αυτού του εργαλείου απαιτούνται δύο παράμετροι. Η πρώτη (0 mm σε αυτό το παράδειγμα)
+καθορίζει την απόσταση της πρώτης υποδοχής σε σχέση με το σημείο αναφοράς του συγκρατητήρα. Στην περίπτωση αυτή, δεδομένου ότι η
+η πρώτη υποδοχή ευθυγραμμίζεται με το σημείο αναφοράς, η τιμή είναι 0. Η δεύτερη παράμετρος (εδώ 36,2 mm)
+που εμφανίζεται ως Α στην παραπάνω εικόνα, καθορίζει την απόσταση της δεύτερης υποδοχής από το
+σημείο αναφοράς του συγκρατητήρα.</p>
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_παράδειγμα_dxf">Παράδειγμα DXF</a>
+  </li>
+  <li level="2">
+   <a href="#_μεταδεδομένα_σε_οντότητες_κειμένου">Μεταδεδομένα σε οντότητες κειμένου</a>
+  </li>
+  <li level="2">
+   <a href="#_αναγνώριση_σχήματος">Αναγνώριση σχήματος</a>
+  </li>
+  <li level="2">
+   <a href="#_πρόσθετες_πληροφορίες">Πρόσθετες πληροφορίες:</a>
+  </li>
+  <li level="1">
+   <a href="#_ειδικά_εργαλεία">Ειδικά εργαλεία</a>
+  </li>
+  <li level="2">
+   <a href="#_στιγείς_δίπλωσης">Στιγείς δίπλωσης</a>
+  </li>
+  <li level="2">
+   <a href="#_μήτρες_μπλοκ_δίπλωσης">Μήτρες μπλοκ δίπλωσης</a>
+  </li>
+  <li level="2">
+   <a href="#_μήτρες_κάμψης_z">Μήτρες κάμψης Z</a>
+  </li>
+  <li level="2">
+   <a href="#_στιγείς_κάμψης_z">Στιγείς κάμψης Z</a>
+  </li>
+  <li level="2">
+   <a href="#_στιγείς_ακτίνας">Στιγείς  ακτίνας</a>
+  </li>
+  <li level="2">
+   <a href="#_μήτρες_δίπλωσης_ev_f">Μήτρες δίπλωσης EV-F</a>
+  </li>
+  <li level="2">
+   <a href="#_στιγείς_δίπλωσης_ev_f">Στιγείς δίπλωσης EV-F</a>
+  </li>
+  <li level="2">
+   <a href="#_κάμψης_με_κύλιση">κάμψης με κύλιση</a>
+  </li>
+  <li level="2">
+   <a href="#_μήτρες_αυτόματης_δίπλωσης">Μήτρες αυτόματης δίπλωσης</a>
+  </li>
+  <li level="2">
+   <a href="#_μήτρες_διπλού_v">Μήτρες διπλού V</a>
+  </li>
+  <li level="2">
+   <a href="#_ελατηριωτές_μήτρες_δίπλωσης_μήτρες_δίπλωσης_φτερών">Ελατηριωτές μήτρες δίπλωσης (μήτρες δίπλωσης φτερών)</a>
+  </li>
+  <li level="2">
+   <a href="#_προσαρμογείς_στιγέων">Προσαρμογείς στιγέων</a>
+  </li>
+  <li level="2">
+   <a href="#_συγκρατητήρες_λαμών">Συγκρατητήρες λαμών</a>
+  </li>
+  <li level="2">
+   <a href="#_συγκρατητήρες_ακτίνας">Συγκρατητήρες ακτίνας</a>
+  </li>
+  <li level="2">
+   <a href="#_διπλοί_συγκρατητήρες_v">Διπλοί συγκρατητήρες V</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="bseparatordxf.html">Διαχωριστικό φύλλο DXF</a></span>
+ <span class="next"><a href="../impressum.html">Νομική ανακοίνωση</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

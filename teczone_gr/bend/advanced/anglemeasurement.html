@@ -1,0 +1,753 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Μέτρηση γωνίας</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Καλώς ήρθατε στο TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Εισαγωγή</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">Εγκατάσταση του λογισμικού</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">Η επιφάνεια χειρισμού</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Ροή εργασιών τεμαχίου</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">Εισαγωγή 2-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">Εκκαθάριση 2-D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">Εισαγωγή 3-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">Εισαγωγή μοντέλου 3D</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Εισαγωγή συγκροτήματος</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Ανίχνευση μορφής</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Ανίχνευση στοιχείων</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">Τροποποίηση της γεωμετρίας</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">CAM Λέιζερ</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Ροή εργασιών τεμαχίου</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Πίνακες επεξεργασίας</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Κοπή με λέιζερ</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Προσέγγιση</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Απόσυρση</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Για προχωρημένους</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Περίγραμμα</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Κοπή αχρήστων</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Τεμάχιο</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Αντιμετώπιση γωνιών</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Quick-Nest (Γρήγορη κατανομή)</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">Ροή εργασιών έργου</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Πίνακας εργασίας</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Καρτέλα μεταλλικών πλακών</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Καρτέλα Τεμάχια</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Καρτέλα Διατάξεις</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Καρτέλα σύνοψης</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Επεξεργασία διάταξης</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Λειτουργίες κατανομής</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Πίνακας τοποθέτησης</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Αλληλουχία</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Τεμαχισμός μεταλλικής πλάκας</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Λοξή κοπή</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Ανοικτά περιγράμματα</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Μεταβλητή λοξοτομή</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Διάφορα</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Για προχωρημένους</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Κανόνες ολοκλήρωσης</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">Επεξεργασία LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">Διπλή γραμμή (TwinLine)</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Στρατηγική</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Microjoint</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">Περαιτέρω ρυθμίσεις</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">Κάμψη CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../createbenddata.html">Δημιουργία δεδομένων κάμψης</a></li>
+    <li><button class="tree blank"></button><a href="../navigator.html">Πλοηγός κάμψης</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../editing/index.html">Επεξεργασία δεδομένων κάμψης</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../editing/editbend.html">Επεξεργασίας μιας κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editmount.html">Επεξεργασία μιας βάσης εργαλείου</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editsetup.html">Επεξεργασία ρυθμίσεων κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editgauge.html">Επεξεργασία των πίσω αναστολέων</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editacb.html">Επεξεργασία μέτρησης γωνιών</a></li>
+      <li><button class="tree blank"></button><a href="../editing/bendsheet.html">Υπολογιστικό φύλλο Κάμψεις</a></li>
+      <li><button class="tree blank"></button><a href="../editing/sequencing.html">Αλλαγή της αλληλουχίας</a></li>
+      <li><button class="tree blank"></button><a href="../editing/addsetup.html">Προσθήκη ρυθμίσεων και σταθμών</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Για προχωρημένους</a>
+     <ul>
+      <li><button class="tree blank"></button><a class="active" href="anglemeasurement.html">Μέτρηση γωνίας</a></li>
+      <li><button class="tree blank"></button><a href="batchprocess.html">Διαδικασία παρτίδας</a></li>
+      <li><button class="tree blank"></button><a href="recompute.html">Επανυπολογισμός λύσης</a></li>
+      <li><button class="tree blank"></button><a href="tonnage.html">Έλεγχος φορτίου</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">Πλοηγός κάμψης</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">Παραλαβή τεμαχίου</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">Παραλαβή από παλέτα</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">Παραλαβή από τον διανομέα</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">Ρομποτική κάμψη</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">Εισαγωγή</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">Κάμψη</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Εξαγωγή</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Εκ νέου σύλληψη</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Πίνακας εκ νέου σύλληψης</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Προσθήκη εκ νέου σύλληψης</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Επεξεργασία εκ νέου σύλληψης</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Εκ νέου σύλληψη με σιαγόνα</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Πίνακας σταθμού εκ νέου σύλληψης</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Απόθεση τεμαχίου</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Μοτίβα απόθεσης</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Επανάληψη και ακολουθία</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Διαχωριστικό φύλλο</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Για προχωρημένους</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Σημεία πορείας</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Διαμόρφωση κελιών</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Βάση δεδομένων στοιχείων αρπάγης</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Αναφορές</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">Δίπλωση CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Δημιουργία δεδομένων δίπλωσης</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">Η προβολή δίπλωσης</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Επεξεργασία δεδομένων δίπλωσης</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Επεξεργασίας μιας κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Επεξεργασία πλευράς/τμήματος</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">Αλλαγή της αλληλουχίας</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">Επεξεργασία των συγκρατητήρων</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">Επεξεργασία των αναστολέων</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">Επεξεργασία των λαμών</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">Επεξεργασία της φόρτωσης</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">Επεξεργασία της απόρριψης</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Απόθεμα εργαλείων</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Για προχωρημένους</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Προσαρμοσμένοι πίνακες διακένου</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">Ολοκλήρωση χειροκίνητης κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Απαιτούμενο μήκος φλάντζας</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Ρυθμίσεις</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Σχέδιο</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Επίπεδα</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Διαστάσεις</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Προβολή</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">Κάμψη CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Προεπιλογές μηχανήματος</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Αποτελέσματα κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Προβολή κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Κελί κάμψης</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">Κοπή CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Διάταξη</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Ρυθμίσεις κατανομής</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Μεταλλική πλάκα</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Χειρισμός μεταλλικής πλάκας</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Κοπές σκελετού</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Υποστήριξη εργασίας</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">CAM Λέιζερ</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Αλληλουχία</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Αποτελέσματα κοπής</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Προβολή κοπής</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Κάμψη πάνελ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Προεπιλογές</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">Φορείς πρόσθετου εργαλείου κάμψης</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Αποτελέσματα</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Αναφορές</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Προεπιλογές στοιχείου</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Εισαγωγή/Εξαγωγή</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Περιβάλλον</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Βάση δεδομένων</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Υλικά</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Μηχανήματα</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Εργαλεία κάμψης</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Στοιχεία αρπάγης κάμψης</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Μορφές/στοιχεία</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Αναφορές</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Σχεδιαστής αναφορών</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Πεδία, εικόνες και πίνακες</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Ζώνες (δευτερεύουσες αναφορές)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Ετικέτες, Bitmap και σχήματα</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Παράρτημα</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Υποστηριζόμενες τρισδιάστατες μορφές</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Διαχωριστικό φύλλο DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bend Tool DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Νομική ανακοίνωση</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">Κάμψη CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Για προχωρημένους</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="anglemeasurement.html">Μέτρηση γωνίας</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Μέτρηση γωνίας</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Συστήματα Μέτρηση γωνίας</strong> όπως ACB&#8482;, ACBLaser&#8482; ή LCB&#8482; μπορούν να χρησιμοποιούνται για
+τη βελτίωση της ακρίβειας της γωνίας κατά την κάμψη. Αυτά τα συστήματα μετρούν την πραγματική γωνία
+που επιτυγχάνεται κατά την κάμψη και την ελατηριωτή επαναφορά της μεταλλικής πλάκας και χρησιμοποιούν αυτές τις πληροφορίες
+για να ρυθμίζουν δυναμικά το ατριβές κάτω κεντρικό σημείο της μπάρας πρεσαρίσματος για την επίτευξη της γωνίας της επιθυμητής
+κάμψης.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_συστήματα_δίσκων_και_λέιζερ">Συστήματα δίσκων και λέιζερ<a id="h000136"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Τα συστήματα μέτρησης γωνιών βασίζονται σε <em>δίσκους αισθητήρων</em> εγκαταστημένους στους στιγείς ή
+σε οπτικά συστήματα που χρησιμοποιούν μια <em>ακτίνα λέιζερ</em> που προβάλλεται επάνω στο τεμάχιο επεξεργασίας. Το TecZone Bend υποστηρίζει
+και τα δύο συστήματα και όταν διαμορφώνετε ένα μηχάνημα, υπάρχουν ορισμένοι διακόπτες επιλογής που μπορείτε να
+<strong>ενεργοποιήσετε</strong> ανάλογα με τις επιλογές μηχανήματος που έχετε εγκαταστήσει.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/acb-1.png" alt="Machine Settings" width="513">
+</div>
+</div>
+<div class="paragraph">
+<p>Η παρακάτω εικόνα παρουσιάζει έναν πίνακα ρυθμίσεων για το μηχάνημα Trumpf 5085 B23. Αυτό το μηχάνημα
+υποστηρίζει δύο τύπους μέτρησης γωνιών με βάση δίσκους (<strong>ACB-Classic</strong> και <strong>ACB-Wireless</strong>),
+καθώς και τη μέτρηση με βάση λέιζερ (<strong>ACB-Laser</strong>). Το συγκεκριμένο μηχάνημα είναι
+διαμορφωμένο και με τις τρεις επιλογές ενεργοποιημένες.</p>
+</div>
+<div class="paragraph">
+<p>Εάν μια καμπτική πρέσα διαθέτει και τα δύο <em>συστήματα</em> μέτρησης γωνία, μπορεί επίσης να θελήσετε να
+ορίσετε ένα κατά προτεραιότητα έναντι του άλλου ή να απενεργοποιήσετε τη μέτρηση γωνίας
+για ένα συγκεκριμένο τεμάχιο. Μπορείτε να το κάνετε αυτό χρησιμοποιώντας τον πίνακα <strong>Ρυθμίσεις</strong>.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>
+image::acb-2.png[ACB Settings,705]</p>
+</div>
+<div class="paragraph">
+<p>Η ενότητα <strong>Μέτρηση γωνίας</strong> της σελίδας <strong>Ρυθμίσεις/BendCAM</strong> διαθέτει μια λίστα επιλογών
+που σας επιτρέπει να ενεργοποιείτε ή να απενεργοποιείτε τα διάφορα συστήματα μέτρησης γωνιών. Μπορείτε να δώσετε προτεραιότητα
+στο ένα έναντι του άλλου συστήματος επιλέγοντάς το και μετακινώντας το προς τα πάνω ή προς τα κάτω χρησιμοποιώντας τα παρακείμενα κουμπιά βέλους
+επάνω/κάτω. Σε αυτό το συγκεκριμένο παράδειγμα, τόσο η μέτρηση γωνίας με δίσκο όσο και με λέιζερ
+ενεργοποιούνται και δίνουμε προτεραιότητα στο λέιζερ πρώτα.<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</div>
+<div class="paragraph">
+<p>Η επιλογή <strong>Χρήση ταχύτητας ACB</strong> αποφασίζει αν η στρατηγική <strong>ACB Speed</strong> (που είναι διαθέσιμη σε μηχανήματα on Touchpoint)
+θα χρησιμοποιείται ως προεπιλογή.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_μέθοδοι_acb">Μέθοδοι ACB<a id="h000137"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Υπάρχουν διαφορετικές <strong>μέθοδοι ACB</strong> που μπορούν να χρησιμοποιηθούν στο TecZone Bend. Οι περισσότερες από αυτές είναι κοινές
+μεταξύ μέτρησης γωνιών βάσει δίσκου και λέιζερ, οπότε θα εξετάσουμε πρώτα τις διαφορετικές
+μεθόδους.</p>
+</div>
+<div class="sect2">
+<h3 id="_αναγνώριση">Αναγνώριση<a id="h000138"></a></h3>
+<div class="paragraph">
+<p>Η μέθοδος <strong>Αναγνώριση</strong> ή <strong>Ταυτοποίηση</strong> ή <strong>Αναγνώριση ελαστικής επαναφοράς</strong> είναι η κανονική χρήση
+του συστήματος ACB. Η καμπτική πρέσα χρησιμοποιεί το σύστημα μέτρησης γωνιών για τον προσδιορισμό της πραγματικής
+γωνίας που σχηματίζεται κατά την κάμψη του τεμαχίου. Αφού ολοκληρωθεί η κάμψη του τεμαχίου, το μηχάνημα τίθεται
+στην κατάσταση <em>αποσυμπίεσης</em> προκειμένου να επιτρέψει την <em>ελαστική επαναφορά</em> του μετάλλου. Η ελαστική επαναφοράς προσδιορίζεται
+επίσης με χρήση του συστήματος ACB και αντισταθμίζεται για μια ακριβή υπερβολική κάμψη. Για να αποφευχθεί η
+πιθανότητα <em>υπέρβασης</em> της επιθυμητής γωνίας κατά τη μέτρηση, το μηχάνημα επιδιώκει
+μια ελαφρώς <em>μικρότερη κάμψη</em> κατ' αρχάς και μετά εκτελεί μια επακόλουθη νέα κάμψη για την επίτευξη του
+στόχου. Αυτή είναι η πιο ακριβής, αλλά και η πιο χρονοβόρα μέθοδος ACB.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_εκμάθηση_y">Εκμάθηση Y<a id="h000139"></a></h3>
+<div class="paragraph">
+<p>Στη μέθοδο <strong>Εκμάθηση Y</strong>, το σύστημα ACB δεν χρησιμοποιείται καθόλου. Ο στόχος μπάρας πρεσαρίσματος Y
+(κάτω τελικό σημείο) αντιγράφεται απλώς από μια προηγούμενη κάμψη (όπως παρουσιάζεται στο <em>Κάμψη αναφοράς</em>)
+που έχει ήδη μετρηθεί με τη μέθοδο <strong>Αναγνώριση</strong>. Αυτή η προηγούμενη κάμψη πρέπει να
+είναι πανομοιότυπη όσον αφορά στη γωνία, στην ακτίνα και στη χρήση του εργαλείου.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_επίκτητη_ελαστική_επαναφορά">Επίκτητη ελαστική επαναφορά</h3>
+<div class="paragraph">
+<p>Στη μέθοδο <strong>Επίκτητη ελαστική επαναφορά</strong> ή <strong>Εκμάθηση ελαστικής επαναφοράς</strong>, το σύστημα ACB χρησιμοποιεί τη γωνία ελαστικής επαναφοράς
+από μια προηγούμενη κάμψη που έχει μετρηθεί με τη μέθοδο <strong>Αναγνώριση</strong>. Το σύστημα ACB
+εξακολουθεί να χρησιμοποιείται για τη ρύθμιση της κάμψης, αλλά δεδομένου ότι δεν απαιτείται μια δεύτερη μέτρηση μετά την αποσυμπίεση,
+ο κύκλος είναι ταχύτερος από έναν πλήρη κύκλο <strong>αναγνώρισης</strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_εισαγωγή_ελαστικής_επαναφοράς">Εισαγωγή ελαστικής επαναφοράς</h3>
+<div class="paragraph">
+<p>Η μέθοδος <strong>Εισαγωγή ελαστικής επαναφοράς</strong> ή <strong>Καταχώριση ελαστικής επαναφοράς</strong> ή <strong>Διορθωμένο</strong> ή <strong>ACB Smart</strong> χρησιμοποιεί το σύστημα ACB
+για τη μέτρηση της επιθυμητής γωνίας, αλλά χρησιμοποιεί μη τιμή ελαστικής επαναφοράς που έχει καταχωριστεί από
+το χρήστη. Με άλλα λόγια, το ACB απλά θα λυγίσει το τεμάχιο στην επιθυμητή γωνία + την
+τιμή διόρθωσης που έχει καταχωριστεί από το χρήστη. Δεν λαμβάνεται δεύτερη μέτρηση μετά την αποσυμπίεση.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_σύμβολα_για_acb">Σύμβολα για ACB<a id="h000140"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Το TecZone Bend χρησιμοποιεί διάφορα εικονίδια για την αναπαράσταση διαφόρων μεθόδων ACB ή σφαλμάτων και
+προειδοποιήσεων ACB. Εδώ παρουσιάζονται τα εικονίδια που χρησιμοποιούνται για την προβολή διαφόρων συστημάτων και λειτουργιών ACB στον
+πλοηγό κάμψης:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Εικονίδιο</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σημασία</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-ok.png" alt="acb ok" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Σύστημα δίσκου, μέθοδος <strong>Αναγνώριση</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-learned.png" alt="acb learned" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Σύστημα δίσκου, μέθοδος <strong>Εκμάθηση Υ</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-corrected.png" alt="acb corrected" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Σύστημα δίσκου, μέθοδος <strong>Εισαγωγή ελαστικής επαναφοράς</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-ok.png" alt="lcb ok" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Σύστημα λέιζερ, μέθοδος <strong>Αναγνώριση</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-learned.png" alt="lcb learned" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Σύστημα λέιζερ, μέθοδος <strong>Εκμάθηση Υ</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-corrected.png" alt="lcb corrected" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Σύστημα λέιζερ, μέθοδος <strong>Εισαγωγή ελαστικής επαναφοράς</strong></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Εδώ παρουσιάζονται τα εικονίδια που χρησιμοποιούνται για την προβολή προειδοποιήσεων και σφαλμάτων:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Εικονίδιο</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Σημασία</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-flange.png" alt="acb flange" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μήκος σκέλους πολύ μικρό. για δίσκο αισθητήρα</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-range.png" alt="acb range" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ο δίσκος αισθητήρα είναι πολύ κοντά στην ακμή του τεμαχίου</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-hole.png" alt="acb hole" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ο δίσκος αισθητήρα πέφτει μέσα σε οπή (κίνδυνος θραύσης)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-reference.png" alt="acb reference" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μη έγκυρο Κάμψη αναφοράς (δεν μπορεί να γίνει εκμάθηση από αυτήν την κάμψη)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-flange.png" alt="lcb flange" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μήκος ίχνους λέιζερ κάτω του ιδανικού (προειδοποίηση)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-single.png" alt="lcb single" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Μόνο ένα λέιζερ (εμπρός ή πίσω) χρησιμοποιείται για τη μέτρηση</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-flange-err.png" alt="lcb flange err" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Το μήκος ίχνους λέιζερ είναι πολύ μικρό ώστε να μετρηθεί (σφάλμα)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Αυτά τα εικονίδια, μαζί με άλλες πληροφορίες για τα συστήματα και τις μεθόδους ACB που χρησιμοποιούνται,
+προβάλλονται όλα στη γραμμή ACB στον πλοηγό:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/acb-3.png" alt="ACB-Navigator" width="333">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_σημειώσεις_σχετικές_με_τη_μέτρηση_γωνιών">Σημειώσεις σχετικές με τη μέτρηση γωνιών<a id="h000141"></a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_ονόματα_συστημάτων_λέιζερ">Ονόματα συστημάτων λέιζερ<a id="h000142"></a></h3>
+<div class="paragraph">
+<p>Το σύστημα μέτρησης γωνιών που βασίζεται σε λέιζερ είναι γνωστό με διαφορετικά ονόματα όπως <strong>ACB-Laser</strong> ή <strong>LCB</strong>.
+Όλα αυτά είναι προγραμματισμένα με τον ίδιο τρόπο στο TecZone Bend, αν και η υλοποίηση του υλισμικού και του μηχανήματος
+διαφέρει. Ως επί του πλείστον, η διεπαφή χρήστη TecZone Bend χρησιμοποιεί απλώς τη λέξη <strong>ACB</strong> ή</p>
+</div>
+<div class="paragraph">
+<p><strong>Λέιζερ ACB</strong>, οπότε και εμείς θα χρησιμοποιήσουμε αυτόν τον όρο στην παρούσα συζήτηση.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_συμπεριφορά_auto_tooler">Συμπεριφορά Auto-tooler<a id="h000143"></a></h3>
+<div class="paragraph">
+<p>Η λειτουργία auto-tooler TecZone Bend αντιστοιχίζει <em>μεθόδους</em> ACB με κάθε κάμψη με το βέλτιστο δυνατό τρόπο.
+Αρχικά, ξεκινά με τη χρήση της μεθόδου <strong>Αναγνώριση</strong> για την πρώτη κάμψη και στη συνέχεια επιχειρεί
+να χρησιμοποιήσει τη μέθοδο <strong>Εκμάθηση Υ</strong> για διαδοχικές κάμψεις, όπου αυτό είναι δυνατό. Εάν υπάρχει ήδη
+μια κάμψη με την ίδια γωνία, ακτίνα, σύνολο εργαλείων και με παρόμοιο _ προσανατολισμό κόκκων_, το TecZone Bend
+θα χρησιμοποιήσει τη μέθοδο <strong>Εκμάθηση Υ</strong> αντί να προβεί σε άλλη αναγνώριση.</p>
+</div>
+<div class="paragraph">
+<p>Ορισμένες κάμψεις ενδέχεται να παραλειφθούν αυτόματα επειδή:</p>
+</div>
+<div id="h000144" class="ulist">
+<ul>
+<li>
+<p>η γωνία κάμψης δεν βρίσκεται εντός του εύρους μέτρησης του αισθητήρα (πολύ οξεία/πολύ αμβλεία).</p>
+</li>
+<li>
+<p>δεν πρόκειται για ελεύθερη κάμψη (για παράδειγμα, κάμψη σε υπόστρωμα, κάμψη Z, δίπλωση κλεισίματος ή δίπλωση)</p>
+</li>
+<li>
+<p>Αυτή είναι μια προκαταρκτική κάμψη για μια άλλη κάμψη (δεν χρειάζεται μια ακριβή γωνία)</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/acb-4.png" alt="Skipped" width="523">
+</div>
+</div>
+<div class="paragraph">
+<p>Η παραπάνω εικόνα παρουσιάζει ένα τεμάχιο όπου ορισμένες κάμψεις δεν έχουν μέθοδο ACB - αυτές σηματοδοτούνται με τα
+εικονίδια κοίλου κύκλου στη γραμμή ACB και η συμβουλή εργαλείου για κάθε κελί επισημαίνει ένα <em>λόγο</em> για τον οποίο δεν
+πραγματοποιείται μέτρηση ACB.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_λήψη_έγκυρης_μέτρησης">Λήψη έγκυρης μέτρησης<a id="h000147"></a></h3>
+<div class="paragraph">
+<p>Όταν εκτελείται μια μέτρηση ACB, το TecZone Bend θα αποφασίσει αν απαιτούνται μία, δύο ή τρεις
+μετρήσεις με βάση το μήκος της γραμμής κάμψης. Οι πραγματικές θέσεις μέτρησης
+υπολογίζονται αυτόματα, αλλά μπορούν επίσης να τροποποιηθούν χρησιμοποιώντας τον <strong>πίνακα ACB</strong> (συζητείται παρακάτω). Συνήθως, το TecZone Bend θα μετακινήσει και τους δύο αισθητήρες ACB _μαζί_και θα χρησιμοποιήσει
+τόσο του εμπρός όσο και τους πίσω αισθητήρες για ένα Μέτρηση ACB Laser, αλλά αυτό μπορεί επίσης να υποβληθεί σε επεξεργασία.</p>
+</div>
+<div class="paragraph">
+<p>Το TecZone Bend μπορεί να αξιολογήσει το <em>μήκος ίχνους λέιζερ</em> για ένα Μέτρηση ACB Laser. Αυτό είναι το μήκος
+της προβαλλόμενης γραμμής λέιζερ που είναι ορατή στην κάμερα. Τμήματα της γραμμής μπορεί να
+παρεμποδίζονται από τη μήτρα ή από τους αναστολείς. Ορισμένα τεμάχια μπορεί να περάσουν επάνω από οπές στη μεταλλική πλάκα
+ή σε σχηματοποιήσεις. Η αξιολόγηση λαμβάνει όλα αυτά υπόψη και μπορεί να υπολογίσει το πραγματικό
+μήκος γραμμής που είναι διαθέσιμο στο οπτικό σύστημα. Το TecZone Bend συγκρίνει αυτό το διαθέσιμο με ένα καθοριζόμενο από του μηχάνημα <em>ελάχιστο</em> και <em>ιδανικό</em> μήκος και μεταδίδει ένα σχετικό σφάλμα
+ή προειδοποίηση (όπως παρουσιάζεται στην παραπάνω ενότητα TecZone Bend Σύμβολα).</p>
+</div>
+<div class="paragraph">
+<p>Το TecZone Bend διαθέτει κάποια νοημοσύνη για να μετακινήσει τη θέση μέτρησης προς τα αριστερά ή προς τα δεξιά για
+να αποφύγει οπές, σχηματοποιήσεις ή άλλους παράγοντες που μπορούν να περιορίσουν το μήκος του ίχνους. Επιπλέον,
+το TecZone Bend προσθέτει αυτόματα μια ανάσυρση των αναστολέων εάν αυτοί παρεμποδίζουν
+μια μέτρηση με λέιζερ. Επιπλέον, η αξιολόγηση του μήκους ίχνους λέιζερ διεξάγεται συνεχώς.
+Συνεπώς εάν μετακινήσετε τις θέσεις του αισθητήρα ACB ή ρυθμίσετε τους αναστολείς, μπορείτε να προβάλλετε άμεσα τα αποτελέσματα
+στον πλοηγό.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Όπως συμβαίνει με όλες τις ρυθμίσεις, χρησιμοποιήστε το <strong>Ρυθμίσεις εφαρμογής</strong> για να το διαμορφώσετε συνολικά (για όλα τα μηχανήματα), χρησιμοποιήστε τις <strong>Ρυθμίσεις μηχανήματος</strong> για να ορίσετε τις προεπιλογές για ένα συγκεκριμένο μηχάνημα και χρησιμοποιήστε το <strong>Ρυθμίσεις κομματιού</strong> για να αλλάξετε τις προεπιλογές για αυτό το συγκεκριμένο τεμάχιο .
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Η ενεργοποίηση ενός συστήματος μέτρησης γωνιών εδώ ισχύει μόνον όταν το μηχάνημα διαθέτει αυτόν το συγκεκριμένο τύπο συστήματος μέτρησης γωνιών εγκατεστημένο ως επιλογή. Με άλλα λόγια, μπορείτε πραγματικά να τη χρησιμοποιήσετε μόνο για την <em>καταστολή</em> ενός συγκεκριμένου συστήματος ώστε αυτό να μην χρησιμοποιείται.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_συστήματα_δίσκων_και_λέιζερ">Συστήματα δίσκων και λέιζερ</a>
+  </li>
+  <li level="1">
+   <a href="#_μέθοδοι_acb">Μέθοδοι ACB</a>
+  </li>
+  <li level="2">
+   <a href="#_αναγνώριση">Αναγνώριση</a>
+  </li>
+  <li level="2">
+   <a href="#_εκμάθηση_y">Εκμάθηση Y</a>
+  </li>
+  <li level="2">
+   <a href="#_επίκτητη_ελαστική_επαναφορά">Επίκτητη ελαστική επαναφορά</a>
+  </li>
+  <li level="2">
+   <a href="#_εισαγωγή_ελαστικής_επαναφοράς">Εισαγωγή ελαστικής επαναφοράς</a>
+  </li>
+  <li level="1">
+   <a href="#_σύμβολα_για_acb">Σύμβολα για ACB</a>
+  </li>
+  <li level="1">
+   <a href="#_σημειώσεις_σχετικές_με_τη_μέτρηση_γωνιών">Σημειώσεις σχετικές με τη μέτρηση γωνιών</a>
+  </li>
+  <li level="2">
+   <a href="#_ονόματα_συστημάτων_λέιζερ">Ονόματα συστημάτων λέιζερ</a>
+  </li>
+  <li level="2">
+   <a href="#_συμπεριφορά_auto_tooler">Συμπεριφορά Auto-tooler</a>
+  </li>
+  <li level="2">
+   <a href="#_λήψη_έγκυρης_μέτρησης">Λήψη έγκυρης μέτρησης</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="index.html">Για προχωρημένους</a></span>
+ <span class="next"><a href="batchprocess.html">Διαδικασία παρτίδας</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

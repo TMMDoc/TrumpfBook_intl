@@ -1,0 +1,594 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Limpieza 2D</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Bienvenido a TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Introducción</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">Instalación del software</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">La interfaz de usuario</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Flujo de trabajo de piezas</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">CAD</a>
+   <ul>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Importación 2D</a>
+     <ul>
+      <li><button class="tree blank"></button><a class="active" href="2dcleanup.html">Limpieza 2D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../3dimport/index.html">Importación 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../3dimport/prep3dmodel.html">Importar modelo 3D</a></li>
+      <li><button class="tree blank"></button><a href="../3dimport/prepassembly.html">Importar grupo de módulos</a></li>
+      <li><button class="tree blank"></button><a href="../3dimport/formdetect.html">Detección de forma</a></li>
+      <li><button class="tree blank"></button><a href="../3dimport/componentdetect.html">Detección de componentes</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../sketch.html">Modificación de la geometría</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">Láser CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Flujo de trabajo de piezas</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Paneles de edición</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Corte por láser</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Aproximación</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Retroceso</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Avanzado</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Contorno</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Corte de desperdicios</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Pieza</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Tratamiento de esquinas</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Nesting rápido</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">Flujo de trabajo de tarea</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Panel de tareas</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Pestaña Chapas</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Pestaña Piezas</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Pestaña Diseños</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Pestaña Resumen</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Editar layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Modos de nesting</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Panel de colocación</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Secuenciación</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Chapa de corte</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Corte biselado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Contornos abiertos</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Chaflán variable</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Varios</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Avanzado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Reglas de acabado</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">Editar TTL</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Estrategia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Microjoints</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">Ajustes adicionales</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bend/index.html">CAM de plegado</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">Crear datos de plegado</a></li>
+    <li><button class="tree blank"></button><a href="../../bend/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bend/editing/index.html">Editar datos de plegado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bend/editing/editbend.html">Editar un plegado</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editmount.html">Editar un soporte de útil</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editsetup.html">Editar una configuración de plegado</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editgauge.html">Editar los dedos de tope</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editacb.html">Editar medición de ángulo</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/bendsheet.html">Hoja de cálculo de plegados</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/sequencing.html">Cambio de la secuencia</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/addsetup.html">Adición de configuraciones y estaciones</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bend/advanced/index.html">Avanzado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bend/advanced/anglemeasurement.html">Medición de ángulo</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/batchprocess.html">Proceso por lotes</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/recompute.html">Recalcular solución</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Comprobación de tonelaje</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">Recogida de piezas</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">Recogida desde bandeja</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">Recogida del dispensador</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">Plegado robótico</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">Inserción</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">Plegado</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Extracción</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Agarre posterior</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Panel de agarre posterior</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Añadir agarre posterior</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Editar agarre posterior</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Agarre posterior con mordaza</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Panel de la estación de giro de agarre</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Depósito de pieza</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Patrones de depósito</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Repetir y secuenciar</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Chapa separadora</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Avanzado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Configuración de celda</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Base de datos de pinzas</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Informes</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">CAM de doblado</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Crear datos de plegado</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">La vista de plegado</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Edición de datos de plegado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Editar un plegado</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Editar un lado/sección</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">Cambiar la secuencia</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">Editar los pisadores</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">Editar los topes</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">Editar las cuchillas</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">Editar la carga</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">Editar la descarga</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Inventario de útiles</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Avanzado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Tablas personalizadas de espacio de aire</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">Finalización del plegado manual</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Longitud del ala requerida</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Ajustes</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Dibujo</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Niveles</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Medidas</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Vista</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">CAM de plegado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Valores predeterminados de máquina</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Salidas de plegado</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Vista de plegado</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Célula de plegado</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">CAM de corte</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Ajustes de nesting</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Chapa</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Manipulación de chapa</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Cortes de rejilla</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Soporte de trabajo</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">Láser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Secuencia</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Salidas de corte</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Vista de corte</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Plegado basculante</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Valores predeterminados</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">Piezas de soporte ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Salidas</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Informes</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Asignaciones previas de artículos</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Importar/Exportar</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Entorno</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Base de datos</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Materiales</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Máquinas</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Útiles de plegado</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Pinzas para doblar</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Moldes/Componentes</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Informes</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Campos, imágenes y tablas</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Bandas (subinformes)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Etiquetas, mapas de bits y formas</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Apéndice</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Formatos 3D admitidos</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">DXF de chapa de separador</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Útil de plegado DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Aviso legal</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">CAD</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Importación 2D</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="2dcleanup.html">Limpieza 2D</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Limpieza 2D</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>A continuación se ofrece una breve guía sobre cómo limpiar un dibujo DXF importado y convertirlo en un dibujo de <em>chapa</em> que pueda procesarse posteriormente. Supongamos que empieza con un archivo DXF con este aspecto:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cleanup1.png" alt="Raw DXF" width="593">
+</div>
+</div>
+<div class="paragraph">
+<p>Este DXF tiene algunos problemas que deben solucionarse:</p>
+</div>
+<div id="h000248" class="ulist">
+<ul>
+<li>
+<p>Hay un borde y un bloque de título.</p>
+</li>
+<li>
+<p>El material y el grosor no están especificados (se puede ver que después de la importación la pestaña en la parte inferior de la ventana TecZone muestra <strong>Off, 0</strong> para el material y espesor).</p>
+</li>
+<li>
+<p>Algunos de los contornos no están <em>cerrados</em>: hay pequeñas superposiciones o huecos cerca de algunas de las esquinas.</p>
+</li>
+<li>
+<p>No hay información de la línea de plegado (las líneas de plegado se dibujan como líneas normales, pero no contienen información sobre su ángulo, dirección o radio).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1_eliminar_entidades_espurias">1: Eliminar entidades espurias<a id="h000252"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dibuje un rectángulo de banda elástica alrededor del dibujo de la pieza real en el medio (haga clic en una esquina, arrastre hasta la esquina opuesta y suelte el botón del ratón). Todas
+las entidades que queremos conservar están seleccionadas:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cleanup2.png" alt="Select Unwanted" width="578">
+</div>
+</div>
+<div class="paragraph">
+<p>Haga clic en el botón <strong>Alternar</strong> para seleccionar <em>todo lo demás</em> y luego pulse el botón <strong>Borrar</strong> en ese panel para eliminar todas las entidades no deseadas como el marco, el cuadro de rotulación, etc.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2_limpiar_contornos_abiertos">2: Limpiar contornos abiertos<a id="h000253"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para visualizar más fácilmente los extremos abiertos de los contornos que no están exactamente cerrados, abra la <a href="../../settings/drawing/view.html">configuración de la vista de dibujo</a><sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> y active el ajuste <strong>Marcar líneas de contorno abiertas</strong> allí.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cleanup3.png" alt="Mark Open" width="533">
+</div>
+</div>
+<div class="paragraph">
+<p>Se dibujan marcadores amarillos en los extremos de todas las polilíneas abiertas, lo que facilita el zoom y su limpieza. Para hacer la limpieza, cambie al modo de croquis haciendo clic en el botón <strong>Subsanar</strong> de la barra de herramientas izquierda (o usando la tecla <kbd>S</kbd>).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cleanup4.png" alt="Trim Command" width="448">
+</div>
+</div>
+<div class="paragraph">
+<p>Seleccione la orden <strong>Adaptar elemento</strong> y recorte cualquier segmento sobrante que impida que los contornos se cierren, tal y como se muestra en la imagen anterior. También puede utilizar la orden <strong>Extender</strong> para extender algunas esquinas que no se encuentran, o incluso usar la orden <strong>Línea</strong> para dibujar líneas pequeñas para cerrar cualquier brecha.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cleanup5.png" alt="Cleaned Drawing" width="589">
+</div>
+</div>
+<div class="paragraph">
+<p>Una vez que haya terminado, el dibujo debe parecerse a la imagen de arriba: todas las áreas que son chapa real están sombreadas en gris claro.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_configurar_el_material">3: Configurar el material<a id="h000254"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Haga clic en el nombre del material de la pieza (puede verlo en la pestaña del documento en la parte inferior) y escriba el nombre del material o selecciónelo de la lista de materiales.A continuación, haga clic en el grosor (que inicialmente está establecido en 0 mm) y configure el grosor de la pieza.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cleanup6.png" alt="Setup Material" width="408">
+</div>
+</div>
+<div class="paragraph">
+<p>Recuerde realizar este paso de configuración del material y el grosor <em>antes</em> de definir cualquier línea de plegado. Tanto el material como el grosor son importantes para que TecZone establezca las tolerancias de plegado correctly<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_4_añadir_información_de_plegado">4: Añadir información de plegado<a id="h000255"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>En este dibujo, las líneas de plegado se dibujan como entidades DE LÍNEA simples y no contienen información de plegado. Puede añadir información de plegado a estas líneas haciendo clic en la línea para abrir primero el panel de inspectores de líneas:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cleanup7.png" alt="To Bendline" width="711">
+</div>
+</div>
+<div class="paragraph">
+<p>Al hacer clic en el botón <strong>Crear línea de plegado</strong>, la línea se convierte en una línea de plegado. Puede configurar el ángulo y el radio, y cambiar la dirección (arriba / abajo) de la línea de plegado haciendo clic en el botón <strong>Invertir</strong>. Repita este proceso con todas las líneas de plegado
+hasta que tenga un dibujo completamente anotado como se muestra a continuación:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cleanup8.png" alt="With Bend Lines" width="564">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_5_plegar_a_3d">5: Plegar a 3D<a id="h000256"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ahora, puede pulsar la tecla <kbd>3</kbd> para <em>plegarlo</em> en un modelo 3D utilizando el grosor del material y las líneas de plegado que ha definido:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cleanup9.png" alt="Folded Model" width="477">
+</div>
+</div>
+<div class="paragraph">
+<p>Si no le parece bien, puede pulsar la tecla <kbd>2</kbd> para volver al dibujo, ajustar las líneas de plegado y volver a intentarlo.</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Haga clic en en el icono <strong>Ajustes</strong> de la izquierda, seleccione <strong>Ajustes de las piezas</strong> y luego navegue a <strong>Dibujo / Vista</strong>.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. TecZone, lo que configura un radio predeterminado para cada plegado igual al grosor. Luego, en función del material, establece un <em>factor K</em> apropiado para cada plegado, a partir del cual se calcula la reducción de plegado plegado o el margen de plegado.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_1_eliminar_entidades_espurias">1: Eliminar entidades espurias</a>
+  </li>
+  <li level="1">
+   <a href="#_2_limpiar_contornos_abiertos">2: Limpiar contornos abiertos</a>
+  </li>
+  <li level="1">
+   <a href="#_3_configurar_el_material">3: Configurar el material</a>
+  </li>
+  <li level="1">
+   <a href="#_4_añadir_información_de_plegado">4: Añadir información de plegado</a>
+  </li>
+  <li level="1">
+   <a href="#_5_plegar_a_3d">5: Plegar a 3D</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="index.html">Importación 2D</a></span>
+ <span class="next"><a href="../3dimport/index.html">Importación 3D</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>
