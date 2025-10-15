@@ -1,0 +1,728 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Ricalcolo della soluzione</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Benvenuti in TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Introduzione</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">Installazione del software</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">L'interfaccia utente</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Workflow pezzo</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">Importazione 2D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">Pulizia 2D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">Importazione 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">Importazione modello 3D</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Importazione gruppo costruttivo</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Riconoscimento delle forme</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Riconoscimento dei componenti</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">Modifica della geometria</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">CAM laser</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Workflow pezzo</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Pannelli di modifica</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Taglio laser</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Accostamento</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Ritorno</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Microgiunzione</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Avanzato</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Contorno</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Taglio degli sfridi</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Pezzo</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Trattamento degli spigoli</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Quick Nest</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">Workflow job</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Pannello Job</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Scheda Lamiere</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Scheda Pezzi</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Scheda Layout</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Scheda Sintesi</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Modifica layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Modalità di nesting</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Pannello Posizionamento</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Sequenziamento</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Porzione di lamiera</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Taglio dello smusso</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Contorni aperti</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Smusso variabile</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Varie</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Avanzato</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Regole di lavoro di finitura</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">Modifica della tabella tecnologica laser per il taglio</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Strategia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Microgiunzioni</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">Ulteriori impostazioni</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">CAM piega</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../createbenddata.html">Creazione di parametri di piegatura</a></li>
+    <li><button class="tree blank"></button><a href="../navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../editing/index.html">Modifica dei parametri di piegatura</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../editing/editbend.html">Modifica di una piega</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editmount.html">Modifica di un supporto dell'utensile</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editsetup.html">Modifica di una configurazione della piega</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editgauge.html">Modifica dei perni di battuta</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editacb.html">Modifica della misurazione degli angoli</a></li>
+      <li><button class="tree blank"></button><a href="../editing/bendsheet.html">Foglio di calcolo Pieghe</a></li>
+      <li><button class="tree blank"></button><a href="../editing/sequencing.html">Modifica della sequenza</a></li>
+      <li><button class="tree blank"></button><a href="../editing/addsetup.html">Aggiunta di configurazioni e stazioni</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Avanzato</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="anglemeasurement.html">Misurazione degli angoli</a></li>
+      <li><button class="tree blank"></button><a href="batchprocess.html">Lavorazione di lotti</a></li>
+      <li><button class="tree blank"></button><a class="active" href="recompute.html">Ricalcolo della soluzione</a></li>
+      <li><button class="tree blank"></button><a href="tonnage.html">Controllo del tonnellaggio</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">CAM BendMaster</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">Prelievo dei pezzi</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">Prelievo da paletta</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">Prelievo dal distributore</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">Piegatura robotizzata</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">Inserimento</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">Piegatura</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Estrazione</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Seconda presa</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Pannello Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Aggiunta di una seconda presa</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Modifica seconda presa</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Seconda presa con ganascia</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Pannello Stazione per seconda presa</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Deposito pezzi</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Modelli di deposito</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Ripetizione e sequenza</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Lamiera di separazione</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Avanzato</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Punto percorso</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Configurazione delle celle</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Banca dati gripper</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Report</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">CAM risvolto</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Creazione di dati risvolto</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">La vista Risvolto</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Modifica dei dati risvolto</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Modifica di una piega</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Modifica di un lato/sezione</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">Modifica della sequenza</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">Modifica dei premilamiera superiori</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">Modifica della calibrazione</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">Modifica delle lame</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">Modifica del caricamento</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">Modifica dello scaricamento</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Giacenza utensili</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Avanzato</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Tabelle traferro personalizzate</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">Completamento piega manuale</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Lunghezza lato richiesta</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Impostazioni</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Disegno</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Layer</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Dimensioni</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Vista</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">CAM piega</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Impostazioni predefinite macchina</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Uscite di piega</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Vista piega</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Cella di piegatura</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">CAM taglio</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Impostazioni di nesting</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Lamiera</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Movimentazione lamiera</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Tagli del grigliato residuo</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Supporto di lavoro</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">CAM laser</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Sequenza</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Output di taglio</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Vista taglio</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Piegatura a rotazione</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Impostazioni predefinite</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">Trasportatori utensile di piegatura ausiliario</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Output</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Report</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Valori predefiniti elementi</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Importazione/esportazione</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Ambiente</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Banca dati</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Materiali</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Macchine</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Utensili di piegatura</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Gripper di piegatura</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme/componenti</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Report</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Campi, immagini e tabelle</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Bande (sottoreport)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Etichette, bitmap e forme</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Appendice</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Formati 3D supportati</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">DXF lamiera di separazione</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">DXF utensile di piegatura</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">CAM piega</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Avanzato</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="recompute.html">Ricalcolo della soluzione</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Ricalcolo della soluzione</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Quando si preme <kbd>B</kbd> o si utilizza il pannello del workflow per calcolare una soluzione,
+TecZone Bend calcola una soluzione di piegatura utilizzando una serie di impostazioni e parametri predefiniti.
+È possibile eseguire un ricalcolo di questa soluzione utilizzando impostazioni diverse facendo clic sul
+menu <strong>Ricalcola</strong>
+<span class="image"><img src="img/gear.png" alt="Recompute" width="20"></span> dalla barra dei comandi. A volte,
+questo è utile anche per completare il calcolo dopo aver modificato in maniera interattiva
+alcuni attrezzaggi oppure la sequenza.<br>
+Per esempio:</p>
+</div>
+<div id="h000155" class="ulist">
+<ul>
+<li>
+<p>È possibile modificare la sequenza e chiedere a TecZone Bend di calcolare nuove stazioni di attrezzaggio
+mantenendo inalterata la sequenza.</p>
+</li>
+<li>
+<p>È possibile cambiare le stazioni di attrezzaggio e chiedere a TecZone Bend di calcolare una nuova sequenza
+o di allineare il pezzo alle stazioni appena create.</p>
+</li>
+<li>
+<p>È possibile provare l&#8217;operazione di attrezzaggio con un diverso set di utensili o provare
+utilizzando una configurazione già creata.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_la_finestra_di_dialogo_ricalcola">La finestra di dialogo Ricalcola<a id="h000158"></a></h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/recompute.png" alt="Recompute" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>La finestra di dialogo <strong>Ricalcola</strong> appare come mostrato a fianco.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_override">Override<a id="h000159"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Questa sezione contiene alcuni interruttori che è possibile utilizzare per ignorare il comportamento predefinito di
+TecZone Bend.</p>
+</div>
+<div id="h000160" class="ulist">
+<ul>
+<li>
+<p>Attivare l&#8217;interruttore <strong>Non modificare la sequenza</strong> per forzare TecZone Bend a calcolare una nuova
+soluzione senza modificare la sequenza. Diverse stazioni di attrezzaggio, posizioni di calibrazione
+o direzioni di inserimento del pezzo verranno provate da TecZone Bend, mantenendo inalterata la sequenza.</p>
+</li>
+<li>
+<p>Se l' interruttore <strong>Senza misurazione degli angoli.</strong> è attivato, TecZone Bend calcola una soluzione
+che non esegue misurazioni degli angoli e non utilizzerà sensori di calibrazione (utensili ACB)</p>
+</li>
+<li>
+<p><strong>Ignora gli utensili dai file GEO/DXF</strong> indicano a TecZone Bend di ignorare i suggerimenti degli utensili
+che si trovano spesso nei file GEO e talvolta nel file DXF.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configurazioni">Configurazioni<a id="h000162"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Questa sezione consente di impostare la strategia per le configurazioni dell&#8217;attrezzaggio; per impostazione predefinita, TecZone Bend calcolerà la configurazione
+da zero, ma è possibile utilizzare queste impostazioni per modificare questo comportamento.</p>
+</div>
+<div id="h000163" class="ulist">
+<ul>
+<li>
+<p><strong>Calcola nuova configurazione</strong> è il comportamento predefinito: TecZone Bend calcolerà una configurazione utilizzando
+tutti gli utensili a cui è consentito (vedere la sezione Utensili di seguito).</p>
+</li>
+<li>
+<p><strong>Mantieni la configurazione esistente</strong> indica a TecZone Bend che non è bisogna apportare modifiche alla configurazione; prova
+a lavorare tutte le pieghe utilizzando l&#8217;attuale configurazione per il pezzo. Se alcune pieghe sono soggette a collisioni
+o hanno una lunghezza utensile insufficiente per la lavorazione, gli errori continuano a non corretti e possono essere
+visualizzati dopo il processo di ricalcolo.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/setup-from-file.png" alt="Setup from file" width="245">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Selezionando <strong>Usa Setup da file</strong>, viene richiesto di scegliere un file di configurazione della piega (bsetup).
+La <strong>configurazione</strong> caricata da questo file viene quindi utilizzata per il calcolo; tale configurazione non viene modificata né
+vengono create stazioni aggiuntive. Le configurazioni caricate di recente dal file vengono visualizzate
+nel selettore che appare al di sotto di questa sezione; è quindi possibile fare clic sul pulsante <strong>+</strong>
+vicino al selettore per scegliere un file di configurazione diverso.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/setup-other-part.png" alt="Setup other part" width="245">
+</div>
+</div>
+<div id="h000165" class="ulist">
+<ul>
+<li>
+<p>L&#8217;opzione <strong>Usa configurazione da un altro pezzo</strong> è disponibile solo se ci sono altri
+pezzi attualmente aperti e se questi ultimi sono stati attrezzati per la stessa pressa piegatrice. In questo caso,
+è possibile chiedere a TecZone Bend di utilizzare la stessa configurazione di uno di questi altri pezzi; viene visualizzato un selettore
+che consente di scegliere il pezzo desiderato.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_utensili">Utensili<a id="h000166"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Scegliendo l&#8217;opzione <strong>Calcola nuova configurazione</strong> nella sezione precedente, è possibile utilizzare la sezione <strong>Utensili</strong>
+per scegliere l&#8217;elenco degli utensili di piegatura che possono essere utilizzati per calcolare la nuova configurazione. Scegliendo
+una delle altre opzioni per la configurazione, questa sezione non è disponibile.</p>
+</div>
+<div id="h000167" class="ulist">
+<ul>
+<li>
+<p>L&#8217;opzione predefinita è <strong>Utensili preferiti per la macchina</strong>. Per ogni pressa piegatrice è possibile scegliere
+  una serie di pulsanti tools<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> Come <em>Utensili preferiti</em>,
+  TecZone Bend utilizzerà tali utensili durante l&#8217;attrezzaggio del pezzo.<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup> (Se non sono stati effettivamente impostati gli utensili preferiti per una macchina,
+  TecZone Bend utilizza tutti gli utensili nelle giacenze come impostazione degli utensili preferiti per la macchina).</p>
+</li>
+<li>
+<p>Scegliendo <strong>Utensili nelle giacenze</strong>, TecZone Bend utilizzerà tutti gli utensili disponibili
+nelle giacenze dell&#8217;installazione. Se non sono state effettivamente configurate giacenze di utensili,
+TecZone Bend utilizza tutti gli utensili del catalogo come inventario.</p>
+</li>
+<li>
+<p><strong>Tutti gli utensili nel catalogo</strong> è la più ampia selezione di utensili; TecZone Bend utilizzerà
+ogni utensile disponibile nel catalogo utensili del produttore per tentare una soluzione. Se da una parte
+questo potrebbe significare che la soluzione potrebbe non essere effettivamente fattibile per la produzione (utilizzando
+le giacenze disponibili), dall&#8217;altra è utile per un&#8217;esplorazione teorica di quali
+gli utensili sarebbero necessari per produrre un pezzo particolarmente complesso. (Inoltre, questa
+modalità dice anche a TecZone Bend di ipotizzare giacenze infinite di pezzi, cioè,
+l&#8217;attrezzaggio ottimale è prodotto supponendo di avere un numero infinito di pezzi di
+ogni lunghezza).</p>
+</li>
+</ul>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/tools-from-file.png" alt="Tools from File" width="240">
+</div>
+</div>
+<div id="h000170" class="ulist">
+<ul>
+<li>
+<p>È possibile creare set di utensili personalizzati e salvarli in file di elenco degli utensili (btools). Questi file
+possono quindi essere utilizzati per attrezzare il pezzo quando si seleziona l&#8217;opzione <strong>Usa set di utensili da file</strong>.
+Scegliendo questa opzione, viene richiesto un file di elenco degli utensili. I file di elenco di utensili
+utilizzati di recente vengono visualizzati per una selezione all&#8217;insegna della semplicità. È possibile fare clic sul segno <strong>+</strong> accanto a questo elenco
+per scegliere un nuovo elenco degli utensili.</p>
+</li>
+<li>
+<p>Per il controllo più diretto sui punzoni e sulle matrici, è possibile selezionare l&#8217;opzione <strong>Stabilisci utensile superiore e inferiore</strong>
+e poi scegliere l&#8217;esatto punzone e l&#8217;esatta matrice che si desidera utilizzare.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/tools-specific.png" alt="Specific tools" width="240">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_priorità_sequenza">Priorità sequenza<a id="h000171"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Quando si sequenziano le pieghe in un pezzo, ci sono alcuni requisiti potenzialmente in conflitto tra loro.
+Ad esempio, TecZone Bend cerca di ridurre al minimo il <em>numero di rotazioni dei pezzi</em> o
+cerca di ridurre al minimo le pieghe in cui il <em>baricentro dei pezzi si trova all&#8217;interno della macchina</em>? <br>
+È molto probabile che ogni operatore possa avere un diverso insieme di regole per la priorità, come è anche
+possibile che pezzi diversi richiedano impostazioni diversi a livello di priorità. TecZone Bend consente quindi
+di effettuare un ricalcolo con una diversa sequenza di priorità utilizzando la sezione</p>
+</div>
+<div id="h000172" class="paragraph">
+<p>*Priorità sequenza * di questa finestra di dialogo.</p>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/sequence-priority.png" alt="Sequence Priority" width="277">
+</div>
+</div>
+<div class="paragraph">
+<p>Utilizzare i pulsanti freccia <span class="image"><img src="img/circle-up.png" alt="up" width="16"></span> e <span class="image"><img src="img/circle-down.png" alt="down" width="16"></span>
+a destra per mescolare le regole; gli elementi in alto hanno una priorità più alta. È possibile
+disattivare completamente alcuni di questi elementi prioritari; questo dice a TecZone Bend di non prenderli in considerazione
+come fattori al momento di decidere la sequenza. (A volte, la disattivazione di alcuni
+può produrre una sequenza che utilizza poche stazioni utensile).</p>
+</div>
+<div id="h000173" class="ulist">
+<ul>
+<li>
+<p><strong>Evitare collisioni durante la piegatura di compensazione</strong>: per garantire la precisione di angolatura, la maggior parte delle pieghe ha bisogno
+di una leggera <em>piegatura di compensazione</em> per compensare il ritorno elastico. Questa regola di sequenza dice a
+TecZone Bend di eseguire le pieghe in una sequenza tale da rendere possibile la piegatura di compensazione. Ad esempio,
+nel pezzo sottostante, dovremmo prima eseguire la piega 1 e poi la piega 2; l&#8217;altro ordine
+bloccherebbe la piegatura di compensazione.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="img/overbending.png" alt="Overbending" width="242">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Evita utensili con bassa priorità</strong>: dice a TecZone Bend di evitare l&#8217;uso di utensili a bassa priorità,
+o di utensili che non sono nell&#8217;elenco dei preferiti, per quanto possibile.</p>
+</li>
+<li>
+<p><strong>Evita arresto contro angoli aperti</strong>: le posizioni di calibrazione dovrebbero idealmente essere sullo stesso
+piano dell&#8217;asse della piega e non ci dovrebbero essere piegatura già lavorate tra
+la linea di piegatura e il punto di calibrazione. Ecco un esempio di una calibrazione di scarsa qualità che
+questa regola cerca di evitare:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="img/open-gauging.png" alt="Open Gauging" width="248">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Lunghezza lato maggiore in prevalenza davanti a linea di piegatura</strong>: soprattutto con pezzi pesanti, è utile evitare
+situazioni in cui il baricentro dei pezzi si trova dietro la linea dell&#8217;utensile. Questa
+regola cerca di minimizzare tali situazioni.<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup></p>
+</li>
+<li>
+<p><strong>Riduci al minimo inversioni pezzo</strong>: i capovolgimenti dei pezzi sono quando il pezzo deve essere rovesciato (le pieghe
+successive sono in diverse direzioni su/giù).</p>
+</li>
+<li>
+<p><strong>Riduci al minimo rotazioni pezzo</strong>: una rotazione del pezzo è quando un pezzo viene ruotato a sinistra o a destra
+sul piano orizzontale; è considerata più facile per l&#8217;operatore rispetto al
+capovolgimento del pezzo; la sequenza predefinita di queste ultime due regole cerca di favorire le rotazioni dei pezzi
+rispetto ai capovolgimenti, ove possibile.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Per farlo, utilizzare le <strong>giacenze</strong> nella barra dei comandi e   scegli <strong>Utensili preferiti</strong> dal menu che si apre.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. TecZone Bend cercherà   di utilizzare solo gli utensili preferiti per il pezzo, ma se ci sono collisioni o   altri problemi che non possono essere risolti, inizierà a utilizzare altri utensili delle giacenze disponibili.
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. TecZone Bend usa una certa discrezione circa il peso del pezzo e quanto il baricentro si trova dietro la linea dell&#8217;utensile per considerarlo un problema. Dal punto di vista tecnico, prende in considerazione un pezzo da ribaltare all&#8217;indietro se c&#8217;è un momento di ribaltamento all&#8217;indietro di 0,15 Nm (newton metri).
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_la_finestra_di_dialogo_ricalcola">La finestra di dialogo Ricalcola</a>
+  </li>
+  <li level="1">
+   <a href="#_override">Override</a>
+  </li>
+  <li level="1">
+   <a href="#_configurazioni">Configurazioni</a>
+  </li>
+  <li level="1">
+   <a href="#_utensili">Utensili</a>
+  </li>
+  <li level="1">
+   <a href="#_priorità_sequenza">Priorità sequenza</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="batchprocess.html">Lavorazione di lotti</a></span>
+ <span class="next"><a href="tonnage.html">Controllo del tonnellaggio</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

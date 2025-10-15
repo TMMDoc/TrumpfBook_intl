@@ -1,0 +1,820 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>Workflow pezzo</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Benvenuti in TecZone</a></li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Introduzione</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="install.html">Installazione del software</a></li>
+    <li><button class="tree blank"></button><a href="clarity.html">L'interfaccia utente</a></li>
+    <li><button class="tree blank"></button><a class="active" href="workflow.html">Workflow pezzo</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">Importazione 2D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">Pulizia 2D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">Importazione 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">Importazione modello 3D</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">Importazione gruppo costruttivo</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">Riconoscimento delle forme</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">Riconoscimento dei componenti</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">Modifica della geometria</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">CAM laser</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Workflow pezzo</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Pannelli di modifica</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Taglio laser</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Accostamento</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Ritorno</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Microgiunzione</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Avanzato</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Contorno</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Taglio degli sfridi</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Pezzo</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Trattamento degli spigoli</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Quick Nest</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Workflow job</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Pannello Job</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Scheda Lamiere</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Scheda Pezzi</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Scheda Layout</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Scheda Sintesi</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Modifica layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Modalità di nesting</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Pannello Posizionamento</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Sequenziamento</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Porzione di lamiera</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Taglio dello smusso</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Contorni aperti</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Smusso variabile</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Varie</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Avanzato</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Regole di lavoro di finitura</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">Modifica della tabella tecnologica laser per il taglio</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Strategia</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Microgiunzioni</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Ulteriori impostazioni</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">CAM piega</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Creazione di parametri di piegatura</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Modifica dei parametri di piegatura</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Modifica di una piega</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Modifica di un supporto dell'utensile</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Modifica di una configurazione della piega</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Modifica dei perni di battuta</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Modifica della misurazione degli angoli</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Foglio di calcolo Pieghe</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Modifica della sequenza</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Aggiunta di configurazioni e stazioni</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Avanzato</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Misurazione degli angoli</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Lavorazione di lotti</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Ricalcolo della soluzione</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Controllo del tonnellaggio</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">CAM BendMaster</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Prelievo dei pezzi</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Prelievo da paletta</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Prelievo dal distributore</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Piegatura robotizzata</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Inserimento</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Piegatura</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Estrazione</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Seconda presa</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Pannello Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Aggiunta di una seconda presa</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Modifica seconda presa</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Seconda presa con ganascia</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Pannello Stazione per seconda presa</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Deposito pezzi</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Modelli di deposito</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Ripetizione e sequenza</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Lamiera di separazione</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Avanzato</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Punto percorso</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Configurazione delle celle</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">Banca dati gripper</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">Report</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">CAM risvolto</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Creazione di dati risvolto</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">La vista Risvolto</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Modifica dei dati risvolto</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Modifica di una piega</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Modifica di un lato/sezione</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">Modifica della sequenza</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">Modifica dei premilamiera superiori</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Modifica della calibrazione</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">Modifica delle lame</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Modifica del caricamento</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Modifica dello scaricamento</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Giacenza utensili</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Avanzato</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Tabelle traferro personalizzate</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Completamento piega manuale</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Lunghezza lato richiesta</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Impostazioni</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Disegno</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Layer</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Dimensioni</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Vista</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">CAM piega</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Impostazioni predefinite macchina</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Uscite di piega</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Vista piega</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Cella di piegatura</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">CAM taglio</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Impostazioni di nesting</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Lamiera</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Movimentazione lamiera</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Tagli del grigliato residuo</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Supporto di lavoro</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">CAM laser</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Sequenza</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Output di taglio</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Vista taglio</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Piegatura a rotazione</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Impostazioni predefinite</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">Trasportatori utensile di piegatura ausiliario</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Output</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Report</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Valori predefiniti elementi</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Importazione/esportazione</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Ambiente</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Banca dati</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Materiali</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Macchine</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Utensili di piegatura</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Gripper di piegatura</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Forme/componenti</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Report</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Campi, immagini e tabelle</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Bande (sottoreport)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Etichette, bitmap e forme</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">Appendice</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Formati 3D supportati</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">DXF lamiera di separazione</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">DXF utensile di piegatura</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Introduzione</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="workflow.html">Workflow pezzo</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Workflow pezzo</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dal momento che TecZone Bend ha molti moduli integrati, ci sono spesso <em>percorsi</em> multipli attraverso
+i quali si possono muovere i dati pezzi.</p>
+</div>
+<div id="h000514" class="paragraph">
+<p><strong>Esempio 1</strong>: quando si caricano dati di pezzi piatti (da un file GEO o DXF), è possibile
+scegliere di</p>
+</div>
+<div id="h000515" class="ulist">
+<ul>
+<li>
+<p>assegnare utensili laser al pezzo, in modo che possa essere posizionato su una lamiera e tagliato,
+insieme ad altri pezzi.</p>
+</li>
+<li>
+<p>risvoltare il pezzo lungo le linee di piegatura in un pezzo 3D, in modo che possa essere lavorato e
+che venga calcolata una sequenza di piegatura per una pressa piegatrice.</p>
+</li>
+</ul>
+</div>
+<div id="h000517" class="paragraph">
+<p><strong>Esempio 2</strong>: quando si importa un modello di superficie 3D (da un file IGES o STEP), è
+possibile scegliere di</p>
+</div>
+<div id="h000518" class="ulist">
+<ul>
+<li>
+<p>analizzare le superfici e posizionare gli utensili CAM laser a 5 assi lungo i fori che devono
+essere tagliati.</p>
+</li>
+<li>
+<p>effettuare il riconoscimento delle caratteristiche, convertire il modello di superficie in un modello di lamiera e
+svilupparlo in un modello piatto per la punzonatura con una pressa di punzonatura.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_il_pannello_workflow">Il pannello Workflow<a id="h000520"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/workflow1.png" alt="Workflow 1" width="248">
+</div>
+</div>
+<div class="paragraph">
+<p>Il pannello <strong>Workflow</strong> è come un hub centrale da cui è possibile dirigere tutti questi
+movimenti. Quando si ha un pezzo aperto, è sempre possibile visualizzare il pannello
+Workflow semplicemente premendo <kbd>W</kbd> o facendo clic sull&#8217;icona del workflow nella
+barra dei comandi a sinistra. Analizziamo il pannello Workflow: iniziamo
+importando un pezzo 2D con informazioni di piegatura (un file GEO, ad esempio).
+A questo punto, la visualizzazione del pannello Workflow è la seguente:</p>
+</div>
+<div id="h000521" class="ulist">
+<ul>
+<li>
+<p>Abbiamo iniziato con Bend_28.geo, importato e ripulito per creare un pezzo 2D
+in lamiera (vengono visualizzate le dimensioni del pezzo)</p>
+</li>
+<li>
+<p>C&#8217;è quindi una diramazione nel workflow.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Potremmo assegnare Laser Tech al pezzo (questo significa semplicemente assegnazione del percorso di taglio laser
+ai contorni del pezzo).</p>
+</li>
+<li>
+<p>Potremmo risvoltare il pezzo piatto in 3D (vengono rilevate 9 pieghe).</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_espansione_dei_nodi_del_workflow_fase_1">Espansione dei nodi del workflow: fase 1<a id="h000523"></a></h3>
+<div class="paragraph">
+<p>Fare clic sull&#8217;icona Laser Tech per assegnare gli utensili laser al pezzo. Si vedrà
+che il pezzo viene immediatamente analizzato; a esso vengono aggiunti utensili laser. Quindi
+fare clic sull&#8217;icona Risvolto a 3D per risvoltare il pezzo piatto in 3D. Dopo questi
+passaggi, ecco come appare il pannello Workflow:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow2.png" alt="Workflow 2" width="698">
+</div>
+</div>
+<div class="paragraph">
+<p>Come mostrano le annotazioni, ci sono diversi tipi di nodi nel diagramma del
+workflow.</p>
+</div>
+<div id="h000524" class="ulist">
+<ul>
+<li>
+<p>Ci sono nodi della vista pezzo che rappresentano i vari tipi di lavorazione che
+si potrebbero fare sul pezzo. Facendo clic su questi nodi, il pezzo passa alla
+<em>vista</em> in questione; l&#8217;insieme delle operazioni disponibili sul pezzo è
+rappresentativo di tale vista. Ad esempio, nella vista pezzo laser,
+si può vedere e modificare gli utensili laser assegnati al pezzo.</p>
+</li>
+<li>
+<p>È possibile passare da una visualizzazione all&#8217;altra facendo clic su queste icone. Tutte queste
+  viste pezzo diverse hanno anche tasti di scelta rapida, visibili se si punta
+  il mouse su una delle icone di visualizzazione. Imparare questi tasti di scelta rapida per
+  accedere alle varie opzioni del workflow. Quindi, dopo un po', si useranno sequenze
+  di tasti come <kbd>W</kbd>
+<kbd>B</kbd>
+<kbd>Esc</kbd> per aprire il
+  pannello Workflow, far passare il pezzo alla vista di piegatura e quindi chiudere il pannello
+Workflow.</p>
+</li>
+<li>
+<p>I dati dei pezzi vengono spinti tra questi nodi da vari processi; nel pannello Workflow questi
+processi sono rappresentati utilizzando le icone della stella
+a 13 punte. Ad esempio, si passa dalla vista pezzo 2D alla
+vista pezzo laser mediante il processo Laser Tech (che analizza il pezzo 2D e
+gli assegna gli utensili laser).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>I processi completati hanno un segno di spunta visualizzato al loro interno. I processi
+non ancora completati (ma disponibili) hanno una croce
+visualizzata all&#8217;interno. È possibile fare clic su questi nodi per completare il
+processo.</p>
+</div>
+<div class="paragraph">
+<p>Riassumiamo ciò che possiamo vedere in questa fase del workflow del nostro pezzo:</p>
+</div>
+<div id="h000527" class="ulist">
+<ul>
+<li>
+<p>Sono ora disponibili 3 viste pezzo (il pezzo 2D, il pezzo laser e il modello 3D;
+si può passare da uno all&#8217;altro).</p>
+</li>
+<li>
+<p>Sono disponibili altri quattro processi:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Potremmo eseguire la rifinitura del pezzo piatto (questo genera un report pezzo piatto che
+essere utile a un operatore di laser o pressa di punzonatura; in genere
+include i tempi di taglio laser, l&#8217;attrezzaggio utensili per le presse di punzonatura e
+altri requisiti a livello dei attrezzaggio speciale per il pezzo in questione).</p>
+</li>
+<li>
+<p>Potremmo fare un Quick Nest (un Quick Nest è un nesting che contiene un solo tipo
+di pezzo) e generare una lamiera intera affollata con questo pezzo. Questo
+potrebbe essere utilizzato per produrre una lamiera intera solo di questo pezzo o come
+aiuto per fare una veloce stima dei tempi e dei costi per il pezzo in questione.</p>
+</li>
+<li>
+<p>Potremmo assegnare Bend Tech (attrezzaggio per presse piegatrici) per il pezzo.</p>
+</li>
+<li>
+<p>Potremmo assegnare Weld Tech (attrezzaggio per robot di saldatura) per il pezzo.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_espansione_dei_nodi_del_workflow_fase_2">Espansione dei nodi del workflow: fase 2<a id="h000529"></a></h3>
+<div class="paragraph">
+<p>Proseguiamo. Fare clic su tutti i nodi di processo disponibili uno alla volta e
+vedere come il pannello Workflow si espande. Continuare finché non si hanno più
+nodi. Ecco cosa abbiamo dopo questi processi:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow3.png" alt="Workflow 3" width="542">
+</div>
+</div>
+<div class="paragraph">
+<p>In questo stato completamente espanso, il pannello Workflow consente di
+passare istantaneamente tra sei diverse viste pezzo in vari
+moduli di lavorazione. È inoltre possibile visualizzare e trasmettere o stampare tutti i
+vari output generati da questi moduli. (Gli output potrebbero essere report, programmi NC
+o studi temporali).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_accesso_alle_varie_opzioni_del_pannello_workflow">Accesso alle varie opzioni del pannello Workflow<a id="h000530"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Il pannello Workflow rappresenta molte informazioni e operazioni in un formato compatto
+e grafico. Per la maggior parte del tempo, questo fungerà da hub centrale mentre
+si sta lavorando con i pezzi. Esaminiamo un po' più da vicino alcune delle
+icone nel pannello Workflow per capire come possono essere utilizzate.</p>
+</div>
+<div class="sect2">
+<h3 id="_nodi_di_processo_disponibili">Nodi di processo disponibili<a id="h000531"></a></h3>
+<div class="paragraph">
+<p>Una stella a 13 punte con un + al suo interno rappresenta una fase di lavorazione che ora è
+disponibile. Ad esempio, potrebbe essere la piegatura di un pezzo piatto 2D in un pezzo 3D
+o l&#8217;assegnazione di utensili con tecnologia laser. Passare il mouse sopra
+un nodo per visualizzare un tooltip che spiega cosa farà il nodo stesso.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow4.png" alt="Workflow4" width="260">
+</div>
+</div>
+<div class="paragraph">
+<p>Questo segue un modello tipico per molti nodi di processo disponibili. Facendo clic sul
+nodo si eseguirà il processo con le impostazioni predefinite. Un <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> sul
+nodo visualizza prima una pagina delle impostazioni. Dopo aver rivisto/modificato le
+impostazioni, il processo viene eseguito. Ad esempio, ecco cosa viene visualizzato,
+con <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> sul nodo Quick Nest:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow5.png" alt="Workflow5" width="510">
+</div>
+</div>
+<div class="paragraph">
+<p>Vengono visualizzate le impostazioni Quick Nest in modo da poterle modificare prima di eseguire il
+nesting.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nodi_di_processo_completati">Nodi di processo completati<a id="h000532"></a></h3>
+<div class="paragraph">
+<p>Una volta completato un processo, si passa da un nodo di processo disponibile a
+uno completato; il simbolo diventa una stella con un segno di spunta
+al suo interno. A questo punto, le opzioni disponibili per il nodo in questione cambiano.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow6.png" alt="Workflow 6" width="428">
+</div>
+</div>
+<div class="paragraph">
+<p>Ecco un tipico insieme di opzioni disponibili su un nodo di processo completato. Facendo clic
+sul nodo vengono visualizzate di nuovo le impostazioni del processo, così è possibile modificarle e
+riprovare la lavorazione. Di solito è disponibile anche un&#8217;opzione <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> per
+cancellare i dati di processo. Se si sceglie questa opzione, viene fatta una richiesta
+prima della cancellazione. Ad esempio, ecco cosa succede quando
+<span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> sul nodo modello 3D, per un pezzo completamente lavorato:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow7.png" alt="Workflow7" width="641">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comandi_ausiliari">Comandi ausiliari<a id="h000533"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Molti nodi hanno piccole icone vicino, che forniscono comandi ausiliari. Questi
+offrono alcune funzionalità correlate al nodo in questione. Ecco
+alcuni esempi.</p>
+</div>
+<div id="h000534" class="ulist">
+<ul>
+<li>
+<p>In genere, le icone ausiliarie vicino a ciascun nodo tecnologia consentono di selezionare una
+  macchina e un attrezzaggio diverse per la macchina in questione.<br>
+<span class="image"><img src="img/workflow8.png" alt="Workflow 8" width="440"></span></p>
+</li>
+<li>
+<p>L&#8217;icona vicino al nodo Quick Nest consente un nesting con un formato lamiera diverso.</p>
+</li>
+</ul>
+</div>
+<div id="h000536" class="ulist">
+<ul>
+<li>
+<p>Le icone vicine ai nodi output consentono di visualizzare i vari output di una nodo
+  lavorazione (report, programmi NC o studi temporali).<br>
+<span class="image"><img src="img/workflow9.png" alt="Workflow 9" width="324"></span></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tracciamento_file_di_origine">Tracciamento file di origine<a id="h000537"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/srcfiletrack.png" alt="Source File Tracking" width="257">
+</div>
+</div>
+<div class="paragraph">
+<p>La maggior parte delle lavorazioni in TecZone Bend inizia importando dati CAD (2D o 3D). I pezzi
+TecZone Bend costruiti con questi dati CAD possono continuare a tracciare questi
+pezzi di origine. Quando un pezzo viene aperto, TecZone Bend può verificare se il file CAD originale
+da cui è stato creato è stato modificato nel frattempo. In caso
+affermativo, il pezzo è ora obsoleto; questo fatto può essere visto nel pannello
+Workflow.</p>
+</div>
+<div id="h000538" class="ulist">
+<ul>
+<li>
+<p>È possibile scegliere di aggiornare il pezzo facendo clic sull&#8217;icona ausiliaria di aggiornamento del pezzo
+vicino al nodo pezzo di origine. TecZone Bend reimporterà la geometria CAD
+e ricostruirà il pezzo.</p>
+</li>
+<li>
+<p>È anche possibile scegliere di interrompere il tracciamento della geometria CAD originale. Questo potrebbe essere
+  utile, ad esempio, se il file CAD originale esiste su un supporto
+  rimovibile o su un&#8217;unità remota che potrebbe non essere accessibile in futuro.
+  Per farlo, fare clic sull&#8217;icona ausiliaria break-link vicino al nodo pezzo
+  di origine. Verrà visualizzato un invito a interrompere il tracking del file
+  di origine:<br>
+<span class="image"><img src="img/srcfiletrack2.png" alt="Source File Disconnect" width="508"></span></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sintesi">Sintesi<a id="h000540"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ecco una breve sintesi dei principi nel pannello Workflow.</p>
+</div>
+<div id="h000541" class="ulist">
+<ul>
+<li>
+<p>Il pannello Workflow visualizza i nodi che rappresentano varie viste pezzo (come
+pezzo laser, pezzo piegato) e i nodi che rappresentano vari processi (come
+Risvolto a 3D, Assegna utensili laser).</p>
+</li>
+<li>
+<p>I nodi di processo disponibili (non ancora eseguiti) sono rappresentati come
+stelle a 13 punte con segno <span class="icon"><i class="fa fa-plus-circle"></i></span> al loro interno. I nodi di processo che sono
+già completati sono rappresentati da stelle con un segno <span class="icon"><i class="fa fa-check-circle"></i></span> al
+loro interno.</p>
+</li>
+<li>
+<p>Facendo clic su un nodo di processo disponibile si richiama quel processo con impostazioni
+predefinite. <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> su un nodo di processo disponibile fa apparire un editor
+per modificare prima le impostazioni del processo, quindi richiama il processo.</p>
+</li>
+<li>
+<p>Fare clic su un nodo di processo completato consente di modificare le impostazioni del processo e
+applicare nuovamente la lavorazione. <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> su un nodo di processo completato
+rimuove i dati di lavorazione.</p>
+</li>
+<li>
+<p>Le piccole icone ausiliarie vicino a un nodo di processo o a un nodo vista pezzo forniscono il controllo
+per modificare alcuni parametri importanti del nodo di processo in questione (come
+la macchina di destinazione o la dimensione della lamiera nesting).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_il_pannello_workflow">Il pannello Workflow</a>
+  </li>
+  <li level="2">
+   <a href="#_espansione_dei_nodi_del_workflow_fase_1">Espansione dei nodi del workflow: fase 1</a>
+  </li>
+  <li level="2">
+   <a href="#_espansione_dei_nodi_del_workflow_fase_2">Espansione dei nodi del workflow: fase 2</a>
+  </li>
+  <li level="1">
+   <a href="#_accesso_alle_varie_opzioni_del_pannello_workflow">Accesso alle varie opzioni del pannello Workflow</a>
+  </li>
+  <li level="2">
+   <a href="#_nodi_di_processo_disponibili">Nodi di processo disponibili</a>
+  </li>
+  <li level="2">
+   <a href="#_nodi_di_processo_completati">Nodi di processo completati</a>
+  </li>
+  <li level="1">
+   <a href="#_comandi_ausiliari">Comandi ausiliari</a>
+  </li>
+  <li level="1">
+   <a href="#_tracciamento_file_di_origine">Tracciamento file di origine</a>
+  </li>
+  <li level="1">
+   <a href="#_sintesi">Sintesi</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="clarity.html">L'interfaccia utente</a></span>
+ <span class="next"><a href="../cad/index.html">CAD</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

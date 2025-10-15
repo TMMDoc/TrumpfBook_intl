@@ -1,0 +1,819 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Modifica di un supporto dell'utensile</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Benvenuti in TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Introduzione</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">Installazione del software</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">L'interfaccia utente</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Workflow pezzo</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">Importazione 2D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">Pulizia 2D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">Importazione 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">Importazione modello 3D</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Importazione gruppo costruttivo</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Riconoscimento delle forme</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Riconoscimento dei componenti</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">Modifica della geometria</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">CAM laser</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Workflow pezzo</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Pannelli di modifica</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Taglio laser</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Accostamento</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Ritorno</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Microgiunzione</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Avanzato</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Contorno</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Taglio degli sfridi</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Pezzo</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Trattamento degli spigoli</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Quick Nest</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">Workflow job</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Pannello Job</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Scheda Lamiere</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Scheda Pezzi</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Scheda Layout</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Scheda Sintesi</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Modifica layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Modalità di nesting</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Pannello Posizionamento</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Sequenziamento</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Porzione di lamiera</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Taglio dello smusso</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Contorni aperti</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Smusso variabile</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Varie</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Avanzato</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Regole di lavoro di finitura</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">Modifica della tabella tecnologica laser per il taglio</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Strategia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Microgiunzioni</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">Ulteriori impostazioni</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">CAM piega</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../createbenddata.html">Creazione di parametri di piegatura</a></li>
+    <li><button class="tree blank"></button><a href="../navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Modifica dei parametri di piegatura</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="editbend.html">Modifica di una piega</a></li>
+      <li><button class="tree blank"></button><a class="active" href="editmount.html">Modifica di un supporto dell'utensile</a></li>
+      <li><button class="tree blank"></button><a href="editsetup.html">Modifica di una configurazione della piega</a></li>
+      <li><button class="tree blank"></button><a href="editgauge.html">Modifica dei perni di battuta</a></li>
+      <li><button class="tree blank"></button><a href="editacb.html">Modifica della misurazione degli angoli</a></li>
+      <li><button class="tree blank"></button><a href="bendsheet.html">Foglio di calcolo Pieghe</a></li>
+      <li><button class="tree blank"></button><a href="sequencing.html">Modifica della sequenza</a></li>
+      <li><button class="tree blank"></button><a href="addsetup.html">Aggiunta di configurazioni e stazioni</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../advanced/index.html">Avanzato</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../advanced/anglemeasurement.html">Misurazione degli angoli</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/batchprocess.html">Lavorazione di lotti</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/recompute.html">Ricalcolo della soluzione</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/tonnage.html">Controllo del tonnellaggio</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">CAM BendMaster</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">Prelievo dei pezzi</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">Prelievo da paletta</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">Prelievo dal distributore</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">Piegatura robotizzata</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">Inserimento</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">Piegatura</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Estrazione</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Seconda presa</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Pannello Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Aggiunta di una seconda presa</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Modifica seconda presa</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Seconda presa con ganascia</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Pannello Stazione per seconda presa</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Deposito pezzi</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Modelli di deposito</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Ripetizione e sequenza</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Lamiera di separazione</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Avanzato</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Punto percorso</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Configurazione delle celle</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Banca dati gripper</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Report</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">CAM risvolto</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Creazione di dati risvolto</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">La vista Risvolto</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Modifica dei dati risvolto</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Modifica di una piega</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Modifica di un lato/sezione</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">Modifica della sequenza</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">Modifica dei premilamiera superiori</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">Modifica della calibrazione</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">Modifica delle lame</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">Modifica del caricamento</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">Modifica dello scaricamento</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Giacenza utensili</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Avanzato</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Tabelle traferro personalizzate</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">Completamento piega manuale</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Lunghezza lato richiesta</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Impostazioni</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Disegno</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Layer</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Dimensioni</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Vista</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">CAM piega</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Impostazioni predefinite macchina</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Uscite di piega</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Vista piega</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Cella di piegatura</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">CAM taglio</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Impostazioni di nesting</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Lamiera</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Movimentazione lamiera</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Tagli del grigliato residuo</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Supporto di lavoro</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">CAM laser</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Sequenza</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Output di taglio</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Vista taglio</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Piegatura a rotazione</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Impostazioni predefinite</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">Trasportatori utensile di piegatura ausiliario</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Output</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Report</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Valori predefiniti elementi</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Importazione/esportazione</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Ambiente</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Banca dati</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Materiali</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Macchine</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Utensili di piegatura</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Gripper di piegatura</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme/componenti</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Report</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Campi, immagini e tabelle</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Bande (sottoreport)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Etichette, bitmap e forme</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Appendice</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Formati 3D supportati</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">DXF lamiera di separazione</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">DXF utensile di piegatura</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">CAM piega</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Modifica dei parametri di piegatura</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="editmount.html">Modifica di un supporto dell'utensile</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Modifica di un supporto dell'utensile</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Facendo clic su un supporto dell&#8217;utensile, viene visualizzato il pannello <strong>Supporto di piegatura</strong>, che può essere
+utilizzato per modificare varie impostazioni del supporto di piegatura e per eseguire diverse operazioni.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_il_pannello_supporto_di_piegatura">Il pannello Supporto di piegatura<a id="h000207"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/edit-mount.png" alt="Bend Mount" width="140">
+</div>
+</div>
+<div class="paragraph">
+<p>Il pannello Supporto di piegatura appare come mostrato a fianco. Le impostazioni e le operazioni esatte
+disponibili variano a seconda che si faccia clic su un supporto di punzone, matrice o
+adattatore. Inoltre, alcune impostazioni potrebbero essere disponibili o meno a seconda
+delle capacità della macchina.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fare clic sul pulsante <strong>Cambia tipo di utensile</strong> per sostituire l&#8217;utensile utilizzato per il
+supporto selezionato con un utensile diverso. (Vedere la sezione seguente per maggiori dettagli
+sul <em>selettore utensile</em> che serve per selezionare un utensile sostitutivo).</p>
+</li>
+<li>
+<p>L&#8217;input <strong>Lunghezza</strong> viene utilizzato per regolare la lunghezza della stazione. Quando
+ si digita un nuovo valore qui, TecZone Bend comporrà nuovamente la stazione utilizzando un
+ insieme appropriato di <em>segmenti</em> per cercare di avvicinarsi quanto più possibile alla lunghezza richiesta.
+È possibile eseguire un&#8217;ispezione visiva dei segmenti utilizzati osservando il
+ le linee limite dei segmenti visualizzate sul supporto di piegatura.</p>
+</li>
+<li>
+<p>L&#8217;input <strong>Posizione</strong> serve per impostare la posizione del <em>bordo sinistro</em>
+del supporto, lungo il tavolo o il pestone della macchina. La posizione può anche essere regolata
+<em>trascinando</em> il supporto a sinistra o a destra. (Vedere la sezione seguente sul trascinamento del supporto).</p>
+</li>
+<li>
+<p>Il selettore <strong>Utensile a corno</strong> (visualizzato solo per i supporti del punzone) può essere utilizzato per
+forzare TecZone Bend a utilizzare l&#8217;elemento a sinistra e/o destra ear<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> pezzi nella composizione).</p>
+</li>
+<li>
+<p><strong>Ruota utensile</strong> viene utilizzato per capovolgere l&#8217;utensile (dalla parte anteriore a quella posteriore). Viene
+  visualizzato quando si modifica un supporto che utilizza un utensile <em>asimmetrico</em> (come un
+  utensile a collo di cigno, per esempio). L&#8217;operazione di capovolgimento è abbastanza intelligente da capire
+  se è necessario capovolgere supporti e utensili aggiuntivi per mantenere la coerenza.
+  Ad esempio, nell&#8217;immagine sottostante, capovolgendo il punzone <strong>OW_Z4</strong> (utilizzato per la piegatura a Z)
+  si capovolge anche la matrice, il supporto e persino il pezzo per mantenere la coerenza del processo:<br>
+<span class="image"><img src="img/flip-tool.png" alt="Flip Tool" width="550"></span></p>
+</li>
+<li>
+<p><strong>Aggiungi adattatore</strong> viene utilizzato per aggiungere un <em>estensore</em> per aumentare l&#8217;altezza
+  del punzone o della matrice. Quando si aggiunge un adattatore, quest&#8217;ultimo viene selezionato e
+  viene visualizzato il pannello per l&#8217;adattatore (questo consente di cambiare l&#8217;adattatore effettivo
+  in uso o per rimuoverlo).<br>
+<span class="image"><img src="img/addadapter.png" alt="Add Adapter" width="460"></span></p>
+</li>
+<li>
+<p><strong>Aggiungi fessura</strong> viene utilizzato per aggiungere uno spazio nel supporto dell&#8217;utensile per consentire a una flangia
+di passare senza collisioni (vedere la sezione seguente sull&#8217;aggiunta di uno spazio per ulteriori
+dettagli in merito).</p>
+</li>
+<li>
+<p><strong>Altezza utensile grande</strong> viene utilizzato per sostituire gli utensili selezionati con
+utensili diversi più alti della stessa famiglia.</p>
+</li>
+<li>
+<p>Fare clic su <strong>Rimuovi</strong> per rimuovere il supporto dell&#8217;utensile. Verrà visualizzato un errore che segnala un <em>punzone mancante</em>
+o una <em>matrice mancante</em> nel Bend Navigator per le pieghe che utilizzano questa
+stazione. Questo può essere risolto utilizzando il pulsante <strong>Aggiungi</strong> sulla barra dei comandi al
+sinistra per aggiungere un nuovo supporto.</p>
+</li>
+<li>
+<p>Il selettore <strong>Utensile con sensore</strong> serve per scorrere le diverse coppie di dischi dei sensori ACB
+che possono essere utilizzate per il pezzo in questione. La selezione dipende dallo
+spessore della lamiera e dal punzone utilizzato.</p>
+</li>
+<li>
+<p>Se la casella di controllo <strong>Controllo di quantità</strong> è selezionata, i segmenti
+  utilizzati vengono confrontati con le <em>giacenze</em> disponibili dei pezzi (che possono essere modificate
+  facendo clic sul link <strong>Gestione utensili…</strong>). Se si utilizzano segmenti che non si trovano nelle
+  giacenze, su di essi viene disegnato un simbolo speciale a forma di trifoglio, come si può vedere
+  nell&#8217;immagine sottostante per i pezzi da 40 mm e 45 mm vicino al centro del punzone
+  qui sotto:<br>
+<span class="image"><img src="img/inventoryerror.png" alt="Inventory Error" width="253"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Quando si modifica un supporto dell&#8217;utensile utilizzando una di queste impostazioni e operazioni, TecZone Bend
+convalida immediatamente lo stato di tutte le operazioni di piegatura, eseguendo vari controlli
+come quelli per individuare eventuali collisioni, verificare l&#8217;utilizzabilità dell&#8217;utensile, ecc. Lo stato del Bend Navigator si aggiorna immediatamente e
+in tempo reale, rendendo molto facile provare varie impostazioni con un
+feedback immediato e accurato.</p>
+</div>
+<div class="sect2">
+<h3 id="_finestra_sostituisci_utensile">Finestra Sostituisci utensile<a id="h000208"></a></h3>
+<div class="paragraph">
+<p>Quando si fa clic sul pulsante <strong>Cambia tipo di utensile</strong>, viene visualizzata la finestra
+<strong>Sostituisci utensile</strong>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/tool-replace.png" alt="Tool replacer" width="750">
+</div>
+</div>
+<div class="paragraph">
+<p>Questa finestra visualizza tutti i possibili utensili sostitutivi.</p>
+</div>
+<div id="h000209" class="ulist">
+<ul>
+<li>
+<p>Usa la gerarchia a sinistra per limitare le scelte, ad esempio si potrebbe
+scegliere di visualizzare solo gli utensili a collo di cigno per facilitare la selezione.</p>
+</li>
+<li>
+<p>Utilizzare il selettore <strong>Ordina</strong> in alto per ordinare gli utensili per nome, altezza, raggio o
+altri criteri (l&#8217;esatta serie di criteri dipende da cosa si sta sostituendo:
+punzone, matrice o adattatore).</p>
+</li>
+<li>
+<p>È possibile digitare un nome dell&#8217;utensile (o un&#8217;abbreviazione) nella casella <strong>Cerca</strong> per limitare rapidamente
+l&#8217;elenco. Anche digitare il nome di un utensile parziale va bene: per esempio, utilizzando <strong>OW200</strong>
+si trovano gli utensili OW200, OW200/S e OW200/K.</p>
+</li>
+<li>
+<p>Utilizzare il cursore <strong>Ridimensiona</strong> per regolare le dimensioni delle immagini dell&#8217;utensile. L&#8217;utensile che è
+attualmente utilizzato ha un riempimento blu e un contorno spesso. Il tratteggio incrociato azzurro
+indica <em>altri utensili</em> che vengono utilizzati in questo pezzo.</p>
+</li>
+<li>
+<p>Disattivare la casella di controllo <strong>Filtro</strong> per avere una visualizzazione illimitata di tutti gli utensili (indipendentemente
+  dall&#8217;idoneità o meno). In questa vista, gli utensili che non sono adatti
+  sono visualizzati in grigio. Spostando il mouse su uno di questi utensili si legge il <em>motivo</em> per cui
+  non è disponibile per la selezione:<br>
+<span class="image"><img src="img/tool-replace2.png" alt="Tool error" width="650"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Mentre si sposta il mouse sulle immagini degli utensili,
+ TecZone Bend ricalcola <em>immediatamente</em> i supporti dell&#8217;utensile selezionati usando l&#8217;utensile selezionato di recente. Si può vedere in tempo reale
+se l&#8217;utensile che si sta prendendo in considerazione causerà problemi di collisione o meno (le
+pieghe corrispondenti nel Bend Navigator si accendono istantaneamente in rosso se c&#8217;è
+una collisione). Grazie a questa anteprima in tempo reale, è notevolmente più semplice provare
+vari utensili fino a trovare quello giusto.</p>
+</div>
+<div class="paragraph">
+<p><strong>Facendo clic</strong> su uno degli utensili, si procede alla scelta e il nuovo utensile viene applicato
+al pezzo. Invece, premendo <kbd>Esc</kbd>, si torna indietro per quanto riguarda
+le scelte di anteprima; l&#8217;utensile originale rimane invariato.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_navigazione_e_selezione">Navigazione e selezione<a id="h000214"></a></h3>
+<div class="paragraph">
+<p>Il pannello Supporto di piegatura presenta vari pulsanti nei sotto-pannelli di <em>navigazione</em> e <em>selezione</em>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Utilizzare il pulsante di navigazione <strong>Staffaggio</strong> per spostarsi verso l&#8217;alto per modificare l&#8217;intera
+configurazione della piega. Vedere la pagina <a href="editsetup.html">Editor configurazione</a> per maggiori dettagli in merito.</p>
+</li>
+<li>
+<p>Utilizzare i pulsanti <strong>Prec</strong> e <strong>Succ</strong> per vedere le varie possibilità di modifica
+dei supporti dell&#8217;utensile nella configurazione in questione.</p>
+</li>
+<li>
+<p>Usa il pulsante di navigazione <strong>Segmenti</strong> per spostarsi di un livello verso il basso
+e modificare i <em>singoli segmenti</em> che compongono questo supporto. La sezione seguente sulla
+modifica dei segmenti dei supporti dell&#8217;utensile fornisce ulteriori informazioni in merito.</p>
+</li>
+<li>
+<p>Utilizzare il selettore <strong>Stazione utensile</strong> per selezionare tutti i supporti dell&#8217;utensile
+che compongono questa <em>stazione</em>. Così si selezioneranno tutti i punzoni, le matrici e i supporti
+che sono allineati con il supporto selezionato, in modo che possano essere tutti modificati o spostati insieme.</p>
+</li>
+<li>
+<p>Utilizzare il selettore <strong>Utensile identico</strong> per selezionare altri supporti dell&#8217;utensile che
+  utilizzano lo stesso utensile. Spesso questo è utile prima di eseguire un&#8217;operazione di <em>cambio utensile</em>;
+  selezionando tutte le stazioni tramite l&#8217;utensile specificato si amplia la selezione disponibile
+  di utensili sostitutivi.<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_modifica_di_più_supporti">Modifica di più supporti<a id="h000215"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/edit-mounts.png" alt="Multiple mounts" width="138">
+</div>
+</div>
+<div class="paragraph">
+<p>Selezionando più supporti facendo <kbd>Shift</kbd>+Clic su tutti, essi possono essere
+modificati insieme. Solo le impostazioni e le operazioni comuni a tutti i supporti sono
+disponibili per la modifica.</p>
+</div>
+<div class="paragraph">
+<p>Campi come <strong>Lunghezza</strong> o <strong>Posizione</strong> vengono visualizzati per
+la modifica solo se sono uguali per tutti i supporti.</p>
+</div>
+<div class="paragraph">
+<p>Se si dispone di più stazioni, è utile selezionare tutti i punzoni o tutte le
+matrici prima di eseguire un&#8217;operazione di <strong>cambio utensile</strong>. In questo caso, la scelta degli
+utensili sostitutivi disponibili è più ampia (poiché non c&#8217;è pericolo che punzoni e matrici
+di altezze diverse causino una collisione).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_trascinamento_di_un_supporto_dellutensile_di_piegatura">Trascinamento di un supporto dell&#8217;utensile di piegatura<a id="h000216"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/drag-mount.png" alt="Dragging a mount" width="450">
+</div>
+</div>
+<div class="paragraph">
+<p>L&#8217;input <strong>Posizione</strong> può essere utilizzato per impostare una posizione precisa per un supporto.
+A volte, è più facile trascinare un supporto di piegatura in una nuova posizione. Per farlo:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fare clic sul supporto di piegatura per selezionarlo (selezionare più supporti utilizzando <kbd>Shift</kbd>+Clic)</p>
+</li>
+<li>
+<p>Fare clic e iniziare a trascinare a sinistra/destra per spostare il supporto selezionato.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Come mostra l&#8217;immagine sopra, quando si sposta il mouse su un supporto selezionato,
+viene visualizzata la punta della freccia che indica che è possibile trascinare il supporto selezionato. Quando
+si sta trascinando il supporto, gli indicatori a scatto consentono di allineare facilmente il supporto
+ad altri supporti esistenti.</p>
+</div>
+<div class="paragraph">
+<p>Se si <em>preleva</em> un supporto vicino al suo bordo sinistro, i bordi a sinistra di tutti i supporti
+vengono utilizzati per lo scatto. Se si preleva un supporto dal centro, la linea centrale
+viene utilizzata per lo scatto e così via.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_operazioni_avanzate">Operazioni avanzate<a id="h000218"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Di seguito alcune operazioni più avanzate con il pannello dell&#8217;editor supporto di piegatura.</p>
+</div>
+<div class="sect2">
+<h3 id="_modifica_dei_segmenti_del_supporto_dellutensile">Modifica dei segmenti del supporto dell&#8217;utensile<a id="h000219"></a></h3>
+<div class="paragraph">
+<p>Facendo clic sul pulsante di navigazione <strong>Segmenti</strong> quando viene modificato un supporto dell&#8217;utensile di piegatura
+si apre il pannello <em>Segmento utensile</em>, vedere l&#8217;immagine a fianco.</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="img/edit-mount2.png" alt="Edit tool Segments" width="525"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Il selettore <strong>Utensile</strong> serve per sostituire il segmento utensile selezionato
+con un pezzo più lungo o più corto o con uno di tipo diverso.</p>
+</li>
+<li>
+<p>I pulsanti <strong>&lt; Sposta</strong> e <strong>Sposta &gt;</strong> sono utilizzati per
+spostare il segmento selezionato a sinistra o a destra nella composizione. Questo non cambia
+la lunghezza complessiva della composizione, ma è utile per spostare un pezzo del sensore di calibrazione
+a sinistra o destra per evitare i fori, ad esempio.</p>
+</li>
+<li>
+<p>I pulsanti <strong>Aggiungi</strong> e <strong>Rimuovi</strong> vengono utilizzati per aggiungere
+nuovi segmenti alla composizione o per rimuovere quello selezionato.</p>
+</li>
+<li>
+<p>I pulsanti di navigazione <strong>Prec</strong> e <strong>Succ</strong> vengono utilizzati per vedere le varie possibilità
+di modifica dei vari segmenti nel supporto di piegatura. Come mostra l&#8217;immagine sopra,
+il segmento utensile in fase di modifica è evidenziato in blu.</p>
+</li>
+<li>
+<p>Il pulsante di navigazione <strong>Montaggio</strong> viene utilizzato per salire di un livello e
+modificare l&#8217;intero supporto di piegatura (invece di singoli segmenti).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_aggiunta_di_uno_spazio_in_un_supporto">Aggiunta di uno spazio in un supporto<a id="h000220"></a></h3>
+<div class="paragraph">
+<p>A volte è utile aggiungere uno <em>spazio</em> stretto in un supporto dell&#8217;utensile, di solito per consentire il passaggio
+di una flangia senza collisioni. Per farlo, fare clic sul pulsante
+<strong>Aggiungi fessura</strong> (che viene visualizzato se il supporto dell&#8217;utensile è sufficientemente lungo). Una
+piccola sezione si apre nel pannello, con una serie di input interconnessi per impostare il
+margine sinistro, margine destro e lo spazio effettivo. Poiché la somma di questi tre deve aggiungersi
+alla lunghezza del supporto dell&#8217;utensile, la modifica di due di questi determinerà l&#8217;impostazione automatica
+del terzo.</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;immagine sottostante mostra questa operazione in corso. Abbiamo una flangia che collide
+con il punzone e regoliamo i margini sinistro/destro fino a quando lo spazio proposto non è
+allineato con il punto in cui la flangia interseca il punzone (lo spazio proposto
+viene visualizzato come due linee arancioni tracciate sul supporto di piegatura).<br>
+<span class="image"><img src="img/add-gap1.png" alt="Adding a gap"></span></p>
+</div>
+<div class="paragraph">
+<p>Facendo clic sul pulsante <strong>Ok</strong> in questo sotto-pannello, lo spazio viene creato; si può vedere
+che l&#8217;errore di collisione è ora risolto:<br>
+<span class="image"><img src="img/add-gap2.png" alt="Adding a gap"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Quando si modifica una stazione che utilizza un portapunzone, TecZone Bend chiede se lo spazio
+deve essere introdotto solo per il <strong>punzone</strong> o sia per il <strong>punzone</strong> che per il <strong>supporto</strong>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_utilizzo_di_un_adattatore_a_doppia_v">Utilizzo di un adattatore a doppia V<a id="h000221"></a></h3>
+<div class="paragraph">
+<p>È possibile utilizzare un adattatore a doppia V per montare due matrici una accanto all&#8217;altra. Per
+compiere questa operazione manualmente, utilizzare il pulsante <strong>Aggiungi adattatore</strong> per aggiungere un adattatore
+a una matrice, quindi utilizzare il pulsante <strong>Cambia tipo di utensile</strong> per modificare
+questo adattatore in uno a doppia V. Ora è possibile aggiungere una seconda matrice all&#8217;altra
+scanalatura dell&#8217;adattatore a doppia V utilizzando il comando <strong>Aggiungi</strong> dalla barra dei comandi e
+scegliendo un supporto della matrice.</p>
+</div>
+<div class="paragraph">
+<p>Quando si dispone di una matrice montata su una scanalatura di un supporto a doppia V, è possibile spostarla nell&#8217;altra
+scanalatura facendo clic sul pulsante <strong>Modifica asse I</strong> che viene visualizzato:<br>
+<span class="image"><img src="img/dv-shift.png" alt="Double-V Shift" width="465"></span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. A volte si parla anche di pezzi <em>spalla</em>.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Ad esempio, se si sta eseguendo un&#8217;operazione di <strong>cambio utensile</strong>   su una sola stazione di punzonatura e ce ne sono diverse, la scelta sarà limitata e si potrà scegliere solo altri utensili di punzonatura della <em>stessa altezza</em> per   evitare collisioni dei punzoni a causa di spazi irregolari.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_il_pannello_supporto_di_piegatura">Il pannello Supporto di piegatura</a>
+  </li>
+  <li level="2">
+   <a href="#_finestra_sostituisci_utensile">Finestra Sostituisci utensile</a>
+  </li>
+  <li level="2">
+   <a href="#_navigazione_e_selezione">Navigazione e selezione</a>
+  </li>
+  <li level="2">
+   <a href="#_modifica_di_più_supporti">Modifica di più supporti</a>
+  </li>
+  <li level="2">
+   <a href="#_trascinamento_di_un_supporto_dellutensile_di_piegatura">Trascinamento di un supporto dell&#8217;utensile di piegatura</a>
+  </li>
+  <li level="1">
+   <a href="#_operazioni_avanzate">Operazioni avanzate</a>
+  </li>
+  <li level="2">
+   <a href="#_modifica_dei_segmenti_del_supporto_dellutensile">Modifica dei segmenti del supporto dell&#8217;utensile</a>
+  </li>
+  <li level="2">
+   <a href="#_aggiunta_di_uno_spazio_in_un_supporto">Aggiunta di uno spazio in un supporto</a>
+  </li>
+  <li level="2">
+   <a href="#_utilizzo_di_un_adattatore_a_doppia_v">Utilizzo di un adattatore a doppia V</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="editbend.html">Modifica di una piega</a></span>
+ <span class="next"><a href="editsetup.html">Modifica di una configurazione della piega</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

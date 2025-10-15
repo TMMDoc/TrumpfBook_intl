@@ -1,0 +1,804 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>A kezelőfelület</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Üdvözöljük a TecZone-ban</a></li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Bevezetés</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="install.html">A szoftver telepítése</a></li>
+    <li><button class="tree blank"></button><a class="active" href="clarity.html">A kezelőfelület</a></li>
+    <li><button class="tree blank"></button><a href="workflow.html">Alkatrész munkafolyamat</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">2-D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">2-D tisztítás</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">3-D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">3D modell importálása</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">Részegység importálása</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">Forma felismerése</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">Komponens felismerése</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">A geometria módosítása</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Lézer CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Alkatrész munkafolyamat</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Szerkesztőpanelek</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Lézervágás</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Indítás</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Visszahúzódás</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Mikrohíd</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Speciális</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Kontúr</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Hulladékvágás</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Alkatrész</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Sarokmegmunkálás</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Gyors táblásítás</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">A feladat munkafolyamata</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Feladat panel</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Lemeztáblák fül</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Alkatrészek fül</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Elrendezések fül</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Összegzés fül</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Elrendezés szerkesztése</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Táblásítási üzemmódok</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Elhelyezés panel</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Sorrendbe állítás</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Lemeztábla szelet</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Ferde vágás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Nyitott kontúrok</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Változtatható ferde vágás</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Egyéb</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Befejezési szabályok</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">Vágási táblázat szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">Flyline</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Stratégia</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Mikrohidak</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">További beállítások</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Hajlítás CAM alkalmazásával</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Hajlítási adatok létrehozása</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Hajlítás navigátor</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Hajlítási adatok szerkesztése</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Hajlítás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Szerszámtartó szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Hajlítási beállítás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Az ütközőujjak szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Szögmérés szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Hajlítások táblázata</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">A sorrend módosítása</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Beállítások és állomások hozzáadása</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Szögmérés</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Kötegelt megmunkálás</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Újraszámítási megoldás</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Terhelésellenőrzés</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Hajlítás navigátor</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Alkatrész felvétele</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Felvétel raklapról</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Felvétel adagolóból</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Robotizált hajlítás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Behelyezés</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Hajlítás</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Kihúzás</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Újrafogás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Újrafogás panel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Újrafogás hozzáadása</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Újrafogás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Újrafogás pofás megfogóval</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Lemezfordító állomás panel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Alkatrész lerakása</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Lerakási minták</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Ismétlés és sorrend</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Szétválasztó lemeztábla</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Útvonalpontok</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Cella konfiguráció</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">Megfogó adatbázis</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">Jelentések</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">CAM lengőhajlítás</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Lengőhajlítási adatok létrehozása</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">A Lengőhajlítás nézet</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Lengőhajlítási adatok szerkesztése</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Hajlítás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Szár/szakasz szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">A sorrend módosítása</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">A leszorítók szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Az ütközők szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">A hajlítóélek szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">A felrakás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">A leszedés szerkesztése</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Szerszámállomány</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Egyedi légrés táblázatok</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">A manuális hajlítás befejezése</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Szükséges peremhossz</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Beállítások</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Rajzolás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Rétegek</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Méretek</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Nézet</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Hajlítás CAM alkalmazásával</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Gép alapértelmezett beállításai</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Hajlítási kimenetek</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Hajlítás nézet</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Hajlítócella</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Vágás CAM alkalmazásával</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Elrendezés</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Táblaterv beállítások</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Lemeztábla</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Lemeztábla kezelése</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Maradékrács-vágások</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Munkatámasz</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">Lézer CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Sorrend</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Vágás kimenő adatok</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Vágás nézet</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Lengőhajlítás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Alapértelmezett értékek</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">Kiegészítő hajlítószerszám tartódarabok</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Kimenetek</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Jelentések</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Elemek alapértelmezett értékei</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Importálás/exportálás</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Környezet</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Adatbázis</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Anyagok</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Gépek</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Hajlítószerszámok</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Hajlító megfogók</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Formázások/részegységek</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Jelentések</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Jelentéstervező</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Mezők, ábrák és táblázatok</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Sávok (részjelentések)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Címkék, bittérképek és alakzatok</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">Függelék</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Támogatott 3D formátumok</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">Szétválasztó lemeztábla DXF</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">DXF hajlítószerszám</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Impresszum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Bevezetés</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="clarity.html">A kezelőfelület</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>A kezelőfelület</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>A TecZone Bend innovatív kialakítású <strong>Clarity</strong> kódnevű kezelőfelülettel működik. A TecZone Bend felületen dolgozva egy áttekinthető, minimalista nézet jelenik meg.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/clarity.png" alt="Clarity" width="651">
+</div>
+</div>
+<div class="paragraph">
+<p>A TecZone Bendkezelőfelületen <strong>nem</strong> találhatók a következők:</p>
+</div>
+<div id="h000466" class="ulist">
+<ul>
+<li>
+<p>Sok egymásra halmozott ikon, amelyek közül csak néhány releváns az aktuális kontextusban.</p>
+</li>
+<li>
+<p>Mély menüszerkezetek, több tucat menüvel.</p>
+</li>
+<li>
+<p>A kezelőfelület <em>menüsávjai</em> sok helyet foglalnak a képernyő tetején.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ehelyett a Clarity kezelőfelület a következő elven működik: először <strong>Kiválasztás</strong>, majd <strong>hajtsa végre</strong>.</p>
+</div>
+<div id="h000469" class="ulist">
+<ul>
+<li>
+<p>Válassza ki a kívánt elemeket azokra kattintva.</p>
+</li>
+<li>
+<p>Megjelenik egy Clarity panel, amely a kiválasztott elemre vonatkozó különböző <strong>Settings</strong> és <strong>műveleteket</strong> tartalmaz.</p>
+</li>
+<li>
+<p>A panel gyakran tartalmaz néhány vezérlőt a kiválasztás <strong>Kiterjesztéséhez</strong> más hasonló elemek kiválasztásával.</p>
+</li>
+<li>
+<p>A panel gyakran tartalmazza a különböző elemek közötti <strong>Navigáláshoz</strong> szükséges vezérlőket is.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ezek a kezelőfelületre vonatkozó alapelvek a TecZone Bend minden üzemmódjában egységesek.
+Akár 3D modellt tisztít, alkatrészeket rendez el egy táblásított lemezen vagy élhajlítógép felszerszámozását szerkeszti, ugyanazon kulcsfontosságú elvek alapján fog dolgozni.
+Hogy ezeket az elvont elképzeléseket kézzelfoghatóbbá tegyük, tegyünk egy kis kitérőt, és nézzük meg a Clarity felületet működés közben (példákat a TecZone Bend jelentésszerkesztőből és a TecZone Bend modulból veszünk szemléltetésként).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vezetett_bemutató">Vezetett bemutató<a id="h000472"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ez egy rövid bemutató a Clarity kezelőfelület működéséről. A TecZone Bend programban csak néhány egyszerű fogalom ismétlődik mindenhol; ha megérti ezeket a fogalmakat, akkor a TecZone Bend nagy részét sok olvasás vagy képzés nélkül is használhatja. Más szóval, ha elolvassa ezt a részt, akkor a TecZone Bend felhasználói útmutatójának többi részét kihagyhatja!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_minta_jelentés">Minta jelentés<a id="h000473"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A jelentéssablonok létrehozásáról és szerkesztéséről részletesebben egy későbbi szakaszban olvashat.
+Most azonban bemutatunk néhány jelentéssel kapcsolatos szakkifejezést, hogy ezek segítségével illusztrálhassuk a Clarity kezelőfelületének fogalmait.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/report.png" alt="Report" width="574">
+</div>
+</div>
+<div class="paragraph">
+<p>A fenti ábrán látható néhány olyan elem, amelyeket be lehet illeszteni egy jelentésbe.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A <strong>Szövegmező</strong> egyszerű szövegrész; különböző tulajdonságokat állíthat be, például a betűtípust, a szöveg igazítását és a színt.</p>
+</li>
+<li>
+<p>A <strong>Mező</strong> az alapul szolgáló alkatrészből kiválasztott tényleges adatokat jeleníti meg.</p>
+</li>
+<li>
+<p>A <strong>Forma</strong> egy egyszerű geometriai alakzat (például ellipszis, téglalap vagy vonal), amely háttérként, kiemelésként vagy legördülő listadobozként használható a jelentésben.</p>
+</li>
+<li>
+<p>A <strong>Táblázat</strong> az alapul szolgáló alkatrész táblázatos formában (például egy adattáblázatban) meglévő adatait jeleníti meg. Ebben a példában láthatjuk az alkatrész hajlítási műveleteinek listáját; mindegyikhez néhány attribútum is megjelenítésre kerül.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A jelentés elemeiről megszerzett alapvető ismeretekkel már elkezdhetjük felfedezni a Clarity kezelőfelületét.</p>
+</div>
+<div class="sect2">
+<h3 id="_alapelv_kattintson_valamire_annak_szerkesztéshez">Alapelv: Kattintson valamire annak szerkesztéshez<a id="h000474"></a></h3>
+<div class="paragraph">
+<p>Kattintson egy mezőre, mire megjelenik egy <strong>Clarity panel</strong> (ebben a leírásban egyszerűen csak panelnek nevezzük). Íme egy szövegjelölésekkel ellátott ábra, amely megmutatja, hogyan nézhetne ki:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/fieldpanel.png" alt="Field Panel" width="581">
+</div>
+</div>
+<div class="paragraph">
+<p>Ha egy mezőre kattint, az kijelölésre kerül és megjelenik a szerkesztéshez szükséges Panel.
+Íme, néhány elem, amelyeket ebben a panelben láthatunk:</p>
+</div>
+<div id="h000475" class="ulist">
+<ul>
+<li>
+<p>A feliratsáv segítségével áthelyezhető a panel (a panel hátterén bárhová kattintva és húzva az áthelyezhető). Ha a <strong>kitűzőt</strong> rögzíti, akkor a panelek mindig azon a helyen nyílnak meg a képernyőn. Ellenkező esetben a panelek az egérkurzor helyéhez közel nyílnak meg.</p>
+</li>
+<li>
+<p>A szerkesztőmezők, számbeviteli mezők, választási listák, betűtípus- és igazítási listadobozok mind különböző módszerek, amelyekkel a Mező beállításai megtekinthetők és szerkeszthetők.</p>
+</li>
+<li>
+<p>A műveletgombokkal különböző műveleteket hajthat végre a kijelölt objektumon.
+Ebben az esetben a mezőt törölheti a jelentésből a <strong>Törlés</strong> gombra kattintva.</p>
+</li>
+<li>
+<p>Egyes panelek több elemet is tartalmazhatnak. A zsúfoltság csökkentése érdekében a panelek szakaszokra vannak osztva, <strong>Kibővíthető menüpontok</strong> segítségével. A fenti ábrán látható, hogy a <strong>Illusztráció</strong> kibővíthető menüpont zárva (elrejtve az adott szakasz összes beállítását), míg a Betűtípus kibővíthető menüpont nyitva van. A kibővíthető menüpont bármely pontjára kattintva megnyithatja vagy bezárhatja az adott részt.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_alapelv_több_elem_kiválasztása_és_együttes_szerkesztése">Alapelv: Több elem kiválasztása és együttes szerkesztése<a id="h000479"></a></h3>
+<div class="paragraph">
+<p>További elemeket választhat ki úgy, hogy lenyomva tartja a <kbd>Shift</kbd> gombot, miközben rákattint az elemekre. Több elem kiválasztása esetén megjelenik egy panel, amely lehetővé teszi az összes elem beállításainak egyidejű szerkesztését.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multisel1.png" alt="Multiple Selection" width="443">
+</div>
+</div>
+<div class="paragraph">
+<p>A fenti ábrán 3 mező látható, amelyeket a <span class="keyseq"><kbd>Shift</kbd>+<kbd>Click</kbd></span> billentyűkombináció segítségével választottunk ki.
+A megjelenő panelen mindhárom mező beállításait egyszerre szerkeszthetjük. (Itt a <strong>Illusztráció</strong> kibővíthető menü nyitva, <strong>Betűtípus</strong> pedig zárva van).
+A <strong>Háttérszín</strong> és a <strong>Vonalvastagság</strong> beállításainak módosítása után a jelentés így néz ki:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multisel2.png" alt="Multiple Selection 2" width="311">
+</div>
+</div>
+<div class="paragraph">
+<p>A végrehajtott módosítások az összes kiválasztott elemre vonatkoznak. Ebben a többszörös szerkesztési esetben vegye észre, hogy a <strong>Kifejezés</strong> beállítás nem jelenik meg; ez azon beállítások egyike, amelyeket valószínűleg nem szeretnénk egyszerre szerkeszteni egy mezőcsoport esetében (nem igazán lenne célszerű, ha 3 mező ugyanazt az értéket jelenítené meg az alkatrészből).
+Azok a beállítások, amelyek általában minden elemhez külön értékkel rendelkeznek, nem jelennek meg az ilyen csoportos szerkesztő paneleken.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_alapelv_különböző_típusú_elemek_együttesen_szerkeszthetők">Alapelv: Különböző típusú elemek együttesen szerkeszthetők.<a id="h000480"></a></h3>
+<div class="paragraph">
+<p>A fenti példában három azonos típusú elemet választottunk ki. Mi történik, ha különböző típusú elemeket választunk ki? Nézzük meg. Először is, így néz ki a panel egy <strong>Forma</strong> elem esetében:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multisel3.png" alt="Shape Panel" width="398">
+</div>
+</div>
+<div class="paragraph">
+<p>Ha egyszerre választunk ki egy <strong>Mező</strong> és egy <strong>Forma</strong> elemet, akkor a következő panel jelenik meg:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multisel4.png" alt="Field and Shape" width="395">
+</div>
+</div>
+<div id="h000481" class="ulist">
+<ul>
+<li>
+<p>A feliratsáv most a következőket jeleníti meg: <strong>2 jelentés-elem</strong>, mivel jelentés-elemeket szerkesztünk, de nem azonos típusúakat.</p>
+</li>
+<li>
+<p>Csak a <strong>Mező</strong> és a <strong>Forma</strong> közös beállításai jelennek meg (ebben az esetben ezek csak a Vizuális szakasz beállításai).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_alapelv_a_többszörös_kiválasztás_további_műveleteket_tehet_lehetővé">Alapelv: A többszörös kiválasztás további műveleteket tehet lehetővé<a id="h000482"></a></h3>
+<div class="paragraph">
+<p>A több objektumon elérhető beállítások és műveletek közös részhalmazán túl a többszörös kiválasztás néha új műveleteket vagy beállításokat is biztosíthat, amelyek az egyes objektumokon nem elérhetők. Ennek szemléltetésére lássunk egy példát a hajlítás nézetből. A hajlítás nézetben egy hajlításra kattintva megjelenik egy panel, ahol a hajlítás beállításait szerkesztheti és néhány műveletet végezhet azokkal:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bend1.png" alt="Bend" width="409">
+</div>
+</div>
+<div class="paragraph">
+<p>A fenti ábra a 3. hajlítás paneljét mutatja. Most tartsa lenyomva a <kbd>Shift</kbd> gombot és válassza ki a 4. hajlítást is. A most megjelenő panel így néz ki:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bend2.png" alt="2-Bends" width="410">
+</div>
+</div>
+<div class="paragraph">
+<p>Van néhány beállítás, amelyet közösen szerkeszthetünk (a hajlítás kihagyása vagy az állomás számának beállítása). Itt azonban egy új gombot látunk <strong>Csoportosítás</strong> elnevezéssel.
+Mivel két hajlítás van kiválasztva és azok egyenes vonalak, ezért egyetlen hajlítási műveletbe csoportosíthatók. Ez automatikusan felismerésre kerül és megjelenik az új <strong>Csoportosítás</strong> gomb; ez a művelet csak akkor érhető el, ha több hajlítás van kiválasztva. A gombra kattintva a két hajtás összevonásra kerül, amint az az alábbi ábrán látható.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bend3.png" alt="Grouped" width="412">
+</div>
+</div>
+<div class="paragraph">
+<p>Most már csak 3 hajlítási művelet van ebben az alkatrészben. Ezen kívül a 3. hajlítás most <em>csoportosított</em> hajlítás, és megjelenik egy új gomb.: <strong>Leválasztás</strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_alapelv_a_kiválasztás_módosításához_használja_a_kiválasztás_alpanelt">Alapelv: A kiválasztás módosításához használja a Kiválasztás alpanelt.<a id="h000483"></a></h3>
+<div class="paragraph">
+<p>A Clarity panel alján gyakran található egy <strong>Kiválasztásion</strong> alpanel.
+Ez a panel néhány gombot tartalmaz, amelyekkel Ön a kiválasztást különböző módon módosíthatja.
+Általában vannak gombok, amelyekkel több, valamilyen szempontból hasonló objektumot lehet kiválasztani. A kijelölés kiterjesztése többféle módon történhet, például a következőképpen:</p>
+</div>
+<div id="h000484" class="ulist">
+<ul>
+<li>
+<p>Az összes mező kiválasztása egy jelentésben.</p>
+</li>
+<li>
+<p>Az azonos rétegben található összes sokszögvonal kiválasztása.</p>
+</li>
+<li>
+<p>Az összes beszúrás kiválasztása egy alkatrészen, amelyekhez ugyanazt a stancolószerszámot használják.</p>
+</li>
+<li>
+<p>Az összes azonos beállítással rendelkező hajlítás kiválasztása.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Itt látható egy példa a jelentésszerkesztőből, ahol egy kiválasztási panel jelenik meg, amikor rákattintunk egy mezőre a jelentésben:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/selection.png" alt="Selection" width="303">
+</div>
+</div>
+<div class="paragraph">
+<p>A kiválasztási alpanel jellegzetes mintázatú háttérrel és lekerekített gombokkal rendelkezik.
+Ebben a példában láthatók a gombok az <strong>Összes mező</strong> kiválasztásához, az <strong>Összes hajlítási mező</strong> (a hajlítás CAM-adataihoz kapcsolódó mezők) kiválasztásához, valamint a <strong>Átkapcsolás</strong> (az aktuális kiválasztott készlet).</p>
+</div>
+<div class="paragraph">
+<p>Az alpanelen megjelenő kiválasztó gombok tényleges listája a kontextustól függően eltérő lehet. A leggyakoribb esetek ezekkel a választógombokkal nagyon kényelmesen kezelhetők.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_alapelv_a_navigációs_alpanel_segítségével_végigböngészheti_az_entitásfát">Alapelv: A navigációs alpanel segítségével végigböngészheti az entitásfát<a id="h000488"></a></h3>
+<div class="paragraph">
+<p>Az elemek egy alkatrészben, jelentésben vagy elrendezésben gyakran hierarchikus szerkezetet alkotnak.
+Ezt nevezzük <em>Entitásfának</em>. A struktúra általában fordított fa formájában jelenik meg, a „szülő” objektummal a tetején és az alatta elhelyezkedő „gyermekekkel”.
+Íme, egy példa egy entitásfára egy jelentésben.</p>
+</div>
+<div id="h000489" class="ulist">
+<ul>
+<li>
+<p>Egy jelentés több elemet is tartalmazhat. Ezek közül néhány elem táblázat lehet.</p>
+</li>
+<li>
+<p>A jelentés táblázata több oszlopot is tartalmazhat.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Nos, ebben a fában 3 szint van; a fa grafikus ábrázolása a következő formát veheti fel:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/navigate1.png" alt="Navigate" width="768">
+</div>
+</div>
+<div class="paragraph">
+<p>Ez a jelentés 2 címkével, 1 mezővel és 1 táblázattal rendelkezik. A táblázat 4 oszlopot tartalmaz.
+A táblázatra kattintva a következő panel jelenik meg:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/navigate2.png" alt="Table" width="619">
+</div>
+</div>
+<div class="paragraph">
+<p>A navigációs panel irányított navigációs gombokat tartalmaz, amelyekkel végigböngészhetjük az entitásfát. A kiválasztási panelhez hasonlóan a navigációs alpanel is jellegzetes textúrájú háttérrel rendelkezik és a panel alján, de a kiválasztási alpanel felett jelenik meg.</p>
+</div>
+<div class="paragraph">
+<p>A <span class="icon"><i class="fa fa-arrow-left"></i></span>
+<strong>Vissza.</strong> és a <strong>Tovább</strong>
+<span class="icon"><i class="fa fa-arrow-right"></i></span> gombokkal az entitásfa azonos szintjén lévő elemek között mozoghatunk. Így ezekre a gombokra kattintva a jelentés többi eleme is kijelölésre kerül, például a jelentés <strong>Szövegmező</strong> vagy <strong>Mező</strong> elemei.
+A <strong>Beállítási terv</strong> <span class="icon"><i class="fa fa-arrow-up"></i></span> elemre kattintva a táblázatból feljebb lépünk a szülő elemhez, azaz a <em>Jelentés</em> elemhez. A <strong>Beállítási terv</strong> gombra kattintva megjelenő panelen a jelentéssel kapcsolatos beállítások láthatók, például a papírméret és a margók:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/navigate3.png" alt="Report" width="617">
+</div>
+</div>
+<div class="paragraph">
+<p>Most a jelentést szerkesztjük; az entitásfa gyökérkönyvtárában vagyunk. Nincs más irány, csak lefelé, ezért a navigációs alpanel csak egy gombot tartalmaz (<span class="icon"><i class="fa fa-arrow-down"></i></span> elemek), amellyel lefelé léphetünk az elemek listájára. Erre kattintva újra kiválasztjuk a táblázatot.</p>
+</div>
+<div class="paragraph">
+<p>A táblázatból a lefelé navigáló <span class="icon"><i class="fa fa-arrow-down"></i></span> <strong>Oszlopok</strong> gomb egy szinttel lejjebb visz és oszlopszerkesztési módba lépünk. Ez történik, amikor rákattintunk
+a <span class="icon"><i class="fa fa-arrow-down"></i></span> <strong>Oszlopok</strong> navigációs gombra a táblázat panelen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/navigate4.png" alt="Columns" width="613">
+</div>
+</div>
+<div class="paragraph">
+<p>A táblázat kiválasztott oszlopának beállításai jelennek meg. Ha rákattint a <span class="icon"><i class="fa fa-arrow-left"></i></span>
+<strong>Vissza.</strong> és a <strong>Tovább</strong>
+<span class="icon"><i class="fa fa-arrow-right"></i></span> gombra, akkor most a táblázat <em>oszlopai</em> között mozgatja a kijelölést, mivel ez az a szint a fában, amelyen dolgozunk. Nincs lefelé navigáló gomb, mivel ez a fa legalacsonyabb szintje. A <strong>Táblázat</strong> <span class="icon"><i class="fa fa-arrow-up"></i></span> gomb segítségével egy szinttel feljebb lépünk és visszatérünk a teljes táblázat szerkesztéséhez.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_összegzés">Összegzés<a id="h000491"></a></h2>
+<div class="sectionbody">
+<div id="h000492" class="ulist">
+<ul>
+<li>
+<p>Kattintson valamire annak szerkesztéshez</p>
+</li>
+<li>
+<p>Válasszon ki több elemet, majd szerkesztheti azokat együttesen.</p>
+</li>
+<li>
+<p>Különböző típusú elemeket is szerkeszthet együtt.</p>
+</li>
+<li>
+<p>A többszörös kiválasztás további beállításokat és műveleteket műveleteket biztosíthat.</p>
+</li>
+<li>
+<p>A kiválasztás intelligens módosításához használja a Kiválasztás alpanelt.</p>
+</li>
+<li>
+<p>A navigációs alpanel segítségével végigböngészheti az entitásfát</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_vezetett_bemutató">Vezetett bemutató</a>
+  </li>
+  <li level="1">
+   <a href="#_minta_jelentés">Minta jelentés</a>
+  </li>
+  <li level="2">
+   <a href="#_alapelv_kattintson_valamire_annak_szerkesztéshez">Alapelv: Kattintson valamire annak szerkesztéshez</a>
+  </li>
+  <li level="2">
+   <a href="#_alapelv_több_elem_kiválasztása_és_együttes_szerkesztése">Alapelv: Több elem kiválasztása és együttes szerkesztése</a>
+  </li>
+  <li level="2">
+   <a href="#_alapelv_különböző_típusú_elemek_együttesen_szerkeszthetők">Alapelv: Különböző típusú elemek együttesen szerkeszthetők.</a>
+  </li>
+  <li level="2">
+   <a href="#_alapelv_a_többszörös_kiválasztás_további_műveleteket_tehet_lehetővé">Alapelv: A többszörös kiválasztás további műveleteket tehet lehetővé</a>
+  </li>
+  <li level="2">
+   <a href="#_alapelv_a_kiválasztás_módosításához_használja_a_kiválasztás_alpanelt">Alapelv: A kiválasztás módosításához használja a Kiválasztás alpanelt.</a>
+  </li>
+  <li level="2">
+   <a href="#_alapelv_a_navigációs_alpanel_segítségével_végigböngészheti_az_entitásfát">Alapelv: A navigációs alpanel segítségével végigböngészheti az entitásfát</a>
+  </li>
+  <li level="1">
+   <a href="#_összegzés">Összegzés</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="install.html">A szoftver telepítése</a></span>
+ <span class="next"><a href="workflow.html">Alkatrész munkafolyamat</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

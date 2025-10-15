@@ -1,0 +1,1373 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>Taivutustyökalujen DXF-tiedostomuoto</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Bend Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Tervetuloa TecZoneen</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">Johdanto</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">Ohjelmiston asentaminen</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">Käyttöliittymä</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">Osan työnkulku</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">2D-tuonti</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">2D-piirustuksen puhdistus</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">3D-tuonti</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">3D-mallin tuonti</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">Rakenneryhmän tuonti</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">Muodon tunnistus</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">Komponenttien tunnistus</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">Geometrian muuttaminen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Laser CAM -toiminnot</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Osan työnkulku</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Muokkauspaneelit</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Laserleikkaus</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Lähestyminen</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Vetäytyminen</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Mikroliitos</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Syventävät osiot</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Muoto</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Jätepalan leikkaus</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Osa</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Nurkkien käsittely</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Quick-Nest-toiminto</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Työtehtävän työnkulku</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Työtehtävän paneeli</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Levyjen välilehti</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Osien välilehti</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Asettelujen välilehti</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Tiivistelmän välilehti</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Asettelun muokkaus</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Nestaustilat</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Sijoittelupaneeli</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Järjestyksen määrittely</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Palojen leikkaus levystä</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Viisteiden leikkaus</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Avoimet muodot</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Säädettävä viiste</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Muuta</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Syventävät osiot</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Päättämistä koskevat säännöt</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">LTT-taulukoiden muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Strategia</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Mikroliitokset</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Muut asetukset</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Bend CAM -toiminnot</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Taivutustietojen luonti</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Taivutusnavigaattori</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Taivutustietojen muokkaus</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Taivutuksen muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Työkalukiinnikkeen muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Taivutuskokoonpanon muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Takavasteiden muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Kulman mittauksen muokkaaminen</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Taivutusten laskentataulukko</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Järjestyksen muuttaminen</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Kokoonpanojen ja asemien lisääminen</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Syventävät osiot</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Kulman mittaus</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Eräprosessi</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Ohjelman uudelleenlaskenta</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Särmäysvoiman tarkastus</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Taivutusnavigaattori</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Osan poiminta</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Poiminta kuormalavalta</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Poiminta syöttölaitteesta</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Robottisärmäys</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Sijoittaminen paikalleen</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Taivutus</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Poistaminen</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Otteenvaihto</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Otteenvaihdon paneeli</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Otteenvaihdon lisääminen</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Otteenvaihdon muokkaaminen</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Otteenvaihto leuan avulla</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Otteenvaihtoaseman paneeli</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Osien varastointi</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Varastointimallit</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Toisto ja järjestys</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Välilevy</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Syventävät osiot</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Reittipisteet</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Solun konfigurointi</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">Tarttujien tietokanta</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">Raportit</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">Fold CAM -toiminnot</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Taivutustietojen luonti</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">Taivutuksen näkymä</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Taivutustietojen muokkaus</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Taivutuksen muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Sivun/osion muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">Järjestyksen muuttaminen</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">Aihiotelineiden muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Vasteiden asemoinnin muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">Terien muokkaaminen</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Latauksen muokkaaminen</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Purkamisen muokkaus</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Työkaluvarustus</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Syventävät osiot</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Mukautettujen ilmarakojen taulukot</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Manuaalisen taivutuksen päättäminen</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Vaadittava laipan pituus</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Asetukset</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Piirustus</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Kerrokset</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Mitat</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Näkymä</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Bend CAM -toiminnot</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Koneen oletusasetukset</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Taivutuksen tulostetiedot</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Taivutuksen näkymä</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Särmäyssolu</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Cut CAM -toiminnot</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Asettelu</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Nestauksen asetukset</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Levy</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Levyn käsittely</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Rangan leikkaukset</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Työtuet</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">Laser CAM -toiminnot</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Järjestys</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Leikkauksen tulostetiedot</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Leikkauksen näkymä</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Taivutus levyntaivutuskoneilla</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Oletusasetukset</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">ZBW-työkalujen pitimet</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Tulostetiedot</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Raportit</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Kohtien oletusasetukset</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Tuonti/vienti</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Ympäristö</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Tietokanta</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Materiaalit</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Koneet</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Taivutustyökalut</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Taivutukseen tarkoitetut tarttujat</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Muodot/komponentit</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Raportit</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Kentät, kuvat ja taulukot</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Nauhat (aliraportit)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Tunnisteet, bittikartat ja muodot</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Liite</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="3dformats.html">Sovelluksen tukemat 3D-tiedostomuodot</a></li>
+    <li><button class="tree blank"></button><a href="bseparatordxf.html">Välilevyjen DXF</a></li>
+    <li><button class="tree blank"></button><a class="active" href="bendtooldxf.html">Taivutustyökalujen DXF-tiedostomuoto</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Liite</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="bendtooldxf.html">Taivutustyökalujen DXF-tiedostomuoto</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Taivutustyökalujen DXF-tiedostomuoto</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Flux-sovelluksen mukana toimitetaan laaja valikoima taivutustyökaluluetteloita (muun muassa Trumpfin, Wilan, Wilsonin,
+Rollerin, Amadan jne. työkaluille). Jos käytät työkaluja, jotka sisältyvät johonkin noin 40:stä
+Flux-sovelluksen mukana tulevasta työkaluluettelosta, sinun tarvitsee tällöin vain asentaa luettelo, minkä jälkeen voit aloittaa työkalujen
+käytön. Toisinaan on tarpeen mallintaa mukautettu työkalu tai työkalu, joka on peräisin
+luettelosta, joka ei sisälly Flux-sovellukseen.</p>
+</div>
+<div class="paragraph">
+<p>Tämä tapahtuu tavallisesti <strong>taivutustyökaluille tarkoitettua DXF-tiedostomuotoa</strong> käyttäen. Flux pystyy
+näin sekä viemään taivutustyökalut DXF-muotoon että tuomaan taivutustyökaluja DXF-muodosta.
+Taivutustyökaluja edustavien DXF-tiedostojen on noudatettava tiettyjä sääntöjä, jotta Flux pystyy kokoamaan
+kaikki tarvitsemansa tiedot. Hyvin usein nopea tapa luoda taivutustyökalu on käyttää
+toimintoa "Vie DXF-muotoon", joka luo DXF-tiedoston olemassa olevasta työkalusta. Tämän jälkeen DXF-tiedostoa voi
+muokata (joko Flux-sovelluksessa tai missä tahansa muussa 2D-CAD-järjestelmässä). Lopuksi muokatun DXF voi tuoda
+takaisin Flux-sovellukseen käyttämällä toimintoa "Tuo DXF-muodosta".</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_esimerkki_dxf_tiedostosta">Esimerkki DXF-tiedostosta<a id="h000015"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Seuraavassa on esimerkki taivutustyökalun DXF-tiedostosta, joka on luotu komennolla "Vie DXF-muotoon":</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name2013.png" alt="Name2013" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Työkalun DXF-tiedoston tulee sisältää seuraavat tiedot:</p>
+</div>
+<div id="h000016" class="ulist">
+<ul>
+<li>
+<p>Yksi (viivoista, kaarista, polyline-objekteista rakentuva) suljettu muoto, joka määrittelee työkalun
+<em>sivuprofiilin</em>. Tämän profiilin pline-komennon tulee olla piirustuksen vasemmanpuoleisin suljettu POLYLINE-objekti
+(ks. kuva edellä).</p>
+</li>
+<li>
+<p>PISTE-elementti, joka määrittelee työkalun referenssipisteen. Tämän piste-elementin on sijaittava
+suljetun profiilin polyline-objektin sisäpuolella. Se määrittelee pisteen, josta
+työkalun korkeus mitataan (ks. kuva edellä).</p>
+</li>
+<li>
+<p>Jokaisesta työkalun osasta, joka ei ole edestä katsottuna yksinkertainen suorakulmio,
+tarvitaan <em>etusivua esittävä piirustus</em>. Nämä ovat tyypillisesti vasemman- tai oikeanpuoleisia korvakeosia, mutta kyseessä voivat olla myös räätälöidyt
+osat <em>ikkunaosat</em> mukaan luettuina.</p>
+</li>
+<li>
+<p>Jokaisen etupuolta esittävän piirustuksen tulee näkyä profiilipiirustuksen oikealla puolella ja
+olla vaakasuunnassa linjassa profiilipiirustuksen kanssa. Jokaisen etupuolta esittävän piirustuksen korkeuden tulee olla täsmälleen sama kuin
+sivuprofiilipiirustuksen korkeuden. Muutoin ohjelma ei ota piirustusta huomioon. Yllä olevassa kuvassa on
+tyypillinen esimerkki vasemmanpuoleisesta ja oikeanpuoleisesta korvakeosasta.</p>
+</li>
+<li>
+<p>Muut työkalua koskevat tiedot on ilmoitettu tekstimerkkijonojen avulla (ks. huomautukset seuraavassa).</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_metatiedot_tekstielementeissä">Metatiedot tekstielementeissä<a id="h000021"></a></h3>
+<div class="paragraph">
+<p>Työkalujen vientiohjelma lukee kaikki tekstimerkkijonot, joiden muoto on <strong>KEY=value</strong>. Ohjelma jäsentää merkkijonot tällöin siten, että työkalusta on mahdollista saada lisätietoja. Seuraavassa on ilmoitettu ohjelman
+tällä hetkellä tukemat avaimet:</p>
+</div>
+<div id="h000022" class="paragraph">
+<p><strong>NAME=OW200/K R3.2/86 CUSTOM-A</strong><br>
+Määrittelee työkalun nimen. Tämä avain on pakollinen.</p>
+</div>
+<div id="h000023" class="paragraph">
+<p><strong>TONNAGE=800</strong><br>
+Määrittelee työkalun enimmäiskuormituksen (yksikkö: kN/m). Tämä avain on pakollinen, jos haluat
+välttää virheelliset työkalujen ylikuormitusta koskevat virheilmoitukset.</p>
+</div>
+<div id="h000024" class="paragraph">
+<p><strong>UPPER=PTrumpf</strong><br>
+Tämä avain on välttämätön pistinten kohdalla. Avain määrittelee liitännän tyypin (tämän työkalun
+ puskimessa käytettävän kiinnittimen tyypin). Ohjelman tukemat liitännän tyypit on lueteltu seuraavassa:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nimi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merkitys</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PTrumpf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trumpfin pistin (Modufix-liitin)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PAmada</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amadan pistin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PWila</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wila classic -pistin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PWilaNS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wila New-Standard -pistin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PAmerican</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amerikkalainen pistin (Yhdysvalloissa käytettävä malli)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PEHT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EHT:n pistin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LVD:n koon A pistin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LVD:n koon B pistin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LVD:n koon C pistin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LVD:n koon D pistin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PGasparini</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gasparinin pistin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PBayelerR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bayelerin R-tyypin pistin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PBayelerS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bayelerin S-tyypin pistin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUrsviken</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ursvikenin OEM-pistin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PBayelerEuro</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bayelerin Euro-pistin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PColgar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Colgarin pistin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PKomatsu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Komatsun pistin</p></td>
+</tr>
+</tbody>
+</table>
+<div id="h000025" class="paragraph">
+<p><strong>LOWER=DTrumpf</strong><br>
+Tämä avain on välttämätön tyynyjen kohdalla. Avain määrittelee liitännän tyypin (tämän työkalun tyynyalustassa käytettävän kiinnittimen tyypin). Ohjelman tukemat liitännän tyypit on lueteltu seuraavassa:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Nimi</th>
+<th class="tableblock halign-left valign-top">Merkitys</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DTrumpf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trumpfin tyyny</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amadan tyyny, leveys 30 mm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada60</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amadan tyyny, leveys 60 mm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmadaF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amadan tyyny, litteä</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada2V</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amadan 2-V-tyyny</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmadaQuick</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada-pikavaihtotyyny</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada90</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amadan tyyny, leveys 90 mm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DEHT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EHT:n tyyny</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada120</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amadan tyyny, leveys 120 mm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DWeinbrenner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Weinbrennerin tyyny</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DWila</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wilan tyyny</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DKomatsu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Komatsun tyyny</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DBeyeler110</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beyelerin 110 mm:n tyyny</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DLVD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LVD:n tyyny</p></td>
+</tr>
+</tbody>
+</table>
+<div id="h000026" class="paragraph">
+<p><strong>PIECES=2x25,30,45,50,2x100,200,4x500</strong><br>
+Tämä avain määrittelee tämän työkalun vakio-osat (vasen ja oikea korvakeosa
+on jo määritelty piirtämällä niiden profiilit). Luettelo on joukko pilkuilla erotettuja
+osien pituuksia, ja valinnaisesti jokaisen pituuden edessä voi olla
+<em>lukumäärän kerroin</em>. Yllä olevan luettelon määrittelemään työkaluun kuuluu siten kaksi 25 mm:n osaa, yksi 30 mm:n osa,
+neljä 500 mm:n osaa jne.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Jos haluat käyttää lukumäärän kerrointa erikoismuotoja sisältävien osien (kuten korvakekappaleiden) kohdalla,
+lisää muotoa "2x" oleva tekstielementti kyseisen osan ääriviivojen sisäpuolelle:
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name20132.png" alt="Name20132" width="400">
+</div>
+</div>
+<div id="h000027" class="paragraph">
+<p><strong>VWIDTHTYPE=Sharp</strong><br>
+Tätä avainta on käytettävä sellaisten tyynyjen kohdalla, joiden V-aukon leveyden määritelmä poikkeaa Trumpfin määritelmästä (ks.
+kuva seuraavassa):</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Nimi</th>
+<th class="tableblock halign-left valign-top">Merkitys</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sharp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tyynyn teoreettinen terävä kulma</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tangent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yläreunan tangenttipiste</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="img/vwidthtype.png" alt="vwidthtype" width="400">
+</div>
+</div>
+<div id="h000028" class="paragraph">
+<p><strong>ISUPPERTOOL=0</strong><br>
+Määrittelee sen, onko työkalu ylä- vai alatyökalu. Ylätyökalun tapauksessa arvon on oltava 1
+ja alatyökalun tapauksessa arvon tulee olla nolla. Tämä on tarpeen työkaluilla, jotka on tuotava
+nollakorkeutta käyttäen (ks. seuraava kuva):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/isuppertool.png" alt="isuppertool" width="250">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_muodon_tunnistus">Muodon tunnistus<a id="h000029"></a></h3>
+<div class="paragraph">
+<p>Huomaa taivutustyökaluille tarkoitetun DXF-muodon osalta, että se edellyttää eräiden kriittisten
+pistimen/tyynyn parametrien, kuten korkeuden, säteen, kulman tai V-aukon leveyden määrittelemistä. Flux
+analysoi työkalupiirustuksen ja poimii nämä parametrit automaattisesti. Pistimen kohdalla
+Flux odottaa löytävänsä alareunasta (bc) kaarevan segmentin, jota reunustavat suorat viivat (ab ja cd).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name20133.png" alt="Name20133" width="350">
+</div>
+</div>
+<div class="paragraph">
+<p>Näistä kolmesta segmentistä sovellus tunnistaa pistimen kulman ja säteen automaattisesti.
+Tyynyn kohdalla Flux hakee parametrit tarkastamalla vasemman olakkeen. Tyynyn kohdalla sovellus
+odottaa löytävänsä kaarevan olakesegmentin (bc), jota reunustavat vaakasuora yläreuna (ab) ja viisto
+segmentti (cd).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name20134.png" alt="Name20134" width="350">
+</div>
+</div>
+<div class="paragraph">
+<p>Jos pistin tai tyyny ei täytä näitä muodontunnistuksen asettamia vaatimuksia, Flux
+ei pysty tunnistamaan muotoa pistimeksi tai tyynyksi.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lisätietoja">Lisätietoja:<a id="h000030"></a></h3>
+<div id="h000031" class="ulist">
+<ul>
+<li>
+<p>Työkaluprofiili voi sijaita missä tahansa kohdassa piirustusta – tarkka sijainti ei ole
+tärkeää, koska työkalun referenssipisteen määrittely tapahtuu pistemerkintäelementin avulla.</p>
+</li>
+<li>
+<p>Edellä mainittujen elementtien lisäksi piirustuksen ei tulisi sisältää muita
+elementtejä. Piirustuksen ei tulisi sisältää etenkään otsikkolohkoa tai suljettuja polyline-
+objekteja.</p>
+</li>
+<li>
+<p>Piirustuksessa tulee aina käyttää metrijärjestelmän yksiköitä (Flux-sovelluksessa kulloinkin käytettävästä
+yksiköstä riippumatta).</p>
+</li>
+<li>
+<p>Vaikka komento kehottaa tuomaan tiedot DXF-tiedostosta, Flux hyväksyy myös GEO-tiedoston,
+mikäli tiedosto noudattaa edellä lueteltuja käytäntöjä.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_erikoistyökalut">Erikoistyökalut<a id="h000035"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Työkalujen tuontitoiminto pystyy tunnistamaan eräitä <em>erikoistyökalujen</em> tyyppejä. Näiden tulee olla
+määritelty käyttämällä DXF-tiedostossa muotoon <strong>FLAVOR=XYX</strong> laadittua tekstiä.</p>
+</div>
+<div class="sect2">
+<h3 id="_litistyspistimet">Litistyspistimet<a id="h000036"></a></h3>
+<div class="paragraph">
+<p>Litistyspistimiä varten on määriteltävä seuraavat lisäasetukset:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Teksti <strong>FLAVOR=HemPunch</strong> määrittelee työkalun litistystyökaluksi.</p>
+</li>
+<li>
+<p>Teksti <strong>PARAMS=-1,12.15,70</strong> määrittelee mittatietoja, joita tarvitaan simulointia
+varten.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hempunch.png" alt="HemPunch" width="300">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hempunch2.png" alt="HemPunch2" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>Litistysprosessin määrittelyyn tarvitaan kolme parametria. Nämä on esitetty
+yllä olevassa kuvassa arvoina A, B ja C. Ensimmäinen arvo (tässä esimerkissä -1 mm) määrittelee sen, kuinka paljon
+pistimen pystysuora tasopinta on taivutuslinjan takana. Koska pystysuora tasopinta on tässä tapauksessa taivutuslinjan edessä, arvo on -1. Toinen parametri (tässä esimerkissä 12,15 mm)
+määrittelee sen, kuinka paljon litistyskärki on taivutuslinjan etupuolella. Viimeinen parametri (tässä esimerkissä 70 mm)
+määrittelee pystysuoran etäisyyden pistimen kärjestä litistyksen kärkipisteeseen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_litistyslohkolla_varustettu_tyynyt">Litistyslohkolla varustettu tyynyt<a id="h000037"></a></h3>
+<div class="paragraph">
+<p>Litistyslohko on litistystä varten tyynyn etu- tai taustapuolelle asennettava lisäosa.
+Lohkon ansiosta käytettävissä on tasopinta, jota vasten litistyksen voi suorittaa siten, että tuloksena on virheetön litistys.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hemblock.png" alt="HemBlock" width="270">
+</div>
+</div>
+<div class="paragraph">
+<p>Litistyslohkoa varten on määriteltävä seuraavat lisäasetukset:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Teksti <strong>FLAVOR=HemBlock</strong> määrittelee työkalun litistyslohkoksi.</p>
+</li>
+<li>
+<p>Teksti <strong>PARAMS=0,13.9</strong> määrittelee mittatietoja, joita tarvitaan simulointia varten.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hemblock2.png" alt="Hemblock2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Litistyslohkon määrittelyyn tarvitaan kaksi parametria. Ensimmäinen parametri määrittelee
+sen, onko litistyslohkoa määrä käyttää tyynyn edessä vai tyynyn takana.0 = edessä ja 1 = takana. Yllä olevassa esimerkissä lohkoa voi käyttää tyynyn edessä.
+Toinen parametri määrittelee I-akselin suuntaisen litistysliikkeen. Tämä on merkitty edellä
+olevaan kuvaan kirjaimella B.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tyynyt_z_taivutustyynyt">Tyynyt Z-taivutustyynyt<a id="h000038"></a></h3>
+<div class="paragraph">
+<p>Z-taivutukseen tarkoitetun tyynyn tapauksessa DXF-tiedoston tulee sisältää tekstisyöte, jonka muoto on <strong>FLAVOR=ZBendDie</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Lisäksi työkalu on piirrettävä siten, että keskellä oleva tasainen alue yltää
+alhaalta vasemmalta ylös oikealle. Toisin sanoen työkalun suunnan tulee olla seuraavan kuvan
+mukainen eikä siten <em>käänteinen</em> kuvan suuntaan nähden:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/zdie.png" alt="ZDie" width="350">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pistimet_z_taivutukseen">Pistimet Z-taivutukseen<a id="h000039"></a></h3>
+<div class="paragraph">
+<p>Z-taivutukseen tarkoitetun pistimen tapauksessa DXF-tiedoston tulee sisältää tekstisyöte, jonka muoto on <strong>FLAVOR=ZBendPunch</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Lisäksi työkalu on piirrettävä siten, että keskellä oleva tasainen alue yltää
+alhaalta vasemmalta ylös oikealle. Toisin sanoen työkalun suunnan tulee olla seuraavan kuvan
+mukainen eikä siten <em>käänteinen</em> kuvan suuntaan nähden:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/zpunch.png" alt="ZPunch" width="350">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pistimet_sädetaivutukseen">Pistimet sädetaivutukseen<a id="h000040"></a></h3>
+<div class="paragraph">
+<p>Kyseessä on sädetaivutusvarsi, johon tarvitaan sopiva kiinnitin.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/radiuspunch.png" alt="RadiusPunch" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Tällaisia pistimiä varten on määriteltävä seuraavat lisäasetukset:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Teksti <strong>FLAVOR=RShaft</strong> määrittelee työkalun sädetaivutusvarreksi.</p>
+</li>
+<li>
+<p>Teksti <strong>PARAMS=80</strong> määrittelee NC-ohjelmaan tulostuvan työkalun korkeuden.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+PISTE-elementti määrittelee työkalun referenssipisteen.
+Työkalu on piirrettävä siten, että referenssipiste sijaitsee kiinnittimen ylösalaisin olevan V-aukon kärkipisteen
+kohdalla.
+</td>
+</tr>
+</table>
+</div>
+<div id="h000041" class="ulist">
+<ul>
+<li>
+<p>Piirrä sädetaivutuselementti ja siihen kuuluva kiinnitin siten kuin osat on asennettu koneeseen (ks. seuraava kuva).</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/radiuspunch3.png" alt="RadiusPunch3" width="250">
+</div>
+</div>
+<div id="h000042" class="ulist">
+<ul>
+<li>
+<p>Poista kiinnittimen pline-komento ja tallenna sädetaivutuselementin dxf. Tämän taivutuselementin profiilin dxf
+sisältää vain kiinnittimen ylösalaisin olevan V-aukon kärjen kohdalla sijaitsevan PISTE-elementin ja taivutuselementin
+pline-komennon hieman PISTEEN alapuolella.</p>
+</li>
+<li>
+<p>Tämän työkalun korkeus mitataan PISTE-elementin kohdalta. Tämä on merkitty seuraavaan
+kuvaan kirjaimella A.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/radiuspunch2.png" alt="RadiusPunch2" width="250">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ev_f_litistystyynyt">EV-F-litistystyynyt<a id="h000044"></a></h3>
+<div class="paragraph">
+<p>Nämä tyynyt ovat EV-F-työkaluja, joiden avulla litistyksen voi suorittaa ilman siirtoliikettä. Tällaisesta tyynystä käytetään
+nimitystä I0HemDie.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hemdie.png" alt="I0HemDie" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Tällaisia tyynyjä varten on määriteltävä seuraavat lisäasetukset:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Teksti <strong>FLAVOR=I0HemDie</strong> määrittelee työkalun nimeksi I0HemDie.</p>
+</li>
+<li>
+<p>Teksti <strong>PARAMS=8.5,95.5</strong> määrittelee mittatietoja, joita tarvitaan simulointia varten.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hemdie2.png" alt="I0HemDie2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Tämän litistystyynyn määrittelee kaksi parametria. Nämä on esitetty yllä olevassa
+kuvassa arvoina A ja B. Ensimmäinen parametri (tässä esimerkissä 8,5 mm) määrittelee
+osan etäisyyden keskilinjasta litistyksen aikana. Toinen parametri (tässä esimerkissä 95,5 mm) määrittelee
+pystysuoran etäisyyden kohdasta, jossa osa sijaitsee litistyksen aikana, tyynyn alareunaan.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ev_f_litistyspistimet">EV-F-litistyspistimet<a id="h000045"></a></h3>
+<div class="paragraph">
+<p>Nämä pistimet ovat EV-F-pistimiä, joiden avulla litistyksen voi suorittaa ilman siirtoliikettä. Tällaisesta pistimestä käytetään
+nimitystä I0HemPunch.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hempunch.png" alt="I0HemPunch" width="450">
+</div>
+</div>
+<div class="paragraph">
+<p>Tällaisia pistimiä varten on määriteltävä seuraavat lisäasetukset:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Teksti <strong>FLAVOR=I0HemPunch</strong> määrittelee työkalun nimeksi I0HemPunch.</p>
+</li>
+<li>
+<p>Teksti <strong>PARAMS=-8,16,57.5</strong> määrittelee mittatietoja, joita tarvitaan
+simulointia varten.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hempunch2.png" alt="I0HemPunch2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Litistysprosessin määrittelyyn tarvitaan kolme parametria. Nämä on esitetty
+yllä olevassa kuvassa arvoina A, B ja C. Nämä parametrit ovat samat kuin
+kohdassa "HemPunch" määritellyt parametrit.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_roll_bend_tyynyt">Roll-bend-tyynyt<a id="h000046"></a></h3>
+<div class="paragraph">
+<p>Roll-bend-tyynyä voidaan kutsua myös siivelliseksi tyynyksi.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rollbenddie.png" alt="RollbendDie" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Tätä työkalua varten on määriteltävä seuraavat lisäasetukset:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Teksti <strong>FLAVOR=WingDie</strong> määrittelee työkalun siivelliseksi työkaluksi.</p>
+</li>
+<li>
+<p>Teksti <strong>PARAMS=10.49,100</strong> määrittelee mittatietoja, joita tarvitaan
+siivellisten työkalujen simulointia varten.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rollbenddie2.png" alt="RollbendDie2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Siipimäisten taivutusosien liikkeen määrittelee kaksi parametria. Ensimmäinen
+parametri määrittelee vaakasuoran etäisyyden tyynyn keskilinjasta jommankumman siiven
+kiertokeskipisteeseen. Tämä on merkitty edellä olevaan kuvaan kirjaimella A. Toinen
+parametri määrittelee pystysuoran etäisyyden tyynyn alareunasta siipien
+kiertokeskipisteeseen. Tämä on merkitty edellä olevaan kuvaan kirjaimella B. Normaalisti parametrin B ja korkeuden arvo on sama.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_integroidulla_taivutuspinnalla_varustetut_litistystyynyt">Integroidulla taivutuspinnalla varustetut litistystyynyt<a id="h000047"></a></h3>
+<div class="paragraph">
+<p>Nämä tyynyt ovat V-tyynyjä, joissa on myös erillinen litistyspöytä seuraavan kuvan mukaisesti.
+Tämän tyynyn tapauksessa DXF-tiedoston tulee sisältää tekstisyöte <strong>FLAVOR=SelfHemDie</strong>
+image::SelfHemDie.png[,200]</p>
+</div>
+<div class="paragraph">
+<p>Lisäksi tiedoston tulee sisältää syöte <strong>PARAMS</strong>, jolla on kaksi arvoa.
+Nämä kaksi parametria ovat samat kuin työkalun "I0HemDie" parametrit.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/selfhemdie2.png" alt="SelfHemDie2" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p>Nämä on esitetty yllä olevassa kuvassa arvoina A ja B. Ensimmäinen parametri määrittelee
+osan etäisyyden keskilinjasta litistyksen aikana. Toinen parametri määrittelee
+pystysuoran etäisyyden kohdasta, jossa osa sijaitsee litistyksen aikana, tyynyn alareunaan.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_kahdella_v_aukolla_varustetut_tyynyt">Kahdella V-aukolla varustetut tyynyt<a id="h000048"></a></h3>
+<div class="paragraph">
+<p>Kahdella V-aukolla varustetuiksi tyynyiksi kutsutaan tyynyjä, joissa on useita V-aukkoja. Toisen aukon
+käyttöön tarvitaan tällöin I-akselia. Tällöin on noudatettava muutamia sääntöjä:</p>
+</div>
+<div id="h000049" class="ulist">
+<ul>
+<li>
+<p>Luo tyynyjen dxf-tiedostot käyttämällä kummallekin V-aukon leveydelle omaa asetusta <strong>FLAVOR=DoubleV</strong>.</p>
+</li>
+<li>
+<p>Aseta sama <strong>ORDERNO</strong> kummallekin tyynylle (tämä voi olla mikä tahansa muu kuin tyhjä merkkijono).</p>
+</li>
+<li>
+<p>Aseta <strong>YSHIFT</strong>-arvo siten, että se vastaa käytettävää I-akselin arvoa.</p>
+</li>
+<li>
+<p>Piirrä pistemerkki tyynyn alareunaan V-aukon keskikohtaan ilmaisemaan
+muovausgeometrian sijainti.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Jos tyynyn V-aukkojen leveydet ovat esimerkiksi 12 ja 6, tyynystä on luotava kaksi dxf-tiedostoa
+seuraavan
+kuvan mukaisesti:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/doublevdie.png" alt="DoubleVdie" width="300">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_jousikuormitteiset_litistystyynyt_joustavat_litistystyynyt">Jousikuormitteiset litistystyynyt (joustavat litistystyynyt)<a id="h000053"></a></h3>
+<div class="paragraph">
+<p>Jousikuormitteisen litistystyynyn tapauksessa DXF-tiedoston tulee sisältää
+tekstisyöte <strong>FLAVOR=SpringHem</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/springhemdie.png" alt="SpringHemDie" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Lisäksi tiedoston tulee sisältää myös seuraava syöte:</p>
+</div>
+<div id="h000054" class="ulist">
+<ul>
+<li>
+<p>Teksti <strong>PARAMS=-2,30,10</strong> määrittelee mittatietoja, joita tarvitaan simulointia varten.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/springhemdie2.png" alt="SpringHemDie2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Tämä tyyny on kaksiosainen tyyny, jonka yläosa, joka liikkuu alaspäin litistääkseen levyn reunan
+toista reunaa vasten. Litistykseen käytettävän syvennyksen määrittelee kolme parametria. Ensimmäinen parametri
+määrittelee osan etäisyyden tyynyn keskilinjasta litistyksen aikana. Arvo "+ve
+tarkoittaa sitä, että osa on keskilinjan etupuolella, ja arvo "-ve" puolestaan sitä, että osa on
+keskilinjan takana. Tämä on merkitty edellä olevaan kuvaan kirjaimella A. Toinen parametri
+määrittelee litistysaukon etäisyyden tyynyn alareunasta osan litistyksen aikana. Tämä on merkitty edellä olevaan kuvaan kirjaimella B. Kolmas parametri määrittelee joustoaukon
+korkeuden. Tämä on merkitty edellä olevaan kuvaan kirjaimella C.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pistinten_kiinnittimet">Pistinten kiinnittimet<a id="h000055"></a></h3>
+<div class="paragraph">
+<p>Työkalujen tuontitoiminto pystyy tuomaan <em>pistinten kiinnittimiä</em>. Jotta Flux pystyy tunnistamaan oikein sen, että
+piirustus esittää pistimen kiinnitintä, tiedoston tulee sisältää seuraavat tekstielementit:</p>
+</div>
+<div id="h000056" class="ulist">
+<ul>
+<li>
+<p>Muotoa <strong>UPPER=PTrumpf</strong>, oleva teksti ilmoittaa ylemmän kiinnittimen tyypin (tyyppi on yleensä
+"PTrumpf", jos kiinnitin asennetaan Trumpfin koneeseen).</p>
+</li>
+<li>
+<p>Muotoa <strong>LOWER=PEHT</strong>, oleva teksti ilmoittaa alemman kiinnittimen tyypin (kyseessä on pistimen tyyppi,
+jonka voi asentaa kiinnittimeen).</p>
+</li>
+<li>
+<p>Muotoa <strong>HIGHT=64</strong> oleva teksti ilmoittaa pitimen tehollisen työkorkeuden. Tämä
+on välttämätöntä, sillä Flux ei voi päätellä kiinnittimen korkeutta automaattisesti.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Tässä on kuva pistimen kiinnittimestä, jonka voi tuoda DXF-tiedostosta:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/padapter.png" alt="PAdapter" width="300">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_terän_kiinnittimet">Terän kiinnittimet<a id="h000059"></a></h3>
+<div class="paragraph">
+<p>Työkalujen tuontitoiminto pystyy tuomaan <em>terän kiinnittimiä</em>. Eräät terän kiinnittimet (esimerkiksi mallin OW209/S kaltaiset kiinnittimet) ovat myös litistystyökaluja, joita käytetään levyn sivun litistämiseen toista sivua vasten. Tällaisista
+terän kiinnittimistä tarvitaan lisätietoja.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bholder1.png" alt="BHolder1" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>Pakolliset parametrit UPPER, LOWER, HEIGHT on selitetty edellisessä pistimen kiinnittimiä käsittelevässä osiossa.
+Parametrien merkitys on molemmissa tapauksissa sama. Lisäksi on määriteltävä seuraavat
+lisäasetukset, jotta Flux pystyisi käyttämään kiinnitintä litistystyökaluna:</p>
+</div>
+<div id="h000060" class="ulist">
+<ul>
+<li>
+<p>Teksti <strong>SPLFLAVOR=HemPunch</strong> määrittelee kiinnittimen litistystyökaluksi.</p>
+</li>
+<li>
+<p>Teksti <strong>PARAMS=-6,18,60</strong> määrittelee mittatietoja, joita tarvitaan
+litistysprosessin simulointia varten.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bholder2.png" alt="BHolder2" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>Litistysprosessin määrittelyyn tarvitaan kolme parametria. Nämä on esitetty
+yllä olevassa kuvassa arvoina A, B ja C. Ensimmäinen arvo (tässä esimerkissä -6 mm) määrittelee sen, kuinka paljon
+pistimen pystysuora tasopinta on taivutuslinjan takana.
+Koska pystysuora tasopinta on tässä tapauksessa taivutuslinjan edessä, arvo
+on -6. Toinen parametri (tässä esimerkissä 18 mm) määrittelee sen, kuinka paljon litistyskärki on
+taivutuslinjan etupuolella. Viimeinen parametri (tässä esimerkissä 60 mm)
+määrittelee pystysuoran etäisyyden pistimen kärjestä litistyksen kärkipisteeseen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sädetyökalujen_pitimet">Sädetyökalujen pitimet<a id="h000062"></a></h3>
+<div class="paragraph">
+<p>Tämä kiinnitin on tarkoitettu sädetaivutusvarrella varustetuille työkaluille.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rholder.png" alt="Rholder" width="220">
+</div>
+</div>
+<div class="paragraph">
+<p>Tässä tapauksessa on määriteltävä seuraavat lisäasetukset:</p>
+</div>
+<div id="h000063" class="ulist">
+<ul>
+<li>
+<p>Teksti <strong>FLAVOR=RHolder</strong> määrittelee kiinnittimen sädetaivutusvarrelliseksi kiinnittimeksi.</p>
+</li>
+<li>
+<p>Teksti <strong>PARAMS=100</strong> määrittelee NC-ohjelmaan tulostuvan työkalun korkeuden.</p>
+</li>
+<li>
+<p>Tämän työkalun korkeus mitataan origosta kiinnittimen ylösalaisin olevan V-aukon kärkipisteeseen.
+Tämä on merkitty seuraavaan kuvaan kirjaimella A.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rholder2.png" alt="RHolder2" width="220">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_kahdella_v_aukolla_varustetut_kiinnittimet">Kahdella V-aukolla varustetut kiinnittimet<a id="h000066"></a></h3>
+<div class="paragraph">
+<p>Nämä kiinnittimet ovat 2 tyynyn kiinnittämiseen tarkoitettuja tyynyn kiinnittimiä.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/dvholder.png" alt="DVHolder" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Tässä tapauksessa on määriteltävä seuraavat lisäasetukset:</p>
+</div>
+<div id="h000067" class="ulist">
+<ul>
+<li>
+<p>Teksti <strong>FLAVOR=DVHolder</strong> määrittelee kiinnittimen tyypin "DVHolder" kiinnittimeksi.</p>
+</li>
+<li>
+<p>Teksti <strong>PARAMS=0,36.2</strong> määrittelee mittatietoja, joita tarvitaan tyynyn siirtämiseen toiseen kiinnityspaikkaan kiinnittimessä.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/dvholder2.png" alt="DVHolder2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>Tämän työkalun määrittelyyn tarvitaan kaksi parametria. Ensimmäinen niistä (tässä esimerkissä: 0 mm)
+määrittelee ensimmäisen kiinnityspaikan etäisyydessä suhteessa kiinnittimen referenssiasemaan. Koska esimerkkitapauksessa ensimmäinen paikka on referenssipisteen kohdalla, arvo on 0. Toinen parametri (tässä: 36,2 mm; merkitty yllä olevaan kuvaan kirjaimella A) määrittelee toisen kiinnityspaikan etäisyyden kiinnittimen
+referenssipisteestä.</p>
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_esimerkki_dxf_tiedostosta">Esimerkki DXF-tiedostosta</a>
+  </li>
+  <li level="2">
+   <a href="#_metatiedot_tekstielementeissä">Metatiedot tekstielementeissä</a>
+  </li>
+  <li level="2">
+   <a href="#_muodon_tunnistus">Muodon tunnistus</a>
+  </li>
+  <li level="2">
+   <a href="#_lisätietoja">Lisätietoja:</a>
+  </li>
+  <li level="1">
+   <a href="#_erikoistyökalut">Erikoistyökalut</a>
+  </li>
+  <li level="2">
+   <a href="#_litistyspistimet">Litistyspistimet</a>
+  </li>
+  <li level="2">
+   <a href="#_litistyslohkolla_varustettu_tyynyt">Litistyslohkolla varustettu tyynyt</a>
+  </li>
+  <li level="2">
+   <a href="#_tyynyt_z_taivutustyynyt">Tyynyt Z-taivutustyynyt</a>
+  </li>
+  <li level="2">
+   <a href="#_pistimet_z_taivutukseen">Pistimet Z-taivutukseen</a>
+  </li>
+  <li level="2">
+   <a href="#_pistimet_sädetaivutukseen">Pistimet sädetaivutukseen</a>
+  </li>
+  <li level="2">
+   <a href="#_ev_f_litistystyynyt">EV-F-litistystyynyt</a>
+  </li>
+  <li level="2">
+   <a href="#_ev_f_litistyspistimet">EV-F-litistyspistimet</a>
+  </li>
+  <li level="2">
+   <a href="#_roll_bend_tyynyt">Roll-bend-tyynyt</a>
+  </li>
+  <li level="2">
+   <a href="#_integroidulla_taivutuspinnalla_varustetut_litistystyynyt">Integroidulla taivutuspinnalla varustetut litistystyynyt</a>
+  </li>
+  <li level="2">
+   <a href="#_kahdella_v_aukolla_varustetut_tyynyt">Kahdella V-aukolla varustetut tyynyt</a>
+  </li>
+  <li level="2">
+   <a href="#_jousikuormitteiset_litistystyynyt_joustavat_litistystyynyt">Jousikuormitteiset litistystyynyt (joustavat litistystyynyt)</a>
+  </li>
+  <li level="2">
+   <a href="#_pistinten_kiinnittimet">Pistinten kiinnittimet</a>
+  </li>
+  <li level="2">
+   <a href="#_terän_kiinnittimet">Terän kiinnittimet</a>
+  </li>
+  <li level="2">
+   <a href="#_sädetyökalujen_pitimet">Sädetyökalujen pitimet</a>
+  </li>
+  <li level="2">
+   <a href="#_kahdella_v_aukolla_varustetut_kiinnittimet">Kahdella V-aukolla varustetut kiinnittimet</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="bseparatordxf.html">Välilevyjen DXF</a></span>
+ <span class="next"><a href="../impressum.html">Impressum</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

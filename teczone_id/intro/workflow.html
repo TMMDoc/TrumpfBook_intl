@@ -1,0 +1,731 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>Alur Kerja Komponen</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Bend Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Selamat datang di TecZone</a></li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Pengantar</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="install.html">Menginstal Perangkat Lunak</a></li>
+    <li><button class="tree blank"></button><a href="clarity.html">Antarmuka Pengguna</a></li>
+    <li><button class="tree blank"></button><a class="active" href="workflow.html">Alur Kerja Komponen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">Impor 2-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">Pembersihan 2-D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">Impor 3-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">Impor Model 3D</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">Impor Modul</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">Deteksi Bentuk</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">Deteksi Komponen</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">Memodifikasi Geometri</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">CAM Laser</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Alur Kerja Komponen</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Panel Pengeditan</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Pemotongan Laser</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Pendekatan</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Mundur</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Sambungan mikro</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Lanjutan</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Pemotongan Scrap</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Komponen</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Penanganan Sudut</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Nesting Cepat</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Alur Kerja Nesting</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Panel Nesting</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Tab Lembaran</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Tab Komponen</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Tab Rancangan</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Tab Ringkasan</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Edit Rancangan</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Mode Nesting</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Panel Penempatan</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Urutan</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Lembar Irisan</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Pemotongan Bevel</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Kontur Terbuka</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Bevel Variabel</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Lain-lain</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Aturan Penyelesaian</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">Edit LTT</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Strategi</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Sambungan mikro</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Pengaturan lebih lanjut</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">CAM Penekukan</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Buat parameter tekukan</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Navigator penekukan</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Edit parameter tekukan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Edit penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Edit pemasangan alat</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Edit pengaturan penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Edit backgauge finger</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Edit pengukuran sudut</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Lembar Kerja Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Mengubah urutan</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Menambahkan pengaturan dan stasiun</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Pengukuran sudut</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Proses batch</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Solusi Perhitungan Ulang</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Pemeriksaan tonase</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Navigator Penekukan</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Pengambilan Komponen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Pengambilan dari Palet</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Pengambilan dari Dispenser</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Penekukan Robotik</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Penyisipan</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Ekstraksi</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Pencengkeraman Ulang</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Panel Pencengkeram Ulang</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Tambahkan Pencengkeram Ulang</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Edit Pencengkeram Ulang</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Pencengkeraman Ulang dengan Jaw</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Panel Stasiun Pencengkeram Ulang</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Endapan Komponen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Pola Endapan</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Pengulangan dan Urutan</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Lembar Pemisah</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Konfigurasi Sel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">Database Gripper</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">Laporan</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">CAM Lipat</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Buat data lipat</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">Tampilan Lipat</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Mengedit data Lipat</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Edit penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Edit sisi/area</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">Ubah urutan</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">Edit penahan lembaran kosong</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Edit stopper</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">Edit pisau</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Edit pemuatan</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Edit pembuangan</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Inventaris alat</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Tabel celah udara khusus</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Penyelesaian penekukan manual</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Panjang Sisi Tekukan yang Diperlukan</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Pengaturan</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Diagram</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Layer</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Dimensi</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Tampilan</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">CAM Penekukan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Pengaturan Default Mesin</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Output Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Tampilan Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Sel Penekukan</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">CAM Pemotongan</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Rancangan</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Pengaturan Nesting</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Lembar</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Penanganan Lembaran</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Pemotongan Sisa Rangka</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Penyangga Kerja</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">CAM Laser</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Urutan</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Output Pemotongan</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Tampilan Pemotongan</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Penekukan Panel</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Default</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">Pembawa ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Output</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Laporan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Pengaturan Default Item</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Impor/Ekspor</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Lingkungan</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Database</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Bahan</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Mesin</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Alat Tekuk</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Gripper Penekukan</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Pembentukan/Komponen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Laporan</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Perancang Laporan</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Bidang, Gambar, dan Tabel</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Band (sublaporan)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Stiker, Bitmap, dan Bentuk</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">Lampiran</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Format 3D yang Didukung</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">Lembar Pemisah DXF</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Alat Tekuk DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Pengantar</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="workflow.html">Alur Kerja Komponen</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Alur Kerja Komponen</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Karena TecZone Bend memiliki banyak modul terintegrasi, sering kali ada beberapa <em>jalur</em> yang dapat dilalui oleh data komponen.</p>
+</div>
+<div id="h000514" class="paragraph">
+<p><strong>Contoh 1</strong>: saat Anda memuat data komponen datar (dari file GEO atau file DXF), Anda dapat memilih untuk</p>
+</div>
+<div id="h000515" class="ulist">
+<ul>
+<li>
+<p>Menetapkan pengaturan alat laser ke komponen, sehingga dapat ditempatkan pada lembaran dan dipotong, bersama dengan komponen lainnya.</p>
+</li>
+<li>
+<p>Melipat komponen sepanjang garis tekuk menjadi komponen 3-D, sehingga dapat diproses dan urutan tekukan dapat dihitung untuk press brake.</p>
+</li>
+</ul>
+</div>
+<div id="h000517" class="paragraph">
+<p><strong>Contoh 2</strong>: saat mengimpor model permukaan 3-D (dari file IGES atau STEP), Anda dapat memilih untuk</p>
+</div>
+<div id="h000518" class="ulist">
+<ul>
+<li>
+<p>Menganalisis permukaan dan menempatkan pengaturan alat CAM laser 5-sumbu di sepanjang bukaan yang perlu dipotong.</p>
+</li>
+<li>
+<p>Melakukan pengenalan fitur, mengonversi model permukaan menjadi model lembaran logam, dan membentangkannya menjadi pola datar untuk dilakukan punching dengan mesin punch-press.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_panel_alur_kerja">Panel Alur Kerja<a id="h000520"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/workflow1.png" alt="Workflow 1" width="248">
+</div>
+</div>
+<div class="paragraph">
+<p>Panel <strong>Alur kerja</strong> berfungsi sebagai pusat kendali dari mana Anda dapat mengarahkan semua gerakan ini.
+ Saat Anda membuka komponen, Anda selalu dapat membuka panel alur kerja dengan menekan <kbd>W</kbd>, atau mengklik ikon alur kerja di baris perintah di sebelah kiri. Mari kita jelajahi panel alur kerja; mulailah dengan mengimpor komponen 2D dengan parameter tekukan (file GEO, misalnya).
+Menampilkan panel alur kerja pada tahap ini akan menampilkan hal berikut:</p>
+</div>
+<div id="h000521" class="ulist">
+<ul>
+<li>
+<p>Kita mulai dengan Bend_28.geo, mengimpor dan membersihkan untuk membuat komponen lembaran logam 2D (dimensi komponen ditampilkan)</p>
+</li>
+<li>
+<p>Kemudian ada cabang dalam alur kerja.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Kita dapat menetapkan Laser Tech ke komponen (ini hanya berarti penetapan jalur pemotongan laser ke kontur komponen).</p>
+</li>
+<li>
+<p>Kita dapat melipat komponen yang datar menjadi 3D (terdeteksi 9 penekukan).</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_memperluas_node_alur_kerja_tahap_1">Memperluas node alur kerja: Tahap 1<a id="h000523"></a></h3>
+<div class="paragraph">
+<p>Klik ikon Laser Tech untuk menetapkan pengaturan alat laser ke komponen. Anda akan melihat komponen tersebut segera dianalisis dan pengaturan alat laser ditambahkan padanya. Kemudian, klik ikon Lipat ke 3D untuk melipat komponen datar menjadi 3D. Setelah langkah-langkah ini, panel alur kerja akan terlihat seperti ini:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow2.png" alt="Workflow 2" width="698">
+</div>
+</div>
+<div class="paragraph">
+<p>Seperti yang ditunjukkan oleh anotasi, ada berbagai jenis node dalam diagram alur kerja.</p>
+</div>
+<div id="h000524" class="ulist">
+<ul>
+<li>
+<p>Ada node Tampilan Komponen yang mewakili berbagai jenis pemrosesan yang dapat dilakukan pada komponen. Dengan mengklik node ini, komponen akan beralih ke <em>tampilan</em> tersebut dan serangkaian aktivitas yang tersedia pada komponen tersebut mewakili tampilan tersebut. Misalnya, dalam tampilan Komponen Laser, Anda dapat melihat dan mengedit pengaturan alat laser yang ditetapkan untuk komponen tersebut.</p>
+</li>
+<li>
+<p>Anda dapat beralih di antara tampilan ini dengan mengklik ikon-ikon ini. Semua tampilan komponen yang beragam ini juga memiliki tombol pintasan, yang dapat Anda lihat jika Anda mengarahkan mouse ke salah satu ikon tampilan. Pelajari tombol pintasan ini untuk menavigasi alur kerja dengan cepat. Jadi, setelah beberapa saat, Anda akan menggunakan urutan tombol seperti
+<kbd>W</kbd>
+<kbd>B</kbd>
+<kbd>Esc</kbd> untuk membuka panel alur kerja, beralih ke tampilan komponen ke penekukan, lalu menutup panel alur kerja.</p>
+</li>
+<li>
+<p>Data komponen didorong di antara node-node ini melalui berbagai proses, dan proses-proses ini direpresentasikan dalam panel alur kerja menggunakan ikon bintang 13 sudut. Misalnya, Anda berpindah dari tampilan Komponen 2D ke tampilan Komponen Laser dengan proses Laser Tech (yang menganalisis komponen 2D dan menetapkan pengaturan alat laser untuknya).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Proses yang telah Anda selesaikan akan ditandai dengan tanda centang di dalamnya. Proses yang belum Anda selesaikan (tetapi masih tersedia) akan ditandai dengan tanda silang di dalamnya. Anda dapat mengklik node proses ini untuk menyelesaikan prosesnya.</p>
+</div>
+<div class="paragraph">
+<p>Mari kita rangkum apa yang dapat kita lihat pada tahap alur kerja komponen ini:</p>
+</div>
+<div id="h000527" class="ulist">
+<ul>
+<li>
+<p>Saat ini ada 3 tampilan komponen yang tersedia (Komponen 2D, Komponen Laser, dan Model 3D yang dapat kita pilih secara bergantian).</p>
+</li>
+<li>
+<p>Ada empat proses lebih lanjut yang tersedia:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Kita dapat melakukan Pascaproses Komponen Datar (ini menghasilkan laporan komponen datar yang berguna bagi operator laser atau mesin punch-press; biasanya laporan ini mencakup waktu pemotongan laser, pengaturan alat untuk mesin punch press, dan prasyarat pengaturan alat khusus lainnya untuk komponen ini).</p>
+</li>
+<li>
+<p>Kita dapat melakukan Nesting Cepat (nesting cepat adalah nesting yang hanya berisi satu jenis komponen) dan menghasilkan lembaran penuh yang dipenuhi dengan komponen ini. Ini dapat digunakan untuk memproduksi lembaran yang hanya berisi komponen ini, atau untuk membantu membuat perkiraan biaya atau waktu yang cepat untuk komponen ini.</p>
+</li>
+<li>
+<p>Kami dapat menetapkan Bend Tech (pengaturan alat press brake) untuk komponen tersebut.</p>
+</li>
+<li>
+<p>Kami dapat menetapkan Weld Tech (pengaturan alat robot pengelasan) untuk komponen tersebut.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_memperluas_node_alur_kerja_tahap_2">Memperluas node alur kerja: Tahap 2<a id="h000529"></a></h3>
+<div class="paragraph">
+<p>Mari kita lanjutkan: Klik semua node proses yang tersedia satu per satu, dan lihat bagaimana panel alur kerja meluas. Lanjutkan hingga tidak ada lagi node yang tersisa. Berikut tampilannya setelah proses ini selesai :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow3.png" alt="Workflow 3" width="542">
+</div>
+</div>
+<div class="paragraph">
+<p>Dalam keadaan sepenuhnya meluas, panel alur kerja memudahkan Anda untuk beralih secara instan antara enam tampilan berbeda dari komponen dalam berbagai modul pemrosesan. Anda juga dapat melihat dan mengirimkan atau mencetak semua output yang dihasilkan oleh modul-modul ini. (Output dapat berupa laporan, kode NC, atau studi waktu).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_menavigasi_panel_alur_kerja">Menavigasi panel alur kerja<a id="h000530"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Panel alur kerja menampilkan banyak informasi dan aktivitas dalam bentuk grafis yang ringkas. Sering kali, panel ini akan berfungsi sebagai pusat kendali saat Anda mengerjakan komponen. Mari kita lihat lebih dekat beberapa ikon di panel alur kerja untuk memahami cara menggunakannya.</p>
+</div>
+<div class="sect2">
+<h3 id="_node_proses_yang_tersedia">Node proses yang tersedia<a id="h000531"></a></h3>
+<div class="paragraph">
+<p>Bintang 13 sudut dengan tanda + di dalamnya mewakili langkah pemrosesan yang sekarang tersedia. Misalnya, bisa berupa hemming benda datar 2-D menjadi komponen 3-D, atau penetapan pengaturan alat teknologi laser. Arahkan mouse ke node tersebut untuk menampilkan tip alat yang menjelaskan fungsi node tersebut.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow4.png" alt="Workflow4" width="260">
+</div>
+</div>
+<div class="paragraph">
+<p>Ini mengikuti pola khas untuk banyak node proses yang tersedia. Dengan mengklik node, proses akan dijalankan dengan pengaturan default. <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> pada node akan memunculkan halaman pengaturan terlebih dahulu, dan setelah Anda meninjau/mengedit pengaturan, proses akan dijalankan. Misalnya, berikut adalah yang muncul saat Anda <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> pada node Nesting Cepat:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow5.png" alt="Workflow5" width="510">
+</div>
+</div>
+<div class="paragraph">
+<p>Pengaturan nesting cepat ditampilkan sehingga Anda dapat mengeditnya sebelum melakukan nesting.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_node_proses_yang_yang_telah_selesai"><strong>Node proses yang yang telah selesai</strong><a id="h000532"></a></h3>
+<div class="paragraph">
+<p>Setelah proses selesai, node akan berubah dari node proses yang tersedia menjadi node proses yang telah selesai; simbolnya berubah menjadi bintang dengan tanda centang di dalamnya. Pada titik ini, opsi yang tersedia untuk node tersebut akan berubah.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow6.png" alt="Workflow 6" width="428">
+</div>
+</div>
+<div class="paragraph">
+<p>Ini adalah sekumpulan opsi khas yang tersedia pada node proses yang telah selesai. Mengklik node akan memunculkan pengaturan proses kembali, sehingga Anda dapat menyesuaikannya dan mencoba pemrosesan kembali. Opsi <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> juga biasanya tersedia untuk menghapus data proses. Jika Anda memilih opsi ini, Anda akan diminta untuk mengonfirmasi sebelum penghapusan dilakukan. Misalnya, berikut adalah yang terjadi jika Anda <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> pada node Model 3D, untuk komponen yang telah diproses sepenuhnya:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow7.png" alt="Workflow7" width="641">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_perintah_tambahan">Perintah tambahan<a id="h000533"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Banyak node memiliki ikon kecil di dekatnya, yang menyediakan perintah tambahan. Perintah ini menyediakan beberapa fungsi yang terkait dengan node tersebut. Berikut beberapa contohnya.</p>
+</div>
+<div id="h000534" class="ulist">
+<ul>
+<li>
+<p>Ikon tambahan di dekat setiap node teknologi biasanya memungkinkan Anda memilih mesin yang berbeda dan menyiapkan alat untuk mesin tersebut.<br>
+<span class="image"><img src="img/workflow8.png" alt="Workflow 8" width="440"></span></p>
+</li>
+<li>
+<p>Ikon di dekat node Nesting cepat memungkinkan Anda melakukan nesting dengan ukuran lembar yang berbeda.</p>
+</li>
+</ul>
+</div>
+<div id="h000536" class="ulist">
+<ul>
+<li>
+<p>Ikon di dekat node output memungkinkan Anda melihat berbagai output dari node pemrosesan (laporan, program NC, atau studi waktu).<br>
+<span class="image"><img src="img/workflow9.png" alt="Workflow 9" width="324"></span></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pelacakan_file_sumber">Pelacakan file sumber<a id="h000537"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/srcfiletrack.png" alt="Source File Tracking" width="257">
+</div>
+</div>
+<div class="paragraph">
+<p>Sebagian besar pemrosesan TecZone Bend dimulai dengan mengimpor data CAD (baik 2-D maupun 3-D). Komponen TecZone Bend yang dibuat dari data CAD ini dapat terus melacak komponen sumber tersebut. Saat sebuah komponen dibuka, TecZone Bend dapat memeriksa apakah file CAD asli yang digunakan untuk membuatnya telah diubah selama waktu tersebut. Jika ya, komponen tersebut sekarang sudah kedaluwarsa dan hal ini dapat dilihat di panel alur kerja.</p>
+</div>
+<div id="h000538" class="ulist">
+<ul>
+<li>
+<p>Anda dapat memilih untuk me-refresh komponen dengan mengklik ikon tambahan refresh komponen di dekat node komponen sumber. TecZone Bend akan mengimpor kembali geometri CAD dan membangun kembali komponen tersebut.</p>
+</li>
+<li>
+<p>Anda juga dapat memilih untuk berhenti melacak geometri CAD asli. Ini mungkin berguna, misalnya, jika file CAD asli ada di media yang dapat dilepas atau di drive jarak jauh yang mungkin tidak dapat diakses di masa mendatang.
+Untuk melakukannya, klik ikon tambahan putus tautan di dekat node komponen sumber. Ini akan memunculkan perintah untuk menghentikan pelacakan file sumber:<br>
+<span class="image"><img src="img/srcfiletrack2.png" alt="Source File Disconnect" width="508"></span></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ringkasan">Ringkasan<a id="h000540"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Berikut ini ringkasan singkat tentang prinsip-prinsip yang terdapat di panel alur kerja.</p>
+</div>
+<div id="h000541" class="ulist">
+<ul>
+<li>
+<p>Panel alur kerja menampilkan node yang mewakili berbagai tampilan komponen (seperti komponen laser, komponen yang ditekuk) dan node yang mewakili berbagai proses (seperti lipat ke 3D, tetapkan pengaturan alat laser).</p>
+</li>
+<li>
+<p>Node proses yang tersedia (belum dilakukan) direpresentasikan sebagai bintang 13 sudut dengan tanda <span class="icon"><i class="fa fa-plus-circle"></i></span> di dalamnya. Node proses yang sudah selesai direpresentasikan oleh bintang dengan tanda <span class="icon"><i class="fa fa-check-circle"></i></span> di dalamnya.</p>
+</li>
+<li>
+<p>Mengklik node proses yang tersedia akan memanggil proses tersebut dengan pengaturan default. <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> pada node proses yang tersedia akan memunculkan editor untuk mengedit pengaturan proses terlebih dahulu, kemudian memanggil proses tersebut.</p>
+</li>
+<li>
+<p>Mengklik node proses yang sudah selesai memungkinkan Anda menyesuaikan pengaturan proses dan menerapkan pemrosesan kembali. <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> pada node proses yang telah selesai akan menghapus data pemrosesan.</p>
+</li>
+<li>
+<p>Ikon tambahan kecil di dekat node proses, atau node tampilan komponen menyediakan kontrol untuk mengubah beberapa parameter penting dari node proses tersebut (seperti mesin target, atau ukuran lembar nesting).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_panel_alur_kerja">Panel Alur Kerja</a>
+  </li>
+  <li level="2">
+   <a href="#_memperluas_node_alur_kerja_tahap_1">Memperluas node alur kerja: Tahap 1</a>
+  </li>
+  <li level="2">
+   <a href="#_memperluas_node_alur_kerja_tahap_2">Memperluas node alur kerja: Tahap 2</a>
+  </li>
+  <li level="1">
+   <a href="#_menavigasi_panel_alur_kerja">Menavigasi panel alur kerja</a>
+  </li>
+  <li level="2">
+   <a href="#_node_proses_yang_tersedia">Node proses yang tersedia</a>
+  </li>
+  <li level="2">
+   <a href="#_node_proses_yang_yang_telah_selesai"><strong>Node proses yang yang telah selesai</strong></a>
+  </li>
+  <li level="1">
+   <a href="#_perintah_tambahan">Perintah tambahan</a>
+  </li>
+  <li level="1">
+   <a href="#_pelacakan_file_sumber">Pelacakan file sumber</a>
+  </li>
+  <li level="1">
+   <a href="#_ringkasan">Ringkasan</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="clarity.html">Antarmuka Pengguna</a></span>
+ <span class="next"><a href="../cad/index.html">CAD</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,793 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>L'interface utilisateur</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Bienvenue dans TecZone</a></li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Introduction</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="install.html">Installation du logiciel</a></li>
+    <li><button class="tree blank"></button><a class="active" href="clarity.html">L'interface utilisateur</a></li>
+    <li><button class="tree blank"></button><a href="workflow.html">Flux de travail de la pièce</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAO</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">Importation 2D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">Nettoyage 2D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">Importation 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">Importation de modèle 3D</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">Importation de sous-groupe</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">Identification des formes</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">Identification de composants</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">Modification de la géométrie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Laser CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Flux de travail de la pièce</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Modification des panneaux</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Découpe laser</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Approche</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Retour</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Microjonction</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Avancé</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Contour</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Coupe de chutes</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Pièce</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Usinage d'angle</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Imbrication rapide</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Flux de travail de la tâche</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Panneau Tâches</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Onglet Tôles</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Onglet Pièces</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Onglet Agencements</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Onglet Synthèse</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Modification de l'agencement</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Modes d'imbrication</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Panneau Placement</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Séquençage</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Tôle en tranches</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Coupe biaise</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Contours ouverts</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Vague de coupe variable</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Divers</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Avancé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Règles d'usinage de finition</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">Modification du TTL</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Stratégie</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Microjonctions</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Réglages supplémentaires</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Bend CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Création de paramètres de pliage</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Navigateur de pliage</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Modification des paramètres de pliage</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Modification d'un pliage</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Modification d'un support d'outil</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Modification d'une configuration de pliage</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Modification des doigts de butée</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Modification de la mesure de l'angle</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Feuille de calcul de pliages</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Modification de la phase</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Ajout de configurations et de stations</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Avancé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Mesure de l'angle</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Usinage de lots</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Recalcul du programme</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Contrôle du tonnage</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Navigateur de pliage</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Prélèvement de pièces</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Préhension depuis une palette</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Prélèvement depuis le distributeur</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Pliage robotisé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Insertion</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Pliage</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Extraction</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Reprise de la pièce</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Panneau Reprise de la pièce</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Ajout d'une reprise de la pièce</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Modification d'une reprise de la pièce</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Reprise de la pièce avec mors</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Panneau Table de reprise des pièces</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Dépôt de pièce</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Modèles de dépôt</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Reproduction et séquence</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Tôle de séparation</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Avancé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Points de passage</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Configuration de cellule</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">Base de données des préhenseurs</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">Rapports</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">Fold CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Création de données de plis écrasés</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">La vue Pli écrasé</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Modification des données de pliage</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Modification d'un pliage</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Modification d'un bord de pli / d'une section</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">Modification de la séquence</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">Modification des serre-flans supérieurs</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Modification du jaugeage</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">Modification des lames</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Modification du chargement</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Modification du déchargement</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Stock d'outils</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Avancé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Tableaux d'entrefer personnalisés</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Réalisation du pliage manuel</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Longueur de côté requis</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Réglages</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Dessin</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Calques</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Dimensions</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Vue</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Réglages par défaut de la machine</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Sorties de pliage</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Vue de pliage</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Cellule de pliage</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Agencement</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Réglages d'imbrication</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Tôle</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Manutention des tôles</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Coupes de squelettes</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Support de travail</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Séquence</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Sorties de coupe</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Affichage de coupe</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Pliage à plat</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Réglages par défaut</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">Supports d'outils de pliage supplémentaires</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Sorties</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Rapports</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Réglages par défaut des éléments</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Importation/exportation</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Environnement</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Base de données</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Matériaux</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Machines</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Outils de pliage</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Préhenseurs de pliage</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Déformations/composants</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Rapports</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Concepteur de rapports</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Champs, images et tableaux</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Sections (sous-rapports)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Labels, bitmaps et formes</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">Annexe</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Formats 3D pris en charge</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">Tôle de séparation DXF</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Outil de pliage DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Mentions légales</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Introduction</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="clarity.html">L'interface utilisateur</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>L'interface utilisateur</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>TecZone Bend utilise un design d&#8217;interface utilisateur innovant, baptisée <strong>Clarity</strong>. Lorsque vous travaillez dans TecZone Bend, vous découvrez une interface épurée et minimaliste.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/clarity.png" alt="Clarity" width="651">
+</div>
+</div>
+<div class="paragraph">
+<p>Dans l&#8217;interface TecZone Bend, vous ne trouverez <strong>pas</strong> :</p>
+</div>
+<div id="h000466" class="ulist">
+<ul>
+<li>
+<p>De nombreuses rangées d&#8217;icônes empilées, dont seules quelques-unes sont pertinentes dans le contexte actuel.</p>
+</li>
+<li>
+<p>Des structures de menus complexes comportant des dizaines de menus.</p>
+</li>
+<li>
+<p>Les <em>rubans</em> d&#8217;interface utilisateur occupent beaucoup d&#8217;espace en haut de l&#8217;écran.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Au lieu de cela, l&#8217;interface Clarity fonctionne selon le principe de <strong>Sélectionner</strong>, puis <strong>opérer</strong>.</p>
+</div>
+<div id="h000469" class="ulist">
+<ul>
+<li>
+<p>Sélectionnez les éléments en cliquant dessus.</p>
+</li>
+<li>
+<p>Un panneau Clarity apparaît, contenant divers <strong>Settings</strong> et <strong>opérations</strong> pour l&#8217;élément sélectionné.</p>
+</li>
+<li>
+<p>Le panneau contient souvent des commandes permettant d'<strong>étendre</strong> la sélection en sélectionnant d&#8217;autres éléments similaires.</p>
+</li>
+<li>
+<p>Le panneau contient souvent aussi des commandes permettant de <strong>naviguer</strong> parmi les différents éléments sur lesquels vous travaillez.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ces principes d&#8217;interface utilisateur sont cohérents dans tous les modes de travail de TecZone Bend.
+Que vous nettoyiez un modèle 3D, organisiez des pièces sur une tôle imbriquée ou modifiez une préparation de presse plieuse, vous utiliserez le même ensemble de concepts clés.
+Pour rendre ces concepts abstraits plus concrets, faisons un petit tour d&#8217;horizon et voyons l&#8217;interface Clarity en action (nous prendrons des exemples de l&#8217;éditeur de rapports TecZone Bend et de TecZone Bend pour illustrer).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_visite_guidée">Visite guidée<a id="h000472"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Voici un aperçu rapide du fonctionnement de l&#8217;interface Clarity. Il n&#8217;y a qu&#8217;une poignée de concepts simples qui se répètent partout dans TecZone Bend, et comprendre ces concepts signifie que la plupart des fonctionnalités de TecZone Bend peuvent être utilisées sans beaucoup de lecture ou de formation. En d&#8217;autres termes, si vous lisez cette section, vous pouvez passer directement à la suite du guide d&#8217;utilisation TecZone Bend !</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exemple_de_rapport">Exemple de rapport<a id="h000473"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vous en apprendrez davantage sur la création et la modification des modèles de rapport dans une section ultérieure.Pour l&#8217;instant, nous allons vous présenter quelques termes utilisés dans les rapports afin de pouvoir illustrer les concepts de l&#8217;interface Clarity.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/report.png" alt="Report" width="574">
+</div>
+</div>
+<div class="paragraph">
+<p>L&#8217;image ci-dessus montre certains des types d&#8217;entités qui pourraient figurer dans un rapport.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Un <strong>Zone de description</strong> est un simple morceau de texte ; vous pouvez définir différentes propriétés telles que la police, l&#8217;alignement du texte et la couleur.</p>
+</li>
+<li>
+<p>Un <strong>Champ</strong> affiche certaines données réelles extraites de la pièce sous-jacente.</p>
+</li>
+<li>
+<p>Une <strong>Forme</strong> est une géométrie simple (comme une ellipse, un rectangle ou une ligne) qui peut être utilisée pour ajouter des arrière-plans, des surbrillance ou des séparateurs dans un rapport.</p>
+</li>
+<li>
+<p>Un <strong>Tableau</strong> affiche les données de la pièce sous-jacente qui se présentent sous forme de tableau (comme une feuille de calcul contenant des informations). Dans cet exemple, nous pouvons voir une liste des phases de pliage dans cette pièce, et certains attributs sont affichés pour chacune d&#8217;entre elles.Maintenant que nous avons quelques notions de base sur les entités de rapport, nous pouvons commencer à explorer l&#8217;interface Clarity.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_principe_cliquez_sur_un_élément_pour_le_modifier">Principe : cliquez sur un élément pour le modifier<a id="h000474"></a></h3>
+<div class="paragraph">
+<p>Cliquez sur un champ et un <strong>panneau Clarity</strong> s&#8217;affiche (appelons cela simplement un « panneau » dans cette présentation). Voici un schéma annoté illustrant comment cela pourrait se présenter :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/fieldpanel.png" alt="Field Panel" width="581">
+</div>
+</div>
+<div class="paragraph">
+<p>Cliquez sur un champ pour le sélectionner et afficher un panneau permettant de le modifier.Voici quelques-uns des éléments que nous voyons dans ce panneau :</p>
+</div>
+<div id="h000475" class="ulist">
+<ul>
+<li>
+<p>La barre de titre peut être utilisée pour repositionner le panneau (vous pouvez cliquer n&#8217;importe où sur l&#8217;arrière-plan du panneau et le faire glisser). Si vous l'<strong>épinglez</strong>, les panneaux s&#8217;ouvriront toujours à cet endroit de l&#8217;écran. Sinon, les panneaux s&#8217;ouvrent près de l&#8217;endroit du curseur de la souris.</p>
+</li>
+<li>
+<p>Les zones d&#8217;édition, les zones de saisie de chiffres, les listes de choix, les sélecteurs de police et d&#8217;alignement sont autant de moyens permettant d&#8217;afficher et de modifier les réglages du champ.</p>
+</li>
+<li>
+<p>Les boutons d&#8217;action permettent d&#8217;effectuer diverses opérations sur l&#8217;objet sélectionné.
+Dans ce cas, vous pouvez supprimer le champ du rapport en cliquant sur le bouton <strong>Effacer</strong>.</p>
+</li>
+<li>
+<p>Certains panneaux peuvent contenir de nombreux éléments. Pour réduire l&#8217;encombrement, les panneaux sont divisés en sections, à l&#8217;aide d'<strong>expanseurs</strong>. Dans l&#8217;image ci-dessus, vous pouvez voir que l&#8217;expanseur <strong>Illustration</strong> est fermé (masquant tous les réglages de cette section), tandis que l&#8217;expanseur de police de caractères est ouvert. Vous pouvez cliquer n&#8217;importe où sur l&#8217;expanseur pour ouvrir ou fermer une section.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_principe_sélectionnez_plusieurs_éléments_et_modifiez_les_ensemble">Principe : sélectionnez plusieurs éléments et modifiez-les ensemble<a id="h000479"></a></h3>
+<div class="paragraph">
+<p>Vous pouvez sélectionner des entités supplémentaires en maintenant la touche <kbd>Shift</kbd> enfoncée lorsque vous cliquez dessus. Lorsque plusieurs entités sont sélectionnées, un panneau s&#8217;affiche et vous permet de modifier les réglages de toutes ces entités en même temps.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multisel1.png" alt="Multiple Selection" width="443">
+</div>
+</div>
+<div class="paragraph">
+<p>Dans l&#8217;image ci-dessus, nous avons 3 champs que nous avons sélectionnés à l&#8217;aide de la méthode <span class="keyseq"><kbd>Shift</kbd>+<kbd>Click</kbd></span>.
+Le panneau qui s&#8217;affiche nous permet de modifier les réglages de ces trois champs en même temps. (Ici, nous avons l&#8217;expanseur <strong>Illustration</strong> ouvert et l&#8217;expanseur <strong>Police</strong> fermé).
+Après avoir modifié la couleur <strong>Fond</strong> et les réglages <strong>Largeur stylo</strong>, voici à quoi ressemble le rapport :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multisel2.png" alt="Multiple Selection 2" width="311">
+</div>
+</div>
+<div class="paragraph">
+<p>Les modifications que nous avons apportées sont appliquées à tous les éléments sélectionnés. Dans ce scénario à modifications multiples, notez que le réglage <strong>Listage</strong> n&#8217;est pas affiché ; il s&#8217;agit d&#8217;un réglage que nous ne souhaitons généralement pas modifier pour un ensemble de champs (nous ne souhaitons pas que 3 champs affichent la même valeur à partir de la pièce).
+Les réglages qui ont généralement des valeurs distinctes pour chaque entité ne sont pas affichés dans ces panneaux d&#8217;édition groupée.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_principe_vous_pouvez_modifier_ensemble_des_entités_de_différents_types">Principe : vous pouvez modifier ensemble des entités de différents types<a id="h000480"></a></h3>
+<div class="paragraph">
+<p>Dans l&#8217;exemple ci-dessus, nous avons sélectionné trois entités du même type. Que se passe-t-il si nous sélectionnons des entités de différents types ? Découvrons-le. Tout d&#8217;abord, voici à quoi ressemble le panneau pour une entité <strong>Forme</strong> :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multisel3.png" alt="Shape Panel" width="398">
+</div>
+</div>
+<div class="paragraph">
+<p>Si nous sélectionnons un <strong>Champ</strong> et une <strong>Forme</strong> en même temps, voici le panneau qui s&#8217;affiche :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multisel4.png" alt="Field and Shape" width="395">
+</div>
+</div>
+<div id="h000481" class="ulist">
+<ul>
+<li>
+<p>La barre de légende affiche désormais <strong>2 éléments de rapport</strong>, car nous modifions des éléments de rapport, mais pas du même type.</p>
+</li>
+<li>
+<p>Seuls les réglages communs entre <strong>Champ</strong> et <strong>Forme</strong> sont affichés (dans ce cas, ce ne sont que les réglages de la section visuelle).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_principe_la_sélection_multiple_peut_générer_des_opérations_supplémentaires">Principe : la sélection multiple peut générer des opérations supplémentaires<a id="h000482"></a></h3>
+<div class="paragraph">
+<p>Outre le sous-ensemble commun de réglages et d&#8217;opérations disponibles sur plusieurs objets, la sélection multiple peut parfois présenter de nouvelles opérations ou de nouveaux réglages qui ne sont pas disponibles sur des objets individuels. Prenons un exemple de la vue de pliage pour illustrer cela. Dans la vue de pliage, cliquer sur un pliage affiche un panneau permettant de modifier les réglages du pliage et d&#8217;effectuer certaines opérations sur celle-ci :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bend1.png" alt="Bend" width="409">
+</div>
+</div>
+<div class="paragraph">
+<p>L&#8217;image ci-dessus montre le panneau pour le pliage 3. Maintenez maintenant la touche <kbd>Shift</kbd> enfoncée et sélectionnez également le pliage 4. Le panneau qui s&#8217;affiche maintenant ressemble à ceci :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bend2.png" alt="2-Bends" width="410">
+</div>
+</div>
+<div class="paragraph">
+<p>Il existe certains réglages que nous pouvons modifier de manière globale (ignorer le pliage ou le numéro de station). Cependant, nous voyons ici un nouveau bouton appelé <strong>Grouper</strong>.Etant donné que deux pliages sont sélectionnés et qu&#8217;ils sont colinéaires, ils pourraient être regroupés en un pli individuel. Ceci est détecté automatiquement, et ce nouveau bouton <strong>Grouper</strong> s&#8217;affiche ; cette opération n&#8217;est pas disponible lorsqu&#8217;un pli individuel est sélectionné. En cliquant sur ce bouton, les deux pliages sont regroupés, comme vous pouvez le voir dans l&#8217;image ci-dessous.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bend3.png" alt="Grouped" width="412">
+</div>
+</div>
+<div class="paragraph">
+<p>Maintenant, il n&#8217;y a que 3 phases de pliage dans cette pièce. De plus, le pliage 3 est maintenant un pliage <em>groupé</em> et vous voyez un nouveau bouton apparaître : <strong>Séparer</strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_principe_utilisez_le_sous_panneau_de_sélection_pour_modifier_la_sélection">Principe : utilisez le sous-panneau de sélection pour modifier la sélection<a id="h000483"></a></h3>
+<div class="paragraph">
+<p>Un panneau Clarity aura souvent un sous-panneau <strong>Sélectionnerion</strong> au niveau inférieur.Ce panneau fournit quelques boutons permettant de modifier la sélection de différentes manières.
+En général, il existe des boutons permettant de sélectionner plusieurs objets qui présentent une similitude quelconque. Par exemple, voici quelques moyens d&#8217;élargir la sélection :</p>
+</div>
+<div id="h000484" class="ulist">
+<ul>
+<li>
+<p>Sélectionnez tous les champs d&#8217;un rapport.</p>
+</li>
+<li>
+<p>Sélectionnez toutes les polylignes du même calque.</p>
+</li>
+<li>
+<p>Sélectionnez toutes les frappes de poinçon dans une pièce qui utilise le même outil de poinçonnage.</p>
+</li>
+<li>
+<p>Sélectionnez tous les pliages qui utilisent la même configuration.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Voici un exemple tiré de l&#8217;éditeur de rapport d&#8217;un panneau de sélection qui s&#8217;affiche lorsque nous cliquons sur un champ dans un rapport :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/selection.png" alt="Selection" width="303">
+</div>
+</div>
+<div class="paragraph">
+<p>Le sous-panneau de sélection présente un arrière-plan à motifs distinctifs et des boutons ronds.
+Dans cet exemple, vous pouvez voir des boutons pour sélectionner <strong>Tous les champs</strong>, <strong>Tous les champs de pliage</strong> (champs liés aux données Bend CAM), et <strong>Commuter</strong> (la sélection actuelle).</p>
+</div>
+<div class="paragraph">
+<p>La liste réelle des boutons de sélection affichés dans ce sous-panneau varie en fonction du contexte. Vous constaterez que ces boutons de sélection permettent de gérer très facilement les scénarios les plus courants.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_principe_utilisez_le_sous_panneau_de_navigation_pour_parcourir_larborescence_des_entités">Principe : utilisez le sous-panneau de navigation pour parcourir l&#8217;arborescence des entités<a id="h000488"></a></h3>
+<div class="paragraph">
+<p>L&#8217;ensemble des entités d&#8217;une pièce, d&#8217;un rapport ou d&#8217;un agencement présente souvent une structure hiérarchique.
+Nous appelons cela une <em>arborescence des entités</em>. La structure est généralement représentée comme un arbre à l&#8217;envers, avec l&#8217;objet « parent » en haut et les enfants en dessous.Voici un exemple d&#8217;arborescence d&#8217;entités dans un rapport.</p>
+</div>
+<div id="h000489" class="ulist">
+<ul>
+<li>
+<p>Un rapport peut contenir plusieurs éléments. Certains de ces éléments pourraient être des tableaux.</p>
+</li>
+<li>
+<p>Un tableau dans un rapport peut contenir plusieurs colonnes.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ainsi, il y a 3 niveaux dans cette arborescence, et une représentation graphique de cette arborescence pourrait être comme suit :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/navigate1.png" alt="Navigate" width="768">
+</div>
+</div>
+<div class="paragraph">
+<p>Ce rapport comporte 2 labels, 1 champ et 1 tableau. Le tableau comporte 4 colonnes.
+Lorsque nous cliquons sur le tableau, nous voyons un panneau comme celui-ci :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/navigate2.png" alt="Table" width="619">
+</div>
+</div>
+<div class="paragraph">
+<p>Le panneau de navigation fournit des boutons de navigation directionnels pour parcourir l&#8217;arborescence des entités. Tout comme le panneau de sélection, le sous-panneau de navigation présente un arrière-plan texturé distinctif et apparaît au bas du panneau, juste au-dessus du sous-panneau de sélection.</p>
+</div>
+<div class="paragraph">
+<p>Les boutons <span class="icon"><i class="fa fa-arrow-left"></i></span> <strong>Retour.</strong> et <strong>Suivant</strong> <span class="icon"><i class="fa fa-arrow-right"></i></span> permettent de se déplacer parmi les éléments situés au même niveau dans l&#8217;arborescence des entités. Ainsi, cliquer sur ces boutons permet de sélectionner les autres éléments du rapport, tels que les éléments <strong>Zone de description</strong> ou <strong>Champ</strong> dans le rapport.</p>
+</div>
+<div class="paragraph">
+<p>Cliquer sur <strong>Plan de travail</strong> <span class="icon"><i class="fa fa-arrow-up"></i></span> permet de remonter du tableau vers l&#8217;élément parent, à savoir le <em>rapport</em> lui-même. Le panneau qui s&#8217;affiche lorsque vous cliquez sur le bouton <strong>Plan de travail</strong> affiche certains réglages liés au rapport lui-même, comme le format papier et les marges :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/navigate3.png" alt="Report" width="617">
+</div>
+</div>
+<div class="paragraph">
+<p>Nous sommes maintenant en train de modifier le rapport ; nous nous trouvons à la racine de l&#8217;arborescence des entités. Il n&#8217;y a pas d&#8217;autre direction que vers le bas, le sous-panneau de navigation ne comporte donc qu&#8217;un seul bouton (<span class="icon"><i class="fa fa-arrow-down"></i></span> Eléments) pour descendre vers la liste des éléments. Cliquez ici pour sélectionner à nouveau le tableau.</p>
+</div>
+<div class="paragraph">
+<p>Dans le tableau, le bouton de navigation vers le bas <span class="icon"><i class="fa fa-arrow-down"></i></span> <strong>Colonnes</strong> nous fait descendre d&#8217;un niveau et nous place en mode édition de colonne. Voici ce qui se passe lorsque nous cliquons sur le bouton de navigation <span class="icon"><i class="fa fa-arrow-down"></i></span> <strong>Colonnes</strong> du panneau du tableau :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/navigate4.png" alt="Columns" width="613">
+</div>
+</div>
+<div class="paragraph">
+<p>Les réglages de la colonne sélectionnée dans le tableau s&#8217;affichent. Les boutons <span class="icon"><i class="fa fa-arrow-left"></i></span> <strong>Retour.</strong> et <strong>Suivant</strong> <span class="icon"><i class="fa fa-arrow-right"></i></span> permettent désormais de déplacer la sélection entre les <em>colonnes</em> du tableau, car c&#8217;est le niveau de l&#8217;arborescence sur lequel nous travaillons. Il n&#8217;y a pas de bouton de navigation vers le bas, car il s&#8217;agit du niveau le plus bas de l&#8217;arborescence. Le bouton <strong>Tableau</strong> <span class="icon"><i class="fa fa-arrow-up"></i></span> remonte d&#8217;un niveau et nous revenons à l&#8217;édition de l&#8217;ensemble du tableau.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_synthèse">Synthèse<a id="h000491"></a></h2>
+<div class="sectionbody">
+<div id="h000492" class="ulist">
+<ul>
+<li>
+<p>Cliquez sur un élément pour le modifier.</p>
+</li>
+<li>
+<p>Sélectionnez plusieurs éléments, puis modifiez-les ensemble.</p>
+</li>
+<li>
+<p>Vous pouvez également modifier ensemble des entités de différents types.</p>
+</li>
+<li>
+<p>La sélection multiple peut générer des réglages et des opérations supplémentaires.</p>
+</li>
+<li>
+<p>Utilisez le sous-panneau de sélection pour modifier intelligemment la sélection.</p>
+</li>
+<li>
+<p>Utilisez le sous-panneau de navigation pour parcourir l&#8217;arborescence des entités.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_visite_guidée">Visite guidée</a>
+  </li>
+  <li level="1">
+   <a href="#_exemple_de_rapport">Exemple de rapport</a>
+  </li>
+  <li level="2">
+   <a href="#_principe_cliquez_sur_un_élément_pour_le_modifier">Principe : cliquez sur un élément pour le modifier</a>
+  </li>
+  <li level="2">
+   <a href="#_principe_sélectionnez_plusieurs_éléments_et_modifiez_les_ensemble">Principe : sélectionnez plusieurs éléments et modifiez-les ensemble</a>
+  </li>
+  <li level="2">
+   <a href="#_principe_vous_pouvez_modifier_ensemble_des_entités_de_différents_types">Principe : vous pouvez modifier ensemble des entités de différents types</a>
+  </li>
+  <li level="2">
+   <a href="#_principe_la_sélection_multiple_peut_générer_des_opérations_supplémentaires">Principe : la sélection multiple peut générer des opérations supplémentaires</a>
+  </li>
+  <li level="2">
+   <a href="#_principe_utilisez_le_sous_panneau_de_sélection_pour_modifier_la_sélection">Principe : utilisez le sous-panneau de sélection pour modifier la sélection</a>
+  </li>
+  <li level="2">
+   <a href="#_principe_utilisez_le_sous_panneau_de_navigation_pour_parcourir_larborescence_des_entités">Principe : utilisez le sous-panneau de navigation pour parcourir l&#8217;arborescence des entités</a>
+  </li>
+  <li level="1">
+   <a href="#_synthèse">Synthèse</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="install.html">Installation du logiciel</a></span>
+ <span class="next"><a href="workflow.html">Flux de travail de la pièce</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

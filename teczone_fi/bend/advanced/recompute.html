@@ -1,0 +1,726 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Ohjelman uudelleenlaskenta</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Bend Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Tervetuloa TecZoneen</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Johdanto</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">Ohjelmiston asentaminen</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">Käyttöliittymä</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Osan työnkulku</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">2D-tuonti</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">2D-piirustuksen puhdistus</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">3D-tuonti</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">3D-mallin tuonti</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Rakenneryhmän tuonti</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Muodon tunnistus</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Komponenttien tunnistus</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">Geometrian muuttaminen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">Laser CAM -toiminnot</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Osan työnkulku</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Muokkauspaneelit</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Laserleikkaus</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Lähestyminen</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Vetäytyminen</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Mikroliitos</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Syventävät osiot</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Muoto</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Jätepalan leikkaus</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Osa</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Nurkkien käsittely</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Quick-Nest-toiminto</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">Työtehtävän työnkulku</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Työtehtävän paneeli</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Levyjen välilehti</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Osien välilehti</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Asettelujen välilehti</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Tiivistelmän välilehti</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Asettelun muokkaus</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Nestaustilat</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Sijoittelupaneeli</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Järjestyksen määrittely</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Palojen leikkaus levystä</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Viisteiden leikkaus</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Avoimet muodot</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Säädettävä viiste</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Muuta</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Syventävät osiot</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Päättämistä koskevat säännöt</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">LTT-taulukoiden muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Strategia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Mikroliitokset</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">Muut asetukset</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">Bend CAM -toiminnot</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../createbenddata.html">Taivutustietojen luonti</a></li>
+    <li><button class="tree blank"></button><a href="../navigator.html">Taivutusnavigaattori</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../editing/index.html">Taivutustietojen muokkaus</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../editing/editbend.html">Taivutuksen muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editmount.html">Työkalukiinnikkeen muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editsetup.html">Taivutuskokoonpanon muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editgauge.html">Takavasteiden muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editacb.html">Kulman mittauksen muokkaaminen</a></li>
+      <li><button class="tree blank"></button><a href="../editing/bendsheet.html">Taivutusten laskentataulukko</a></li>
+      <li><button class="tree blank"></button><a href="../editing/sequencing.html">Järjestyksen muuttaminen</a></li>
+      <li><button class="tree blank"></button><a href="../editing/addsetup.html">Kokoonpanojen ja asemien lisääminen</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Syventävät osiot</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="anglemeasurement.html">Kulman mittaus</a></li>
+      <li><button class="tree blank"></button><a href="batchprocess.html">Eräprosessi</a></li>
+      <li><button class="tree blank"></button><a class="active" href="recompute.html">Ohjelman uudelleenlaskenta</a></li>
+      <li><button class="tree blank"></button><a href="tonnage.html">Särmäysvoiman tarkastus</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">Taivutusnavigaattori</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">Osan poiminta</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">Poiminta kuormalavalta</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">Poiminta syöttölaitteesta</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">Robottisärmäys</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">Sijoittaminen paikalleen</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">Taivutus</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Poistaminen</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Otteenvaihto</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Otteenvaihdon paneeli</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Otteenvaihdon lisääminen</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Otteenvaihdon muokkaaminen</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Otteenvaihto leuan avulla</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Otteenvaihtoaseman paneeli</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Osien varastointi</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Varastointimallit</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Toisto ja järjestys</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Välilevy</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Syventävät osiot</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Reittipisteet</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Solun konfigurointi</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Tarttujien tietokanta</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Raportit</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">Fold CAM -toiminnot</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Taivutustietojen luonti</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">Taivutuksen näkymä</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Taivutustietojen muokkaus</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Taivutuksen muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Sivun/osion muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">Järjestyksen muuttaminen</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">Aihiotelineiden muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">Vasteiden asemoinnin muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">Terien muokkaaminen</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">Latauksen muokkaaminen</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">Purkamisen muokkaus</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Työkaluvarustus</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Syventävät osiot</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Mukautettujen ilmarakojen taulukot</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">Manuaalisen taivutuksen päättäminen</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Vaadittava laipan pituus</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Asetukset</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Piirustus</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Kerrokset</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Mitat</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Näkymä</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">Bend CAM -toiminnot</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Koneen oletusasetukset</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Taivutuksen tulostetiedot</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Taivutuksen näkymä</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Särmäyssolu</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">Cut CAM -toiminnot</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Asettelu</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Nestauksen asetukset</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Levy</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Levyn käsittely</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Rangan leikkaukset</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Työtuet</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">Laser CAM -toiminnot</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Järjestys</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Leikkauksen tulostetiedot</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Leikkauksen näkymä</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Taivutus levyntaivutuskoneilla</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Oletusasetukset</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">ZBW-työkalujen pitimet</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Tulostetiedot</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Raportit</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Kohtien oletusasetukset</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Tuonti/vienti</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Ympäristö</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Tietokanta</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Materiaalit</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Koneet</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Taivutustyökalut</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Taivutukseen tarkoitetut tarttujat</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Muodot/komponentit</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Raportit</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Kentät, kuvat ja taulukot</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Nauhat (aliraportit)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Tunnisteet, bittikartat ja muodot</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Liite</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Sovelluksen tukemat 3D-tiedostomuodot</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Välilevyjen DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Taivutustyökalujen DXF-tiedostomuoto</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">Bend CAM -toiminnot</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Syventävät osiot</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="recompute.html">Ohjelman uudelleenlaskenta</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Ohjelman uudelleenlaskenta</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Mikäli painat painiketta <kbd>B</kbd> tai käytät työnkulun paneelia ohjelman laskemiseen,
+TecZone Bend laskee taivutusohjelman oletusasetusten ja -parametrien perusteella.
+Voit laskea tämän ohjelman uudelleen eri asetuksia käyttäen napsauttamalla</p>
+</div>
+<div class="paragraph">
+<p>komentopalkista valikkoa <strong>Recompute</strong>
+<span class="image"><img src="img/gear.png" alt="Recompute" width="20"></span> (uudelleenlaskenta). Joskus näin
+kannattaa tehdä myös laskennan suorittamiseen sen jälkeen, kun työkaluja tai järjestystä
+on muokattu vuorovaikutteisesti.<br>
+Esimerkiksi:</p>
+</div>
+<div id="h000155" class="ulist">
+<ul>
+<li>
+<p>Voit muuttaa järjestystä ja pyytää TecZone Bend-sovellusta laskemaan uusia työkaluasemia säilyttämällä
+järjestyksen samalla muuttumattomana.</p>
+</li>
+<li>
+<p>Voit muuttaa työkaluasemia ja pyytää TecZone Bend-sovellusta laskemaan uuden järjestyksen
+tai asemoida osan juuri luomiisi uusiin asemiin nähden.</p>
+</li>
+<li>
+<p>Voit kokeilla työkalujen asetustoimintoa eri työkaluja käyttäen tai jo luodun
+kokoonpanon käyttöä.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_uudelleenlaskennan_ikkuna">Uudelleenlaskennan ikkuna<a id="h000158"></a></h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/recompute.png" alt="Recompute" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Uudelleenlaskennan ikkuna</strong> on viereisen kuvan kaltainen.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ohitukset">Ohitukset<a id="h000159"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Tässä kappaleessa on kuvattu joitakin kytkimiä, joiden avulla voit ohittaa TecZone Bend-sovelluksen
+oletuskäyttäytymisen.</p>
+</div>
+<div id="h000160" class="ulist">
+<ul>
+<li>
+<p>Kytkemällä kytkimen <strong>Don&#8217;t change sequence</strong> (älä muuta järjestystä) päälle voit pakottaa TecZone Bend-sovelluksen laskemaan uuden
+ohjelman muuttamatta järjestystä. TecZone Bend kokeilee erilaisia työkaluasemia, vasteiden asemia
+tai osan paikalleen sijoittamiseen käytettäviä suuntia muuttamatta tällöin järjestystä.</p>
+</li>
+<li>
+<p>Jos kytkin <strong>EI kulmanmittausta.</strong> on päällä, TecZone Bend laskee ohjelman,
+joka ei suorita kulmamittauksia eikä käytä vasteisiin liittyviä antureita (ACB-työkaluja).</p>
+</li>
+<li>
+<p>Asetus <strong>Ignore tools from GEO/DXF files</strong> (ohita geo-/dfx-tiedostojen työkalut) kehottaa TecZone Bend-sovellusta
+ohittamaan GEO-tiedostojen usein ja DXF-tiedostojen toisinaan sisältämät työkaluvarustusta koskevat vinkit.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_kokoonpanot">Kokoonpanot<a id="h000162"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Tässä osiossa määritellään työkalukokoonpanoja koskeva strategia. Oletusasetuksen mukaan TecZone Bend laskee työkalukokoonpanot
+alusta alkaen, mutta sovelluksen toimintatapaa on mahdollista muuttaa tämän kohdan asetusten avulla.</p>
+</div>
+<div id="h000163" class="ulist">
+<ul>
+<li>
+<p><strong>Compute new Setup</strong> (laske uusi kokoonpano) on oletustoimintatapa. TecZone Bend laskee tällöin kokoonpanon käyttämällä
+kaikkia työkaluja, joita se saa käyttää (ks. kappale "Työkalut" seuraavassa).</p>
+</li>
+<li>
+<p>Asetus <strong>Keep existing Setup</strong> (säilytä olemassa oleva kokoonpano) ilmoittaa TecZone Bend-sovellukselle, että kokoonpanoon ei tule tehdä muutoksia. Sovellus yrittää
+suorittaa kaikki taivutukset osalle tällä hetkellä määriteltyä kokoonpanoa käyttäen. Jos joidenkin taivutusten yhteydessä esiintyy törmäyksiä
+tai jos työkalujen pituus ei riitä taivutukseen, sovellus jättää tällaiset virheet korjaamatta. Nämä virheet ovat myös
+katseltavissa uudelleenlaskennan jälkeen.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/setup-from-file.png" alt="Setup from file" width="245">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Jos valitset vaihtoehdon <strong>Use Setup tiedostosta</strong> (käytä tiedoston kokoonpanoa), sovellus pyytää sinua valitsemaan taivutuskokoonpanon tiedoston (bsetup).
+Sovellus käyttää tämän jälkeen laskentaan tästä tiedostosta ladattua <strong>kokoonpanoa</strong>. Sovellus ei tällöin muuta tiedoston sisältämää kokoonpanoa eikä
+luo uusia asemia. Äsken tiedostosta lataamasi kokoonpanot ovat nähtävissä
+tämän osion alapuolisessa avattavassa valikossa, josta voit myös valita toisen kokoonpanotiedoston napsauttamalla painiketta <strong>+</strong>
+avattavan valikon lähellä.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/setup-other-part.png" alt="Setup other part" width="245">
+</div>
+</div>
+<div id="h000165" class="ulist">
+<ul>
+<li>
+<p>Vaihtoehto <strong>Use Setup from another Part</strong> (käytä toiselle osalle määriteltyä kokoonpanoa) on käytettävissä vain, jos muita
+osia on parhaillaan avattuna ja jos osat on valmisteltu samaa särmäyspuristinta varten. Jos ehdot täyttyvät,
+voit pyytää TecZone Bend-sovellusta käyttämään samaa kokoonpanoa kuin edellä mainittujen osien kohdalla. Näyttöön ilmestyy tällöin avattava valikko,
+josta voit valita haluamasi osan.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_työkalut">Työkalut<a id="h000166"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Jos valitset edellä olevassa kappaleessa kuvatun vaihtoehdon <strong>Compute new Setup</strong> (laske uusi kokoonpano), voit valita osiosta <strong>Tools</strong> (työkalut)
+taivutustyökalujen luettelon, jota voi käyttää uuden kokoonpanon laskemiseen. Tämä osio ei ole
+käytettävissä, jos valitset jonkin muun kokoonpanoa koskevan vaihtoehdon.</p>
+</div>
+<div id="h000167" class="ulist">
+<ul>
+<li>
+<p>Oletusvaihtoehto on <strong>Preferred tools for Machine</strong> (koneen ensisijaiset työkalut). Voit valita jokaiselle särmäyspuristimelle
+työkalusarjan tools<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> käytettäviksi <em>ensisijaisina työkaluina</em>,
+jolloin TecZone Bend käyttää näitä työkaluja osan valmistelussa.<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup> (Jos et ole määritellyt koneelle ensisijaisia työkaluja,
+TecZone Bend käyttää kaikkia varustukseen kuuluvia työkaluja koneen ensisijaisena työkalusarjana).</p>
+</li>
+<li>
+<p>Jos valitset vaihtoehdon <strong>Tools in Inventory</strong> (varustukseen kuuluvat työkalut), TecZone Bend käyttää kaikkia laitteiston varustukseen
+kuuluvia työkaluja. Jos et ole määritellyt työkaluvarustusta,
+TecZone Bend käyttää varustuksena kaikkia luettelon sisältämiä työkaluja.</p>
+</li>
+<li>
+<p><strong>All Tools in Catalog</strong> (kaikki työkalut luettelossa) on laajin työkaluvalikoima. TecZone Bend yrittää tällöin löytää ratkaisun käyttämällä
+jokaista valmistajan työkaluluettelon sisältämää työkalua. Tämä
+voi merkitä sitä, että ratkaisu ei ole tosiasiallisesti tuotantokelpoinen (käytettävissä
+olevan olevan varustuksen avulla). Toisaalta ratkaisun avulla on kuitenkin mahdollista arvioida teoreettisella tasolla sitä, mitä työkaluja erityisen kompleksisen osan tuotantoon saatetaan tarvita. (Lisäksi tässä
+tilassa TecZone Bend-sovelluksen on myös oletettava kappalemäärän olevan ääretön. Tämä merkitsee sitä,
+että sovellus muodostaa optimaalisen työkalukokoonpanon olettamalla, että kaiken pituisia kappaleita on
+käytettävissä rajaton määrä).</p>
+</li>
+</ul>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/tools-from-file.png" alt="Tools from File" width="240">
+</div>
+</div>
+<div id="h000170" class="ulist">
+<ul>
+<li>
+<p>Voit luoda mukautettuja työkalusarjoja ja tallentaa ne työkaluluetteloiden tiedostoihin (btools). Voit käyttää näitä tiedostoja
+tämän jälkeen osan valmisteluun valitsemalla vaihtoehdon <strong>Use tool-set from File</strong> (käytä tiedoston sisältämää työkalusarjaa).
+Valitessasi tämän vaihtoehdon sovellus kehottaa sinua valitsemaan työkaluluettelon tiedoston, ja näyttöön ilmestyvät tällöin valitsemisen helpottamiseksi viimeksi käyttämäsi työkaluluetteloiden tiedostot. Voit valita uuden työkaluluettelon napsauttamalla merkkiä <strong>+</strong>
+luettelon lähellä.</p>
+</li>
+<li>
+<p>Voit vaikuttaa itse eniten pistinten ja tyynyjen valintaan valitsemalla ensin vaihtoehdon <strong>Määrittele ylä- ja alatyökalu</strong>
+ja sen jälkeen juuri sen pistimen ja tyynyn, jota haluat käyttää.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/tools-specific.png" alt="Specific tools" width="240">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_järjestyksen_ensisijaisuus">Järjestyksen ensisijaisuus<a id="h000171"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Osaan tehtävien taivutusten järjestystä määriteltäessä on otettava huomioon muutamia mahdollisesti ristiriitaisia vaatimuksia.
+Tällöin on esimerkiksi päätettävä, onko TecZone Bend-sovelluksen esimerkiksi määrä yrittää minimoida <em>osan kiertoliikkeiden lukumäärä</em> vai onko
+sovelluksen määrä yrittää minimoida taivutukset, joissa <em>osan painopiste sijaitsee koneen sisällä</em>. <br>
+On melko todennäköistä, että jokainen koneenkäyttäjä noudattaa eri ensisijaisuussääntöjä ja että erilaiset osat
+vaativat erilaisia ensisijaisuusasetuksia. TecZone Bend antaa sinulle tämän vuoksi
+mahdollisuuden suorittaa uudelleenlaskennan eri ensisijaisuusjärjestystä käyttäen. tämä on mahdollista tämän valintaikkunan osiossa</p>
+</div>
+<div id="h000172" class="paragraph">
+<p><strong>Sequence Priority</strong> (järjestyksen ensisijaisuus).</p>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/sequence-priority.png" alt="Sequence Priority" width="277">
+</div>
+</div>
+<div class="paragraph">
+<p>Oikealla puolella olevilla nuolipainikkeilla <span class="image"><img src="img/circle-up.png" alt="up" width="16"></span> ja <span class="image"><img src="img/circle-down.png" alt="down" width="16"></span> voit vaihtaa sääntöjen paikkaa luettelossa. Sääntöjen ensisijaisuustaso on sitä korkeampi, mitä ylempänä säännöt luettelossa. Voit
+poistaa osan näistä ensisijaisuusluettelon kohdista kokonaan käytöstä. TecZone Bend ei tällöin ota kyseisiä sääntöjä huomioon
+ määritellessään ensisijaisuusjärjestystä. (Luettelon kohtien poistaminen käytöstä voi toisinaan
+johtaa siihen, että järjestys käyttää vain muutamia työkaluasemia.)</p>
+</div>
+<div id="h000173" class="ulist">
+<ul>
+<li>
+<p><strong>Avoid collisions during overbend</strong> (vältä törmäyksiä ylitaivutuksen aikana): kulmatarkkuuden saavuttamiseksi useimpia taivutuksia on hieman
+<em>ylitaivutettava</em> takaisinjouston kompensoimiseksi. Tämä järjestyssääntö kehottaa
+TecZone Bend-sovellusta tekemään taivutukset sellaisessa järjestyksessä, että ylitaivutus on mahdollista. Esimerkiksi
+alla olevan osan kohdalla taivutus 1 tulisi tehdä ennen taivutusta 2. Toinen järjestys
+estäisi ylitaivutuksen.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="img/overbending.png" alt="Overbending" width="242">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Vältä matalan prioriteetin työkalujen käyttöä</strong>: kehottaa TecZone Bend-sovellusta välttämään siinä määrin kuin mahdollista sellaisten työkalujen käyttöä, joiden ensisijaisuustaso on matala tai jotka puuttuvat ensisijaisten työkalujen luettelosta.</p>
+</li>
+<li>
+<p><strong>Vältä avoimiin kulmiin kohdistuvia iskuja</strong>: vasteiden asemien tulisi mieluiten olla samassa
+tasossa kuin taivutusakseli, eikä taivutuslinjan ja vastepisteen välissä
+tulisi olla aiemmin valmistettuja taivutuksia. Seuraavassa on esimerkki huonosta vasteen asemoinnista, joka pyritään välttämään
+tämän säännön avulla:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="img/open-gauging.png" alt="Open Gauging" width="248">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pitkä jalka ensisijaisesti taivutusreunan edellä</strong>: erityisesti painavien osien kohdalla kannattaa välttää
+tilanteet, joissa osan painopiste on työkalun linjan takana. Tämän
+säännön avulla pyritään minimoimaan tällaiset tilanteet.<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup></p>
+</li>
+<li>
+<p><strong>Minimoi osien kääntö</strong>: osien kääntö tapahtuu silloin, kun osa on käännettävä ylösalaisin (peräkkäiset
+taivutukset ovat eri suunnissa ylöspäin/alaspäin).</p>
+</li>
+<li>
+<p><strong>Minimoi osien pyöritys</strong>: osan kierto tapahtuu käännettäessä osaa vasemmalle tai oikealle
+vaakatasossa. Tämän katsotaan olevan koneenkäyttäjälle helpompaa kuin
+osan kääntö. Näiden kahden viimeisen säännön oletusjärjestyksen tarkoituksena on suosia mahdollisuuksien mukaan osan kiertämistä
+osan kääntämiseen verrattuna.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Voit tehdä tämän painamalla komentopalkin painiketta <strong>inventory</strong> (varustus) ja valitsemalla avautuvasta valikosta kohdan <strong>Preferred Tools</strong> (ensisijaiset työkalut).
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. TecZone Bend yrittää käyttää osan kohdalla vain ensisijaisia työkaluja, mutta ratkaisemattomien törmäysten tai muiden ongelmien tapauksessa sovellus alkaa käyttää muita varustuksessa käytettävissä olevia työkaluja.
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. TecZone Bend käyttää jonkin verran harkintaa arvioidessaan sitä, milloin osan paino ja osan painopisteen etäisyys työkalun linjan takana muodostaa ongelman. Sovellus arvioi teknisessä mielessä osan kallistuvan taaksepäin, jos kallistusmomentti taaksepäin on 0,15 Nm (newtonmetriä).
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_uudelleenlaskennan_ikkuna">Uudelleenlaskennan ikkuna</a>
+  </li>
+  <li level="1">
+   <a href="#_ohitukset">Ohitukset</a>
+  </li>
+  <li level="1">
+   <a href="#_kokoonpanot">Kokoonpanot</a>
+  </li>
+  <li level="1">
+   <a href="#_työkalut">Työkalut</a>
+  </li>
+  <li level="1">
+   <a href="#_järjestyksen_ensisijaisuus">Järjestyksen ensisijaisuus</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="batchprocess.html">Eräprosessi</a></span>
+ <span class="next"><a href="tonnage.html">Särmäysvoiman tarkastus</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

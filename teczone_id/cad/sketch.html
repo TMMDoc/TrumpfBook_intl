@@ -1,0 +1,786 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>Memodifikasi Geometri</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Bend Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Selamat datang di TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">Pengantar</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">Menginstal Perangkat Lunak</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">Antarmuka Pengguna</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">Alur Kerja Komponen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">CAD</a>
+   <ul>
+    <li>
+     <button class="tree closed"></button>
+     <a href="2dimport/index.html">Impor 2-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="2dimport/2dcleanup.html">Pembersihan 2-D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="3dimport/index.html">Impor 3-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="3dimport/prep3dmodel.html">Impor Model 3D</a></li>
+      <li><button class="tree blank"></button><a href="3dimport/prepassembly.html">Impor Modul</a></li>
+      <li><button class="tree blank"></button><a href="3dimport/formdetect.html">Deteksi Bentuk</a></li>
+      <li><button class="tree blank"></button><a href="3dimport/componentdetect.html">Deteksi Komponen</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a class="active" href="sketch.html">Memodifikasi Geometri</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">CAM Laser</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Alur Kerja Komponen</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Panel Pengeditan</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Pemotongan Laser</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Pendekatan</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Mundur</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Sambungan mikro</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Lanjutan</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Pemotongan Scrap</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Komponen</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Penanganan Sudut</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Nesting Cepat</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Alur Kerja Nesting</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Panel Nesting</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Tab Lembaran</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Tab Komponen</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Tab Rancangan</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Tab Ringkasan</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Edit Rancangan</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Mode Nesting</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Panel Penempatan</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Urutan</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Lembar Irisan</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Pemotongan Bevel</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Kontur Terbuka</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Bevel Variabel</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Lain-lain</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Aturan Penyelesaian</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">Edit LTT</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Strategi</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Sambungan mikro</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Pengaturan lebih lanjut</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">CAM Penekukan</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Buat parameter tekukan</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Navigator penekukan</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Edit parameter tekukan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Edit penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Edit pemasangan alat</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Edit pengaturan penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Edit backgauge finger</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Edit pengukuran sudut</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Lembar Kerja Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Mengubah urutan</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Menambahkan pengaturan dan stasiun</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Pengukuran sudut</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Proses batch</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Solusi Perhitungan Ulang</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Pemeriksaan tonase</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Navigator Penekukan</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Pengambilan Komponen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Pengambilan dari Palet</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Pengambilan dari Dispenser</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Penekukan Robotik</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Penyisipan</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Ekstraksi</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Pencengkeraman Ulang</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Panel Pencengkeram Ulang</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Tambahkan Pencengkeram Ulang</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Edit Pencengkeram Ulang</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Pencengkeraman Ulang dengan Jaw</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Panel Stasiun Pencengkeram Ulang</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Endapan Komponen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Pola Endapan</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Pengulangan dan Urutan</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Lembar Pemisah</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Konfigurasi Sel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">Database Gripper</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">Laporan</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">CAM Lipat</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Buat data lipat</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">Tampilan Lipat</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Mengedit data Lipat</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Edit penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Edit sisi/area</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">Ubah urutan</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">Edit penahan lembaran kosong</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Edit stopper</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">Edit pisau</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Edit pemuatan</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Edit pembuangan</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Inventaris alat</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Tabel celah udara khusus</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Penyelesaian penekukan manual</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Panjang Sisi Tekukan yang Diperlukan</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Pengaturan</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Diagram</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Layer</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Dimensi</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Tampilan</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">CAM Penekukan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Pengaturan Default Mesin</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Output Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Tampilan Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Sel Penekukan</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">CAM Pemotongan</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Rancangan</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Pengaturan Nesting</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Lembar</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Penanganan Lembaran</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Pemotongan Sisa Rangka</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Penyangga Kerja</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">CAM Laser</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Urutan</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Output Pemotongan</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Tampilan Pemotongan</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Penekukan Panel</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Default</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">Pembawa ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Output</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Laporan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Pengaturan Default Item</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Impor/Ekspor</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Lingkungan</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Database</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Bahan</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Mesin</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Alat Tekuk</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Gripper Penekukan</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Pembentukan/Komponen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Laporan</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Perancang Laporan</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Bidang, Gambar, dan Tabel</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Band (sublaporan)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Stiker, Bitmap, dan Bentuk</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">Lampiran</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Format 3D yang Didukung</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">Lembar Pemisah DXF</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Alat Tekuk DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">CAD</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="sketch.html">Memodifikasi Geometri</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Memodifikasi Geometri</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dalam Penekukan TecZone, Anda memiliki editor sketsa 2D yang canggih untuk memodifikasi, membersihkan, atau menambahkan geometri Anda. Gunakan tombol Pintasan <kbd>S</kbd> untuk masuk ke mode sketsa. Editor menampilkan komponen dalam tampilan bentangan.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/unfold2d.png" alt="image" width="528" height="243">
+</div>
+</div>
+<div class="paragraph">
+<p>Dalam tampilan bentangan, klik ikon <strong>Bersihkan</strong> <span class="image"><img src="img/pencil.png" alt="Sketch" width="16"></span> atau tekan tombol Pintasan <kbd>S</kbd>.</p>
+</div>
+<div class="paragraph">
+<p>Sebuah menu terbuka dengan berbagai ikon untuk pemrosesan bentangan:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/movepanel.png" alt="movepanel">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_panel_sketsa">Panel Sketsa<a id="h000261"></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Ikon</th>
+<th class="tableblock halign-left valign-top">Simbol</th>
+<th class="tableblock halign-left valign-top">Arti</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/pick.png" alt="pick" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pilih</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pilih objek, garis, entri, dll.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/line.png" alt="line" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Garis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Buat sketsa garis</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/lines.png" alt="lines" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Garis tersambung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa sejumlah garis</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/parallel.png" alt="parallel" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Paralel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa sejajar dengan garis</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/lineperpendicular.png" alt="lineperpendicular" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Normal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa garis singgung pada kurva</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/bendline.png" alt="bendline" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Garis tekuk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa garis normal ke garis</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arc.png" alt="arc" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Busur titik tengah</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Buat sketsa garis tekuk</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arc2p.png" alt="arc2p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Busur melingkar 2 titik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa busur dari titik pusat, titik awal, dan titik akhir</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arc3p.png" alt="arc3p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Busur melingkar 3 titik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa busur melingkar melalui dua titik yang ditentukan (titik awal dan akhir)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arctangent.png" alt="arctangent" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Garis singgung busur melingkar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa busur yang bersinggungan dengan elemen sketsa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rect.png" alt="rect" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Persegi panjang</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa persegi panjang</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rectcenter.png" alt="rectcenter" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Persegi panjang titik tengah</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa persegi panjang dari tengah</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle.png" alt="circle" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lingkaran</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa lingkaran. Pilih titik tengah lingkaran dan seret kursor untuk menentukan radius atau masukkan nilai untuk radius</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle2p.png" alt="circle2p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Radius dengan 2 titik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa lingkaran sesuai dengan keliling. Pilih satu titik pada lingkaran, kemudian pilih titik kedua dan titik ketiga.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle3p.png" alt="circle3p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Radius dengan 3 titik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa lingkaran sesuai dengan keliling. Pilih satu titik pada lingkaran, kemudian pilih titik kedua dan titik ketiga.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle2t.png" alt="circle2t" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lingkaran dengan 2 garis singgung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa lingkaran dengan dua garis singgung. Masukkan diameter lingkaran, lalu pilih titik singgung pertama, kemudian pilih titik singgung kedua.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle3t.png" alt="circle3t" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lingkaran dengan 3 garis singgung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa lingkaran dengan tiga garis singgung. Masukkan diameter lingkaran, lalu pilih titik singgung pertama, kemudian titik singgung kedua, dan terakhir titik singgung ketiga.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polygonins.png" alt="polygonins" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Titik tengah poligon - titik sudut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa lingkaran dengan tiga garis singgung. Masukkan diameter lingkaran, lalu pilih titik singgung pertama, kemudian titik singgung kedua, dan terakhir titik singgung ketiga.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polygoncircum.png" alt="polygoncircum" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Titik tengah poligon - tepi sisi tengah</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa poligon. Tentukan jumlah sisi dan pilih titik tengah serta tengah tepi sisi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polygonedge.png" alt="polygonedge" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Poligon dengan tepi sisi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat sketsa poligon. Tentukan jumlah sisi dan tentukan titik awal dan titik akhir dari sebuah sisi.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/fillet.png" alt="fillet" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pembulatan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat lengkungan di sudut pertemuan dua elemen sketsa dengan radius yang telah dimasukkan, sehingga terbentuk busur tangensial/bersinggungan</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/chamfer.png" alt="chamfer" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Miring</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat bevel di sudut persimpangan dua elemen sketsa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/infillet.png" alt="infillet" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lingkaran trim sudut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Memangkas sudut di persimpangan dua elemen sketsa dengan radius yang dimasukkan</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/cornerstep.png" alt="cornerstep" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tepi trim sudut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Memangkas sudut di persimpangan dua elemen sketsa dengan persegi panjang. Ukuran persegi panjang dapat dimasukkan terlebih dahulu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/edgerecess.png" alt="edgerecess" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dipotong bebas berbentuk persegi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat pemotongan bebas berbentuk persegi panjang. Anda harus memasukkan jarak sudut, kedalaman pemotongan bebas, dan kemudian memilih sudut.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/edgeu.png" alt="edgeu" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Slot melengkung dipotong bebas</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat pemotongan bebas berbentuk lubang oval. Anda harus memasukkan jarak sudut, lebar pemotongan bebas, kedalaman pemotongan bebas, dan kemudian memilih sudut.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/edgev.png" alt="edgev" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dipotong bebas bentuk segitiga</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat pemotongan bebas segitiga. Anda harus memasukkan jarak sudut, lebar pemotongan bebas, kedalaman pemotongan bebas, dan kemudian memilih sudut.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/keyslot.png" alt="keyslot" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lubang kunci</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat lubang kunci dalam lingkaran dengan nilai yang dimasukkan.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/fillet3seg.png" alt="fillet3seg" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 segmen pembulatan penuh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat lengkungan tiga elemen sketsa yang terhubung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/extend.png" alt="extend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Perpanjang elemen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pilih elemen sketsa yang akan diperpanjang<br>
+<kbd>ctrl</kbd> Pilih batas<br>
+<kbd>Shift</kbd> Hubungkan<br>
+<kbd>Alt</kbd> Seret</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/trim.png" alt="trim" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Potong elemen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pilih elemen sketsa yang akan dipangkas<br>
+<kbd>Ctrl</kbd> Pilih batas<br>
+<kbd>Shift</kbd> Hapus elemen<br>
+<kbd>Alt</kbd> Hapus polyline<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/join.png" alt="join" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gabung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digunakan untuk memangkas dan menggabungkan beberapa polyline terpisah menjadi satu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/offset.png" alt="offset" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Elemen offset</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geser satu atau lebih elemen sketsa, tepi model sketsa, atau wajah model dengan jarak yang ditentukan</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/move.png" alt="move" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geser</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pilih elemen sketsa dengan <kbd>ctrl</kbd>, pilih titik referensi, dan pindahkan elemen sketsa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rotate.png" alt="rotate" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Putar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pilih elemen sketsa dengan <kbd>ctrl</kbd>, pilih titik pusat putaran, lalu pilih titik awal dan titik akhir untuk memutar elemen sketsa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/scale.png" alt="scale" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skalakan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pilih elemen sketsa dengan <kbd>ctrl</kbd>, pilih titik dasar, kemudian titik referensi awal dan titik referensi akhir untuk menskalakan elemen sketsa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/mirror.png" alt="mirror" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cerminkan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pilih elemen sketsa dengan <kbd>ctrl</kbd>, lalu awal garis cermin, dan kemudian akhir garis cermin untuk mencerminkan elemen sketsa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rectarray.png" alt="rectarray" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pola linear</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gunakan pola linier untuk membuat salinan yang saling merujuk dari satu atau lebih elemen sketsa yang dapat Anda atur pada jarak yang sama sepanjang satu atau dua jalur linier. Klik pada pola linier dan masukkan nilai yang diinginkan</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polararray.png" alt="polararray" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pola lingkaran</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gunakan pola lingkaran untuk membuat salinan yang saling merujuk dari satu atau lebih elemen sketsa yang dapat Anda atur pada jarak yang sama di sekitar sumbu. Klik pada pola lingkaran dan masukkan nilai yang diinginkan</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/union.png" alt="union" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kombinasikan permukaan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pilih dua atau lebih elemen sketsa yang tertutup untuk menggabungkan permukaan satu sama lain</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/intersection.png" alt="intersection" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Permukaan potongan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pilih dua atau lebih elemen sketsa yang tertutup untuk menghasilkan area pemotongan dari elemen yang dipilih</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/subtraction.png" alt="subtraction" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Potong permukaan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pilih dua atau lebih elemen sketsa tertutup untuk memangkas permukaan</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/copynotch.png" alt="copynotch" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Salin potongan bebas</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anda dapat membuat beberapa salinan notch di sepanjang tepi menggunakan alat ini. Pertama, masukkan jarak bebas antarsalinan, dan jumlah salinan notch yang ingin Anda buat. Kemudian, pilih notch dengan mengklik pada dua segmen garis yang berdekatan dengan notch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/deletenotch.png" alt="deletenotch" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hapus potongan bebas</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anda dapat menghapus notch di sudut, atau sepanjang segmen garis, menggunakan alat ini. Klik pada dua segmen garis yang berdekatan dengan notch, dan notch akan dihapus</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/mirrornotch.png" alt="mirrornotch" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cerminkan potongan bebas</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anda dapat mencerminkan notch di sudut, atau sepanjang segmen garis, menggunakan alat ini. Klik pada dua segmen garis yang berdekatan dengan notch, dan notch akan dicerminkan</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/spline.png" alt="spline" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Garis melengkung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Untuk memulai spline baru, klik pada titik awal, dan saat Anda mengklik titik-titik berikutnya, spline akan dibuat. Jika Anda ingin menutup spline, tekan tombol ALT dan kemudian klik</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/profile.png" alt="profile" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profil</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ketik panjang dasar, tinggi sisi tekukan, ketebalan, sudut sisi tekukan, radius dalam, dan tekan enter untuk membuat profil</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/text.png" alt="text" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Teks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digunakan untuk menggambar teks yang akan ditandai pada komponen oleh mesin Laser. Saat Anda mengklik tombol alat ini, baris masukan akan menampilkan kotak masukan untuk teks, ukuran, dan sudut putaran</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/truetype.png" alt="truetype" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Teks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digunakan untuk mengambil bentuk karakter dari font TrueType apa pun dan mengubahnya menjadi polyline. Pengaturan alat laser kemudian dapat diterapkan pada polyline ini, dan polyline tersebut dapat dipotong.
+Saat tombol ini diklik untuk pertama kalinya, kotak dialog Font akan muncul, memungkinkan Anda memilih font yang akan digunakan untuk teks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/commonshape.png" alt="commonshape" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bentuk standar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digunakan untuk membuat beberapa bentuk umum dan menyisipkannya ke dalam diagram. Ketika Anda mengklik tombol ini, kotak dialog "Buat Bentuk" akan muncul, memungkinkan Anda memilih dari palet bentuk umum yang terdaftar</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dsimple.png" alt="dsimple" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dimensi sederhana</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pilih titik dimensi pertama, kemudian titik dimensi kedua, dan posisikan garis dimensi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dbaseline.png" alt="dbaseline" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dimensi referensi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pilih titik dimensi pertama, kemudian titik dimensi kedua, dan posisikan garis dimensi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dcontinue.png" alt="dcontinue" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rangkaian dimensi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pilih titik dimensi pertama, lalu titik dimensi kedua, posisikan garis dimensi, dan pilih titik dimensi berikutnya</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dhorzordinate.png" alt="dhorzordinate" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dimensi ordinat horizontal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dimensi ordinat adalah sekumpulan dimensi yang diukur dari titik nol ordinat pada diagram. Pilih titik referensi dan posisikan dimensi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dvertordinate.png" alt="dvertordinate" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dimensi ordinat vertikal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dimensi ordinat adalah sekumpulan dimensi yang diukur dari titik nol ordinat pada diagram. Pilih titik referensi dan posisikan dimensi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dangular.png" alt="dangular" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dimensi sudut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat dimensi untuk sudut. Pilih garis pertama, lalu pilih garis kedua di mana Anda ingin mengukur dimensi sudut</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dradius.png" alt="dradius" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dimensi radius</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat dimensi untuk radius. Pilih lingkaran di mana Anda ingin mengukur dimensi radius. Ukur dimensi diameter dengan <kbd>ctrl</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dradius.png" alt="dradius" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Radius dimensi dengan catatan garis petunjuk yang jelas</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membuat dimensi dengan garis penunjuk berkelanjutan untuk radius. Pilih lingkaran di mana Anda ingin mengukur dimensi radius. Ukur dimensi diameter dengan <kbd>ctrl</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dcallout.png" alt="dcallout" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gunakan untuk menambahkan catatan ke diagram dalam bentuk keterangan. Untuk membuat keterangan, ketik teks yang ingin ditampilkan, klik untuk menandai arah panah, dan klik lagi untuk menandai posisi teks.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dsegment.png" alt="dsegment" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pendimensian segmen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gunakan untuk menambahkan dimensi untuk garis lurus dan segmen melengkung. Klik pada segmen yang akan diukur dimensinya, lalu klik lagi untuk memosisikan dimensi. Atau tekan dan tahan <kbd></kbd>, lalu klik pada segmen untuk memosisikan dimensi secara otomatis.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_panel_sketsa">Panel Sketsa</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="3dimport/componentdetect.html">Deteksi Komponen</a></span>
+ <span class="next"><a href="../cut/index.html">CAM Laser</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

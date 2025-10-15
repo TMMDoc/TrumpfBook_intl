@@ -1,0 +1,717 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Edit pemasangan alat</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Bend Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Selamat datang di TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Pengantar</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">Menginstal Perangkat Lunak</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">Antarmuka Pengguna</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Alur Kerja Komponen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">Impor 2-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">Pembersihan 2-D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">Impor 3-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">Impor Model 3D</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Impor Modul</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Deteksi Bentuk</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Deteksi Komponen</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">Memodifikasi Geometri</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">CAM Laser</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Alur Kerja Komponen</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Panel Pengeditan</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Pemotongan Laser</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Pendekatan</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Mundur</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Sambungan mikro</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Lanjutan</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Pemotongan Scrap</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Komponen</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Penanganan Sudut</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Nesting Cepat</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">Alur Kerja Nesting</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Panel Nesting</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Tab Lembaran</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Tab Komponen</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Tab Rancangan</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Tab Ringkasan</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Edit Rancangan</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Mode Nesting</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Panel Penempatan</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Urutan</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Lembar Irisan</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Pemotongan Bevel</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Kontur Terbuka</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Bevel Variabel</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Lain-lain</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Aturan Penyelesaian</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">Edit LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Strategi</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Sambungan mikro</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">Pengaturan lebih lanjut</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">CAM Penekukan</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../createbenddata.html">Buat parameter tekukan</a></li>
+    <li><button class="tree blank"></button><a href="../navigator.html">Navigator penekukan</a></li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Edit parameter tekukan</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="editbend.html">Edit penekukan</a></li>
+      <li><button class="tree blank"></button><a class="active" href="editmount.html">Edit pemasangan alat</a></li>
+      <li><button class="tree blank"></button><a href="editsetup.html">Edit pengaturan penekukan</a></li>
+      <li><button class="tree blank"></button><a href="editgauge.html">Edit backgauge finger</a></li>
+      <li><button class="tree blank"></button><a href="editacb.html">Edit pengukuran sudut</a></li>
+      <li><button class="tree blank"></button><a href="bendsheet.html">Lembar Kerja Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="sequencing.html">Mengubah urutan</a></li>
+      <li><button class="tree blank"></button><a href="addsetup.html">Menambahkan pengaturan dan stasiun</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../advanced/anglemeasurement.html">Pengukuran sudut</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/batchprocess.html">Proses batch</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/recompute.html">Solusi Perhitungan Ulang</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/tonnage.html">Pemeriksaan tonase</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">Navigator Penekukan</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">Pengambilan Komponen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">Pengambilan dari Palet</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">Pengambilan dari Dispenser</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">Penekukan Robotik</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">Penyisipan</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Ekstraksi</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Pencengkeraman Ulang</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Panel Pencengkeram Ulang</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Tambahkan Pencengkeram Ulang</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Edit Pencengkeram Ulang</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Pencengkeraman Ulang dengan Jaw</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Panel Stasiun Pencengkeram Ulang</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Endapan Komponen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Pola Endapan</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Pengulangan dan Urutan</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Lembar Pemisah</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Konfigurasi Sel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Database Gripper</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Laporan</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">CAM Lipat</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Buat data lipat</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">Tampilan Lipat</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Mengedit data Lipat</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Edit penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Edit sisi/area</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">Ubah urutan</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">Edit penahan lembaran kosong</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">Edit stopper</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">Edit pisau</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">Edit pemuatan</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">Edit pembuangan</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Inventaris alat</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Tabel celah udara khusus</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">Penyelesaian penekukan manual</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Panjang Sisi Tekukan yang Diperlukan</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Pengaturan</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Diagram</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Layer</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Dimensi</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Tampilan</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">CAM Penekukan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Pengaturan Default Mesin</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Output Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Tampilan Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Sel Penekukan</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">CAM Pemotongan</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Rancangan</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Pengaturan Nesting</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Lembar</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Penanganan Lembaran</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Pemotongan Sisa Rangka</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Penyangga Kerja</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">CAM Laser</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Urutan</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Output Pemotongan</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Tampilan Pemotongan</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Penekukan Panel</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Default</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">Pembawa ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Output</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Laporan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Pengaturan Default Item</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Impor/Ekspor</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Lingkungan</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Database</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Bahan</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Mesin</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Alat Tekuk</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Gripper Penekukan</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Pembentukan/Komponen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Laporan</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Perancang Laporan</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Bidang, Gambar, dan Tabel</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Band (sublaporan)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Stiker, Bitmap, dan Bentuk</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Lampiran</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Format 3D yang Didukung</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Lembar Pemisah DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Alat Tekuk DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">CAM Penekukan</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Edit parameter tekukan</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="editmount.html">Edit pemasangan alat</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Edit pemasangan alat</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Saat Anda mengklik pemasangan alat, panel <strong>Pemasangan Penekukan</strong> akan ditampilkan, dan dapat digunakan untuk mengedit berbagai pengaturan pemasangan penekukan, serta untuk melakukan beberapa aktivitas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_panel_pemasangan_penekukan">Panel Pemasangan Penekukan<a id="h000207"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/edit-mount.png" alt="Bend Mount" width="140">
+</div>
+</div>
+<div class="paragraph">
+<p>Panel Pemasangan Penekukan terlihat seperti gambar di sampingnya. Pengaturan dan aktivitas yang tersedia akan berbeda-beda, tergantung pada apakah Anda mengklik punch, die, atau pemasangan adapter. Selain itu, beberapa pengaturan mungkin tersedia atau tidak tergantung pada kemampuan mesin.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Klik tombol <strong>Ubah jenis alat</strong> untuk mengganti alat yang digunakan untuk pemasangan yang dipilih dengan alat yang berbeda. (Lihat bagian di bawah ini untuk detail lebih lanjut tentang <em>selektor alat</em> yang digunakan untuk memilih alat pengganti).</p>
+</li>
+<li>
+<p>Masukan <strong>Panjang</strong> digunakan untuk menyesuaikan panjang stasiun. Ketika Anda memasukkan nilai baru di sini, TecZone Bend akan menyusun stasiun kembali menggunakan kumpulan <em>segmen</em> yang sesuai untuk mencoba mencocokkan panjang yang diminta sedekat mungkin. Anda dapat memeriksa secara visual segmen yang digunakan dengan melihat garis batas segmen yang ditampilkan pada pemasangan penekukan.</p>
+</li>
+<li>
+<p>Masukan <strong>Posisi</strong> digunakan untuk mengatur posisi <em>tepi kiri</em> pemasangan, sepanjang meja atau batang penekan mesin. Posisi juga dapat disesuaikan dengan <em>menyeret</em> pemasangan ke kiri atau kanan. (Lihat bagian di bawah ini tentang menyeret pemasangan).</p>
+</li>
+<li>
+<p>Selektor <strong>Horn</strong> (hanya ditampilkan untuk pemasangan punch) dapat digunakan untuk memaksa TecZone Bend menggunakan kiri dan/atau kanan ear<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> bagian-bagian dalam komposisi).</p>
+</li>
+<li>
+<p><strong>Putar alat</strong> digunakan untuk membalik alat (dari depan ke belakang). Ini ditampilkan saat Anda mengedit pemasangan yang menggunakan alat <em>asimetris</em> (seperti alat offset, misalnya). Aktivitas membalik cukup cerdas untuk mengetahui apakah penahan dan alat tambahan perlu dibalik untuk menjaga konsistensi.
+Misalnya, pada gambar di bawah ini, membalik punch <strong>OW_Z4</strong> (digunakan untuk penekukan Z) juga membalik die, penahan, dan bahkan komponen untuk menjaga konsistensi proses:<br>
+<span class="image"><img src="img/flip-tool.png" alt="Flip Tool" width="550"></span></p>
+</li>
+<li>
+<p><strong>Tambahkan adapter</strong> digunakan untuk menambahkan <em>pemanjang</em> untuk menambah tinggi punch atau die. Saat Anda menambahkan adapter, adapter tersebut akan terpilih dan panel untuk adapter tersebut akan ditampilkan (hal ini memungkinkan Anda untuk mengganti adapter yang sedang digunakan atau mengeluarkannya).<br>
+<span class="image"><img src="img/addadapter.png" alt="Add Adapter" width="460"></span></p>
+</li>
+<li>
+<p><strong>Tambahkan celah</strong> digunakan untuk menambahkan celah ke dalam pemasangan alat agar sisi tekukan dapat melewatinya tanpa benturan (lihat bagian di bawah ini tentang Menambahkan Celah untuk detail lebih lanjut).</p>
+</li>
+<li>
+<p><strong>Tinggi alat besar</strong> digunakan untuk mengganti alat yang dipilih dengan alat lain yang lebih tinggi dari keluarga yang sama.</p>
+</li>
+<li>
+<p>Klik <strong>Jauhkan</strong> untuk mengeluarkan pemasangan alat. Akan muncul kondisi kegagalan <em>punch hilang</em> atau <em>die hilang</em> yang ditampilkan pada navigator penekukan untuk penekukan yang menggunakan stasiun ini, dan hal ini dapat diperbaiki dengan menggunakan <strong>Tambahkan</strong> pada baris perintah di sebelah kiri untuk menambahkan pemasangan baru.</p>
+</li>
+<li>
+<p>Selektor <strong>Alat sensor</strong> digunakan untuk berpindah-pindah antara pasangan disk sensor sudut ACB yang berbeda yang dapat digunakan untuk komponen ini. Pemilihan tergantung pada ketebalan lembaran, dan punch yang digunakan.</p>
+</li>
+<li>
+<p>Jika kotak centang <strong>Pemeriksaan item target</strong> dipilih, segmen yang digunakan akan diperiksa terhadap <em>inventaris</em> bagian yang tersedia (yang dapat diedit dengan mengklik tautan <strong>Pengelolaan alat…</strong>). Jika segmen yang tidak ada dalam inventaris digunakan, simbol trefoil khusus akan digambar pada segmen tersebut, seperti yang dapat Anda lihat pada gambar di bawah ini untuk potongan 40 mm dan 45 mm di dekat bagian tengah punch di bawah ini:<br>
+<span class="image"><img src="img/inventoryerror.png" alt="Inventory Error" width="253"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Saat Anda mengedit pemasangan alat menggunakan salah satu pengaturan dan aktivitas ini, TecZone Bend segera memvalidasi status semua proses tekuk, melakukan berbagai pemeriksaan seperti benturan, kegunaan alat, dll. Status navigator penekukan diperbarui dengan segera dan dalam waktu nyata, sehingga sangat mudah untuk bereksperimen dengan berbagai pengaturan dengan umpan balik yang cepat dan akurat.</p>
+</div>
+<div class="sect2">
+<h3 id="_jendela_ganti_alat">Jendela Ganti Alat<a id="h000208"></a></h3>
+<div class="paragraph">
+<p>Saat Anda mengklik tombol <strong>Ubah jenis alat</strong>, jendela <strong>Ganti Alat</strong> akan ditampilkan:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/tool-replace.png" alt="Tool replacer" width="750">
+</div>
+</div>
+<div class="paragraph">
+<p>Jendela ini menampilkan semua alat pengganti yang tersedia.</p>
+</div>
+<div id="h000209" class="ulist">
+<ul>
+<li>
+<p>Gunakan hierarki di sebelah kiri untuk mempersempit pilihan - misalnya, Anda dapat memilih untuk hanya menampilkan alat Offset, agar pemilihan lebih mudah.</p>
+</li>
+<li>
+<p>Gunakan selektor <strong>Urutkan</strong> di bagian atas untuk mengurutkan alat berdasarkan nama, tinggi, radius, atau kriteria pengurutan lainnya (kumpulan kriteria pengurutan yang tepat tergantung pada apakah Anda mengganti punch, die, atau adapter).</p>
+</li>
+<li>
+<p>Anda dapat mengetikkan nama alat (atau nama singkat) ke dalam kotak <strong>Pencarian</strong> untuk mempersempit daftar dengan cepat. Mengetik sebagian nama alat juga bisa - misalnya, menggunakan <strong>OW200</strong> akan cocok dengan alat OW200, OW200/S, dan OW200/K.</p>
+</li>
+<li>
+<p>Gunakan slider <strong>Skala</strong> untuk menyesuaikan ukuran gambar alat. Alat yang saat ini digunakan memiliki isian berwarna biru dan garis luar tebal. Tanda silang biru muda menunjukkan <em>alat lain</em> yang digunakan dalam komponen ini.</p>
+</li>
+<li>
+<p>Matikan kotak centang <strong>Filter</strong> untuk melihat semua alat tanpa batasan (terlepas dari apakah alat tersebut cocok atau tidak). Dalam tampilan ini, alat yang tidak cocok akan berwarna abu-abu, dan mengarahkan mouse ke salah satu alat tersebut akan menunjukkan alasan <em>mengapa</em> alat tersebut tidak tersedia untuk dipilih:<br>
+<span class="image"><img src="img/tool-replace2.png" alt="Tool error" width="650"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Saat Anda menggerakkan mouse di atas gambar alat, TecZone Bend <em>segera</em> menghitung ulang pemasangan alat yang dipilih menggunakan alat yang baru dipilih, dan Anda dapat melihat dalam waktu nyata apakah alat yang Anda pertimbangkan akan menyebabkan masalah benturan atau tidak (penekukan yang sesuai dalam navigator penekukan akan langsung menyala merah jika terjadi benturan). Pratinjau dalam waktu nyata ini memudahkan Anda untuk bereksperimen dengan berbagai pilihan alat hingga Anda menemukan yang sesuai.</p>
+</div>
+<div class="paragraph">
+<p>Jika Anda <strong>mengklik</strong> salah satu alat, pilihan telah dibuat dan alat baru akan diterapkan ke komponen tersebut. Jika Anda menekan <kbd>Esc</kbd>, pilihan pratinjau yang Anda buat akan dikembalikan dan alat asli tidak akan berubah.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_navigasi_dan_pemilihan">Navigasi dan pemilihan<a id="h000214"></a></h3>
+<div class="paragraph">
+<p>Panel yang dipasang pada penekukan menampilkan berbagai tombol di subpanel <em>navigasi</em> dan <em>pemilihan</em>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Gunakan tombol navigasi <strong>Penjepitan</strong> untuk naik ke pengeditan seluruh pengaturan penekukan. Lihat halaman <a href="editsetup.html">editor pengaturan</a> untuk detail lebih lanjut tentang hal ini.</p>
+</li>
+<li>
+<p>Gunakan tombol <strong>Kembali</strong> dan <strong>Lanjut</strong> untuk berpindah-pindah mengedit berbagai pemasangan alat dalam pengaturan ini.</p>
+</li>
+<li>
+<p>Gunakan tombol navigasi <strong>Pembagian</strong> untuk turun ke level berikutnya dan edit <em>segmen-segmen individu</em> yang membentuk pemasangan ini. Bagian di bawah ini tentang mengedit segmen pemasangan alat memberikan informasi lebih lanjut tentang hal ini.</p>
+</li>
+<li>
+<p>Gunakan selektor <strong>Stasiun alat</strong> untuk memilih semua pemasangan alat yang membentuk <em>stasiun</em> ini. Ini akan memilih semua punch, die, dan penahan yang sejajar dengan dudukan yang dipilih, sehingga semuanya dapat diedit atau dipindahkan bersama-sama.</p>
+</li>
+<li>
+<p>Gunakan selektor <strong>Alat yang sama</strong> untuk memilih pemasangan alat lain yang menggunakan alat yang sama. Hal ini sering berguna sebelum menggunakan aktivitas <em>penggantian alat</em>; memilih semua stasiun menggunakan alat yang ditentukan akan memperluas pemilihan alat pengganti yang tersedia.<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mengedit_beberapa_pemasangan">Mengedit beberapa pemasangan<a id="h000215"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/edit-mounts.png" alt="Multiple mounts" width="138">
+</div>
+</div>
+<div class="paragraph">
+<p>Jika Anda memilih beberapa pemasangan menggunakan <kbd>Shift</kbd>+Klik pada semua pemasangan tersebut, Anda dapat mengeditnya secara bersamaan. Hanya pengaturan dan aktivitas yang umum untuk semua pemasangan yang dapat diedit.</p>
+</div>
+<div class="paragraph">
+<p>Bidang seperti <strong>Panjang</strong> atau <strong>Posisi</strong> hanya ditampilkan untuk diedit jika nilainya sama untuk semua pemasangan.</p>
+</div>
+<div class="paragraph">
+<p>Jika Anda memiliki beberapa stasiun, akan berguna untuk memilih semua punch atau semua die sebelum melakukan aktivitas <strong>Ganti alat</strong>. Dalam hal ini, pilihan alat pengganti yang tersedia lebih banyak (karena tidak ada bahaya benturan antara punch dan die yang memiliki tinggi berbeda).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_menyeret_pemasangan_alat_tekuk">Menyeret pemasangan alat tekuk<a id="h000216"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/drag-mount.png" alt="Dragging a mount" width="450">
+</div>
+</div>
+<div class="paragraph">
+<p>Masukan <strong>Posisi</strong> dapat digunakan untuk mengatur posisi yang tepat untuk pemasangan.
+Terkadang, lebih mudah untuk hanya menyeret pemasangan penekukan ke posisi baru. Untuk melakukan ini:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Klik pada pemasangan penekukan untuk memilihnya (pilih beberapa pemasangan menggunakan <kbd>Shift</kbd>+Klik)</p>
+</li>
+<li>
+<p>Klik dan mulai seret ke kiri/kanan untuk memindahkan pemasangan yang dipilih.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Seperti yang ditunjukkan pada gambar di atas, saat Anda mengarahkan mouse ke atas pemasangan yang dipilih, tanda panah akan ditampilkan, menandakan bahwa Anda dapat menyeret pemasangan yang dipilih. Saat Anda menyeret pemasangan, elemen tampilan penempelan memungkinkan Anda dengan mudah menyelaraskan pemasangan dengan pemasangan lain yang sudah ada.</p>
+</div>
+<div class="paragraph">
+<p>Jika Anda <em>mengambil</em> sebuah pemasangan di dekat tepi kirinya, tepi kiri semua pemasangan akan digunakan untuk penempelan. Jika Anda mengambil pemasangan dari bagian tengah, garis tengah akan digunakan sebagai acuan untuk penempelan, dan seterusnya.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_operasi_lanjutan">Operasi lanjutan<a id="h000218"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Berikut adalah beberapa aktivitas lanjutan dengan panel editor Pemasangan Penekukan.</p>
+</div>
+<div class="sect2">
+<h3 id="_mengedit_segmen_pemasangan_alat">Mengedit segmen pemasangan alat<a id="h000219"></a></h3>
+<div class="paragraph">
+<p>Mengklik tombol navigasi <strong>Segmen</strong> saat pemasangan alat penekukan sedang diedit akan membuka panel <em>Segmen Alat</em>, yang terlihat seperti gambar di samping.
+<span class="image right"><img src="img/edit-mount2.png" alt="Edit tool Segments" width="525"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Selektor <strong>Alat</strong> digunakan untuk mengganti segmen alat yang dipilih dengan bagian yang lebih panjang atau lebih pendek, atau jenis bagian yang berbeda.</p>
+</li>
+<li>
+<p>Tombol <strong>&lt; Geser</strong> dan <strong>Geser &gt;</strong> digunakan untuk memindahkan segmen yang dipilih ke kiri atau kanan dalam komposisi. Ini tidak mengubah panjang keseluruhan komposisi, tetapi berguna untuk memindahkan bagian sensor stopper ke kiri atau ke kanan untuk menghindari bukaan, misalnya.</p>
+</li>
+<li>
+<p>Tombol <strong>Tambahkan</strong> dan <strong>Jauhkan</strong> digunakan untuk menambahkan segmen baru ke dalam komposisi, atau untuk menghapus segmen yang dipilih.</p>
+</li>
+<li>
+<p>Tombol navigasi <strong>Kembali</strong> dan <strong>Lanjut</strong> digunakan untuk berpindah-pindah antara pengeditan segmen yang berbeda dalam pemasangan penekukan. Seperti yang ditunjukkan pada gambar di atas, segmen alat yang sedang diedit disorot dengan warna biru.</p>
+</li>
+<li>
+<p>Tombol navigasi <strong>Pasang</strong> digunakan untuk naik satu tingkat, dan mengedit seluruh pemasangan penekukan, bukan segmen individual.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_menambahkan_celah_pada_pemasangan">Menambahkan celah pada pemasangan<a id="h000220"></a></h3>
+<div class="paragraph">
+<p>Terkadang berguna untuk menambahkan <em>celah</em> sempit pada pemasangan alat, biasanya untuk memungkinkan sisi tekukan melewatinya tanpa benturan. Untuk melakukan ini, klik pada
+<strong>tombol Tambahkan celah</strong> (yang muncul jika pemasangan alat cukup panjang). Sebuah area kecil akan terbuka di panel, dengan serangkaian masukan yang saling terhubung untuk mengatur margin kiri, margin kanan, dan celah aktual. Karena jumlah ketiga bagian ini harus sama dengan panjang pemasangan alat, mengedit dua bagian akan mengatur bagian ketiga secara otomatis.</p>
+</div>
+<div class="paragraph">
+<p>Gambar di bawah ini menunjukkan proses aktivitas ini sedang berlangsung. Kami memiliki sisi tekukan yang bertabrakan dengan punch, dan kami menyesuaikan margin Kiri/Kanan hingga celah yang diusulkan sejajar dengan titik persimpangan sisi tekukan dan punch (Anda dapat melihat celah yang diusulkan ditampilkan sebagai dua garis oranye yang ditandai pada pemasangan penekukan).<br>
+<span class="image"><img src="img/add-gap1.png" alt="Adding a gap"></span></p>
+</div>
+<div class="paragraph">
+<p>Saat Anda mengklik tombol <strong>Ok</strong> di subpanel ini, celah akan dibuat dan Anda dapat melihat bahwa kondisi kegagalan benturan sekarang telah teratasi:<br>
+<span class="image"><img src="img/add-gap2.png" alt="Adding a gap"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Saat mengedit stasiun yang menggunakan penahan punch, TecZone Bend akan menanyakan apakah celah harus dibuat hanya untuk <strong>punch</strong> atau untuk <strong>punch</strong> dan <strong>penahan</strong>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_menggunakan_adapter_v_ganda">Menggunakan adapter V Ganda<a id="h000221"></a></h3>
+<div class="paragraph">
+<p>Anda dapat menggunakan adapter V ganda untuk memasang dua die di samping satu sama lain. Untuk melakukannya secara manual, gunakan tombol <strong>Tambahkan adapter</strong> untuk menambahkan adapter ke die, lalu gunakan tombol <strong>Ubah jenis alat</strong> untuk mengubah adapter tersebut menjadi adapter V ganda. Sekarang, Anda dapat menambahkan die kedua ke slot lain pada adapter V ganda menggunakan perintah <strong>Tambahkan</strong> dari baris perintah dan memilih pemasangan die.</p>
+</div>
+<div class="paragraph">
+<p>Ketika Anda memasang sebuah die pada salah satu slot dari penahan V ganda, Anda dapat memindahkannya ke slot lainnya dengan mengklik tombol <strong>Ubah sumbu I</strong> yang ditampilkan:<br>
+<span class="image"><img src="img/dv-shift.png" alt="Double-V Shift" width="465"></span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Ini terkadang juga dikenal sebagai bagian <em>bahu</em>.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Misalnya, jika Anda melakukan aktivitas <strong>Ganti alat</strong> hanya pada satu stasiun punch, dan ada beberapa stasiun punch, Anda akan dibatasi untuk hanya memilih alat punch lain yang memiliki <em>tinggi yang sama</em>, untuk menghindari benturan punch-die karena jarak yang tidak rata.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_panel_pemasangan_penekukan">Panel Pemasangan Penekukan</a>
+  </li>
+  <li level="2">
+   <a href="#_jendela_ganti_alat">Jendela Ganti Alat</a>
+  </li>
+  <li level="2">
+   <a href="#_navigasi_dan_pemilihan">Navigasi dan pemilihan</a>
+  </li>
+  <li level="2">
+   <a href="#_mengedit_beberapa_pemasangan">Mengedit beberapa pemasangan</a>
+  </li>
+  <li level="2">
+   <a href="#_menyeret_pemasangan_alat_tekuk">Menyeret pemasangan alat tekuk</a>
+  </li>
+  <li level="1">
+   <a href="#_operasi_lanjutan">Operasi lanjutan</a>
+  </li>
+  <li level="2">
+   <a href="#_mengedit_segmen_pemasangan_alat">Mengedit segmen pemasangan alat</a>
+  </li>
+  <li level="2">
+   <a href="#_menambahkan_celah_pada_pemasangan">Menambahkan celah pada pemasangan</a>
+  </li>
+  <li level="2">
+   <a href="#_menggunakan_adapter_v_ganda">Menggunakan adapter V Ganda</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="editbend.html">Edit penekukan</a></span>
+ <span class="next"><a href="editsetup.html">Edit pengaturan penekukan</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

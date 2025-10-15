@@ -1,0 +1,663 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Solusi Perhitungan Ulang</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Bend Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Selamat datang di TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Pengantar</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">Menginstal Perangkat Lunak</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">Antarmuka Pengguna</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Alur Kerja Komponen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">Impor 2-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">Pembersihan 2-D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">Impor 3-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">Impor Model 3D</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Impor Modul</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Deteksi Bentuk</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Deteksi Komponen</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">Memodifikasi Geometri</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">CAM Laser</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Alur Kerja Komponen</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Panel Pengeditan</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Pemotongan Laser</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Pendekatan</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Mundur</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Sambungan mikro</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Lanjutan</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Pemotongan Scrap</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Komponen</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Penanganan Sudut</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Nesting Cepat</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">Alur Kerja Nesting</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Panel Nesting</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Tab Lembaran</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Tab Komponen</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Tab Rancangan</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Tab Ringkasan</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Edit Rancangan</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Mode Nesting</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Panel Penempatan</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Urutan</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Lembar Irisan</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Pemotongan Bevel</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Kontur Terbuka</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Bevel Variabel</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Lain-lain</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Aturan Penyelesaian</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">Edit LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Strategi</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Sambungan mikro</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">Pengaturan lebih lanjut</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">CAM Penekukan</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../createbenddata.html">Buat parameter tekukan</a></li>
+    <li><button class="tree blank"></button><a href="../navigator.html">Navigator penekukan</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../editing/index.html">Edit parameter tekukan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../editing/editbend.html">Edit penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editmount.html">Edit pemasangan alat</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editsetup.html">Edit pengaturan penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editgauge.html">Edit backgauge finger</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editacb.html">Edit pengukuran sudut</a></li>
+      <li><button class="tree blank"></button><a href="../editing/bendsheet.html">Lembar Kerja Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../editing/sequencing.html">Mengubah urutan</a></li>
+      <li><button class="tree blank"></button><a href="../editing/addsetup.html">Menambahkan pengaturan dan stasiun</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Lanjutan</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="anglemeasurement.html">Pengukuran sudut</a></li>
+      <li><button class="tree blank"></button><a href="batchprocess.html">Proses batch</a></li>
+      <li><button class="tree blank"></button><a class="active" href="recompute.html">Solusi Perhitungan Ulang</a></li>
+      <li><button class="tree blank"></button><a href="tonnage.html">Pemeriksaan tonase</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">Navigator Penekukan</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">Pengambilan Komponen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">Pengambilan dari Palet</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">Pengambilan dari Dispenser</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">Penekukan Robotik</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">Penyisipan</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Ekstraksi</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Pencengkeraman Ulang</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Panel Pencengkeram Ulang</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Tambahkan Pencengkeram Ulang</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Edit Pencengkeram Ulang</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Pencengkeraman Ulang dengan Jaw</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Panel Stasiun Pencengkeram Ulang</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Endapan Komponen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Pola Endapan</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Pengulangan dan Urutan</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Lembar Pemisah</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Konfigurasi Sel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Database Gripper</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Laporan</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">CAM Lipat</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Buat data lipat</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">Tampilan Lipat</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Mengedit data Lipat</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Edit penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Edit sisi/area</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">Ubah urutan</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">Edit penahan lembaran kosong</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">Edit stopper</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">Edit pisau</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">Edit pemuatan</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">Edit pembuangan</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Inventaris alat</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Tabel celah udara khusus</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">Penyelesaian penekukan manual</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Panjang Sisi Tekukan yang Diperlukan</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Pengaturan</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Diagram</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Layer</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Dimensi</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Tampilan</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">CAM Penekukan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Pengaturan Default Mesin</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Output Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Tampilan Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Sel Penekukan</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">CAM Pemotongan</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Rancangan</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Pengaturan Nesting</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Lembar</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Penanganan Lembaran</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Pemotongan Sisa Rangka</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Penyangga Kerja</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">CAM Laser</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Urutan</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Output Pemotongan</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Tampilan Pemotongan</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Penekukan Panel</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Default</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">Pembawa ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Output</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Laporan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Pengaturan Default Item</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Impor/Ekspor</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Lingkungan</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Database</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Bahan</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Mesin</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Alat Tekuk</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Gripper Penekukan</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Pembentukan/Komponen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Laporan</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Perancang Laporan</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Bidang, Gambar, dan Tabel</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Band (sublaporan)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Stiker, Bitmap, dan Bentuk</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Lampiran</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Format 3D yang Didukung</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Lembar Pemisah DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Alat Tekuk DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">CAM Penekukan</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Lanjutan</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="recompute.html">Solusi Perhitungan Ulang</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Solusi Perhitungan Ulang</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Saat Anda menekan <kbd>B</kbd>, atau menggunakan panel alur kerja untuk menghitung solusi, TecZone Bend menghitung program tekuk menggunakan serangkaian pengaturan dan parameter default.
+Anda dapat melakukan penghitungan ulang solusi ini menggunakan pengaturan yang berbeda dengan mengklik menu <strong>Hitung Ulang</strong> <span class="image"><img src="img/gear.png" alt="Recompute" width="20"></span> dari baris perintah. Terkadang, ini juga berguna untuk menyelesaikan perhitungan setelah Anda mengedit beberapa pengaturan alat atau urutan secara interaktif.<br>
+Misalnya:</p>
+</div>
+<div id="h000155" class="ulist">
+<ul>
+<li>
+<p>Anda dapat mengubah urutan, dan meminta TecZone Bend untuk menghitung stasiun alat baru sambil menjaga urutan tidak berubah.</p>
+</li>
+<li>
+<p>Anda dapat mengubah stasiun alat, dan meminta TecZone Bend untuk menghitung urutan baru, atau untuk menyejajarkan komponen ke stasiun yang baru dibuat.</p>
+</li>
+<li>
+<p>Anda dapat mencoba aktivitas pengaturan alat dengan set tool yang berbeda, atau mencoba menggunakan Pengaturan yang sudah dibuat.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dialog_perhitungan_ulang">Dialog Perhitungan Ulang<a id="h000158"></a></h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/recompute.png" alt="Recompute" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>Dialog <strong>Perhitungan Ulang</strong> terlihat seperti gambar di samping.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pengesampingan">Pengesampingan<a id="h000159"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Area ini berisi beberapa sakelar yang dapat Anda gunakan untuk mengesampingkan perilaku default TecZone Bend.</p>
+</div>
+<div id="h000160" class="ulist">
+<ul>
+<li>
+<p>Aktifkan sakelar <strong>Jangan ubah urutan</strong> untuk memaksa TecZone Bend menghitung solusi baru tanpa mengubah urutan. Berbagai stasiun alat, posisi stopper, atau arah penyisipan komponen akan dicoba oleh TecZone Bend, sambil mempertahankan urutan yang tidak berubah.</p>
+</li>
+<li>
+<p>Jika sakelar <strong>Tidak ada pengukuran sudut.</strong> diaktifkan, TecZone Bend menghitung solusi yang tidak melakukan pengukuran sudut, dan tidak akan menggunakan sensor stopper (tool sensor)</p>
+</li>
+<li>
+<p><strong>Abaikan alat dari file GEO/DXF</strong> menginstruksikan TecZone Bend untuk mengabaikan catatan pengaturan alat yang sering ditemukan dalam file GEO, dan terkadang dalam file DXF.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pengaturan">Pengaturan<a id="h000162"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bagian ini mengatur strategi untuk pengaturan alat; secara default, TecZone Bend akan menghitung Pengaturan dari awal, tetapi Anda dapat menggunakan pengaturan ini untuk mengubah perilaku tersebut.</p>
+</div>
+<div id="h000163" class="ulist">
+<ul>
+<li>
+<p><strong>Menghitung Pengaturan baru</strong> adalah perilaku default - TecZone Bend akan menghitung pengaturan menggunakan semua alat yang diizinkan (lihat bagian Alat di bawah).</p>
+</li>
+<li>
+<p><strong>Pertahankan Pengaturan yang ada</strong> memberi tahu TecZone Bend bahwa tidak ada perubahan Pengaturan yang harus dilakukan; ini mencoba memproses semua penekukan menggunakan pengaturan saat ini untuk komponen tersebut. Jika beberapa penekukan mengalami benturan, atau panjang alat tidak cukup untuk pemrosesan, kondisi kegagalan tersebut tetap tidak diperbaiki, dan dapat dilihat setelah proses penghitungan ulang.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/setup-from-file.png" alt="Setup from file" width="245">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Jika Anda memilih <strong>GunakanSetup dari file</strong>, Anda diminta untuk memilih file pengaturan penekukan (bsetup).
+<strong>Pengaturan</strong> yang dimuat dari file ini kemudian digunakan untuk perhitungan; pengaturan tersebut tidak diubah, dan tidak ada stasiun tambahan yang dibuat. Pengaturan yang baru saja Anda muat dari file akan ditampilkan di selektor yang muncul di bawah bagian ini, dan Anda dapat mengklik tombol <strong>+</strong> di dekat selektor tersebut untuk memilih file pengaturan yang berbeda.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/setup-other-part.png" alt="Setup other part" width="245">
+</div>
+</div>
+<div id="h000165" class="ulist">
+<ul>
+<li>
+<p>Opsi <strong>Gunakan Pengaturan dari Komponen lain</strong> hanya tersedia jika ada beberapa komponen lain yang sedang terbuka, dan telah dipasangi alat untuk press brake yang sama. Dalam hal ini, Anda dapat meminta TecZone Bend untuk menggunakan pengaturan yang sama seperti salah satu komponen lain tersebut; sebuah selektor akan muncul untuk memungkinkan Anda memilih komponen yang diinginkan.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_alat">Alat<a id="h000166"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Jika Anda memilih opsi <strong>Hitung Pengaturan baru</strong> di area atas, Anda dapat menggunakan area <strong>Alat</strong> untuk memilih daftar alat tekuk yang dapat digunakan untuk menghitung pengaturan baru. Jika Anda memilih salah satu opsi lain untuk Pengaturan, area ini tidak tersedia.</p>
+</div>
+<div id="h000167" class="ulist">
+<ul>
+<li>
+<p><strong>Alat pilihan untuk Mesin</strong> adalah opsi default. Untuk setiap press brake, Anda dapat memilih satu set tools<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> sebagai <em>alat pilihan</em>, dan TecZone Bend akan menggunakan alat tersebut saat melakukan pengaturan alat komponen.<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup> (Jika Anda belum benar-benar mengatur alat-alat pilihan untuk sebuah mesin, TecZone Bend akan menggunakan semua alat yang ada dalam inventaris sebagai set tool pilihan untuk mesin tersebut).</p>
+</li>
+<li>
+<p>Jika Anda memilih <strong>Alat di Inventaris</strong>, TecZone Bend akan menggunakan semua alat yang tersedia di inventaris pemasangan. Jika Anda belum benar-benar membuat daftar inventaris alat, TecZone Bend akan menggunakan semua alat yang ada di Katalog sebagai inventaris Anda.</p>
+</li>
+<li>
+<p><strong>Semua Alat dalam Katalog</strong> adalah pilihan alat yang paling lengkap; TecZone Bend akan menggunakan semua alat yang tersedia dalam katalog alat produsen untuk mencoba solusi. Meskipun hal ini mungkin berarti solusi tersebut tidak dapat diterapkan dalam produksi (menggunakan inventaris yang Anda miliki), hal ini berguna untuk eksplorasi spekulatif tentang alat apa saja yang diperlukan untuk memproduksi komponen yang sangat kompleks. (Selain itu, mode ini juga menginstruksikan TecZone Bend untuk mengasumsikan inventaris tak terbatas untuk setiap bagian - artinya, pengaturan alat optimal dihasilkan dengan mengasumsikan Anda memiliki jumlah tak terbatas dari setiap panjang bagian).</p>
+</li>
+</ul>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/tools-from-file.png" alt="Tools from File" width="240">
+</div>
+</div>
+<div id="h000170" class="ulist">
+<ul>
+<li>
+<p>Anda dapat membuat set tool khusus dan menyimpannya dalam file daftar alat (btools). File-file ini kemudian dapat digunakan untuk menyiapkan alat pada komponen, saat Anda memilih opsi <strong>Gunakan set tool dari File</strong>.
+Saat Anda memilih opsi ini, Anda akan diminta untuk memilih file daftar alat, dan file daftar alat yang baru saja Anda gunakan akan ditampilkan untuk memudahkan pemilihan. Anda dapat mengklik tanda <strong>+</strong> di dekat daftar ini untuk memilih daftar alat baru.</p>
+</li>
+<li>
+<p>Untuk kontrol paling langsung atas punch dan die, Anda dapat memilih opsi <strong>Pilih pisau atas dan die bawah</strong>, lalu memilih punch dan die yang ingin digunakan.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/tools-specific.png" alt="Specific tools" width="240">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prioritas_urutan">Prioritas urutan<a id="h000171"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Saat mengurutkan penekukan di suatu komponen, ada beberapa prasyarat yang berpotensi bertentangan.
+Misalnya, apakah TecZone Bend harus mencoba meminimalkan <em>jumlah putaran komponen</em>, atau meminimalkan penekukan di bagian <em>titik gravitasi komponen yang berada di dalam mesin</em>? <br>
+Sangat mungkin bahwa setiap operator mungkin memiliki seperangkat aturan prioritas yang berbeda, dan juga kemungkinan bahwa komponen yang berbeda mungkin memerlukan pengaturan prioritas yang berbeda. Dengan demikian, TecZone Bend memungkinkan Anda untuk melakukan perhitungan ulang dengan urutan prioritas yang berbeda, menggunakan
+<strong>area Prioritas Urutan</strong> dalam dialog ini.</p>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/sequence-priority.png" alt="Sequence Priority" width="277">
+</div>
+</div>
+<div class="paragraph">
+<p>Gunakan tombol panah <span class="image"><img src="img/circle-up.png" alt="up" width="16"></span> dan <span class="image"><img src="img/circle-down.png" alt="down" width="16"></span> di sebelah kanan untuk mengacak aturan; item yang berada di bagian atas memiliki prioritas lebih tinggi. Anda dapat menonaktifkan beberapa item prioritas ini sepenuhnya; hal ini menginstruksikan TecZone Bend untuk tidak mempertimbangkan item tersebut sebagai faktor saat menentukan urutan. (Terkadang, menonaktifkan beberapa item ini dapat menghasilkan urutan yang menggunakan sedikit stasiun alat).</p>
+</div>
+<div id="h000173" class="ulist">
+<ul>
+<li>
+<p><strong>Hindari benturan selama penekukan berlebih</strong>: Untuk mencapai akurasi sudut, sebagian besar penekukan harus sedikit <em>ditekuk berlebih</em> untuk mengimbangi lenting balik. Aturan urutan ini menginstruksikan TecZone Bend untuk melakukan penekukan dalam urutan yang memungkinkan terjadinya penekukan berlebih. Misalnya, pada komponen di bawah ini, kita harus melakukan penekukan 1 terlebih dahulu, baru kemudian penekukan 2; urutan sebaliknya akan menghalangi penekukan berlebih.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="img/overbending.png" alt="Overbending" width="242">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Hindari alat dengan prioritas rendah</strong>: Menginstruksikan TecZone Bend untuk menghindari penggunaan alat-alat dengan prioritas rendah, atau alat-alat yang tidak tercantum dalam daftar pilihan, sejauh mungkin.</p>
+</li>
+<li>
+<p><strong>Hindari pengencangan di sudut terbuka</strong>: Posisi pengukuran idealnya berada pada bidang yang sama dengan sumbu penekukan, dan tidak boleh ada penekukan yang telah diproses antara garis tekuk dan titik pengukuran. Berikut adalah contoh penyetelan stopper yang buruk yang ingin dihindari oleh aturan ini:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="img/open-gauging.png" alt="Open Gauging" width="248">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Panjang sisi yang lebih panjang sebagian besar sebelum garis tekuk</strong>: Terutama pada komponen yang berat, penting untuk menghindari situasi di mana titik gravitasi komponen berada di belakang garis alat. Aturan ini mencoba meminimalkan situasi seperti itu.<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup></p>
+</li>
+<li>
+<p><strong>Minimalkan penggunaan komponen</strong>: Komponen terbalik terjadi ketika komponen harus dibalik (penekukan berturut-turut berada pada arah atas/bawah yang berbeda).</p>
+</li>
+<li>
+<p><strong>Minimalkan putaran komponen</strong>: Putaran komponen adalah ketika sebuah komponen diputar ke kiri atau ke kanan pada bidang horizontal; hal ini dianggap lebih mudah bagi operator daripada membalik komponen; urutan default dari dua aturan terakhir ini mencoba untuk mengutamakan putaran komponen daripada membalik komponen, jika memungkinkan.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Untuk melakukannya, gunakan tombol <strong>inventaris</strong> di baris perintah, lalu pilih <strong>Alat Pilihan</strong> dari menu yang muncul.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. TecZone Bend akan mencoba menggunakan hanya alat pilihan untuk komponen tersebut, tetapi jika terjadi benturan atau masalah lain yang tidak dapat diselesaikan, ia akan mulai menggunakan alat lain dari inventaris yang tersedia.
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. TecZone Bend menggunakan kebijaksanaan dalam menentukan bobot komponen dan sejauh mana titik gravitasi berada di belakang garis alat untuk mempertimbangkan hal ini sebagai masalah. Secara teknis, aturan ini menganggap suatu komponen akan terjatuh ke belakang jika ada momen terjatuh sebesar 0,15 Nm (Newton meter) ke belakang.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_dialog_perhitungan_ulang">Dialog Perhitungan Ulang</a>
+  </li>
+  <li level="1">
+   <a href="#_pengesampingan">Pengesampingan</a>
+  </li>
+  <li level="1">
+   <a href="#_pengaturan">Pengaturan</a>
+  </li>
+  <li level="1">
+   <a href="#_alat">Alat</a>
+  </li>
+  <li level="1">
+   <a href="#_prioritas_urutan">Prioritas urutan</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="batchprocess.html">Proses batch</a></span>
+ <span class="next"><a href="tonnage.html">Pemeriksaan tonase</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

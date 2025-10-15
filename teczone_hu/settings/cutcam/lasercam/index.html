@@ -1,0 +1,769 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../res/bento.css">
+  <link rel="stylesheet" href="../../../res/site.css">
+  <link rel="stylesheet" href="../../../res/tree.css">
+  <link rel="stylesheet" href="../../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../../img/trumpf-icon.png">
+  <title>Lézer CAM</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../../index.html">Üdvözöljük a TecZone-ban</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../intro/index.html">Bevezetés</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../intro/install.html">A szoftver telepítése</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/clarity.html">A kezelőfelület</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/workflow.html">Alkatrész munkafolyamat</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/2dimport/index.html">2-D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/2dimport/2dcleanup.html">2-D tisztítás</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/3dimport/index.html">3-D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prep3dmodel.html">3D modell importálása</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prepassembly.html">Részegység importálása</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/formdetect.html">Forma felismerése</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/componentdetect.html">Komponens felismerése</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../cad/sketch.html">A geometria módosítása</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cut/index.html">Lézer CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/partworkflow/index.html">Alkatrész munkafolyamat</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/partworkflow/panels/index.html">Szerkesztőpanelek</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../../cut/partworkflow/panels/lasercut/index.html">Lézervágás</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/approach.html">Indítás</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/withdrawal.html">Visszahúzódás</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/microjoint.html">Mikrohíd</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/advanced.html">Speciális</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/contour.html">Kontúr</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/scrapcut.html">Hulladékvágás</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/part.html">Alkatrész</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/cornertreatment.html">Sarokmegmunkálás</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/partworkflow/quicknest.html">Gyors táblásítás</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/jobworkflow/index.html">A feladat munkafolyamata</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/jobpanel/index.html">Feladat panel</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/sheets.html">Lemeztáblák fül</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/parts.html">Alkatrészek fül</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/layouts.html">Elrendezések fül</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/summary.html">Összegzés fül</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/editlayout/index.html">Elrendezés szerkesztése</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/nestingmodes.html">Táblásítási üzemmódok</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/placementpanel.html">Elhelyezés panel</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/sequencing.html">Sorrendbe állítás</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/slicesheet.html">Lemeztábla szelet</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/bevelcut/index.html">Ferde vágás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/opencontours.html">Nyitott kontúrok</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/variablebevel.html">Változtatható ferde vágás</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/miscellaneous.html">Egyéb</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/finishingrules.html">Befejezési szabályok</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/editltt.html">Vágási táblázat szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/flyline.html">Flyline</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/strategies.html">Stratégia</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/microjoints.html">Mikrohidak</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/stability.html">További beállítások</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bend/index.html">Hajlítás CAM alkalmazásával</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">Hajlítási adatok létrehozása</a></li>
+    <li><button class="tree blank"></button><a href="../../../bend/navigator.html">Hajlítás navigátor</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/editing/index.html">Hajlítási adatok szerkesztése</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editbend.html">Hajlítás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editmount.html">Szerszámtartó szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editsetup.html">Hajlítási beállítás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editgauge.html">Az ütközőujjak szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editacb.html">Szögmérés szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/bendsheet.html">Hajlítások táblázata</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/sequencing.html">A sorrend módosítása</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/addsetup.html">Beállítások és állomások hozzáadása</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/anglemeasurement.html">Szögmérés</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/batchprocess.html">Kötegelt megmunkálás</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/recompute.html">Újraszámítási megoldás</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">Terhelésellenőrzés</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bcell/navigator.html">Hajlítás navigátor</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/pickup/index.html">Alkatrész felvétele</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/frompallet.html">Felvétel raklapról</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/fromdispenser.html">Felvétel adagolóból</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/bending/index.html">Robotizált hajlítás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/insertion.html">Behelyezés</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/bending.html">Hajlítás</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/extraction.html">Kihúzás</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/regrip/index.html">Újrafogás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/regrippanel.html">Újrafogás panel</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/addregrip.html">Újrafogás hozzáadása</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/editregrip.html">Újrafogás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/jawregrip.html">Újrafogás pofás megfogóval</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/rgstationpanel.html">Lemezfordító állomás panel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/deposit/index.html">Alkatrész lerakása</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/patterns.html">Lerakási minták</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/repeat.html">Ismétlés és sorrend</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/separatorsheet.html">Szétválasztó lemeztábla</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/waypoints.html">Útvonalpontok</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/cellconfig.html">Cella konfiguráció</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb.html">Megfogó adatbázis</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/reports.html">Jelentések</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../fold/index.html">CAM lengőhajlítás</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../fold/createfolddata.html">Lengőhajlítási adatok létrehozása</a></li>
+    <li><button class="tree blank"></button><a href="../../../fold/foldview.html">A Lengőhajlítás nézet</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/editing/index.html">Lengőhajlítási adatok szerkesztése</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbend.html">Hajlítás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editside.html">Szár/szakasz szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editseq.html">A sorrend módosítása</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbh.html">A leszorítók szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editgauge.html">Az ütközők szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editblade.html">A hajlítóélek szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editload.html">A felrakás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editunload.html">A leszedés szerkesztése</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../fold/toolinventory.html">Szerszámállomány</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/airgaptables.html">Egyedi légrés táblázatok</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/manualbend.html">A manuális hajlítás befejezése</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/minflangelength.html">Szükséges peremhossz</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../../index.html">Beállítások</a>
+   <ul>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../drawing/index.html">Rajzolás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../drawing/layers.html">Rétegek</a></li>
+      <li><button class="tree blank"></button><a href="../../drawing/dimensions.html">Méretek</a></li>
+      <li><button class="tree blank"></button><a href="../../drawing/view.html">Nézet</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bendcam/index.html">Hajlítás CAM alkalmazásával</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bendcam/benddefaults.html">Gép alapértelmezett beállításai</a></li>
+      <li><button class="tree blank"></button><a href="../../bendcam/bendoutputs.html">Hajlítási kimenetek</a></li>
+      <li><button class="tree blank"></button><a href="../../bendcam/bendview.html">Hajlítás nézet</a></li>
+      <li><button class="tree blank"></button><a href="../../bendcam/bendcell.html">Hajlítócella</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="../index.html">Vágás CAM alkalmazásával</a>
+     <ul>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../layout/index.html">Elrendezés</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../layout/nesting.html">Táblaterv beállítások</a></li>
+        <li><button class="tree blank"></button><a href="../layout/sheet.html">Lemeztábla</a></li>
+        <li><button class="tree blank"></button><a href="../layout/sheethandling.html">Lemeztábla kezelése</a></li>
+        <li><button class="tree blank"></button><a href="../layout/skeletoncuts.html">Maradékrács-vágások</a></li>
+        <li><button class="tree blank"></button><a href="../layout/worksupport.html">Munkatámasz</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree open"></button>
+       <a class="active" href="index.html">Lézer CAM</a>
+       <ul>
+        <li><button class="tree blank"></button><a href="sequence.html">Sorrend</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cutoutputs.html">Vágás kimenő adatok</a></li>
+      <li><button class="tree blank"></button><a href="../cutview.html">Vágás nézet</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../foldcam/index.html">Lengőhajlítás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../foldcam/defaults.html">Alapértelmezett értékek</a></li>
+      <li><button class="tree blank"></button><a href="../../foldcam/zbwcarriers.html">Kiegészítő hajlítószerszám tartódarabok</a></li>
+      <li><button class="tree blank"></button><a href="../../foldcam/foldoutputs.html">Kimenetek</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../reports/index.html">Jelentések</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../reports/itemdefaults.html">Elemek alapértelmezett értékei</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../importexport.html">Importálás/exportálás</a></li>
+    <li><button class="tree blank"></button><a href="../../environment.html">Környezet</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../database/index.html">Adatbázis</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../database/materials.html">Anyagok</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/machines.html">Gépek</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendtools.html">Hajlítószerszámok</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">Hajlító megfogók</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Formázások/részegységek</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../report/index.html">Jelentések</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../report/designer.html">Jelentéstervező</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/fields.html">Mezők, ábrák és táblázatok</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/bands.html">Sávok (részjelentések)</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/labels.html">Címkék, bittérképek és alakzatok</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../appendix/index.html">Függelék</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">Támogatott 3D formátumok</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">Szétválasztó lemeztábla DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">DXF hajlítószerszám</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../../impressum.html">Impresszum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../../index.html">Beállítások</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="../index.html">Vágás CAM alkalmazásával</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Lézer CAM</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Lézer CAM</h1>
+<div class="sect1">
+<h2 id="_vágás">Vágás<a id="h000955"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Háromféle feltétel alapján történhet egy lemez vágása.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne28.png" alt="ne28">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Choose cutting condition by</strong> - Ez a beállítás határozza meg, hogy a vágási feltételek hogyan kerülnek kiválasztásra. Az opciók között szerepel a Maximális szegmenshossz, az Átlagos szegmenshossz és a Terület.</p>
+</div>
+<div class="paragraph">
+<p><strong>Maximum segment length</strong> - A leghosszabb szegmens tekinthető küszöbértéknek.</p>
+</div>
+<div class="paragraph">
+<p><strong>Average segment length</strong> - Kiszámításra kerül az összes szegmens átlagos hossza és ez kerül alkalmazása küszöbértékként. Az alapértelmezett beállítás az TecZone Laser.</p>
+</div>
+<div class="paragraph">
+<p><strong>Area</strong> - A kontúr által körülvett területet küszöbértékként szolgál.</p>
+</div>
+<div class="paragraph">
+<p><strong>Switch to slower cutting condition when approach is constrained</strong> -
+A lézerfej lassú vágási sebességre vált, ha a lemezgeometria az indításhoz szükséges bonyolult.</p>
+</div>
+<div class="paragraph">
+<p><strong>Process for open polylines</strong> - Ha nyitott sokszögvonalak találhatók egy alkatrészben, akkor a kiválasztott opciótól függően a TecZoneCut a sokszögvonalakat ennek megfelelően dolgozza fel. Az opciók között szerepelnek: <em>Vágás</em>, <em>Jelölés</em>,
+<em>Ki</em>, és <em>Réteg alapján</em>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Ki</strong>: A lézer figyelmen kívül hagyja ezt a a vonalat az alkatrész rajzán.</p>
+</div>
+<div class="paragraph">
+<p><strong>Jelölés</strong>: A lézer csak megjelöli ezt a vonalat, azaz látható vonalat rajzol a lemezre, amely nem hatol át rajta.</p>
+</div>
+<div class="paragraph">
+<p><strong>Vágás</strong>: A TecZone Laser kiválasztja a megfelelő lézerbeállítást ehhez a sokszögvonalhoz és a lézer ennek megfelelően fogja vágni azt.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Ahhoz, hogy ez a beállítás érvénybe lépjen, a felszerszámozást újra kell számítani, mert a manuális szerszámok módosításai felülírják az ebben a beállításban eszközölt módosításokat. Ha a nyitott sokszögvonal az interaktív elrendezésben manuálisan „Jelölésre” van beállítva, akkor semmilyen hatása nem lesz, ha a beállításokban „Vágásra” változtatjuk azt.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Cut/Mark open polylines backwards</strong> - Az opció a nyitott sokszögvonalak visszafelé történő vágását vagy jelölését teszi lehetővé. Ez a beállítás csak akkor érvényes, ha a nyitott sokszögvonalak megmunkálási folyamatához vágás vagy jelölés van beállítva.</p>
+</div>
+<div class="paragraph">
+<p><strong>Mark forming footprint</strong> - Ha a TecZoneCut süllyesztési szituáció észlel, akkor automatikusan áthelyezi a köré írható kört a Forming footprint rétegre. Ha ez az opció be van jelölve, a Form footprint rétegben lévő geometriát az alkalmazás megjelöli.</p>
+</div>
+<div class="paragraph">
+<p><strong>Stitch cutting threshold distance (0=disable)</strong> - Ez az opció a két vágás közötti maximális távolságot határozza meg, amelyet a varratvágásnál figyelembe vesznek.</p>
+</div>
+<div class="paragraph">
+<p><strong>Dynamics</strong> - A Dinamika legördülő menü a következő menüpontokat tartalmazza: Normál, Magas és Csökkentett.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pierce_settings">Pierce settings</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/pierce.png" alt="pierce">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Allow approach that is more than 0.5 distance to opposite side</strong> -
+Ezzel az opcióval meghatározható, hogy egy indítás meghaladhatja-e a szemközti oldalig tartó távolságot.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_corner_processing">Corner Processing</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/cornerprocess.png" alt="cornerprocess">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Rounding tolerance (distance of corner from rounding tip)</strong> -
+Ezzel az opcióval lehet meghatározni a saroktól a lekerekítés csúcsáig megengedett maximális távolságot, az alábbi ábra szerint. A sarok és a lekerekítési pont közötti távolság egyenesen arányos a lekerekítési sugárral. Az itt megadott érték alapján a TecZoneCut a min. és max. tartományban választja ki a lekerekítési sugarat. Ha a legkisebb sugár kiválasztása esetén ez a távolság nem kerül a tűréshatáron belülre, akkor a lekerekítés nem kerül alkalmazásra (hurkolás vagy hűtés alkalmazható).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cornprocess1.png" alt="cornprocess1">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Maximum distance of corner from outermost point on loop</strong> -
+Ezzel az opcióval meghatározható a hurok maximális kiterjedése a saroktól. A hurok kiterjedése egyenesen arányos a sugárral. Éles sarkoknál, ha a legkisebb sugár kiválasztása esetén ez a távolság nem kerül az itt megadott érték alá, a hurok nem kerül alkalmazásra (a lekerekítés vagy a hűtés továbbra is alkalmazható).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cornprocess2.png" alt="cornprocess2">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_twinline">TwinLine</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/cornerprocess.png" alt="cornerprocess">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Twinline processing strategy</strong> - Ez a legördülő menü a használni kívánt twinline-stratégia meghatározására szolgál.</p>
+</div>
+<div class="paragraph">
+<p><em>Partwise</em> - A vágások részekre bontva történnek. Alkalmas vastag lemezekhez, ahol nem áll fenn a veszélye annak, hogy a kontúrok ledőlnek.</p>
+</div>
+<div class="paragraph">
+<p><em>Partwise-Safe</em> - A vágások részenként történnek történnek, de az előkészítő vágások a szomszédos részeken végrehajtásra kerülnek. Alkalmas vékony lemezekhez, ahol az alkatrészek megdőlhetnek.</p>
+</div>
+<div class="paragraph">
+<p><em>TIO (Twinline-Islands-Outer)</em> - A Twinline élek levágása történik először, majd az alkatrészek között kialakított szigetek, végül a külső kontúr vágása.</p>
+</div>
+<div class="paragraph">
+<p><strong>Use TIO strategy of there are no islands</strong> -
+A szoftver mindig a TIO (Twinline-Islands-Outer) stratégiát választja, ha a twinline blokkban nincsenek szigetek létrehozva. Ez az opció alapértelmezés szerint be van jelölve.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scrap_cutting">Scrap cutting</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/scrap.png" alt="scrap">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Scrap grid width</strong> - Ez a felszerszámozás által létrehozott rács egyes celláinak szélessége. Az ide beírt értéknek olyannak kell lennie, hogy a kapott négyzet pozíciójától függetlenül biztosan átessen a feltámasztólécek között.</p>
+</div>
+<div class="paragraph">
+<p><strong>Approach length for separating cuts</strong> - Ez a hulladékvágásoknál elérni kívánt hosszúság.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vaporization">Vaporization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Vaporize</strong> - Ez a beállítás szabályozza, hogy van-e szükség gőzölésre. Ha igen, akkor a lézervágási útvonal mely részeit kell párologtatni.</p>
+</div>
+<div class="paragraph">
+<p><em>None</em> - Nincs párologtatás</p>
+</div>
+<div class="paragraph">
+<p><em>Pierce</em> - Párologtatás csak a beszúrási pontoknál</p>
+</div>
+<div class="paragraph">
+<p><em>Pierce &amp; approach</em> - Párologtatás a lézervágási pálya beszúrási és indítási részein.</p>
+</div>
+<div class="paragraph">
+<p><em>Full laser path</em> - A teljes vágási pálya, beleértve a beszúrást, az indítást és a kontúrt, párologtatásra kerül.</p>
+</div>
+<div class="paragraph">
+<p><strong>Pierce point vaporization circle radius</strong> - Ha itt nullánál nagyobb értéket adunk meg, akkor a szoftver a lézerfejet a beszúrási pont körül kis körben mozgatja, a gőzölő lézer bekapcsolt állapotában (párologtatás körpálya mentén). Az érték határozza meg a kör sugarát. Ha ez az érték nulla, akkor a gőzölő lézer pontosan a beszúrási pont felett kapcsol be, majd azonnal kikapcsol (pontszerű párologtatás).</p>
+</div>
+<div class="paragraph">
+<p><strong>Vaporize marking</strong> - Ez az opció a párologtatás engedélyezésére vagy letiltására szolgál. Ne feledje, hogy a TC_WRITE makróval gravírozott lézeres szövegjelölések nem gőzölögtethetők el.</p>
+</div>
+<div class="paragraph">
+<p>E beállítások módosítása esetén a TecZoneCut kezelőfelületen nem lesz látható változás, kivéve, hogy az NC-program ikon újra engedélyezésre kerül, ha korábban letiltották azt.
+Ez azért van, mert ezek a beállítások hatással vannak a program generálására. A különböző vágásokhoz generált párologtatási kódokat az alábbi táblázat tartalmazza.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Vágás</th>
+<th class="tableblock halign-left valign-top">Működés</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Laser Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ez a szokásos vágási elem az alkatrész kontúrjának kivágásához.<br>
+Ha Vaporize = Full laser path,
+a teljes kontúr, beleértve a beszúrást és az indítást is, párologtatásra kerül. Az elpárologtató menet során azonban a sugárkompenzáció ki van kapcsolva. A vágásnak nem kell közvetlenül a párologtatás után történnie. Ha egy kontúr több mint 1 mikrohidat tartalmaz és így több darabra oszlik, akkor az adott kontúr minden darabján először végrehajtásra kerül a párologtatási művelet. Ezután megkezdődik a kontúr vágása.
+Ezt a gőzölési sorrendet kontúrszerűnek nevezzük, mivel a vágás előtt minden kontúrnál gőzölés történik. Ez általában hatékony fejmozgást eredményez.</p>
+<p class="tableblock"><span class="image"><img src="img/scraplasercut.png" alt="scraplasercut"></span></p>
+<p class="tableblock">Ha Vaporize = Pierce &amp; approach,
+Gőzölés először csak a beszúrási pontban és az indítási szakaszban történik, majd ezt követően a lézerfej újrapozícionál a beszúrási pont felett és megkezdi a tényleges vágást. Ennél a gőzölési opciónál és a Gőzölés = Beszúrás beállításnál a beszúrás és az indítás mindig közvetlenül a vágás végrehajtása előtt történik. Ezt a típusú gőzölési sorrendet vágásonkénti sorrendnek nevezzük, mivel a gőzölés minden vágandó darabnál a vágás előtt történik.</p>
+<p class="tableblock">A Vaporize = Pierce,
+hasonló a fentihez, azzal a különbséggel, hogy gőzölés csak a beszúrási pontoknál történik.</p>
+<p class="tableblock">Ha Vaporize = None, akkor a generált kódban nincs változás.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Scrap Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ha Vaporize =
+Full laser path, akkor a teljes gőzölési és vágási sorrend a következő lenne:<br>
+-  Először a teljes hulladékrács gőzölésre kerül, ugyanúgy, mintha vágás történne.</p>
+<p class="tableblock">- A kontúr, valamint a beszúrás és az indítás gőzölésre kerül.</p>
+<p class="tableblock">- A hulladékrács kivágásra kerül.</p>
+<p class="tableblock">- A kontúr kivágásra kerül.</p>
+<p class="tableblock">Tehát a rács és a kontúr is gőzölésre, majd kivágásra kerül.
+Ha Vaporize = Pierce &amp; approach
+vagy Pierce, akkor a hulladék és a kontúr beszúrási és indítási szakaszai a vágás előtt gőzölésre kerülnek.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Sheet Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A lemeztábla-vágás mindig közvetlenül a vágás előtt gőzölésre kerül.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">FlyLine vágás</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ezeknél a vágásoknál soha nincs gőzölés, függetlenül a gőzölési beállításoktól.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Point Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ez gőzölésre kerül közvetlenül a vágás előtt.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lézeres_jelölés">Lézeres jelölés<a id="h000956"></a></h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/lasermarking.png" alt="lasermarking">
+</div>
+</div>
+<div class="paragraph">
+<p>Az alkatrész egy vagy több szöveges jelölésének hozzáadására vonatkozó szabályok a itt határozhatók meg: <strong>Settings &#8594; Cut CAM &#8594; Laser CAM &#8594; Laser marking</strong>.
+Az alábbi táblázatban a felhasználó több szabályt is hozzáadhat, amelyek mindegyike egy-egy szövegsor elhelyezéséhez vezet.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne94.png" alt="ne94">
+</div>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Oszlop</th>
+<th class="tableblock halign-left valign-top">Leírás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Jelölőnégyzet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Az első oszlopban található jelölőnégyzet segítségével engedélyezheti vagy letilthatja a szabályt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Az alkatrészre beillesztendő szöveg. Ez a szöveg tartalmazhatja a következő tokeneket, amelyek az Alkatrész információkból származó megfelelő értékekkel kerülnek helyettesítésre. Ezek a tokenek nem különböztetik meg a kis- és nagybetűket.</p>
+<p class="tableblock">$PARTNAME - Az alkatrész neve.</p>
+<p class="tableblock">$FILENAME - Az FX fájl neve.</p>
+<p class="tableblock">$ROOTFILE - Az eredeti CAD fájl neve.</p>
+<p class="tableblock">$PARTID - Munkadarab-azonosító.</p>
+<p class="tableblock">$CUSTOMER - Ügyfél.</p>
+<p class="tableblock">$AUTHOR - Szerző.</p>
+<p class="tableblock">$JOBNUMBER - Feladatszám az Alkatrész &#8594;Információk részből.</p>
+<p class="tableblock">Ezek a változók egy elemleírásban jelennek meg.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Height</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ez a betűmagasság (az alapvonaltól a felső vonalig) mm-ben vagy hüvelykben. A szöveg beillesztésekor előfordulhat, hogy nincs elegendő hely a szöveg előírt betűmagassággal történő beillesztéséhez.
+Ilyen esetben a TecZone Laser automatikusan 10%-kal csökkenti a szöveg méretét, hogy a szöveg beilleszthető legyen. Ez a csökkentés jelenleg legfeljebb 2 mm-ig megengedett.</p>
+<p class="tableblock">A minimum értéke 2 mm-re van beállítva.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Orientation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ez az oszlop határozza meg a szöveg tájolását.
+A következő értékek lehetségesek:</p>
+<p class="tableblock"><em>Horizontal</em> - A szöveg vízszintes lesz.</p>
+<p class="tableblock"><em>Vertical</em> - A szöveg függőleges lesz.</p>
+<p class="tableblock"><em>Along longer side</em>: A szöveg az alkatrész hosszabb oldalához igazodik. Fekvő alkatrész esetén a szöveg vízszintes, álló alkatrész esetén pedig függőleges lesz.</p>
+<p class="tableblock"><em>Along shorter side</em>: A szöveg az alkatrész rövidebb oldalához igazodik (a fentiekkel ellentétben). Ha két szöveget ad hozzá az alkatrészhez, ez és az előző opció együttesen használható a szövegátfedések kockázatának minimalizálása érdekében.</p>
+<p class="tableblock"><em>Along longest segment</em>:
+A szöveg a külső kontúr leghosszabb lineáris szakaszához igazodik. Ebben az esetben a szöveg nem feltétlenül lesz a tengelyhez igazítva. Függetlenül attól, hogy a szöveg vízszintes, függőleges vagy ferde elhelyezésű, a TecZone Laser mindig úgy tájolja a szöveget, hogy a felhasználó azt a szöveghez legközelebb eső oldalról nézve a megfelelő irányban lássa. Vagyis az alul középen elhelyezett vízszintes szöveg balról jobbra, míg a felül középen elhelyezett jobbról balra irányul.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Horizontal pos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Szöveg vízszintes igazítása. Lehetséges értékek:
+<em>center</em>, <em>left</em>
+&amp; <em>right</em>. Ez a beállítás nem releváns, ha a kívánt tájolásként a <em>Along longest segment</em> lehetőséget választja.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Vertical pos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A szöveg függőleges igazítása. Lehetséges értékek:
+<em>center</em>, <em>bottom</em>
+&amp; <em>top</em>. Ez a beállítás nem releváns, ha a kívánt tájolásként a <em>Along longest segment</em> lehetőséget választja.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Ezeknek a jelöléseknek a hozzáadásakor a TecZone Laser mindig biztosítja, hogy a hozzáadott szöveg ne ütközzön semmilyen alkatrész kontúrjával. Nagyon apró vagy kevés szabad területtel rendelkező alkatrészek esetén a program automatikusan a szükséges mértékben kicsinyíti a betűméretet, hogy a szöveg beleférjen az alkatrészbe és ne érjen a nyílásokhoz.</p>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_vágás">Vágás</a>
+  </li>
+  <li level="1">
+   <a href="#_pierce_settings">Pierce settings</a>
+  </li>
+  <li level="1">
+   <a href="#_corner_processing">Corner Processing</a>
+  </li>
+  <li level="1">
+   <a href="#_twinline">TwinLine</a>
+  </li>
+  <li level="1">
+   <a href="#_scrap_cutting">Scrap cutting</a>
+  </li>
+  <li level="1">
+   <a href="#_vaporization">Vaporization</a>
+  </li>
+  <li level="1">
+   <a href="#_lézeres_jelölés">Lézeres jelölés</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="../layout/worksupport.html">Munkatámasz</a></span>
+ <span class="next"><a href="sequence.html">Sorrend</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../../res/index.js"></script>
+    <script src="../../../res/files.js"></script>
+    <script src="../../../res/site.js"></script>
+
+    
+</body>
+</html>

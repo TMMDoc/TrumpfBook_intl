@@ -1,0 +1,619 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Hajlítás CAM alkalmazásával</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Üdvözöljük a TecZone-ban</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Bevezetés</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">A szoftver telepítése</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">A kezelőfelület</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Alkatrész munkafolyamat</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">2-D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">2-D tisztítás</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">3-D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">3D modell importálása</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Részegység importálása</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Forma felismerése</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Komponens felismerése</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">A geometria módosítása</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">Lézer CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Alkatrész munkafolyamat</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Szerkesztőpanelek</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Lézervágás</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Indítás</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Visszahúzódás</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Mikrohíd</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Speciális</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Kontúr</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Hulladékvágás</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Alkatrész</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Sarokmegmunkálás</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Gyors táblásítás</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">A feladat munkafolyamata</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Feladat panel</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Lemeztáblák fül</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Alkatrészek fül</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Elrendezések fül</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Összegzés fül</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Elrendezés szerkesztése</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Táblásítási üzemmódok</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Elhelyezés panel</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Sorrendbe állítás</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Lemeztábla szelet</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Ferde vágás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Nyitott kontúrok</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Változtatható ferde vágás</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Egyéb</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Befejezési szabályok</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">Vágási táblázat szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">Flyline</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Stratégia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Mikrohidak</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">További beállítások</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bend/index.html">Hajlítás CAM alkalmazásával</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">Hajlítási adatok létrehozása</a></li>
+    <li><button class="tree blank"></button><a href="../../bend/navigator.html">Hajlítás navigátor</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bend/editing/index.html">Hajlítási adatok szerkesztése</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bend/editing/editbend.html">Hajlítás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editmount.html">Szerszámtartó szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editsetup.html">Hajlítási beállítás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editgauge.html">Az ütközőujjak szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editacb.html">Szögmérés szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/bendsheet.html">Hajlítások táblázata</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/sequencing.html">A sorrend módosítása</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/addsetup.html">Beállítások és állomások hozzáadása</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bend/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bend/advanced/anglemeasurement.html">Szögmérés</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/batchprocess.html">Kötegelt megmunkálás</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/recompute.html">Újraszámítási megoldás</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Terhelésellenőrzés</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">Hajlítás navigátor</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">Alkatrész felvétele</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">Felvétel raklapról</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">Felvétel adagolóból</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">Robotizált hajlítás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">Behelyezés</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">Hajlítás</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Kihúzás</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Újrafogás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Újrafogás panel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Újrafogás hozzáadása</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Újrafogás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Újrafogás pofás megfogóval</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Lemezfordító állomás panel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Alkatrész lerakása</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Lerakási minták</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Ismétlés és sorrend</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Szétválasztó lemeztábla</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Útvonalpontok</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Cella konfiguráció</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Megfogó adatbázis</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Jelentések</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">CAM lengőhajlítás</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Lengőhajlítási adatok létrehozása</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">A Lengőhajlítás nézet</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Lengőhajlítási adatok szerkesztése</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Hajlítás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Szár/szakasz szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">A sorrend módosítása</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">A leszorítók szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">Az ütközők szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">A hajlítóélek szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">A felrakás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">A leszedés szerkesztése</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Szerszámállomány</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Egyedi légrés táblázatok</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">A manuális hajlítás befejezése</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Szükséges peremhossz</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">Beállítások</a>
+   <ul>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../drawing/index.html">Rajzolás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../drawing/layers.html">Rétegek</a></li>
+      <li><button class="tree blank"></button><a href="../drawing/dimensions.html">Méretek</a></li>
+      <li><button class="tree blank"></button><a href="../drawing/view.html">Nézet</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a class="active" href="index.html">Hajlítás CAM alkalmazásával</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="benddefaults.html">Gép alapértelmezett beállításai</a></li>
+      <li><button class="tree blank"></button><a href="bendoutputs.html">Hajlítási kimenetek</a></li>
+      <li><button class="tree blank"></button><a href="bendview.html">Hajlítás nézet</a></li>
+      <li><button class="tree blank"></button><a href="bendcell.html">Hajlítócella</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cutcam/index.html">Vágás CAM alkalmazásával</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cutcam/layout/index.html">Elrendezés</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cutcam/layout/nesting.html">Táblaterv beállítások</a></li>
+        <li><button class="tree blank"></button><a href="../cutcam/layout/sheet.html">Lemeztábla</a></li>
+        <li><button class="tree blank"></button><a href="../cutcam/layout/sheethandling.html">Lemeztábla kezelése</a></li>
+        <li><button class="tree blank"></button><a href="../cutcam/layout/skeletoncuts.html">Maradékrács-vágások</a></li>
+        <li><button class="tree blank"></button><a href="../cutcam/layout/worksupport.html">Munkatámasz</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cutcam/lasercam/index.html">Lézer CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cutcam/lasercam/sequence.html">Sorrend</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cutcam/cutoutputs.html">Vágás kimenő adatok</a></li>
+      <li><button class="tree blank"></button><a href="../cutcam/cutview.html">Vágás nézet</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../foldcam/index.html">Lengőhajlítás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../foldcam/defaults.html">Alapértelmezett értékek</a></li>
+      <li><button class="tree blank"></button><a href="../foldcam/zbwcarriers.html">Kiegészítő hajlítószerszám tartódarabok</a></li>
+      <li><button class="tree blank"></button><a href="../foldcam/foldoutputs.html">Kimenetek</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../reports/index.html">Jelentések</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../reports/itemdefaults.html">Elemek alapértelmezett értékei</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../importexport.html">Importálás/exportálás</a></li>
+    <li><button class="tree blank"></button><a href="../environment.html">Környezet</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Adatbázis</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Anyagok</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Gépek</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Hajlítószerszámok</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Hajlító megfogók</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Formázások/részegységek</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Jelentések</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Jelentéstervező</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Mezők, ábrák és táblázatok</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Sávok (részjelentések)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Címkék, bittérképek és alakzatok</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Függelék</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Támogatott 3D formátumok</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Szétválasztó lemeztábla DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">DXF hajlítószerszám</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impresszum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">Beállítások</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Hajlítás CAM alkalmazásával</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Hajlítás CAM alkalmazásával</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/bendcam.png" alt="bendcam">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_hátsó_ütközők">Hátsó ütközők</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Automatikus visszahúzás a(z) … mm lemezvastagságtól</strong> - Ezzel a beállítással megadhatja az ütközőujjak automatikus visszahúzódásának értékét mm-ben, amikor a lemezvastagság elérte a megadott értéket.</p>
+</div>
+<div class="paragraph">
+<p><strong>Hátsó ütközőrendszeri stratégia</strong> - Ezzel állítható be, hogy az ütközőujjak hogyan álljanak meg a munkadarabon.</p>
+</div>
+<div class="paragraph">
+<p>A következő választási lehetőségek állnak rendelkezésre:</p>
+</div>
+<div class="paragraph">
+<p><strong>Standard</strong> - Az ütközőujjak minden hajlításnál a szoftver által legmegfelelőbbnek ítélt módon állnak meg.</p>
+</div>
+<div class="paragraph">
+<p><strong>2 x egyen. ütköző</strong> - Mindkét ütközőujj egyenes felületei a munkadarabhoz érnek.</p>
+</div>
+<div class="paragraph">
+<p><strong>Befogás+leállás</strong> - Az egyik ütközőujj rögzíti a munkadarabot, a másik ütközőujj pedig egyenes felületével megállítja azt.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_szögmérés">Szögmérés</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>A Szögmérés</strong> csak Trumpf gépekhez ár rendelkezésre. Az Automatically Controlled Bending termékcsalád szögmérő rendszereinekk használatával már az első sorozatgyártott alkatrész is tökéletes lesz. Érzékelők határozzák meg a tényleges szöget a visszarugózással együtt és a dugattyút a kívánt szögbe irányítják. Ebben a részben adhatók meg az ACB beállításai a gépen.</p>
+</div>
+<div class="sect2">
+<h3 id="_szögmérő_rendszer">Szögmérő rendszer</h3>
+<div class="paragraph">
+<p><strong>Lézer</strong> - Jelölje be ezt az opciót, ha a gép ACB Laser funkcióval rendelkezik.
+Az ACB Laser egy vonalat vet a lapra, egy kamera pedig érzékeli a szöget.</p>
+</div>
+<div class="paragraph">
+<p><strong>Vezeték nélküli</strong> - Jelölje be ezt az opciót, ha a gép ACB Wireless-t használ. Az ACB Wireless a felső szerszámba integrált érintőlapokat jelöli.</p>
+</div>
+<div class="paragraph">
+<p><strong>Klasszikus</strong> - Jelölje be ezt az opciót, ha a gép ACB Classic-ot használ.</p>
+</div>
+<div class="paragraph">
+<p><strong>2 szögmérés a(z) … mm élhajlítási hossztól</strong> - Ez az opció a lengőhajlítás minimális hossza, amely két mérést tesz lehetővé a lengőhajlítás során a helyes szög biztosítása érdekében. Ez 50 &gt; 4000 milliméter között lehet.</p>
+</div>
+<div class="paragraph">
+<p><strong>3 szögmérés a(z) … mm élhajlítási hossztól</strong> - Ez az opció a lengőhajlítás minimális hossza, amely három mérést tesz lehetővé a lengőhajlítás során a helyes szög biztosítása érdekében. Ez 50 &gt; 4000 milliméter között lehet.</p>
+</div>
+<div class="paragraph">
+<p><strong>ACB Laser parkolóhelyzetben (újraindítás szükséges!)</strong> - Ez a lézerérzékelő nyugvóhelyzete.</p>
+</div>
+<div class="paragraph">
+<p><strong>ACB minőségi korlát - figyelmeztetés</strong> - Ez az a határérték, amely figyelmeztetést generál az alkatrész mérésekor, például biztonsági ráhagyás (fudge factor) alkalmazásával. Ha az érték a megadott tartományban van, akkor figyelmeztetés jelenik meg.</p>
+</div>
+<div class="paragraph">
+<p><strong>ACB minőségi korlát - hiba</strong> - Ez az a határérték, amely hibaüzenetet generál az alkatrész mérésekor, például biztonsági ráhagyás (fudge factor) alkalmazásával. Hibaüzenetet generál, ha az érték a megadott tartományba esik.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_megmunkálási_stratégiák_a_munkadarab_testreszabásához">Megmunkálási stratégiák a munkadarab testreszabásához</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ha a szoftverben 2D-s vagy 3D-s fájlt szerkesztünk, a hajlítási sugarak és a hajlítások rövidítése ellenőrzésre kerülnek. Különböző megmunkálási stratégiák kerülnek végrehajtásra attól függően, hogy az Egyszerű programozás beállításokban milyen stratégiákat a választottak a munkadarab módosításához. Ha a beállítás interaktívra volt állítva, akkor megjelenik a Munkadarab testreszabása párbeszédablak.</p>
+</div>
+<div class="sect2">
+<h3 id="_kiterítés_importálása">Kiterítés importálása</h3>
+<div class="paragraph">
+<p><strong>Interaktiv döntés</strong> - Ha 2D alkatrészről hajlításra vált, ez a beállítás automatikusan megjeleníti a Munkadarab testreszabása párbeszédablakot. Ezzel lehetőség nyílik a síklemezméret megtartására, a 3D-s méretek megtartására vagy a változtatás elvetésére, így ez a funkció nagyon interaktív és felhasználóbarát.</p>
+</div>
+<div class="paragraph">
+<p><strong>Háromdimenziós modell megtartása</strong> - Ez az opció megváltoztatja a kiterítést, amelyet ezután manuálisan kell elmenteni. Ez a stratégia akkor használatos, ha a lemezteríték még nincs vágva.</p>
+</div>
+<div class="paragraph">
+<p><strong>Kiterítés megtartása</strong> - Ez az opció azt jelenti, hogy a hajlítási sugár és a hajlítások rövidítése a meglévő kibontáshoz igazodik; a hajlítási vonal ugyanazon a helyen marad. Ez megváltoztatja az alkatrész szárhosszát. A kiterítés nem változik. Ez a stratégia akkor használatos, ha a lemezterítéket már vágták.</p>
+</div>
+<div class="paragraph">
+<p><strong>Nincs testreszabás</strong> - Ezen opció használata esetén a hajlítási sugár és a hajlítások rövidítése változatlan marad. Az alkatrész a helyes méretekkel jelenik meg 3D-ben, de a megjelenített hajlítási sugarak nem felelnek meg a ténylegeseknek. Az egyes munkadarabok hajlításainak méretei változhatnak.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_háromdimenziós_modell_importálása">Háromdimenziós modell importálása</h3>
+<div class="paragraph">
+<p><strong>Interaktiv döntés</strong> - Ha 3D alkatrészről hajlításra vált, ez a beállítás automatikusan megjeleníti a Munkadarab testreszabása párbeszédablakot. Ezzel lehetőség nyílik a síklemezméret megtartására, a 3D-s méretek megtartására vagy a változtatás elvetésére, így ez a funkció nagyon interaktív és felhasználóbarát.</p>
+</div>
+<div class="paragraph">
+<p><strong>Háromdimenziós modell megtartása</strong> - Ez az opció megváltoztatja a kiterítést, amelyet ezután manuálisan kell elmenteni. Ez a stratégia akkor használatos, ha a lemezteríték még nincs vágva.</p>
+</div>
+<div class="paragraph">
+<p><strong>Kiterítés megtartása</strong> - Ez az opció azt jelenti, hogy a hajlítási sugár és a hajlítások rövidítése a meglévő kibontáshoz igazodik; a hajlítási vonal ugyanazon a helyen marad. Ez megváltoztatja az alkatrész szárhosszát. Ez a stratégia akkor használatos, ha a lemezterítéket már méretre vágták.</p>
+</div>
+<div class="paragraph">
+<p><strong>Nincs testreszabás</strong> - Ezen opció használata esetén a hajlítási sugár és a hajlítások rövidítése változatlan marad. Az alkatrész a helyes méretekkel jelenik meg 3D-ben, de a megjelenített hajlítási sugarak nem felelnek meg a ténylegeseknek. Az egyes munkadarabok hajlításainak méretei változhatnak.</p>
+</div>
+<div class="paragraph">
+<p><strong>Rövidítési érték</strong> - Ez az opció lehetővé teszi a K-tényező módszer kényszerített használatát. Ez az érték az Alkalmazás alapértelmezett beállításaiban állítható be vagy gépenként külön-külön is módosítható.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Nem Trumpf gépek esetén mindig K-tényezők kerülnek alkalmazásra; a Trumpf hajlítási számítások csak Trumpf élhajlító gépek esetén állnak rendelkezésre.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Hátsó ütközőrendszer változat, bal</strong> - A használt BG változat függvényében az NC program módosul, hogy ezt tükrözze.</p>
+</div>
+<div class="paragraph">
+<p><strong>Hátsó ütközőrendszer változat, jobb</strong> - A használt BG változat függvényében az NC program módosul, hogy ezt tükrözze.
+== További beállítások
+<strong>Falcolás közbeni előhajlítási szög</strong> - Ez az opció lehetővé teszi a hajlított perem előhajlítási szögének 10° és 60° közötti szerkesztését. Az alapértelmezett érték 40°, mivel ez a legtöbb gyártó által javasolt előhajlítási szög a hajlított peremekhez. A Trumpf gépek valamennyi forgalmazott változatában 30°-ra van beállítva.</p>
+</div>
+<div class="paragraph">
+<p><strong>Bendguard-mód előbeállítás</strong> - Ha ezt automatikus számításra állítjuk (alapértelmezett), a TecZoneBend minden hajlításnál kiszámítja a hajlításvédelmi módot. Azonban kényszerítheti a hajlításvédelmi módot az egyik beállításra, hogy csak azt használja, függetlenül attól, hogy az megfelelő-e vagy sem.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Ezt a beállítást minden gépen felülbírálhatja, ha a Alkalmazási beállítások helyett a Gép alapértelmezései menüpontban állítja be azt.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Gépasztal pozíció</strong> - Ennél a beállításnál a gépasztal három pozíciója jöhet szóba:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Eltávolítva</p>
+</li>
+<li>
+<p>Le</p>
+</li>
+<li>
+<p>Fel</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Darabszám ellenőrzés</strong> - Ennek az opciónak az engedélyezésével megjelennek azok a szerszámszegmensek, amelyek a munkadarab hajlításához szükségesek lehetnek. A hiányzó készletjelölők kijelzésre kerülnek.</p>
+</div>
+<div class="paragraph">
+<p><strong>Lehetőleg kerüljük a szerszám túlterhelését</strong> - Ezen opció bekapcsolásával elkerülhető a szerszám túlterhelése. A túlterhelés elkerülése érdekében még akkor is alacsonyabb prioritású szerszámot használunk. ha egy magasabb prioritású szerszám alkalmas lenne az alkatrész megmunkálására.</p>
+</div>
+<div class="paragraph">
+<p><strong>A geo/dxf fájlból származó szerszámok figyelmen kívül hagyása</strong> - Ennek az opciónak az engedélyezésével a DXF/GEO fájlban a használni kívánt szerszámokra vonatkozó információk figyelmen kívül maradnak</p>
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_hátsó_ütközők">Hátsó ütközők</a>
+  </li>
+  <li level="1">
+   <a href="#_szögmérés">Szögmérés</a>
+  </li>
+  <li level="2">
+   <a href="#_szögmérő_rendszer">Szögmérő rendszer</a>
+  </li>
+  <li level="1">
+   <a href="#_megmunkálási_stratégiák_a_munkadarab_testreszabásához">Megmunkálási stratégiák a munkadarab testreszabásához</a>
+  </li>
+  <li level="2">
+   <a href="#_kiterítés_importálása">Kiterítés importálása</a>
+  </li>
+  <li level="2">
+   <a href="#_háromdimenziós_modell_importálása">Háromdimenziós modell importálása</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="../drawing/view.html">Nézet</a></span>
+ <span class="next"><a href="benddefaults.html">Gép alapértelmezett beállításai</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,756 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Felvétel raklapról</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Üdvözöljük a TecZone-ban</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Bevezetés</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">A szoftver telepítése</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">A kezelőfelület</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Alkatrész munkafolyamat</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">2-D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">2-D tisztítás</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">3-D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">3D modell importálása</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Részegység importálása</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Forma felismerése</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Komponens felismerése</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">A geometria módosítása</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">Lézer CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Alkatrész munkafolyamat</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Szerkesztőpanelek</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Lézervágás</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Indítás</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Visszahúzódás</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Mikrohíd</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Speciális</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Kontúr</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Hulladékvágás</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Alkatrész</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Sarokmegmunkálás</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Gyors táblásítás</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">A feladat munkafolyamata</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Feladat panel</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Lemeztáblák fül</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Alkatrészek fül</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Elrendezések fül</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Összegzés fül</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Elrendezés szerkesztése</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Táblásítási üzemmódok</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Elhelyezés panel</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Sorrendbe állítás</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Lemeztábla szelet</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Ferde vágás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Nyitott kontúrok</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Változtatható ferde vágás</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Egyéb</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Befejezési szabályok</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">Vágási táblázat szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">Flyline</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Stratégia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Mikrohidak</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">További beállítások</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bend/index.html">Hajlítás CAM alkalmazásával</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">Hajlítási adatok létrehozása</a></li>
+    <li><button class="tree blank"></button><a href="../../bend/navigator.html">Hajlítás navigátor</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bend/editing/index.html">Hajlítási adatok szerkesztése</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bend/editing/editbend.html">Hajlítás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editmount.html">Szerszámtartó szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editsetup.html">Hajlítási beállítás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editgauge.html">Az ütközőujjak szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editacb.html">Szögmérés szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/bendsheet.html">Hajlítások táblázata</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/sequencing.html">A sorrend módosítása</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/addsetup.html">Beállítások és állomások hozzáadása</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bend/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bend/advanced/anglemeasurement.html">Szögmérés</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/batchprocess.html">Kötegelt megmunkálás</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/recompute.html">Újraszámítási megoldás</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Terhelésellenőrzés</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">BendMaster CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../navigator.html">Hajlítás navigátor</a></li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Alkatrész felvétele</a>
+     <ul>
+      <li><button class="tree blank"></button><a class="active" href="frompallet.html">Felvétel raklapról</a></li>
+      <li><button class="tree blank"></button><a href="fromdispenser.html">Felvétel adagolóból</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bending/index.html">Robotizált hajlítás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bending/insertion.html">Behelyezés</a></li>
+      <li><button class="tree blank"></button><a href="../bending/bending.html">Hajlítás</a></li>
+      <li><button class="tree blank"></button><a href="../bending/extraction.html">Kihúzás</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../regrip/index.html">Újrafogás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../regrip/regrippanel.html">Újrafogás panel</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/addregrip.html">Újrafogás hozzáadása</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/editregrip.html">Újrafogás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/jawregrip.html">Újrafogás pofás megfogóval</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/rgstationpanel.html">Lemezfordító állomás panel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../deposit/index.html">Alkatrész lerakása</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Lerakási minták</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/repeat.html">Ismétlés és sorrend</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Szétválasztó lemeztábla</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../advanced/waypoints.html">Útvonalpontok</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/cellconfig.html">Cella konfiguráció</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/gripperdb.html">Megfogó adatbázis</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/reports.html">Jelentések</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">CAM lengőhajlítás</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Lengőhajlítási adatok létrehozása</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">A Lengőhajlítás nézet</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Lengőhajlítási adatok szerkesztése</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Hajlítás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Szár/szakasz szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">A sorrend módosítása</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">A leszorítók szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">Az ütközők szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">A hajlítóélek szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">A felrakás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">A leszedés szerkesztése</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Szerszámállomány</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Egyedi légrés táblázatok</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">A manuális hajlítás befejezése</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Szükséges peremhossz</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Beállítások</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Rajzolás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Rétegek</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Méretek</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Nézet</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">Hajlítás CAM alkalmazásával</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Gép alapértelmezett beállításai</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Hajlítási kimenetek</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Hajlítás nézet</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Hajlítócella</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">Vágás CAM alkalmazásával</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Elrendezés</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Táblaterv beállítások</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Lemeztábla</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Lemeztábla kezelése</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Maradékrács-vágások</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Munkatámasz</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">Lézer CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Sorrend</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Vágás kimenő adatok</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Vágás nézet</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Lengőhajlítás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Alapértelmezett értékek</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">Kiegészítő hajlítószerszám tartódarabok</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Kimenetek</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Jelentések</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Elemek alapértelmezett értékei</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Importálás/exportálás</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Környezet</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Adatbázis</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Anyagok</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Gépek</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Hajlítószerszámok</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Hajlító megfogók</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Formázások/részegységek</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Jelentések</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Jelentéstervező</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Mezők, ábrák és táblázatok</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Sávok (részjelentések)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Címkék, bittérképek és alakzatok</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Függelék</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Támogatott 3D formátumok</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Szétválasztó lemeztábla DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">DXF hajlítószerszám</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impresszum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">BendMaster CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Alkatrész felvétele</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="frompallet.html">Felvétel raklapról</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Felvétel raklapról</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vákuumszívó vagy mágneses megfogó használata esetén a lemezterítékeket (lapos alkatrészeket) a gép egy <em>raklapról</em> veszi fel: Ezt a folyamatot a következő paraméterek befolyásolják:</p>
+</div>
+<div id="h000112" class="ulist">
+<ul>
+<li>
+<p>A raklap helyzete a gépcellában.</p>
+</li>
+<li>
+<p>A raklapon lévő alkatrészrakat helyzete és tájolása.</p>
+</li>
+<li>
+<p>A szívókorongos megfogó pozíciója és tájolása az alkatrészen.</p>
+</li>
+<li>
+<p>A megfogó szívókorongjainak konfigurációja (mely szívókorongok vannak bekapcsolva/kikapcsolva és milyen típusú szívókorongok vannak felszerelve az egyes aljzatokba).</p>
+</li>
+<li>
+<p>Az alkatrész azon területei, amelyek a robot kamerájával <em>felvételre</em> kerülnek és referenciaként szolgálnak az alkatrész pozíciójának kalibrálásához.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Az összes beállítás szerkesztésére szolgáló panelek az alábbiakban láthatók – ezeket logikai sorrendben felfelé/lefelé navigáló linkek kötik össze, amelyek más panelekhez vezetnek:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/palletnav.png" alt="Pallet Navigation" width="827">
+</div>
+</div>
+<div class="paragraph">
+<p>A fenti képen látható módon ezek a panelek a szimulációban található különböző objektumokra kattintva is könnyen elérhetők:</p>
+</div>
+<div id="h000117" class="ulist">
+<ul>
+<li>
+<p>Az <strong>Raklap</strong> panel megnyitásához kattintson egy raklapra.</p>
+</li>
+<li>
+<p>A raklapon lévő alkatrészrakat szerkesztéséhez (a <strong>Felvétel</strong> panel) kattintson a raklapon fekvő lemezterítékekre.</p>
+</li>
+<li>
+<p>A megfogó pozíciójának szerkesztéséhez a lemezterítéken (a <strong>Megfogó</strong> panel) kattintson a megfogóra.</p>
+</li>
+<li>
+<p>A megfogó szívókorong-konfigurációjának szerkesztéséhez (a <strong>Szívás</strong> panel) kattintson az egyik szívókorongra.</p>
+</li>
+<li>
+<p>A <em>képalkotási</em> pozíciók (amelyeket a finompozíció-felismerő rendszer használ) szerkesztéséhez kattintson a <strong>Kamera</strong> gombra.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_raklap_panel">Raklap panel<a id="h000122"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A <strong>Raklap</strong> panel a raklap kiválasztására és a cellában való pozícionálására szolgál. Ezt a panelt egyszerűen megnyithatja egy raklapra kattintva; a Flux a szimulációs idővonalat is úgy pozícionálja, hogy a robot a raklapról való felvétel pontján álljon.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/pallet.png" alt="Pallet" width="472">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Használja a <strong>Név</strong> lehetőséget másik raklap kiválasztásához. Normál esetben csak azok a raklapok jelennek meg, amelyek használhatók ehhez a lemezterítékhez, de kikapcsolhatja a <strong>Szűrt</strong> jelölőnégyzetet és akkor az összes rendelkezésre álló raklap megjelenik.</p>
+</li>
+<li>
+<p>Ha az egérmutatót a névlista egyik nevére viszi, megjelenik egy rövid összefoglalás a raklapról és egy miniatűr kép:<br>
+<span class="image"><img src="img/palletthumbnail.png" alt="Pallet thumbnail" width="308"></span></p>
+</li>
+<li>
+<p>A <strong>Pozíció</strong> parancsokkal pozícionálhatja a raklapot a <strong>Z</strong> és az <strong>X</strong> tengely mentén (cellakoordinátákban), a <strong>Szög</strong> paranccsal pedig elforgathatja azt. A raklap mozgatásakor vagy forgatásakor a raklapon lévő alkatrészek és a megfogó/robot is követi a mozgást.</p>
+</li>
+<li>
+<p>A <strong>Tovább</strong> és a <strong>Vissza</strong> gombokkal navigálhat a cellában található <em>másik</em> raklapokhoz, például azokhoz, amelyekhez alkatrész-lerakási műveletek vannak hozzárendelve.</p>
+</li>
+<li>
+<p>A <strong>Befogás</strong> navigációs gombokkal szerkesztheti az alkatrészrakat helyzetét a raklapon.</p>
+</li>
+<li>
+<p>A <strong>Konfig. Tárhely</strong> gombbal a <strong>bővített</strong> részben elmentheti ezt a cellakonfigurációt (az összes raklappal együtt) alapértelmezettként ehhez a géphez.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_felvétel_panel">Felvétel panel<a id="h000124"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A <strong>Felvétel</strong> panel a raklapon lévő alkatrészrakat pozíciójának szerkesztésére szolgál.
+Ezt a panelt közvetlenül megnyithatja a raklapon fekvő lemezterítékek rakatára kattintva.
+(Az a Raklap panel <strong>Befogás</strong> linkjével is elérhető).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/stack.png" alt="Stack" width="526">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Az <strong>Pozíció</strong> adatok bevitelével helyezze el a rakatot a raklapon; ezek a koordináták meghatározzák az alkatrész középpontját a <strong>Z</strong> és az <strong>X</strong> irányban, a raklap sarkához viszonyítva és a raklap helyi koordinátarendszerében vannak megadva.</p>
+</li>
+<li>
+<p>A <strong>Szög</strong> beviteli mezőbe megfelelő adatokat írva forgathatja az alkatrészt a raklapon.</p>
+</li>
+<li>
+<p>Az alkatrész megfordításához használja a <strong>Munkadarab megfordítása</strong> kapcsolót. Vegye figyelembe, hogy ez általában azt jelenti, hogy az első hajlítás végrehajtását megelőzően további <em>újrafogási műveletre</em> lesz szükség (ezt a TecZone Bend automatikusan hozzáadja).</p>
+</li>
+<li>
+<p>Az <strong>Kamera…</strong> linkkel váltson a <strong>Kamera</strong> panelre, ahol beállíthatja a felvételi művelet képfelismerési fázisát.</p>
+</li>
+<li>
+<p>A <strong>Vonatkozási pontok&#8230;&#8203;</strong> link megnyitja az <a href="../advanced/waypoints.html">Útvonalpontok</a> szerkesztőt, ahol finomhangolhatja a robot felvétel során megtett pályáját.</p>
+</li>
+<li>
+<p>A <strong>Áthelyezési áll.</strong> link megnyitja a <a href="../regrip/rgstationpanel.html">Lemezfordító állomás</a> panelt, ahol beállíthatja a lemezfordító állomás pozícióját a felvétel során.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Miközben az alkatrész körben halad a raklapon, a megfogó <em>helyzete nem változik</em> az alkatrészhez viszonyítva és a robot követi a mozgásokat.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_megfogó_panel">Megfogó panel<a id="h000125"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A <strong>Megfogó</strong> panel segítségével lehet másik megfogót választani vagy megváltoztatni a megfogó pozícióját és tájolását, amellyel a megfogó felszedi az alkatrészt.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/gripper.png" alt="Gripper" width="585">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Használja a <strong>Név</strong> lehetőséget másik megfogó kiválasztásához. Normál esetben csak az adott alkatrészhez megfelelő megfogók jelennek meg (a megfogó mérete és teherbírása alapján), de a <strong>Szűrt</strong> jelölőnégyzetet kikapcsolva az összes megfogó megjelenik.</p>
+</li>
+<li>
+<p>Ha az egérmutatót a megfogólista egyik nevére viszi, megjelenik egy rövid összefoglalás az adott megfogóról és egy miniatűr kép:<br>
+<span class="image"><img src="img/gripperthumbnail.png" alt="Gripper thumbnail" width="309"></span></p>
+</li>
+<li>
+<p>A <strong>Pozíció</strong> beviteli mezőkbe beírt adatokkal mozgathatja a megfogó középpontját az alkatrész középpontjához képest, a <strong>Szög</strong> beviteli mezők adataival pedig elforgathatja a megfogót az alkatrész tájolásához képest.</p>
+</li>
+<li>
+<p>A <strong>Tapadókorong</strong> link segítségével átválthat a megfogó <em>finomszerkesztésre</em> (különböző szívókorongok kiválasztása, szívókorongok be-/kikapcsolása).</p>
+</li>
+<li>
+<p>A <strong>Fogófelület kiválaszta</strong> gombbal a megfogó áthelyezhető másik síkra. Normál esetben a modell legnagyobb síkja szolgál a megfogó pozícionálására. Ha ezt meg szeretné változtatni, kattintson erre a gombra. Ezután kattintson arra a síkra, ahol a megfogót el szeretné helyezni:<br>
+<span class="image"><img src="img/setonplane.png" alt="Set on Plane" width="753"></span></p>
+</li>
+<li>
+<p>A <strong>Megfogószerkezet alkalmazása</strong> gombbal az alkatrész átkapcsolható az alkatrészdagoló és a pofás befogó (mechanikus megfogó) használatára A hajlítási ciklus összes szakasza, a felvételtől a lerakásig, újraszámításra kerül a pofás befogók használatát feltételezve.
+gripper<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_szívási_figyelmeztetések">Szívási figyelmeztetések<a id="h000127"></a></h3>
+<div class="paragraph">
+<p>Ha a megfogót úgy mozgatják, hogy néhány szívókorong lecsúszik a lemezről vagy az alkatrész lyukainak fölé kerül, a korongok kiemelten láthatók és hibaüzenet jelenik meg a</p>
+</div>
+<div id="h000128" class="paragraph">
+<p><strong>a Navigátor Felvétel</strong> oszlopában, az alábbi ábrán látható módon:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/gripperhole.png" alt="Suction Missing" width="614">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_műveletek_menü">Műveletek menü<a id="h000129"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/gripperactions.png" alt="Gripper Actions" width="236">
+</div>
+</div>
+<div class="paragraph">
+<p>A <strong>Műveletek</strong> gombra kattintva megnyílik egy menü, amely néhány hasznos műveletet tartalmaz a megfogó használatához:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Auto-Shift</strong> Megpróbálja áthelyezni a megfogót az alkatrész fölé, ügyelve arra, hogy a szívókorongok kivétel nélkül az alkatrészen belül legyenek és ne legyenek lyukak felett    (ha lehetséges).</p>
+</li>
+<li>
+<p><strong>Tömítetlen szívókorongok lekapcsolása</strong>: Kikapcsolja az összes olyan szívókorongot,    amely lyukak felett vagy a part<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
+</li>
+<li>
+<p><strong>Minden szívókorong lekapcsolása</strong>: Bekapcsolja az összes kikapcsolt szívókorongot.</p>
+</li>
+<li>
+<p><strong>Konfig. Tárhely</strong>: Ha a megfogót úgy <em>konfigurálja</em>, hogy néhány szívókorongot kikapcsol vagy eltávolít, illetve a karok hosszát vagy szögét megváltoztatja (az   alakváltoztatható többcélú megfogók esetében), akkor a megfogó megváltozott konfigurációját új néven elmentheti, hogy később könnyen újra felhasználhassa azt.</p>
+</li>
+<li>
+<p><strong>Megfogó exportálása</strong>: Mentse az aktuális megfogót <strong>.fxbgrip</strong> fájlként, amely importálható egy másik telepített TecZone Bend alkalmazásba. Ez akkor hasznos, ha importált egy egyedi megfogót és azt szeretné megosztani más telepített alkalmazásokkal.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_szívás_panel">Szívás panel<a id="h000130"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A <strong>Szívás</strong> panel a megfogó szívókorong-elrendezésének konfigurálására szolgál. Ezt a panelt közvetlenül egy szívókorongra vagy a Megfogó panelen található <strong>Szívás</strong> linkre kattintva lehet megnyitni.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/suction.png" alt="Suction" width="672">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Az <strong># tapadókorong</strong> opció segítségével válasszon ki egy adott szívókorongot a megfogóban vagy a  <strong>Tovább</strong> és a <strong>Vissza</strong> gombbal navigáljon a szívókorongok között. A kiválasztott szívókorong kék színnel van kerül kiemelésre és szerkeszthető.</p>
+</li>
+<li>
+<p>Az egyes szívókorongokhoz beállíthatja a következő <strong>Állapot</strong> állapotokat: Be, Ki vagy Eltávolítva.
+További részletek erről az alábbi leírásban találhatók.</p>
+</li>
+<li>
+<p>A <strong>Típus</strong> panelen válthat másik típusú szívókorongra.
+Általában a megfogó összes szívókorongját új típusra szokták kicserélni, de a szívókorongokat keverni is lehet, ha kikapcsolja a <strong>Összes módosítása</strong> opciót, majd kicseréli a szívókorongokat. (Ne feledje, hogy ha ezt a lehetőséget választja, akkor a választható szívókorongok száma korlátozott lesz, mivel a megfogókeretre szerelt összes szívókorongnak azonos munkamagassággal kell rendelkeznie). A fenti ábrán látható, hogy két szívókorongot valamivel kisebb méretűre cseréltünk (SAXM50, az alapértelmezett SAXM80 helyett).</p>
+</li>
+<li>
+<p>A <strong>Visszaállítás</strong> gomb segítségével visszaállíthatja a megfogót az eredeti állapotába – minden szívókorong bekapcsol és visszaáll a megfogóban meghatározott alapértelmezett típusra.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A szívókorong alapértelmezett állapota <strong>Be</strong>, ami azt jelenti, hogy a szívókorongok kapcsolódnak a vákuumvezetékhez és segítenek az emelésben.</p>
+</div>
+<div class="paragraph">
+<p>Ha egy szívókorong egy alkatrész lyukán fekszik, akkor az állapotot <strong>Ki</strong> értékre lehet állítani, ami azt jelenti, hogy nincs vákuum. (Ez csökkenti a megfogó emelőerejét és megváltoztatja az emelés középpontját, amit a Flux figyelembe vesz a megfogó kapacitásának ellenőrzésekor). Ne feledje, hogy a szívókorong még mindig a keretbe van szerelve és részt vesz az ütközésellenőrzésekben. A Flux a kikapcsolt szívókorongokat drótvázakként jeleníti meg, amint az a fenti ábrán két szívókorong esetében látható.</p>
+</div>
+<div class="paragraph">
+<p>Végül beállíthatja a szívókorongot <strong>Eltávolítva</strong> állapotba, ami azt jelenti, hogy a szívókorongot eltávolították a keretből a tényleges gépben. Ez a szívókorong nem emel és nem okoz ütközést. Ez néha hasznos lehet, ha egy szívókorong egy formázott területre esik vagy működés közben ütközik a szerszámmal, illetve a gépasztallal.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_kamera_panel">Kamera panel<a id="h000131"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A felvételi folyamat során a kamera egy vagy több képet készít, majd egy képfeldolgozó rendszer ezeket a képeket felhasználva pontosan meghatározza, hogy az alkatrész hol található a raklapon. A robotra szerelt kamerára kattintva vagy a <strong>Felvétel</strong> panelen a <strong>Kamera</strong> navigáció gombot választva megnyílik a Kamera panel. A Flux a szimulációt is úgy pozicionálója, hogy a robot a kép rögzítéséhez szükséges pozícióban legyen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/camera.png" alt="Camera" width="472">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A <strong>Index</strong> listával (vagy a <strong>Tovább</strong> és a <strong>Vissza</strong> gombbal) válthat az alkatrészhez használt különböző pontos felismerésű képek között.
+Ennek során a Flux narancssárga kontúrral jelzi az alkatrész képfelismerési zónáját (lásd a fenti ábrát).</p>
+</li>
+<li>
+<p>A <strong>Pozíció</strong> beviteli mezőkbe beírt adatokkal áthelyezheti ezt a zónát a <strong>Z</strong> és az <strong>X</strong> irányba, hogy jobban érvényesítse azokat a jellemzőket, amelyek javíthatják a felismerés pontosságát (sarkok, kis lyukak, hornyok).</p>
+</li>
+<li>
+<p>Az <strong>Hozzáadás</strong> gomb segítségével további felismerési képeket (legfeljeb 4-t) adhat hozzá, a <strong>Eltávolítás</strong> gomb segítségével pedig törölheti az aktuális felismerési képet. Az alkatrész felvételének szimulációja során a Flux megmutatja, hogy a robot a kamerát lefelé irányítva mozog az egyes felismerési területek felé és megáll, hogy rögzítse a képet.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ha a <strong>Átvilágítási asztal alkalmazása</strong> kapcsoló be van kapcsolva, akkor az alkatrész, mielőtt a kamera rögzítené a képét, egy megvilágított asztalra kerül. Ez növeli a kontrasztot és nagyon fényvisszaverő alkatrészek esetén hasznos. TecZone Bend
+Hozzáadja a háttérvilágítású asztalt és automatikusan a felvételi raklap közelébe helyezi azt, de ezt követően a pozíciót manuálisan is beállíthatja, ha rákattint erre:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/lighttable.png" alt="Light Table" width="438">
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Ez az opció csak azoknál az alkatrészeknél érhető el, amelyek átnyúlnak a szívó megfogók és a pofás meg fogok munkaméret-tartományain
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. határain kívül helyezkedik el. Figyelem: emiatt a megfogó szívóereje annyira lecsökkenhet, hogy az alkatrész megbízható felvételéhez szükséges tapadás már nem biztosított. Ezt a navigátor <strong>Felvétel</strong> oszlopában megjelenő hibaüzenet jelzi.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_raklap_panel">Raklap panel</a>
+  </li>
+  <li level="1">
+   <a href="#_felvétel_panel">Felvétel panel</a>
+  </li>
+  <li level="1">
+   <a href="#_megfogó_panel">Megfogó panel</a>
+  </li>
+  <li level="2">
+   <a href="#_szívási_figyelmeztetések">Szívási figyelmeztetések</a>
+  </li>
+  <li level="2">
+   <a href="#_műveletek_menü">Műveletek menü</a>
+  </li>
+  <li level="1">
+   <a href="#_szívás_panel">Szívás panel</a>
+  </li>
+  <li level="1">
+   <a href="#_kamera_panel">Kamera panel</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="index.html">Alkatrész felvétele</a></span>
+ <span class="next"><a href="fromdispenser.html">Felvétel adagolóból</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

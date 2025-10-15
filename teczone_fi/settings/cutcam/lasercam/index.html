@@ -1,0 +1,862 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../res/bento.css">
+  <link rel="stylesheet" href="../../../res/site.css">
+  <link rel="stylesheet" href="../../../res/tree.css">
+  <link rel="stylesheet" href="../../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../../img/trumpf-icon.png">
+  <title>Laser CAM -toiminnot</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Bend Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../../index.html">Tervetuloa TecZoneen</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../intro/index.html">Johdanto</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../intro/install.html">Ohjelmiston asentaminen</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/clarity.html">Käyttöliittymä</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/workflow.html">Osan työnkulku</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/2dimport/index.html">2D-tuonti</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/2dimport/2dcleanup.html">2D-piirustuksen puhdistus</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/3dimport/index.html">3D-tuonti</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prep3dmodel.html">3D-mallin tuonti</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prepassembly.html">Rakenneryhmän tuonti</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/formdetect.html">Muodon tunnistus</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/componentdetect.html">Komponenttien tunnistus</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../cad/sketch.html">Geometrian muuttaminen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cut/index.html">Laser CAM -toiminnot</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/partworkflow/index.html">Osan työnkulku</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/partworkflow/panels/index.html">Muokkauspaneelit</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../../cut/partworkflow/panels/lasercut/index.html">Laserleikkaus</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/approach.html">Lähestyminen</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/withdrawal.html">Vetäytyminen</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/microjoint.html">Mikroliitos</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/advanced.html">Syventävät osiot</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/contour.html">Muoto</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/scrapcut.html">Jätepalan leikkaus</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/part.html">Osa</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/cornertreatment.html">Nurkkien käsittely</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/partworkflow/quicknest.html">Quick-Nest-toiminto</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/jobworkflow/index.html">Työtehtävän työnkulku</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/jobpanel/index.html">Työtehtävän paneeli</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/sheets.html">Levyjen välilehti</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/parts.html">Osien välilehti</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/layouts.html">Asettelujen välilehti</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/summary.html">Tiivistelmän välilehti</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/editlayout/index.html">Asettelun muokkaus</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/nestingmodes.html">Nestaustilat</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/placementpanel.html">Sijoittelupaneeli</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/sequencing.html">Järjestyksen määrittely</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/slicesheet.html">Palojen leikkaus levystä</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/bevelcut/index.html">Viisteiden leikkaus</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/opencontours.html">Avoimet muodot</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/variablebevel.html">Säädettävä viiste</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/miscellaneous.html">Muuta</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/advanced/index.html">Syventävät osiot</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/finishingrules.html">Päättämistä koskevat säännöt</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/editltt.html">LTT-taulukoiden muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/strategies.html">Strategia</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/microjoints.html">Mikroliitokset</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/stability.html">Muut asetukset</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bend/index.html">Bend CAM -toiminnot</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">Taivutustietojen luonti</a></li>
+    <li><button class="tree blank"></button><a href="../../../bend/navigator.html">Taivutusnavigaattori</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/editing/index.html">Taivutustietojen muokkaus</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editbend.html">Taivutuksen muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editmount.html">Työkalukiinnikkeen muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editsetup.html">Taivutuskokoonpanon muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editgauge.html">Takavasteiden muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editacb.html">Kulman mittauksen muokkaaminen</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/bendsheet.html">Taivutusten laskentataulukko</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/sequencing.html">Järjestyksen muuttaminen</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/addsetup.html">Kokoonpanojen ja asemien lisääminen</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/advanced/index.html">Syventävät osiot</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/anglemeasurement.html">Kulman mittaus</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/batchprocess.html">Eräprosessi</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/recompute.html">Ohjelman uudelleenlaskenta</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">Särmäysvoiman tarkastus</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bcell/navigator.html">Taivutusnavigaattori</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/pickup/index.html">Osan poiminta</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/frompallet.html">Poiminta kuormalavalta</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/fromdispenser.html">Poiminta syöttölaitteesta</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/bending/index.html">Robottisärmäys</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/insertion.html">Sijoittaminen paikalleen</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/bending.html">Taivutus</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/extraction.html">Poistaminen</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/regrip/index.html">Otteenvaihto</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/regrippanel.html">Otteenvaihdon paneeli</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/addregrip.html">Otteenvaihdon lisääminen</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/editregrip.html">Otteenvaihdon muokkaaminen</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/jawregrip.html">Otteenvaihto leuan avulla</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/rgstationpanel.html">Otteenvaihtoaseman paneeli</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/deposit/index.html">Osien varastointi</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/patterns.html">Varastointimallit</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/repeat.html">Toisto ja järjestys</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/separatorsheet.html">Välilevy</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/advanced/index.html">Syventävät osiot</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/waypoints.html">Reittipisteet</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/cellconfig.html">Solun konfigurointi</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb.html">Tarttujien tietokanta</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/reports.html">Raportit</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../fold/index.html">Fold CAM -toiminnot</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../fold/createfolddata.html">Taivutustietojen luonti</a></li>
+    <li><button class="tree blank"></button><a href="../../../fold/foldview.html">Taivutuksen näkymä</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/editing/index.html">Taivutustietojen muokkaus</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbend.html">Taivutuksen muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editside.html">Sivun/osion muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editseq.html">Järjestyksen muuttaminen</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbh.html">Aihiotelineiden muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editgauge.html">Vasteiden asemoinnin muokkaus</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editblade.html">Terien muokkaaminen</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editload.html">Latauksen muokkaaminen</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editunload.html">Purkamisen muokkaus</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../fold/toolinventory.html">Työkaluvarustus</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/advanced/index.html">Syventävät osiot</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/airgaptables.html">Mukautettujen ilmarakojen taulukot</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/manualbend.html">Manuaalisen taivutuksen päättäminen</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/minflangelength.html">Vaadittava laipan pituus</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../../index.html">Asetukset</a>
+   <ul>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../drawing/index.html">Piirustus</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../drawing/layers.html">Kerrokset</a></li>
+      <li><button class="tree blank"></button><a href="../../drawing/dimensions.html">Mitat</a></li>
+      <li><button class="tree blank"></button><a href="../../drawing/view.html">Näkymä</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bendcam/index.html">Bend CAM -toiminnot</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bendcam/benddefaults.html">Koneen oletusasetukset</a></li>
+      <li><button class="tree blank"></button><a href="../../bendcam/bendoutputs.html">Taivutuksen tulostetiedot</a></li>
+      <li><button class="tree blank"></button><a href="../../bendcam/bendview.html">Taivutuksen näkymä</a></li>
+      <li><button class="tree blank"></button><a href="../../bendcam/bendcell.html">Särmäyssolu</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="../index.html">Cut CAM -toiminnot</a>
+     <ul>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../layout/index.html">Asettelu</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../layout/nesting.html">Nestauksen asetukset</a></li>
+        <li><button class="tree blank"></button><a href="../layout/sheet.html">Levy</a></li>
+        <li><button class="tree blank"></button><a href="../layout/sheethandling.html">Levyn käsittely</a></li>
+        <li><button class="tree blank"></button><a href="../layout/skeletoncuts.html">Rangan leikkaukset</a></li>
+        <li><button class="tree blank"></button><a href="../layout/worksupport.html">Työtuet</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree open"></button>
+       <a class="active" href="index.html">Laser CAM -toiminnot</a>
+       <ul>
+        <li><button class="tree blank"></button><a href="sequence.html">Järjestys</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cutoutputs.html">Leikkauksen tulostetiedot</a></li>
+      <li><button class="tree blank"></button><a href="../cutview.html">Leikkauksen näkymä</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../foldcam/index.html">Taivutus levyntaivutuskoneilla</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../foldcam/defaults.html">Oletusasetukset</a></li>
+      <li><button class="tree blank"></button><a href="../../foldcam/zbwcarriers.html">ZBW-työkalujen pitimet</a></li>
+      <li><button class="tree blank"></button><a href="../../foldcam/foldoutputs.html">Tulostetiedot</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../reports/index.html">Raportit</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../reports/itemdefaults.html">Kohtien oletusasetukset</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../importexport.html">Tuonti/vienti</a></li>
+    <li><button class="tree blank"></button><a href="../../environment.html">Ympäristö</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../database/index.html">Tietokanta</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../database/materials.html">Materiaalit</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/machines.html">Koneet</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendtools.html">Taivutustyökalut</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">Taivutukseen tarkoitetut tarttujat</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Muodot/komponentit</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../report/index.html">Raportit</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/fields.html">Kentät, kuvat ja taulukot</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/bands.html">Nauhat (aliraportit)</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/labels.html">Tunnisteet, bittikartat ja muodot</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../appendix/index.html">Liite</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">Sovelluksen tukemat 3D-tiedostomuodot</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">Välilevyjen DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">Taivutustyökalujen DXF-tiedostomuoto</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../../index.html">Asetukset</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="../index.html">Cut CAM -toiminnot</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Laser CAM -toiminnot</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Laser CAM -toiminnot</h1>
+<div class="sect1">
+<h2 id="_leikkaus">Leikkaus<a id="h000955"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Leikkaukselle on kolme ehtoa, jotka perustuvat leikattavaan levyyn.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne28.png" alt="ne28">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Choose cutting condition by</strong> - Tämä asetus määrittelee tavan, jolla leikkausehdon valinta tapahtuu. Vaihtoehtoja ovat "Maksimaalinen segmentin
+pituus", "Keskimääräinen segmentin pituus" ja "Pinta-ala".</p>
+</div>
+<div class="paragraph">
+<p><strong>Maximum segment length</strong> - Pisin segmentti on
+käytössä kynnysarvona.</p>
+</div>
+<div class="paragraph">
+<p><strong>Average segment length</strong> - Sovellus laskee kaikkien segmenttien keskimääräisen pituuden
+ja sitä kynnysarvona. TecZone Laser-sovelluksen oletusasetus.</p>
+</div>
+<div class="paragraph">
+<p><strong>Area</strong> - Muodon rajaama alue on käytössä
+kynnysarvona.</p>
+</div>
+<div class="paragraph">
+<p><strong>Switch to slower cutting condition when approach is constrained</strong> -
+Laserpää siirtyy hidasnopeuksiseen leikkaustilanteeseen, mikäli levyn geometria
+on lähestymisen kannalta monimutkainen.</p>
+</div>
+<div class="paragraph">
+<p><strong>Process for open polylines</strong> - Mikäli osasta on löytynyt avoimia polyline-objekteja, Cut
+käsittelee polyline-objektin valitun vaihtoehdon mukaisesti. Vaihtoehdot ovat
+ <em>Leikkaa</em>, <em>Valitse</em>, <em>Pois päältä</em>
+ja <em>Perustuu kerrokseen</em>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Pois päältä</strong>: laser ohittaa tämän viivan osan
+piirustuksessa.</p>
+</div>
+<div class="paragraph">
+<p><strong>Valitse</strong>: laser vain merkitsee tämän viivan,
+ts. piirtää ohutlevylle näkyvän viivan, joka ei läpäise levyä.</p>
+</div>
+<div class="paragraph">
+<p><strong>Leikkaa</strong>: TecZone Laser valitsee sopivan
+laseria koskevan ehdon tälle polyline-objektille, ja laser leikkaa objektin ehdon mukaisesti.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Jotta tämä asetus astuisi voimaan, työstöt on laskettava uudelleen.
+Manuaalisiin työstöihin tehdyt muutokset ohittavat kaikki tähän asetukseen tehdyt muutokset. Jos avoimelle
+polyline-objektille on valittu vuorovaikutteisessa asettelussa manuaalisesti tila "Merkintä",
+kyseiselle
+objektille asetuksissa valittu tila "Leikkaus" ei astu voimaan.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Cut/Mark open polylines backwards</strong> - Tämän kohdan valitsemalla
+avoimet polyline-objektit voi leikata tai merkitä suorittamalla työstön taaksepäin. Tämä asetus on käytössä vain, jos leikkaus tai merkintä
+on asetettu avointen polyline-objektien työstön kohdalle.</p>
+</div>
+<div class="paragraph">
+<p><strong>Mark forming footprint</strong> - Mikäli Cut tunnistaa upotustilanteen, se siirtää ulkoympyrän automaattisesti kerroksen
+muovausjalanjäljen kohdalle. Jos tämä vaihtoehto on valittuna, järjestelmä merkitsee muovausjalanjäljen
+kerroksen geometrian.</p>
+</div>
+<div class="paragraph">
+<p><strong>Stitch cutting threshold distance (0=disable)</strong> - Tämän
+vaihtoehdon avulla voi määritellä kahden leikkauksen välisen enimmäisetäisyyden,
+jonka kohdalla sovellus katsoo leikkaukset vielä yhdistetyksi leikkaukseksi.</p>
+</div>
+<div class="paragraph">
+<p><strong>Dynamics</strong> - Dynamiikan pudotusvalikko sisältää kohdat "Normaali", "Suuri" ja
+"Pienennetty".</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pierce_settings">Pierce settings</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/pierce.png" alt="pierce">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Allow approach that is more than 0.5 distance to opposite side</strong> -
+Tämän vaihtoehdon avulla voi määritellä sen, onko sovelluksen määrä sallia lähestyminen, jonka pituus on suurempi kuin etäisyys
+vastakkaiselle puolelle.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_corner_processing">Corner Processing</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/cornerprocess.png" alt="cornerprocess">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Rounding tolerance (distance of corner from rounding tip)</strong> -
+Tämän vaihtoehdon avulla voi määritellä suurimman sallitun etäisyyden nurkasta pyöristyksen lakipisteeseen
+alla olevan kuvan mukaisesti. Nurkan etäisyys lakipisteestä on suoraan
+verrannollinen pyöristyssäteeseen. Cut valitsee syötetyn arvon perusteella pyöristyssäteen minimi- ja
+maksimiarvojen väliltä. Jos pienimmän säteen valitseminen ei tuota etäisyyttä, joka on toleranssiarvon
+sisällä, pyöristys jää tekemättä. (silmukat tai jäähdytys
+voivat olla käytössä).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cornprocess1.png" alt="cornprocess1">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Maximum distance of corner from outermost point on loop</strong> -
+Tämän vaihtoehdon avulla voi määritellä silmukan enimmäismitan
+nurkan ulkopuolella. Silmukan mitta nurkan ulkopuolella on suoraan verrannollinen säteeseen. Jos pienimmän säteen
+valitseminen ei tuota terävän nurkan kohdalla etäisyyttä, joka on tähän syötetyn
+arvon rajoissa, silmukka jää tekemättä. (pyöristys tai jäähdytys
+voivat silti olla käytössä).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cornprocess2.png" alt="cornprocess2">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_twinline">TwinLine</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/cornerprocess.png" alt="cornerprocess">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Twinline processing strategy</strong> - Tämän pudotusvalikon avulla voi määritellä
+käytettävän strategian twinline-leikkauksen yhteydessä.</p>
+</div>
+<div class="paragraph">
+<p><em>Partwise</em> - Sovellus tekee leikkaukset osakohtaisesti. Soveltuu
+paksuille levyille, joiden yhteydessä ei muotojen kallistumisen vaaraa.</p>
+</div>
+<div class="paragraph">
+<p><em>Partwise-Safe</em> - Sovellus tekee leikkaukset osakohtaisesti mutta tekee samalla myös valmistelevia leikkauksia viereisiin osiin. Soveltuu ohuille levyille, joista
+leikattavat osat voivat kallistua.</p>
+</div>
+<div class="paragraph">
+<p><em>TIO (Twinline-Islands-Outer)</em> - Sovellus leikkaa twinline-
+reunat ensin, seuraavaksi kaikki osien välille luodut saarekkeet ja tämän jälkeen ulkomuodon.</p>
+</div>
+<div class="paragraph">
+<p><strong>Use TIO strategy of there are no islands</strong> -
+Ohjelmisto valitsee aina
+TIO (Twinline-Islands-Outer)-strategian, jos twinline-ryhmään ei ole luotu saarekkeita. Tämä vaihtoehto on
+oletusasetuksen mukaan valittuna.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scrap_cutting">Scrap cutting</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/scrap.png" alt="scrap">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Scrap grid width</strong> - Tämä on yksittäisen solun leveys
+työstötoiminnon luomassa ristikossa. Tähän syötetyn arvon on oltava sellainen, että
+työstön tuloksena syntyvä neliömäinen kappale putoaa taatusti tukilevyjen välistä riippumatta kappaleen
+asennosta.</p>
+</div>
+<div class="paragraph">
+<p><strong>Approach length for separating cuts</strong> - Tämä haluttu
+lähestymispituus jätepalojen leikkauksen yhteydessä.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vaporization">Vaporization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Vaporize</strong> - Tämä asetus määrittelee sen, onko
+höyrystäminen välttämätöntä. Jos höyrystäminen on suoritettava, tämä kohta määrittelee myös
+laserleikkausradan osat, jotka on höyrystettävä.</p>
+</div>
+<div class="paragraph">
+<p><em>None</em> - Ei höyrystystä</p>
+</div>
+<div class="paragraph">
+<p><em>Pierce</em> - Vain lävistyskohtien höyrystys</p>
+</div>
+<div class="paragraph">
+<p><em>Pierce &amp; approach</em> -
+Laserleikkausradan lävistyskohtien ja lähestymisosan höyrystys.</p>
+</div>
+<div class="paragraph">
+<p><em>Full laser path</em> - Koko leikkausradan höyrystys
+lävistyskohta, lähestymisrata ja muoto mukaan luettuina.</p>
+</div>
+<div class="paragraph">
+<p><strong>Pierce point vaporization circle radius</strong> - Jos tähän
+syötetään nollaa suurempi arvo, ohjelmisto liikuttaa laserpäätä
+pientä ympyrää pitkin lävistyspisteen ympärillä höyrystyslaserin ollessa päällä (höyrystys ympyräliikettä
+käyttäen). Arvo määrittelee ympyrän säteen. Jos tämä arvo on
+nolla, höyrystyslaser kytkeytyy päälle täsmälleen lävistyspisteen yläpuolella
+ja kytkeytyy välittömästi tämän jälkeen pois päältä (pistemäinen höyrystys).</p>
+</div>
+<div class="paragraph">
+<p><strong>Vaporize marking</strong> - Tämän vaihtoehdon avulla voi ottaa höyrystyksen käyttöön tai poistaa
+sen käytöstä. Huomaa, että höyrystys ei ole koskaan käytössä lasertekstimerkintöjen kohdalla, joiden valmistus tapahtuu etsaamalla TC_WRITE-makron avulla.</p>
+</div>
+<div class="paragraph">
+<p>Näiden asetusten muuttamisen yhteydessä Cut-käyttöliittymässä ei tapahdu näkyviä muutoksia lukuun ottamatta sitä,
+että mahdollisesti pois käytöstä ollut NC-ohjelman kuvake on nyt käytössä.
+Tämä johtuu siitä, että nämä asetukset vaikuttavat ohjelman luontiin. Eri leikkauksia varten luotu
+höyrystysohjelma on kuvattu alla olevassa taulukossa.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Leikkaus</th>
+<th class="tableblock halign-left valign-top">Käyttäytyminen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Laser Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kyseessä on tavallinen leikkauskohde, jossa tarkoituksena osan muodon leikkaaminen.<br>
+Jos Vaporize = Full laser path,
+höyrystys kattaa koko muodon, lävistyskohta ja lähestymisrata mukaan luettuina. Säteen kompensointi on kuitenkin pois
+käytöstä höyrystyskierroksen aikana. Leikkausta ei tarvitse suorittaa
+välittömästi höyrystyksen jälkeen. Jos muotoon kuuluu useampi kuin 1
+mikroliitos ja siten useita laserleikkauksen kohteena olevia kappaleita, kaikki kyseisen muodon leikattavat kappaleet
+ovat ensimmäiseksi höyrystyksen kohteena. Tämän jälkeen on vuorossa muodon leikkaaminen.
+Höyrystysjärjestystä kutsutaan muotokohtaiseksi, koska jokainen muoto on
+höyrystetään ennen leikkaamista. Tämän tuloksena pään liikkeet ovat
+yleensä tehokkaita.</p>
+<p class="tableblock"><span class="image"><img src="img/scraplasercut.png" alt="scraplasercut"></span></p>
+<p class="tableblock">Jos Vaporize = Pierce &amp; approach,
+vain lävistyspiste ja lähestymisrata
+ovat ensin höyrystyksen kohteena, minkä jälkeen laserpää
+siirtyy uudelleen lävistyspisteen yläpuolelle ja aloittaa varsinainen leikkauksen. Tämän
+höyrystysasetuksen ja toiminnon "höyrystys = lävistys" yhteydessä lävistyksen ja lähestymisradan höyrystys
+tapahtuvat aina juuri ennen leikkauksen suorittamista. Tällaista höyrystysjärjestystä
+kutsutaan leikkauskohtaiseksi, koska jokainen leikattava kappale
+höyrystetään ennen leikkaamista.</p>
+<p class="tableblock">Toiminto Vaporize = Pierce,
+käyttäytyy kuten edellä on kuvattu, paitsi että höyrystyksen kohteena ovat vain
+lävistyspisteet.</p>
+<p class="tableblock">Jos Vaporize = None, luodussa koodissa ei tapahdu muutoksia.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Scrap Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jos Vaporize =
+Full laser path, höyrystys- ja leikkausjärjestys on
+seuraava:<br>
+-  Koko jäteristikko höyrystetään ensin samalla tavalla kuin
+se leikattaisiin.</p>
+<p class="tableblock">- Muoto yhdessä lävistyskohdan ja lähestymisradan kanssa ovat
+höyrystyksen kohteena.</p>
+<p class="tableblock">- Jäteristikko leikataan.</p>
+<p class="tableblock">- Muoto leikataan.</p>
+<p class="tableblock">Näin sekä ristikko että muodot höyrystetään ensin ja leikataan sen jälkeen.
+Jos Vaporize = Pierce &amp; approach
+tai Pierce, jätepalojen ja muodon lävistys- ja lähestymissegmentit
+ovat höyrystyksen kohteena juuri ennen
+leikkaamista.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Sheet Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Levyn leikkauksen yhteydessä höyrystys tapahtuu aina juuri ennen leikkausta.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">FlyLine Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nämä leikkaukset eivät ole koskaan höyrystyksen kohteena höyrystysasetuksista riippumatta.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Point Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tämä kohde höyrystetään juuri ennen leikkausta.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lasermerkintä">Lasermerkintä<a id="h000956"></a></h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/lasermarking.png" alt="lasermarking">
+</div>
+</div>
+<div class="paragraph">
+<p>Yhden tai useamman tekstimerkinnän osaan lisäämistä koskevat säännöt voi
+määritellä kohdassa <strong>Settings &#8594; Cut CAM &#8594; Laser CAM &#8594; Laser marking</strong>.
+Käyttäjä voi lisätä alla olevaan taulukkoon useita sääntöjä, joista jokainen vaikuttaa yksittäisen tekstirivin sijoitteluun.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne94.png" alt="ne94">
+</div>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Sarake</th>
+<th class="tableblock halign-left valign-top">Kuvaus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Valintaruutu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Voit ottaa säännön käyttöön tai poistaa sen käytöstä käyttämällä ensimmäisen sarakkeen valintaruutua.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Teksti, joka on lisättävä osaan. Tämä teksti voi
+sisältää seuraavat tunnisteet, jotka korvaa niitä vastaava
+arvo kohdasta "Osan tiedot". Nämä tunnisteet eivät ole aakkoskoosta riippuvaisia.</p>
+<p class="tableblock">$PARTNAME - osan nimi.</p>
+<p class="tableblock">$FILENAME - FX-tiedoston nimi.</p>
+<p class="tableblock">$ROOTFILE - alkuperäisen CAD-tiedoston nimi.</p>
+<p class="tableblock">$PARTID - Osan tunnus.</p>
+<p class="tableblock">$CUSTOMER - asiakas.</p>
+<p class="tableblock">$AUTHOR - laatija.</p>
+<p class="tableblock">$JOBNUMBER - työn numero kohdasta Osa&#8594;Tiedot.</p>
+<p class="tableblock">Nämä muuttujat on esitetty työkaluvihjeessä.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Height</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tämä asetus määrittelee kirjasintyypin korkeuden (peruslinjasta ylälinjaan)
+millimetreinä tai tuumina. Tekstiä lisättäessä saattaa käydä niin, että tila ei riitä tekstin lisäämiseen määriteltyä kirjasintyypin korkeutta käyttäen.
+Tällaisissa tilanteissa TecZone Laser kutistaa tekstin kokoa automaattisesti 10 %:n portain, kunnes tekstin sijoittaminen on mahdollista. Korkeutta saa tällä hetkellä pienentää
+2 mm:iin saakka.</p>
+<p class="tableblock">Minimikorkeudeksi on määritelty 2 mm.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Orientation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tämä sarake määrittelee tekstin suunnan.
+Seuraavat arvot ovat mahdollisia:</p>
+<p class="tableblock"><em>Horizontal</em> - Teksti on vaakasuorassa.</p>
+<p class="tableblock"><em>Vertical</em> - Teksti on pystysuorassa.</p>
+<p class="tableblock"><em>Along longer side</em>: Suuntaa tekstin
+osan pidemmän sivun kanssa. Jos osa on esitetty vaakakuvana, teksti on vaakasuorassa.
+Jos osa on esitetty pystykuvana, teksti on pystysuorassa.</p>
+<p class="tableblock"><em>Along shorter side</em>: suuntaa tekstin
+osan lyhyempään sivuun nähden (toiminto vastakkainen edellä kuvattuun toimintoon nähden). Mikäli lisäät osaan kaksi tekstiä, tätä ja
+edellistä vaihtoehtoa voi käyttää yhdessä, jotta vältytään tekstien sijoittumiselta päällekkäin.</p>
+<p class="tableblock"><em>Along longest segment</em>:
+suuntaa tekstin
+ulkomuodon pisimmän lineaarisen segmentin kanssa. Tässä tapauksessa teksti
+ei välttämättä ole akselin suuntainen. Oli sitten kyse vaakasuorasta,
+pystysuorasta tai viistoon kulkevasta tekstistä, TecZone Laser suuntaa tekstin aina siten, että tekstin suunta on oikea käyttäjän katsoessa osaa lähimpänä
+tekstiä olevalta sivulta. Toisin sanoen keskelle osan alareunaa sijoitettu teksti kulkee vasemmalta
+ oikealle ja keskelle yläreunaa sijoitettu teksti puolestaan
+oikealta vasemmalle.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Horizontal pos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tekstin vaakasuuntainen tasaus. Mahdolliset arvot ovat
+<em>center</em>,
+ <em>left</em> ja <em>right</em>. Tällä asetuksella ei ole merkitystä, jos
+vaadittavaksi suunnaksi valitaan
+<em>Along longest segment</em>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Vertical pos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tekstin pystysuuntainen tasaus. Mahdolliset arvot ovat
+<em>center</em>,
+ <em>bottom</em> ja <em>top</em>. Tällä asetuksella ei ole merkitystä, jos
+vaadittavaksi suunnaksi valitaan
+<em>Along longest segment</em>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Näiden merkkien lisäämisen yhteydessä TecZone Laser varmistaa aina, että lisätty
+teksti ei osu osan muotoihin. Sovellus pienentää kirjasinkokoa automaattisesti tarpeen mukaan hyvin pienten osien tai
+sellaisten osien kohdalla, joissa on vähän vapaata tilaa, jotta teksti mahtuu osan sisäpuolelle ja on
+erillään osan rei&#8217;istä.</p>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_leikkaus">Leikkaus</a>
+  </li>
+  <li level="1">
+   <a href="#_pierce_settings">Pierce settings</a>
+  </li>
+  <li level="1">
+   <a href="#_corner_processing">Corner Processing</a>
+  </li>
+  <li level="1">
+   <a href="#_twinline">TwinLine</a>
+  </li>
+  <li level="1">
+   <a href="#_scrap_cutting">Scrap cutting</a>
+  </li>
+  <li level="1">
+   <a href="#_vaporization">Vaporization</a>
+  </li>
+  <li level="1">
+   <a href="#_lasermerkintä">Lasermerkintä</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="../layout/worksupport.html">Työtuet</a></span>
+ <span class="next"><a href="sequence.html">Järjestys</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../../res/index.js"></script>
+    <script src="../../../res/files.js"></script>
+    <script src="../../../res/site.js"></script>
+
+    
+</body>
+</html>
