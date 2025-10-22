@@ -1,0 +1,899 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>曲げ加工ナビゲーター</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">TecZoneへようこそ</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">本書について</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">ソフトウェアのインストール</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">ユーザーインターフェース</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">パーツ  ワークフロー</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">2 Dインポート</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">2 Dクリーンアップ</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">3 Dインポート</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">3D モデルのインポート</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">コンポーネントのインポート</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">フォーミング検出</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">コンポーネント検出</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">ジオメトリの修正</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">レーザCAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">パーツ  ワークフロー</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">パネルの編集</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">レーザ切断</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">アプローチ</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">戻り</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">ミクロジョイント</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">上級</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">コンター</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">抜きカス切断</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">パーツ</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">コーナ処理</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">クイック ネスティング</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">ジョブワークフロー</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">ジョブパネル</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">材料タブ</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">パーツ タブ</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">レイアウト タブ</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">概要タブ</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">レイアウトの編集</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">ネスティングモード</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">配置パネル</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">順序</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">材料のスライス</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">ベベルカット</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">開いたコンター</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">可変ベベル</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">その他</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">上級</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">仕上げのルール</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">LTTの編集</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">ストラテジー</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">ミクロジョイント</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">その他の設定</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">曲げ加工 CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="createbenddata.html">曲げデータの作成</a></li>
+    <li><button class="tree blank"></button><a class="active" href="navigator.html">曲げ加工ナビゲーター</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="editing/index.html">曲げデータの編集</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="editing/editbend.html">曲げ加工の編集</a></li>
+      <li><button class="tree blank"></button><a href="editing/editmount.html">ツール マウントの編集</a></li>
+      <li><button class="tree blank"></button><a href="editing/editsetup.html">曲げ加工設定の編集</a></li>
+      <li><button class="tree blank"></button><a href="editing/editgauge.html">突き当ての編集</a></li>
+      <li><button class="tree blank"></button><a href="editing/editacb.html">角度測定の編集</a></li>
+      <li><button class="tree blank"></button><a href="editing/bendsheet.html">曲げ加工スプレッドシート</a></li>
+      <li><button class="tree blank"></button><a href="editing/sequencing.html">順序の変更</a></li>
+      <li><button class="tree blank"></button><a href="editing/addsetup.html">セットアップとステーションの追加</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="advanced/index.html">上級</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="advanced/anglemeasurement.html">角度測定</a></li>
+      <li><button class="tree blank"></button><a href="advanced/batchprocess.html">バッチ加工</a></li>
+      <li><button class="tree blank"></button><a href="advanced/recompute.html">ソリューションの再計算</a></li>
+      <li><button class="tree blank"></button><a href="advanced/tonnage.html">トン数チェック</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">曲げ加工ナビゲーター</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">パーツピックアップ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">パレットからピックアップ</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">ディスペンサーからのピックアップ</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">ロボット曲げ加工</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">挿入</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">曲げ加工</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">抽出</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">つかみ換え</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">つかみ換えパネル</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">つかみ換えを追加</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">つかみ換えの編集</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">あごでつかみ換え</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">つかみ替えステーションパネル</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">パーツ収納</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">収納パターン</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">繰り返しと順序</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">材料セパレーター</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">上級</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">ウェイポイント</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">セル設定</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">グリッパーデータベース</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">レポート</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">反転 CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">反転データの作成</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">反転ビュー</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">反転データの編集</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">曲げ加工の編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">辺の長さ/セクションの編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">順序の変更</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">プレッサフットの編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">ゲージングの編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">ブレードの編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">ローディングの編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">アンローディングの編集</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">ツール在庫</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">上級</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">カスタムエアギャップテーブル</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">手動曲げ完了</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">必要な辺の長さ</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">設定</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">描画</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">レイヤー</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">寸法</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">ビュー</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">曲げ加工 CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">マシンの初期設定</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">曲げ加工出力</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">曲げ加工 ビュー</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">曲げセル</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">切断 CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">レイアウト</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">ネスティング設定</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">材料</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">材料ハンドリング</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">スケルトンカット</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">ワークサポート</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">レーザCAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">順序</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Cut 出力</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Cut　ビュー</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">パネルベンディング</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">初期設定</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">ZBW キャリア</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">出力</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">レポート</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">初期設定項目</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">インポート/エクスポート</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">周囲</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">データベース</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">素材</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">マシン</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">曲げツール</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">曲げグリッパー</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">フォーミング/コンポーネント</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">レポート</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">レポートデザイナー</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">フィールド、画像およびテーブル</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">バンド（サブレポート）</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">ラベル、ビットマップおよび図形</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">付録</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">対応 Dフォーマット</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">セパレーター 材料DXF</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">曲げツール DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">曲げ加工 CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="navigator.html">曲げ加工ナビゲーター</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>曲げ加工ナビゲーター</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>_曲げ加工ビュー_では、<strong>曲げ加工ナビゲーター</strong>パネルが、TecZone Bend画面の上部に表示されます。このナビゲーターを使用すると、さまざまな曲げ加工工程を簡単に移動でき、さらに各曲げ加工のさまざまな状態確認を表示できます。また、曲げ加工シミュレーションを表示/停止出来ます。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/nav1.png" alt="Navigator 1" width="460">
+</div>
+</div>
+<div class="paragraph">
+<p>ナビゲーターは、_警告_や_エラー_がある曲げ加工を別の色で表示します。
+現在の曲げ加工は枠で囲まれたボックスで表示され、小さなdots<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>は、その曲げ加工が実行される_ツールステーション_を示します。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_シミュレーション_コントローラー">シミュレーション コントローラー<a id="h000235"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ベンドナビゲーターの近くにマウスを移動すると、<strong>シミュレーションコントロール</strong>が表示されます。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/nav2.png" alt="Navigator 2" width="438">
+</div>
+</div>
+<div id="h000236" class="ulist">
+<ul>
+<li>
+<p><strong>スライダー</strong>を使うと、現在の曲げ加工を曲げプロセスのさまざまな段階（パーツ挿入、突き当てのリトラクト、挟まれる箇所までのパンチの下降、曲げ加工、開放など）に移動できます。スライダーを動かすと、ツールチップに現在の曲げ加工段階が表示され、シミュレーションではマシンのさまざまなパーツが動きます。衝突が発生すると、それらのパーツは赤色で強調表示されます。</p>
+</li>
+<li>
+<p>左側の<strong>再生コントローラー</strong>を使用して、シミュレーションを開始、停止、  または最初へ巻き戻します。</p>
+</li>
+<li>
+<p>中央付近の<strong>シェブロン</strong>を使用すると、曲げ加工ナビゲーターを延長して、さまざまな曲げ加工のエラーと警告に関する詳細情報を表示できます。</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<kbd>Spacebar</kbd>を押すと、曲げシミュレーションの再生を開始または停止できます。<br>
+<kbd>Z</kbd> キーを押して、ベンドナビゲーターの表示を延長したり/縮小します。
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_ベンドナビゲーター拡張ビュー">ベンドナビゲーター：拡張ビュー<a id="h000239"></a></h3>
+<div class="paragraph">
+<p>オープン ボタンをクリックするか、<kbd>Z</kbd> キーを押して曲げ加工ナビゲータを開くと、次のように表示されます：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/nav3.png" alt="Bend Navigator" width="450">
+</div>
+</div>
+<div class="paragraph">
+<p>曲げ加工ごとに、ナビゲーターには数行の<strong>ステータスアイコン</strong>が表示されます。色付きアイコンはエラーまたは警告です。色付きのセルにマウスを移動すると、エラーまたは警告の詳細情報が表示されます。
+エラー表示のあるセルをクリックすると、シミュレーションが<strong>停止</strong>し、エラーを確認できます。たとえば、<strong>パンチクラッシュ</strong>エラーが表示されているセルをクリックすると、シミュレーションはパンチが加工品と衝突する段階に移動します。これらは、ナビゲーター上部にある曲げ加工番号の隣に表示されるアイコンです。</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>アイコン</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>説明</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/coining.png" alt="coining" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">コイニング</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/doublesheet.png" alt="doublesheet" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ダブルシートベンディング</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/hemming.png" alt="hemming" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">折り曲げ加工</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/prebend.png" alt="prebend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">予備曲げ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/postbend.png" alt="postbend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">後曲げ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/skippedbend.png" alt="skippedbend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">スキップした曲げ加工</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/zbend.png" alt="zbend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Z曲げ加工</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ナビゲーターの行">ナビゲーターの行<a id="h000240"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ナビゲーターには複数の<strong>行</strong>があります；<strong>パンチ</strong>や<strong>ダイ</strong>などの行は常に表示されますが、<strong>ACB</strong> (角度測定) などの行は、マシンがその機能に適応する場合に限り表示されます。</p>
+</div>
+<div class="sect2">
+<h3 id="_パンチ行">パンチ行<a id="h000241"></a></h3>
+<div class="paragraph">
+<p>ベンドナビゲーターの<strong>パンチ</strong>行には、この曲げ加工で使用されるパンチに関する情報が表示されます。そしてパンチに関連する警告やエラーがあるかどうかを示します。パンチ行に表示されるアイコンは以下です：</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>アイコン</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>意味</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラーなし、有効なパンチが使用されました</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：曲げ加工中にパンチがパーツと衝突</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion3.png" alt="explosion3" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：曲げ加工中にパンチがダイと衝突</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/missing.png" alt="missing" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：パンチの欠如-この曲げ加工にはパンチが割り当てられていません</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/tool-short.png" alt="tool short" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：パンチの高さが足りず曲げを完了できません（もっと高いパンチを使用するか、アダプターを追加して下さい）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/exclaim.png" alt="exclaim" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：誤ったパンチ加工の使用（たとえば、コイニング以外用のパンチがコイニング加工に使用されたり、 Z曲げ加工に標準パンチが使用されています）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/overload.png" alt="overload" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：パンチが定格トン数を超えて過負荷になっています（ツールチップに実際の負荷が表示されます）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/span-short.png" alt="span short" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：パンチのスパンが短過ぎます（パーツがパンチの端からはみ出しています）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/sensor-edge.png" alt="sensor edge" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">警告： ACBセンサーがパンチステーションの端に取り付けられています</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/sensor-close.png" alt="sensor close" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">警告： 取り付けられているACBセンサーディスクの相互距離が近過ぎます</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/skipped-bend.png" alt="skipped bend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">曲げ加工のスキップ（この曲げ加工は実行なし）</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_ダイ行">ダイ行<a id="h000242"></a></h3>
+<div class="paragraph">
+<p>ベンドナビゲーターの<strong>ダイ</strong>行には、この曲げ加工で使用されるダイに関する情報が表示されます。そしてダイに関連する警告やエラーがあるかどうかを示します。ダイ行に表示されるアイコンは以下です：</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>アイコン</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>意味</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラーなし、有効なダイを使用しました</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：曲げ加工中にダイがパーツと衝突</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion3.png" alt="explosion3" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：曲げ加工中にダイがパンチと衝突</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/missing.png" alt="missing" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：ダイが欠如-この曲げ加工にダイが割り当てられていません</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/exclaim.png" alt="exclaim" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：誤ったダイ加工が使用（たとえば、Z曲げ加工に  標準Vダイを使用）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/overload.png" alt="overload" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：ダイが定格トン数を超えて過負荷になっています（ツールチップに実際の負荷が表示されます）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/span-short.png" alt="span short" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：ダイのスパンが短過ぎます（パーツがダイの端からはみ出しています）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/flange-narrow.png" alt="flange narrow" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">警告：フランジがこのダイには狭すぎる可能性があります；曲げ加工が正確にならない可能性があります</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/skipped-bend.png" alt="skipped bend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">スキップした曲げ加工</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_ゲージ行">ゲージ行<a id="h000243"></a></h3>
+<div class="paragraph">
+<p>ベンドナビゲーターの<strong>ゲージ</strong>行には、曲げ加工中にパーツの原点復帰に使用される突き当てに関する情報と、ゲージ関連の警告やエラーが表示されます。</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>アイコン</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>意味</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラーなし、有効なダイを使用しました</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：突き当てがパーツと衝突</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion3.png" alt="explosion3" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：突き当てがパンチまたはダイと衝突</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/missing.png" alt="missing" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：この曲げ加工に突き当てが割り当てられていません</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/overtravel.png" alt="overtravel" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：突き当て位置がゲージの移動限界を超えています</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/one-finger.png" alt="one finger" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">警告：突き当てが1つしか使用されていません：ゲージが安定しない場合があります</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/so-so.png" alt="so so" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">警告：突き当て位置はダイラインのずっと上または下；  ゲージングが安定しない場合があります</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/skipped-bend.png" alt="skipped bend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">スキップした曲げ加工</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_マシン行">マシン行<a id="h000244"></a></h3>
+<div class="paragraph">
+<p>ベンドナビゲーターの<strong>マシン</strong>行には、衝突またはその他<strong>マシン</strong>関連のエラーが表示されます。</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>アイコン</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>意味</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">マシンとの衝突なし</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：パーツがプレスビーム、または  曲げ加工中のダイベッドと衝突</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion3.png" alt="explosion3" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：曲げ加工中にパーツがフロアに衝突</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion4.png" alt="explosion4" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：曲げ加工中にパーツがベンドガード（安全システム）と衝突</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/overload.png" alt="overload" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：この曲げ加工中にマシンの定格トン数を超過</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_acb_行">ACB 行<a id="h000245"></a></h3>
+<div class="paragraph">
+<p>ベンドナビゲーターの<strong>ACB</strong>行には、角度測定システムに関連する警告とエラーが表示されます。</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>アイコン</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>意味</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/acb-ok.png" alt="acb ok" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">この曲げ加工に使用するACB<strong>識別</strong>方法</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/acb-corrected.png" alt="acb corrected" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">この曲げ加工に使用するACB<strong>修正</strong>方法  （ユーザー指定のスプリングバック補正）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/acb-learned.png" alt="acb learned" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">この曲げ加工（以前の基準曲げ加工からストロークがコピーされビーム曲げ）に使用するACB<strong>学習</strong>方法</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/missing.png" alt="missing" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">この曲げ加工に使用しないACB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/acb-range.png" alt="acb range" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">警告： ACBディスクがパーツにはめ込まれていません</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/acb-hole.png" alt="acb hole" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー： ACBセンサーディスクが開口部に落ちます</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/acb-flange.png" alt="acb flange" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">警告：フランジがACB測定には狭すぎます</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/acb-reference.png" alt="acb reference" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー： ACBの基準曲げ加工として誤った曲げ加工が選択されています</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/skipped-bend.png" alt="skipped bend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">スキップした曲げ加工</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_そのパーツ行">そのパーツ行<a id="h000246"></a></h3>
+<div class="paragraph">
+<p>ベンドナビゲーターの<strong>パーツ</strong>行には、パーツ取り扱いに関する情報が表示されます。曲げ加工の間にパーツをどう回転/反転するか、またパーツの重心が曲げ軸の後方になる場合の警告（パーツ転倒警告）などです。</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>アイコン</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>意味</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">パーツ取り扱いに問題なし；パーツの回転/反転の必要はありません。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/incorrect.png" alt="incorrect" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エラー：無効な曲げ順；この曲げ加工のセグメントは  一直線上にないため、この位置でこの順序での加工できません。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">警告：オーバーベンド中にパーツフランジが衝突します；角度の精度が損なわれる可能性があります。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/less-than.png" alt="less than" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">警告：パーツの重心が曲げ線の後ろです（パーツが後方に傾いています）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/rotate-l.png" alt="rotate l" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">次の曲げ加工用にパーツの左回転が必要です</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/rotate-r.png" alt="rotate r" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">次の曲げ加工用にパーツの右回転が必要です</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/rotate-180.png" alt="rotate 180" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">次の曲げ加工用にパーツの180°回転&deg;が必要です</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/flip-vertical.png" alt="flip vertical" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">次の曲げ加工用にパーツの反転が必要です</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/skipped-bend.png" alt="skipped bend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">スキップした曲げ加工</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>パンチ、ダイ、順序、または位置ストップの設定を変更すると、ベンドナビゲーターはすぐに新しいステータスに更新されます。この即時フィードバックのおかげで、さまざまな設定を簡単に試すことができます
+<strong>毎回再計算</strong> コマンドの必要がありません。</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. これらのドットは、パーツに複数のステーションがある場合にのみ表示され、各ボックスの。
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_シミュレーション_コントローラー">シミュレーション コントローラー</a>
+  </li>
+  <li level="2">
+   <a href="#_ベンドナビゲーター拡張ビュー">ベンドナビゲーター：拡張ビュー</a>
+  </li>
+  <li level="1">
+   <a href="#_ナビゲーターの行">ナビゲーターの行</a>
+  </li>
+  <li level="2">
+   <a href="#_パンチ行">パンチ行</a>
+  </li>
+  <li level="2">
+   <a href="#_ダイ行">ダイ行</a>
+  </li>
+  <li level="2">
+   <a href="#_ゲージ行">ゲージ行</a>
+  </li>
+  <li level="2">
+   <a href="#_マシン行">マシン行</a>
+  </li>
+  <li level="2">
+   <a href="#_acb_行">ACB 行</a>
+  </li>
+  <li level="2">
+   <a href="#_そのパーツ行">そのパーツ行</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="createbenddata.html">曲げデータの作成</a></span>
+ <span class="next"><a href="editing/index.html">曲げデータの編集</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

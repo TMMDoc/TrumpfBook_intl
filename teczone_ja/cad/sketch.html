@@ -1,0 +1,785 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>ジオメトリの修正</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">TecZoneへようこそ</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">本書について</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">ソフトウェアのインストール</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">ユーザーインターフェース</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">パーツ  ワークフロー</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">CAD</a>
+   <ul>
+    <li>
+     <button class="tree closed"></button>
+     <a href="2dimport/index.html">2 Dインポート</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="2dimport/2dcleanup.html">2 Dクリーンアップ</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="3dimport/index.html">3 Dインポート</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="3dimport/prep3dmodel.html">3D モデルのインポート</a></li>
+      <li><button class="tree blank"></button><a href="3dimport/prepassembly.html">コンポーネントのインポート</a></li>
+      <li><button class="tree blank"></button><a href="3dimport/formdetect.html">フォーミング検出</a></li>
+      <li><button class="tree blank"></button><a href="3dimport/componentdetect.html">コンポーネント検出</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a class="active" href="sketch.html">ジオメトリの修正</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">レーザCAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">パーツ  ワークフロー</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">パネルの編集</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">レーザ切断</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">アプローチ</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">戻り</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">ミクロジョイント</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">上級</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">コンター</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">抜きカス切断</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">パーツ</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">コーナ処理</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">クイック ネスティング</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">ジョブワークフロー</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">ジョブパネル</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">材料タブ</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">パーツ タブ</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">レイアウト タブ</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">概要タブ</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">レイアウトの編集</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">ネスティングモード</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">配置パネル</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">順序</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">材料のスライス</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">ベベルカット</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">開いたコンター</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">可変ベベル</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">その他</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">上級</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">仕上げのルール</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">LTTの編集</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">ストラテジー</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">ミクロジョイント</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">その他の設定</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">曲げ加工 CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">曲げデータの作成</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">曲げ加工ナビゲーター</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">曲げデータの編集</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">曲げ加工の編集</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">ツール マウントの編集</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">曲げ加工設定の編集</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">突き当ての編集</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">角度測定の編集</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">曲げ加工スプレッドシート</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">順序の変更</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">セットアップとステーションの追加</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">上級</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">角度測定</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">バッチ加工</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">ソリューションの再計算</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">トン数チェック</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">曲げ加工ナビゲーター</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">パーツピックアップ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">パレットからピックアップ</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">ディスペンサーからのピックアップ</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">ロボット曲げ加工</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">挿入</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">曲げ加工</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">抽出</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">つかみ換え</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">つかみ換えパネル</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">つかみ換えを追加</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">つかみ換えの編集</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">あごでつかみ換え</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">つかみ替えステーションパネル</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">パーツ収納</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">収納パターン</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">繰り返しと順序</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">材料セパレーター</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">上級</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">ウェイポイント</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">セル設定</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">グリッパーデータベース</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">レポート</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">反転 CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">反転データの作成</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">反転ビュー</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">反転データの編集</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">曲げ加工の編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">辺の長さ/セクションの編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">順序の変更</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">プレッサフットの編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">ゲージングの編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">ブレードの編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">ローディングの編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">アンローディングの編集</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">ツール在庫</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">上級</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">カスタムエアギャップテーブル</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">手動曲げ完了</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">必要な辺の長さ</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">設定</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">描画</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">レイヤー</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">寸法</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">ビュー</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">曲げ加工 CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">マシンの初期設定</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">曲げ加工出力</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">曲げ加工 ビュー</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">曲げセル</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">切断 CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">レイアウト</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">ネスティング設定</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">材料</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">材料ハンドリング</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">スケルトンカット</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">ワークサポート</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">レーザCAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">順序</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Cut 出力</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Cut　ビュー</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">パネルベンディング</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">初期設定</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">ZBW キャリア</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">出力</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">レポート</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">初期設定項目</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">インポート/エクスポート</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">周囲</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">データベース</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">素材</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">マシン</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">曲げツール</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">曲げグリッパー</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">フォーミング/コンポーネント</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">レポート</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">レポートデザイナー</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">フィールド、画像およびテーブル</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">バンド（サブレポート）</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">ラベル、ビットマップおよび図形</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">付録</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">対応 Dフォーマット</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">セパレーター 材料DXF</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">曲げツール DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">CAD</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="sketch.html">ジオメトリの修正</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>ジオメトリの修正</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>TecZone Bend では、強力な 2D スケッチエディターを使用して、図形ﾃﾞｰﾀを修正したり、クリーンアップ/付け加えができます。ショートカットキー<kbd>S</kbd>でスケッチモードに切り替えます。エディタは、展開ビューにパーツを表示します。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/unfold2d.png" alt="image" width="528" height="243">
+</div>
+</div>
+<div class="paragraph">
+<p>展開で、<strong>Sketch</strong> アイコンをクリック<span class="image"><img src="img/pencil.png" alt="Sketch" width="16"></span>するか、ショートカットキーを押します <kbd>S</kbd>。</p>
+</div>
+<div class="paragraph">
+<p>メニューが開き、展開の加工ようにさまざまなアイコンが表示されます：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/movepanel.png" alt="movepanel">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_スケッチパネル">スケッチパネル<a id="h000261"></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">アイコン</th>
+<th class="tableblock halign-left valign-top">アイコン</th>
+<th class="tableblock halign-left valign-top">意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/pick.png" alt="pick" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">オブジェクト、線、入力などの選択</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/line.png" alt="line" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Line</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">線のスケッチ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/lines.png" alt="lines" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Connected line</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">任意の数の線をスケッチします</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/parallel.png" alt="parallel" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parallel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">直線に平行な線をスケッチします</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/lineperpendicular.png" alt="lineperpendicular" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Normal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">円弧線の接線をスケッチします</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/bendline.png" alt="bendline" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bendline</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">線の法線をスケッチします</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arc.png" alt="arc" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Center-Point Arc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">曲げ線をスケッチします</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arc2p.png" alt="arc2p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2-Point Arc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">中心点、スタート位置、終点からの円弧をスケッチします</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arc3p.png" alt="arc3p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3-Point Arc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">規定した2つの点（スタート位置と終点）を通る円弧をスケッチします</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arctangent.png" alt="arctangent" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tangent Arc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描画エレメントに接する円弧をスケッチします</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rect.png" alt="rect" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rectangle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">長方形をスケッチします</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rectcenter.png" alt="rectcenter" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Center-Point Rectangle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">中央から長角をスケッチします</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle.png" alt="circle" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Circle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">円をスケッチします 円の中心点を選択し、カーソルをドラッグして、 半径を規定したり、半径の値を入力します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle2p.png" alt="circle2p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2-Point Circle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">円周に応じて円をスケッチします 円周上の１点を選択して、次いで第２および第３の点を選択します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle3p.png" alt="circle3p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3-Point Circle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">円周に応じて円をスケッチします 円周上の１点を選択して、次いで第２および第３の点を選択します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle2t.png" alt="circle2t" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2-Tangent Circle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2つの接線のある円をスケッチします。円の直径を入力し、次に第１の接線、そして第２の接線を選択します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle3t.png" alt="circle3t" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3-Tangent Circle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3つの接線のある円をスケッチします。円の直径を入力し、次に 第１の接線、それから第２、第３の接線を選択します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polygonins.png" alt="polygonins" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inscribed Polygon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3つの接線のある円をスケッチします。円の直径を入力し、次に 第１の接線、それから第２、第３の接線を選択します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polygoncircum.png" alt="polygoncircum" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Circumscribed Polygon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">多角形をスケッチします。辺の数を指定し、中心点と辺の中央を選択します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polygonedge.png" alt="polygonedge" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edge Polygon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">多角形をスケッチします。側面の数を指定し、辺のスタート位置と終点を規定します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/fillet.png" alt="fillet" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fillet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2つの描画エレメントの交点に、指定した半径で角を丸め、接線円弧を作成します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/chamfer.png" alt="chamfer" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Chamfer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2つの描画エレメントの交差コーナーに斜面を作成します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/infillet.png" alt="infillet" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In-Fillet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">入力した半径で、2つの描画エレメント交差コーナーをトリミングします。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/cornerstep.png" alt="cornerstep" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corner Step</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2つの描画エレメントの交差コーナーを長角でトリミングします。この 長角のサイズは事前に入力できます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/edgerecess.png" alt="edgerecess" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edge Recess</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">矩形のフリーカットを作成します。角の間隔、フリーカットの深さを入力してから、  コーナーを選択します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/edgeu.png" alt="edgeu" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edge U-Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">長丸開口部のフリーカットを作成します。角の間隔、フリーカットの幅と深さを入力してから、  コーナーを選択します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/edgev.png" alt="edgev" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edge V-Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">三角形のフリーカットを作成します。角の間隔、フリーカットの幅と深さを入力してから、  コーナーを選択します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/keyslot.png" alt="keyslot" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keyslot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">入力した値で、円に鍵穴を作成します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/fillet3seg.png" alt="fillet3seg" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fillet 3-Seg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3つの接続した描画エレメントを丸めます</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/extend.png" alt="extend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extend</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">延長する描画エレメントを選択します<br>
+<kbd>ctrl</kbd>境界線の選択<br>
+<kbd>Shift</kbd>接続<br>
+<kbd>Alt</kbd> ドラッグ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/trim.png" alt="trim" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trim</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">トリミングする描画エレメントの選択<br>
+<kbd>Ctrl</kbd>境界線の選択<br>
+<kbd>Shift</kbd> エレメントの削除<br>
+<kbd>Alt</kbd>ポリラインの削除<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/join.png" alt="join" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Join</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">複数の個別のポリラインをトリミングして1つに結合するのに使用します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/offset.png" alt="offset" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Offset</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1つ以上の描画エレメント、スケッチしたモデルのエッジ、またはモデルの面を、指定した間隔でオフセットします</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/move.png" alt="move" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描画エレメントを<kbd>ctrl</kbd>で選択し、原点を指定して描画エレメントを移動します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rotate.png" alt="rotate" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rotate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描画エレメントを<kbd>ctrl</kbd>で選択し、回転の中心点、それからスタート位置と終点を選択して、描画エレメントを回転します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/scale.png" alt="scale" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描画エレメントを<kbd>ctrl</kbd>で選択し、原点を指定した後、スタート位置と終原点を選択して、描画エレメントを拡大縮小します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/mirror.png" alt="mirror" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mirror</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描画エレメントを<kbd>ctrl</kbd>で選択し、その後、ミラーラインのスタート位置と終点を選択して、描画エレメントを鏡映（ミラー）します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rectarray.png" alt="rectarray" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rectangle Array</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">リニアパターンを使用して、1つ以上の描画エレメントの参照コピーを複数作成し、それらを1本または2本の直線パスに沿って等間隔に配置します。  リニアパターンをクリックし、希望の値を入力します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polararray.png" alt="polararray" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Polar Array</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">リニアパターンを使用して、1つ以上の描画エレメントの参照コピーを複数作成し、軸の周りに等間隔で配置します。  円パターンをクリックし、希望の値を入力します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/union.png" alt="union" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Union</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2つ以上の閉じた描画エレメントを選択して、互いのサーフェスを結合します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/intersection.png" alt="intersection" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Intersection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2つ以上の閉じた描画エレメントを選択して、選択したエレメントの切断領域を生成します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/subtraction.png" alt="subtraction" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subtraction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2つ以上の閉じた描画エレメントを選択して、サーフェイスをトリミングします</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/copynotch.png" alt="copynotch" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copy Notch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">このツールを使用して、エッジに沿って切り欠き部の複数のコピーを作成できます。まず、 コピー間のスペースを入力し、作成したい切り欠き部のコピー数を入力します。次に、切り欠き部に隣接する2つの線セグメントをクリックして、切り欠き部を選択します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/deletenotch.png" alt="deletenotch" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete Notch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">このツールで、角または線セグメントに沿って切り欠き部を削除します。切り欠き部に隣接する2つの線セグメントをクリックして、切り欠き部を削除します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/mirrornotch.png" alt="mirrornotch" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mirror Notch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">このツールで、角または線セグメントに沿って切り欠き部を鏡映（ミラー）します。切り欠き部に隣接する2つの線セグメントをクリックして、切り欠き部をミラーします</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/spline.png" alt="spline" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spline</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">新規スプラインを開始するには、スタート位置をクリックし、次の点をクリックすると、スプラインを作成できます。スプラインを閉じるには、ALTキーを押して、 次にクリックします</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/profile.png" alt="profile" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ベースの長さ、フランジの高さ、厚さ、フランジの角度、内側半径をタイプして、 Enter キーを押し、プロフィールを作成します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/text.png" alt="text" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">レーザ加工機がパーツにマーキングするテキストの描画にに使用します。このツールボタンをクリックすると、入力バーにテキスト、サイズ、および回転角度の入力ボックスが表示されます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/truetype.png" alt="truetype" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Truetype Text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">任意のTrueTypeフォントの文字の形状からポリラインを作成するために使用されます。その後、レーザツーリングをこれらのポリラインに適用し、切断できます。このボタンをクリックすると、フォント ダイアログが表示され、テキストに使用するフォントを選択出来ます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/commonshape.png" alt="commonshape" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Common Shape</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">いくつかの一般的な形状を作成し、図面に挿入するために使用されます。このボタンをクリックすると、形状作成ダイアログが表示され、リストの一般的な図形のパレットから選択出来ます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dsimple.png" alt="dsimple" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simple Dimension</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">最初の寸法点を選択し、次に2番目の寸法点を選択して、寸法線を配置します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dbaseline.png" alt="dbaseline" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Baseline Dimension</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">最初の寸法点を選択し、次に2番目の寸法点を選択して、寸法線を配置します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dcontinue.png" alt="dcontinue" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Continue Dimension</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">最初の寸法点を選択し、次に2番目の寸法点を選択して、寸法線を配置して、次の寸法点を選択します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dhorzordinate.png" alt="dhorzordinate" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Horizontal Ordinate Dimension</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">座標寸法は、図面の座標ゼロから測定する寸法セットです。原点を選択し、寸法を配置します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dvertordinate.png" alt="dvertordinate" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vertical Ordinate Dimension</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">座標寸法は、図面の座標ゼロから測定する寸法セットです。原点を選択し、寸法を配置します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dangular.png" alt="dangular" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Angular Dimension</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">角度の寸法を作成します。最初の線を選択し、次に角度を寸法付記入したい2本目の線を選択します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dradius.png" alt="dradius" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Radius Dimension</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">半径の寸法を作成します。半径を寸法記入したい円を選択します。 <kbd>ctrl</kbd>で直径の寸法記入します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dradius.png" alt="dradius" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Center Point Radius Dimension</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">半径の連続引出線付き寸法記入を作成します。半径の寸法記入をする円を選択します。 <kbd>ctrl</kbd>で直径の寸法記入します</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dcallout.png" alt="dcallout" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Callout Dimension</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">吹き出し形式で図面に注釈を追加するために使用します。吹き出しを作成するには、 表示するテキストをタイプし、クリックして矢印のポイントを指定します。 もう一度クリックして、テキストを配置する場所を指定します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dsegment.png" alt="dsegment" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Segment Dimension</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">直線と曲線セグメントの寸法記入を追加するために使用します。寸法記入するセグメントをクリックして、 もう一度クリックして寸法を配置します。また<kbd></kbd>を長押し、セグメントをクリックして、寸法を自動的に配置します。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_スケッチパネル">スケッチパネル</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="3dimport/componentdetect.html">コンポーネント検出</a></span>
+ <span class="next"><a href="../cut/index.html">レーザCAM</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

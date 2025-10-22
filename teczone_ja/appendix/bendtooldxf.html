@@ -1,0 +1,1292 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>曲げツール DXF</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">TecZoneへようこそ</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">本書について</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">ソフトウェアのインストール</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">ユーザーインターフェース</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">パーツ  ワークフロー</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">2 Dインポート</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">2 Dクリーンアップ</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">3 Dインポート</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">3D モデルのインポート</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">コンポーネントのインポート</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">フォーミング検出</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">コンポーネント検出</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">ジオメトリの修正</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">レーザCAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">パーツ  ワークフロー</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">パネルの編集</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">レーザ切断</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">アプローチ</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">戻り</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">ミクロジョイント</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">上級</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">コンター</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">抜きカス切断</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">パーツ</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">コーナ処理</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">クイック ネスティング</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">ジョブワークフロー</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">ジョブパネル</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">材料タブ</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">パーツ タブ</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">レイアウト タブ</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">概要タブ</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">レイアウトの編集</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">ネスティングモード</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">配置パネル</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">順序</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">材料のスライス</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">ベベルカット</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">開いたコンター</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">可変ベベル</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">その他</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">上級</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">仕上げのルール</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">LTTの編集</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">ストラテジー</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">ミクロジョイント</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">その他の設定</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">曲げ加工 CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">曲げデータの作成</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">曲げ加工ナビゲーター</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">曲げデータの編集</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">曲げ加工の編集</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">ツール マウントの編集</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">曲げ加工設定の編集</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">突き当ての編集</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">角度測定の編集</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">曲げ加工スプレッドシート</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">順序の変更</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">セットアップとステーションの追加</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">上級</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">角度測定</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">バッチ加工</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">ソリューションの再計算</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">トン数チェック</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">曲げ加工ナビゲーター</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">パーツピックアップ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">パレットからピックアップ</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">ディスペンサーからのピックアップ</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">ロボット曲げ加工</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">挿入</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">曲げ加工</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">抽出</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">つかみ換え</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">つかみ換えパネル</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">つかみ換えを追加</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">つかみ換えの編集</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">あごでつかみ換え</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">つかみ替えステーションパネル</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">パーツ収納</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">収納パターン</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">繰り返しと順序</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">材料セパレーター</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">上級</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">ウェイポイント</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">セル設定</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">グリッパーデータベース</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">レポート</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">反転 CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">反転データの作成</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">反転ビュー</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">反転データの編集</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">曲げ加工の編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">辺の長さ/セクションの編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">順序の変更</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">プレッサフットの編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">ゲージングの編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">ブレードの編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">ローディングの編集</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">アンローディングの編集</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">ツール在庫</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">上級</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">カスタムエアギャップテーブル</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">手動曲げ完了</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">必要な辺の長さ</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">設定</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">描画</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">レイヤー</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">寸法</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">ビュー</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">曲げ加工 CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">マシンの初期設定</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">曲げ加工出力</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">曲げ加工 ビュー</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">曲げセル</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">切断 CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">レイアウト</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">ネスティング設定</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">材料</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">材料ハンドリング</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">スケルトンカット</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">ワークサポート</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">レーザCAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">順序</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Cut 出力</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Cut　ビュー</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">パネルベンディング</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">初期設定</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">ZBW キャリア</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">出力</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">レポート</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">初期設定項目</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">インポート/エクスポート</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">周囲</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">データベース</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">素材</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">マシン</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">曲げツール</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">曲げグリッパー</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">フォーミング/コンポーネント</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">レポート</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">レポートデザイナー</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">フィールド、画像およびテーブル</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">バンド（サブレポート）</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">ラベル、ビットマップおよび図形</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">付録</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="3dformats.html">対応 Dフォーマット</a></li>
+    <li><button class="tree blank"></button><a href="bseparatordxf.html">セパレーター 材料DXF</a></li>
+    <li><button class="tree blank"></button><a class="active" href="bendtooldxf.html">曲げツール DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">付録</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="bendtooldxf.html">曲げツール DXF</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>曲げツール DXF</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Flux には、さまざまな曲げツール カタログ (Trumpf、Wila、Wilson、Rolleri、Amada など) が付属しています。Flux の約 40 種類のツール カタログのいずれかのツールを使用している場合は、カタログをインストールするだけでツールを使用開始できます。時には、カスタムツールや、フラックス にないカタログのツールをモデリングする必要があります。 <strong>Tool DXFフォーマット</strong> は、これを行うための規格のメカニズムです。フラックスは曲げツールをDXFフォーマットにエクスポートしたり、DXFフォーマットから曲げツールをインポートできます。曲げツールを表現するために使用される DXF ファイルは、フラックス が必要なすべての情報を取得できるように、特定のルールに従う必要があります。多くの場合、曲げツールを素早く作成するため、Export to DXF機能を使って既存のツールからDXFファイルを作成します。次に、DXFを（ フラックス、または他の2 D CADシステムのいずれかで）編集します。最後に、「DXF からインポート」機能を使用して 、修正された DXF をフラックスに戻します。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dxf例">DXF例<a id="h000015"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>これは、「DXFにエクスポート」コマンドで作成した曲げツールのDXFの例です：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name2013.png" alt="Name2013" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>ツールDXFには以下が必要です：</p>
+</div>
+<div id="h000016" class="ulist">
+<ul>
+<li>
+<p>ツールの_サイドプロファイル_を規定する1つの閉じた形状（線、円弧、ポリラインからなる）。このプロファイルプラインは、図面で最も左端にある閉じたポリラインでなければなりません  （上の図を参照）。</p>
+</li>
+<li>
+<p>ツール原点をマーキングする点エンティティ。この点エンティティは  閉じたプロファイルポリライン内でなくてはならず、ツールの高さを測定する点です (上の図を参照)。</p>
+</li>
+<li>
+<p>正面図が単純な長角ではないツールピースには、_正面図の描画_が必要です。これらは通常、左または右イヤーピースですが、_ウィンドウ_ピースなどのカスタム ピースのこともあります。</p>
+</li>
+<li>
+<p>各正面図描画をプロファイル描画の右、そして 水平方向に揃えます。各正面図は、側面プロファイル図と正確に同じ高さでなければなりません；そうでない場合、その正面図は認識されません。上の画像は、左右イヤピースの典型的な例です。</p>
+</li>
+<li>
+<p>ツールに関するその他の情報は、テキスト文字列に表示されます（下の注記を参照）。</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_テキストエンティティのメタデータ">テキストエンティティのメタデータ<a id="h000021"></a></h3>
+<div class="paragraph">
+<p>フォーマット KEY = value のテキスト文字列は、ツールエクスポーターで読み取られ、解析されてツールに関する追加情報が得られます。これらは、現在対応できるキーです：</p>
+</div>
+<div id="h000022" class="ulist">
+<ul>
+<li>
+<p><strong>名称= OW 200/K R3.2/86 CUSTOM - A</strong><br>
+はツール名称を特定します。これは必須です。</p>
+</li>
+</ul>
+</div>
+<div id="h000023" class="ulist">
+<ul>
+<li>
+<p><strong>トン数= 800</strong><br>
+ツールの最大ローディングをkN/mで指定します。不必要なツールオーバーロードエラーを表示したくない場合、これが必須です。</p>
+</li>
+</ul>
+</div>
+<div id="h000024" class="ulist">
+<ul>
+<li>
+<p><strong>UPPER= PTrumpf</strong><br>
+これはパンチングに必要で、コネクタ-タイプ（このツールのプレスビームへの取り付けタイプ）を指定します。対応するコネクタータイプは以下です：</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">名称</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">意味</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PTrumpf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trumpf パンチ（ Modufix コネクタ-）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PAmada</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada パンチ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PWila</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wila  クラシック パンチ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PWilaNS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wila New ー 規格パンチ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PAmerican</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">American（ USタイプ）パンチ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PEHT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EHTパンチ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LVD サイズ A パンチ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LVD サイズB パンチ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LVD サイズC パンチ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LVD サイズD パンチ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PGasparini</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gasparini パンチ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PBayelerR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bayeler R-タイプパンチ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PBayelerS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bayeler S-タイプパンチ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUrsviken</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ursviken OEMパンチ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PBayelerEuro</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bayeler Euroパンチ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PColgar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Colgar パンチ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PKomatsu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Komatsu パンチ</p></td>
+</tr>
+</tbody>
+</table>
+<div id="h000025" class="ulist">
+<ul>
+<li>
+<p><strong>LOWER = DTrumpf</strong><br>
+これはダイに必要で、コネクタ-タイプ（このツールのダイベッドへの取り付けタイプ）を指定します。対応するコネクタータイプは以下です：</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DTrumpf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trumpf Die</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada 30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada ダイ、幅30 mm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada 60</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada ダイ、幅60 mm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmadaF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada ダイ、フラット</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada 2 V</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada 2 - Vダイ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmadaQuick</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada クイックチェンジダイ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada 90</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada ダイ、幅90 mm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DEHT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EHTダイ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada 120</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada ダイ、幅120 mm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DWeinbrenner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Weinbrenner ダイ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DWila</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wila ダイ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DKomatsu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Komatsu ダイ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DBeyeler 110</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beyeler 110 mmダイ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DLVD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LVDダイ</p></td>
+</tr>
+</tbody>
+</table>
+<div id="h000026" class="ulist">
+<ul>
+<li>
+<p><strong>ピース= 2 x 25,30,45,50,2 x 100,200,4 x 500</strong><br>
+これで、このツールの規格ピース（左右イアピースは、プロファイル描画で既に指定されています）を指定します。リストはコンマで区切られたピースの長さのセットで、オプションでそれぞれの長さの前に_数量乗数_があることがあります。したがって、上記のリストは、25 mmのピース2個、30 mmのピース1個、そして500 mmのピース4個を規定します。</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+特殊形状のピース（イヤーピースのような）用に数量乗数が必要な場合は、そのピースのアウトライン内に 2 x という形式のテキストエンティティを追加して下さい：
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name20132.png" alt="Name20132" width="400">
+</div>
+</div>
+<div id="h000027" class="ulist">
+<ul>
+<li>
+<p><strong>VWIDTHTYPE =鋭利</strong><br>
+これは、V幅の規定がトルンプ（社）と一致しないダイに必要です（下の画像）：</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名称</th>
+<th class="tableblock halign-left valign-top">意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">シャープエッジ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ダイの理論上の鋭利さシャープエッジ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">接線</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">上端接点</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="img/vwidthtype.png" alt="vwidthtype" width="400">
+</div>
+</div>
+<div id="h000028" class="ulist">
+<ul>
+<li>
+<p><strong>ISUPPERTOOL = 0</strong><br>
+ツールが上部ツールか下ツールかを指定します。上部ツール用の値は1、下ツール用の値はゼロです。これは、高さゼロでインポートする必要があるツールに必要です (下の画像を参照)：</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/isuppertool.png" alt="isuppertool" width="250">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_形状認識">形状認識<a id="h000029"></a></h3>
+<div class="paragraph">
+<p>曲げツールツールDXFフォーマットでは、高さ、半径、角度、またはV幅などのパンチ/ダイのいくつかの重要なパラメーターを特定する必要がありません。フラックスはツール描画を分析し、これらのパラメータを自動的に抽出します。パンチの場合、フラックス は、直線 (ab と cd) に囲まれた下部の曲線セグメント (bc) を想定します。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name20133.png" alt="Name20133" width="350">
+</div>
+</div>
+<div class="paragraph">
+<p>これらの3つのセグメントから、パンチの角度と半径を自動的に認識します。ダイの場合、フラックスは左肩を調べてパラメータを抽出します。水平な上面 (ab) と傾斜した角度のセグメント (cd) に挟まれた湾曲した肩のセグメント (bc) を想定します。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name20134.png" alt="Name20134" width="350">
+</div>
+</div>
+<div class="paragraph">
+<p>パンチやダイがこれら形状認識要件を満たさない場合、フラックスは形状をパンチやダイとして認識できません。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_追加情報">追加情報：<a id="h000030"></a></h3>
+<div id="h000031" class="ulist">
+<ul>
+<li>
+<p>ツール プロファイルは描画のどこかに表示されます　- 正確な場所は重要ではありません。ポイント マーカー エンティティでツールの原点がわかるからです。</p>
+</li>
+<li>
+<p>上記のエンティティ以外には、描画には他のエンティティがあってはなりません。特に、描画にはタイトル ブロックや閉じたポリラインがあってはなりません。</p>
+</li>
+<li>
+<p>描画は常にメートル単位にして下さい（フラックスの現在のオペレートユニットに関わらず）。</p>
+</li>
+<li>
+<p>コマンドは DXF からインポートするようになっていますが、フラックスは、上記の規定に従っている限り、GEO ファイルも受け入れます。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_特殊ツール">特殊ツール<a id="h000035"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ツールインポーターは、あるタイプの_特殊ツール_は認識できます。これらは、DXF ファイルの <strong>FLAVOR=XYX</strong> 形式のテキストを使用して識別されます。</p>
+</div>
+<div class="sect2">
+<h3 id="_完全折り畳み用パンチ">完全折り畳み用パンチ<a id="h000036"></a></h3>
+<div class="paragraph">
+<p>完全折り畳み用パンチには、以下も入力して下さい：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>テキスト <strong>FLAVOR = HemPunch</strong> はこれが完全折り畳みツールであることを示します。</p>
+</li>
+<li>
+<p>テキスト <strong>PARAMS =-1,12.15,70</strong> は、正しいシミュレーションに必要ないくつかの指標を提供します。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hempunch.png" alt="HemPunch" width="300">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hempunch2.png" alt="HemPunch2" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>完全折り畳み加工プロセスを規定するには、3つのパラメーターが必要です。つまり、上の画像のA、B、Cの値です。最初の値 (この例では -1mm) は、パンチの平らな垂直面が曲げ線からどれだけ後ろにあるかを規定します。この場合、垂直な平面は曲げ線の前なので、値は-1です。2番目のパラメーター（ここでは12.15 mm ）は、完全折り畳みの先端が曲げ線のどれだけ前方になるかを規定します。最後のパラメーター（ここでは70 mm ）は、パンチの先端から完全折り畳みの先端までの垂直距離です。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_完全折り畳みブロックダイ">完全折り畳みブロックダイ<a id="h000037"></a></h3>
+<div class="paragraph">
+<p>完全折り畳みブロックは、完全折り畳みのために、ダイの前、または後ろ用の取付けパーツです。これは平らな面で、完全折り畳みのきれいな折り返しのために使います。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hemblock.png" alt="HemBlock" width="270">
+</div>
+</div>
+<div class="paragraph">
+<p>完全折り畳みブロックには、さらに以下の入力が必要です：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>テキスト <strong>FLAVOR = HemBlock</strong> はこれが完全折り畳みブロックなことを示します。</p>
+</li>
+<li>
+<p>テキスト <strong>PARAMS = 0,13.9</strong> は、正しいシミュレーションに必要ないくつかの指標を提供します。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hemblock2.png" alt="Hemblock2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>完全折り畳みブロックの規定には、2つのパラメーターが必要です。最初のパラメーターは、このブロックをダイの前または後ろで使用するかという完全折り畳み位置を規定します。0 =前面、1 =背面。上の例は、ブロックをダイの前で使用できることを示します。もう1つのパラメータは、I軸の動きでヘミング偏向です。これは上の画像の B です。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_z曲げ加工ダイ">Z曲げ加工ダイ<a id="h000038"></a></h3>
+<div class="paragraph">
+<p>Z曲げ加工の場合、DXFファイルに以下のテキスト入力があるはずです： <strong>FLAVOR = ZBendDie</strong></p>
+</div>
+<div class="paragraph">
+<p>さらに、ツールは中央の平坦な部分が左下端から右上端に向かって描かれるように作図して下さい。言い換えれば、ツールの向きは下の画像のようにする必要があり、これを_反転させた_向きにはしないでください。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_z曲げ加工パンチ">Z曲げ加工パンチ<a id="h000039"></a></h3>
+<div class="paragraph">
+<p>Z曲げ加工パンチには、DXFファイルに次のようなテキスト入力が必要です： <strong>FLAVOR = ZBendPunch</strong></p>
+</div>
+<div class="paragraph">
+<p>さらに、ツールは中央の平坦な部分が左下端から右上端に向かって描かれるように作図して下さい。言い換えれば、ツールの向きは下の画像のようにする必要があり、これを_反転させた_向きにはしないでください。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/zpunch.png" alt="ZPunch" width="350">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_半径パンチ">半径パンチ<a id="h000040"></a></h3>
+<div class="paragraph">
+<p>これは半径ベースサポートが要る半径シャフトです。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/radiuspunch.png" alt="RadiusPunch" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>このようなパンチには、さらに以下の入力が必要です。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>テキスト <strong>FLAVOR = RShaft</strong> はこれが半径シャフトなことを示します。</p>
+</li>
+<li>
+<p>テキスト <strong>PARAMS = 80</strong> は、NCプログラムが出力するツールの高さです。</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+ポイントエンティティは、ツール原点です。ツールは、ホルダーの逆 V の先端が原点になるように描画して下さい。
+</td>
+</tr>
+</table>
+</div>
+<div id="h000041" class="ulist">
+<ul>
+<li>
+<p>下図のように、マシンに装備された状態の半径アライメントを該当するホルダーとともに描画して下さい。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/radiuspunch3.png" alt="RadiusPunch3" width="250">
+</div>
+</div>
+<div id="h000042" class="ulist">
+<ul>
+<li>
+<p>ホルダープラインを取り外し、半径アライメントdxfを保存します。ホルダーのインバート V先端のPOINT エンティティと、POINT から少し下にあるアライメントインサートプラインのみが、このアライメントのプロファイル DXF になります。</p>
+</li>
+<li>
+<p>このツールの高さは、POINTエンティティから測定されます。これは以下の画像で A として示されています。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/radiuspunch2.png" alt="RadiusPunch2" width="250">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ev_f完全折り畳みダイ">EV - F　完全折り畳みダイ<a id="h000044"></a></h3>
+<div class="paragraph">
+<p>これらは、偏向なしの完全折り畳みに使用されるEV - Fツールです。そのようなダイは、I0HemDie と呼ばれます。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hemdie.png" alt="I0HemDie" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>このようなダイには、次の入力が必要です。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>テキスト <strong>FLAVOR = I 0 HemDie</strong> はこれがI 0 HemDieなことを示します。</p>
+</li>
+<li>
+<p>テキスト <strong>PARAMS = 8.5,95.5</strong> は、正しいシミュレーションに必要ないくつかの指標を提供します。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hemdie2.png" alt="I0HemDie2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>2つのパラメーターで完全折り畳みダイを規定します。つまり、上の画像のAおよびBの値です。最初のパラメーター（この例では8.5mm ）は、完全折り畳みの際の、パーツの中央線からの距離を規定します。2番目のパラメーター（ここでは95.5mm ）は完全折り畳みの際のパーツとダイ底部までの垂直距離を規定します。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ev_完全折り畳みパンチ">EV - 完全折り畳みパンチ<a id="h000045"></a></h3>
+<div class="paragraph">
+<p>これらは偏向なしの完全折り畳みに使うEV - Fパンチです。このようになパンチは　I0 HemPunchと呼ばれます。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hempunch.png" alt="I0HemPunch" width="450">
+</div>
+</div>
+<div class="paragraph">
+<p>このようなパンチには、さらに以下の入力が必要です。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>テキスト <strong>FLAVOR = I 0 HemPunch</strong> は、これがI 0 HemPunchなことを示します。</p>
+</li>
+<li>
+<p>テキスト <strong>PARAMS =-8,16,57.5</strong> は、正しいシミュレーションに必要ないくつかの指標を提供します。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hempunch2.png" alt="I0HemPunch2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>完全折り畳みプロセスを規定する3つのパラメーターがあります。つまり、上の画像のA、B、Cの値です。これらのパラメーターは、HemPunchで規定されているものと同じです。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ロールベンドダイ">ロールベンドダイ<a id="h000046"></a></h3>
+<div class="paragraph">
+<p>ロールベンドダイはウィングダイと呼ばれます。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rollbenddie.png" alt="RollbendDie" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>このツールには、さらに以下の入力が必要です。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>テキスト <strong>FLAVOR = WingDie</strong> は、これがウィングツールなことを示します。</p>
+</li>
+<li>
+<p>テキスト <strong>PARAMS = 10.49,100</strong> はウィングの正しいシミュレーションに必要な指標を示します。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rollbenddie2.png" alt="RollbendDie2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>２つのパラメーターでウイングベンドピースの動きを規定します。最初のパラメーターは、ダイ中央線からウィング一つの回転の心合わせ点までの水平距離です。これは上の画像のAです。2番目のパラメーターは、ダイ底部かウィング回転の心合わせ点までの垂直距離です。これは上の画像のBです。通常、Bと全高は同じです。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_セルフヘムダイ">セルフヘムダイ<a id="h000047"></a></h3>
+<div class="paragraph">
+<p>これらは、下の画像のように、別にヘミングテーブルも備えた V ダイです。
+このダイには、DXFファイルに以下のテキストエントリがあります： <strong>FLAVOR = SelfHemDie</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/selfhemdie.png" alt="SelfHemDie" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p>さらに、2つの値のある <strong>PARAMS</strong> 入力が必要です。これら2つのパラメーターは、I 0 HemDieのパラメーターと同じです。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/selfhemdie2.png" alt="SelfHemDie2" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p>これらは、上の画像のAとB値です。最初のパラメーターは、完全折り畳み中のパーツの中央線からの距離を規定します。2番目のパラメーターは、完全折り畳み中のパーツとダイ底部の垂直距離を規定します。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ダブルvダイ">ダブルVダイ<a id="h000048"></a></h3>
+<div class="paragraph">
+<p>複数の V 幅があり、他の V を使用するために IAxis が必要なダイは、ダブル V ダイと呼ばれます。いくつかのルールに従って下さい：</p>
+</div>
+<div id="h000049" class="ulist">
+<ul>
+<li>
+<p><strong>FLAVOR=DoubleV</strong> 設定でダイの dxfs を各 V 幅ごとに 1 つ作成します。</p>
+</li>
+<li>
+<p>両方のダイに同じ <strong>ORDERNO</strong> を設定します（空でなければ任意の文字列にできます）</p>
+</li>
+<li>
+<p><strong>YSHIFT</strong> 値を正しいIAxis値に設定して使用します</p>
+</li>
+<li>
+<p>ダイの底で、Vの下の中央にポイントマーカーを引っ張り、成形ジオメトリーがどこにあるかを示します</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>例えば、Ｖ幅12及び６のダイは、以下の画像のように、２つのdfxとして作成して下さい：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/doublevdie.png" alt="DoubleVdie" width="300">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ばね式のダイフェザーヘミングダイス">ばね式のダイ（フェザーヘミングダイス）<a id="h000053"></a></h3>
+<div class="paragraph">
+<p>ばね式のダイには、DXFにこのようなテキス入力をして下さい： <strong>FLAVOR = SpringHem</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/springhemdie.png" alt="SpringHemDie" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>さらに、次の追加入力が必要です：</p>
+</div>
+<div id="h000054" class="ulist">
+<ul>
+<li>
+<p>テキスト <strong>PARAMS =-2,30,10</strong> は、正しいシミュレーションに必要な指標を提供します。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/springhemdie2.png" alt="SpringHemDie2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>このダイはツーピースダイで、上部が下に動き裾を平らにします。完全折り畳み切り欠き部を規定する3つのパラメーターがあります。最初のパラメーターは、完全折り畳み中のパーツ用ダイ中央線からの距離です。正の値（+）は中央線の前方を意味し、負の値（−）は中央線の後方を意味します。これは上の画像のAです。2番目のパラメーターは、完全折り畳み中のパーツ用の完全折り畳み切り欠き部のダイの底からの位置です。これは上の画像のBです。3番目のパラメータはばねの隙間で、切り欠き部の高さです。これは、上の図のCです。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_パンチアダプタ">パンチアダプタ<a id="h000055"></a></h3>
+<div class="paragraph">
+<p>ツールインポーターは、_パンチアダプタ_をインポートできます。フラックスが描画を正しくパンチアダプタと認識できるように、ファイルには以下のテキスト入力が必要です。</p>
+</div>
+<div id="h000056" class="ulist">
+<ul>
+<li>
+<p><strong>UPPER=PTrumpf</strong> のようなテキストは上部の取り付けタイプを示します (通常、アダプタをトルンプ（社） マシンに取り付ける場合は PTrumpf になります)。</p>
+</li>
+<li>
+<p><strong>LOWER = PEHT</strong> のようなテキストは、下部取り付けタイプを示します（これは アダプタに取り付けられるパンチのタイプです）。</p>
+</li>
+<li>
+<p><strong>HEIGHT=64</strong> のようなテキスト。フラックス はアダプタの高さを自動的に推測できないため、これが必要です。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>以下は、DXFからインポートできるパンチアダプタの画像です:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/padapter.png" alt="PAdapter" width="300">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ブレードベースサポート">ブレードベースサポート<a id="h000059"></a></h3>
+<div class="paragraph">
+<p>ツールインポーターは、_ブレードベースサポート_をインポート出来ます。一部のブレードベースサポート (OW209/S に類似したものなど) は、裾を平らにするために使用する完全折り畳みパンチでもあります。このようなブレードベースサポートには、いくつかの追加データが必要です</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bholder1.png" alt="BHolder1" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>必須パラメーター UPPER、LOWER、HEIGHT については、上記の「パンチアダプター」に関するセクションで説明されており、そこでの意味と同じです。さらに、フラックスがベースサポートを完全折り畳みツールとして使用するには、次の追加入力が必要です：</p>
+</div>
+<div id="h000060" class="ulist">
+<ul>
+<li>
+<p>テキスト <strong>SPLFLAVOR= HemPunch</strong> は、アダプターが完全折り畳みツールなことを示します。</p>
+</li>
+<li>
+<p>テキスト <strong>PARAMS=-6,18,60</strong> は、完全折り畳みプロセスの正しいシミュレーションに必要な特定の指標を提供します。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bholder2.png" alt="BHolder2" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>完全折り畳みプロセスを規定する3つのパラメーターがあります。上の画像のA、B、Cの値です。最初のもの（この例では-6 mm ）は、パンチの平らな垂直面が曲げ線からどのくらい後ろにあるかを規定します。この場合、平らな垂直面は曲げ線の前にあるため、値は-6です。2番目のパラメーター（ここでは18 mm ）は、完全折り畳みの端が曲げ線のどのくらい前になるかを規定します。最後のパラメーター（ここでは60 mm ）は、パンチ端から完全折り畳みの端までの垂直距離です。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_半径ベースサポート">半径ベースサポート<a id="h000062"></a></h3>
+<div class="paragraph">
+<p>これは、半径シャフトツール用ベースサポートです。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rholder.png" alt="Rholder" width="220">
+</div>
+</div>
+<div class="paragraph">
+<p>次の追加入力が必要です：</p>
+</div>
+<div id="h000063" class="ulist">
+<ul>
+<li>
+<p>テキスト <strong>FLAVOR = RHolder</strong> は、アダプタが半径シャフトベースホルダーなことを示します。</p>
+</li>
+<li>
+<p>テキスト <strong>PARAMS = 100</strong> は、NCプログラムが出力するツールの高さです。</p>
+</li>
+<li>
+<p>このツールの高さは、原点からベースサポートの逆Vまでの距離です。これは下の画像のAです。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rholder2.png" alt="RHolder2" width="220">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ダブルvベースサポート">ダブルVベースサポート<a id="h000066"></a></h3>
+<div class="paragraph">
+<p>ダイを2個保持できるダイベースサポートです。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/dvholder.png" alt="DVHolder" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>次の追加入力が必要です：</p>
+</div>
+<div id="h000067" class="ulist">
+<ul>
+<li>
+<p>テキスト <strong>FLAVOR = DVHolder</strong> は、アダプタがDVHolderなことを示します。</p>
+</li>
+<li>
+<p>テキスト <strong>PARAMS=0,36.2</strong> は、ダイをベースサポートの別のスロットへ移動する数値を示します。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/dvholder2.png" alt="DVHolder2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>このツールを規定するには、2つのパラメーターが必要です。最初の値（この例では0mm）は、ベースサポートの原点から最初のスロットがどれだけ離れているかを示します。この場合、最初のスロットが原点に一致しているため、値は0です。 2番目のパラメーター（ここでは36.2mm ）は上の画像ではAで、ベースサポートの原点から2番目のスロットまでの距離を示します。</p>
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_dxf例">DXF例</a>
+  </li>
+  <li level="2">
+   <a href="#_テキストエンティティのメタデータ">テキストエンティティのメタデータ</a>
+  </li>
+  <li level="2">
+   <a href="#_形状認識">形状認識</a>
+  </li>
+  <li level="2">
+   <a href="#_追加情報">追加情報：</a>
+  </li>
+  <li level="1">
+   <a href="#_特殊ツール">特殊ツール</a>
+  </li>
+  <li level="2">
+   <a href="#_完全折り畳み用パンチ">完全折り畳み用パンチ</a>
+  </li>
+  <li level="2">
+   <a href="#_完全折り畳みブロックダイ">完全折り畳みブロックダイ</a>
+  </li>
+  <li level="2">
+   <a href="#_z曲げ加工ダイ">Z曲げ加工ダイ</a>
+  </li>
+  <li level="2">
+   <a href="#_z曲げ加工パンチ">Z曲げ加工パンチ</a>
+  </li>
+  <li level="2">
+   <a href="#_半径パンチ">半径パンチ</a>
+  </li>
+  <li level="2">
+   <a href="#_ev_f完全折り畳みダイ">EV - F　完全折り畳みダイ</a>
+  </li>
+  <li level="2">
+   <a href="#_ev_完全折り畳みパンチ">EV - 完全折り畳みパンチ</a>
+  </li>
+  <li level="2">
+   <a href="#_ロールベンドダイ">ロールベンドダイ</a>
+  </li>
+  <li level="2">
+   <a href="#_セルフヘムダイ">セルフヘムダイ</a>
+  </li>
+  <li level="2">
+   <a href="#_ダブルvダイ">ダブルVダイ</a>
+  </li>
+  <li level="2">
+   <a href="#_ばね式のダイフェザーヘミングダイス">ばね式のダイ（フェザーヘミングダイス）</a>
+  </li>
+  <li level="2">
+   <a href="#_パンチアダプタ">パンチアダプタ</a>
+  </li>
+  <li level="2">
+   <a href="#_ブレードベースサポート">ブレードベースサポート</a>
+  </li>
+  <li level="2">
+   <a href="#_半径ベースサポート">半径ベースサポート</a>
+  </li>
+  <li level="2">
+   <a href="#_ダブルvベースサポート">ダブルVベースサポート</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="bseparatordxf.html">セパレーター 材料DXF</a></span>
+ <span class="next"><a href="../impressum.html">Impressum</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

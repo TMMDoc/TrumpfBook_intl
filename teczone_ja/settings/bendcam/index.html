@@ -1,0 +1,624 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>曲げ加工 CAM</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">TecZoneへようこそ</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">本書について</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">ソフトウェアのインストール</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">ユーザーインターフェース</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">パーツ  ワークフロー</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">2 Dインポート</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">2 Dクリーンアップ</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">3 Dインポート</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">3D モデルのインポート</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">コンポーネントのインポート</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">フォーミング検出</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">コンポーネント検出</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">ジオメトリの修正</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">レーザCAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">パーツ  ワークフロー</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">パネルの編集</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">レーザ切断</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">アプローチ</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">戻り</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">ミクロジョイント</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">上級</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">コンター</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">抜きカス切断</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">パーツ</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">コーナ処理</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">クイック ネスティング</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">ジョブワークフロー</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">ジョブパネル</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">材料タブ</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">パーツ タブ</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">レイアウト タブ</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">概要タブ</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">レイアウトの編集</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">ネスティングモード</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">配置パネル</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">順序</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">材料のスライス</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">ベベルカット</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">開いたコンター</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">可変ベベル</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">その他</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">上級</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">仕上げのルール</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">LTTの編集</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">ストラテジー</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">ミクロジョイント</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">その他の設定</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bend/index.html">曲げ加工 CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">曲げデータの作成</a></li>
+    <li><button class="tree blank"></button><a href="../../bend/navigator.html">曲げ加工ナビゲーター</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bend/editing/index.html">曲げデータの編集</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bend/editing/editbend.html">曲げ加工の編集</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editmount.html">ツール マウントの編集</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editsetup.html">曲げ加工設定の編集</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editgauge.html">突き当ての編集</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editacb.html">角度測定の編集</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/bendsheet.html">曲げ加工スプレッドシート</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/sequencing.html">順序の変更</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/addsetup.html">セットアップとステーションの追加</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bend/advanced/index.html">上級</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bend/advanced/anglemeasurement.html">角度測定</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/batchprocess.html">バッチ加工</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/recompute.html">ソリューションの再計算</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">トン数チェック</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">曲げ加工ナビゲーター</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">パーツピックアップ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">パレットからピックアップ</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">ディスペンサーからのピックアップ</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">ロボット曲げ加工</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">挿入</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">曲げ加工</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">抽出</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">つかみ換え</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">つかみ換えパネル</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">つかみ換えを追加</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">つかみ換えの編集</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">あごでつかみ換え</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">つかみ替えステーションパネル</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">パーツ収納</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">収納パターン</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">繰り返しと順序</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">材料セパレーター</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">上級</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">ウェイポイント</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">セル設定</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">グリッパーデータベース</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">レポート</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">反転 CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">反転データの作成</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">反転ビュー</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">反転データの編集</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">曲げ加工の編集</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">辺の長さ/セクションの編集</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">順序の変更</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">プレッサフットの編集</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">ゲージングの編集</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">ブレードの編集</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">ローディングの編集</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">アンローディングの編集</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">ツール在庫</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">上級</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">カスタムエアギャップテーブル</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">手動曲げ完了</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">必要な辺の長さ</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">設定</a>
+   <ul>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../drawing/index.html">描画</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../drawing/layers.html">レイヤー</a></li>
+      <li><button class="tree blank"></button><a href="../drawing/dimensions.html">寸法</a></li>
+      <li><button class="tree blank"></button><a href="../drawing/view.html">ビュー</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a class="active" href="index.html">曲げ加工 CAM</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="benddefaults.html">マシンの初期設定</a></li>
+      <li><button class="tree blank"></button><a href="bendoutputs.html">曲げ加工出力</a></li>
+      <li><button class="tree blank"></button><a href="bendview.html">曲げ加工 ビュー</a></li>
+      <li><button class="tree blank"></button><a href="bendcell.html">曲げセル</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cutcam/index.html">切断 CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cutcam/layout/index.html">レイアウト</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cutcam/layout/nesting.html">ネスティング設定</a></li>
+        <li><button class="tree blank"></button><a href="../cutcam/layout/sheet.html">材料</a></li>
+        <li><button class="tree blank"></button><a href="../cutcam/layout/sheethandling.html">材料ハンドリング</a></li>
+        <li><button class="tree blank"></button><a href="../cutcam/layout/skeletoncuts.html">スケルトンカット</a></li>
+        <li><button class="tree blank"></button><a href="../cutcam/layout/worksupport.html">ワークサポート</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cutcam/lasercam/index.html">レーザCAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cutcam/lasercam/sequence.html">順序</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cutcam/cutoutputs.html">Cut 出力</a></li>
+      <li><button class="tree blank"></button><a href="../cutcam/cutview.html">Cut　ビュー</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../foldcam/index.html">パネルベンディング</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../foldcam/defaults.html">初期設定</a></li>
+      <li><button class="tree blank"></button><a href="../foldcam/zbwcarriers.html">ZBW キャリア</a></li>
+      <li><button class="tree blank"></button><a href="../foldcam/foldoutputs.html">出力</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../reports/index.html">レポート</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../reports/itemdefaults.html">初期設定項目</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../importexport.html">インポート/エクスポート</a></li>
+    <li><button class="tree blank"></button><a href="../environment.html">周囲</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">データベース</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">素材</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">マシン</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">曲げツール</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">曲げグリッパー</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">フォーミング/コンポーネント</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">レポート</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">レポートデザイナー</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">フィールド、画像およびテーブル</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">バンド（サブレポート）</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">ラベル、ビットマップおよび図形</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">付録</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">対応 Dフォーマット</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">セパレーター 材料DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">曲げツール DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">設定</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">曲げ加工 CAM</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>曲げ加工 CAM</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/bendcam.png" alt="bendcam">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_back_gauges">Back-gauges</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Min.thickness to always pull-back (mm)</strong> -この設定で、入力した板厚に達した時、バックゲージが自動的に戻る距離をミリメートル単位で入力できます。</p>
+</div>
+<div class="paragraph">
+<p><strong>Clamping strategy</strong> -これで、バックゲージが加工品上でどう停止するかを設定します。次の選択オプションが利用可能です：</p>
+</div>
+<div class="paragraph">
+<p><strong>Default</strong> -バックゲージは、各曲げ加工でソフトウェアが最適と判断する方法で停止します。</p>
+</div>
+<div class="paragraph">
+<p><strong>Stop + Stop</strong> -両方のバックゲージの直線面が加工品に当たって止まります。</p>
+</div>
+<div class="paragraph">
+<p><strong>Clamp + Stop</strong> - 11つのバックゲージが加工品をクランプし、もう 1 つのバックゲージが直線面で加工品を止めます。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_angle_measurement">Angle Measurement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Angle measurement</strong>トルンプ（社） マシン専用です。自動制御曲げシステムの角度測定システムを使用すると、シリーズの最初のパーツも完璧に仕上がります。センサーがスプリングバックとともに実際の角度を検出し、プレスビームを誘導して目的の角度を実現します。このセクションで、マシンのACB設定を入力できます。</p>
+</div>
+<div class="sect2">
+<h3 id="_angle_measurement_systems">Angle Measurement Systems</h3>
+<div class="paragraph">
+<p><strong>Laser</strong> -マシンにACB Laserが搭載されている場合は、このオプションにチェックを入れてください。ACB Laserは、レーザが材料にに線を投影し、カメラが角度を検出するところです。</p>
+</div>
+<div class="paragraph">
+<p><strong>Wireless</strong> -　 -マシンにACB Laserワイヤレスを使用している場合、このオプションにチェックを入れてください。ACBワイヤレスは、上部ツールに統合されたセンサーディスクです。</p>
+</div>
+<div class="paragraph">
+<p><strong>Classic</strong> -マシンがACB Classicを使用している場合は、このオプションをオンにします。</p>
+</div>
+<div class="paragraph">
+<p><strong>Min. bend length to use 2 angle measures</strong> -このオプションは、折り曲げ加工時に正しい角度を確保するために、折り曲げの最小長さを 2 回測定します。50 &gt; 4000 ミリメートルの範囲になります。</p>
+</div>
+<div class="paragraph">
+<p><strong>Min. bend length to use 3 angle measures</strong>  -このオプションは、折り曲げ加工時に正しい角度を確保するために、折り曲げの最小長さを 3回測定します。50 &gt; 4000 ミリメートルの範囲になります。</p>
+</div>
+<div class="paragraph">
+<p><strong>ACB laser sensor park position</strong> -これはレーザ センサーの休止位置です。レーザーセンサーの位置。</p>
+</div>
+<div class="paragraph">
+<p><strong>ACB Quality limit - warning</strong> -これは、パーツの測定時に警告を出す限界値で、ファッジファクターのようなものです。それが指定の範囲にある場合、警告が出ます。</p>
+</div>
+<div class="paragraph">
+<p><strong>ACB Quality limit - error</strong> -  -これは、パーツの測定時にエラーを出す限界値で、ファッジファクターのようなものです。それが指定の範囲にある場合、エラーが出ます。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_geometry_adaptation_strategy">Geometry Adaptation Strategy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ソフトウェアで2Dまたは3Dファイルを編集すると、曲げ半径および縮み量係数がチェックされます。Easy Programmingで加工品調整のために選択したストラテジーに応じて、様々な加工計画が実行されます。決定がインタラクティブに設定されている場合は、Adapt Geometryダイアログが表示されます。</p>
+</div>
+<div class="sect2">
+<h3 id="_when_starting_with_2d_flat">When starting with 2D flat</h3>
+<div class="paragraph">
+<p><strong>Ask each time</strong> - 2Dパーツから曲げ加工に移行する際、この設定を使用するとAdapt Geometryダイアログが自動的に表示されます。ここには、フラット サイズを保持するか、3D ディメンションを保持するか、何も変更しないかのオプションが表示され、これが非常にインタラクティブでユーザー主導の機能なことがわかります。</p>
+</div>
+<div class="paragraph">
+<p><strong>Keep 3D dimensions</strong> -このオプションは展開を変更します。それを手動で保存して下さい。ブランク材がまだ切断されていない場合、このストラテジーを使用します。</p>
+</div>
+<div class="paragraph">
+<p><strong>Keep 2D dimensions</strong> -このオプションでは、曲げ半径と縮み量係数が既存の展開に調整されます；曲げ線は同じ位置に保持されます。これでパーツの辺の長さを変更します。展開は変更されません。このストラテジーは、ブランク材がすでに切断されている場合に使用されます。</p>
+</div>
+<div class="paragraph">
+<p><strong>No adjustments</strong> -このオプションでは、曲げ半径と縮み量係数は変更されません。パーツは正しい寸法で3D表示されますが、表示された曲げ半径は実際の曲げ半径と一致しません。各加工品の曲げ寸法は変えられます。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_when_starting_with_3d_model">When starting with 3D model</h3>
+<div class="paragraph">
+<p><strong>Ask each time</strong> - 3Dパーツから曲げ加工に移行する際、この設定を使用するとAdapt Geometryダイアログが自動的に表示されます。ここには、フラット サイズを保持するか、3D ディメンションを保持するか、何も変更しないかのオプションが表示され、これが非常にインタラクティブでユーザー主導の機能なことがわかります。</p>
+</div>
+<div class="paragraph">
+<p><strong>Keep 3D dimensions</strong> -このオプションは展開を変更します。それを手動で保存して下さい。ブランク材がまだ切断されていない場合、このストラテジーを使用します。</p>
+</div>
+<div class="paragraph">
+<p><strong>Keep 2D dimensions</strong> -このオプションでは、曲げ半径と縮み量係数が既存の展開に調整されます；曲げ線は同じ位置に保持されます。これでパーツの辺の長さを変更します。このストラテジーは、ブランク材がすでに切断されている場合に使用されます。</p>
+</div>
+<div class="paragraph">
+<p><strong>No adjustments</strong> -このオプションでは、曲げ半径と縮み量係数は変更されません。パーツは正しい寸法で3D表示されますが、表示された曲げ半径は実際の曲げ半径と一致しません。各加工品の曲げ寸法は変えられます。</p>
+</div>
+<div class="paragraph">
+<p><strong>Bend deduction calculation</strong> -このオプションを使用すると、補正係数 kの使用が義務になります。この設定では、アプリケーション初期設定にすることも、マシンごとに個別に調整することもできます。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+トルンプ（社）以外のマシンの場合、補正係数 kは常に使用されます；トルンプ（社） 曲げ計算はトルンプ（社）プレスブレーキ専用です。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>BG-Left variant</strong> -使用するBGの種類に応じて、NCプログラムがそれに合わせて修正されます。</p>
+</div>
+<div class="paragraph">
+<p><strong>BG-Right variant</strong> -使用するBGの種類に応じて、NCプログラムがそれに合わせて修正されます。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_settings">Other Settings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Hemming pre-bend angle</strong> -このオプションでは、折り曲げ加工予備曲げ角度を10度から60度の間で編集できます。初期設定は40度です。これは、ほとんどのメーカーが推奨する折り曲げ加工予備曲げ角度です。トルンプ（社）のマシンのすべてのエディションでは、これが30度に設定されています。</p>
+</div>
+<div class="paragraph">
+<p><strong>Bend-guard mode override</strong> -これを自動計算（初期設定）に設定すると、Bendは各曲げ加工の曲げ加工安全装置モードを計算します。ただし、適切かどうかに関係なく、ベンドガードモードを特定のオプションに強制的に設定して、そのモードのみを使用することも可能です。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Application Settingsの代わりに、マシンの初期設定にして、各マシンのこの設定を上書き出来ます。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Machine table position</strong> -この設定では、テーブル位置に関する 3 つのオプションがあります：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>取り出し済み</p>
+</li>
+<li>
+<p>下</p>
+</li>
+<li>
+<p>上</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Tool inventory check</strong> -このオプションが有効だと、加工品を曲げるのに必要なツールセグメントが表示されます。在庫不足マーカーが表示されます。</p>
+</div>
+<div class="paragraph">
+<p><strong>Avoid tool overload if possible</strong> -このオプションをオンにすると、ツールの過負荷を回避できます。優先度の高いツールがパーツに適していても、過負荷を回避するため、代わりに優先度の低いツールが使用されます。</p>
+</div>
+<div class="paragraph">
+<p><strong>Ignore tool hints from GEO/DXF files</strong> -このオプションを有効にすると、DXF/GEOファイルの使用するツーリングに関する情報は無視されます。</p>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_back_gauges">Back-gauges</a>
+  </li>
+  <li level="1">
+   <a href="#_angle_measurement">Angle Measurement</a>
+  </li>
+  <li level="2">
+   <a href="#_angle_measurement_systems">Angle Measurement Systems</a>
+  </li>
+  <li level="1">
+   <a href="#_geometry_adaptation_strategy">Geometry Adaptation Strategy</a>
+  </li>
+  <li level="2">
+   <a href="#_when_starting_with_2d_flat">When starting with 2D flat</a>
+  </li>
+  <li level="2">
+   <a href="#_when_starting_with_3d_model">When starting with 3D model</a>
+  </li>
+  <li level="1">
+   <a href="#_other_settings">Other Settings</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="../drawing/view.html">ビュー</a></span>
+ <span class="next"><a href="benddefaults.html">マシンの初期設定</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

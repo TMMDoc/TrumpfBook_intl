@@ -1,0 +1,645 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>벤딩부 편집</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">TecZone에 오신 것을 환영합니다</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">소개</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">소프트웨어 설치하기</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">사용자 인터페이스</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">파트 워크플로</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">2D 가져오기</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">2D 정리</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">3D 가져오기</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">3D 모델 가져오기</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">조립품 가져오기</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">성형부 인식</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">부품 인식</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">형상 변경하기</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">레이저 CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">파트 워크플로</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">편집 패널</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">레이저 절단</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">접근</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">후진</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">마이크로조인트</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">고급</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">컨투어</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">스크랩 절단</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">파트</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">코너 처리</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">퀵 네스팅</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">통합 작업 워크플로</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">통합 작업 패널</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">시트 탭</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">파트 탭</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">레이아웃 탭</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">요약 탭</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">레이아웃 편집</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">네스팅 모드</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">배치하기 패널</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">시퀀싱</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">슬라이스 시트</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">베벨 절단</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">열린 컨투어</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">가변 베벨</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">기타 내용</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">고급</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">종료 가공 기준</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">LTT 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">전략</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">마이크로조인트</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">추가 설정</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">Bend CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../createbenddata.html">벤딩 파라미터 생성</a></li>
+    <li><button class="tree blank"></button><a href="../navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">벤딩 파라미터 편집</a>
+     <ul>
+      <li><button class="tree blank"></button><a class="active" href="editbend.html">벤딩부 편집</a></li>
+      <li><button class="tree blank"></button><a href="editmount.html">툴 마운트 편집</a></li>
+      <li><button class="tree blank"></button><a href="editsetup.html">벤딩 셋업 편집</a></li>
+      <li><button class="tree blank"></button><a href="editgauge.html">백게이지 편집</a></li>
+      <li><button class="tree blank"></button><a href="editacb.html">각도 측정 편집</a></li>
+      <li><button class="tree blank"></button><a href="bendsheet.html">벤딩부 스프레드시트</a></li>
+      <li><button class="tree blank"></button><a href="sequencing.html">시퀀스 변경하기</a></li>
+      <li><button class="tree blank"></button><a href="addsetup.html">셋업 및 스테이션 추가하기</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../advanced/index.html">고급</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../advanced/anglemeasurement.html">각도 측정</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/batchprocess.html">배치 처리</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/recompute.html">재계산 솔루션</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/tonnage.html">톤수 점검</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">벤딩 네비게이터</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">파트 픽업</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">팔레트에서 픽업</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">디스펜서에서 픽업</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">로봇 벤딩</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">삽입</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">벤딩</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">반출</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">파지 작업</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">파지 패널</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">파지 추가</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">파지 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">조를 사용하여 파지</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">파지 스테이션 패널</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">파트 하적</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">하적 패턴</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">반복 및 시퀀스</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">세퍼레이터 시트</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">고급</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">웨이포인트</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">셀 컨피규레이션</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">그리퍼 데이터베이스</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">보고서</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">폴딩 CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">폴딩 데이터 생성</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">폴딩 보기</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">폴딩 데이터 편집하기</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">벤딩부 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">측면/섹션 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">시퀀스 변경</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">블랭크 홀더 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">게이징 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">블레이드 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">로딩 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">언로딩 편집</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">툴 재고</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">고급</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">사용자 정의 에어갭 테이블</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">수동으로 벤딩 완료</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">필요한 플랜지 길이</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">설정 내용</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">도면</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">레이어</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">치수</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">보기</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">기계 기본값</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">벤딩 출력물</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">벤딩 보기</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">벤딩 셀</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">레이아웃</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">네스팅 설정</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">시트</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">판재 핸들링</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">잔재 그리드 절단부</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">작업 서포트</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">레이저 CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">시퀀스</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">절단 출력물</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Cut 보기</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">스위블 벤딩</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">기본값</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">ZBW 지지부품</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">출력물</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">보고서</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">항목 기본값</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">가져오기/내보내기</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">환경</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">데이터베이스</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">재료</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">기계</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Bend 툴</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Bend 그리퍼</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">성형부/부품</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">보고서</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">보고서 디자이너</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">필드, 사진 및 테이블</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Bands(하위 보고서)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">레이블, 비트맵 및 모양</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">부록</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">지원되는 3D 형식</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">세퍼레이터 시트 DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">벤딩 툴 DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">Bend CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">벤딩 파라미터 편집</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="editbend.html">벤딩부 편집</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>벤딩부 편집</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>벤딩부에 대한 기본 설정은 <strong>Bend</strong> 패널을 사용하여 보기를 보고 편집할 수 있습니다.특정 벤딩부에 대한 벤딩 패널을 불러오려면:</p>
+</div>
+<div id="h000187" class="ulist">
+<ul>
+<li>
+<p>벤딩 네비게이터에서 하나의 벤딩부를 클릭하여 그 벤딩부를 선택합니다.</p>
+</li>
+<li>
+<p>동일한 벤딩부를 <strong>다시</strong> 클릭하여 해당 벤딩부를 편집하기 위해 벤딩 패널을 엽니다.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>대체 방법:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>벤딩 네비게이터에서 <kbd>Ctrl</kbd>+ Click하여 벤딩부를 선택하고 해당 벤딩부에 대한 편집 패널을 엽니다.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bend_패널">Bend 패널<a id="h000189"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/edit-bend.png" alt="Bend Panel" width="136">
+</div>
+</div>
+<div class="paragraph">
+<p>Bend 패널은 옆에 있는 이미지와 같습니다. 여기에는 벤딩부에서 작업하기 위한 몇 가지 설정과 작업이 있습니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>위치</strong> 입력은 기계를 따라 벤딩부를 이동하는 데 사용됩니다.여기에 표시된 값은 기계의 스케일에서 벤딩부의 <em>왼쪽 끝</em> 위치입니다. (해당 벤딩부를 드래그하여 대화식으로 위치를 설정할 수도 있습니다. 아래 섹션 참조).</p>
+</li>
+<li>
+<p><strong>클램핑</strong> 및 <strong>스테이션</strong> 목록은 벤딩 작업을 다른 셋업으로 이동하는 데<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> 또는 다른 station<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>이 셋업 내에서 이동하는 데 사용됩니다. 이러한 선택은 파트에 여러 셋업이 있는 경우 또는 셋업에 각각 여러 개의 스테이션이 있는 경우에만 나타납니다. (공작물을 클릭하고 다른 스테이션에 맞춰서 드래그하여 벤딩부를 다른 스테이션으로 이동시킬 수도 있습니다).</p>
+</li>
+<li>
+<p><strong>벤딩 파트 회전</strong> 버튼은 파트를 <em>뒤집는</em> 데 사용됩니다(반대쪽을 기계에 삽입합니다). 아래 이미지는 이 버튼을 클릭했을 때의 효과를 보여줍니다(이 버튼을 다시 클릭하면 원래 방향이 복원됨):<br>
+<span class="image"><img src="img/flip-part.png" alt="Flip Part" width="561"></span></p>
+</li>
+<li>
+<p>이 <strong>분리</strong> 버튼은 <em>다중 스팬</em> 벤딩부를 편집할 때 나타납니다(두 개 이상의 동일선상의 벤딩 스팬으로 구성된 벤딩부). 그룹화된 벤딩부를 그룹해제하고 별도의 벤딩부로 처리_할 수 있는_ 경우 이 버튼을 사용하여 이 벤딩부 두 개의 별도 작업으로 나눌 수 있습니다. 아래 이미지는 그룹해제 후 벤딩부 1이 (시퀀싱 모드에서는 1a 및 1b로 표시됨) 벤딩부 1과 2로 분리되는 모습을 보여줍니다:<br>
+<span class="image"><img src="img/ungroup.png" alt="Ungroup" width="552"></span></p>
+</li>
+<li>
+<p><strong>각도측정</strong> 링크는 이 벤딩부에 대한 _각도 측정 패널_을 표시하는 데 사용됩니다. 이 버튼은 하나 이상의 각도 측정 방법을 선택한 기계에 사용할 수 있는 경우만 보입니다.</p>
+</li>
+<li>
+<p>이 <strong>벤딩부 건너뛰기</strong> 버튼은 TecZone Bend가 이 특별한 벤딩부를 처리하지 말라고 지시하는 데 사용됩니다. 이는 일부 벤딩부가 프레스 브레이크와 다른 테크놀로지로 처리되었음을 표시하는 데 유용합니다(예: 펀치 프레스 또는 스위블 벤딩 머신).<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup></p>
+</li>
+<li>
+<p><strong>코이닝</strong> 체크박스를 켜면 TecZone Bend에 코이닝 작업을 사용하도록 지시합니다. 이는 코이닝이 가능한 경우에만 활성화됩니다(일반적으로 이는 사용할 수 있는 코이닝 가능한 펀치와 다이가 있음을 의미합니다). 코이닝에는 더 많은 프레스 힘이 필요하지만, 프리벤딩 캔보다 더 단단한 벤딩 반경을 만들어낼 수 있습니다. 코이닝에는 또한 이 벤딩 작업에 필요한 정확한 각도를 가진 펀치와 다이가 필요합니다.</p>
+</li>
+<li>
+<p>이 벤딩부를 일차벤딩과 후벤딩 작업의 두 가지 별도 작업으로 분할하려면, <strong>일차 벤딩부</strong> 옵션을 켭니다. 기본적으로 TecZone Bend는 후벤딩을 시퀀스에서 <em>다음</em> 벤딩부 바로 뒤의 위치로 이동시킵니다.일차벤딩 사용에 대한 자세한 내용은 아래 섹션 참조.<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup></p>
+</li>
+<li>
+<p><strong>뒤로</strong> 및 <strong>계속</strong> 버튼을 사용하면 파트에서 다양한 벤딩부를 차례대로 수행하여 편집합니다.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_고급_작업_과정">고급 작업 과정<a id="h000190"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>벤딩을 이용해 수행할 수 있는 좀 더 고급 작업 과정은 다음과 같습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="_일차_벤딩_사용하기">일차 벤딩 사용하기<a id="h000191"></a></h3>
+<div class="paragraph">
+<p>일부 유형의 충돌은 벤딩 과정을 일차 벤딩과 후 벤딩으로 분할하면 피할 수 있습니다. 다음은 간단한 예입니다:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/pre-bend1.png" alt="Pre-bend Example" width="328">
+</div>
+</div>
+<div class="paragraph">
+<p>위의 파트에는 두 개의 벤딩부가 있고, 두 번째 벤딩부에서 파트는 다이 레일과 충돌합니다. 이 문제는 시퀀스를 변경하여 해결할 수 없습니다. 한 가지 가능한 해결 방법은 벤딩부 1을 선택하고, 일차 벤딩부 체크박스를 활성화하여 벤딩부 1에 일차 벤딩을 도입하는 것입니다.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/pre-bend2.png" alt="Pre-bend Panel" width="367">
+</div>
+</div>
+<div class="paragraph">
+<p>이미지에서 볼 수 있듯이, 벤딩부 1을 일차 벤딩과 후 벤딩으로 나눕니다(이제 벤딩부 3이 됨). 이제 벤딩 네비게이터의 아이콘들이 벤딩부 1은 일차 벤딩이고, 3은 후 벤딩임을 나타냅니다. <strong>일차 벤딩 각도</strong> 입력 상자를 사용하여 일차 벤딩의 각도를 미세 세팅할 수 있습니다. 이 예에서 각도가 120으로 설정되었으므로, 파트가 첫 번째 스테이지에서는 평면 상태(180 내부 각도)에서 120도까지 벤딩되고, 두 번째 스테이지에서는 90도까지 벤딩됩니다. 따라서 벤딩부 2를 가공하는 동안, 첫 번째 플랜지가 완전히 벤딩되지 않으므로 다이 레일과의 충돌을 피할 수 있습니다(아래 이미지는 벤딩부 2 및 3이 가공되는 상황을 보여줍니다):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/pre-bend3.png" alt="Pre-bend Solution" width="280">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_여러_벤딩부_편집하기">여러 벤딩부 편집하기<a id="h000192"></a></h3>
+<div class="paragraph">
+<p>여러 벤딩부를 동시에 편집할 수 있습니다. 이를 수행하려면:</p>
+</div>
+<div id="h000193" class="ulist">
+<ul>
+<li>
+<p>벤딩 네비게이터에서 하나의 벤딩부를 클릭하여 해당 벤딩부를 선택합니다.</p>
+</li>
+<li>
+<p><kbd>Shift</kbd> 누른 상태에서 추가 벤딩부를 선택하여 모두 함께 편집합니다.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/edit-bends.png" alt="Edit Bends" width="106">
+</div>
+</div>
+<div class="paragraph">
+<p>옆에 있는 것과 같은 편집 패널이 표시됩니다. 모든 벤딩부에 대해 동시에 수행할 수 있는 일부 편집 작업이 여기에 표시됩니다. 또한, 이 패널은 몇 가지 추가 버튼을 표시 할 수 있습니다:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>동일선상에 있는 두 개 이상의 벤딩부를 선택하면 <strong>그룹핑</strong> 버튼이 표시되고 이를 단일 다중 벤딩 작업으로 그룹화할 수 있습니다.</p>
+</li>
+<li>
+<p>정확히 두 개의 벤딩부를 선택하면 <strong>벤딩부를 교환합니다.</strong> 버튼이 표시되며, 두 개의 벤딩부를 시퀀스에서 바꿀 수 있게 합니다(두 개의 벤딩부를 시퀀스에서 바꾸기 <em>가능한</em> 경우에만 표시됩니다).</p>
+</li>
+</ul>
+</div>
+<div id="h000194" class="ulist">
+<ul>
+<li>
+<p>두 벤딩부가 서로 반대방향으로 평행하고, 짧은 간격으로 떨어져 있는 경우, 이들을 하나의 _Z 벤딩부_로 결합할 수 있습니다. 이 경우, <strong>Z 벤딩부</strong> 버튼이 표시됩니다.<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_벤딩부_드래그하기">벤딩부 드래그하기<a id="h000195"></a></h3>
+<div class="paragraph">
+<p><strong>위치</strong> 입력 상자를 사용하여 벤딩부를 정확하게 위치시킬 수 있습니다.종종 벤딩부를 필요한 위치로 _드래그_하는 것이 더 쉽습니다. 이를 수행하려면:</p>
+</div>
+<div id="h000196" class="ulist">
+<ul>
+<li>
+<p>벤딩부 편집 패널이 열려있는지 확인합니다(벤딩부 번호를 두 번 클릭하여).</p>
+</li>
+<li>
+<p>절곡선 근처의 파트를 클릭하고 파트를 왼쪽/오른쪽으로 드래그하기 시작합니다.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>파트를 고정하는 위치에 따라(절곡선의 중앙 근처 또는 왼쪽/오른쪽 가장자리 근처), TecZone Bend는 툴 스테이션을 기준으로 벤딩부의 위치를 정확하게 지정하는 데 도움이 되는 자동 _스냅 라인_을 생성합니다. 아래 이미지는 벤딩부를 중앙 근처 또는 왼쪽 가장자리 근처로 잡고, 드래그하는 모습을 보여줍니다.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/drag-bend.png" alt="Drag Bend" width="596">
+</div>
+</div>
+<div class="paragraph">
+<p>위 그림의 스냅 라인은 벤딩부가 툴 스테이션에서 정확하게 중앙에 위치하거나 왼쪽 가장자리가 펀치와 다이와 정확히 일치함을 보여줍니다.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. , <strong>셋업</strong>은 기계에서 펀치와 다이의 완전한 조립입니다. 일부 파트는 완전히 가공하려면, 여러 번 셋업이 필요하며, 그러한 파트의 경우 TecZone Bend는 여러 NC 프로그램을 생성합니다(각 셋업마다 하나씩).
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. 으로 <strong>스테이션</strong>은 셋업에서 정렬된 펀치와 다이 세트이며, 벤딩부를 처리하는 데 사용됩니다. 파트의 복잡성에 따라 일부 셋업에는 기계의 테이블에 따라 배치된 여러 스테이션을 포함할 수 있습니다. 다른 벤딩부는 다른 스테이션에서 가공될 수 있습니다.
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. 건너뛴 벤딩부를 _이미 완료됨_으로 처리할지 또는 _나중에 완료됨_으로 처리할지에 따라 가공 순서의 시작이나 끝으로 이동시킬 수 있습니다. 이를 올바르게 설정하면 TecZone Bend가 보다 정확한 충돌점검을 수행하는 데 도움이 됩니다.
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. 일반적으로 TecZone Bend는 이러한 충돌을 방지하기 위해 언제 일차벤딩을 사용할 수 있는지 자동으로 결정할 수 있고, 그런 벤딩부에 일차 벤딩 옵션을 켭니다. 이 스위치는 이를 위한 수동 오버라이드를 제공합니다(일차 벤딩을 <strong>on/off</strong>하려면).
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. 일반적으로, TecZone Bend는 두 개의 이러한 벤딩부를 단일 Z 벤딩부(때로는 오프셋 벤딩부 또는 조글 벤딩부라고 불림)로 그룹화하여 가공해야 하는지 여부를 자동으로 결정할 수 있습니다. 이 스위치는 해당 결정을 수동으로 오버라이드하려는 일부 상황을 위해 존재합니다.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_bend_패널">Bend 패널</a>
+  </li>
+  <li level="1">
+   <a href="#_고급_작업_과정">고급 작업 과정</a>
+  </li>
+  <li level="2">
+   <a href="#_일차_벤딩_사용하기">일차 벤딩 사용하기</a>
+  </li>
+  <li level="2">
+   <a href="#_여러_벤딩부_편집하기">여러 벤딩부 편집하기</a>
+  </li>
+  <li level="2">
+   <a href="#_벤딩부_드래그하기">벤딩부 드래그하기</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="index.html">벤딩 파라미터 편집</a></span>
+ <span class="next"><a href="editmount.html">툴 마운트 편집</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>
