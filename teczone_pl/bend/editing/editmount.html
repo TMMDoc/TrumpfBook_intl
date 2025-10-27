@@ -1,0 +1,726 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Edycja uchwytu narzędziowego</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Witamy w TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Wstęp</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">Instalowanie oprogramowania</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">Interfejs użytkownika</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Przepływ pracy dla detalu</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">Import 2-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">Czyszczenie 2-D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">Import 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">Importuj model 3D</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Importuj zespół</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Wykrywanie formy</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Wykrywanie podzespołów</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">Modyfikowanie geometrii</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">Laser CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Przepływ pracy dla detalu</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Edycja paneli</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Cięcie laserowe</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Najazd</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Wycofanie</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Mikropołączenie</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Zagadnienia zaawansowane</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Cięcie wióru</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Detal</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Wykańczanie narożników</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Szybkie układanie</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">Przepływ pracy w ramach zadania</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Panel zadań</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Zakładka Arkusze</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Zakładka Detale</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Zakładka Układy</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Karta Podsumowanie</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Edytuj układ</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Tryby układania</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Panel rozmieszczenia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Sekwencjonowanie</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Wycinek arkusza</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Ukosowanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Otwarte kontury</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Ukos zmienny</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Informacje różne</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Reguły wykańczania</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">Edytuj LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Strategia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Mikropołączenia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">Dalsze ustawienia</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">Wykrywanie linii (DetectLine)</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">Gięcie CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../createbenddata.html">Utwórz dane gięcia</a></li>
+    <li><button class="tree blank"></button><a href="../navigator.html">Nawigator gięcia</a></li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Edycja danych gięcia</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="editbend.html">Edycja gięcia</a></li>
+      <li><button class="tree blank"></button><a class="active" href="editmount.html">Edycja uchwytu narzędziowego</a></li>
+      <li><button class="tree blank"></button><a href="editsetup.html">Edycja konfiguracji gięcia</a></li>
+      <li><button class="tree blank"></button><a href="editgauge.html">Edycja tylnych zderzaków</a></li>
+      <li><button class="tree blank"></button><a href="editacb.html">Edycja pomiaru kąta</a></li>
+      <li><button class="tree blank"></button><a href="bendsheet.html">Arkusz gięć</a></li>
+      <li><button class="tree blank"></button><a href="sequencing.html">Zmiana kolejności</a></li>
+      <li><button class="tree blank"></button><a href="addsetup.html">Dodawanie ustawień i stacji</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../advanced/anglemeasurement.html">Pomiar kąta</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/batchprocess.html">Proces obróbki partii</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/recompute.html">Przelicz dane rozwiązania</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/tonnage.html">Kontrola tonażu</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">Nawigator gięcia</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">Odbiór detalu</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">Odbiór z palety</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">Odbiór z dozownika</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">Gięcie zrobotyzowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">Wkładanie</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">Gięcie</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Ekstrakcja</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Przechwytywanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Panel przechwytów</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Dodaj przechwyt</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Edytuj przechwyt</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Przechwyt za pomocą szczęki</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Panel stacji przechwytowych</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Odkładanie części</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Schematy odkładania</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Powtórzenie i sekwencja</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Arkusz separatora</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Punkty orientacyjne</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Konfiguracja komórki</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Baza danych chwytaków</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Raporty</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">Składanie CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Utwórz dane składania</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">Widok Składanie</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Edycja danych składania</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Edycja gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Edycja boku/sekcji</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">Zmiana kolejności w sekwencji</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">Edycja dociskaczy</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">Edycja przymiaru</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">Edycja noży</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">Edytuj ładowanie</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">Edycja rozładunku</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Magazyn narzędzi</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Niestandardowe tabele szczelin powietrznych</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">Zakończenie gięcia ręcznego</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Wymagana długość kołnierza</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Ustawienia</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Rysunek</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Warstwy</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Wymiary</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Widok</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">Gięcie CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Ustawienia domyślne maszyny</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Dane wyjściowe gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Widok gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Komórka gięcia</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">Cięcie CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Układ</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Ustawienia gniazda</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Arkusz</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Obsługa arkuszy</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Cięcia w szkielecie</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Wsparcie pracy</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Sekwencja</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Dane wyjściowe cięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Widok cięcia</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Gięcie panelu</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Ustawienia domyślne</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">Podajniki ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Dane wyjściowe</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Raporty</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Wartości domyślne pozycji</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Importowanie/Eksportowanie</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Otoczenie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Baza danych</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Materiały</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Maszyny</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Narzędzia do gięcia</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Chwytaki do gięcia</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Formy/komponenty</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Raporty</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Projektant raportów</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Pola, zdjęcia i tabele</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Raporty szczegółowe</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Etykiety, mapy bitowe i kształty</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Załącznik</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Obsługiwane formaty 3D</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">DXF arkusza separatora</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Narzędzie do gięcia DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">Gięcie CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Edycja danych gięcia</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="editmount.html">Edycja uchwytu narzędziowego</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Edycja uchwytu narzędziowego</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Po kliknięciu na uchwyt narzędziowy wyświetlany jest panel <strong>Mocowanie gięcia</strong> i służy on do edycji różnych ustawień mocowania gięcia i wykonywania różnych operacji.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_panel_mocowanie_gięcia">Panel Mocowanie gięcia<a id="h000207"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/edit-mount.png" alt="Bend Mount" width="140">
+</div>
+</div>
+<div class="paragraph">
+<p>Panel Mocowanie gięcia wygląda jak na ilustracji obok. Dokładne dostępne ustawienia i operacje będą się różnić w zależności od tego, czy klikasz na stempel, matrycę, czy mocowanie uchwytu. Ponadto niektóre ustawienia mogą być dostępne lub nie, w zależności od możliwości maszyny.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Kliknij przycisk <strong>Zmiana typu narzędzia</strong>, aby zastąpić narzędzie używane do wybranego mocowania za pomocą innego narzędzia. (Zobacz sekcję poniżej, aby uzyskać więcej informacji na temat <em>pola wyboru narzędzi</em>, który służy do wyboru narzędzia zastępczego).</p>
+</li>
+<li>
+<p>Dane wejściowe <strong>Długość</strong> służą do regulacji długości stacji. Po wpisaniu tutaj nowej wartości, TecZone Bend ponownie utworzy stację za pomocą odpowiedniego zestawu <em>segmentów,</em> aby jak najdokładniej dopasować żądaną długość.
+Możesz wzrokowo sprawdzić używane segmenty, patrząc na linie granicy segmentu wyświetlane na mocowaniu gięcia.</p>
+</li>
+<li>
+<p>Dane wejściowe <strong>Pozycja</strong> służą do ustawienia pozycji <em>lewej krawędzi</em> mocowania, wzdłuż stołu lub belki maszyny. Pozycję można również regulować, <em>przeciągając</em> uchwyt w lewo lub w prawo. (Patrz sekcja poniżej dotycząca przeciągania uchwytu).</p>
+</li>
+<li>
+<p>Okno wyboru <strong>Dwuróg</strong> (wyświetlane tylko dla mocowań stempli) może być używane do wymuszania TecZone Bendużycia lewego i/lub prawegoear<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> elementy w grupie).</p>
+</li>
+<li>
+<p><strong>Obrót narzędzia</strong> służy do obracania narzędzia (od przodu do tyłu). Jest wyświetlany, gdy edytujesz mocowanie, które używa narzędzia <em>asymetrycznego</em> (takiego jak na przykład narzędzie wygięte). Operacja odwracania jest wystarczająco inteligentna, aby określić czy konieczne jest obrócenie dodatkowych uchwytów i narzędzi, aby zachować spójność.
+Przykładowo na poniższym obrazku odwrócenie stempla <strong>OW_Z4</strong> (używanego do gięcia Z) również odwraca matrycę, uchwyt, a nawet detal, aby zachować spójność procesu:<br>
+<span class="image"><img src="img/flip-tool.png" alt="Flip Tool" width="550"></span></p>
+</li>
+<li>
+<p><strong>Dodawanie adaptera</strong> służy do dodawania <em>przedłużacza</em> w celu zwiększenia wysokości stempla lub matrycy. Po dodaniu uchwytu zostanie on wybrany i wyświetli się dla niego panel (pozwala to na zmianę aktualnego uchwytu w trakcie użytkowania lub w celu jego usunięcia).<br>
+<span class="image"><img src="img/addadapter.png" alt="Add Adapter" width="460"></span></p>
+</li>
+<li>
+<p><strong>Dodaj szczelinę</strong> służy do dodawania szczeliny w uchwycie narzędzia, aby umożliwić kołnierzowi przejście bez zderzenia (patrz sekcja poniżej Dodawanie odstępu, aby uzyskać więcej szczegółów na ten temat).</p>
+</li>
+<li>
+<p><strong>Duża wysokość narzędzia</strong> służy do zastąpienia wybranych narzędzi innymi wyższymi narzędziami z tej samej grupy.</p>
+</li>
+<li>
+<p>Kliknij, <strong>Usuwanie</strong> aby zdjąć uchwyt narzędzia. Wyświetli się błąd <em>braku stempla</em> lub <em>matrycy</em> w nawigatorze gięcia dla gięć, które używają tej stacji. Można go naprawić za pomocą przycisku <strong>Dodaj</strong> na pasku poleceń po lewej i dodać nowy uchwyt.</p>
+</li>
+<li>
+<p>Przełącznik <strong>Narzędzie pomiarowe</strong> służy do przełączania się między różnymi parami tarcz pomiarowych ACB, które mogą być używane do tej części. Wybór zależy od grubości blachy i używanego stempla.</p>
+</li>
+<li>
+<p>Jeśli pole wyboru <strong>Kontrola ilości</strong> jest zaznaczone, używane segmenty są sprawdzane pod kątem dostępnej zawartości <em>magazynu</em> (którą można edytować, klikając w link <strong>Zarządzanie narzędziami…</strong>). Jeśli używane są segmenty, których nie ma w magazynie, rysowany jest na nich specjalny symbol trójlistny, jak widać na poniższym obrazku, dla elementów 40 mm i 45 mm w pobliżu środka stempla poniżej:<br>
+<span class="image"><img src="img/inventoryerror.png" alt="Inventory Error" width="253"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Podczas edycji mocowania narzędzia za pomocą któregokolwiek z tych ustawień i operacji TecZone Bend
+natychmiast zatwierdza status wszystkich operacji gięcia, wykonując różne kontrole, np. zderzeń, użyteczności narzędzi itp. Status nawigatora gięcia jest natychmiast aktualizowany w czasie rzeczywistym, co bardzo ułatwia eksperymentowanie z różnymi ustawieniami przy natychmiastowych i dokładnych informacjach zwrotnych.</p>
+</div>
+<div class="sect2">
+<h3 id="_okno_zastąp_narzędzie">Okno Zastąp narzędzie<a id="h000208"></a></h3>
+<div class="paragraph">
+<p>Po kliknięciu przycisku <strong>Zmiana typu narzędzia</strong> zostanie wyświetlone okno <strong>Zastąp narzędzie</strong>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/tool-replace.png" alt="Tool replacer" width="750">
+</div>
+</div>
+<div class="paragraph">
+<p>W tym oknie wyświetlane są wszystkie możliwe narzędzia zastępcze.</p>
+</div>
+<div id="h000209" class="ulist">
+<ul>
+<li>
+<p>Użyj hierarchii po lewej stronie, aby zawęzić wybór – na przykład możesz wybrać wyświetlanie tylko narzędzi wygiętych, aby wybór był łatwiejszy.</p>
+</li>
+<li>
+<p>Użyj pola wyboru <strong>Sortuj</strong> u góry, aby posortować narzędzia według nazwy, wysokości, promienia lub innych kryteriów (dokładny zestaw kryteriów sortowania zależy od tego, czy wymieniasz stempel, matrycę lub uchwyt mocujący).</p>
+</li>
+<li>
+<p>Możesz wpisać nazwę narzędzia (lub nazwę skróconą) w polu <strong>Wyszukaj</strong>, aby szybko zawęzić listę. Wpisanie częściowej nazwy narzędzia również jest w porządku – przykładowo użycie <strong>OW200</strong> będzie pasować do narzędzi OW200, OW200/S i OW200/K.</p>
+</li>
+<li>
+<p>Użyj suwaka <strong>Skaluj</strong>, aby dostosować rozmiary obrazów narzędzi. Narzędzie, które jest obecnie stosowane ma niebieskie wypełnienie i gruby obrys. Jasnoniebieska kratka wskazuje <em>inne narzędzia</em>, które są używane w tej części.</p>
+</li>
+<li>
+<p>Wyłącz pole wyboru <strong>Filtruj</strong>, aby mieć nieograniczony widok na wszystkie narzędzia (niezależnie od tego, czy są odpowiednie, czy nie). W tym widoku narzędzia, które nie są odpowiednie są wyszarzone, a przesunięcie myszy nad jednym z tych narzędzi wskazuje, <em>dlaczego</em> jest niedostępne do wyboru:<br>
+<span class="image"><img src="img/tool-replace2.png" alt="Tool error" width="650"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Przesuwając kursor myszy nad obrazami narzędzi,
+ TecZone Bend_natychmiast_ ponownie oblicza wybrane narzędzie, montuje nowo wybrane narzędzie i można zobaczyć w czasie rzeczywistym, czy rozważane narzędzie spowoduje jakiekolwiek problemy kolizyjne (odpowiednie gięcia w nawigatorze gięcia natychmiast zapalą się na czerwono, jeśli występuje zderzenie). Ten podgląd w czasie rzeczywistym bardzo ułatwia eksperymentowanie z różnymi narzędziami do wyboru, aż znajdziesz takie, które pasuje.</p>
+</div>
+<div class="paragraph">
+<p>Jeśli <strong>klikniesz</strong> na jedno z narzędzi, wybór zostanie dokonany, a nowe narzędzie zostanie zastosowane do detalu. Jeśli zamiast tego naciśniesz<kbd>Esc</kbd>, dokonane wybory podglądu zostaną cofnięte, a oryginalne narzędzie pozostaje niezmienione.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nawigacja_i_wybór">Nawigacja i wybór<a id="h000214"></a></h3>
+<div class="paragraph">
+<p>Panel mocowania gięcia wyświetla różne przyciski w podrzędnych panelach <em>nawigacji</em> i <em>wyboru</em>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Użyj przycisku nawigacji <strong>Mocowanie</strong>, aby przejść do edycji całej konfiguracji gięcia. Więcej informacji na ten temat można znaleźć na stronie <a href="editsetup.html">edytora konfiguracji</a>.</p>
+</li>
+<li>
+<p>Użyj przycisków <strong>Wstecz</strong> i <strong>Dalej</strong>, aby przejść przez edycję różnych mocowań narzędzi w tej konfiguracji.</p>
+</li>
+<li>
+<p>Użyj przycisku nawigacji <strong>Segmenty</strong>, aby przejść o jeden poziom w dół i edytować <em>poszczególne segmenty</em> składające się na to mocowanie. Poniższa sekcja na temat edycji segmentów mocowań narzędzi dostarcza więcej informacji na ten temat.</p>
+</li>
+<li>
+<p>Użyj pola wyboru <strong>Stacja narzędziowa</strong>, aby wybrać wszystkie mocowania narzędzi składających się na tę <em>stację</em>. Spowoduje to wybranie wszystkich stempli, matryc i uchwytów, które są wyrównane z wybranym mocowaniem, dzięki czemu można je edytować lub przesuwać razem.</p>
+</li>
+<li>
+<p>Użyj pola wyboru <strong>Takie samo narzędzie</strong>, aby wybrać inne mocowania narzędzi, które używają tego samego narzędzia. Jest to często przydatne przed operacją <em>wymiany narzędzia</em>; wybranie wszystkich stacji za pomocą określonego narzędzia poszerza dostępny wybór narzędzi zamiennych.<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_edycja_wielu_mocowań">Edycja wielu mocowań<a id="h000215"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/edit-mounts.png" alt="Multiple mounts" width="138">
+</div>
+</div>
+<div class="paragraph">
+<p>Jeśli wybierzesz wiele mocowań za pomocą <kbd>Shift</kbd>+Klikając na wszystkich, można je edytować razem. Tylko ustawienia i operacje, które są wspólne dla wszystkich mocowań, są dostępne do edycji.</p>
+</div>
+<div class="paragraph">
+<p>Pola takie jak <strong>Długość</strong> lub <strong>Pozycja</strong> są wyświetlane do
+edycji, tylko jeśli są takie same dla wszystkich mocowań.</p>
+</div>
+<div class="paragraph">
+<p>Jeśli jest wiele stacji, przydatne jest wybranie wszystkich stempli lub wszystkich matryc przed wykonaniem operacji <strong>Zmień narzędzie</strong>. W tym przypadku wybór dostępnych narzędzi zastępczych jest większy (ponieważ nie ma niebezpieczeństwa różnej wysokości
+stempli i matryc, powodujących zderzenie).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_przeciąganie_uchwytu_narzędzia_do_gięcia">Przeciąganie uchwytu narzędzia do gięcia<a id="h000216"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/drag-mount.png" alt="Dragging a mount" width="450">
+</div>
+</div>
+<div class="paragraph">
+<p>Dane wejściowe <strong>Pozycja</strong> mogą służyć do precyzyjnego ustawienia pozycji mocowania.
+Czasami łatwiej jest po prostu przeciągnąć mocowanie gięcia w nowe położenie. Aby to zrobić:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Kliknij mocowanie gięcia, aby je wybrać (wybierz wiele mocowań za pomocą <kbd>Shift</kbd>+Kliknij).</p>
+</li>
+<li>
+<p>Kliknij i zacznij przeciągać w lewo / w prawo, aby przesunąć wybrane mocowanie.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Jak widać na powyższym obrazku, po przesunięciu kursora myszy nad wybranym mocowaniem wyświetlany jest grot strzałki, co oznacza, że możesz przeciągnąć wybrane mocowanie. Kiedy przeciągasz mocowanie, wskaźniki zatrzaskowe pozwalają łatwo wyrównać mocowanie z innymi istniejącymi mocowaniami.</p>
+</div>
+<div class="paragraph">
+<p>Jeśli <em>podniesiesz</em> mocowanie w pobliżu jego lewej krawędzi, lewe krawędzie wszystkich uchwytów są wykorzystywane do przyciągania. Jeśli podniesiesz uchwyt na środku, to linia środkowa
+służy do przyciągania i tak dalej.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_zaawansowane_operacje">Zaawansowane operacje<a id="h000218"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Oto kilka bardziej zaawansowanych operacji w panelu edytora Mocowanie gięcia.</p>
+</div>
+<div class="sect2">
+<h3 id="_edycja_segmentów_mocowań_narzędzi">Edycja segmentów mocowań narzędzi<a id="h000219"></a></h3>
+<div class="paragraph">
+<p>Kliknięcie przycisku nawigacyjnego <strong>Segmenty</strong> podczas edycji uchwytu narzędzia do gięcia otwiera panel <em>Segment narzędzia</em>, który wygląda jak na ilustracji obok.
+<span class="image right"><img src="img/edit-mount2.png" alt="Edit tool Segments" width="525"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pole wyboru <strong>Narzędzie</strong> służy do zastąpienia wybranego segmentu narzędzia dłuższym lub krótszym narzędziem lub innym rodzajem narzędzia.</p>
+</li>
+<li>
+<p>Przyciski <strong>&lt; Przesunięcie</strong> i <strong>Przesunięcie &gt;</strong> służą do przesunięcia wybranego segmentu w lewo lub w prawo w ramach układu. Nie zmienia to całkowitej długości układu, ale jest przydatne do przemieszczania czujnika pomiarowego na przykład w lewo lub w prawo, aby uniknąć otworów.</p>
+</li>
+<li>
+<p>Przyciski <strong>Dodaj</strong> i <strong>Usuwanie</strong> służą do dodawania nowych segmentów do układu lub do usunięcia wybranego segmentu.</p>
+</li>
+<li>
+<p>Przyciski nawigacyjne <strong>Wstecz</strong> i <strong>Dalej</strong> służą do nawigacji przez proces edycji różnych segmentów w mocowaniu gięcia. Jak widać na powyższym obrazku, edytowany segment narzędzia jest podświetlony na niebiesko.</p>
+</li>
+<li>
+<p>Przycisk nawigacji <strong>Zbrojenie</strong> służy do poruszania się w górę o jeden poziom oraz edytowania raczej całego mocowania gięcia niż poszczególnych segmentów.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dodanie_szczeliny_w_mocowaniu">Dodanie szczeliny w mocowaniu<a id="h000220"></a></h3>
+<div class="paragraph">
+<p>Czasami przydatne jest dodanie wąskiej <em>szczeliny</em> w mocowaniu narzędzia, zwykle w celu umożliwienia
+kołnierzowi przejścia przez niego bez zderzenia. Aby to zrobić, kliknij
+<strong>przycisk Dodaj szczelinę</strong> (który pojawia się, jeśli mocowanie narzędzia jest wystarczająco długie). W panelu otwiera się niewielkie pole z zestawem wzajemnie połączonych danych wejściowych do ustawiania lewego marginesu, prawego marginesu i rzeczywistej szczeliny. Jako że suma tych trzech wartości musi sumować się do długości mocowania narzędzia, edycja dwóch z nich automatycznie ustawi trzecią.</p>
+</div>
+<div class="paragraph">
+<p>Poniższy rysunek pokazuje tę operację w toku. Mamy kołnierz, który zderza się ze stemplem, a my dostosowujemy lewy/prawy margines, aż proponowana szczelina zostanie wyrównana z miejscem, w którym kołnierz przecina się ze stemplem (widać proponowaną szczelinę
+wyświetlaną jako dwie pomarańczowe linie zaznaczone na mocowaniu gięcia).<br>
+<span class="image"><img src="img/add-gap1.png" alt="Adding a gap"></span></p>
+</div>
+<div class="paragraph">
+<p>Po kliknięciu przycisku <strong>OK</strong> w tym panelu podrzędnym tworzona jest szczelina i można zobaczyć, że błąd zderzenia został rozwiązany:<br>
+<span class="image"><img src="img/add-gap2.png" alt="Adding a gap"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Podczas edycji stacji, która używa uchwytu stempla TecZone Bend pyta, czy szczelinę należy wprowadzać tylko dla <strong>stempla</strong>, czy zarówno dla <strong>stempla</strong>, jak i <strong>uchwytu</strong>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_korzystanie_z_uchwytu_podwójnego_v">Korzystanie z uchwytu podwójnego V<a id="h000221"></a></h3>
+<div class="paragraph">
+<p>Możliwe jest użycie podwójnego uchwytu V do zamontowania dwóch matryc obok siebie. Aby to zrobić ręcznie, użyj przycisku <strong>Dodawanie adaptera</strong>, aby dodać uchwyt do matrycy, a następnie użyć przycisku <strong>Zmiana typu narzędzia</strong>, aby zmienić uchwyt na uchwyt podwójny V. Teraz można dodać drugą matrycę do drugiego
+gniazda uchwytu podwójnego V za pomocą polecenia <strong>Dodaj</strong> z paska poleceń i wybierając mocowanie matrycy.</p>
+</div>
+<div class="paragraph">
+<p>Gdy matryca jest zamontowana w jednym gnieździe uchwytu podwójnego V, możesz ją przesunąć do innego gniazda, klikając wyświetlony przycisk <strong>Zmiana osi I</strong>:<br>
+<span class="image"><img src="img/dv-shift.png" alt="Double-V Shift" width="465"></span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Czasami nazywa się je elementami <em>ramiennymi</em>.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Przykładowo, jeśli wykonujesz operację <strong>Zmień narzędzie</strong> tylko na jednym stanowisku stempla, a jest wiele stanowisk stempla, wtedy będziesz ograniczać się do wyboru tylko takich innych narzędzi stempla, które są <em>tej samej wysokości</em>, aby unikać zderzania się stempli z matrycami z powodu nierównych szczelin.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_panel_mocowanie_gięcia">Panel Mocowanie gięcia</a>
+  </li>
+  <li level="2">
+   <a href="#_okno_zastąp_narzędzie">Okno Zastąp narzędzie</a>
+  </li>
+  <li level="2">
+   <a href="#_nawigacja_i_wybór">Nawigacja i wybór</a>
+  </li>
+  <li level="2">
+   <a href="#_edycja_wielu_mocowań">Edycja wielu mocowań</a>
+  </li>
+  <li level="2">
+   <a href="#_przeciąganie_uchwytu_narzędzia_do_gięcia">Przeciąganie uchwytu narzędzia do gięcia</a>
+  </li>
+  <li level="1">
+   <a href="#_zaawansowane_operacje">Zaawansowane operacje</a>
+  </li>
+  <li level="2">
+   <a href="#_edycja_segmentów_mocowań_narzędzi">Edycja segmentów mocowań narzędzi</a>
+  </li>
+  <li level="2">
+   <a href="#_dodanie_szczeliny_w_mocowaniu">Dodanie szczeliny w mocowaniu</a>
+  </li>
+  <li level="2">
+   <a href="#_korzystanie_z_uchwytu_podwójnego_v">Korzystanie z uchwytu podwójnego V</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="editbend.html">Edycja gięcia</a></span>
+ <span class="next"><a href="editsetup.html">Edycja konfiguracji gięcia</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

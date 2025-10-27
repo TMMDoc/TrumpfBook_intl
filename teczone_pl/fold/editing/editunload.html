@@ -1,0 +1,568 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Edycja rozładunku</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Witamy w TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Wstęp</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">Instalowanie oprogramowania</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">Interfejs użytkownika</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Przepływ pracy dla detalu</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">Import 2-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">Czyszczenie 2-D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">Import 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">Importuj model 3D</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Importuj zespół</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Wykrywanie formy</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Wykrywanie podzespołów</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">Modyfikowanie geometrii</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">Laser CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Przepływ pracy dla detalu</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Edycja paneli</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Cięcie laserowe</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Najazd</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Wycofanie</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Mikropołączenie</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Zagadnienia zaawansowane</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Cięcie wióru</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Detal</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Wykańczanie narożników</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Szybkie układanie</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">Przepływ pracy w ramach zadania</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Panel zadań</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Zakładka Arkusze</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Zakładka Detale</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Zakładka Układy</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Karta Podsumowanie</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Edytuj układ</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Tryby układania</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Panel rozmieszczenia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Sekwencjonowanie</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Wycinek arkusza</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Ukosowanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Otwarte kontury</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Ukos zmienny</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Informacje różne</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Reguły wykańczania</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">Edytuj LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Strategia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Mikropołączenia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">Dalsze ustawienia</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">Wykrywanie linii (DetectLine)</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bend/index.html">Gięcie CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">Utwórz dane gięcia</a></li>
+    <li><button class="tree blank"></button><a href="../../bend/navigator.html">Nawigator gięcia</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bend/editing/index.html">Edycja danych gięcia</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bend/editing/editbend.html">Edycja gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editmount.html">Edycja uchwytu narzędziowego</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editsetup.html">Edycja konfiguracji gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editgauge.html">Edycja tylnych zderzaków</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editacb.html">Edycja pomiaru kąta</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/bendsheet.html">Arkusz gięć</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/sequencing.html">Zmiana kolejności</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/addsetup.html">Dodawanie ustawień i stacji</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bend/advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bend/advanced/anglemeasurement.html">Pomiar kąta</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/batchprocess.html">Proces obróbki partii</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/recompute.html">Przelicz dane rozwiązania</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Kontrola tonażu</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">Nawigator gięcia</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">Odbiór detalu</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">Odbiór z palety</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">Odbiór z dozownika</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">Gięcie zrobotyzowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">Wkładanie</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">Gięcie</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Ekstrakcja</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Przechwytywanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Panel przechwytów</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Dodaj przechwyt</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Edytuj przechwyt</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Przechwyt za pomocą szczęki</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Panel stacji przechwytowych</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Odkładanie części</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Schematy odkładania</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Powtórzenie i sekwencja</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Arkusz separatora</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Punkty orientacyjne</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Konfiguracja komórki</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Baza danych chwytaków</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Raporty</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">Składanie CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../createfolddata.html">Utwórz dane składania</a></li>
+    <li><button class="tree blank"></button><a href="../foldview.html">Widok Składanie</a></li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Edycja danych składania</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="editbend.html">Edycja gięcia</a></li>
+      <li><button class="tree blank"></button><a href="editside.html">Edycja boku/sekcji</a></li>
+      <li><button class="tree blank"></button><a href="editseq.html">Zmiana kolejności w sekwencji</a></li>
+      <li><button class="tree blank"></button><a href="editbh.html">Edycja dociskaczy</a></li>
+      <li><button class="tree blank"></button><a href="editgauge.html">Edycja przymiaru</a></li>
+      <li><button class="tree blank"></button><a href="editblade.html">Edycja noży</a></li>
+      <li><button class="tree blank"></button><a href="editload.html">Edytuj ładowanie</a></li>
+      <li><button class="tree blank"></button><a class="active" href="editunload.html">Edycja rozładunku</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../toolinventory.html">Magazyn narzędzi</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../advanced/airgaptables.html">Niestandardowe tabele szczelin powietrznych</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/manualbend.html">Zakończenie gięcia ręcznego</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/minflangelength.html">Wymagana długość kołnierza</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Ustawienia</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Rysunek</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Warstwy</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Wymiary</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Widok</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">Gięcie CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Ustawienia domyślne maszyny</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Dane wyjściowe gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Widok gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Komórka gięcia</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">Cięcie CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Układ</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Ustawienia gniazda</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Arkusz</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Obsługa arkuszy</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Cięcia w szkielecie</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Wsparcie pracy</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Sekwencja</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Dane wyjściowe cięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Widok cięcia</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Gięcie panelu</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Ustawienia domyślne</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">Podajniki ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Dane wyjściowe</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Raporty</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Wartości domyślne pozycji</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Importowanie/Eksportowanie</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Otoczenie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Baza danych</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Materiały</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Maszyny</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Narzędzia do gięcia</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Chwytaki do gięcia</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Formy/komponenty</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Raporty</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Projektant raportów</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Pola, zdjęcia i tabele</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Raporty szczegółowe</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Etykiety, mapy bitowe i kształty</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Załącznik</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Obsługiwane formaty 3D</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">DXF arkusza separatora</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Narzędzie do gięcia DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">Składanie CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Edycja danych składania</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="editunload.html">Edycja rozładunku</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Edycja rozładunku</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Operację <strong>Rozładunek</strong> w zautomatyzowanej giętarce krawędziowej (takiej jak TBC-7030 lub TBC-7020) można edytować, klikając dwukrotnie komórkę <em>rozładunku</em> w nawigatorze u góry. Jest to komórka oznaczona literą <strong>U</strong>. Dwukrotne kliknięcie w tę komórkę (najpierw w celu wybrania operacji rozładunku, a następnie otwarcia panelu) wyświetla następujący komunikat:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/unload1.png" alt="Unloading Panel" width="551">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_panel_rozładunku">Panel rozładunku<a id="h000419"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Oto ustawienia dostępne w panelu Rozładunek. W zależności od kontekstu, tylko niektóre z tych ustawień mogą być widoczne lub edytowalne (przykładowo, jeśli detal nie jest obracany przed rozładunkiem, ustawienia związane ze środkiem obrotu nie pojawią się).</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ustawienie <strong>Obrót</strong> na panelu rozładunku służy do sterowania obrotem detalu przed rozładunkiem. Niniejszą wartość mierzy się <em>względem</em> ostatnio obrabianego boku, więc wartość 0 oznacza tutaj, że część jest rozładowywana bezpośrednio bez żadnego obrotu.</p>
+</li>
+<li>
+<p>Ustawienia <strong>Wirnik końcowy (Z, X)</strong> sterują pozycjami Z, X wirnika względem środka detalu na <em>końcu</em> wszystkich obrotów podczas rozładunku – innymi słowy, w ułożeniu, w którym detal znajduje się podczas rozładunku.</p>
+</li>
+<li>
+<p>Ustawienia <strong>Detal końcowy X</strong> i <strong>Override</strong> sterują ostateczną pozycją X środka detalu. Jeśli nie dojdzie do <em>przekroczenia ograniczenia</em>, maszyna w miarę możliwości popchnie detal w oparciu o ograniczenie skoku osi X2 lub X4 (w zależności od tego, która służy do rozładunku detalu). Można ograniczyć ten ruch, włączając przełącznik Pomijanie i ustawiając wartość dla końcowej pozycji detalu. (Zazwyczaj robi się to, aby zapobiec zbyt dużemu wystawaniu detalu poza przednią krawędź stołu po rozładunku).</p>
+</li>
+<li>
+<p>W przypadku małych detali może być dostępna <strong>Cofnij rozładowywanie</strong> (tylko w 7030). Jeśli ta opcja jest włączona, detal jest odpychany dalej tyłem do manipulatora (patrz zdjęcia poniżej).</p>
+</li>
+<li>
+<p>Ustawienia <strong>Wirnik początkowy (Z, X)</strong> są wyświetlane tylko wtedy, gdy wybrane końcowe położenia wirnika wymagają dwóch obrotów po obróbce ostatniego boku. W tej sytuacji przesunięcia te określają położenie wirnika (względem środka detalu) podczas pierwszego z tych dwóch obrotów.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Niektóre przykłady różnych cykli rozładunku pomogą wyjaśnić te ustawienia.</p>
+</div>
+<div class="sect2">
+<h3 id="_prosty_rozładunek_bez_obrotu">Prosty rozładunek bez obrotu<a id="h000420"></a></h3>
+<div class="paragraph">
+<p>Poniższe zdjęcia przedstawiają prosty cykl rozładunku bez obrotów (wartość <strong>Obrót</strong> jest ustawiona na 0). W tym cyklu ostateczna pozycja detalu jest pomijana, aby na krótko zatrzymać detal. TecZone Fold zwykle wylicza tę konieczność pominięcia w oparciu o to, czy detal wystawałby zbytnio z krawędzi stołu, ale można potem opcję tę włączyć lub wyłączyć, a następnie wyregulować końcową pozycję dostawy detalu.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/unload3.png" alt="No rotation" width="508">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_prosty_cykl_z_rozładunkiem_od_tyłu">Prosty cykl z rozładunkiem od tyłu<a id="h000421"></a></h3>
+<div class="paragraph">
+<p>Oto część, dla której włączony jest cykl <strong>Rozładunek od tyłu</strong> (dostępny tylko dla małych detali). W kroku 2 detal jest zwalniany przez chwytak ssawkowy, który następnie cofa się za detal (krok 3), a następnie popycha detal bliżej operatora za pomocą tylnej powierzchni (krok 4).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/unload6.png" alt="Back Unloading" width="768">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pojedynczy_obrót_o_90_stopni">Pojedynczy obrót o 90 stopni<a id="h000422"></a></h3>
+<div class="paragraph">
+<p>Poniższy przykład pokazuje rozładunek z pojedynczym obrotem o 90 stopni. W kroku 1 detal jest odciągany do tyłu po ostatnim gięciu i zaciskany przez wirnik. Następnie wirnik obraca detal o 90 stopni. Po zakończeniu obrotu (<strong>Krok 2</strong>) widać, że
+wirnik znajduje się w określonej <strong>Końcowej pozycji (Z, X)</strong> względem środka detalu: <strong>(255, 0)</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/unload2.png" alt="Single Rotate" width="738">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_obrót_dwustopniowy_o_90_stopni">Obrót dwustopniowy o 90 stopni<a id="h000423"></a></h3>
+<div class="paragraph">
+<p>W tym przykładzie wymagany jest 2-stopniowy obrót ze względu na specyfikację końcowej pozycji wirnika.</p>
+</div>
+<div id="h000424" class="ulist">
+<ul>
+<li>
+<p>W kroku 1 detal osiąga <strong>Początkową pozycję</strong> wirnika <strong>0, -255</strong> i jest zaciskany przez wirnik.</p>
+</li>
+<li>
+<p>W kroku 2 osiąga się pośrednie położenie obrotowe, a wirnik przesuwa się aby ponownie zacisnąć detal.</p>
+</li>
+<li>
+<p>W kroku 3 osiągnięto ostateczne <strong>Położenie wirnika</strong> <strong>0, 254</strong>.</p>
+</li>
+<li>
+<p>Detal jest następnie zwalniany przez wirnik i rozładowywany w kierunku użytkownika w Kroku 4.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/unload4.png" alt="Double Rotate" width="876">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rozładunek_na_pas_kb40">Rozładunek na pas KB40<a id="h000428"></a></h3>
+<div class="paragraph">
+<p>Jeśli zamontowany jest osprzęt ładowarki/rozładowacza KB40, wówczas dostępna jest opcja rozładunku na określony pas KB40. Można wybrać między automatycznym wyborem pasa; wybierz jeden z pasów <strong>UZ1</strong> lub <strong>UZ2</strong> (pod warunkiem, że detal jest wystarczająco wąsko, aby pasował do pasa/pasów).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/unload5.png" alt="KB40 Unload" width="837">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_panel_rozładunku">Panel rozładunku</a>
+  </li>
+  <li level="2">
+   <a href="#_prosty_rozładunek_bez_obrotu">Prosty rozładunek bez obrotu</a>
+  </li>
+  <li level="2">
+   <a href="#_prosty_cykl_z_rozładunkiem_od_tyłu">Prosty cykl z rozładunkiem od tyłu</a>
+  </li>
+  <li level="2">
+   <a href="#_pojedynczy_obrót_o_90_stopni">Pojedynczy obrót o 90 stopni</a>
+  </li>
+  <li level="2">
+   <a href="#_obrót_dwustopniowy_o_90_stopni">Obrót dwustopniowy o 90 stopni</a>
+  </li>
+  <li level="2">
+   <a href="#_rozładunek_na_pas_kb40">Rozładunek na pas KB40</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="editload.html">Edytuj ładowanie</a></span>
+ <span class="next"><a href="../toolinventory.html">Magazyn narzędzi</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

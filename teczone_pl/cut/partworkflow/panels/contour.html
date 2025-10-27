@@ -1,0 +1,523 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../res/bento.css">
+  <link rel="stylesheet" href="../../../res/site.css">
+  <link rel="stylesheet" href="../../../res/tree.css">
+  <link rel="stylesheet" href="../../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../../img/trumpf-icon.png">
+  <title>Kontur</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../../index.html">Witamy w TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../intro/index.html">Wstęp</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../intro/install.html">Instalowanie oprogramowania</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/clarity.html">Interfejs użytkownika</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/workflow.html">Przepływ pracy dla detalu</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/2dimport/index.html">Import 2-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/2dimport/2dcleanup.html">Czyszczenie 2-D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/3dimport/index.html">Import 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prep3dmodel.html">Importuj model 3D</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prepassembly.html">Importuj zespół</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/formdetect.html">Wykrywanie formy</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/componentdetect.html">Wykrywanie podzespołów</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../cad/sketch.html">Modyfikowanie geometrii</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../../index.html">Laser CAM</a>
+   <ul>
+    <li>
+     <button class="tree open"></button>
+     <a href="../index.html">Przepływ pracy dla detalu</a>
+     <ul>
+      <li>
+       <button class="tree open"></button>
+       <a href="index.html">Edycja paneli</a>
+       <ul>
+        <li>
+         <button class="tree closed"></button>
+         <a href="lasercut/index.html">Cięcie laserowe</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="lasercut/approach.html">Najazd</a></li>
+          <li><button class="tree blank"></button><a href="lasercut/withdrawal.html">Wycofanie</a></li>
+          <li><button class="tree blank"></button><a href="lasercut/microjoint.html">Mikropołączenie</a></li>
+          <li><button class="tree blank"></button><a href="lasercut/advanced.html">Zagadnienia zaawansowane</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a class="active" href="contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="scrapcut.html">Cięcie wióru</a></li>
+        <li><button class="tree blank"></button><a href="part.html">Detal</a></li>
+        <li><button class="tree blank"></button><a href="cornertreatment.html">Wykańczanie narożników</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../quicknest.html">Szybkie układanie</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../jobworkflow/index.html">Przepływ pracy w ramach zadania</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../jobworkflow/jobpanel/index.html">Panel zadań</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../jobworkflow/jobpanel/sheets.html">Zakładka Arkusze</a></li>
+        <li><button class="tree blank"></button><a href="../../jobworkflow/jobpanel/parts.html">Zakładka Detale</a></li>
+        <li><button class="tree blank"></button><a href="../../jobworkflow/jobpanel/layouts.html">Zakładka Układy</a></li>
+        <li><button class="tree blank"></button><a href="../../jobworkflow/jobpanel/summary.html">Karta Podsumowanie</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../jobworkflow/editlayout/index.html">Edytuj układ</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../jobworkflow/editlayout/nestingmodes.html">Tryby układania</a></li>
+        <li><button class="tree blank"></button><a href="../../jobworkflow/editlayout/placementpanel.html">Panel rozmieszczenia</a></li>
+        <li><button class="tree blank"></button><a href="../../jobworkflow/editlayout/sequencing.html">Sekwencjonowanie</a></li>
+        <li><button class="tree blank"></button><a href="../../jobworkflow/editlayout/slicesheet.html">Wycinek arkusza</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bevelcut/index.html">Ukosowanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bevelcut/opencontours.html">Otwarte kontury</a></li>
+      <li><button class="tree blank"></button><a href="../../bevelcut/variablebevel.html">Ukos zmienny</a></li>
+      <li><button class="tree blank"></button><a href="../../bevelcut/miscellaneous.html">Informacje różne</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../advanced/finishingrules.html">Reguły wykańczania</a></li>
+      <li><button class="tree blank"></button><a href="../../advanced/editltt.html">Edytuj LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../advanced/twinline/strategies.html">Strategia</a></li>
+        <li><button class="tree blank"></button><a href="../../advanced/twinline/microjoints.html">Mikropołączenia</a></li>
+        <li><button class="tree blank"></button><a href="../../advanced/twinline/stability.html">Dalsze ustawienia</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../advanced/detectline.html">Wykrywanie linii (DetectLine)</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bend/index.html">Gięcie CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">Utwórz dane gięcia</a></li>
+    <li><button class="tree blank"></button><a href="../../../bend/navigator.html">Nawigator gięcia</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/editing/index.html">Edycja danych gięcia</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editbend.html">Edycja gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editmount.html">Edycja uchwytu narzędziowego</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editsetup.html">Edycja konfiguracji gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editgauge.html">Edycja tylnych zderzaków</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editacb.html">Edycja pomiaru kąta</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/bendsheet.html">Arkusz gięć</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/sequencing.html">Zmiana kolejności</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/addsetup.html">Dodawanie ustawień i stacji</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/anglemeasurement.html">Pomiar kąta</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/batchprocess.html">Proces obróbki partii</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/recompute.html">Przelicz dane rozwiązania</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">Kontrola tonażu</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bcell/navigator.html">Nawigator gięcia</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/pickup/index.html">Odbiór detalu</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/frompallet.html">Odbiór z palety</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/fromdispenser.html">Odbiór z dozownika</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/bending/index.html">Gięcie zrobotyzowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/insertion.html">Wkładanie</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/bending.html">Gięcie</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/extraction.html">Ekstrakcja</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/regrip/index.html">Przechwytywanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/regrippanel.html">Panel przechwytów</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/addregrip.html">Dodaj przechwyt</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/editregrip.html">Edytuj przechwyt</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/jawregrip.html">Przechwyt za pomocą szczęki</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/rgstationpanel.html">Panel stacji przechwytowych</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/deposit/index.html">Odkładanie części</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/patterns.html">Schematy odkładania</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/repeat.html">Powtórzenie i sekwencja</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/separatorsheet.html">Arkusz separatora</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/waypoints.html">Punkty orientacyjne</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/cellconfig.html">Konfiguracja komórki</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb.html">Baza danych chwytaków</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/reports.html">Raporty</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../fold/index.html">Składanie CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../fold/createfolddata.html">Utwórz dane składania</a></li>
+    <li><button class="tree blank"></button><a href="../../../fold/foldview.html">Widok Składanie</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/editing/index.html">Edycja danych składania</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbend.html">Edycja gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editside.html">Edycja boku/sekcji</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editseq.html">Zmiana kolejności w sekwencji</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbh.html">Edycja dociskaczy</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editgauge.html">Edycja przymiaru</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editblade.html">Edycja noży</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editload.html">Edytuj ładowanie</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editunload.html">Edycja rozładunku</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../fold/toolinventory.html">Magazyn narzędzi</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/airgaptables.html">Niestandardowe tabele szczelin powietrznych</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/manualbend.html">Zakończenie gięcia ręcznego</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/minflangelength.html">Wymagana długość kołnierza</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../settings/index.html">Ustawienia</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/drawing/index.html">Rysunek</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/layers.html">Warstwy</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/dimensions.html">Wymiary</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/view.html">Widok</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/bendcam/index.html">Gięcie CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/benddefaults.html">Ustawienia domyślne maszyny</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendoutputs.html">Dane wyjściowe gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendview.html">Widok gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendcell.html">Komórka gięcia</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/cutcam/index.html">Cięcie CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/layout/index.html">Układ</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/nesting.html">Ustawienia gniazda</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheet.html">Arkusz</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheethandling.html">Obsługa arkuszy</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/skeletoncuts.html">Cięcia w szkielecie</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/worksupport.html">Wsparcie pracy</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/lasercam/sequence.html">Sekwencja</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutoutputs.html">Dane wyjściowe cięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutview.html">Widok cięcia</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/foldcam/index.html">Gięcie panelu</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/defaults.html">Ustawienia domyślne</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/zbwcarriers.html">Podajniki ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/foldoutputs.html">Dane wyjściowe</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/reports/index.html">Raporty</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/reports/itemdefaults.html">Wartości domyślne pozycji</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../settings/importexport.html">Importowanie/Eksportowanie</a></li>
+    <li><button class="tree blank"></button><a href="../../../settings/environment.html">Otoczenie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../database/index.html">Baza danych</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../database/materials.html">Materiały</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/machines.html">Maszyny</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendtools.html">Narzędzia do gięcia</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">Chwytaki do gięcia</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Formy/komponenty</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../report/index.html">Raporty</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../report/designer.html">Projektant raportów</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/fields.html">Pola, zdjęcia i tabele</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/bands.html">Raporty szczegółowe</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/labels.html">Etykiety, mapy bitowe i kształty</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../appendix/index.html">Załącznik</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">Obsługiwane formaty 3D</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">DXF arkusza separatora</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">Narzędzie do gięcia DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../../index.html">Laser CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="../index.html">Przepływ pracy dla detalu</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Edycja paneli</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="contour.html">Kontur</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Kontur</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/contourpanel.png" alt="Contour Panel" width="155">
+</div>
+</div>
+<div class="paragraph">
+<p>Panel <strong>Contour</strong> jest używany do operacji na <em>wszystkich cięciach laserowych</em> na określonym
+konturze. Przykładowo można dodać mikropołączenia, aby podzielić jedno cięcie laserowe na dwa, lub usunąć złącza, aby połączyć dwa kolejne cięcia laserowe na tym samym konturze w jedno.</p>
+</div>
+<div class="paragraph">
+<p>Aby uzyskać dostęp do tego panelu, kliknij wycięcie laserowe,
+<strong>Laser Cut</strong> a następnie przycisk nawigacji <strong>Contour</strong> u dołu, aby otworzyć panel konturu.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Usuń</strong>: Usuwa wszystkie cięcia laserowe na tym konturze.</p>
+</li>
+<li>
+<p><strong>Copy Tooling</strong>: Kopiuje cięcia laserowe na tym konturze do innych podobnych konturów.</p>
+</li>
+<li>
+<p><strong>Microjoint</strong>: Ustawienia w tej sekcji są używane, aby dodać lub usunąć mikropołączenia na konturze.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Dodaj</strong>: Kliknij tutaj, aby dodać więcej mikropołączeń na
+konturze. Za każdym razem, gdy dodawane jest mikropołączenie, istniejące złącza są przesuwane tak, aby wszystkie cięcia laserowe miały w przybliżeniu równą długość. Poniższy rysunek przedstawia wyniki po kolejnych kliknięciach przycisku <strong>Dodaj</strong>. (Zauważ, że między pierwszą a drugą opcją liczba cięć laserowych nie jest zwiększona, ale na końcu cięcia dodano mikropołączenie).<br>
+<span class="image"><img src="img/addjoints.png" alt="Add Joints" width="408"></span></p>
+</li>
+<li>
+<p><strong>Reduce</strong>: Zmniejsz liczbę mikropołączeń, łącząc ze sobą dwa cięcia laserowe.</p>
+</li>
+<li>
+<p><strong>Remove All</strong>: Usuwa wszystkie mikropołączenia na tym
+konturze (co skutkuje pojedynczym cięciem laserowym całego konturu).</p>
+</li>
+<li>
+<p><strong>Scrap</strong>: Ta sekcja pojawia się, jeśli sprawdzamy otwór (wewnętrzny kontur) i służy do dodawania <a href="scrapcut.html">Cięcia wiórów</a> w celu pocięcia wióru stworzonego przez otwór lub w celu usunięcia cięć wiórów, jeśli zostały dodane wcześniej.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_split_tooling">Split Tooling</h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/splittooling.png" alt="Split Tooling" width="149">
+</div>
+</div>
+<div class="paragraph">
+<p>Kliknięcie <strong>Split Tooling</strong> przełącza ten panel na specjalny tryb, w którym można interaktywnie dzielić cięcie laserowe lub łączyć dwa kolejne cięcia laserowe.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Corner offset</strong>: Wpisz tutaj wartość tutaj, aby utworzyć podział w konkretnej odległości od narożnika. Gdy zbliżasz się do tego punktu, pojawia się wskaźnik zatrzasku, aby pomóc w ustawieniu podziału.<br>
+<span class="image"><img src="img/split1.png" alt="Corner Offset" width="431"></span></p>
+</li>
+<li>
+<p><strong>Microjoint</strong>: Jeśli ta opcja jest włączona, mikropołączenie jest
+tworzone w punkcie podziału za każdym razem, gdy tworzone jest nowe cięcie laserowe. Oto przykład dodawania mikropołączenia (ponieważ znajdujemy się w narożniku i
+<strong>wyświetla się wskaźnik zatrzaskucorner joint</strong>).<br>
+<span class="image"><img src="img/split2.png" alt="Corner Joint" width="455"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Możesz przesunąć mysz nad mikropołączeniem między dwoma cięciami, a wskaźnik zatrzasku zmieni się na <strong>merge</strong>. Kliknięcie spowoduje teraz usunięcie połączenia i scalenie dwóch sąsiednich cięć laserowych w jedno.<br>
+<span class="image"><img src="img/merge.png" alt="Merge" width="429"></span></p>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_split_tooling">Split Tooling</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="lasercut/advanced.html">Zagadnienia zaawansowane</a></span>
+ <span class="next"><a href="scrapcut.html">Cięcie wióru</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../../res/index.js"></script>
+    <script src="../../../res/files.js"></script>
+    <script src="../../../res/site.js"></script>
+
+    
+</body>
+</html>

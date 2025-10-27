@@ -1,0 +1,696 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Een gereedschapshouder bewerken</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Welkom bij TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Inleiding</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">De software installeren</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">De gebruikersinterface</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Stuk-workflow</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">2D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">2D opruimen</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">3D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">3D-model importeren</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Module importeren</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Vormdetectie</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Componentdetectie</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">De geometrie wijzigen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">Laser CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Stuk-workflow</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Bewerkingsvensters</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Lasersnijden</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Aanlopen</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Terugslag</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Geavanceerd</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Contour</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Schrootsnede</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Stuk</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Hoekbehandeling</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Snel nesten</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">Job-workflow</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Venster Job</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Tabblad Platen</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Tabblad Stukken</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Tabblad Lay-outs</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Tabblad Overzicht</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Lay-out bewerken</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Nestingmodi</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Plaatsingsvenster</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Volgorde bepalen</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Plaat slicen</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Afschuiningssnede</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Open contouren</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Variabele afschuining</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Diverse</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Geavanceerd</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Afwerkingsregels</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">LTT bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Strategie</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Microjoints</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">Verdere instellingen</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">Buig CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../createbenddata.html">Buigparameters aanmaken</a></li>
+    <li><button class="tree blank"></button><a href="../navigator.html">Buignavigator</a></li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Buigparameters bewerken</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="editbend.html">Een buiging bewerken</a></li>
+      <li><button class="tree blank"></button><a class="active" href="editmount.html">Een gereedschapshouder bewerken</a></li>
+      <li><button class="tree blank"></button><a href="editsetup.html">Een buigopspanning bewerken</a></li>
+      <li><button class="tree blank"></button><a href="editgauge.html">De achteraanslagen bewerken</a></li>
+      <li><button class="tree blank"></button><a href="editacb.html">Hoekmeting bewerken</a></li>
+      <li><button class="tree blank"></button><a href="bendsheet.html">Spreadsheet Buigingen</a></li>
+      <li><button class="tree blank"></button><a href="sequencing.html">De volgorde wijzigen</a></li>
+      <li><button class="tree blank"></button><a href="addsetup.html">Opspanningen en stations toevoegen</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../advanced/index.html">Geavanceerd</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../advanced/anglemeasurement.html">Hoekmeting</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/batchprocess.html">Batchbewerking</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/recompute.html">Oplossing opnieuw berekenen</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/tonnage.html">Tonnagecontrole</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">Buignavigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">Stuk ophalen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">Ophalen van pallet</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">Ophalen bij houder</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">Robotbuigen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">Inleggen</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">Buigen</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Extractie</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Omgrijpen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Venster Omgrijpen</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Omgrijpen toevoegen</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Omgrijpen bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Omgrijpen met klauw</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Venster Omgrijpstation</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Stukafzetting</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Afzetpatronen</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Herhalen en volgorde</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Separatorplaat</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Geavanceerd</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Celconfiguratie</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Grijperdatabank</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Rapporten</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">Fels CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Felsgegevens aanmaken</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">De felsweergave</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Felsgegevens bewerken</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Een buiging bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Een zijde/sectie bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">De volgorde wijzigen</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">De neerhouders bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">De aanslag bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">De messen bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">Het laden bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">Het ontladen bewerken</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Gereedschapsvoorraad</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Geavanceerd</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Aangepaste luchtspleettabellen</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">Handmatige buiging voltooien</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Vereiste beenlengte</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Instellingen</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Tekening</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Lagen</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Afmetingen</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Weergave</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">Buig CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Standaard instellingen van de machine</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Buiguitvoeren</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Buigweergave</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Buigcel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">Snij CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Lay-out</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Nestingsinstellingen</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Plaat</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Plaatbehandeling</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Resterende plaatsneden</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Werkondersteuning</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Volgorde</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Snij-uitvoeren</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Snijweergave</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Zwenkbuigen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Standaard instellingen</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">ZBW-dragers</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Uitvoeren</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Rapporten</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Standaard instellingen voor items</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Importeren/exporteren</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Omgeving</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Database</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Materialen</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Machines</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Buiggereedschappen</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Buiggrijpers</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Vormen/componenten</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Rapporten</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Rapportontwerper</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Velden, afbeeldingen en tabellen</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Banden (subrapporten)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Labels, bitmaps en vormen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Bijlage</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Ondersteunde 3D-formaten</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separatorplaat DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Buiggereedschap DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">Buig CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Buigparameters bewerken</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="editmount.html">Een gereedschapshouder bewerken</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Een gereedschapshouder bewerken</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wanneer u op een gereedschaphouder klikt, wordt het venster <strong>Buighouder</strong> weergegeven en kan worden gebruikt om verschillende instellingen van de buighouder te bewerken en om verschillende procedures uit te voeren.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_het_venster_buighouder">Het venster Buighouder<a id="h000207"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/edit-mount.png" alt="Bend Mount" width="140">
+</div>
+</div>
+<div class="paragraph">
+<p>Het venster Buighouder ziet eruit als de afbeelding ernaast. De exact beschikbare instellingen en bewerkingen zal variëren, afhankelijk van of u op een stempel-, matrijs- of adapterhouder klikt. Bovendien kunnen sommige instellingen al dan niet beschikbaar zijn, afhankelijk van mogelijkheden van de machine.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Klik op de knop <strong>Gereedschapstype wijzigen</strong> om het gereedschap te vervangen dat wordt gebruikt voor de geselecteerde houder door een ander gereedschap. (Zie het gedeelte hieronder voor meer informatie over de <em>gereedschapsselector</em> die wordt gebruikt om een vervangend gereedschap te selecteren).</p>
+</li>
+<li>
+<p>De invoer <strong>Lengte</strong> wordt gebruikt om de lengte van het station aan te passen. Wanneer u hier een nieuwe waarde typt, stelt TecZone Bend het station opnieuw samen met behulp van een gepaste set <em>segmenten</em> om te proberen de gevraagde lengte zo dicht mogelijk te benaderen. U kunt de gebruikte segmenten visueel inspecteren door te kijken naar de segmentgrenslijnen weergegeven op de buighouder.</p>
+</li>
+<li>
+<p>De invoer <strong>Positie</strong> wordt gebruikt om de positie van de <em>linkerrand</em> van de houder in te stellen, langs de tafel of balk van de machine. De positie kan ook worden aangepast door de houder naar links of rechts te <em>slepen</em>. (Zie het gedeelte hieronder over het slepen van de houder).</p>
+</li>
+<li>
+<p>De keuzeschakelaar <strong>Hoorngereedschap</strong> (alleen weergegeven voor stempelhouder) kan worden gebruikt om TecZone Bend te dwingen om links en/of rechts te gebruiken ear<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> stukken in de samenstelling).</p>
+</li>
+<li>
+<p>De <strong>Gereedschap draaien</strong> wordt gebruikt om het gereedschap te spiegelen (van voor naar achter). Het wordt weergegeven wanneer u een houder bewerkt die een <em>assymmetrisch</em> gereedschap gebruikt (zoals een zwanenhalsgereedschap). De spiegelprocedure is intelligent genoeg om te bepalen of er extra dragers en gereedschappen moeten worden omgedraaid om de consistentie te behouden.In de onderstaande afbeelding, zorgt het spiegelen van de stempel <strong>OW_Z4</strong> (gebruikt voor Z-buiging) bijvoorbeeld ook voor het spiegelen de matrijs, de drager en zelfs het stuk om de consistentie van het proces te behouden:<br>
+<span class="image"><img src="img/flip-tool.png" alt="Flip Tool" width="550"></span></p>
+</li>
+<li>
+<p>De <strong>Adapter toevoegen</strong> wordt gebruikt om een <em>extender</em> toe te voegen om de hoogte van de stempel of matrijs te vergroten. Wanneer u een adapter toevoegt, wordt de adapter geselecteerd en het venster voor de adapter wordt weergegeven (hiermee kunt u de werkelijke adapter die wordt gebruikt wijzigen of verwijderen).<br>
+<span class="image"><img src="img/addadapter.png" alt="Add Adapter" width="460"></span></p>
+</li>
+<li>
+<p>De <strong>Kolom toevoegen</strong> wordt gebruikt om een spleet in de gereedschapshouder toe te voegen om het mogelijk te maken dat een buigbeen er zonder botsingen doorheen gaat (zie het gedeelte hieronder over het toevoegen van een spleet voor meer details hierover).</p>
+</li>
+<li>
+<p><strong>Gr. gereedschapshoogte</strong> wordt gebruikt om de geselecteerde gereedschappen te vervangen door verschillende grotere gereedschappen uit dezelfde familie.</p>
+</li>
+<li>
+<p>Klik op <strong>Verwijderen</strong> om de gereedschaphouder te verwijderen. Een fout <em>Ontbrekende stempel</em> of <em>ontbrekende matrijs</em> wordt weergegeven in de buignavigator voor buigingen die dit station gebruiken, en dit kan worden opgelost met behulp van <strong>Toevoegen</strong> op de opdrachtbalk links om een nieuwe houder toe te voegen.</p>
+</li>
+<li>
+<p>De keuzeschakelaar <strong>Sensorgereedschap</strong> wordt gebruikt om door de verschillende ACB-tastschijvenparen te bladeren die voor dit stuk kunnen worden gebruikt. De selectie is afhankelijk van de plaatdikte en de gebruikte stempel.</p>
+</li>
+<li>
+<p>Als het selectievakje <strong>Controle van aantal</strong> is geselecteerd , worden de gebruikte segmenten gecontroleerd aan de hand van de beschikbare <em>voorraad</em> van stukken (die kan worden bewerkt door op de link <strong>Gereedschapsbeheer…</strong> te klikken). Als segmenten worden gebruikt die niet in de voorraad zijn, wordt er een speciaal klaverblad-symbool op getekend, zoals u kunt zien in de onderstaande afbeelding voor de stukken van 40 mm en 45 mm nabij het midden van de stempel onderaan:<br>
+<span class="image"><img src="img/inventoryerror.png" alt="Inventory Error" width="253"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Wanneer u een gereedschapshouder bewerkt met behulp van een van deze instellingen en procedures, valideert TecZone Bend onmiddellijk de status van alle buigprocessen en voert verschillende controles uit zoals botsing, bruikbaarheid van gereedschap enz. De status van de buignavigator wordt onmiddellijk en in realtime bijgewerkt, waardoor het heel gemakkelijk is om te experimenteren met verschillende instellingen met onmiddellijke en nauwkeurige feedback.</p>
+</div>
+<div class="sect2">
+<h3 id="_het_venster_gereedschap_vervangen">Het venster Gereedschap vervangen<a id="h000208"></a></h3>
+<div class="paragraph">
+<p>Wanneer u op de knop <strong>Gereedschapstype wijzigen</strong> klikt, wordt het venster <strong>Gereedschap vervangen</strong> weergegeven:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/tool-replace.png" alt="Tool replacer" width="750">
+</div>
+</div>
+<div class="paragraph">
+<p>Dit venster toont alle mogelijke vervangende gereedschappen.</p>
+</div>
+<div id="h000209" class="ulist">
+<ul>
+<li>
+<p>Gebruik de hiërarchie aan de linkerkant om de keuzes te beperken - u kunt bijvoorbeeld ervoor kiezen om alleen zwanenhalsgereedschappen weer te geven, om de selectie gemakkelijker te maken.</p>
+</li>
+<li>
+<p>Gebruik de keuzeschakelaar <strong>Sorteren</strong> bovenaan om de gereedschappen te sorteren op naam, hoogte, radius of andere sorteercriteria (de exacte set sorteercriteria hangt af van u een stempel, matrijs of adapter vervangt).</p>
+</li>
+<li>
+<p>U kunt een gereedschapsnaam (of korte naam) in het vak <strong>Zoeken</strong> typen om de lijst snel te beperken. Het typen van een gedeeltelijke gereedschapsnaam is ook prima - <strong>OW200</strong> zal bijvoorbeeld overeenkomen met de gereedschappen OW200, OW200/S en OW200/K.</p>
+</li>
+<li>
+<p>Gebruik de schuifregelaar <strong>Schaal</strong> om de afmetingen van de gereedschapsafbeeldingen aan te passen. Het gereedschap dat momenteel wordt gebruikt heeft een blauwe vulling en een dikke rand. Het lichtblauwe ruitpatroon geeft <em>andere gereedschappen</em> aan die in dit stuk worden gebruikt.</p>
+</li>
+<li>
+<p>Schakel het selectievakje <strong>Filter</strong> uit om een onbeperkt overzicht te krijgen van alle gereedschappen (ongeacht of ze geschikt zijn of niet). In deze weergave zijn de gereedschappen die niet geschikt zijn grijs, en het bewegen van de muis over een van deze tools geeft aan <em>waarom</em> het niet beschikbaar voor selectie:<br>
+<span class="image"><img src="img/tool-replace2.png" alt="Tool error" width="650"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Terwijl u met de muis over de gereedschapsafbeeldingen beweegt, herberekent TecZone Bend <em>onmiddellijk</em> degeselecteerde gereedschapshouders met behulp van het nieuw geselecteerde gereedschap, en u kunt in realtime zien of het gereedschap dat u overweegt botsingsproblemen zal veroorzaken of niet (de overeenkomstige buigingen in de buignavigator lichten onmiddellijk rood op als er een botsing is). Deze real-time vooruitblik maakt het heel gemakkelijk voor u om te experimenteren met verschillende gereedschapskeuzes totdat u er een vindt die werkt.Als u op een van de gereedschappen <strong>klikt</strong>, wordt de keuze gemaakt en wordt het nieuwe gereedschap toegepast op het stuk. Als u in plaats daarvan op <kbd>Esc</kbd> drukt, worden de voorbeeldkeuzes die u heeft gemaakt teruggedraaid en het originele gereedschap blijft ongewijzigd.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_navigatie_en_selectie">Navigatie en selectie<a id="h000214"></a></h3>
+<div class="paragraph">
+<p>Het venster voor buighouder toont verschillende knoppen in de subvensters <em>navigatie</em> en <em>selectie</em>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Gebruik de navigatieknop <strong>Opspanning</strong> om omhoog te gaan naar het bewerken van de volledige buigopspanning. Zie de pagina over de <a href="editsetup.html">opspanningseditor</a> voor meer informatie hierover.</p>
+</li>
+<li>
+<p>Gebruik de knoppen <strong>Terug</strong> en <strong>Verder</strong> om te bladeren door het bewerken van de verschillende gereedschapshouders in deze opspanning.</p>
+</li>
+<li>
+<p>Gebruik de navigatieknop <strong>Segmenten</strong> om een niveau omlaag te gaan en de <em>afzonderlijke segmenten</em> te bewerken waaruit deze houder bestaat. Het onderstaande gedeelte over het bewerken van gereedschapshoudersegmenten geeft hier meer informatie over.</p>
+</li>
+<li>
+<p>Gebruik de keuzeschakelaar <strong>Gereedschapsstation</strong> om alle gereedschapshouders te selecteren waaruit dit <em>station</em> bestaat. Dit selecteert alle stempels, matrijzen en dragers die zijn uitgelijnd met de geselecteerde houder, zodat ze allemaal samen kunnen worden bewerkt of verplaatst.</p>
+</li>
+<li>
+<p>Gebruik de keuzeschakelaar <strong>Hetzelfde gereedschap</strong> om andere gereedschapshouders te selecteren die hetzelfde gereedschap gebruiken. Dit is vaak handig voordat u <em>een gereedschapswissel</em> gebruikt; het selecteren van alle stations met behulp van het opgegeven gereedschap verbreedt de beschikbare selectie van vervangend gereedschap.<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_meerdere_houders_bewerken">Meerdere houders bewerken<a id="h000215"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/edit-mounts.png" alt="Multiple mounts" width="138">
+</div>
+</div>
+<div class="paragraph">
+<p>Als u meerdere houders selecteert met <kbd>Shift</kbd>+klik op allemaal, kunnen ze samen worden bewerkt. Alleen instellingen en procedures die gemeenschappelijk zijn voor alle houders zijn beschikbaar voor bewerking.Velden zoals <strong>Lengte</strong> of <strong>Positie</strong> worden weergegeven voor bewerken, alleen als ze hetzelfde zijn voor alle houders.Als u meerdere stations heeft, is het handig om alle stempels of alle matrijzen te selecteren voordat u een procedure voor <strong>Gereedschap wijzigen</strong> uitvoert. In dit geval is de keuze van beschikbare vervangend gereedschap uitgebreider (aangezien er geen gevaar is dat stempels en matrijzen met verschillende hoogte die een botsing veroorzaken).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_een_buiggereedschaphouder_slepen">Een buiggereedschaphouder slepen<a id="h000216"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/drag-mount.png" alt="Dragging a mount" width="450">
+</div>
+</div>
+<div class="paragraph">
+<p>De invoer <strong>Positie</strong> kan worden gebruikt om een precieze positie voor een houder in te stellen.Soms is het makkelijker om een buighouder gewoon naar een nieuwe positie te slepen. Om dit te doen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Klik op de buighouder om deze te selecteren (selecteer meerdere houders met <kbd>Shift</kbd>+klik)</p>
+</li>
+<li>
+<p>Klik en begin met slepen naar links/rechts om de geselecteerde houder te verplaatsen.Zoals de afbeelding hierboven laat zien, wanneer u de muis over een geselecteerde houder beweegt, wordt de pijlpunt weergegeven om aan te geven dat u de geselecteerde houder kunt slepen. Wanneer u de houder sleept, laten klikdisplayelementen u de houder eenvoudig uitlijnen op andere bestaande houders.Als u een houder in de buurt van de linkerrand <em>oppakt</em>, dan worden de linker randen van alle houders gebruikt voor vastklikken. Als je een houder in het midden oppakt, dan wordt de middellijn gebruikt voor vastklikken, enzovoort.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_geavanceerde_procedures">Geavanceerde procedures<a id="h000218"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hier zijn enkele meer geavanceerde procedures die u met het venster Buighouder editor kunt doen.</p>
+</div>
+<div class="sect2">
+<h3 id="_gereedschapshoudersegmenten_bewerken">Gereedschapshoudersegmenten bewerken<a id="h000219"></a></h3>
+<div class="paragraph">
+<p>Als u op de navigatieknop <strong>Segmenten</strong> klikt terwijl een buiggereedschapshouder wordt bewerkt, wordt het venster <em>Gereedschapssegment</em> geopend, dat eruit ziet als in de afbeelding hiernaast.</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="img/edit-mount2.png" alt="Edit tool Segments" width="525"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>De keuzeschakelaar <strong>Gereedschap</strong> wordt gebruikt om het geselecteerde gereedschapssegment te vervangen door een langer of korter stuk, of een ander type stuk.</p>
+</li>
+<li>
+<p>De knoppen <strong>&lt; Verplaatsen</strong> en <strong>Verplaatsen &gt;</strong> worden gebruikt om het geselecteerde segment naar links of rechts te schuiven in de samenstelling. Dit verandert de totale lengte van de samenstelling niet, maar is bijvoorbeeld handig om een aanslagsensor naar links of rechts te verplaatsen om uitsparingen te vermijden.</p>
+</li>
+<li>
+<p>De knoppen <strong>Toevoegen</strong> en <strong>Verwijderen</strong> worden gebruikt om nieuwe segmenten aan de samenstelling toe te voegen, of om het geselecteerde segment eruit te verwijderen.</p>
+</li>
+<li>
+<p>De navigatieknoppen <strong>Terug</strong> en <strong>Verder</strong> worden gebruikt om te bladeren door het bewerken van de de verschillende segmenten in de buighouder. Zoals de afbeelding hierboven laat zien, is het gereedschapssegment dat wordt bewerkt blauw gemarkeerd.</p>
+</li>
+<li>
+<p>De navigatieknop <strong>Laden</strong> wordt gebruikt om een niveau omhoog te gaan, en de volledige buighouder te werken, in plaats van afzonderlijke segmenten.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_een_spleet_in_een_houder_toevoegen">Een spleet in een houder toevoegen<a id="h000220"></a></h3>
+<div class="paragraph">
+<p>Het is soms handig om een smalle <em>spleet</em> in een gereedschaphouder toe te voegen, meestal om een buigbeen zonder botsing door te laten. Om dit te doen, klikt u op de knop
+<strong>Kolom toevoegen</strong> (deze verschijnt als de gereedschapshouder lang genoeg is). Er wordt een klein gedeelte in het venster geopend, met een set onderling gekoppelde invoeren om de linkermarge, rechtermarge en werkelijke spleet in te stellen. Aangezien de som van deze drie moet optellen tot de lengte van de gereedschapshouder, zal het bewerken van twee hiervan de derde automatisch instellen.De onderstaande afbeelding toont deze bewerking in uitvoering. We hebben een buigbeen dat botst met de stempel, en we passen de linker/rechter marges aan totdat de voorgestelde spleet is uitgelijnd met waar het buigbeen de stempel snijdt (u kunt de voorgestelde spleet zien weergegeven als twee oranje lijnen op de buighouder).<br>
+<span class="image"><img src="img/add-gap1.png" alt="Adding a gap"></span></p>
+</div>
+<div class="paragraph">
+<p>Wanneer u op de knop <strong>Ok</strong> in dit subvenster klikt, wordt de spleet gemaakt en kunt u zien dat de botsingsfout nu is opgelost:<br>
+<span class="image"><img src="img/add-gap2.png" alt="Adding a gap"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Bij het bewerken van een station dat een stempelhouder gebruikt, vraagt TecZone Bend u of de spleet alleen moet worden ingevoerd voor de <strong>stempel</strong> of zowel de <strong>stempel</strong> als de <strong>houder</strong>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_een_dubbele_v_adapter_gebruiken">Een dubbele V-adapter gebruiken<a id="h000221"></a></h3>
+<div class="paragraph">
+<p>Het is mogelijk om een dubbele V-adapter te gebruiken om twee matrijzen naast elkaar te monteren. Om dit handmatig te doen, gebruikt u de knop <strong>Adapter toevoegen</strong> om een adapter toe te voegen aan een matrijs, en daarna de knop <strong>Gereedschapstype wijzigen</strong> om die adapter te veranderen in een dubbele V-adapter. Nu is het mogelijk om een tweede matrijs toe te voegen aan de andere groef van de dubbele V-adapter met behulp van het commando <strong>Toevoegen</strong> op de opdrachtbalk en het kiezen van een matrijshouder.Wanneer u een matrijs één groef van een dubbele V-houder hebt gemonteerd, kunt u deze verschuiven naar de andere groef door te klikken op de knop <strong>I-as wijzigen</strong> die wordt weergegeven:<br>
+<span class="image"><img src="img/dv-shift.png" alt="Double-V Shift" width="465"></span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Deze zijn soms ook bekend als _schouder_stukken.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Als u bijvoorbeeld een procedure <strong>Gereedschap wisselen</strong> uitvoert op slechts één ponsstation, en er zijn meerdere ponsstations, dan zult u beperkt zijn tot het kiezen van alleen andere ponsgereedschappen die <em>dezelfde hoogte</em> hebben, om botsingen tussen stempel en matrijs te vermijden vanwege ongelijke spleten.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_het_venster_buighouder">Het venster Buighouder</a>
+  </li>
+  <li level="2">
+   <a href="#_het_venster_gereedschap_vervangen">Het venster Gereedschap vervangen</a>
+  </li>
+  <li level="2">
+   <a href="#_navigatie_en_selectie">Navigatie en selectie</a>
+  </li>
+  <li level="2">
+   <a href="#_meerdere_houders_bewerken">Meerdere houders bewerken</a>
+  </li>
+  <li level="2">
+   <a href="#_een_buiggereedschaphouder_slepen">Een buiggereedschaphouder slepen</a>
+  </li>
+  <li level="1">
+   <a href="#_geavanceerde_procedures">Geavanceerde procedures</a>
+  </li>
+  <li level="2">
+   <a href="#_gereedschapshoudersegmenten_bewerken">Gereedschapshoudersegmenten bewerken</a>
+  </li>
+  <li level="2">
+   <a href="#_een_spleet_in_een_houder_toevoegen">Een spleet in een houder toevoegen</a>
+  </li>
+  <li level="2">
+   <a href="#_een_dubbele_v_adapter_gebruiken">Een dubbele V-adapter gebruiken</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="editbend.html">Een buiging bewerken</a></span>
+ <span class="next"><a href="editsetup.html">Een buigopspanning bewerken</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

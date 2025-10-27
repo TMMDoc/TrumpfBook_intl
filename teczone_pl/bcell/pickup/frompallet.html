@@ -1,0 +1,761 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Odbiór z palety</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Witamy w TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Wstęp</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">Instalowanie oprogramowania</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">Interfejs użytkownika</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Przepływ pracy dla detalu</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">Import 2-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">Czyszczenie 2-D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">Import 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">Importuj model 3D</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Importuj zespół</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Wykrywanie formy</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Wykrywanie podzespołów</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">Modyfikowanie geometrii</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">Laser CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Przepływ pracy dla detalu</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Edycja paneli</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Cięcie laserowe</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Najazd</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Wycofanie</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Mikropołączenie</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Zagadnienia zaawansowane</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Cięcie wióru</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Detal</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Wykańczanie narożników</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Szybkie układanie</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">Przepływ pracy w ramach zadania</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Panel zadań</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Zakładka Arkusze</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Zakładka Detale</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Zakładka Układy</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Karta Podsumowanie</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Edytuj układ</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Tryby układania</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Panel rozmieszczenia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Sekwencjonowanie</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Wycinek arkusza</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Ukosowanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Otwarte kontury</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Ukos zmienny</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Informacje różne</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Reguły wykańczania</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">Edytuj LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Strategia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Mikropołączenia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">Dalsze ustawienia</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">Wykrywanie linii (DetectLine)</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bend/index.html">Gięcie CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">Utwórz dane gięcia</a></li>
+    <li><button class="tree blank"></button><a href="../../bend/navigator.html">Nawigator gięcia</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bend/editing/index.html">Edycja danych gięcia</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bend/editing/editbend.html">Edycja gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editmount.html">Edycja uchwytu narzędziowego</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editsetup.html">Edycja konfiguracji gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editgauge.html">Edycja tylnych zderzaków</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editacb.html">Edycja pomiaru kąta</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/bendsheet.html">Arkusz gięć</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/sequencing.html">Zmiana kolejności</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/addsetup.html">Dodawanie ustawień i stacji</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bend/advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bend/advanced/anglemeasurement.html">Pomiar kąta</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/batchprocess.html">Proces obróbki partii</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/recompute.html">Przelicz dane rozwiązania</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Kontrola tonażu</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">BendMaster CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../navigator.html">Nawigator gięcia</a></li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Odbiór detalu</a>
+     <ul>
+      <li><button class="tree blank"></button><a class="active" href="frompallet.html">Odbiór z palety</a></li>
+      <li><button class="tree blank"></button><a href="fromdispenser.html">Odbiór z dozownika</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bending/index.html">Gięcie zrobotyzowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bending/insertion.html">Wkładanie</a></li>
+      <li><button class="tree blank"></button><a href="../bending/bending.html">Gięcie</a></li>
+      <li><button class="tree blank"></button><a href="../bending/extraction.html">Ekstrakcja</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../regrip/index.html">Przechwytywanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../regrip/regrippanel.html">Panel przechwytów</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/addregrip.html">Dodaj przechwyt</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/editregrip.html">Edytuj przechwyt</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/jawregrip.html">Przechwyt za pomocą szczęki</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/rgstationpanel.html">Panel stacji przechwytowych</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../deposit/index.html">Odkładanie części</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Schematy odkładania</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/repeat.html">Powtórzenie i sekwencja</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Arkusz separatora</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../advanced/waypoints.html">Punkty orientacyjne</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/cellconfig.html">Konfiguracja komórki</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/gripperdb.html">Baza danych chwytaków</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/reports.html">Raporty</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">Składanie CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Utwórz dane składania</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">Widok Składanie</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Edycja danych składania</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Edycja gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Edycja boku/sekcji</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">Zmiana kolejności w sekwencji</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">Edycja dociskaczy</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">Edycja przymiaru</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">Edycja noży</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">Edytuj ładowanie</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">Edycja rozładunku</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Magazyn narzędzi</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Niestandardowe tabele szczelin powietrznych</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">Zakończenie gięcia ręcznego</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Wymagana długość kołnierza</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Ustawienia</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Rysunek</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Warstwy</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Wymiary</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Widok</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">Gięcie CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Ustawienia domyślne maszyny</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Dane wyjściowe gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Widok gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Komórka gięcia</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">Cięcie CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Układ</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Ustawienia gniazda</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Arkusz</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Obsługa arkuszy</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Cięcia w szkielecie</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Wsparcie pracy</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Sekwencja</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Dane wyjściowe cięcia</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Widok cięcia</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Gięcie panelu</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Ustawienia domyślne</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">Podajniki ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Dane wyjściowe</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Raporty</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Wartości domyślne pozycji</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Importowanie/Eksportowanie</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Otoczenie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Baza danych</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Materiały</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Maszyny</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Narzędzia do gięcia</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Chwytaki do gięcia</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Formy/komponenty</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Raporty</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Projektant raportów</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Pola, zdjęcia i tabele</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Raporty szczegółowe</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Etykiety, mapy bitowe i kształty</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Załącznik</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Obsługiwane formaty 3D</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">DXF arkusza separatora</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Narzędzie do gięcia DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">BendMaster CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Odbiór detalu</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="frompallet.html">Odbiór z palety</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Odbiór z palety</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Gdy używany jest chwytak ssawkowy lub magnetyczny, półfabrykaty (części płaskie) są
+odbierane z <em>palety</em>. Następujące parametry wpływają na ten proces:</p>
+</div>
+<div id="h000112" class="ulist">
+<ul>
+<li>
+<p>Położenie palety w komórce maszyny.</p>
+</li>
+<li>
+<p>Położenie i ułożenie stosu detali na palecie.</p>
+</li>
+<li>
+<p>Położenie i ułożenie chwytaka ssącego na detalu.</p>
+</li>
+<li>
+<p>Konfiguracja przyssawki chwytaka (które przyssawki są włączane/wyłączane i jaki rodzaj przyssawek montowany jest w każdym gnieździe).</p>
+</li>
+<li>
+<p>Obszary detalu, które są <em>obrazowane</em> przez kamerę na robocie, oraz wykorzystywane jako punkty odniesienia do kalibracji położenia detalu.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Panele służące do edycji wszystkich tych ustawień są wyświetlane poniżej – wszystkie są połączone linkami nawigacyjnymi przesuwania w górę / w dół prowadzącymi do innych paneli w logicznej
+sekwencji:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/palletnav.png" alt="Pallet Navigation" width="827">
+</div>
+</div>
+<div class="paragraph">
+<p>Jak pokazuje powyższy obrazek, dostęp do tych paneli można również łatwo uzyskać, po prostu klikając różne obiekty w symulacji:</p>
+</div>
+<div id="h000117" class="ulist">
+<ul>
+<li>
+<p>Aby otworzyć panel <strong>Paleta</strong>, kliknij paletę.</p>
+</li>
+<li>
+<p>Aby edytować stos detali na palecie (panel <strong>Odbiór</strong>), kliknij na półfabrykaty leżące na palecie.</p>
+</li>
+<li>
+<p>Aby edytować pozycję chwytaka na półfabrykacie (panel <strong>Chwytak</strong>), kliknij na chwytak.</p>
+</li>
+<li>
+<p>Aby edytować konfigurację przyssawki chwytaka (panel <strong>Ssanie</strong>), kliknij jedną z przyssawek.</p>
+</li>
+<li>
+<p>Aby edytować pozycje <em>obrazowania</em> (używane przez system rozpoznawania pozycji precyzyjnych), kliknij <strong>kamerę</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_panel_palet">Panel palet<a id="h000122"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Panel <strong>Paleta</strong> służy do wyboru palety i umieszczenia jej w komórce. Możesz otworzyć ten panel, klikając paletę; Flux ustawi również oś czasu symulacji tak, aby robot był ustawiony w punkcie podnoszenia detalu z palety.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/pallet.png" alt="Pallet" width="472">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Za pomocą <strong>Nazwa</strong> możesz wybrać inną paletę. Zwykle wymienione są tylko palety, które nadają się do tego półfabrykatu, ale można wyłączyć kontrolę <strong>Przefiltrowane</strong> i następnie zostają wymienione wszystkie dostępne palety.</p>
+</li>
+<li>
+<p>Przesunięcie kursora myszy nad nazwą na liście nazw powoduje wyświetlenie szybkiego podsumowania tej palety, wraz z miniaturą:<br>
+<span class="image"><img src="img/palletthumbnail.png" alt="Pallet thumbnail" width="308"></span></p>
+</li>
+<li>
+<p>Użyj danych wejściowych <strong>Pozycja</strong>, aby ustawić paletę w pozycji <strong>Z</strong> i <strong>X</strong> (we współrzędnych komórki), a następnie użyj danych wejściowych <strong>Kąt</strong>, aby obrócić paletę. Podczas przesuwania lub obracania palety detal układana jest na palecie, a chwytak/robot podążają za ruchem.</p>
+</li>
+<li>
+<p>Użyj przycisków <strong>Dalej</strong> i <strong>Wstecz</strong>, aby przejść do <em>innych</em> palet w komórce; na przykład palet z operacjami odkładania detali.</p>
+</li>
+<li>
+<p>Użyj przycisku <strong>Uchwyt</strong> nawigacji, aby edytować pozycję stosu detali na palecie.</p>
+</li>
+<li>
+<p>Użyj przycisku <strong>Konfig. pamięci</strong> pod sekcją <strong>Rozszerzone</strong>, aby zapisać tę konfigurację komórki (w tym wszystkie palety) jako domyślną dla tej maszyny.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_panel_odbioru">Panel odbioru<a id="h000124"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Panel <strong>Odbiór</strong> służy do edycji położenia stosu części na palecie.
+Możesz otworzyć ten panel bezpośrednio, klikając stos półfabrykatów leżących na palecie.
+(Możesz również uzyskać do niego dostęp za pomocą linku <strong>Uchwyt</strong> z panelu Paleta).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/stack.png" alt="Stack" width="526">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Użyj danych wejściowych <strong>Pozycja</strong>, aby ustawić stos na palecie; współrzędne te określają środek detalu w <strong>Z</strong> i <strong>X</strong> względem narożnika palety i znajdują się w lokalnej przestrzeni współrzędnych palety.</p>
+</li>
+<li>
+<p>Użyj danych wejściowych <strong>Kąt</strong>, aby obrócić detal na palecie.</p>
+</li>
+<li>
+<p>Użyj przełącznika <strong>Odwróć detal</strong>, aby odwrócić detal. Należy pamiętać, że zazwyczaj będzie to oznaczać, że konieczna będzie dodatkowa operacja <em>przechwytu</em> przed wykonaniem pierwszego gięcia (zostanie automatycznie dodane przez TecZone Bend).</p>
+</li>
+<li>
+<p>Użyj linku <strong>Kamera…</strong>, aby przejść do panelu <strong>Kamera</strong>, gdzie możesz konfigurować fazę rozpoznawania obrazu odbioru.</p>
+</li>
+<li>
+<p>Link <strong>Punkty kalibracji&#8230;&#8203;</strong> wyświetla edytor <a href="../advanced/waypoints.html">Punkty orientacyjne</a>, w którym można precyzyjnie dostroić trajektorię robota podczas odbioru.</p>
+</li>
+<li>
+<p>Link <strong>St. przech.</strong> wyświetla panel <a href="../regrip/rgstationpanel.html">Stacja przechwytowa</a>, w którym można skonfigurować jej pozycję podczas operacji pobierania.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Gdy detal jest przemieszczana na palecie, chwytak pozostaje <em>przyklejony</em> do detalu i robot podąża za ruchami.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_panel_chwytaka">Panel chwytaka<a id="h000125"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Panel <strong>Chwytak</strong> służy do wyboru innego chwytaka lub do zmiany pozycji i ułożenia, w których chwytak podnosi detal.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/gripper.png" alt="Gripper" width="585">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Za pomocą <strong>Nazwa</strong> możesz wybrać inny chwytak. Zwykle wyświetlane są tylko chwytaki odpowiednie dla tego detalu (na podstawie rozmiaru chwytaka i ładunku), ale można wyłączyć kontrolę <strong>Przefiltrowane</strong>, a następnie wszystkie chwytaki zostaną wymienione.</p>
+</li>
+<li>
+<p>Przesunięcie kursora myszy nad nazwą na liście chwytaków powoduje wyświetlenie podsumowania tego chwytaka wraz z miniaturą:<br>
+<span class="image"><img src="img/gripperthumbnail.png" alt="Gripper thumbnail" width="309"></span></p>
+</li>
+<li>
+<p>Użyj danych wejściowych <strong>Pozycja</strong>, aby przesunąć środek chwytaka względem środka detalu i użyć danych wejściowych <strong>Kąt</strong>, aby obrócić chwytak względem detalu.</p>
+</li>
+<li>
+<p>Użyj linku <strong>Ssawki</strong>, aby przejść do <em>precyzyjnej edycji</em> chwytaka (wyboru różnych przyssawek, włączania/wyłączania przyssawek).</p>
+</li>
+<li>
+<p>Przycisk <strong>Wybierz powierzchnię chwytną</strong> służy do pozycjonowania chwytaka na innej płaszczyźnie. Zwykle do pozycjonowania chwytaka używana jest największa płaszczyzna. Jeśli chcesz to zmienić, kliknij ten przycisk. Następnie kliknij płaszczyznę, w której powinien być umieszczony chwytak:<br>
+<span class="image"><img src="img/setonplane.png" alt="Set on Plane" width="753"></span></p>
+</li>
+<li>
+<p>Przycisk <strong>Użyj chwytaka cęgowego</strong> służy do przełączania tej części za pomocą dozownika detalu i chwytaka szczękowego (chwytaka mechanicznego). Wszystkie etapy cyklu gięcia od odbioru do odkładania są przeliczane za pomocą szczęki
+gripper<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_ostrzeżenia_dotyczące_ssania">Ostrzeżenia dotyczące ssania<a id="h000127"></a></h3>
+<div class="paragraph">
+<p>Jeśli chwytak zostanie przesunięty w taki sposób, że niektóre przyssawki leżą na arkuszu lub są umieszczone nad otworami w detalu, przyssawki zostają podświetlone, a w</p>
+</div>
+<div id="h000128" class="paragraph">
+<p><strong>kolumnie nawigatora Odbiór</strong> wyświetla się błąd, jak pokazano na poniższym obrazku:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/gripperhole.png" alt="Suction Missing" width="614">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_menu_działań">Menu działań<a id="h000129"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/gripperactions.png" alt="Gripper Actions" width="236">
+</div>
+</div>
+<div class="paragraph">
+<p>Przycisk <strong>Działania</strong> służy do wywołania menu, które zawiera kilka przydatnych działań
+na chwytaku:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Auto-Shift</strong> Próbuje zmienić położenie chwytaka nad detalem, upewniając się, że wszystkie przyssawki znajdują się wewnątrz detalu, a nie nad otworami (jeśli to możliwe).</p>
+</li>
+<li>
+<p><strong>Wyłączanie nieszczelnych ssawek</strong>: wyłącza wszystkie przyssawki leżące nad otworami lub znajdujące się poza granicami. part<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
+</li>
+<li>
+<p><strong>Włączanie wszystkich ssawek</strong>: Włącza wszystkie wyłączone przyssawki.</p>
+</li>
+<li>
+<p><strong>Konfig. pamięci</strong>: Jeśli <em>skonfigurujesz</em> chwytak, obracając lub usuwając niektóre przyssawki, lub poprzez zmianę długości ramion lub kątów (dla chwytaków MultiGrippers, które mogą zmieniać kształt), możesz zapisać zmienioną konfigurację chwytaka z nową nazwą w celu łatwego ponownego użycia.</p>
+</li>
+<li>
+<p><strong>Eksport chwytaka</strong>: Zapisz bieżący chwytak jako plik <strong>.fxbgrip</strong>, który można zaimportować do innej instalacjiTecZone Bend. Jest to przydatne, jeśli zaimportowano niestandardowy chwytak i trzeba go udostępnić na potrzeby innych instalacji.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_panel_ssanie">Panel Ssanie<a id="h000130"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Panel <strong>Ssanie</strong> służy do konfiguracji układu przyssawek chwytaka. Można otworzyć ten panel, klikając bezpośrednio na przyssawce lub wybierając link <strong>Przyssawka</strong> na panelu chwytaka.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/suction.png" alt="Suction" width="672">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Za pomocą <strong>Ssawki #</strong> wybierz konkretną przyssawkę w chwytaku lub użyj przycisków <strong>Dalej</strong> i <strong>Wstecz</strong>, aby przeglądać przyssawki. Wybrana przyssawka jest podświetlona na niebiesko i można ją edytować.</p>
+</li>
+<li>
+<p>Dla każdej przyssawki można ustawić <strong>Status</strong> na Wł., Wył. lub Usunięto.
+Zapoznaj się z poniższym opisem, aby uzyskać więcej informacji na ten temat.</p>
+</li>
+<li>
+<p>Za pomocą panelu <strong>Typ</strong> możesz zmienić typ przyssawki.
+Zwykle zmienia się wszystkie przyssawki w chwytaku na nowy typ, ale można również dopasować przyssawki, wyłączając przycisk <strong>Zmień wszystkie</strong> i następnie wymieniając przyssawki. (Należy pamiętać, że podczas wykonywania tej czynności wybór przyssawek będzie ograniczony, ponieważ wszystkie przyssawki zamontowane na ramie chwytaka muszą mieć tę samą wysokość roboczą). Powyższy rysunek przedstawia dwie przyssawki zastąpione mniejszymi (SAXM50 zamiast domyślnej SAXM80).</p>
+</li>
+<li>
+<p>Użyj przycisku <strong>Reset</strong>, aby przywrócić chwytak z powrotem do stanu pierwotnego – wszystkie przyssawki są włączane i przywracane do stanu domyślnego, który jest zdefiniowany w chwytaku.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Domyślnym stanem przyssawki jest <strong>Wł.</strong>, co oznacza, że przyssawki są podłączone do instalacji próżniowej i pomagają podczas podnoszenia.</p>
+</div>
+<div class="paragraph">
+<p>Jeśli przyssawka znajduje się nad otworem w detalu, można zmienić stan na <strong>Wył.</strong>, co
+oznacza brak próżni. (Zmniejsza to uniesienie chwytaka i zmienia środek podnoszenia, które Flux bierze pod uwagę przy sprawdzaniu wydajności chwytaka). Należy pamiętać, że przyssawka jest nadal zamontowana w ramie i uczestniczy w kontrolach zderzeń. Flux wyświetla wyłączone przyssawki jako makiety, jak widać w przypadku dwóch przyssawek na ilustracji powyżej.</p>
+</div>
+<div class="paragraph">
+<p>Na koniec można ustawić status przyssawki na <strong>Usunięto</strong>, co oznacza, że przyssawka została usunięta z ramy w rzeczywistej maszynie. Ta przyssawka nie uczestniczy w podnoszeniu i nie spowoduje zderzenia. Jest to czasami przydatne, jeśli przyssawka opada na uformowany obszar lub powoduje zderzenie z matrycą lub stołem maszyny podczas pracy.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_panel_kamery">Panel kamery<a id="h000131"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Proces odbioru wymaga przechwycenia jednego lub więcej obrazów przez kamerę i system przetwarzania obrazu wykorzystuje te obrazy do oszacowania dokładnego położenia detalu na palecie. Kliknięcie w kamerę zamontowaną na robocie lub wybranie przycisku nawigacji <strong>Kamera</strong>
+na panelu <strong>Odbiór</strong> otwiera panel kamery. Flux nastawia również symulację tak, aby robot znajdował się w pozycji wymaganej do przechwycenia obrazu:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/camera.png" alt="Camera" width="472">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Użyj listy <strong>Indeks</strong> (lub przycisków <strong>Dalej</strong> i <strong>Wstecz</strong>), aby cyklicznie przeglądać różne precyzyjnie rozpoznawalne obrazy używane w tym detalu.
+W tym czasie Flux wyświetla pomarańczowy kontur, który pokazuje strefę rozpoznawania obrazu na detalu (patrz ilustracja powyżej).</p>
+</li>
+<li>
+<p>Użyj danych wejściowych*Pozycja*, aby zmienić położenie tej strefy w <strong>Z</strong> i <strong>X</strong> w celu lepszego uwzględnienia niektórych interesujących cech, które mogą poprawić dokładność rozpoznawalności (narożniki, małe otwory, nacięcia).</p>
+</li>
+<li>
+<p>Użyj przycisku <strong>Dodaj</strong>, aby dodać dodatkowy obraz do rozpoznania (do 4) i przycisku <strong>Usuwanie</strong>, aby usunąć bieżący obraz do rozpoznania. Podczas symulacji pobierania detalu Flux pokazuje, jak robot przechodzi do każdego z tych obszarów rozpoznawania z kamerą skierowaną w dół i zatrzymuje się, aby pobrać obraz.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Jeśli przełącznik <strong>Zastosuj stół podświetlany</strong> jest włączony, to detal jest przenoszony na podświetlany stół przed użyciem kamery do zobrazowania detalu.
+ Zwiększa to kontrast i jest przydatne w przypadku detalu silnie odbijającego światło. TecZone Bend dodaje podświetlany stół i ustawia go automatycznie w pobliżu palety odbiorczej, ale możesz następnie skonfigurować pozycję, klikając na nią:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/lighttable.png" alt="Light Table" width="438">
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Ta opcja jest dostępna tylko dla części, które mieszczą się w zakresach rozmiarów roboczych chwytaków ssawkowych i chwytaków szczękowych
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Zauważ, że może to spowodować zmniejszenie ssania przez chwytak poniżej poziomu, w którym może niezawodnie podnieść detal. Wskazuje na to błąd w kolumnie nawigatora <strong>Odbiór</strong>.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_panel_palet">Panel palet</a>
+  </li>
+  <li level="1">
+   <a href="#_panel_odbioru">Panel odbioru</a>
+  </li>
+  <li level="1">
+   <a href="#_panel_chwytaka">Panel chwytaka</a>
+  </li>
+  <li level="2">
+   <a href="#_ostrzeżenia_dotyczące_ssania">Ostrzeżenia dotyczące ssania</a>
+  </li>
+  <li level="2">
+   <a href="#_menu_działań">Menu działań</a>
+  </li>
+  <li level="1">
+   <a href="#_panel_ssanie">Panel Ssanie</a>
+  </li>
+  <li level="1">
+   <a href="#_panel_kamery">Panel kamery</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="index.html">Odbiór detalu</a></span>
+ <span class="next"><a href="fromdispenser.html">Odbiór z dozownika</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>
