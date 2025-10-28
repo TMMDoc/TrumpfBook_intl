@@ -1,0 +1,803 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>Ovládacia plocha</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Vitajte v TecZone</a></li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Úvod</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="install.html">Inštalovanie softvéru</a></li>
+    <li><button class="tree blank"></button><a class="active" href="clarity.html">Ovládacia plocha</a></li>
+    <li><button class="tree blank"></button><a href="workflow.html">Pracovný postup dielca</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">2D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">Prečistenie 2D výkresu</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">3D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">Import 3D modelu</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">Import zostavy</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">Detekcia tvaru</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">Detekcia komponentov</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">Úprava geometrie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Laser CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Pracovný postup dielca</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Úprava okien</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Rezanie laserom</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Nábeh</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Odtiahnutie</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Rozšírené</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Geometria</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Rozrezanie odpadu</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Dielec</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Obrábanie v rohu</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Rýchle rozmiestnenie</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Pracovný postup zákazky</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Okno zákazky</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Záložka tabule plechu</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Záložka dielce</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Záložka rozmiestnenia</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Záložka súhrnu</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Úprava rozmiestnenia</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Režimy rozmiestňovania dielcov</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Okno umiestnenia dielcov</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Poradie obrábania</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Odrezanie tabule plechu</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Bevel Cut</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Otvorené geometrie</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Variabilné zrazenie</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Rôzne</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Rozšírené</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Pravidlá dokončovania</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">Úprava LTT</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Stratégia</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Mikro mostíky</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Ďalšie nastavenia</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Bend CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Vytvorenie údajov o ohýbaní</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Navigátor ohýbania</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Úprava dát ohybu</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Úprava ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Úprava zostavy nástrojov</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Úprava zostavy nástrojov</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Úprava zadných dorazov</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Úprava merania uhlov</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Tabuľka ohýbania</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Zmena postupnosti ohýbania</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Pridanie zostavy nástrojov a staníc</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Rozšírené</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Meranie uhlov</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Dávkový proces</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Prepočet riešenia</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Kontrola tlačnej sily</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Navigátor ohýbania</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Uchopovanie dielca</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Odoberanie z palety</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Odoberanie zo zásobníka dielcov</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Robotické ohýbanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Vkladanie dielca</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Ohýbanie</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Vyberanie dielca</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Prechytenie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Okno prechytenia</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Pridanie prechytenia</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Úprava prechytenia</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Prechytenie kliešťami</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Okno prechytávacej stanice</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Ukladanie dielcov</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Vzory ukladania dielcov</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Opakovanie a postupnosť</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Oddeľovacia vrstva</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Rozšírené</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Body na dráhe</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Konfigurácia kabíny (Cell)</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">Databáza chápadiel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">Správy</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">Fold CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Vytvorenie údajov o ohýbaní</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">Pohľad na ohýbanie</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Úprava údajov o ohýbaní</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Úprava ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Úprava strany/sekcie</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">Zmena postupnosti ohýbania</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">Úprava držiakov prístrihov</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Úprava dorážania</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">Úprava nadstavcov</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Úprava vkladania</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Úprava vykladania</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Stav zásob nástrojov</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Rozšírené</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Tabuľky vlastných vzduchových medzier</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Dokončenie manuálneho ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Required Flange Length</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Nastavenia</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Kreslenie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Vrstvy</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Kótovanie</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Náhľad</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Predvolené nastavenia stroja</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Výstupy ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Náhľad ohraňovacieho stroja</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Bend Cell</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Nastavenia rozmiestňovania dielcov</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Tabuľa plechu</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Manipulácia s tabuľou plechu</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Rozrezanie zvyškovej mriežky</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Podopieranie obrobku</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Poradie obrábania</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Výstupy rezania</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Náhľad rezania</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Výkyvné ohýbanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Predvolené nastavenia</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">Držiaky ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Výstupy</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Správy</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Predvolené nastavenia položiek</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Import/export</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Prostredie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Databáza</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Materiály</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Stroje</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Ohraňovacie nástroje</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Chápadla pre ohýbanie</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Tvary/komponenty</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Správy</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Návrhár správ</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Polia, obrázky a tabuľky</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Zostava (čiastková správa)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Štítky, bitmapy a tvary</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">Dodatok</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Podporované 3D formáty</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">DXF oddeľovacej vrstvy</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Bend Tool DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Úvod</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="clarity.html">Ovládacia plocha</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Ovládacia plocha</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>TecZone Bend používa inovatívny dizajn ovládacej plochy, nazývanej <strong>Clarity</strong>. Pri práci vo TecZone Bend-e máte prehľadný a minimalistický náhľad.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/clarity.png" alt="Clarity" width="651">
+</div>
+</div>
+<div class="paragraph">
+<p>Na ovládacej ploche TecZone Bend-u <strong>nenájdete</strong>:</p>
+</div>
+<div id="h000466" class="ulist">
+<ul>
+<li>
+<p>Mnoho riadkov usporiadaných ikon, pričom je pre aktuálnu situáciu podstatné len ich malé množstvo.</p>
+</li>
+<li>
+<p>Hlboké štruktúry menu s desiatkami ďalších menu.</p>
+</li>
+<li>
+<p><em>Lišty s nástrojmi</em> ovládacej plochy zaberajú veľa miesta v hornej časti obrazovky.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Rozhranie Clarity namiesto toho funguje na princípe <strong>Vybrať</strong> (Zvoliť) a <strong>Operate</strong> (Spustiť).</p>
+</div>
+<div id="h000469" class="ulist">
+<ul>
+<li>
+<p>Vyberte položky kliknutím na ne.</p>
+</li>
+<li>
+<p>Otvorí sa okno Clarity, obsahujúce rôzne <strong>Settings</strong> (Nastavenia) a <strong>Operations</strong> (Procesy) pre zvolenú položku.</p>
+</li>
+<li>
+<p>Okno často obsahuje niektoré ovládacie prvky na <strong>rozšírenie</strong> výberu výberom iných podobných položiek.</p>
+</li>
+<li>
+<p>Okno často obsahuje aj ovládacie prvky na <strong>navigáciu</strong> medzi rôznymi položkami, s ktorými pracujete.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Tieto princípy ovládacej plochy sú rovnaké v každom pracovnom režime TecZone Bend-u.
+Či už prečisťujete 3D model, ukladáte dielce na tabuľu plechu alebo upravujete ohraňovacie nástroje, budete používať rovnakú sadu kľúčových koncepcií.
+Aby sme tieto všeobecné myšlienky konkretizovali, urobíme si krátku exkurziu a pozrieme si ovládaciu plochu Clarity v akcii (na ilustráciu si vezmeme príklady z editora správ TecZone Bend-u a z TecZone Bend-u).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sprievodca">Sprievodca<a id="h000472"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Toto je krátka prehliadka fungovania ovládacej plochy Clarity. Existuje len niekoľko jednoduchých konceptov, ktoré sa opakujú všade vo TecZone Bend-e, pochopenie týchto konceptov znamená, že väčšinu TecZone Bend-u je možné používať bez dlhšieho čítania alebo školenia. Inými slovami, ak si prečítate túto časť, môžete preskočiť čítanie zvyšku užívateľskej príručky TecZone Bend-u!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vzor_správy">Vzor správy<a id="h000473"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>V ďalšej časti sa dozviete viac o vytváraní a úprave šablón správ.
+Zatiaľ si predstavme terminológiu v správach, aby sme ju mohli použiť na predstavenie konceptov ovládacej plochy Clarity.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/report.png" alt="Report" width="574">
+</div>
+</div>
+<div class="paragraph">
+<p>Obrázok vyššie zobrazuje niektoré typy objektov, ktoré je možné umiestniť do zostavy.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Textové pole</strong> (Štítok) je jednoduchý textový prvok; nastaviť je možné rôzne vlastnosti, ako napríklad písmo, zarovnanie textu a farbu.</p>
+</li>
+<li>
+<p><strong>Pole</strong> (Pole) zobrazuje niektoré skutočné údaje získané zo základného dielca.</p>
+</li>
+<li>
+<p><strong>Tvar</strong> (Tvar) je jednoduchá geometria (napr. elipsa, obdĺžnik alebo čiara), ktorú je možné použiť na pridanie pozadia, zvýraznenia alebo oddeľovačov v správe.</p>
+</li>
+<li>
+<p><strong>Tabuľka</strong> (Tabuľka) zobrazuje údaje zo základného dielca vo forme tabuľky (ako tabuľka s informáciami). V tomto príklade je možné vidieť zoznam operácií ohýbania v tomto dielci a pre každú z nich sa zobrazujú niektoré vlastnosti.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>S týmto základným vysvetlením objektov prehľadu môžeme začať skúmať rozhranie Clarity.</p>
+</div>
+<div class="sect2">
+<h3 id="_princíp_kliknutie_na_položku_kvôli_úpravám">Princíp: Kliknutie na položku kvôli úpravám<a id="h000474"></a></h3>
+<div class="paragraph">
+<p>Kliknutím na pole sa zobrazí <strong>okno Clarity</strong> (v tejto diskusii ho budeme nazývať len okno). Tu je obrázok s poznámkami, ako by to mohol vyzerať:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/fieldpanel.png" alt="Field Panel" width="581">
+</div>
+</div>
+<div class="paragraph">
+<p>Kliknutím na pole za zvolí, pričom sa otvorí okno kvôli úpravám.
+Tu sú niektoré prvky, ktoré je možné vidieť v tomto okne:</p>
+</div>
+<div id="h000475" class="ulist">
+<ul>
+<li>
+<p>Panel s nástrojmi sa dá použiť na zmenu polohy okna (kliknutím kdekoľvek na pozadie okna a potiahnutím). Ak kliknete na <strong>špendlík</strong>, okná sa vždy otvoria na tomto mieste na obrazovke. V opačnom prípade sa okná otvoria blízko miesta kurzora myši.</p>
+</li>
+<li>
+<p>Polia úprav, polia na zadávanie čísel, zoznamy možností, možnosti písma a zarovnania sú rôzne spôsoby, akými sa zobrazujú a upravujú nastavenia poľa.</p>
+</li>
+<li>
+<p>Tlačidlá akcií slúžia na vykonávanie rôznych procesov so zvoleným objektom.
+V tomto prípade je možné pole zo správy odstrániť kliknutím na tlačidlo <strong>Vymazať</strong> (Vymazať).</p>
+</li>
+<li>
+<p>Niektoré okná môžu obsahovať viacero prvkov. Pre vytvorenie prehľadu sú okná rozdelené do sekcií s <strong>rozbaľovacími oknami</strong>. Na obrázku vyššie je vidno zbalené okno <strong>Ilustrácia</strong> (skryté sú všetky nastavenia v tejto časti), zatiaľ čo rozbaľovacie okno Font je otvorené. Kliknutím kdekoľvek na rozbaľovacie okno je možné ho otvoriť alebo zatvoriť.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_princíp_výber_viacerých_objektov_aich_spoločné_úpravy">Princíp: Výber viacerých objektov a ich spoločné úpravy<a id="h000479"></a></h3>
+<div class="paragraph">
+<p>Ďalšie objekty je možné zvoliť pridržaním klávesu <kbd>Shift</kbd> a kliknutím na ne. Keď je zvolených viacero objektov, zobrazí sa okno, ktoré umožňuje upraviť nastavenia všetkých týchto objektov súčasne.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multisel1.png" alt="Multiple Selection" width="443">
+</div>
+</div>
+<div class="paragraph">
+<p>Na obrázku vyššie sú 3 okná, ktoré sú zvolené pomocou kombinácie <span class="keyseq"><kbd>Shift</kbd>+<kbd>Click</kbd></span>.
+Zobrazené okno umožňuje upravovať nastavenia všetkých týchto troch polí súčasne. (Tu je otvorené rozbaľovacie okno <strong>Ilustrácia</strong> a okno <strong>Druh písma</strong> je zatvorené).
+Po úprave farby <strong>Bgrd</strong> (Pozadie) a po nastavení <strong>Pen-width</strong> (šírky pera) vyzerá správa takto:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multisel2.png" alt="Multiple Selection 2" width="311">
+</div>
+</div>
+<div class="paragraph">
+<p>Zmeny, ktoré sa vykonali, sa použijú na všetky zvolené položky. V tomto scenári viacnásobných úprav je vidno, že nastavenie <strong>Výraz</strong> (Výraz) sa nezobrazuje; toto je jedno z nastavení, ktoré sa pravdepodobne nebude upravovať spoločne pre sadu polí (nie je žiadúce, aby 3 polia zobrazovali tú istú hodnotu dielca).
+Nastavenia, ktoré by zvyčajne mali odlišné hodnoty pre každý objekt, sa v takýchto oknách skupinových úprav nezobrazujú.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_princíp_objekty_rôznych_typov_je_možné_upravovať_súčasne">Princíp: Objekty rôznych typov je možné upravovať súčasne<a id="h000480"></a></h3>
+<div class="paragraph">
+<p>Vo vyššie uvedenom príklade sme zvolili tri objekty rovnakého typu. Čo sa stane, ak vyberieme objekty rôznych typov? Pozrime sa na to. Najprv sa pozrime, ako vyzerá okno pre objekt <strong>Tvar</strong> (Tvar):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multisel3.png" alt="Shape Panel" width="398">
+</div>
+</div>
+<div class="paragraph">
+<p>Ak zvolíme <strong>Pole</strong> (Pole) a <strong>Tvar</strong> (Tvar) súčasne, otvorí sa toto okno:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multisel4.png" alt="Field and Shape" width="395">
+</div>
+</div>
+<div id="h000481" class="ulist">
+<ul>
+<li>
+<p>V paneli nástrojov sa teraz zobrazia <strong>2 položky správy</strong>, pretože upravujeme položky správy, pričom nie sú rovnakého typu.</p>
+</li>
+<li>
+<p>Zobrazujú sa iba spoločné nastavenia <strong>Pole</strong> (Pole) a <strong>Tvar</strong> (Tvar) (v tomto prípade ide iba o nastavenia v sekcii Visual).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_princíp_viacnásobným_výberom_môžu_pribudnúť_ďalšie_operácie">Princíp: Viacnásobným výberom môžu pribudnúť ďalšie operácie<a id="h000482"></a></h3>
+<div class="paragraph">
+<p>Okrem bežnej podskupiny nastavení a operácií dostupných pre viacero objektov môžu pri viacnásobnom výbere niekedy pribudnúť nové operácie alebo nastavenia, ktoré nie sú dostupné pre jednotlivé objekty. Pre ilustráciu si vezmime si príklad z pohľadu ohýbania. Z pohľadu ohýbania sa kliknutím na ohyb zobrazí okno na úpravu nastavení ohybu a vykonanie niektorých operácií s ním:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bend1.png" alt="Bend" width="409">
+</div>
+</div>
+<div class="paragraph">
+<p>Na obrázku vyššie je zobrazené okno pre ohyb 3. Teraz je možné podržaním klávesu <kbd>Shift</kbd> zvoliť aj ohyb 4. Okno ktoré sa otvorí vyzerá takto:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bend2.png" alt="2-Bends" width="410">
+</div>
+</div>
+<div class="paragraph">
+<p>Existujú niektoré nastavenia, ktoré môžeme spoločne upravovať (nastavenie preskočenia ohybu alebo nastavenie čísla stanice). Pribudlo nové tlačidlo s názvom <strong>Zoskupenie</strong> (Zoskupiť).
+Keďže sú zvolené dva ohyby a tieto sú na jednej priamke, mohli by sa zoskupiť do jednej operácie ohybu. Zistí sa to automaticky, pričom sa zobrazí nové tlačidlo <strong>Zoskupenie</strong> (Zoskupiť); táto možnosť nie je k dispozícii, keď je zvolený iba jeden ohyb. Kliknutím na toto tlačidlo sa dva ohyby zoskupia, ako je to vidno na obrázku nižšie.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bend3.png" alt="Grouped" width="412">
+</div>
+</div>
+<div class="paragraph">
+<p>Teraz sú v tomto dielci už len 3 operácie ohybu. Ohyb 3 je teraz <em>zoskupený</em> ohyb, pričom pribudne nové tlačidlo: <strong>Oddelenie</strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_princíp_použitie_podradeného_okna_výber_na_úpravu_výberu">Princíp: Použitie podradeného okna Výber na úpravu výberu<a id="h000483"></a></h3>
+<div class="paragraph">
+<p>V okne Clarity sa v spodnej časti nachádza podradené okno <strong>Vybraťion</strong> (Výber).
+V tomto okne sa nachádza niekoľko tlačidiel na úpravu výberu rôznymi spôsobmi.
+Zvyčajne existujú tlačidlá na výber viacerých objektov, ktoré sú si nejakým spôsobom podobné. Niektoré spôsoby rozšírenia výberu by napríklad boli:</p>
+</div>
+<div id="h000484" class="ulist">
+<ul>
+<li>
+<p>Výber všetkých polí v správe.</p>
+</li>
+<li>
+<p>Výber všetkých lomených čiar v rovnakej vrstve.</p>
+</li>
+<li>
+<p>Výber všetkých úderov razníkom v dielci, ktoré používajú rovnaký razník.</p>
+</li>
+<li>
+<p>Výber všetkých ohybov, ktoré používajú rovnakú zostavu nástrojov.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Tu je príklad z editora správ, kde sa okno výberu zobrazuje po kliknutí na Pole v správe:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/selection.png" alt="Selection" width="303">
+</div>
+</div>
+<div class="paragraph">
+<p>Podradené okno výberu má charakteristické pozadie so vzorom a zaoblené tlačidlá.
+V tomto prípade sú zobrazené tlačidlá výberu <strong>All Fields</strong> (Všetky polia), voľba <strong>All Bend Fields</strong> (Všetky polia ohybu) (polia súvisiace s CAM dátami ohybu) a <strong>Prepnúť</strong> (Prepínanie) (aktuálna množina výberu).</p>
+</div>
+<div class="paragraph">
+<p>Skutočný zoznam tlačidiel výberu zobrazených v tomto podradenom okne sa bude líšiť v závislosti od situácie. Zistíte, že väčšinu bežných situácií je možné veľmi pohodlne ovládať pomocou týchto tlačidiel výberu.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_princíp_použitie_navigačného_okna_na_prechádzanie_stromom_objektov">Princíp: Použitie navigačného okna na prechádzanie stromom objektov<a id="h000488"></a></h3>
+<div class="paragraph">
+<p>Množina objektov v dielci, správa alebo výkres majú často hierarchickú štruktúru.
+Nazývame to <em>strom objektov</em>. Štruktúra je typicky znázornená ako obrátený strom, s „rodičovským“ objektom na vrchu a podradenými objektmi pod ním.
+Tu je príklad stromu objektov v správe.</p>
+</div>
+<div id="h000489" class="ulist">
+<ul>
+<li>
+<p>Správa môže mať viacero položiek. Niektoré z týchto položiek môžu mať tvar tabuľky.</p>
+</li>
+<li>
+<p>Tabuľka v správe môže mať viacero stĺpcov.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>V tomto strome sú teda 3 úrovne, grafické znázornenie tohto stromu by mohlo vyzerať takto:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/navigate1.png" alt="Navigate" width="768">
+</div>
+</div>
+<div class="paragraph">
+<p>Táto správa má 2 štítky, 1 pole a 1 tabuľku. Tabuľka má 4 stĺpce.
+Po kliknutí na tabuľku sa zobrazí sa podobné okno:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/navigate2.png" alt="Table" width="619">
+</div>
+</div>
+<div class="paragraph">
+<p>V navigačnom okne sú smerové navigačné tlačidlá na prechádzanie stromom objektov. Podobne ako okno výberu, má aj navigačné podradené okno charakteristické textúrované pozadie, nachádza sa v spodnej časti okna, ale tesne nad podradeným oknom výberu.</p>
+</div>
+<div class="paragraph">
+<p>Tlačidlá <span class="icon"><i class="fa fa-arrow-left"></i></span>
+<strong>Späť.</strong> (Predošlý) a <strong>Ďalej</strong>
+<span class="icon"><i class="fa fa-arrow-right"></i></span> (Ďalší) slúžia na presúvanie sa medzi položkami na tej istej úrovni v strome objektov. Kliknutím na tieto tlačidlá sa teda zvolia ďalšie položky v správe, ako napríklad položky <strong>Textové pole</strong> (Štítok) alebo <strong>Pole</strong> (Pole) v správe.</p>
+</div>
+<div class="paragraph">
+<p>Kliknutím na <strong>Nastavovací plán</strong> <span class="icon"><i class="fa fa-arrow-up"></i></span> (Správa) je možný presun nahor z tabuľky do nadradenej položky - do samotnej <em>správy</em>. V okne, ktoré sa otvorí po kliknutí na tlačidlo <strong>Nastavovací plán</strong> (Správa) sa zobrazujú niektoré nastavenia súvisiace so samotnou správou, ako napríklad veľkosť papiera a okraje:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/navigate3.png" alt="Report" width="617">
+</div>
+</div>
+<div class="paragraph">
+<p>Teraz upravujeme správu; nachádzame sa v koreni stromu objektov. Neexistuje žiadny smer, ktorým by sa dalo ísť, iba nadol, preto má navigačné podradené okno iba jedno tlačidlo (<span class="icon"><i class="fa fa-arrow-down"></i></span> Položky) na prechod nadol do zoznamu položiek. Kliknutím na toto tlačidlo sa tabuľka opäť vyberie.</p>
+</div>
+<div class="paragraph">
+<p>Z tabuľky nás tlačidlo navigácie nadol <span class="icon"><i class="fa fa-arrow-down"></i></span> <strong>Stĺpce</strong> (Stĺpce) presunie o jednu úroveň nižšie a prepne nás do režimu úpravy stĺpcov. Toto sa stane, keď klikneme na navigačné tlačidlo <span class="icon"><i class="fa fa-arrow-down"></i></span> <strong>Stĺpce</strong> (Stĺpce) v okne tabuľky:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/navigate4.png" alt="Columns" width="613">
+</div>
+</div>
+<div class="paragraph">
+<p>Zobrazia sa nastavenia pre zvolený stĺpec v tabuľke. Po kliknutí na <span class="icon"><i class="fa fa-arrow-left"></i></span> <strong>Späť</strong> (Predošlý) a <strong>Ďalej</strong> <span class="icon"><i class="fa fa-arrow-right"></i></span> (Ďalší) sa teraz presunie výber medzi <em>stĺpcami</em> v tabuľke, pretože to je úroveň v strome, s ktorou pracujeme. Neexistuje žiadne tlačidlo navigácie nadol, pretože toto je najnižšia úroveň v strome. Tlačidlom <strong>Tabuľka</strong> <span class="icon"><i class="fa fa-arrow-up"></i></span> (Tabuľka) sa presunieme o jednu úroveň vyššie a vrátime sa k úprave celej tabuľky.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_zhrnutie">Zhrnutie<a id="h000491"></a></h2>
+<div class="sectionbody">
+<div id="h000492" class="ulist">
+<ul>
+<li>
+<p>Kliknutie na položku kvôli úpravám.</p>
+</li>
+<li>
+<p>Výber viacerých objektov a možnosť ich spoločných úprav.</p>
+</li>
+<li>
+<p>Objekty rôznych typov je možné upravovať súčasne.</p>
+</li>
+<li>
+<p>Viacnásobným výberom môžu pribudnúť ďalšie nastavenia a operácie.</p>
+</li>
+<li>
+<p>Použitie podradeného okna Výber na inteligentnú úpravu výberu.</p>
+</li>
+<li>
+<p>Použitie navigačného okna na prechádzanie stromom objektov.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_sprievodca">Sprievodca</a>
+  </li>
+  <li level="1">
+   <a href="#_vzor_správy">Vzor správy</a>
+  </li>
+  <li level="2">
+   <a href="#_princíp_kliknutie_na_položku_kvôli_úpravám">Princíp: Kliknutie na položku kvôli úpravám</a>
+  </li>
+  <li level="2">
+   <a href="#_princíp_výber_viacerých_objektov_aich_spoločné_úpravy">Princíp: Výber viacerých objektov a ich spoločné úpravy</a>
+  </li>
+  <li level="2">
+   <a href="#_princíp_objekty_rôznych_typov_je_možné_upravovať_súčasne">Princíp: Objekty rôznych typov je možné upravovať súčasne</a>
+  </li>
+  <li level="2">
+   <a href="#_princíp_viacnásobným_výberom_môžu_pribudnúť_ďalšie_operácie">Princíp: Viacnásobným výberom môžu pribudnúť ďalšie operácie</a>
+  </li>
+  <li level="2">
+   <a href="#_princíp_použitie_podradeného_okna_výber_na_úpravu_výberu">Princíp: Použitie podradeného okna Výber na úpravu výberu</a>
+  </li>
+  <li level="2">
+   <a href="#_princíp_použitie_navigačného_okna_na_prechádzanie_stromom_objektov">Princíp: Použitie navigačného okna na prechádzanie stromom objektov</a>
+  </li>
+  <li level="1">
+   <a href="#_zhrnutie">Zhrnutie</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="install.html">Inštalovanie softvéru</a></span>
+ <span class="next"><a href="workflow.html">Pracovný postup dielca</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

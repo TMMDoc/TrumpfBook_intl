@@ -1,0 +1,716 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Úprava zostavy nástrojov</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Vitajte v TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Úvod</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">Inštalovanie softvéru</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">Ovládacia plocha</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Pracovný postup dielca</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">2D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">Prečistenie 2D výkresu</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">3D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">Import 3D modelu</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Import zostavy</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Detekcia tvaru</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Detekcia komponentov</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">Úprava geometrie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">Laser CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Pracovný postup dielca</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Úprava okien</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Rezanie laserom</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Nábeh</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Odtiahnutie</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Rozšírené</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Geometria</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Rozrezanie odpadu</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Dielec</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Obrábanie v rohu</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Rýchle rozmiestnenie</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">Pracovný postup zákazky</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Okno zákazky</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Záložka tabule plechu</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Záložka dielce</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Záložka rozmiestnenia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Záložka súhrnu</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Úprava rozmiestnenia</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Režimy rozmiestňovania dielcov</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Okno umiestnenia dielcov</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Poradie obrábania</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Odrezanie tabule plechu</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Bevel Cut</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Otvorené geometrie</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Variabilné zrazenie</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Rôzne</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Rozšírené</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Pravidlá dokončovania</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">Úprava LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Stratégia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Mikro mostíky</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">Ďalšie nastavenia</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">Bend CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../createbenddata.html">Vytvorenie údajov o ohýbaní</a></li>
+    <li><button class="tree blank"></button><a href="../navigator.html">Navigátor ohýbania</a></li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Úprava dát ohybu</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="editbend.html">Úprava ohybu</a></li>
+      <li><button class="tree blank"></button><a class="active" href="editmount.html">Úprava zostavy nástrojov</a></li>
+      <li><button class="tree blank"></button><a href="editsetup.html">Úprava zostavy nástrojov</a></li>
+      <li><button class="tree blank"></button><a href="editgauge.html">Úprava zadných dorazov</a></li>
+      <li><button class="tree blank"></button><a href="editacb.html">Úprava merania uhlov</a></li>
+      <li><button class="tree blank"></button><a href="bendsheet.html">Tabuľka ohýbania</a></li>
+      <li><button class="tree blank"></button><a href="sequencing.html">Zmena postupnosti ohýbania</a></li>
+      <li><button class="tree blank"></button><a href="addsetup.html">Pridanie zostavy nástrojov a staníc</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../advanced/index.html">Rozšírené</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../advanced/anglemeasurement.html">Meranie uhlov</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/batchprocess.html">Dávkový proces</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/recompute.html">Prepočet riešenia</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/tonnage.html">Kontrola tlačnej sily</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">Navigátor ohýbania</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">Uchopovanie dielca</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">Odoberanie z palety</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">Odoberanie zo zásobníka dielcov</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">Robotické ohýbanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">Vkladanie dielca</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">Ohýbanie</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Vyberanie dielca</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Prechytenie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Okno prechytenia</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Pridanie prechytenia</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Úprava prechytenia</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Prechytenie kliešťami</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Okno prechytávacej stanice</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Ukladanie dielcov</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Vzory ukladania dielcov</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Opakovanie a postupnosť</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Oddeľovacia vrstva</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Rozšírené</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Body na dráhe</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Konfigurácia kabíny (Cell)</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Databáza chápadiel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Správy</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">Fold CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Vytvorenie údajov o ohýbaní</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">Pohľad na ohýbanie</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Úprava údajov o ohýbaní</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Úprava ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Úprava strany/sekcie</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">Zmena postupnosti ohýbania</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">Úprava držiakov prístrihov</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">Úprava dorážania</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">Úprava nadstavcov</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">Úprava vkladania</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">Úprava vykladania</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Stav zásob nástrojov</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Rozšírené</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Tabuľky vlastných vzduchových medzier</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">Dokončenie manuálneho ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Required Flange Length</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Nastavenia</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Kreslenie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Vrstvy</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Kótovanie</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Náhľad</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Predvolené nastavenia stroja</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Výstupy ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Náhľad ohraňovacieho stroja</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Bend Cell</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Nastavenia rozmiestňovania dielcov</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Tabuľa plechu</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Manipulácia s tabuľou plechu</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Rozrezanie zvyškovej mriežky</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Podopieranie obrobku</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Poradie obrábania</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Výstupy rezania</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Náhľad rezania</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Výkyvné ohýbanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Predvolené nastavenia</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">Držiaky ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Výstupy</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Správy</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Predvolené nastavenia položiek</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Import/export</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Prostredie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Databáza</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Materiály</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Stroje</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Ohraňovacie nástroje</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Chápadla pre ohýbanie</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Tvary/komponenty</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Správy</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Návrhár správ</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Polia, obrázky a tabuľky</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Zostava (čiastková správa)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Štítky, bitmapy a tvary</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Dodatok</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Podporované 3D formáty</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">DXF oddeľovacej vrstvy</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bend Tool DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">Bend CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Úprava dát ohybu</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="editmount.html">Úprava zostavy nástrojov</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Úprava zostavy nástrojov</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Po kliknutí na zostavu nástroja sa otvorí okno <strong>Bend Mount</strong> (Montáž nástroja), môže sa použiť na úpravu rôznych nastavení zostavy nástroja a na vykonanie niektorých operácií.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_okno_zostavy_nástroja">Okno zostavy nástroja<a id="h000207"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/edit-mount.png" alt="Bend Mount" width="140">
+</div>
+</div>
+<div class="paragraph">
+<p>Na obrázku vedľa je zobrazené okno Bend Mount (Zostava nástroja). Presné nastavenia a dostupné operácie sa budú líšiť v závislosti od toho, či klikáte na zostavu horného, spodného nástroja alebo adaptéra. Niektoré nastavenia môžu alebo nemusia byť dostupné v závislosti od možností stroja.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Kliknutím na tlačidlo <strong>Zmeniť typ nástroja</strong> (Zmeniť nástroj) je možné vymeniť nástroj použitý vo zvolenej zostave nástroja za iný nástroj. (V časti nižšie je uvedených viac informácií o <em>výbere nástroja</em>, ktorý sa používa na voľbu iného nástroja).</p>
+</li>
+<li>
+<p>Zadanie <strong>Dĺžka</strong> (Dĺžka) sa používa na nastavenie dĺžky stanice nástroja. Ak tu zadáte novú hodnotu, TecZone Bend opäť zostaví stanicu nástrojov použitím vhodnej sady <em>segmentov nástroja</em> tak, aby sa čo najviac zhodovala s požadovanou dĺžkou. Použité segmenty je možné vizuálne skontrolovať pohľadom na okrajové čiary deliace segmenty, zobrazené v zostave nástrojov.</p>
+</li>
+<li>
+<p>Zadanie <strong>Poloha</strong> (Pozícia) sa používa na nastavenie pozície <em>ľavého okraja</em> zostavy, vzhľadom k stolu stroja alebo tlačného barana. Túto polohu je možné nastaviť aj <em>potiahnutím</em> zostavy doľava alebo doprava. (Pozri nižšie časť o potiahnutí zostavy).</p>
+</li>
+<li>
+<p>Pole <strong>Rohový nástroj</strong> (Roh) (zobrazuje sa len pre zostavy horných nástrojov) je možné použiť, ak chceme aby TecZone Bend použil ľavý a/alebo pravý horný rohovýear<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> nástroj v zostave nástrojov).</p>
+</li>
+<li>
+<p><strong>Otočiť nástroj</strong> (Otočiť nástroj) sa používa na otočenie nástroja (čelom dozadu). Zobrazí sa, ak upravujete zostavu, v ktorej je použitý <em>asymetrický</em> nástroj (napríklad zahnutý nástroj tvaru husieho krku). Operácia otočenia je dostatočne inteligentná na to, aby zistila, či je potrebné otočiť ďalšie držiaky a nástroje, aby sa zachovala ich konzistencia.
+  Napríklad, na obrázku nižšie a pri otočení horného nástroja <strong>OW_Z4</strong> (používaného na ohyby tvaru Z) otočí aj spodný nástroj, držiak a dokonca aj dielec, aby nedošlo k porušeniu procesu:<br>
+<span class="image"><img src="img/flip-tool.png" alt="Flip Tool" width="550"></span></p>
+</li>
+<li>
+<p><strong>Pridať adaptér</strong> (Pridať adaptér) sa používa na pridanie <em>predĺženia</em> kvôli zväčšeniu výšky horného alebo spodného nástroja. Po pridaní adaptéra sa adaptér zvolí a otvorí sa okno adaptéra (to vám umožní zmeniť aktuálne používaný adaptér alebo ho odstrániť).<br>
+<span class="image"><img src="img/addadapter.png" alt="Add Adapter" width="460"></span></p>
+</li>
+<li>
+<p><strong>Pridať medzeru</strong> (Pridať medzeru) sa používa na pridanie medzery do zostavy nástrojov, aby sa do nej pri ohýbaní bez kolízie zasunul vopred vytvorený ohyb (detaily sú uvedené v časti nižšie, o pridaní medzery).</p>
+</li>
+<li>
+<p><strong>Veľká výška nástroja</strong> (Vyšší nástroj) sa používa na nahradenie zvolených nástrojov inými vyššími nástrojmi rovnakého typu.</p>
+</li>
+<li>
+<p>Kliknutím na <strong>Odstrániť</strong> (Odstrániť) odstránite zostavu nástrojov. V navigátore sa zobrazí sa chyba <em>missing punch</em> (chýbajúci horný nástroj) alebo <em>missing die</em> (chýbajúci spodný nástroj) pre ohyby, ktoré používajú túto stanicu. Odstráni sa to pridaním novej zostavy použitím povelu <strong>Add</strong> (Pridať) v paneli nástrojov naľavo.</p>
+</li>
+<li>
+<p>Pole <strong>Snímačový nástroj</strong> sa používa na prepínanie medzi rôznymi pármi meracích platničiek ACB, ktoré je možné použiť na tento dielec. Voľba je závislá od hrúbky plechu a použitého horného nástroja.</p>
+</li>
+<li>
+<p>Ak je označené zaškrtávacie políčko <strong>Kontrola počtu kusov</strong> (Kontrola skladu), skontroluje sa, či sa potrebný počet použitých segmentov nástroja nachádzajú <em>na sklade</em> (možné upraviť kliknutím na odkaz <strong>Správa nástrojov…</strong> (Sklad)). Ak sú použité segmenty nástroja, ktoré nie sú v závode skladom, zobrazí sa na ňom špeciálny symbol trojlístka, ako je to zobrazené na obrázku nižšie na segmente horného nástroja dĺžky 40 mm a 45 mm:<br>
+<span class="image"><img src="img/inventoryerror.png" alt="Inventory Error" width="253"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Keď upravíte zostavu nástroja pomocou ktoréhokoľvek z týchto nastavení a operácií, TecZone Bend hneď overí stav všetkých operácií ohýbania a vykoná rôzne kontroly, ako je kolízia, použiteľnosť nástroja atď. Stav navigátora ohýbania sa aktualizuje okamžite a v reálnom čase, čo veľmi uľahčuje experimentovanie s rôznymi nastaveniami s okamžitou a presnou spätnou väzbou.</p>
+</div>
+<div class="sect2">
+<h3 id="_okno_výmeny_nástroja">Okno výmeny nástroja<a id="h000208"></a></h3>
+<div class="paragraph">
+<p>Po kliknutí na tlačidlo <strong>Zmeniť typ nástroja</strong> (Zmena nástroja), otvorí sa okno <strong>Replace Tool</strong> (Vymeniť nástroj):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/tool-replace.png" alt="Tool replacer" width="750">
+</div>
+</div>
+<div class="paragraph">
+<p>V tomto okne sa zobrazia všetky možné náhradné nástroje.</p>
+</div>
+<div id="h000209" class="ulist">
+<ul>
+<li>
+<p>Pomocou filtra na ľavej strane je možné zúžiť výber – napríklad vybrať zobrazenie iba zahnutých nástrojov (s husím krkom), aby bol výber jednoduchší.</p>
+</li>
+<li>
+<p>V poli <strong>Sort</strong> (Triediť) hore je možné triediť nástroje podľa názvu, výšky, rádiusu alebo iných kritérií triedenia (kritériá triedenia závisí od toho, či sa mení horný, spodný nástroj alebo adaptér).</p>
+</li>
+<li>
+<p>Do poľa <strong>Search</strong> (Hľadať) je možné zadať názov nástroja (alebo skrátený názov) a rýchlo tak zúžiť zoznam. Pritom postačuje zadať čiastočný názov nástroja - napr. zadaniu <strong>OW200</strong> budú zodpovedať nástroje OW200, OW200/S a OW200/K.</p>
+</li>
+<li>
+<p>Posuvným ovládačom <strong>Scale</strong> (Mierka) sa zmení veľkosť obrázkov nástrojov. Aktuálne používaný nástroj je vyplnený modrou farbou a má hrubý obrys. Svetlomodré šrafovanie označuje <em>ostatné nástroje</em>, ktoré sa na tomto dielci používajú.</p>
+</li>
+<li>
+<p>Vypnutím zaškrtávacieho políčka <strong>Filter</strong> sa zobrazia všetky nástroje (bez ohľadu na to, či sú použiteľné, alebo nie). V tomto zobrazení sú nástroje, ktoré nie sú vhodné, zobrazené sivou farbou. Presunutím myši nad jeden z týchto nástrojov sa zobrazí, <em>prečo</em> ho nie je možné zvoliť:<br>
+<span class="image"><img src="img/tool-replace2.png" alt="Tool error" width="650"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Pri pohybe myšou po obrázkoch nástrojov TecZone Bend <em>hneď</em> prepočíta zostavu zvoleného nástroja, pri použití novo zvoleného nástroja. V reálnom čase je možné vidieť, či nástroj, ktorý zvažujete, spôsobí problémy formou kolízie alebo nie (príslušné ohyby v navigátore ohybov sa okamžite rozsvietia na červeno, ak v nich dôjde ku kolízii). Tento náhľad v reálnom čase výrazne uľahčuje experimentovanie s rôznymi možnosťami nástrojov, kým sa nenájde ten správny.</p>
+</div>
+<div class="paragraph">
+<p>Po <strong>kliknutí</strong> na jeden z nástrojov sa zrealizuje výber a nový nástroj sa použije na dielec. Ak namiesto toho stlačíte <kbd>Esc</kbd>, vykonané voľby v náhľade sa vrátia späť a pôvodný nástroj ostane nezmenený.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_navigácia_avýber">Navigácia a výber<a id="h000214"></a></h3>
+<div class="paragraph">
+<p>V okne zostavy nástroja sú zobrazené rôzne tlačidlá okien <em>navigácie</em> a <em>výberu</em>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pomocou navigačného tlačidla <strong>Upnutie</strong> (Zostava nástrojov) je možný presun nahor kvôli úpravám celej zostavy nástrojov. Viac informácií je uvedených na stránke <a href="editsetup.html">úprav zostáv nástrojov</a>.</p>
+</li>
+<li>
+<p>Pomocou tlačidiel <strong>Späť</strong> (Predošlý) a <strong>Ďalej</strong> (Ďalší) je možné prepínať sa medzi úpravami rôznych zostáv nástrojov v tejto zostave.</p>
+</li>
+<li>
+<p>Pomocou navigačného tlačidla <strong>Zloženie súpravy</strong> (Segmenty) je možné prejsť o úroveň nižšie a upraviť <em>jednotlivé segmenty</em> tvoriace túto zostavu. Viac informácií k tejto téme je uvedených v časti nižšie o úprave segmentov.</p>
+</li>
+<li>
+<p>V poli <strong>Nástrojová stanica</strong> (Stanica nástrojov) je možné zvoliť všetky zostavy nástrojov tvoriacich túto <em>stanicu</em>. Týmto sa zvolia všetky horné, spodné nástroje a držiaky, ktoré sú zarovnané s vybranou zostavou nástrojov, všetky je možné upravovať alebo spoločne presúvať.</p>
+</li>
+<li>
+<p>V poli <strong>Rovnaký nástroj</strong> (Ten istý nástroj) je možné zvoliť inú zostavu nástrojov, ktorá používa ten istý nástroj. Často sa to používa pred spustením procesu <em>výmeny nástroja</em>; výber všetkých staníc pomocou zadaného nástroja rozšíri dostupný výber nástrojov, ktoré je možné vymeniť.<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_úprava_viacerých_zostáv">Úprava viacerých zostáv<a id="h000215"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/edit-mounts.png" alt="Multiple mounts" width="138">
+</div>
+</div>
+<div class="paragraph">
+<p>Po zvolení viacerých zostáv stlačením <kbd>Shift</kbd>+klik na všetky z nich, je možné ich upravovať spolu. Pre úpravy sú k dispozícii iba nastavenia a operácie, ktoré sú spoločné pre všetky zostavy.</p>
+</div>
+<div class="paragraph">
+<p>Pre úpravy sa zobrazia iba polia <strong>Dĺžka</strong> (Dĺžka) alebo <strong>Poloha</strong> (Pozícia), ktoré sú spoločné pre pre všetky zostavy.</p>
+</div>
+<div class="paragraph">
+<p>Ak máte viacero staníc, pred vykonaním <strong>Zmeny nástroja</strong> má zmysel zvoliť všetky horné alebo spodné nástroje. V takom prípade je výber dostupných nástrojov navrhnutých na výmenu rozsiahlejší (pretože neexistuje nebezpečenstvo kolízie horných a spodných nástrojov s rôznou výškou).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_presunutie_zostavy_ohraňovacích_nástrojov">Presunutie zostavy ohraňovacích nástrojov<a id="h000216"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/drag-mount.png" alt="Dragging a mount" width="450">
+</div>
+</div>
+<div class="paragraph">
+<p>Parameter <strong>Poloha</strong> (Pozícia) je možné použiť na nastavenie presnej pozície zostavy nástrojov.</p>
+</div>
+<div class="paragraph">
+<p>Niekedy je jednoduchšie jednoducho presunúť zostavu nástrojov na požadované miesto. Ako na to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Kliknutím na zostavu nástrojov ju zvolíte (viacero zostáv zvolíte stlačením <kbd>Shift</kbd>+klik)</p>
+</li>
+<li>
+<p>Kliknite na zvolenú zostavu a začnite posúvať doľava/doprava aby ste ju presunuli.Ako je znázornené na obrázku vyššie, keď presuniete myš nad vybranú zostavu, zobrazí sa šípka, ktorá naznačuje, že zvolenú zostavu je možné presunúť. Pri presúvaní zostavy umožňujú indikátory prichytenia jednoducho zarovnať zostavu s inými existujúcimi zostavami.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ak <em>chytíte</em> zostavu blízko jeho ľavého okraja, bude sa prichytávať k ľavým okrajom všetkých zostáv. Ak chytíte držiak za stred, pri prichytenie sa použije stredová čiara zostavy, atď.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rozšírené_operácie">Rozšírené operácie<a id="h000218"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Tu je niekoľko ďalších procesov, ktoré sú možné v okne úprav zostavy nástrojov.</p>
+</div>
+<div class="sect2">
+<h3 id="_úprava_segmentov_zostavy_nástroja">Úprava segmentov zostavy nástroja<a id="h000219"></a></h3>
+<div class="paragraph">
+<p>Kliknutím na navigačné tlačidlo <strong>Segments</strong> (Segmenty) počas úprav zostavy ohraňovacích nástrojov sa otvorí okno <em>Tool Segment</em> (Segment nástroja), viď obrázok.
+<span class="image right"><img src="img/edit-mount2.png" alt="Edit tool Segments" width="525"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>V poli <strong>Nástroj</strong> je možné zmeniť zvolený segment nástroja za dlhší alebo kratší segment, alebo za iný typ segmentu.</p>
+</li>
+<li>
+<p>Tlačidlá <strong>Presunúť &lt;</strong> a <strong>Presunúť &gt;</strong> sa používajú na posunutie zvoleného segmentu v zostave doľava alebo doprava v rámci zostavy. Tým sa nezmení celková dĺžka zostavy, túto funkciu je vhodné použiť napríklad na posunutie senzorového nástroja doľava alebo doprava, aby sa nenachádzali nad otvormi.</p>
+</li>
+<li>
+<p>Tlačidlá <strong>Pridať</strong> (Pridať) a <strong>Odstrániť</strong> (Odstrániť) sa používajú na pridanie nového segmentu do zostavy, alebo na odstránenie zvoleného segmentu.</p>
+</li>
+<li>
+<p>Navigačné tlačidlá <strong>Späť</strong> (Predošlý) a <strong>Ďalej</strong> (Ďalší) sa používajú na prepínanie medzi úpravami rôznych segmentov v zostave nástrojov. Ako je znázornené na obrázku vyššie, upravovaný segment nástroja je zvýraznený modrou farbou.</p>
+</li>
+<li>
+<p>Pomocou navigačného tlačidla <strong>Osadenie</strong> (Zostava) je možné použiť na posun o jednu úroveň vyššie a na úpravu celej zostavy nástrojov, nie jednotlivých segmentov.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pridanie_medzery_do_zostavy">Pridanie medzery do zostavy<a id="h000220"></a></h3>
+<div class="paragraph">
+<p>Niekedy je potrebné pridať do zostavy nástrojov úzku <em>medzeru</em>, zvyčajne preto, aby ním mohol prejsť predošlý ohyb bez kolízie. Kliknite pritom na tlačidlo
+<strong>Pridať medzeru</strong> (Pridať medzeru) (ktoré sa objaví, ak je zostava nástroja dostatočne dlhá). V okne sa otvorí malá sekcia so sadou prepojených vstupov na nastavenie ľavého okraja, pravého okraja a skutočnej medzery. Keďže súčet týchto troch hodnôt musí zodpovedať dĺžke zostavy nástroja, úpravou dvoch z nich sa automaticky nastaví tretia.</p>
+</div>
+<div class="paragraph">
+<p>Na obrázku nižšie je zobrazený tento proces. Máme vnútorný ohyb, ktorý je v kolízii s horným nástrojom. Upravujeme ľavý/pravý okraj, kým sa navrhovaná medzera nezarovná s miestom, kde ohyb pretína horný nástroj (navrhovanú medzeru je možné vidieť ako dve oranžové čiary nakreslené na zostave nástrojov).<br>
+<span class="image"><img src="img/add-gap1.png" alt="Adding a gap"></span></p>
+</div>
+<div class="paragraph">
+<p>Kliknutím na tlačidlo <strong>Ok</strong> v tomto okne sa vytvorí medzera. Následne je možné vidieť, že chyba kolízie je už vyriešená:<br>
+<span class="image"><img src="img/add-gap2.png" alt="Adding a gap"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Pri úprave stanice, ktorá používa držiak horného nástroja sa TecZone Bend opýta, či sa má medzera nastaviť iba pre <strong>horný nástroj</strong> alebo aj pre jeho <strong>držiak</strong>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adaptér_pre_dva_spodné_nástroje">Adaptér pre dva spodné nástroje<a id="h000221"></a></h3>
+<div class="paragraph">
+<p>Na montáž dvoch spodných nástrojov za sebou je možné použiť adaptér (DV adaptér). Ak chcete ručne pridať adaptér spodného nástroja, stlačte tlačidlo <strong>Pridať adaptér</strong> (Pridať adaptér), potom stlačte tlačidlo <strong>Zmeniť typ nástroja</strong> (Zmeniť nástroj), aby sa adaptér zmenil na DV adaptér. Teraz je možné pridať druhý spodný nástroj do druhej drážky DV adaptéra pomocou príkazu <strong>Add</strong> (Pridať) v paneli nástrojov a zvolením zostavy nástroja.</p>
+</div>
+<div class="paragraph">
+<p>Keď máte nástroj namontovaný v jednej drážke DV adaptéra, je možné ho presunúť do druhej drážky kliknutím na zobrazené tlačidlo <strong>Zmeniť os I</strong> (Posunúť DV):<br>
+<span class="image"><img src="img/dv-shift.png" alt="Double-V Shift" width="465"></span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Niekedy sú označované aj ako <em>okrajové</em> nástroje.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Napríklad, ak vykonávate <strong>Výmenu nástroja</strong> iba na jednej stanici horných nástrojov a existuje viacero staníc horných nástrojov, musíte zvoliť horné nástroje <em>rovnakej výšky</em>, aby ste predišli kolíziám horných a spodných nástrojov v dôsledku nerovnakých výšok medzi nástrojmi.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_okno_zostavy_nástroja">Okno zostavy nástroja</a>
+  </li>
+  <li level="2">
+   <a href="#_okno_výmeny_nástroja">Okno výmeny nástroja</a>
+  </li>
+  <li level="2">
+   <a href="#_navigácia_avýber">Navigácia a výber</a>
+  </li>
+  <li level="2">
+   <a href="#_úprava_viacerých_zostáv">Úprava viacerých zostáv</a>
+  </li>
+  <li level="2">
+   <a href="#_presunutie_zostavy_ohraňovacích_nástrojov">Presunutie zostavy ohraňovacích nástrojov</a>
+  </li>
+  <li level="1">
+   <a href="#_rozšírené_operácie">Rozšírené operácie</a>
+  </li>
+  <li level="2">
+   <a href="#_úprava_segmentov_zostavy_nástroja">Úprava segmentov zostavy nástroja</a>
+  </li>
+  <li level="2">
+   <a href="#_pridanie_medzery_do_zostavy">Pridanie medzery do zostavy</a>
+  </li>
+  <li level="2">
+   <a href="#_adaptér_pre_dva_spodné_nástroje">Adaptér pre dva spodné nástroje</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="editbend.html">Úprava ohybu</a></span>
+ <span class="next"><a href="editsetup.html">Úprava zostavy nástrojov</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

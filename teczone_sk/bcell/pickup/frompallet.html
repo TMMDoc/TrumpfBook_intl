@@ -1,0 +1,754 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Odoberanie z palety</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Vitajte v TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Úvod</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">Inštalovanie softvéru</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">Ovládacia plocha</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Pracovný postup dielca</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">2D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">Prečistenie 2D výkresu</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">3D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">Import 3D modelu</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Import zostavy</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Detekcia tvaru</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Detekcia komponentov</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">Úprava geometrie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">Laser CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Pracovný postup dielca</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Úprava okien</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Rezanie laserom</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Nábeh</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Odtiahnutie</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Rozšírené</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Geometria</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Rozrezanie odpadu</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Dielec</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Obrábanie v rohu</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Rýchle rozmiestnenie</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">Pracovný postup zákazky</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Okno zákazky</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Záložka tabule plechu</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Záložka dielce</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Záložka rozmiestnenia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Záložka súhrnu</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Úprava rozmiestnenia</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Režimy rozmiestňovania dielcov</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Okno umiestnenia dielcov</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Poradie obrábania</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Odrezanie tabule plechu</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Bevel Cut</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Otvorené geometrie</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Variabilné zrazenie</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Rôzne</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Rozšírené</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Pravidlá dokončovania</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">Úprava LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Stratégia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Mikro mostíky</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">Ďalšie nastavenia</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bend/index.html">Bend CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">Vytvorenie údajov o ohýbaní</a></li>
+    <li><button class="tree blank"></button><a href="../../bend/navigator.html">Navigátor ohýbania</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bend/editing/index.html">Úprava dát ohybu</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bend/editing/editbend.html">Úprava ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editmount.html">Úprava zostavy nástrojov</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editsetup.html">Úprava zostavy nástrojov</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editgauge.html">Úprava zadných dorazov</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editacb.html">Úprava merania uhlov</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/bendsheet.html">Tabuľka ohýbania</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/sequencing.html">Zmena postupnosti ohýbania</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/addsetup.html">Pridanie zostavy nástrojov a staníc</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bend/advanced/index.html">Rozšírené</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bend/advanced/anglemeasurement.html">Meranie uhlov</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/batchprocess.html">Dávkový proces</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/recompute.html">Prepočet riešenia</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Kontrola tlačnej sily</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">BendMaster CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../navigator.html">Navigátor ohýbania</a></li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Uchopovanie dielca</a>
+     <ul>
+      <li><button class="tree blank"></button><a class="active" href="frompallet.html">Odoberanie z palety</a></li>
+      <li><button class="tree blank"></button><a href="fromdispenser.html">Odoberanie zo zásobníka dielcov</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bending/index.html">Robotické ohýbanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bending/insertion.html">Vkladanie dielca</a></li>
+      <li><button class="tree blank"></button><a href="../bending/bending.html">Ohýbanie</a></li>
+      <li><button class="tree blank"></button><a href="../bending/extraction.html">Vyberanie dielca</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../regrip/index.html">Prechytenie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../regrip/regrippanel.html">Okno prechytenia</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/addregrip.html">Pridanie prechytenia</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/editregrip.html">Úprava prechytenia</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/jawregrip.html">Prechytenie kliešťami</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/rgstationpanel.html">Okno prechytávacej stanice</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../deposit/index.html">Ukladanie dielcov</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Vzory ukladania dielcov</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/repeat.html">Opakovanie a postupnosť</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Oddeľovacia vrstva</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../advanced/index.html">Rozšírené</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../advanced/waypoints.html">Body na dráhe</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/cellconfig.html">Konfigurácia kabíny (Cell)</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/gripperdb.html">Databáza chápadiel</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/reports.html">Správy</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">Fold CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Vytvorenie údajov o ohýbaní</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">Pohľad na ohýbanie</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Úprava údajov o ohýbaní</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Úprava ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Úprava strany/sekcie</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">Zmena postupnosti ohýbania</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">Úprava držiakov prístrihov</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">Úprava dorážania</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">Úprava nadstavcov</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">Úprava vkladania</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">Úprava vykladania</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Stav zásob nástrojov</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Rozšírené</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Tabuľky vlastných vzduchových medzier</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">Dokončenie manuálneho ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Required Flange Length</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Nastavenia</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Kreslenie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Vrstvy</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Kótovanie</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Náhľad</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Predvolené nastavenia stroja</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Výstupy ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Náhľad ohraňovacieho stroja</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Bend Cell</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Nastavenia rozmiestňovania dielcov</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Tabuľa plechu</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Manipulácia s tabuľou plechu</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Rozrezanie zvyškovej mriežky</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Podopieranie obrobku</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Poradie obrábania</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Výstupy rezania</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Náhľad rezania</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Výkyvné ohýbanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Predvolené nastavenia</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">Držiaky ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Výstupy</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Správy</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Predvolené nastavenia položiek</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Import/export</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Prostredie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Databáza</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Materiály</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Stroje</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Ohraňovacie nástroje</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Chápadla pre ohýbanie</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Tvary/komponenty</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Správy</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Návrhár správ</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Polia, obrázky a tabuľky</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Zostava (čiastková správa)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Štítky, bitmapy a tvary</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Dodatok</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Podporované 3D formáty</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">DXF oddeľovacej vrstvy</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bend Tool DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">BendMaster CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Uchopovanie dielca</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="frompallet.html">Odoberanie z palety</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Odoberanie z palety</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ak sa používa prísavkové alebo magnetické chápadlo, prístrihy (rozviny) sú odoberané z <em>palety</em>. Tento proces ovplyvňujú nasledujúce parametre:</p>
+</div>
+<div id="h000112" class="ulist">
+<ul>
+<li>
+<p>Poloha palety v kabíne stroja.</p>
+</li>
+<li>
+<p>Poloha a orientácia stohu dielcov na palete.</p>
+</li>
+<li>
+<p>Poloha a orientácia prísavkového chápadla na dielci.</p>
+</li>
+<li>
+<p>Nastavenie prísaviek chápadla (ktoré prísavky sú sú zapnuté/vypnuté, a aký typ prísaviek je namontovaný na každej objímke).</p>
+</li>
+<li>
+<p>Časti dielca, ktoré sú <em>zobrazené</em> kamerou na robote a sú použité ako referencie na kalibrovanie polohy dielca.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Nižšie sú zobrazené okná používané na úpravu všetkých týchto nastavení - všetky sú prepojené navigačnými odkazmi nahor/nadol, ktoré vedú k ďalším oknám v logickej postupnosti:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/palletnav.png" alt="Pallet Navigation" width="827">
+</div>
+</div>
+<div class="paragraph">
+<p>Ako je zobrazené na obrázku vyššie, k týmto oknám je ľahký prístup aj jednoduchým kliknutím na rôzne objekty v simulácii:</p>
+</div>
+<div id="h000117" class="ulist">
+<ul>
+<li>
+<p>Kliknite na paletu, ak chcete otvoriť okno <strong>Pallet</strong> (Paleta).</p>
+</li>
+<li>
+<p>Pre úpravu stohu dielov na palete (okno <strong>Pickup</strong> (Uchopiť), kliknite na prístrihy uložené na palete.</p>
+</li>
+<li>
+<p>Pre úpravu polohy chápadla na prístrihu (okno <strong>Gripper</strong> (Chápadlo)), kliknite na chápadlo.</p>
+</li>
+<li>
+<p>Pre úpravu nastavenia prísaviek chápadla (okno <strong>Suction</strong> (Prisávanie), kliknite na jednu z prísaviek.</p>
+</li>
+<li>
+<p>Pre úpravu polôh <em>zobrazovania</em> (používané systémom na presné rozpoznanie polohy), kliknite na <strong>kameru</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_okno_paliet">Okno paliet<a id="h000122"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Okno <strong>Pallet</strong> (Paleta) sa používa na voľbu palety a na jej umiestnenie v kabíne. Toto okno je možné otvoriť jednoduchým kliknutím na paletu; Flux tiež nastaví časovú os simulácie tak, aby bol robot v polohe, v ktorej odoberie dielec z palety.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/pallet.png" alt="Pallet" width="472">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Inú paletu je možné zvoliť v zozname <strong>Názov</strong> (Názov). Za normálnych okolností sú uvedené iba palety, ktoré je možné použiť pre tento prístrih, je možné ale vypnúť <strong>Filtrované</strong> (Filter), následne sa zobrazia všetky dostupné palety.</p>
+</li>
+<li>
+<p>Pri pohybe myšou po názvoch v zozname sa zobrazí krátky popis danej palety, spolu s  jej miniatúrnym zobrazením:<br>
+<span class="image"><img src="img/palletthumbnail.png" alt="Pallet thumbnail" width="308"></span></p>
+</li>
+<li>
+<p>Pomocou parametra <strong>Poloha</strong> (Poloha) sa nastaví poloha palety v smere osi <strong>Z</strong> a <strong>X</strong> (v súradniciach kabíny), pomocou <strong>Uhol</strong> (Uhol) je možné otočiť paletu. Keď posúvate alebo otáčate paletu, stoh dielcov na palete a chápadlo/robot nasledujú tento pohyb.</p>
+</li>
+<li>
+<p>Pomocou tlačidiel <strong>Ďalej</strong> (Ďalší) a <strong>Späť</strong> (Predošlý) je možné sa prepínať na <em>ostatné</em> palety v kabíne; napríklad na paletu s krokmi na ukladanie dielcov.</p>
+</li>
+<li>
+<p>Pomocou navigačného tlačidla <strong>Snímanie</strong> (Odobrať) je možná úprava polohy stohu dielcov na palete.</p>
+</li>
+<li>
+<p>Pomocou tlačidla <strong>Konfig. Pamäť</strong> (Uložiť nastavenie) pod oknom <strong>Rozšírené</strong> (Rozšírené) je možné uložiť toto nastavenie kabíny (vrátane všetkých paliet) ako predvolené pre tento stroj.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_okno_uchopovania">Okno uchopovania<a id="h000124"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Okno <strong>Pickup</strong> (Uchopiť) sa používa na úpravu polohy stohu dielcov na palete.
+Toto okno je možné otvoriť priamo kliknutím na stoh prístrihov uložených na palete.
+(Prístup k nemu je možné získať aj použitím odkazu <strong>Snímanie</strong> (Odobrať) v okne paliet).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/stack.png" alt="Stack" width="526">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pomocou parametra <strong>Poloha</strong> (Poloha) sa nastaví poloha stohu na palete; tieto súradnice špecifikujú stred dielca v smere osi <strong>Z</strong> a <strong>X</strong>, vzhľadom na roh palety, nachádzajú sa v lokálnom súradnicovom systéme palety.</p>
+</li>
+<li>
+<p>Pomocou parametra <strong>Uhol</strong> (Uhol) sa nastaví otočenie dielca na palete.</p>
+</li>
+<li>
+<p>Na prevrátenie dielca použite prepínač <strong>Otočiť dielec</strong> (Prevrátiť dielec). Pozor, väčšinou to znamená, že skôr, ako bude možné vykonať prvý ohyb, bude potrebný dodatočný proces <em>prechytenia</em> (TecZone Bend ho pridá automaticky).</p>
+</li>
+<li>
+<p>Pomocou odkazu <strong>Kamera&#8230;&#8203;</strong> (Kamera) je možné prejsť do okna <strong>Camera</strong> (Camera), kde je možné nastaviť rozlíšenie obrazu vo fáze uchopovania.</p>
+</li>
+<li>
+<p>Kliknutím na <strong>Vzťažné body&#8230;&#8203;</strong> (Body na dráhe) sa otvorí editor <a href="../advanced/waypoints.html">Waypoints</a> (Body na dráhe), kde je možné presne nastaviť dráhu robota počas uchopovania.</p>
+</li>
+<li>
+<p>Kliknutím na <strong>Prechyt. stan.</strong> (Prechyt. stanice) sa otvorí okno <a href="../regrip/rgstationpanel.html">Regrip Station</a> (Prechytávacia stanica), kde je možné nastaviť polohu prechytávacej stanice počas uchopovania.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Pri pohybe dielca po palete ostáva chápadlo "<em>spojené</em>" s dielcom a robot sleduje pohyby.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_okno_chápadla">Okno chápadla<a id="h000125"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Okno <strong>Gripper</strong> (Chápadlo) sa používa na voľbu rôznych chápadiel, alebo na zmenu polohy a orientácie, v ktorej chápadlo uchopí dielec.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/gripper.png" alt="Gripper" width="585">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Iné chápadlo je možné zvoliť v zozname <strong>Názov</strong> (Názov). Za normálnych okolností sa zobrazia iba tie chápadlá, ktoré sú vhodné pre tento dielec (na základe veľkosti a nosnosti chápadla),
+je možné ale vypnúť <strong>Filtrované</strong> (Filter), následne sa zobrazia všetky chápadlá.</p>
+</li>
+<li>
+<p>Pri pohybe myšou po názvoch v zozname chápadiel sa zobrazí krátky popis daného chápadla, spolu s jeho miniatúrnym zobrazením:<br>
+<span class="image"><img src="img/gripperthumbnail.png" alt="Gripper thumbnail" width="309"></span></p>
+</li>
+<li>
+<p>Pomocou parametra <strong>Poloha</strong> (Pozícia) je možné posunúť stred chápadla voči stredu dielca, pomocou parametra <strong>Uhol</strong> (Uhol) je možné otočiť chápadlo vzhľadom na orientáciu dielca.</p>
+</li>
+<li>
+<p>Kliknutím na odkaz <strong>Prísavka</strong> (Prisávanie) je možné prejsť na <em>detailnú úpravu</em> chápadla (výber rôznych prísaviek, zapínanie / vypínanie prísaviek).</p>
+</li>
+<li>
+<p>Tlačidlo <strong>Zvoliť uchopovaciu plochu</strong> (Nastaviť plochu uchopovania) je možné použiť na umiestnenie chápadla na inú plochu. Za normálnych okolností sa na umiestnenie chápadla použije najväčšia plocha na modeli. Ak je potrebná zmena, kliknite na toto tlačidlo. Následne kliknite na plochu, na ktorú sa má umiestniť chápadlo:<br>
+<span class="image"><img src="img/setonplane.png" alt="Set on Plane" width="753"></span></p>
+</li>
+<li>
+<p>Tlačidlo <strong>Použiť kliešťové chápadlo</strong> (Použiť kliešťové chápadlo) sa používa na prepnutie tohoto dielca pre zásobník dielcov a kliešťové (mechanické) chápadlo. Všetky fázy cyklu ohýbania od uchopenia prístrihu až po uloženie dielca sa prepočítajú s použitím kliešťového chápadla
+gripper<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_výstrahy_prisávania">Výstrahy prisávania<a id="h000127"></a></h3>
+<div class="paragraph">
+<p>Ak sa chápadlo posunie tak, že niektoré prísavky sú mimo plechu alebo sú nad otvormi v dielci, prísavky sa zvýraznia a v stĺpci
+<strong>Pickup</strong> (Uchopenie) v navigátore sa zobrazí chyba, ako je to vidno na obrázku nižšie:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/gripperhole.png" alt="Suction Missing" width="614">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_menu_akcií">Menu akcií<a id="h000129"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/gripperactions.png" alt="Gripper Actions" width="236">
+</div>
+</div>
+<div class="paragraph">
+<p>Tlačidlo <strong>Actions</strong> (Akcie) sa používa na otvorenie menu, ktoré poskytuje niekoľko užitočných akcií na chápadle:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Automatické prepnutie</strong> (Auto umiestnenie: Posunutie): Pokúša sa premiestniť chápadlo nad dielec a zabezpečiť, aby boli všetky prísavky vnútri dielca a zároveň aby neboli nad otvormi (ak to je možné).</p>
+</li>
+<li>
+<p><strong>Odpojenie netesných prísaviek</strong> (Vypnúť prísavky s netesnosťou): Vypne všetky prísavky ktoré sú nad otvormi, alebo sú mimo okrajov dielca part<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
+</li>
+<li>
+<p><strong>Pripojenie všetkých prísaviek</strong> (Zapni všetky prísavky): Zapne všetky prísavky, ktoré sú vypnuté.</p>
+</li>
+<li>
+<p><strong>Konfig. Pamäť</strong> (Uložiť nastavenie): Ak <em>nastavujete</em> chápadlo otáčaním alebo odstránením niektorých prísaviek, alebo zmenou dĺžky alebo uhla ramena (pri multi chápadlách, ktoré môžu meniť tvar), je možné uložiť zmenené nastavenie chápadla pod novým názvom, aby ste ho mohli jednoducho opäť použiť.</p>
+</li>
+<li>
+<p><strong>Exportovanie chápadiel</strong> (Exportovať chápadlo): Uloží aktuálne chápadlo ako súbor <strong>.fxbgrip</strong>, ktorý je možné naimportovať do inej inštalácie TecZone Bend-u. Je to užitočné, ak ste si naimportovali vlastné chápadlo a potrebujete ho zdieľať s inými inštaláciami softvéru.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_okno_prísaviek">Okno prísaviek<a id="h000130"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Okno <strong>Suction</strong> (Prisávanie) sa používa na nastavenie rozloženia prísaviek na chápadle. Toto okno je možné otvoriť kliknutím priamo na prísavku, alebo kliknutím na odkaz <strong>Suction</strong> (Prisávanie) v okne chápadla.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/suction.png" alt="Suction" width="672">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Konkrétnu prísavku v chápadle je možné zvoliť kliknutím na <strong>Prísavka #</strong> (Prísavka č.), alebo použite tlačidlá <strong>Ďalej</strong> (Ďalšie) a <strong>Späť</strong> (Predošlé) na prepínanie medzi prísavkami. Zvolená prísavka je zvýraznená modrou farbou a môže byť upravovaná.</p>
+</li>
+<li>
+<p>Pre každú prísavku je možné nastaviť <strong>Stav</strong> (Stav) na On (zap), Off (vyp) alebo Removed (odstránená).
+Viac informácií k tomu je uvedených v popise nižšie.</p>
+</li>
+<li>
+<p>Pomocou okna <strong>Typ</strong> (Typ) je možné zmeniť typ rôznych prísaviek.
+Zvyčajne sa jednou zmenou zmenia všetky prísavky v chápadle na nový typ, no takisto je možné kombinovať prísavky vypnutím tlačidla <strong>Zmeniť všetko</strong> (Zmeniť všetky) a následnou zmenou prísaviek. (Pozor, ak to takto urobíte, voľba prísaviek bude obmedzená, pretože všetky prísavky namontované na ráme chápadla musia mať rovnakú pracovnú výšku). Na obrázku sú zobrazené dve z prísaviek nahradené menšími (SAXM50, namiesto predvolenej SAXM80).</p>
+</li>
+<li>
+<p>Pomocou tlačidla <strong>Reset</strong> (Reset) je možné obnoviť pôvodný stav chápadla - všetky prísavky sú zapnuté a sú zresetované späť na predvolený typ prísaviek, ktoré sú zadefinované v chápadle.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Predvolený stav prísavky je <strong>On</strong> (zap), čo znamená, že k prísavke je pripojené vákuum (odsávanie) a pomáha pri nadvihovaní dielcov.</p>
+</div>
+<div class="paragraph">
+<p>Ak sa prísavka nachádza nad otvorom v dielci, môžete zmeniť jej stav na <strong>Off</strong> (vyp), čo znamená "žiadne vákuum". (Tým sa zníži zdvih chápadla a zmení sa stred zdvíhania, čo Flux zohľadňuje pri kontrole kapacity chápadla). Prísavka je stále namontovaná na ráme a podieľa sa na kontrole kolízie. Flux zobrazuje vypnuté prísavky ako drôtené modely, tak ako vidíte na dvoch z prísaviek na obrázku vyššie.</p>
+</div>
+<div class="paragraph">
+<p>Okrem toho je možné nastaviť prísavku ako <strong>Removed</strong> (Odstránená), čo znamená, že prísavka bola odmontovaná z rámu aktuálneho stroja. Táto prísavka nedvíha dielec a takisto nespôsobí kolíziu. Niekedy to je potrebné, ak prísavka spadne cez tvarovanú oblasť dielca alebo spôsobí kolíziu so spodným nástrojom alebo stolom stroja počas prevádzky.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_okno_kamery">Okno kamery<a id="h000131"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Proces uchopovania dielcov si vyžaduje, aby kamera zaznamenala jeden alebo viac obrázkov, systém spracovania obrazu potom tieto obrázky využije na presné určenie polohy dielca na palete. Kliknutím na kameru namontovanú na robot, alebo zvolením navigačného tlačidla <strong>Camera</strong> (Kamera) v okne <strong>Pickup</strong> (Uchopiť) sa otvorí okno kamery. Flux takisto umiestní simuláciu tak, aby bol robot v polohe potrebnej na zachytenie obrázka:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/camera.png" alt="Camera" width="472">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pomocou zoznamu <strong>Index</strong> (Index) (alebo tlačidiel <strong>Ďalej</strong> (Ďalší) a <strong>Späť</strong> (Predošlý)) je možné prepínať medzi obrázkami presného rozpoznávania tohoto dielca.
+Flux pritom zobrazí oranžový obrys, ktorý znázorňuje zónu rozpoznávania obrazu ba dielci (pozri obrázok vyššie).</p>
+</li>
+<li>
+<p>Pomocou parametra <strong>Poloha</strong> (Pozícia) je možné premiestniť túto zónu v smere osi <strong>Z</strong> a <strong>X</strong>, aby lepšie zaznamenávala niektoré prvky na dielci, ktoré môžu vylepšiť presnosť rozpoznávania (rohy, malé otvory, zárezy).</p>
+</li>
+<li>
+<p>Pomocou tlačidla <strong>Pridať</strong> (Pridať) je možné pridať ďalší obrázok rozpoznávania (až 4), pomocou tlačidla <strong>Odstrániť</strong> (Odstrániť) je možné odstrániť aktuálny obrázok rozpoznávania. Počas simulácie uchopovania dielca zobrazuje Flux pohyb robota s kamerou nadol do každej z týchto oblastí rozpoznávania, následne sa zastaví, aby zaznamenala obraz.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ak je zapnutý prepínač <strong>Použiť presvetľovací stôl</strong> (Použiť podsvietený stôl), dielec sa pred použitím kamery pre záznam obrazu presunie na podsvietený stôl. Zvýši sa tým kontrast, čo je potrebné pri dielcoch odrážajúcich svetlo. TecZone Bend pridá podsvietený stôl a automaticky ho umiestní blízko odoberacej palety, kliknutím na neho máte možnosť zmeniť jeho polohu:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/lighttable.png" alt="Light Table" width="438">
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Táto možnosť je dostupná len pre dielce, ktoré prekračujú rozsah pracovnej veľkosti prísavkových a kliešťových chápadiel.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Pozor, môže to spôsobiť zníženie výkonu prisávania chápadla pod bod, kde ešte dokáže spoľahlivo uchopiť dielec. Upozorní na to zobrazenie chyby v stĺpci <strong>Pickup</strong> (Uchopiť) v navigátore.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_okno_paliet">Okno paliet</a>
+  </li>
+  <li level="1">
+   <a href="#_okno_uchopovania">Okno uchopovania</a>
+  </li>
+  <li level="1">
+   <a href="#_okno_chápadla">Okno chápadla</a>
+  </li>
+  <li level="2">
+   <a href="#_výstrahy_prisávania">Výstrahy prisávania</a>
+  </li>
+  <li level="2">
+   <a href="#_menu_akcií">Menu akcií</a>
+  </li>
+  <li level="1">
+   <a href="#_okno_prísaviek">Okno prísaviek</a>
+  </li>
+  <li level="1">
+   <a href="#_okno_kamery">Okno kamery</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="index.html">Uchopovanie dielca</a></span>
+ <span class="next"><a href="fromdispenser.html">Odoberanie zo zásobníka dielcov</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

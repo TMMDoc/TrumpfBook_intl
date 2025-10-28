@@ -1,0 +1,698 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Meranie uhlov</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">Vitajte v TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Úvod</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">Inštalovanie softvéru</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">Ovládacia plocha</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Pracovný postup dielca</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">2D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">Prečistenie 2D výkresu</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">3D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">Import 3D modelu</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Import zostavy</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Detekcia tvaru</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Detekcia komponentov</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">Úprava geometrie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">Laser CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Pracovný postup dielca</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Úprava okien</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Rezanie laserom</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Nábeh</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Odtiahnutie</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Rozšírené</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Geometria</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Rozrezanie odpadu</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Dielec</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Obrábanie v rohu</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Rýchle rozmiestnenie</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">Pracovný postup zákazky</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Okno zákazky</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Záložka tabule plechu</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Záložka dielce</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Záložka rozmiestnenia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Záložka súhrnu</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Úprava rozmiestnenia</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Režimy rozmiestňovania dielcov</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Okno umiestnenia dielcov</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Poradie obrábania</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Odrezanie tabule plechu</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Bevel Cut</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Otvorené geometrie</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Variabilné zrazenie</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Rôzne</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Rozšírené</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Pravidlá dokončovania</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">Úprava LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Stratégia</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Mikro mostíky</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">Ďalšie nastavenia</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">Bend CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../createbenddata.html">Vytvorenie údajov o ohýbaní</a></li>
+    <li><button class="tree blank"></button><a href="../navigator.html">Navigátor ohýbania</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../editing/index.html">Úprava dát ohybu</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../editing/editbend.html">Úprava ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editmount.html">Úprava zostavy nástrojov</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editsetup.html">Úprava zostavy nástrojov</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editgauge.html">Úprava zadných dorazov</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editacb.html">Úprava merania uhlov</a></li>
+      <li><button class="tree blank"></button><a href="../editing/bendsheet.html">Tabuľka ohýbania</a></li>
+      <li><button class="tree blank"></button><a href="../editing/sequencing.html">Zmena postupnosti ohýbania</a></li>
+      <li><button class="tree blank"></button><a href="../editing/addsetup.html">Pridanie zostavy nástrojov a staníc</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Rozšírené</a>
+     <ul>
+      <li><button class="tree blank"></button><a class="active" href="anglemeasurement.html">Meranie uhlov</a></li>
+      <li><button class="tree blank"></button><a href="batchprocess.html">Dávkový proces</a></li>
+      <li><button class="tree blank"></button><a href="recompute.html">Prepočet riešenia</a></li>
+      <li><button class="tree blank"></button><a href="tonnage.html">Kontrola tlačnej sily</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">Navigátor ohýbania</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">Uchopovanie dielca</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">Odoberanie z palety</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">Odoberanie zo zásobníka dielcov</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">Robotické ohýbanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">Vkladanie dielca</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">Ohýbanie</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Vyberanie dielca</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Prechytenie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Okno prechytenia</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Pridanie prechytenia</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Úprava prechytenia</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Prechytenie kliešťami</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Okno prechytávacej stanice</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Ukladanie dielcov</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Vzory ukladania dielcov</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Opakovanie a postupnosť</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Oddeľovacia vrstva</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Rozšírené</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Body na dráhe</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Konfigurácia kabíny (Cell)</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Databáza chápadiel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Správy</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">Fold CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Vytvorenie údajov o ohýbaní</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">Pohľad na ohýbanie</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Úprava údajov o ohýbaní</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Úprava ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Úprava strany/sekcie</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">Zmena postupnosti ohýbania</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">Úprava držiakov prístrihov</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">Úprava dorážania</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">Úprava nadstavcov</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">Úprava vkladania</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">Úprava vykladania</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Stav zásob nástrojov</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Rozšírené</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Tabuľky vlastných vzduchových medzier</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">Dokončenie manuálneho ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Required Flange Length</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Nastavenia</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Kreslenie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Vrstvy</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Kótovanie</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Náhľad</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Predvolené nastavenia stroja</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Výstupy ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Náhľad ohraňovacieho stroja</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Bend Cell</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Nastavenia rozmiestňovania dielcov</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Tabuľa plechu</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Manipulácia s tabuľou plechu</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Rozrezanie zvyškovej mriežky</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Podopieranie obrobku</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Poradie obrábania</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Výstupy rezania</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Náhľad rezania</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Výkyvné ohýbanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Predvolené nastavenia</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">Držiaky ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Výstupy</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Správy</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Predvolené nastavenia položiek</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Import/export</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Prostredie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Databáza</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Materiály</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Stroje</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Ohraňovacie nástroje</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Chápadla pre ohýbanie</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Tvary/komponenty</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Správy</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Návrhár správ</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Polia, obrázky a tabuľky</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Zostava (čiastková správa)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Štítky, bitmapy a tvary</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Dodatok</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Podporované 3D formáty</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">DXF oddeľovacej vrstvy</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bend Tool DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">Bend CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Rozšírené</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="anglemeasurement.html">Meranie uhlov</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Meranie uhlov</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Systémy na meranie uhlov</strong> ako ACB&#8482;, ACBLaser&#8482;, alebo LCB&#8482; je možné používať na vylepšenie presnosti uhlov počas ohýbania. Tieto systémy merajú skutočný uhol dosiahnutý počas ohýbania a spätné odpruženie plechu. Tieto informácie sa následne používajú na dynamické nastavenie dolnej úvrate tlačného barana, na dosiahnutie požadovaného uhla ohybu.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_systémy_splatničkami_alaserom">Systémy s platničkami a laserom<a id="h000136"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Systémy na meranie uhlov sú buď na princípe <em>meracích platničiek</em> namontovaných v horných nástrojoch, alebo na princípe optických systémov použitím <em>laserového lúča</em> premietaného na obrobok. TecZone Bend podporuje oba systémy. Počas konfigurácie stroja máte niekoľko možností prepínačov, ktoré je možné zapnúť (<strong>on</strong>), v závislosti od výbavy stroja, ktorý máte nainštalovaný.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/acb-1.png" alt="Machine Settings" width="513">
+</div>
+</div>
+<div class="paragraph">
+<p>Na obrázku vyššie je zobrazené okno nastavení pre stroj TRUMPF 5085 B23. Tento stroj podporuje dva typy merania uhlov na princípe meracích platničiek (<strong>ACB Classic</strong> a <strong>ACB Wireless</strong>) ako aj meranie na princípe lasera (<strong>ACB Laser</strong>). Tento konkrétny stroj je nakonfigurovaný so zapnutými všetkými tromi možnosťami.</p>
+</div>
+<div class="paragraph">
+<p>Ak je stroj vybavený oboma <em>systémami</em> na meranie uhlov, možno budete chcieť uprednostniť jeden pred druhým, alebo budete chcieť vypnúť meranie uhlov pre konkrétny dielec. Môžete to vykonať pomocou okna <strong>Settings</strong> (Nastavenia).<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/acb-2.png" alt="ACB Settings" width="705">
+</div>
+</div>
+<div class="paragraph">
+<p>V časti <strong>Meranie uhlov</strong> (Meranie uhla) na stránke <strong>Settings/BendCAM</strong> (Nastavenia/BendCAM) sa nachádza zoznam možností, ktorý umožňuje zapnúť alebo vypnúť rôzne systémy na meranie uhlov. Môžete uprednostniť jednu metódu pred druhou jej zvolením a jej posunutím nahor alebo nadol pomocou tlačidiel so šípkami nahor/nadol na boku. V tomto konkrétnom príklade sú povolené oba systémy na meranie uhlov, s meracími platničkami aj laserom, pričom je uprednostnený laser.<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</div>
+<div class="paragraph">
+<p>Možnosť <strong>Use ACB Speed</strong> (Použiť ACB Speed) určuje, či sa stratégia <strong>ACB Speed</strong> (dostupné na strojoch s ovládaním Touchpoint) použije ako predvolená.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_acb_metódy">ACB metódy<a id="h000137"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Jestvuje viacero rôznych <strong>metód ACB</strong>, ktoré je možné použiť vo TecZone Bend-e. Väčšina z nich je spoločná pre meranie uhlov pomocou meracích platničiek alebo laserom, preto si najprv rozoberieme rôzne metódy.</p>
+</div>
+<div class="sect2">
+<h3 id="_identifikácia">Identifikácia<a id="h000138"></a></h3>
+<div class="paragraph">
+<p>Metódy <strong>Identifikovať</strong> alebo <strong>Identifikácia</strong> alebo <strong>Identifikovanie odpruženia</strong> sú bežnou metódou používania ACB systému. Ohraňovací lis používa systém na meranie uhlov na meranie skutočného uhla, ktorý sa vytvára pri ohýbanie dielca. Po kompletnom ohnutí dielca prejde stroj do stavu <em>dekompresie</em> (uvoľnenie dielca), aby umožnil materiálu <em>odpruženie</em>. Použitím ACB sa meria aj odpruženie, kompenzované je presným dodatočným ohnutím naviac. Aby sa predišlo <em>prekročeniu</em> požadovaného uhla počas merania, stroj najprv vykoná <em>menej ohnutý</em> ohyb, následne vykoná ďalší ohyb, aby dosiahol požadovaný uhol. Toto je najpresnejšia, ale aj časovo najnáročnejšia metóda ACB.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_učeniey">Učenie Y<a id="h000139"></a></h3>
+<div class="paragraph">
+<p>Pri metóde <strong>Learn Y</strong> (Učenie Y), sa systém ACB vôbec nepoužíva. Požadovaná poloha Y tlačného barana (dolná úvrať) je jednoducho skopírovaná z predošlého ohybu (označovaného aj ako <em>referenčný ohyb</em>) ktorý už bol odmeraný použitím metódy <strong>Identifikácia</strong>. Tento predošlý ohyb musí byť zhodný z hľadiska uhla, rádiusu a použitého nástroja.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_naučené_odpruženie">Naučené odpruženie</h3>
+<div class="paragraph">
+<p>V metóde <strong>Naučené odpruženie</strong> (Zistiť SB) alebo <strong>Learn Springback</strong> (Zistiť odpruženie) používa ACB systém uhol odpruženia z predošlého ohybu, ktorý bol odmeraný použitím metódy <strong>Identifikácia</strong>. Systém ACB sa stále používa na reguláciu ohýbania, no keďže nie je potrebné druhé meranie po uvoľnení dielca po ohybe, cyklus je rýchlejší ako celý cyklus <strong>Identifikácie</strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zadanie_odpruženia">Zadanie odpruženia</h3>
+<div class="paragraph">
+<p>Metóda <strong>Zadanie odpruženia</strong> (Zadať SB), alebo <strong>Enter Springback</strong> (Zadať odpruženie) alebo <strong>Corrected</strong> (Upravené) alebo <strong>ACB Smart</strong> využíva systém ACB na meranie požadovaného uhla, ale využíva hodnotu odpruženia ktorú zadá užívateľ. Inými slovami, ACB jednoducho ohne dielec na požadovaný uhol + užívateľom zadanú hodnotu korekcie. Po uvoľnení dielca sa nevykoná druhé meranie uhla</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_symboly_pre_acb">Symboly pre ACB<a id="h000140"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TecZone Bend používa niekoľko ikon na znázornenie rôznych metód ACB alebo chýb a varovaní v rámci ACB. Tu sú ikony používané na zobrazenie rôznych systémov a režimov ACB v navigátore ohýbania:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Ikona</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Popis</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-ok.png" alt="acb ok" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Systém s meracími platničkami, metóda <strong>Identify</strong> (Identifikácia)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-learned.png" alt="acb learned" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Systém s meracími platničkami, metóda <strong>Learn Y</strong> (Učenie Y)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-corrected.png" alt="acb corrected" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Systém s meracími platničkami, metóda <strong>Zadanie odpruženia</strong> (Zadať SB)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-ok.png" alt="lcb ok" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Laserový systém, metóda <strong>Identify</strong> (Identifikácia)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-learned.png" alt="lcb learned" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Laserový systém, metóda <strong>Learn Y</strong> (Učenie Y)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-corrected.png" alt="lcb corrected" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Laserový systém, metóda <strong>Zadanie odpruženia</strong> (Zadať SB)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Tu sú ikony používané na zobrazenie výstrah a chýb:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Ikona</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Popis</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-flange.png" alt="acb flange" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ohýbané rameno je príliš úzke pre meracie platničky</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-range.png" alt="acb range" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meracia platnička je príliš blízko k okraju dielca</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-hole.png" alt="acb hole" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meracia platnička padla do otvoru (riziko poškodenia)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-reference.png" alt="acb reference" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Neplatný referenčný ohyb (z tohoto ohybu sa nedá načítať hodnoty)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-flange.png" alt="lcb flange" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dĺžka laserovej stopy je menšia ako ideálna (výstraha)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-single.png" alt="lcb single" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Na meranie sa používa len jeden laser (predný alebo zadný)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-flange-err.png" alt="lcb flange err" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dĺžka laserovej stopy je príliš nízko pre meranie (chyba)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Tieto ikony, spolu s ďalšími informáciami o používaných systémoch a metódach ACB sú zobrazené v riadku <strong>ACB</strong> navigátora:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/acb-3.png" alt="ACB-Navigator" width="333">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_poznámky_omeraní_uhlov">Poznámky o meraní uhlov<a id="h000141"></a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_názvy_laserových_systémov">Názvy laserových systémov<a id="h000142"></a></h3>
+<div class="paragraph">
+<p>Systém na meranie uhlov na princípe lasera je známy pod rôznymi názvami ako <strong>ACB Laser</strong> alebo <strong>LCB</strong>.
+Všetky sa programujú vo TecZone Bend-e rovnako, aj keď sa odlišujú konštrukciou a inštaláciou na stroji. Vo väčšine okien TecZone Bend-u sa používa slovo <strong>ACB</strong> alebo
+<strong>ACB Laser</strong>, preto budeme aj v tejto diskusii používať tento termín.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_správanie_automatického_nástrojára">Správanie automatického nástrojára<a id="h000143"></a></h3>
+<div class="paragraph">
+<p>Automatický nástrojár TecZone Bend priradí každému ohybu <em>metódy</em> ACB Laser-a optimálnym spôsobom.
+Najprv sa pre prvý ohyb použije metóda <strong>Identify</strong> (Identifikácia), následne sa pre ďalšie ohyby, tam kde to je možné, použije metóda <strong>Learn Y</strong> (Učenie Y). Ak už existuje ohyb s rovnakým uhlom, rádiusom, sadou nástrojov a s podobným <em>smerom valcovania</em>, TecZone Bend použije metódu <strong>Learn Y</strong> (Učenie Y), namiesto vykonávania ďalšej identifikácie.</p>
+</div>
+<div class="paragraph">
+<p>Niektoré ohyby sa môžu automaticky preskočiť, pretože:</p>
+</div>
+<div id="h000144" class="ulist">
+<ul>
+<li>
+<p>Uhol ohybu nie je v rozsahu merania snímača (príliš ostrý / príliš tupý uhol).</p>
+</li>
+<li>
+<p>Nejedná sa o voľné ohýbanie (napr. lisovanie, Z-ohyby, falcovanie alebo dotláčanie)</p>
+</li>
+<li>
+<p>Jedná sa o predohnutie pre iný ohyb (nie je nutný presný uhol)</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/acb-4.png" alt="Skipped" width="523">
+</div>
+</div>
+<div class="paragraph">
+<p>Na obrázku vyššie je zobrazený dielec, pri ktorom na niektorých ohyboch nie sú použité metódy ACB - tieto sú označené ikonami s prázdnymi kruhmi v riadku ACB, pričom je v nápovede pre každú bunku uvedený <em>dôvod</em>, prečo nie je použité meranie pomocou ACB.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vytvorenie_platného_merania">Vytvorenie platného merania<a id="h000147"></a></h3>
+<div class="paragraph">
+<p>Keď sa vykoná meranie ACB, TecZone Bend na základe dĺžky čiary ohybu rozhodne, či je potrebné vykonať meranie na jednom, dvoch alebo troch miestach. Skutočné miesta merania sa vypočítajú automaticky, ale dajú sa upraviť aj pomocou <strong>ACB Panel</strong>-a (prejednávané nižšie). TecZone Bend typicky posúva obidva senzory ACB <em>spoločne</em>, a na ACB meranie používa obidva snímače, predný aj zadný, čo je ale možné zmeniť.</p>
+</div>
+<div class="paragraph">
+<p>TecZone Bend dokáže vyhodnotiť <em>dĺžku laserovej stopy</em> pre ACB meranie. Je to dĺžka premietanej laserovej čiary, ktorú vidí kamera. Časti čiary môžu byť blokované spodným nástrojom, alebo zadnými dorazmi. Niektoré jej časti môžu prechádzať cez otvory v plechu, alebo cez prelisy. Vyhodnotenie zohľadňuje všetky tieto faktory a dokáže vypočítať skutočnú dĺžku čiary dostupnú pre optický systém. TecZone Bend porovnáva túto dostupnú dĺžku s <em>minimálnou</em> a s <em>ideálnou</em> dĺžkou definovanou strojom a generuje príslušnú chybu alebo výstrahu (ako je to vyššie znázornené v symboloch TecZone Bend).</p>
+</div>
+<div class="paragraph">
+<p>TecZone Bend je vybavený určitou inteligenciou, pomocou ktorej presúva miesta merania doľava alebo doprava, aby sa vyhol otvorom, prelisom alebo iným faktorom, ktoré môžu obmedziť dĺžku čiary. Okrem toho, TecZone Bend automaticky vloží povel na odtiahnutie zadných dorazov ak sa dostanú do cesty merania laserom. Naviac, vyhodnocovanie laserovej stopy sa vykonáva nepretržite, ak teda presuniete polohy senzorov ACB alebo polohy zadných dorazov, výsledok hneď uvidíte v navigátore.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Rovnako ako pri všetkých nastaveniach, použite <strong>Nastavenia aplikácie</strong> (Nastavenia aplikácie) na toto nastavenie globálne (pre všetky stroje), použite <strong>Machine Settings</strong> (Nastavenia stroja) pre nastavenie predvolených nastavení pre konkrétny stroj a použite <strong>Nastavenia dielov</strong> (Nastavenia dielca) na zmenu predvolených nastavení pre konkrétny dielec.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Povolenie systému na meranie uhlov je účinné iba vtedy, ak má stroj nainštalovaný tento konkrétny typ systému na meranie uhlov ako doplnkovú výbavu. Inými slovami, môžete to reálne používať len na <em>zakázanie</em> používania konkrétneho systému.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_systémy_splatničkami_alaserom">Systémy s platničkami a laserom</a>
+  </li>
+  <li level="1">
+   <a href="#_acb_metódy">ACB metódy</a>
+  </li>
+  <li level="2">
+   <a href="#_identifikácia">Identifikácia</a>
+  </li>
+  <li level="2">
+   <a href="#_učeniey">Učenie Y</a>
+  </li>
+  <li level="2">
+   <a href="#_naučené_odpruženie">Naučené odpruženie</a>
+  </li>
+  <li level="2">
+   <a href="#_zadanie_odpruženia">Zadanie odpruženia</a>
+  </li>
+  <li level="1">
+   <a href="#_symboly_pre_acb">Symboly pre ACB</a>
+  </li>
+  <li level="1">
+   <a href="#_poznámky_omeraní_uhlov">Poznámky o meraní uhlov</a>
+  </li>
+  <li level="2">
+   <a href="#_názvy_laserových_systémov">Názvy laserových systémov</a>
+  </li>
+  <li level="2">
+   <a href="#_správanie_automatického_nástrojára">Správanie automatického nástrojára</a>
+  </li>
+  <li level="2">
+   <a href="#_vytvorenie_platného_merania">Vytvorenie platného merania</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="index.html">Rozšírené</a></span>
+ <span class="next"><a href="batchprocess.html">Dávkový proces</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>
