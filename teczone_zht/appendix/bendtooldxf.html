@@ -1,0 +1,1259 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>折彎模具DXF</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">歡迎使用 TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">導言</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">安裝軟體</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">使用者介面</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">零件工作流程</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">2D匯入</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">2D清理</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">3D匯入</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">匯入3D模型</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">匯入組件</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">成型加工辨識</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">部件辨識</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">修改幾何形狀</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">雷射 CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">零件工作流程</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">編輯面板</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">雷射切割</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">進刀</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">回縮</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">微連</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">進階</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">輪廓</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">廢料切割</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">零件</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">轉角加工</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">快速排樣</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">套裁工作流程</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">套裁面板</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">板材選項卡</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">零件選項卡</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">佈局選項卡</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">摘要選項卡</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">編輯佈局</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">排樣模式</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">放置面板</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">排序</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">切片板材</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">斜切</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">開放輪廓</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">可變斜角</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">雜項</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">進階</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">精加工規則</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">編輯LTT</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">策略</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">微連</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">其他設定</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">折彎 CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">建立折彎資料</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">折彎導航器</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">編輯折彎數據</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">編輯折彎</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">編輯模具裝置</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">編輯折彎設定</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">編輯後定規</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">編輯角度測量</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">折彎試算表</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">更改順序</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">添加設定和工站</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">進階</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">角度測量</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">批量加工</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">重新計算程式</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">噸位檢查</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">折彎導航器</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">零件拾取</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">從托盤拾取</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">從分配器拾取</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">機器人折彎</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">插入</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">折彎</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">提取</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">改抓</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">改抓面板</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">添加改抓</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">編輯改抓</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">用卡爪改抓</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">改抓站面板</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">零件存儲</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">存儲模式</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">重復和順序</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">分張板材</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">進階</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">位移點</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">單元配置</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">夾鉗資料庫</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">報告</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">折邊 CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">建立折邊數據</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">折邊視圖</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">編輯折邊資料</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">編輯折彎</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">編輯邊/區域</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">更改順序</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">編輯板坯支架</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">編輯止擋</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">編輯刀片</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">編輯上料</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">編輯下料</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">模具庫存</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">進階</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">自定義氣隙表</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">手動折彎完成</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">所需法蘭長度</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">設定</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">圖紙</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">圖層</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">尺寸</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">視圖</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">折彎 CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">機台預配置</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">折彎輸出</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">折彎視圖</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">折彎單元</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">切割 CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">布局</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">排樣設定</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">板材</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">板材搬運</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">骨架切割</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">工作支座</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">雷射 CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">順序</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">切割輸出</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">切割視圖</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">翻板折彎機</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">預配置</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">ZBW托架</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">輸出</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">報告</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">項目預配置</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">匯入/匯出</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">環境</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">資料庫</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">材料</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">機台</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">折彎模具</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">折彎夾鉗</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">成型加工/部件</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">報告</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">報告設計器</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">字段、圖片和表格</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">圖素集（子報告）</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">標籤、點陣圖和形狀</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">附錄</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="3dformats.html">支持的3D格式</a></li>
+    <li><button class="tree blank"></button><a href="bseparatordxf.html">分張板材DXF</a></li>
+    <li><button class="tree blank"></button><a class="active" href="bendtooldxf.html">折彎模具DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">版本資訊（Impressum）</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">附錄</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="bendtooldxf.html">折彎模具DXF</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>折彎模具DXF</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Flux附有各種折彎模具目錄（如Trumpf， Wila， Wilson，Rolleri、Amada等）。如果您正在使用Flux提供的大約40種不同的模具目錄中的任何一種，您可以簡單地安裝目錄並開始使用模具。有時，需要對定制模具或來自Flux中未顯示的目錄中的模具設計結構形式。<strong>折彎模具DXF格式</strong>是完成此操作的標準機制。Flux現在可以將折彎模具匯出為DXF格式，也可以從DXF格式匯入折彎模具。用於表示折彎模具的DXF檔案必須遵循某些規則，以便Flux可以收集它需要的所有資訊。通常，創建折彎模具的快速方法是使用匯出到DXF功能，以從現有模具建立DXF檔案。然後， DXF可以進行編輯（在Flux或任何其他2D CAD系統中）。最後，修改後的DXF可以使用從DXF匯入功能反饋到Flux。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dxf示例">DXF示例<a id="h000015"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>以下是使用匯出到DXF命令創建的折彎模具DXF的示例：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name2013.png" alt="Name2013" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>DXF模具必須包含：</p>
+</div>
+<div id="h000016" class="ulist">
+<ul>
+<li>
+<p>一個閉合形狀（由線條、弧線、折線組成），用於定義模具_邊輪廓_。此輪廓線必須是圖紙中最左邊的折線 （見上圖）。</p>
+</li>
+<li>
+<p>標記模具參考點的點實體。此點實體必須位於閉合輪廓折線內的某個位置，並指示從哪個點開始測量模具的高度（見上圖）。</p>
+</li>
+<li>
+<p>對於前視圖中不是簡單矩形的每個模具件，都需要_前視圖_。這些通常是左耳或右耳件，但也可以是定制件，包括_窗戶_件。</p>
+</li>
+<li>
+<p>每個前視圖必須顯示在輪廓圖紙的右側，並且必須水平對齊。每個前視圖的高度必須與邊輪廓完全相同；否則將不予考慮。上方圖片顯示左耳和右耳件的典型示例。</p>
+</li>
+<li>
+<p>有關模具的其他資訊使用文字字串表示（請參閱下面的備註）。</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_文字實體中的元資料">文字實體中的元資料<a id="h000021"></a></h3>
+<div class="paragraph">
+<p>任何格式為<strong>KEY=value</strong>的文字字串都會被模具匯出程式讀取並解析，以獲得有關模具的其他資訊。這些鍵現已支援：</p>
+</div>
+<div id="h000022" class="paragraph">
+<p><strong>NAME=OW200/K R3.2/86 CUSTOM-A</strong><br>
+指定模具的名稱。這是必填項目。</p>
+</div>
+<div id="h000023" class="paragraph">
+<p><strong>TONNAGE=800</strong><br>
+指定模具的最大負載，單位為kN/m。這是強制性的，旨在避免顯示虛假的模具過載錯誤。</p>
+</div>
+<div id="h000024" class="paragraph">
+<p><strong>UPPER=PTrumpf</strong><br>
+這是沖模所必需的，並指定連接器類型（此模具在下壓式折床上的安裝類型)。支援的連接類型如下：</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">名稱</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">含義</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PTrumpf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trumpf 沖模（Modufix連接器）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PAmada</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada 沖模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PWila</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wila 經典沖模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PWilaNS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wila 新標準沖模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PAmerican</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">美式（US 類型）沖模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PEHT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EHT 沖模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LVD尺寸A沖模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LVD尺寸B沖模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LVD尺寸C沖模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LVD尺寸D沖模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PGasparini</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gasparini 沖模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PBayelerR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bayeler R型沖模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PBayelerS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bayeler S型沖模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUrsviken</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ursviken OEM 沖模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PBayelerEuro</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bayeler 歐式沖模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PColgar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Colgar 沖模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PKomatsu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Komatsu 沖模</p></td>
+</tr>
+</tbody>
+</table>
+<div id="h000025" class="paragraph">
+<p><strong>LOWER=DTrumpf</strong><br>
+這是凹模所必需的，並指定連接器類型（此模具在凹模床上的安裝類型)。支援的連接類型如下：</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名稱</th>
+<th class="tableblock halign-left valign-top">含義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DTrumpf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trumpf 凹模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada凹模， 30mm寬</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada60</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada凹模， 60mm寬</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmadaF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada 凹模，扁平</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada2V</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada 2-V 凹模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmadaQuick</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada快速更換凹模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada90</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada凹模， 90mm寬</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DEHT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EHT凹模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada120</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amada凹模， 120mm寬</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DWeinbrenner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Weinbrenner 凹模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DWila</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WILA 凹模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DKomatsu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Komatsu 凹模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DBeyeler110</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beyeler 110毫米凹模</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DLVD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LVD凹模</p></td>
+</tr>
+</tbody>
+</table>
+<div id="h000026" class="paragraph">
+<p><strong>PIECES=2x25,30,45,50,2x100,200,4x500</strong><br>
+這指定了此模具的標準件（左耳和右耳件已經透過繪製其輪廓來指定）。清單是一組以逗號分隔的件長度，並且可選地每個長度前面可以有一個_數量乘數_。因此，上面的清單定義了2件25毫米， 1件30毫米，4件500毫米等。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+如果您想為特殊形狀的件（如耳件）設置數量乘數，只需在該件的輪廓內添加2x形式的文字實體：
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name20132.png" alt="Name20132" width="400">
+</div>
+</div>
+<div id="h000027" class="paragraph">
+<p><strong>VWIDTHTYPE=Sharp</strong><br>
+這對於V寬定義與Trumpf不匹配的凹模是必要的（請參閱下圖）：</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">名稱</th>
+<th class="tableblock halign-left valign-top">含義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">銳度</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">凹模的理論銳度</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">切線</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">頂切點</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="img/vwidthtype.png" alt="vwidthtype" width="400">
+</div>
+</div>
+<div id="h000028" class="paragraph">
+<p><strong>ISUPPERTOOL=0</strong><br>
+指定模具是上模還是下模。對於上模，值應爲1，對於下模，應為零。這對於必須以零高度匯入的模具來說是必要的（請參閱下圖）：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/isuppertool.png" alt="isuppertool" width="250">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_形狀辨識">形狀辨識<a id="h000029"></a></h3>
+<div class="paragraph">
+<p>在折彎模具DXF格式中，請注意，不需要指定一些關鍵沖模/凹模的參數，例如高度、半徑、角度或V寬度。Flux會分析模具圖紙並自動提取這些參數。對於沖模，Flux預計會在底部（bc）找到一個弧形段，其兩側是直線（ab和cd）。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name20133.png" alt="Name20133" width="350">
+</div>
+</div>
+<div class="paragraph">
+<p>從這三個段中，自動識別沖模的角度和半徑。對於凹模， Flux檢查左肩以提取參數。它希望找到一個折彎的肩段（bc），兩側是水平頂部（ab）和傾斜的角度段(cd)。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name20134.png" alt="Name20134" width="350">
+</div>
+</div>
+<div class="paragraph">
+<p>如果沖模或凹模不符合這些形狀識別要求， Flux將無法把形狀識別為沖模或凹模。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_其他資訊">其他資訊：<a id="h000030"></a></h3>
+<div id="h000031" class="ulist">
+<ul>
+<li>
+<p>模具輪廓可能會出現在圖紙中的任何位置——無需確切的位置，因為點標記實體用於提供模具的參考點。</p>
+</li>
+<li>
+<p>除上述實體外，圖紙中不應有任何其他實體。特別是，圖紙中不應有標題塊或任何閉合的折線。</p>
+</li>
+<li>
+<p>圖紙應始終以公制單位為單位（無論Flux當前操作單位為何）。</p>
+</li>
+<li>
+<p>雖然命令顯示從DXF匯入，但Flux也會接受GEO檔案，只要它遵循上面列出的相同約定。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_特殊模具">特殊模具<a id="h000035"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>模具匯入器可以識別特定類型的_特殊模具_。這些需要使用DXF檔案中<strong>FLAVOR=XYX</strong>形式的文字來識別。</p>
+</div>
+<div class="sect2">
+<h3 id="_壓合沖模">壓合沖模<a id="h000036"></a></h3>
+<div class="paragraph">
+<p>對於壓合沖模，需要以下額外條目：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>文字<strong>FLAVOR=HemPunch</strong>將其標記為壓合模具。</p>
+</li>
+<li>
+<p>文字<strong>PARAMS=-1,12.15,70</strong>提供了正確模擬所需的一些指標。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hempunch.png" alt="HemPunch" width="300">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hempunch2.png" alt="HemPunch2" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>壓合過程需要定義三個參數。這些可以看作上圖中的A、B和C值。第一個（本示例中為-1mm）定義了沖模的平坦垂直面在折彎線後面的距離。在這種情況下，由於平坦垂直面在折彎線之前，值為-1。第二個參數（此處為12.15 mm）定義壓合尖端在折彎線前面的距離。最終參數（此處為70mm）是從沖模尖端到壓合尖端點的垂直距離。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_壓合塊凹模">壓合塊凹模<a id="h000037"></a></h3>
+<div class="paragraph">
+<p>壓合塊是安裝在凹模前面或凹模後面以進行壓合的附件。這提供了一個平坦的表面，邊緣可以與其接合，以便進行清潔的壓合。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hemblock.png" alt="HemBlock" width="270">
+</div>
+</div>
+<div class="paragraph">
+<p>對於壓合塊，需要以下額外條目：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>文字<strong>FLAVOR=HemBlock</strong>將其標記為壓合塊。</p>
+</li>
+<li>
+<p>文字<strong>PARAMS=0,13.9</strong>提供了正確模擬所需的一些指標。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hemblock2.png" alt="Hemblock2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>壓合塊需要定義兩個參數。第一個參數定義壓合位置是否應在凹模前面還是凹模後面使用此塊。0=正面， 1=背面。上面的示例表明，該塊可以在凹模前面使用。另一個參數是壓合位移，即I軸運動。這顯示為上圖中的B。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_z折彎凹模">Z折彎凹模<a id="h000038"></a></h3>
+<div class="paragraph">
+<p>對於Z折彎凹模，在DXF檔案中應有一個像這樣的文字條目： <strong>FLAVOR=ZBendDie</strong>
+此外，應拉出模具，使中央平面從左下到右上。換句話說，方向應如下圖，而不是_翻轉_的方向：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/zdie.png" alt="ZDie" width="350">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_z折彎沖模">Z折彎沖模<a id="h000039"></a></h3>
+<div class="paragraph">
+<p>對於Z折彎沖模，在DXF檔案中應有一個像這樣的文字條目： <strong>FLAVOR=ZBendPunch</strong>
+此外，應拉出模具，使中央平面從左下到右上。換句話說，方向應如下圖，而不是_翻轉_的方向：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/zpunch.png" alt="ZPunch" width="350">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_半徑沖模">半徑沖模<a id="h000040"></a></h3>
+<div class="paragraph">
+<p>這是一個需要半徑支架的半徑軸。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/radiuspunch.png" alt="RadiusPunch" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>對於此類沖模，需要以下額外條目：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>文字<strong>FLAVOR=RShaft</strong>將其標記為半徑軸。</p>
+</li>
+<li>
+<p>文字<strong>PARAMS=80</strong>是在數控程式中要輸出的模具的高度。</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+點實體是模具的參考點。應繪製模具，使參考點位於支架倒V的尖端。
+</td>
+</tr>
+</table>
+</div>
+<div id="h000041" class="ulist">
+<ul>
+<li>
+<p>繪製安裝在機台中的半徑嵌件和相關支架，如下所示。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/radiuspunch3.png" alt="RadiusPunch3" width="250">
+</div>
+</div>
+<div id="h000042" class="ulist">
+<ul>
+<li>
+<p>取下支架曲線並保存半徑嵌件dxf。僅支架倒V尖端的點實體以及距離點稍微向下的插入曲線，將是此插入的輪廓dxf。</p>
+</li>
+<li>
+<p>此模具的高度是從點實體測量的。這在下方圖片中顯示為A。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/radiuspunch2.png" alt="RadiusPunch2" width="250">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ev_f壓合凹模">EV-F壓合凹模<a id="h000044"></a></h3>
+<div class="paragraph">
+<p>這些是EV-F模具，用於進行無位移的壓合。這樣的凹模叫做I0HemDie。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hemdie.png" alt="I0HemDie" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>對於此類凹模，需要以下額外條目：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>文字<strong>FLAVOR=I0HemDie</strong>將其標記為I0HemDie。</p>
+</li>
+<li>
+<p>文字<strong>PARAMS=8.5,95.5</strong>提供了正確模擬所需的一些指標。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hemdie2.png" alt="I0HemDie2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>有兩個參數定義此壓合凹模。這些可視為上圖中的A和B值。第一個參數（本例中為8.5mm）定義了零件壓合過程中距離中心線的距離。第二個參數（此處為95.5mm）定義了壓合過程中從零件所在位置到凹模底部的垂直距離。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ev_f壓合沖模">EV-F壓合沖模<a id="h000045"></a></h3>
+<div class="paragraph">
+<p>這些是EV-F沖模，用於進行無位移的壓合。這樣的沖模叫做I0HemPunch。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hempunch.png" alt="I0HemPunch" width="450">
+</div>
+</div>
+<div class="paragraph">
+<p>對於此類沖模，需要以下額外條目：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>文字<strong>FLAVOR=I0HemPunch</strong>將其標記為I0HemPunch。</p>
+</li>
+<li>
+<p>文字<strong>PARAMS=-8,16,57.5</strong>提供了正確模擬所需的一些指標。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hempunch2.png" alt="I0HemPunch2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>壓合過程需要定義三個參數。這些可以看作上圖中的A、B和C值。這些參數與在HemPunch中的定義相同。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_軋制折彎凹模">軋制折彎凹模<a id="h000046"></a></h3>
+<div class="paragraph">
+<p>軋制折彎凹模稱為翼形凹模。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rollbenddie.png" alt="RollbendDie" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>此模具需要以下額外條目：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>文字<strong>FLAVOR=WingDie</strong>將其標記為翼形模具。</p>
+</li>
+<li>
+<p>文字<strong>PARAMS=10.49,100</strong>提供了正確模擬翼形所需的一些指標。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rollbenddie2.png" alt="RollbendDie2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>有兩個參數定義翼形折彎件的移動。第一個參數是從凹模中心線到其中一個翼形的旋轉中心點的水平距離。這在上圖中顯示為A。第二個參數是從凹模底部到翼形的旋轉中心點的垂直距離。這在上圖中顯示為B。通常， B和高度相同。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_自壓合凹模">自壓合凹模<a id="h000047"></a></h3>
+<div class="paragraph">
+<p>這些V型凹模也有一個獨立的壓合台，如下圖所示。
+對於此凹模， DXF檔案中應有一個像這樣的文字條目： <strong>FLAVOR=SelfHemDie</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/selfhemdie.png" alt="SelfHemDie" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p>此外，<strong>PARAMS</strong>條目是必需的，它有兩個值。這兩個參數與I0HemDie相同。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/selfhemdie2.png" alt="SelfHemDie2" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p>這些可視為上圖中的A和B值。第一個參數定義了零件壓合過程中距離中心線的距離。第二個參數定義了壓合過程中從零件所在位置到凹模底部的垂直距離。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_雙v凹模">雙V凹模<a id="h000048"></a></h3>
+<div class="paragraph">
+<p>具有多個V寬度且需要I軸才能使用其他V的凹模稱為雙V凹模。有幾項規則需要遵守：</p>
+</div>
+<div id="h000049" class="ulist">
+<ul>
+<li>
+<p>為<strong>FLAVOR=DoubleV</strong>的凹模創建dxfs，每個V寬度設置一個</p>
+</li>
+<li>
+<p>為兩個凹模設置相同的<strong>ORDERNO</strong>（這可以是任何非空字串）</p>
+</li>
+<li>
+<p>將<strong>YSHIFT</strong>值設置為要使用的正確I軸值</p>
+</li>
+<li>
+<p>在凹模底部繪製一個點標記，在V的下方對中以表示成型加工幾何形狀的位置。例如，必須將V寬度為12和6的凹模創建為兩個dxf，如下圖所示：</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/doublevdie.png" alt="DoubleVdie" width="300">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_帶彈簧的壓合凹模羽毛壓合凹模">帶彈簧的壓合凹模（羽毛壓合凹模）<a id="h000053"></a></h3>
+<div class="paragraph">
+<p>對於帶彈簧的壓合凹模， DXF文檔中應有一個像這樣的文字條目: <strong>FLAVOR=SpringHem</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/springhemdie.png" alt="SpringHemDie" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>此外，還需要以下額外條目：</p>
+</div>
+<div id="h000054" class="ulist">
+<ul>
+<li>
+<p>文字<strong>PARAMS=-2,30,10</strong>提供了正確模擬所需的一些指標。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/springhemdie2.png" alt="SpringHemDie2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>這種凹模是一個兩件式凹模，其頂部向下移動以平整壓合。有三個參數可以定義壓合缺口。第一個參數是壓合期間零件與凹模中心線的距離。+ve值意味著它在中心線的前面，而-ve值意味著它在中心線的背面。這在上圖中顯示為A。第二個參數是壓合期間壓合缺口距零件凹模底部的位置。這在上圖中顯示為B。第三個參數是彈簧間隙，即缺口的高度。這在上圖中顯示為C。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_沖模適配器">沖模適配器<a id="h000055"></a></h3>
+<div class="paragraph">
+<p>模具匯入器可以匯入_沖模適配器_。為了讓Flux正確識別圖紙是一個沖模適配器，檔案中應有以下文字實體：</p>
+</div>
+<div id="h000056" class="ulist">
+<ul>
+<li>
+<p>像<strong>UPPER=PTrumpf</strong>這樣的文字標記上部安裝類型（通常，這是 PTrumpf，如果要將適配器安裝在Trumpf機台上）。</p>
+</li>
+<li>
+<p>像<strong>LOWER=PEHT</strong>這樣的文字標記下部安裝類型（這是可以安裝在適配器上的沖模的類型）。</p>
+</li>
+<li>
+<p>文字，如<strong>HEIGHT=64</strong>，映射適配器的有效工作高度。這是必要的，因為Flux無法自動推斷適配器的高度。以下是可以從DXF匯入的沖模適配器的圖片：</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/padapter.png" alt="PAdapter" width="300">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_刀片架">刀片架<a id="h000059"></a></h3>
+<div class="paragraph">
+<p>模具匯入器可以匯入_刀片架_。一些刀片架（例如與OW209/S類似）也是用於平整壓合的壓合沖模。對於這樣的刀片架，需要一些額外的數據</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bholder1.png" alt="BHolder1" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>強制性參數UPPER、LOWER、HEIGHT在關於沖模適配器的上述章節中說明，它們具有相同的含義。此外，為了幫助Flux使用支架作為壓合模具，需要以下額外條目：</p>
+</div>
+<div id="h000060" class="ulist">
+<ul>
+<li>
+<p>文字<strong>SPLFLAVOR=HemPunch</strong>將適配器標記為壓合模具。</p>
+</li>
+<li>
+<p>文字<strong>PARAMS=-6,18,60</strong>提供了正確模擬壓合過程所需的一些指標。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bholder2.png" alt="BHolder2" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>壓合過程需要定義三個參數。這些可以看作上圖中的A、B和C值。第一個（本示例中為-6mm）定義了沖模的平坦垂直面在折彎線後面的距離。在這種情況下，由於平坦垂直面在折彎線之前，值為-6。第二個參數（此處為18 mm）定義壓合尖端在折彎線前面的距離。最終參數（此處為60mm）是從沖模尖端到壓合尖端點的垂直距離。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_半徑支架">半徑支架<a id="h000062"></a></h3>
+<div class="paragraph">
+<p>這是半徑軸模具的支架。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rholder.png" alt="Rholder" width="220">
+</div>
+</div>
+<div class="paragraph">
+<p>需要以下額外條目：</p>
+</div>
+<div id="h000063" class="ulist">
+<ul>
+<li>
+<p>文字<strong>FLAVOR=RHolder</strong>將適配器標記為半徑軸支架。</p>
+</li>
+<li>
+<p>文字<strong>PARAMS=100</strong>是在數控程式中要輸出的模具的高度。</p>
+</li>
+<li>
+<p>此模具的高度是從支架的原點到倒V進行測量的。這在下方圖片中顯示為A。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rholder2.png" alt="RHolder2" width="220">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_雙v支架">雙V支架<a id="h000066"></a></h3>
+<div class="paragraph">
+<p>這些是可以容納2個凹模的凹模支架。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/dvholder.png" alt="DVHolder" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>需要以下額外條目：</p>
+</div>
+<div id="h000067" class="ulist">
+<ul>
+<li>
+<p>文字<strong>FLAVOR=DVHolder</strong>將適配器標記為DVHolder。</p>
+</li>
+<li>
+<p>文字<strong>PARAMS=0,36.2</strong>提供了將凹模移動到支架中另一個槽的指標。</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/dvholder2.png" alt="DVHolder2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>定義此模具需要兩個參數。第一個（此示例中為0mm）定義第一個槽相對於支架參考的距離。在這種情況下，由於第一個槽與參考點對齊，值為0。 第二個參數（此處為36.2mm）在上圖中顯示為A，定義了第二個槽距離支架的參考點的距離。</p>
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_dxf示例">DXF示例</a>
+  </li>
+  <li level="2">
+   <a href="#_文字實體中的元資料">文字實體中的元資料</a>
+  </li>
+  <li level="2">
+   <a href="#_形狀辨識">形狀辨識</a>
+  </li>
+  <li level="2">
+   <a href="#_其他資訊">其他資訊：</a>
+  </li>
+  <li level="1">
+   <a href="#_特殊模具">特殊模具</a>
+  </li>
+  <li level="2">
+   <a href="#_壓合沖模">壓合沖模</a>
+  </li>
+  <li level="2">
+   <a href="#_壓合塊凹模">壓合塊凹模</a>
+  </li>
+  <li level="2">
+   <a href="#_z折彎凹模">Z折彎凹模</a>
+  </li>
+  <li level="2">
+   <a href="#_z折彎沖模">Z折彎沖模</a>
+  </li>
+  <li level="2">
+   <a href="#_半徑沖模">半徑沖模</a>
+  </li>
+  <li level="2">
+   <a href="#_ev_f壓合凹模">EV-F壓合凹模</a>
+  </li>
+  <li level="2">
+   <a href="#_ev_f壓合沖模">EV-F壓合沖模</a>
+  </li>
+  <li level="2">
+   <a href="#_軋制折彎凹模">軋制折彎凹模</a>
+  </li>
+  <li level="2">
+   <a href="#_自壓合凹模">自壓合凹模</a>
+  </li>
+  <li level="2">
+   <a href="#_雙v凹模">雙V凹模</a>
+  </li>
+  <li level="2">
+   <a href="#_帶彈簧的壓合凹模羽毛壓合凹模">帶彈簧的壓合凹模（羽毛壓合凹模）</a>
+  </li>
+  <li level="2">
+   <a href="#_沖模適配器">沖模適配器</a>
+  </li>
+  <li level="2">
+   <a href="#_刀片架">刀片架</a>
+  </li>
+  <li level="2">
+   <a href="#_半徑支架">半徑支架</a>
+  </li>
+  <li level="2">
+   <a href="#_雙v支架">雙V支架</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="bseparatordxf.html">分張板材DXF</a></span>
+ <span class="next"><a href="../impressum.html">版本資訊（Impressum）</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

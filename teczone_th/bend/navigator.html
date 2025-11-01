@@ -1,0 +1,942 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>Bend Navigator</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">ยินดีต้อนรับสู่ TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">บทนำ</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">การติดตั้งซอฟต์แวร์</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">ส่วนติดต่อผู้ใช้</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">Part Workflow</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">การนำเข้า 2 มิติ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">การล้างข้อมูล 2D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">การนำเข้า 3 มิติ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">การนำเข้าโมเดล 3 มิติ</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">การนำเข้าแอสเซมบลี</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">การตรวจจับฟอร์ม</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">การตรวจหาส่วนประกอบ</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">การปรับแก้เรขาคณิต</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Laser CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Part Workflow</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Editing Panels</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Laser Cut</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Approach</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Withdrawal</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">ขั้นสูง</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Contour</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">การตัดเศษ</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">ชิ้นส่วน</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Corner Treatment</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Quick-Nest</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">ขั้นตอนการทำงานของงาน</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Job Panel</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">แท็บ Sheets</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Parts Tab</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Layouts Tab</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">แท็บ Summary</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">การแก้ไขเลย์เอาต์</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">โหมดการ Nest</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Placement Panel</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">การจัดลำดับ</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">แผ่นตัด</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Bevel Cut</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">การเปิดเส้นโค้ง</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">การเอียงที่ปรับค่าได้</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">เบ็ดเตล็ด</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">กฎการเก็บชิ้นงาน</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">การแก้ไข LTT</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">กลยุทธ์</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Microjoints</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">การตั้งค่าเพิ่มเติม</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Bend CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="createbenddata.html">สร้างข้อมูลการดัด</a></li>
+    <li><button class="tree blank"></button><a class="active" href="navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="editing/index.html">การแก้ไขข้อมูลการดัด</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="editing/editbend.html">การแก้ไขการพับ</a></li>
+      <li><button class="tree blank"></button><a href="editing/editmount.html">การแก้ไขตัวยึดเครื่องมือ</a></li>
+      <li><button class="tree blank"></button><a href="editing/editsetup.html">การแก้ไข Bend Setup</a></li>
+      <li><button class="tree blank"></button><a href="editing/editgauge.html">การแก้ไข Back-gauge</a></li>
+      <li><button class="tree blank"></button><a href="editing/editacb.html">การแก้ไขการวัดมุม</a></li>
+      <li><button class="tree blank"></button><a href="editing/bendsheet.html">ตารางการพับ</a></li>
+      <li><button class="tree blank"></button><a href="editing/sequencing.html">การเปลี่ยนลำดับ</a></li>
+      <li><button class="tree blank"></button><a href="editing/addsetup.html">การเพิ่มการตั้งค่าและสถานี</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="advanced/anglemeasurement.html">การวัดมุม</a></li>
+      <li><button class="tree blank"></button><a href="advanced/batchprocess.html">การประมวลผลแบบชุด</a></li>
+      <li><button class="tree blank"></button><a href="advanced/recompute.html">Recompute solution</a></li>
+      <li><button class="tree blank"></button><a href="advanced/tonnage.html">การตรวจสอบแรงกด</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">การหยิบชิ้นงาน</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">การหยิบจากพาเลท</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Pickup from Dispenser</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">การดัดด้วยหุ่นยนต์</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">การแทรก</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Bending</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">การนำชิ้นงานออก</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Regripping</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">แผง Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Add Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Edit Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Regrip ด้วยกริปเปอร์แบบขากรรไกร</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">แผงสถานี Regrip</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Part Deposit</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Deposit Patterns</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Repeat and Sequence</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Separator Sheet</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Cell Configuration</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">Gripper Database</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">Reports</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">Fold CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">การสร้างข้อมูลการพับ</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">มุมมอง Fold</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">การแก้ไขข้อมูลการพับ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">การแก้ไขการพับ</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">การแก้ไขด้าน/เซกชัน</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">การเปลี่ยนลำดับ</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">การแก้ไข blank-holder</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">การแก้ไขการวัดด้วยเกจ</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">การแก้ไขใบมีด</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">การแก้ไขการโหลด</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">การแก้ไขการถอดชิ้นงาน</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">สต็อกเครื่องมือ</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">ตารางระยะช่องว่างอากาศแบบกำหนดเอง</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">การทำงานของการดัดแบบแมนนวล</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">ความยาวขอบพับขั้นต่ำ</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Settings</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Drawing</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Layers</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Dimensions</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">View</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Machine Defaults</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Bend Outputs</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Bend View</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Bend Cell</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">เลย์เอาต์</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Nest Settings</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Sheet</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Sheet Handling</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Skeleton Cuts</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Work Support</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Sequence</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Cut Outputs</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Cut View</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Panel Bending</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">ค่าเริ่มต้น</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">ZBW Carriers</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Outputs</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Reports</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Item Defaults</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Import/Export</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Environment</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">ฐานข้อมูล</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">วัสดุ</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">เครื่องจักร</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">เครื่องมือดัด</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">ตัวจับดัด</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">ฟอร์ม/ส่วนประกอบ</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Reports</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">ฟิลด์ รูปภาพ และตาราง</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Bands (sub-reports)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Labels, Bitmaps และ Shapes</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">ภาคผนวก</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Supported 3D Formats</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">แผ่นคั่น DXF</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">เครื่องมือดัด DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Bend CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="navigator.html">Bend Navigator</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Bend Navigator</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>เมื่อคุณอยู่ใน_มุมมองการดัด_ แผง <strong>Bend Navigator</strong> จะปรากฏขึ้นที่ด้านบน
+ของหน้าต่าง TecZone Bend ตัวนำทางนี้ช่วยให้คุณนำทางได้อย่างรวดเร็วผ่านขั้นตอนการดัดต่างๆ
+และยังให้มุมมองเพื่อตรวจสอบสถานะของแต่ละการดัด
+นอกจากนี้ยังมีตัวควบคุมเพื่อดูหรือหยุดการจำลองการดัด</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/nav1.png" alt="Navigator 1" width="460">
+</div>
+</div>
+<div class="paragraph">
+<p>ตัวนำทางจะแสดงสีที่แตกต่างกันสำหรับการดัดที่มี_คำเตือน_หรือ_ข้อผิดพลาด_
+การดัดปัจจุบันจะแสดงด้วยกล่องขอบ dots<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>โดยแต่ละจุด
+ในกล่องแสดง_สถานีเครื่องมือ_ที่ใช้ประมวลผลการดัดนั้น</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_การควบคุมการจำลอง">การควบคุมการจำลอง<a id="h000235"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>เมื่อคุณเลื่อนเมาส์ไปใกล้ Bend Navigator<strong>ปุ่มควบคุมการจำลอง</strong>จะปรากฏขึ้น</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/nav2.png" alt="Navigator 2" width="438">
+</div>
+</div>
+<div id="h000236" class="ulist">
+<ul>
+<li>
+<p><strong>แถบเลื่อน</strong>สามารถใช้เลื่อนการดัดปัจจุบันผ่านแต่ละขั้นตอนของการดัด
+(เช่น ใส่ชิ้นงาน, ถอย Back-gauge, ลดหัวเจาะไปยังจุด Pinch point, ดัด,
+ ปล่อย และอื่นๆ) เมื่อเลื่อนแถบเลื่อน เคล็ดลับเครื่องมือจะแสดงขั้นตอนปัจจุบันของการดัด
+และส่วนต่างๆ ของเครื่องจักรจะเคลื่อนในภาพจำลอง หากมีการชน
+ชิ้นส่วนดังกล่าวจะแสดงเป็นสีแดงเพื่อเน้นจุดที่ชน</p>
+</li>
+<li>
+<p><strong>ปุ่มควบคุมการเล่น</strong>ที่ด้านซ้ายสามารถใช้เริ่ม หยุด หรือย้อนการจำลองไปยังจุดเริ่มต้น</p>
+</li>
+<li>
+<p>เครื่องหมาย Chevron ตรงกลางสามารถใช้ขยาย Bend Navigator เพื่อแสดง
+ข้อมูลรายละเอียดเพิ่มเติมเกี่ยวกับข้อผิดพลาดและคำเตือนของการดัดแต่ละขั้น</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+คุณยังสามารถกดปุ่ม <kbd>Spacebar</kbd> เพื่อเริ่มหรือหยุดการจำลองการดัด<br>
+คุณยังสามารถกดปุ่ม <kbd>Z</kbd> เพื่อขยาย/ย่อการแสดงผลของ Bend Navigator ได้
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_bend_navigator_มุมมองแบบขยาย">Bend Navigator: มุมมองแบบขยาย<a id="h000239"></a></h3>
+<div class="paragraph">
+<p>เมื่อคุณเปิด Bend Navigator โดยการคลิกปุ่มเปิด หรือกดปุ่ม
+<kbd>Z</kbd> จะมีลักษณะดังนี้:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/nav3.png" alt="Bend Navigator" width="450">
+</div>
+</div>
+<div class="paragraph">
+<p>สำหรับการดัดแต่ละครั้ง ตัวนำทางจะแสดงแถวของ_ไอคอนสถานะ_หลายแถว ไอคอนที่มีสีแต่ละรายการ
+แสดงถึงข้อผิดพลาดหรือคำเตือน การเลื่อนเมาส์เหนือเซลล์สีจะแสดง
+ข้อมูลเพิ่มเติมเกี่ยวกับข้อผิดพลาดหรือคำเตือนนั้น</p>
+</div>
+<div class="paragraph">
+<p>การคลิกที่เซลล์ซึ่งแสดงข้อผิดพลาดจะ_หยุด_การจำลองเพื่อให้เห็นข้อผิดพลาด
+ได้ทันที เช่น การคลิกที่เซลล์ซึ่งแสดงข้อผิดพลาด<strong>การชนของหัวเจาะ</strong>
+จะย้ายการจำลองไปยังขั้นตอนที่หัวเจาะชน
+กับชิ้นงาน</p>
+</div>
+<div class="paragraph">
+<p>ไอคอนนี้อาจปรากฏถัดจากหมายเลขการดัดที่ด้านบนของตัวนำทาง</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>ไอคอน</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>คำอธิบาย</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/coining.png" alt="coining" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">การดัดแบบ Coining</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/doublesheet.png" alt="doublesheet" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">การดัดแผ่นซ้อนสองชั้น</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/hemming.png" alt="hemming" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">การพับขอบ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/prebend.png" alt="prebend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">การดัดล่วงหน้า</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/postbend.png" alt="postbend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">การดัดหลัง</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/skippedbend.png" alt="skippedbend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้ามการดัด</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/zbend.png" alt="zbend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">การดัดแบบ Z</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_แถวข้อมูลใน_navigator">แถวข้อมูลใน Navigator<a id="h000240"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ตัวนำทางมีหลาย_แถว_ โดยบางแถว เช่น แถว <strong>Punch</strong> หรือแถว <strong>Die</strong> จะแสดงตลอดเวลา
+ในขณะที่บางแถว เช่น แถว <strong>ACB</strong> (การวัดมุม) จะแสดง
+ต่อเมื่อเครื่องรองรับฟังก์ชันนี้เท่านั้น</p>
+</div>
+<div class="sect2">
+<h3 id="_แถว_punch">แถว Punch<a id="h000241"></a></h3>
+<div class="paragraph">
+<p>แถว <em>Punch</em> ของตัวนำทางการดัดจะแสดงข้อมูลเกี่ยวกับหัวเจาะที่ใช้สำหรับการดัดนี้
+และแสดงว่ามีคำเตือนหรือข้อผิดพลาดที่เกี่ยวข้องกับหัวเจาะหรือไม่
+ไอคอนที่คุณอาจเห็นในแถว Punch ได้แก่:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>ไอคอน</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ความหมาย</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ไม่มีข้อผิดพลาด ใช้หัวเจาะได้ถูกต้อง</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: หัวเจาะชนกับชิ้นงานระหว่างการดัด</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion3.png" alt="explosion3" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: หัวเจาะชนกับดายระหว่างการดัด</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/missing.png" alt="missing" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ไม่มีหัวเจาะ ไม่ได้กำหนดหัวเจาะสำหรับการดัดนี้</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/tool-short.png" alt="tool short" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ความสูงของหัวเจาะสั้นเกินไปที่จะทำการดัดให้เสร็จสิ้น (ต้องใช้หัวเจาะที่สูงกว่า
+หรือเพิ่มอะแดปเตอร์)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/exclaim.png" alt="exclaim" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ใช้กระบวนการหัวเจาะไม่ถูกต้อง (เช่น ใช้หัวเจาะแบบไม่ใช่ coining
+สำหรับการดัด coining หรือใช้หัวเจาะมาตรฐานสำหรับการดัดแบบ Z-bend)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/overload.png" alt="overload" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: หัวเจาะมีน้ำหนักเกินค่ากำลังรับน้ำหนักที่กำหนด (tooltip จะแสดงค่าน้ำหนักจริง)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/span-short.png" alt="span short" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ระยะของหัวเจาะสั้นเกินไป (ชิ้นงานยื่นออกไปเกินปลายหัวเจาะ)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/sensor-edge.png" alt="sensor edge" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">คำเตือน: มีการติดตั้งเซ็นเซอร์ ACB ที่ปลายสถานีหัวเจาะ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/sensor-close.png" alt="sensor close" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">คำเตือน: จานเซ็นเซอร์ ACB ติดตั้งใกล้กันเกินไป</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/skipped-bend.png" alt="skipped bend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้ามการดัด (ไม่มีการประมวลผลสำหรับการดัดนี้)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_แถว_die">แถว Die<a id="h000242"></a></h3>
+<div class="paragraph">
+<p>แถว <em>Die</em> ของตัวนำทางการดัดจะแสดงข้อมูลเกี่ยวกับดายที่ใช้สำหรับการดัดนี้
+และแสดงว่ามีคำเตือนหรือข้อผิดพลาดที่เกี่ยวข้องกับดายหรือไม่ ไอคอน
+ที่คุณอาจเห็นในแถว Die ได้แก่:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>ไอคอน</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ความหมาย</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ไม่มีข้อผิดพลาด ใช้ดายได้ถูกต้อง</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ดายชนกับชิ้นงานระหว่างการดัด</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion3.png" alt="explosion3" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ดายชนกับหัวเจาะระหว่างการดัด</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/missing.png" alt="missing" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ไม่มีดาย ไม่ได้กำหนดดายสำหรับการดัดนี้</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/exclaim.png" alt="exclaim" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ใช้กระบวนการดายไม่ถูกต้อง (เช่น
+ใช้ดาย V มาตรฐานสำหรับการดัดแบบ Z-bend)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/overload.png" alt="overload" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ดายมีน้ำหนักเกินค่ากำลังรับน้ำหนักที่กำหนด (tooltip จะแสดงค่าน้ำหนักจริง)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/span-short.png" alt="span short" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ระยะของดายสั้นเกินไป (ชิ้นงานยื่นออกไปเกินปลายดาย)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/flange-narrow.png" alt="flange narrow" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">คำเตือน: ขอบพับอาจแคบเกินไปสำหรับดายนี้
+ทำให้การดัดอาจไม่แม่นยำ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/skipped-bend.png" alt="skipped bend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้ามการดัด</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_แถว_gauges">แถว Gauges<a id="h000243"></a></h3>
+<div class="paragraph">
+<p>แถว <em>Gauges</em> ของตัวนำทางการดัดจะแสดงข้อมูลเกี่ยวกับ Back-gauges
+ที่ใช้สำหรับอ้างอิงชิ้นงานระหว่างการดัดและแสดงว่ามีคำเตือนหรือข้อผิดพลาดที่เกี่ยวข้องกับเกจหรือไม่</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>ไอคอน</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ความหมาย</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ไม่มีข้อผิดพลาด ใช้ดายได้ถูกต้อง</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: Back-gauges ชนกับชิ้นงาน</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion3.png" alt="explosion3" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: Back-gauges ชนกับหัวเจาะหรือดาย</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/missing.png" alt="missing" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ไม่ได้กำหนด Back-gauges สำหรับการดัดนี้</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/overtravel.png" alt="overtravel" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ตำแหน่งของ Back-gauge เกินขีดจำกัดการเคลื่อนที่ของเกจ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/one-finger.png" alt="one finger" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">คำเตือน: ใช้ Back-gauge เพียงตัวเดียว การวางตำแหน่งอาจไม่เสถียร</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/so-so.png" alt="so so" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">คำเตือน: ตำแหน่งของ Back-gauge สูงหรือต่ำกว่าระนาบดายมากเกินไป
+การวางตำแหน่งอาจไม่เสถียร</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/skipped-bend.png" alt="skipped bend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้ามการดัด</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_แถว_machine">แถว Machine<a id="h000244"></a></h3>
+<div class="paragraph">
+<p>แถว <em>Machine</em> ของตัวนำทางการดัดจะแสดงการชนหรือข้อผิดพลาดอื่นๆ
+ที่เกี่ยวข้องกับ_เครื่องจักร_</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>ไอคอน</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ความหมาย</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ไม่มีการชนกับเครื่องจักร</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ชิ้นงานชนกับคานกดหรือ
+เตียงดายระหว่างการดัด</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion3.png" alt="explosion3" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ชิ้นงานชนกับพื้นระหว่างการดัด</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion4.png" alt="explosion4" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ชิ้นงานชนกับแผงป้องกันการดัด (Bend-guard – ระบบความปลอดภัย) ระหว่างการดัด</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/overload.png" alt="overload" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: น้ำหนักเกินค่ากำลังรับน้ำหนักของเครื่องระหว่างการประมวลผลการดัดนี้</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_แถว_acb">แถว ACB<a id="h000245"></a></h3>
+<div class="paragraph">
+<p>แถว <em>ACB</em> ของตัวนำทางการดัดจะแสดงคำเตือนและข้อผิดพลาดที่เกี่ยวข้องกับ
+ระบบวัดมุม</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>ไอคอน</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ความหมาย</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/acb-ok.png" alt="acb ok" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ใช้วิธี <strong>Identify</strong> ของ ACB สำหรับการดัดนี้</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/acb-corrected.png" alt="acb corrected" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ใช้วิธี <strong>Corrected</strong> ของ ACB สำหรับการดัดนี้
+(การแก้ไข Spring-back ที่กำหนดโดยผู้ใช้)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/acb-learned.png" alt="acb learned" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ใช้วิธี <strong>Learned</strong> ของ ACB สำหรับการดัดนี้ (การดัดคาน
+ค่าจังหวะ stroke ถูกคัดลอกจากการดัดอ้างอิงก่อนหน้า)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/missing.png" alt="missing" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ไม่ได้ใช้ ACB สำหรับการดัดนี้</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/acb-range.png" alt="acb range" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">คำเตือน: ไม่มีดิสก์ ACB สัมผัสกับชิ้นงาน</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/acb-hole.png" alt="acb hole" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ดิสก์เซนเซอร์ ACB ตกลงไปในรู</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/acb-flange.png" alt="acb flange" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">คำเตือน: ขอบพับแคบเกินไปสำหรับการวัดมุมด้วย ACB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/acb-reference.png" alt="acb reference" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: เลือกการดัดอ้างอิงไม่ถูกต้องสำหรับ ACB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/skipped-bend.png" alt="skipped bend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้ามการดัด</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_แถว_part">แถว Part<a id="h000246"></a></h3>
+<div class="paragraph">
+<p>แถว <em>Part</em> ของตัวนำทางการดัดจะแสดงข้อมูลเกี่ยวกับการจัดการชิ้นงาน
+ข้อมูลนี้รวมถึงวิธีที่ชิ้นงานควรหมุนหรือกลับด้านระหว่างการดัด
+และคำเตือนสำหรับสถานการณ์ที่จุดศูนย์ถ่วงของชิ้นงาน
+อยู่หลังแนวดัด (Part Tip-back Warning)</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>ไอคอน</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ความหมาย</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ไม่มีปัญหาในการจัดการชิ้นงาน; ไม่จำเป็นต้องหมุนหรือกลับด้านชิ้นงาน</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/incorrect.png" alt="incorrect" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อผิดพลาด: ใช้ลำดับการดัดไม่ถูกต้อง; ส่วนของการดัดนี้
+ไม่อยู่ในแนวเส้นตรงเดียวกันและไม่สามารถประมวลผลในตำแหน่งนี้ได้</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">คำเตือน: ขอบพับของชิ้นงานชนกันระหว่างการดัดเกินอาจส่งผลต่อความแม่นยำของมุม</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/less-than.png" alt="less than" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">คำเตือน: จุดศูนย์ถ่วงของชิ้นงานอยู่หลังแนวดัด (ชิ้นงานเอนถอยหลัง)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/rotate-l.png" alt="rotate l" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ชิ้นงานต้องหมุนไปทางซ้ายสำหรับการดัดครั้งถัดไป</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/rotate-r.png" alt="rotate r" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ชิ้นงานต้องหมุนไปทางขวาสำหรับการดัดครั้งถัดไป</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/rotate-180.png" alt="rotate 180" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ชิ้นงานต้องหมุน 180&deg; องศาสำหรับการดัดครั้งถัดไป</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/flip-vertical.png" alt="flip vertical" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ชิ้นงานต้องกลับด้านคว่ำสำหรับการดัดครั้งถัดไป</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/skipped-bend.png" alt="skipped bend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้ามการดัด</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>เมื่อคุณทำการเปลี่ยนแปลงหัวเจาะ ดาย ลำดับ หรือการตั้งค่าเกจ
+ตัวนำทางการดัดจะอัปเดตสถานะใหม่ทันที การตอบสนองแบบทันที
+นี้ทำให้คุณสามารถทดลองการกำหนดค่าที่แตกต่างกันได้โดยไม่ต้องสั่ง
+<strong>คำนวณใหม่</strong>ทุกครั้ง</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. และจุดเล็กๆ จะปรากฏขึ้นหากชิ้นงานมีมากกว่าหนึ่งสถานี
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_การควบคุมการจำลอง">การควบคุมการจำลอง</a>
+  </li>
+  <li level="2">
+   <a href="#_bend_navigator_มุมมองแบบขยาย">Bend Navigator: มุมมองแบบขยาย</a>
+  </li>
+  <li level="1">
+   <a href="#_แถวข้อมูลใน_navigator">แถวข้อมูลใน Navigator</a>
+  </li>
+  <li level="2">
+   <a href="#_แถว_punch">แถว Punch</a>
+  </li>
+  <li level="2">
+   <a href="#_แถว_die">แถว Die</a>
+  </li>
+  <li level="2">
+   <a href="#_แถว_gauges">แถว Gauges</a>
+  </li>
+  <li level="2">
+   <a href="#_แถว_machine">แถว Machine</a>
+  </li>
+  <li level="2">
+   <a href="#_แถว_acb">แถว ACB</a>
+  </li>
+  <li level="2">
+   <a href="#_แถว_part">แถว Part</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="createbenddata.html">สร้างข้อมูลการดัด</a></span>
+ <span class="next"><a href="editing/index.html">การแก้ไขข้อมูลการดัด</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

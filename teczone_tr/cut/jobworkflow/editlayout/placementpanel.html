@@ -1,0 +1,634 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../res/bento.css">
+  <link rel="stylesheet" href="../../../res/site.css">
+  <link rel="stylesheet" href="../../../res/tree.css">
+  <link rel="stylesheet" href="../../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../../img/trumpf-icon.png">
+  <title>Konumlandırma Paneli</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../../index.html">TecZone'a Hoş Geldiniz</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../intro/index.html">Giriş</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../intro/install.html">Yazılımı Yükleme</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/clarity.html">Operasyon Yüzeyi</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/workflow.html">Parça İş Akışı</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/2dimport/index.html">2-D içe aktarma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/2dimport/2dcleanup.html">2-D Temizleme</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/3dimport/index.html">3-D içe aktarma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prep3dmodel.html">3D Modeli İçe Aktarma</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prepassembly.html">Montajı İçe Aktarma</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/formdetect.html">Form Algılama</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/componentdetect.html">Komponent Algılama</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../cad/sketch.html">Geometriyi Değiştirme</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../../index.html">Lazer CAM</a>
+   <ul>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../partworkflow/index.html">Parça İş Akışı</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../partworkflow/panels/index.html">Panelleri Düzenleme</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../partworkflow/panels/lasercut/index.html">Lazer Kesim</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../partworkflow/panels/lasercut/approach.html">Yaklaşma</a></li>
+          <li><button class="tree blank"></button><a href="../../partworkflow/panels/lasercut/withdrawal.html">Geri çekme</a></li>
+          <li><button class="tree blank"></button><a href="../../partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../../partworkflow/panels/lasercut/advanced.html">Gelişmiş</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../partworkflow/panels/contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="../../partworkflow/panels/scrapcut.html">Hurda Kesimi</a></li>
+        <li><button class="tree blank"></button><a href="../../partworkflow/panels/part.html">Parça</a></li>
+        <li><button class="tree blank"></button><a href="../../partworkflow/panels/cornertreatment.html">Köşe İşleme</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../partworkflow/quicknest.html">Hızlı Yerleştirme</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="../index.html">Görev İş Akışı</a>
+     <ul>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../jobpanel/index.html">İş Paneli</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../jobpanel/sheets.html">Saclar Sekmesi</a></li>
+        <li><button class="tree blank"></button><a href="../jobpanel/parts.html">Parçalar Sekmesi</a></li>
+        <li><button class="tree blank"></button><a href="../jobpanel/layouts.html">Yerleşim Düzenleri Sekmesi</a></li>
+        <li><button class="tree blank"></button><a href="../jobpanel/summary.html">Özet Sekmesi</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree open"></button>
+       <a href="index.html">Yerleşim Düzenini Düzenleme</a>
+       <ul>
+        <li><button class="tree blank"></button><a href="nestingmodes.html">Yerleştirme Modları</a></li>
+        <li><button class="tree blank"></button><a class="active" href="placementpanel.html">Konumlandırma Paneli</a></li>
+        <li><button class="tree blank"></button><a href="sequencing.html">Sıralama</a></li>
+        <li><button class="tree blank"></button><a href="slicesheet.html">Sac Dilimleme</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bevelcut/index.html">Eğimli Kesim</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bevelcut/opencontours.html">Açık Konturlar</a></li>
+      <li><button class="tree blank"></button><a href="../../bevelcut/variablebevel.html">Değişken Eğim</a></li>
+      <li><button class="tree blank"></button><a href="../../bevelcut/miscellaneous.html">Diğer</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../advanced/finishingrules.html">Bitirme Kuralları</a></li>
+      <li><button class="tree blank"></button><a href="../../advanced/editltt.html">LTT'yi düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../advanced/twinline/strategies.html">Strateji</a></li>
+        <li><button class="tree blank"></button><a href="../../advanced/twinline/microjoints.html">Mikrojointler</a></li>
+        <li><button class="tree blank"></button><a href="../../advanced/twinline/stability.html">Diğer ayarlar</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bend/index.html">Bend CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">Bükme parametreleri oluşturma</a></li>
+    <li><button class="tree blank"></button><a href="../../../bend/navigator.html">Büküm gezinti öğesi</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/editing/index.html">Büküm verilerini düzenleme</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editbend.html">Bir bükümü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editmount.html">Bir takım montajını düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editsetup.html">Bir büküm kurulumunu düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editgauge.html">Arka dayanakları düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editacb.html">Açı ölçümünü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/bendsheet.html">Bükümler elektronik tablosu</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/sequencing.html">Sıralamayı değiştirme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/addsetup.html">Kurulumlar ve istasyonlar ekleme</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/anglemeasurement.html">Açı ölçümü</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/batchprocess.html">Toplu işleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/recompute.html">Çözümü yeniden hesaplama</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">Tonaj kontrolü</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bcell/navigator.html">Bend gezinti öğesi</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/pickup/index.html">Parça Alma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/frompallet.html">Paletten Alma</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/fromdispenser.html">Dağıtıcıdan Alma</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/bending/index.html">Robotik Bükme</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/insertion.html">Yerleştirme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/bending.html">Bükme İşlemi</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/extraction.html">Parça çıkarma</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/regrip/index.html">Kavrama</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/regrippanel.html">Kavrama Paneli</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/addregrip.html">Kavrama Ekleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/editregrip.html">Kavramayı Düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/jawregrip.html">Çeneyle Kavrama</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/rgstationpanel.html">Kavrama İstasyonu Paneli</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/deposit/index.html">Parça Bırakma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/patterns.html">Bırakma Örüntüleri</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/repeat.html">Tekrarlama ve Sıralama</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/separatorsheet.html">Separatör Sac</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/waypoints.html">Geçiş Noktaları</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/cellconfig.html">Hücre Konfigürasyonu</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb.html">Kavrayıcı Veritabanı</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/reports.html">Raporlar</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../fold/index.html">Katlama CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../fold/createfolddata.html">Katlama verisi oluşturma</a></li>
+    <li><button class="tree blank"></button><a href="../../../fold/foldview.html">Katlama görünümü</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/editing/index.html">Katlama verilerini düzenleme</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbend.html">Bir bükümü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editside.html">Bir tarafı/bölümü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editseq.html">Sırayı değiştirme</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbh.html">Sabitleyicileri düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editgauge.html">Dayamayı düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editblade.html">Bıçakları düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editload.html">Yüklemeyi düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editunload.html">Boşaltmayı düzenleme</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../fold/toolinventory.html">Takım stoğu</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/airgaptables.html">Özel hava boşluğu tabloları</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/manualbend.html">Manuel büküm tamamlama</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/minflangelength.html">Gerekli Flanş Uzunluğu</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../settings/index.html">Ayarlar</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/drawing/index.html">Çizim</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/layers.html">Katmanlar</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/dimensions.html">Ölçüler</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/view.html">Görünüm</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/benddefaults.html">Makine Varsayılanları</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendoutputs.html">Büküm Çıkışları</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendview.html">Büküm Görünümü</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendcell.html">Büküm Hücresi</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/layout/index.html">Yerleşim Düzeni</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/nesting.html">Yerleştirme Ayarları</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheet.html">Sac</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheethandling.html">Sac İşleme</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/skeletoncuts.html">İskelet Kesimleri</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/worksupport.html">İş Desteği</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/lasercam/index.html">Lazer CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/lasercam/sequence.html">Sıralama</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutoutputs.html">Kesim Çıkışları</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutview.html">Kesim Görünümü</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/foldcam/index.html">Panel Büküm</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/defaults.html">Varsayılanlar</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/zbwcarriers.html">İBT Taşıyıcı Parçaları</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/foldoutputs.html">Çıkışlar</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/reports/index.html">Raporlar</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/reports/itemdefaults.html">Öğe Varsayılanları</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../settings/importexport.html">İçe/Dışa Aktarma</a></li>
+    <li><button class="tree blank"></button><a href="../../../settings/environment.html">Çevre</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../database/index.html">Veri tabanı</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../database/materials.html">Malzemeler</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/machines.html">Makineler</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendtools.html">Bükme Takımları</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">Bükme Kavrayıcıları</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Formlar/Komponentler</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../report/index.html">Raporlar</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../report/designer.html">Rapor Tasarımcısı</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/fields.html">Alanlar, Resimler ve Tablolar</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/bands.html">Bantlar (alt raporlar)</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/labels.html">Etiketler, Bit Eşlemler ve Şekiller</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../appendix/index.html">Ek</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">Desteklenen 3D Formatları</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">Separatör Sac DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">Bükme Takımı DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../../impressum.html">Künyemiz</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../../index.html">Lazer CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="../index.html">Görev İş Akışı</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Yerleşim Düzenini Düzenleme</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="placementpanel.html">Konumlandırma Paneli</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Konumlandırma Paneli</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Eklenmiş olan bir parça (veya yerleşim düzenindeki herhangi bir parça), ilgili parçaya tıkladığınızda gösterilen <strong>Konumlandırma Paneli</strong> yardımıyla taşınabilir, döndürülebilir veya tekrarlanabilir:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/placement.png" alt="Placement Panel" width="681"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Left</strong>, <strong>Bottom</strong>,
+<strong>Right</strong> ve <strong>Top</strong> ayarları, parçaya ait <em>sınırlayıcı kutunun</em> sınırlarıdır
+ve bunlar, parçayı hassas olarak pozisyonlamak amacıyla
+kullanılabilir.</p>
+</li>
+</ul>
+</div>
+<div id="h000329" class="ulist">
+<ul>
+<li>
+<p>Ayrıca, parçanın ortasındaki kırmızı dairesel <em>tutamağa</em> tıklayarak
+sac üzerinde konumlandırmak üzere sürüklemeye başlayabilirsiniz. Parçayı sürüklerken, TecZone Laser tarafından bitişik
+parçalara hassas bir boşluk (köprü genişliği) bırakarak pozisyonlandırmanıza yardımcı
+olacak kenetleme kılavuzları eklenir. Parça konumlandırılıyorken parçanın çevresine, gerçek parça konturundan köprü
+genişliği kadar kaydırılmış olan bir <em>anahat</em> da çizilir.</p>
+</li>
+<li>
+<p><strong>Angle</strong> ayarı, diğer yönleri deneyebilmek için
+parçayı döndürmek amacıyla kullanılabilir. Ayrıca, parçayı sürükleme
+tutamağıyla sürüklüyorken, <kbd>Ctrl</kbd> düğmesine basılı tutup fare tekerleğini çevirerek
+parçayı etkileşimli olarak döndürebilirsiniz.</p>
+</li>
+<li>
+<p>Parçanın bir kopyasını oluşturmak için <strong><kbd>Ctrl</kbd>+Tıklama</strong> uygulayın ve ardından da
+bu kopyayı sürüklemeye başlayın.</p>
+</li>
+<li>
+<p>Parçayı dikey olarak yansıtmak için <strong><kbd>Alt</kbd>+Tıklama</strong> ve
+<strong>Parçayı yatay olarak yansıtmak için de <span class="keyseq"><kbd>Alt</kbd>+<kbd>Shift</kbd></span>+Tıklama</strong> uygulayın.</p>
+</li>
+</ul>
+</div>
+<div id="h000330" class="ulist">
+<ul>
+<li>
+<p>Bu panelin alt kısmında birkaç <strong>Seçici</strong> bulunur:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Seçili parçaları seçimi kaldırmak ve geri kalan her şeyi seçmek için <strong>Değiştir</strong> öğesine tıklayın.</p>
+</li>
+<li>
+<p><em>Aynı açıda</em> bulunan aynı parçanın tüm
+kopyalarını seçmek için <strong>Similar</strong> öğesine tıklayın.</p>
+</li>
+<li>
+<p>Aynı parçanın tüm
+kopyalarını seçmek için <strong>Same Parts</strong> öğesine
+tıklayın (dönüş açısından bağımsız).</p>
+</li>
+<li>
+<p>Aynı açıdaki ve aynı yatay pozisyondaki
+tüm parçaları seçmek için <strong>Similar Parts in Row</strong> öğesine tıklayın.</p>
+</li>
+<li>
+<p>Aynı açıdaki ve aynı dikey pozisyondaki
+tüm parçaları seçmek için <strong>Similar Parts in Column</strong> öğesine tıklayın.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_twinline_ortak_hat_konumlandırması">TwinLine (ortak hat) Konumlandırması<a id="h000331"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong><kbd>Shift</kbd>+tıklama</strong> uygulayarak bir parçayı sürüklemeye başladığınızda,
+ilgili konumlandırma <em>TwinLine</em> moduna geçer; iki paralel kenarı birbirine
+yaklaştırdığınızda, her ikisinin de ortak bir hat aracılığıyla kesilebilmesi için TecZone Laser bunları
+aralarında tam olarak bir kesim aralığı genişliği mesafesi bırakarak birbirine kenetler. Burada, <kbd>Shift</kbd>+Tıklama ile bir parçayı sürüklerken bu türde bir kenetlemenin yürütüldüğü bir örnek sağlanmıştır:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/twinline1.png" alt="TwinLine" width="411"></span></p>
+</div>
+<div class="paragraph">
+<p>Fare bırakıldığında, iki parça tek bir TwinLine uygulanmış
+grup oluşturur ve ortak hat da yalnızca bir kez kesilir (göreceğiniz gibi, ortadaki
+diyagonal hat üzerinde yalnızca tek bir kesik çizgi oku bulunmaktadır).</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/twinline2.png" alt="TwinLine" width="626"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_parçaları_tekrarlama_ve_gruplandırma">Parçaları tekrarlama ve gruplandırma<a id="h000332"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image right"><img src="img/repeat1.png" alt="Repeat 1" width="205"></span></p>
+</div>
+<div class="paragraph">
+<p>Bir parçayı seçebilir ve ardından da sınırlayıcı kutunun köşelerinde bulunan dört tutamak yardımıyla parçayı tekrarlayabilirsiniz. Bu, seçilmiş durumdaki bir <em>grup</em> parça ile
+bile yapılabilir. Burada, iki bitişik parçayı seçerek başladığımız ve köşe tutamacına
+tıklayarak sürüklemeye başladığımız bir örnek sağlanmıştır:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/repeat2.png" alt="Repeat 2" width="384">
+</div>
+</div>
+<div class="paragraph">
+<p>Gerekli satır ve sütun sayısına ulaştığınızda, tekrarlanan kısımları eklemek için tıklayabilirsiniz:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/repeat3.png" alt="Repeat 3" width="592">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_twinline_ile_tekrarlama">TwinLine ile tekrarlama<a id="h000333"></a></h3>
+<div class="paragraph">
+<p>Tek bir parçayla veya birden fazla parçadan oluşan bir TwinLine birimiyle başlarsanız, köşeyi sürüklerken <kbd>Shift</kbd> düğmesine basılı tutarak bir <em>TwinLine</em> tekrarı yapabilirsiniz:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/repeattwinline.png" alt="Repeat Twinline" width="688"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gruplandırma">Gruplandırma<a id="h000334"></a></h3>
+<div class="paragraph">
+<p>Birden fazla parça seçtiğinizde,
+<strong>Group</strong> düğmesine tıklayarak bunları tek bir ünite olarak gruplandırabilirsiniz. Ardından, taşıma, döndürme, yansıtma ve tekrar etme gibi tüm faaliyetler bu öğe üzerinde çalışır:
+<strong>Group</strong>. Bir grubu seçtikten sonra,
+<strong>Ungroup</strong> öğesine tıklayarak bu grubu parçalayabilir ve tekrar münferit parçalar olarak değerlendirebilirsiniz.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_parça_donatımını_düzenleme">Parça Donatımını Düzenleme<a id="h000335"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Konumlandırma panelindeki <strong>Edit Tooling</strong> düğmesi,
+bir veya daha fazla seçili parçanın lazer kesim donatımını doğrudan yerleşim düzeni
+bağlamında ayarlamak amacıyla kullanılabilir. İlk olarak, donatımlarını düzenlemek istediğiniz
+benzer parçalardan oluşan bir grup seçin:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/edittooling1.png" alt="Edit Tooling" width="577">
+</div>
+</div>
+<div class="paragraph">
+<p>Diğer tüm parçalar grileştirilir; TecZone Laser seçilen parçalara yakınlaştırır ve ardından da
+parçanın donatımını düzenleyebilirsiniz. Bu örnekte, yuvarlak deliklerden birine bir <strong>Scrap cutting</strong> faaliyeti
+ekleyerek ilgili çapağı dilimlemek istediğimizi varsayalım:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/edittooling2.png" alt="Before Scrap Cut" width="571">
+</div>
+</div>
+<div class="paragraph">
+<p>Bir düzenleme yaparsanız (ör. Hurda Kesimi eklemek gibi), düzenlemenin
+seçilmiş olan tüm parçalara uygulandığını görebilirsiniz.
+ Düzenlenen parça grubunun dışında herhangi bir yere tıklanması,
+yerleşim düzenine geri dönmenizi sağlar. Gördüğünüz gibi, seçilen üç parçaya hurda kesme donatımı eklenmiştir.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/edittooling3.png" alt="After Scrap Cut" width="560">
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_twinline_ortak_hat_konumlandırması">TwinLine (ortak hat) Konumlandırması</a>
+  </li>
+  <li level="1">
+   <a href="#_parçaları_tekrarlama_ve_gruplandırma">Parçaları tekrarlama ve gruplandırma</a>
+  </li>
+  <li level="2">
+   <a href="#_twinline_ile_tekrarlama">TwinLine ile tekrarlama</a>
+  </li>
+  <li level="2">
+   <a href="#_gruplandırma">Gruplandırma</a>
+  </li>
+  <li level="1">
+   <a href="#_parça_donatımını_düzenleme">Parça Donatımını Düzenleme</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="nestingmodes.html">Yerleştirme Modları</a></span>
+ <span class="next"><a href="sequencing.html">Sıralama</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../../res/index.js"></script>
+    <script src="../../../res/files.js"></script>
+    <script src="../../../res/site.js"></script>
+
+    
+</body>
+</html>

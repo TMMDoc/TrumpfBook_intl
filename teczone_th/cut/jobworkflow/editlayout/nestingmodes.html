@@ -1,0 +1,628 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../res/bento.css">
+  <link rel="stylesheet" href="../../../res/site.css">
+  <link rel="stylesheet" href="../../../res/tree.css">
+  <link rel="stylesheet" href="../../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../../img/trumpf-icon.png">
+  <title>โหมดการ Nest</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../../index.html">ยินดีต้อนรับสู่ TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../intro/index.html">บทนำ</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../intro/install.html">การติดตั้งซอฟต์แวร์</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/clarity.html">ส่วนติดต่อผู้ใช้</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/workflow.html">Part Workflow</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/2dimport/index.html">การนำเข้า 2 มิติ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/2dimport/2dcleanup.html">การล้างข้อมูล 2D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/3dimport/index.html">การนำเข้า 3 มิติ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prep3dmodel.html">การนำเข้าโมเดล 3 มิติ</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prepassembly.html">การนำเข้าแอสเซมบลี</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/formdetect.html">การตรวจจับฟอร์ม</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/componentdetect.html">การตรวจหาส่วนประกอบ</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../cad/sketch.html">การปรับแก้เรขาคณิต</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../../index.html">Laser CAM</a>
+   <ul>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../partworkflow/index.html">Part Workflow</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../partworkflow/panels/index.html">Editing Panels</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../partworkflow/panels/lasercut/index.html">Laser Cut</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../partworkflow/panels/lasercut/approach.html">Approach</a></li>
+          <li><button class="tree blank"></button><a href="../../partworkflow/panels/lasercut/withdrawal.html">Withdrawal</a></li>
+          <li><button class="tree blank"></button><a href="../../partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../../partworkflow/panels/lasercut/advanced.html">ขั้นสูง</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../partworkflow/panels/contour.html">Contour</a></li>
+        <li><button class="tree blank"></button><a href="../../partworkflow/panels/scrapcut.html">การตัดเศษ</a></li>
+        <li><button class="tree blank"></button><a href="../../partworkflow/panels/part.html">ชิ้นส่วน</a></li>
+        <li><button class="tree blank"></button><a href="../../partworkflow/panels/cornertreatment.html">Corner Treatment</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../partworkflow/quicknest.html">Quick-Nest</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="../index.html">ขั้นตอนการทำงานของงาน</a>
+     <ul>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../jobpanel/index.html">Job Panel</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../jobpanel/sheets.html">แท็บ Sheets</a></li>
+        <li><button class="tree blank"></button><a href="../jobpanel/parts.html">Parts Tab</a></li>
+        <li><button class="tree blank"></button><a href="../jobpanel/layouts.html">Layouts Tab</a></li>
+        <li><button class="tree blank"></button><a href="../jobpanel/summary.html">แท็บ Summary</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree open"></button>
+       <a href="index.html">การแก้ไขเลย์เอาต์</a>
+       <ul>
+        <li><button class="tree blank"></button><a class="active" href="nestingmodes.html">โหมดการ Nest</a></li>
+        <li><button class="tree blank"></button><a href="placementpanel.html">Placement Panel</a></li>
+        <li><button class="tree blank"></button><a href="sequencing.html">การจัดลำดับ</a></li>
+        <li><button class="tree blank"></button><a href="slicesheet.html">แผ่นตัด</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bevelcut/index.html">Bevel Cut</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bevelcut/opencontours.html">การเปิดเส้นโค้ง</a></li>
+      <li><button class="tree blank"></button><a href="../../bevelcut/variablebevel.html">การเอียงที่ปรับค่าได้</a></li>
+      <li><button class="tree blank"></button><a href="../../bevelcut/miscellaneous.html">เบ็ดเตล็ด</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../advanced/finishingrules.html">กฎการเก็บชิ้นงาน</a></li>
+      <li><button class="tree blank"></button><a href="../../advanced/editltt.html">การแก้ไข LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../advanced/twinline/strategies.html">กลยุทธ์</a></li>
+        <li><button class="tree blank"></button><a href="../../advanced/twinline/microjoints.html">Microjoints</a></li>
+        <li><button class="tree blank"></button><a href="../../advanced/twinline/stability.html">การตั้งค่าเพิ่มเติม</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bend/index.html">Bend CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">สร้างข้อมูลการดัด</a></li>
+    <li><button class="tree blank"></button><a href="../../../bend/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/editing/index.html">การแก้ไขข้อมูลการดัด</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editbend.html">การแก้ไขการพับ</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editmount.html">การแก้ไขตัวยึดเครื่องมือ</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editsetup.html">การแก้ไข Bend Setup</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editgauge.html">การแก้ไข Back-gauge</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editacb.html">การแก้ไขการวัดมุม</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/bendsheet.html">ตารางการพับ</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/sequencing.html">การเปลี่ยนลำดับ</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/addsetup.html">การเพิ่มการตั้งค่าและสถานี</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/anglemeasurement.html">การวัดมุม</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/batchprocess.html">การประมวลผลแบบชุด</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/recompute.html">Recompute solution</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">การตรวจสอบแรงกด</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bcell/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/pickup/index.html">การหยิบชิ้นงาน</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/frompallet.html">การหยิบจากพาเลท</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/fromdispenser.html">Pickup from Dispenser</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/bending/index.html">การดัดด้วยหุ่นยนต์</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/insertion.html">การแทรก</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/bending.html">Bending</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/extraction.html">การนำชิ้นงานออก</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/regrip/index.html">Regripping</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/regrippanel.html">แผง Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/addregrip.html">Add Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/editregrip.html">Edit Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/jawregrip.html">Regrip ด้วยกริปเปอร์แบบขากรรไกร</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/rgstationpanel.html">แผงสถานี Regrip</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/deposit/index.html">Part Deposit</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/patterns.html">Deposit Patterns</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/repeat.html">Repeat and Sequence</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/separatorsheet.html">Separator Sheet</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/cellconfig.html">Cell Configuration</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb.html">Gripper Database</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/reports.html">Reports</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../fold/index.html">Fold CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../fold/createfolddata.html">การสร้างข้อมูลการพับ</a></li>
+    <li><button class="tree blank"></button><a href="../../../fold/foldview.html">มุมมอง Fold</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/editing/index.html">การแก้ไขข้อมูลการพับ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbend.html">การแก้ไขการพับ</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editside.html">การแก้ไขด้าน/เซกชัน</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editseq.html">การเปลี่ยนลำดับ</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbh.html">การแก้ไข blank-holder</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editgauge.html">การแก้ไขการวัดด้วยเกจ</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editblade.html">การแก้ไขใบมีด</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editload.html">การแก้ไขการโหลด</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editunload.html">การแก้ไขการถอดชิ้นงาน</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../fold/toolinventory.html">สต็อกเครื่องมือ</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/airgaptables.html">ตารางระยะช่องว่างอากาศแบบกำหนดเอง</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/manualbend.html">การทำงานของการดัดแบบแมนนวล</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/minflangelength.html">ความยาวขอบพับขั้นต่ำ</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../settings/index.html">Settings</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/drawing/index.html">Drawing</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/layers.html">Layers</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/dimensions.html">Dimensions</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/view.html">View</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/benddefaults.html">Machine Defaults</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendoutputs.html">Bend Outputs</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendview.html">Bend View</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendcell.html">Bend Cell</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/layout/index.html">เลย์เอาต์</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/nesting.html">Nest Settings</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheet.html">Sheet</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheethandling.html">Sheet Handling</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/skeletoncuts.html">Skeleton Cuts</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/worksupport.html">Work Support</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/lasercam/sequence.html">Sequence</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutoutputs.html">Cut Outputs</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutview.html">Cut View</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/foldcam/index.html">Panel Bending</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/defaults.html">ค่าเริ่มต้น</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/zbwcarriers.html">ZBW Carriers</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/foldoutputs.html">Outputs</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/reports/index.html">Reports</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/reports/itemdefaults.html">Item Defaults</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../settings/importexport.html">Import/Export</a></li>
+    <li><button class="tree blank"></button><a href="../../../settings/environment.html">Environment</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../database/index.html">ฐานข้อมูล</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../database/materials.html">วัสดุ</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/machines.html">เครื่องจักร</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendtools.html">เครื่องมือดัด</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">ตัวจับดัด</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">ฟอร์ม/ส่วนประกอบ</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../report/index.html">Reports</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/fields.html">ฟิลด์ รูปภาพ และตาราง</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/bands.html">Bands (sub-reports)</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/labels.html">Labels, Bitmaps และ Shapes</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../appendix/index.html">ภาคผนวก</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">Supported 3D Formats</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">แผ่นคั่น DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">เครื่องมือดัด DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../../index.html">Laser CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="../index.html">ขั้นตอนการทำงานของงาน</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">การแก้ไขเลย์เอาต์</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="nestingmodes.html">โหมดการ Nest</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>โหมดการ Nest</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>เครื่องยนต์ Nesting</strong> ใน TecZone Laser สามารถจัดทำเลย์เอาต์จากงาน Nesting ได้
+อย่างมีประสิทธิภาพ คุณยังสามารถนำเลย์เอาต์ที่ Nest แล้วใด ๆ (หรือแม้กระทั่งเริ่มต้นด้วย
+แผ่นว่าง) แล้วเพิ่มชิ้นงาน_แบบโต้ตอบ_ เคลื่อนย้าย และหมุนชิ้นงานได้</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_การ_nest_อัตโนมัติ">การ Nest อัตโนมัติ<a id="h000324"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ในช่วงเริ่มต้น คุณเพิ่มแผ่นวัสดุและชิ้นงานเข้าสู่งาน Nesting จากนั้น เมื่อคุณสลับไปที่
+แท็บ <strong>Layouts</strong> ระบบจะทำการ Nest โดยอัตโนมัติ หลังจากนั้น คุณ
+สามารถเปลี่ยนรายการชิ้นงาน หรือแก้ไขการตั้งค่าบางอย่าง และจะมีตัวเลือก
+ให้ทำการ_ Nest ชิ้นงานใหม่_ด้วยการตั้งค่าที่หลากหลาย</p>
+</div>
+<div class="sect2">
+<h3 id="_การเพิ่มชิ้นงานเพิ่มเติมลงในแผ่น">การเพิ่มชิ้นงานเพิ่มเติมลงในแผ่น<a id="h000325"></a></h3>
+<div class="paragraph">
+<p>สมมุติว่า คุณได้เพิ่มชิ้นงานเพิ่มเติมบางชิ้นในงาน Nesting แล้ว
+แต่ยังไม่ได้ถูก Nest เพื่อใช้เครื่องยนต์ Nesting วางชิ้นงานเหล่านี้ลงบนแผ่น
+ให้เลือกแท็บ layout<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>ที่คุณต้องการใช้ (บ่อยครั้งจะเป็นแผ่นสุดท้าย
+ซึ่งมักจะถูกเติมเพียงบางส่วน) จากนั้น คลิกที่ไอคอน <strong>Nest</strong>
+จากแถบเครื่องมือทางซ้าย แล้วเลือก
+<strong>Pack remaining sheet area automatically</strong>
+<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>
+image::AutoNest.png[Auto-Nest,906]</p>
+</div>
+<div class="paragraph">
+<p>ชิ้นงานที่ยังไม่ได้ Nest จะถูกวางในพื้นที่ที่เหลืออยู่ของแผ่น
+ตัวเลือกนี้จะไม่เปลี่ยนแปลงชิ้นงานใดๆ ที่ถูกวางไว้บนแผ่นแล้ว
+และบางครั้งจะถูกใช้สำหรับ Nest แผ่นบางส่วนด้วยตนเอง จากนั้นจึงสั่งให้
+เครื่องยนต์ Nesting จัดการส่วนที่เหลือให้เสร็จ ภาพด้านล่างแสดง
+ชิ้นงานที่เพิ่งถูกเพิ่มใหม่ในสีเหลือง และคุณสามารถเห็นว่าชิ้นงานเก่ายังคงอยู่ในตำแหน่งเดิมไม่ได้
+ถูกย้าย:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/autonest2.png" alt="Auto-Nest 2" width="836">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_การจัดเรียงใหม่_แผ่นที่เหลือ">การจัดเรียงใหม่ – แผ่นที่เหลือ<a id="h000326"></a></h3>
+<div class="paragraph">
+<p>หากคุณไม่จำเป็นต้องรักษาตำแหน่งของชิ้นงานเดิม คุณสามารถ
+ได้ผลลัพธ์ที่ดีกว่าโดยให้เครื่องยนต์ Nesting _จัดเรียง_แผ่นงานทั้งหมดใหม่
+เลือก <strong>Rearrange to create a remainder sheet</strong> แล้ว
+TecZone Laser จะทำการจัดเรียงชิ้นงานทั้งหมดบนแผ่นงานใหม่ โดยพยายาม
+ให้ได้_แผ่นเหลือ_รูปสี่เหลี่ยมผืนผ้าด้านขวาที่สะอาด ซึ่งสามารถใช้เป็นวัตถุดิบสำหรับการ Nesting
+ครั้งถัดไป</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/autonest3.png" alt="Auto-Nest 3" width="834">
+</div>
+</div>
+<div class="paragraph">
+<p>ซึ่งจะเห็นได้ว่าแผ่นงานข้างต้นมีชิ้นงานเหมือนเดิม แต่
+ถูกจัดให้แน่นขึ้น ซึ่งทำให้สามารถตัดแผ่นเหลือออกมาใช้งานได้</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_การจัดเรียงใหม่_ใช้พื้นที่ทั้งแผ่น">การจัดเรียงใหม่ - ใช้พื้นที่ทั้งแผ่น<a id="h000327"></a></h3>
+<div class="paragraph">
+<p>หากแผ่นเหลือมีขนาดเล็กเกินกว่าจะใช้งานได้ ควรให้
+เครื่องยนต์ Nesting จัดเรียงใหม่แบบ_หลวมขึ้น_ โดยยังคงวาง
+ชิ้นงานทั้งหมดลงบนแผ่น แต่เพิ่มช่องว่างระหว่างชิ้นงาน
+เพื่อใช้พื้นที่ทั้งแผ่นให้เต็มที่ ซึ่งสามารถทำได้โดยเลือก
+<strong>Rearrange to use full sheet</strong> จากเมนู:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/autonest4.png" alt="Auto-Nest 4" width="834">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ManualNesting">การจัด Nesting แบบ Manual</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>เปิดเลย์เอาต์เพื่อแก้ไขได้จากแท็บ <a href="../jobpanel/layouts.html">Layouts</a>
+ของ Job Panel หรือเปิดไฟล์ <strong>.fxlyt</strong> ที่คุณบันทึกไว้ก่อนหน้านี้</p>
+</div>
+<div class="sect2">
+<h3 id="_การเพิ่มชิ้นส่วน">การเพิ่มชิ้นส่วน<a id="h000328"></a></h3>
+<div class="paragraph">
+<p>คุณสามารถเพิ่มชิ้นส่วนไปยังเลย์เอาต์ได้โดยคลิกปุ่ม <strong>Add</strong>
+บนแถบเครื่องมือด้านซ้าย จะแสดงรายชื่อชิ้นงานทั้งหมดในงาน
+Nesting:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/addpart.png" alt="Add Part" width="488">
+</div>
+</div>
+<div class="paragraph">
+<p>คลิกที่ชิ้นส่วนจากรายการเพื่อเพิ่มลงในแผ่นงาน (เครื่องยนต์ Nesting จะ
+พยายามหาตำแหน่งที่เหมาะสมที่สุดสำหรับชิ้นงาน แต่คุณสามารถเปลี่ยนได้
+ภายหลัง) คำอธิบายชิ้นส่วนใช้สีต่างๆ เพื่อบ่งบอกความหมายที่แตกต่างกัน
+ดังนี้:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/correctqty.png" alt="Correct Qty" width="197"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">วางชิ้นส่วนแล้ว 12 ชิ้น (จำนวนที่ต้องการ)<br>
+  ข้อความเป็นสีเทาหมายความว่าจำนวนที่ต้องการทั้งหมดถูกวางแล้ว</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/lessqty.png" alt="Less Qty" width="197"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ขาดชิ้นงานไป 2 ชิ้นจากจำนวนที่ต้องการ<br>
+  ข้อความเป็นสีขาวหมายความว่ายังเหลือชิ้นส่วนที่ต้องวางอีก</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/moreqty.png" alt="More Qty" width="197"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ต้องการ 18 ชิ้น แต่จัดวางไปแล้ว 20 ชิ้น (+2)<br>
+  ข้อความเป็นสีเทาหมายความว่าจัดวางเกินจำนวนที่ต้องการ
+แล้ว</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/toobig.png" alt="Too Big" width="197"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ต้องการ 24 ชิ้น และจัดวางครบแล้ว<br>
+  ข้อความเป็นสีแดงหมายความว่าชิ้นส่วนมีขนาดใหญ่เกินไปที่จะวางในพื้นที่ที่เหลืออยู่บนแผ่น</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>มื่อคุณเลื่อนเมาส์เหนือชิ้นงานในรายการ TecZone Laser จะคำนวณ
+ตำแหน่งที่เหมาะสมและแทรกชั่วคราวลงในแผ่นเป็นสีน้ำเงิน
+เพื่อให้คุณประเมินได้ว่าเหมาะสมหรือไม่ ดังนั้น คุณสามารถ
+วางชิ้นงานหลายชิ้นได้อย่างรวดเร็วบนแผ่น เพียงแค่เลื่อนเมาส์เหนือพื้นที่ดังกล่าว
+แล้วคลิก</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/addpart2.png" alt="Adding Part" width="780"></span></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+เมื่อชิ้นงานถูกวางบนแผ่นแล้ว สามารถย้าย หมุน หรือทำซ้ำได้
+โดยใช้ <a href="placementpanel.html">Placement Panel</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <strong>Layouts</strong> จากนั้นเลือก เลย์เอาต์จากรายชื่อเลย์เอาต์ที่ปรากฏ
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. หรือใช้ลำดับคีย์บอร์ด <kbd>H</kbd>, <kbd>A</kbd>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_การ_nest_อัตโนมัติ">การ Nest อัตโนมัติ</a>
+  </li>
+  <li level="2">
+   <a href="#_การเพิ่มชิ้นงานเพิ่มเติมลงในแผ่น">การเพิ่มชิ้นงานเพิ่มเติมลงในแผ่น</a>
+  </li>
+  <li level="2">
+   <a href="#_การจัดเรียงใหม่_แผ่นที่เหลือ">การจัดเรียงใหม่ – แผ่นที่เหลือ</a>
+  </li>
+  <li level="2">
+   <a href="#_การจัดเรียงใหม่_ใช้พื้นที่ทั้งแผ่น">การจัดเรียงใหม่ - ใช้พื้นที่ทั้งแผ่น</a>
+  </li>
+  <li level="1">
+   <a href="#ManualNesting">การจัด Nesting แบบ Manual</a>
+  </li>
+  <li level="2">
+   <a href="#_การเพิ่มชิ้นส่วน">การเพิ่มชิ้นส่วน</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="index.html">การแก้ไขเลย์เอาต์</a></span>
+ <span class="next"><a href="placementpanel.html">Placement Panel</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../../res/index.js"></script>
+    <script src="../../../res/files.js"></script>
+    <script src="../../../res/site.js"></script>
+
+    
+</body>
+</html>

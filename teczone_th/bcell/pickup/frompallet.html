@@ -1,0 +1,844 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>การหยิบจากพาเลท</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">ยินดีต้อนรับสู่ TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">บทนำ</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">การติดตั้งซอฟต์แวร์</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">ส่วนติดต่อผู้ใช้</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Part Workflow</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">การนำเข้า 2 มิติ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">การล้างข้อมูล 2D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">การนำเข้า 3 มิติ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">การนำเข้าโมเดล 3 มิติ</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">การนำเข้าแอสเซมบลี</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">การตรวจจับฟอร์ม</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">การตรวจหาส่วนประกอบ</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">การปรับแก้เรขาคณิต</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">Laser CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Part Workflow</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Editing Panels</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Laser Cut</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Approach</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Withdrawal</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">ขั้นสูง</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Contour</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">การตัดเศษ</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">ชิ้นส่วน</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Corner Treatment</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Quick-Nest</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">ขั้นตอนการทำงานของงาน</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Job Panel</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">แท็บ Sheets</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Parts Tab</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Layouts Tab</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">แท็บ Summary</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">การแก้ไขเลย์เอาต์</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">โหมดการ Nest</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Placement Panel</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">การจัดลำดับ</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">แผ่นตัด</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Bevel Cut</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">การเปิดเส้นโค้ง</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">การเอียงที่ปรับค่าได้</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">เบ็ดเตล็ด</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">กฎการเก็บชิ้นงาน</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">การแก้ไข LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">กลยุทธ์</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Microjoints</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">การตั้งค่าเพิ่มเติม</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bend/index.html">Bend CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">สร้างข้อมูลการดัด</a></li>
+    <li><button class="tree blank"></button><a href="../../bend/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bend/editing/index.html">การแก้ไขข้อมูลการดัด</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bend/editing/editbend.html">การแก้ไขการพับ</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editmount.html">การแก้ไขตัวยึดเครื่องมือ</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editsetup.html">การแก้ไข Bend Setup</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editgauge.html">การแก้ไข Back-gauge</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/editacb.html">การแก้ไขการวัดมุม</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/bendsheet.html">ตารางการพับ</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/sequencing.html">การเปลี่ยนลำดับ</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/editing/addsetup.html">การเพิ่มการตั้งค่าและสถานี</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bend/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bend/advanced/anglemeasurement.html">การวัดมุม</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/batchprocess.html">การประมวลผลแบบชุด</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/recompute.html">Recompute solution</a></li>
+      <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">การตรวจสอบแรงกด</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">BendMaster CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">การหยิบชิ้นงาน</a>
+     <ul>
+      <li><button class="tree blank"></button><a class="active" href="frompallet.html">การหยิบจากพาเลท</a></li>
+      <li><button class="tree blank"></button><a href="fromdispenser.html">Pickup from Dispenser</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bending/index.html">การดัดด้วยหุ่นยนต์</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bending/insertion.html">การแทรก</a></li>
+      <li><button class="tree blank"></button><a href="../bending/bending.html">Bending</a></li>
+      <li><button class="tree blank"></button><a href="../bending/extraction.html">การนำชิ้นงานออก</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../regrip/index.html">Regripping</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../regrip/regrippanel.html">แผง Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/addregrip.html">Add Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/editregrip.html">Edit Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/jawregrip.html">Regrip ด้วยกริปเปอร์แบบขากรรไกร</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/rgstationpanel.html">แผงสถานี Regrip</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../deposit/index.html">Part Deposit</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Deposit Patterns</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/repeat.html">Repeat and Sequence</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Separator Sheet</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/cellconfig.html">Cell Configuration</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/gripperdb.html">Gripper Database</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/reports.html">Reports</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">Fold CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">การสร้างข้อมูลการพับ</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">มุมมอง Fold</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">การแก้ไขข้อมูลการพับ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">การแก้ไขการพับ</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">การแก้ไขด้าน/เซกชัน</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">การเปลี่ยนลำดับ</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">การแก้ไข blank-holder</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">การแก้ไขการวัดด้วยเกจ</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">การแก้ไขใบมีด</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">การแก้ไขการโหลด</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">การแก้ไขการถอดชิ้นงาน</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">สต็อกเครื่องมือ</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">ตารางระยะช่องว่างอากาศแบบกำหนดเอง</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">การทำงานของการดัดแบบแมนนวล</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">ความยาวขอบพับขั้นต่ำ</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Settings</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Drawing</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Layers</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Dimensions</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">View</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Machine Defaults</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Bend Outputs</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Bend View</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Bend Cell</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">เลย์เอาต์</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Nest Settings</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Sheet</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Sheet Handling</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Skeleton Cuts</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Work Support</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Sequence</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Cut Outputs</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Cut View</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Panel Bending</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">ค่าเริ่มต้น</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">ZBW Carriers</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Outputs</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Reports</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Item Defaults</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Import/Export</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Environment</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">ฐานข้อมูล</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">วัสดุ</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">เครื่องจักร</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">เครื่องมือดัด</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">ตัวจับดัด</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">ฟอร์ม/ส่วนประกอบ</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Reports</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">ฟิลด์ รูปภาพ และตาราง</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Bands (sub-reports)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Labels, Bitmaps และ Shapes</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">ภาคผนวก</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Supported 3D Formats</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">แผ่นคั่น DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">เครื่องมือดัด DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">BendMaster CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">การหยิบชิ้นงาน</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="frompallet.html">การหยิบจากพาเลท</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>การหยิบจากพาเลท</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>เมื่อใช้กริปเปอร์สูญญากาศหรือกริปเปอร์แม่เหล็ก แผ่นเปล่าจะถูกหยิบจาก_พาเลท_ พารามิเตอร์ที่มีผลต่อกระบวนการนี้ ได้แก่</p>
+</div>
+<div id="h000112" class="ulist">
+<ul>
+<li>
+<p>ตำแหน่งของพาเลทในเซลล์เครื่องจักร</p>
+</li>
+<li>
+<p>ตำแหน่งและทิศทางของกองชิ้นงานบนพาเลท</p>
+</li>
+<li>
+<p>ตำแหน่งและทิศทางของกริปเปอร์สูญญากาศบนชิ้นงาน</p>
+</li>
+<li>
+<p>การตั้งค่าถ้วยดูดของกริปเปอร์ (ถ้วยใดเปิด/ปิด
+และชนิดของถ้วยที่ติดตั้งในแต่ละช่อง)</p>
+</li>
+<li>
+<p>พื้นที่ของชิ้นงานที่ถูก_จับภาพ_โดยกล้องบนหุ่นยนต์
+และใช้เป็นข้อมูลอ้างอิงสำหรับการปรับตำแหน่งชิ้นงาน</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>แผงควบคุมที่ใช้แก้ไขการตั้งค่าทั้งหมดนี้จะแสดงอยู่ด้านล่าง ซึ่งทั้งหมด
+เชื่อมโยงกันด้วยลิงก์การนำทางขึ้น/ลงไปยังแผงอื่นๆ ตามลำดับขั้นตอน
+อย่างเป็นระบบ:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/palletnav.png" alt="Pallet Navigation" width="827">
+</div>
+</div>
+<div class="paragraph">
+<p>แผงนี้สามารถเข้าถึงได้ง่ายโดยการคลิกที่วัตถุต่างๆ
+ในการจำลองตามที่แสดงในภาพด้านบน:</p>
+</div>
+<div id="h000117" class="ulist">
+<ul>
+<li>
+<p>หากต้องการเปิดพาเนล <strong>Pallet</strong> ให้คลิกบนพาเลท</p>
+</li>
+<li>
+<p>หากต้องการแก้ไขกองชิ้นงานบนพาเลท (พาเนล <strong>Pickup</strong>) ให้คลิกบนแผ่นเปล่า
+ที่อยู่บนพาเลท</p>
+</li>
+<li>
+<p>เพื่อแก้ไขตำแหน่งกริปเปอร์บนแผ่นเปล่า (พาเนล <strong>Gripper</strong>)
+ให้คลิกบนกริปเปอร์</p>
+</li>
+<li>
+<p>หากต้องการแก้ไขการตั้งค่าถ้วยดูดของกริปเปอร์ (พาเนล <strong>Suction</strong>)
+ให้คลิกบนถ้วยดูด</p>
+</li>
+<li>
+<p>หากต้องการแก้ไขตำแหน่ง_การถ่ายภาพ_ (ใช้โดยระบบจดจำตำแหน่งละเอียด) ให้คลิกที่<strong>กล้อง</strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_พาเนล_pallet">พาเนล Pallet<a id="h000122"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>พาเนล <strong>Pallet</strong> ใช้เลือกพาเลทและวางตำแหน่งในเซลล์ คุณ
+สามารถเปิดพาเนลนี้ได้เพียงคลิกที่พาเลท; Flux จะปรับตำแหน่ง
+เส้นเวลาในซิมูเลชันเพื่อให้หุ่นยนต์อยู่ในจุดที่จะหยิบชิ้นงาน
+จากพาเลท</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/pallet.png" alt="Pallet" width="472">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ใช้ตัวเลือก <strong>Name</strong> เพื่อเลือกพาเลทอื่น โดยปกติจะแสดง
+เฉพาะพาเลทที่ใช้ได้กับแผ่นเปล่านี้ แต่คุณสามารถปิดการตรวจสอบ
+<strong>Filtered</strong> เพื่อแสดงพาเลททั้งหมด</p>
+</li>
+<li>
+<p>การวางเมาส์เหนือชื่อในรายชื่อจะแสดงสรุปข้อมูล
+ของพาเลทดังกล่าวพร้อมภาพย่อ:<br>
+<span class="image"><img src="img/palletthumbnail.png" alt="Pallet thumbnail" width="308"></span></p>
+</li>
+<li>
+<p>ใช้ช่องป้อนข้อมูล <strong>Position</strong> เพื่อตำแหน่งพาเลทในแกน <strong>Z</strong>
+และ <strong>X</strong> (ในพิกัดของเซลล์) และใช้ช่องป้อนข้อมูล <strong>Angle</strong>
+เพื่อหมุนพาเลท เมื่อเลื่อนหรือหมุนพาเลท กองชิ้นงานบนพาเลทและ
+กริปเปอร์/หุ่นยนต์จะเคลื่อนตาม</p>
+</li>
+<li>
+<p>ใช้ปุ่ม <strong>Next</strong> และ <strong>Prev</strong> เพื่อเลื่อน
+ไปยังพาเลท_อื่นๆ_ ในเซลล์ เช่น พาเลท
+ที่ใช้สำหรับการวางชิ้นงาน</p>
+</li>
+<li>
+<p>ใช้ปุ่มนำทาง <strong>Pickup</strong> เพื่อแก้ไขตำแหน่งของ
+กองชิ้นงานบนพาเลท</p>
+</li>
+<li>
+<p>ใช้ปุ่ม <strong>Save Config</strong> ภายใต้ส่วน <strong>Advanced</strong>
+เพื่อบันทึกการตั้งค่าเซลล์นี้ (รวมถึงพาเลททั้งหมด) เป็นค่าเริ่มต้นสำหรับ
+เครื่องนี้</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_แผง_pickup">แผง Pickup<a id="h000124"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>แผง <strong>Pickup</strong> ใช้สำหรับแก้ไขตำแหน่งของกองชิ้นงานบนพาเลท
+คุณสามารถเปิดแผงนี้ได้โดยตรงโดยคลิกที่กองแผ่น Blank ที่วางอยู่บนพาเลท
+(คุณยังสามารถเข้าถึงได้โดยใช้ลิงก์ <strong>Pickup</strong> จากแผง Pallet)</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/stack.png" alt="Stack" width="526">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ใช้ช่องป้อนข้อมูล <strong>Position</strong> เพื่อตั้งตำแหน่งกองชิ้นงาน
+บนพาเลท โดยพิกัดดังกล่าวจะกำหนดจุดกึ่งกลางของชิ้นงานในแกน <strong>Z</strong> และ <strong>X</strong>
+เมื่อเทียบกับมุมของพาเลทและอยู่ในระบบพิกัดเฉพาะของพาเลท</p>
+</li>
+<li>
+<p>ใช้ช่องป้อนข้อมูล <strong>Angle</strong> เพื่อหมุนชิ้นงานบนพาเลท</p>
+</li>
+<li>
+<p>ใช้สวิตช์ <strong>Flip part</strong> เพื่อพลิกชิ้นงาน หมายเหตุ:
+โดยปกติแล้วจะต้องมีการทำงาน <em>regripping</em> เพิ่มเติม
+ก่อนที่จะสามารถประมวลผลการดัดครั้งแรกได้ (TecZone Bend จะเพิ่มการทำงานนี้ให้
+โดยอัตโนมัติ)</p>
+</li>
+<li>
+<p>ใช้ลิงก์ <strong>Camera</strong> เพื่อสลับไปที่แผง <strong>Camera</strong> ซึ่งคุณสามารถ
+ตั้งค่าขั้นตอนการรู้จำภาพของการหยิบชิ้นงานได้</p>
+</li>
+<li>
+<p>ลิงก์ <strong>Waypoints</strong> จะเปิดตัวแก้ไข <a href="../advanced/waypoints.html">Waypoints</a>
+ซึ่งคุณสามารถปรับแต่งเส้นทางการเคลื่อนที่ของหุ่นยนต์ในระหว่างการหยิบชิ้นงานได้</p>
+</li>
+<li>
+<p>ลิงก์ <strong>RG-Stations</strong> จะเปิดแผง
+<a href="../regrip/rgstationpanel.html">Regrip Station</a> ซึ่งคุณสามารถกำหนด
+ตำแหน่งของสถานี Regrip ในระหว่างการหยิบชิ้นงานได้</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>เมื่อชิ้นงานถูกเคลื่อนที่ไปบนพาเลท กริปเปอร์จะยังคง_ยึดติด_กับชิ้นงาน
+และหุ่นยนต์จะเคลื่อนที่ตาม</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_พาเนล_gripper">พาเนล Gripper<a id="h000125"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>พาเนล <strong>Gripper</strong> ใช้สำหรับเลือกกริปเปอร์แบบอื่น
+หรือเปลี่ยนตำแหน่งและทิศทางที่กริปเปอร์ใช้หยิบชิ้นงาน</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/gripper.png" alt="Gripper" width="585">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ใช้ตัวเลือก <strong>Name</strong> เพื่อเลือกกริปเปอร์อื่น โดยปกติแล้ว ระบบ
+จะแสดงเฉพาะกริปเปอร์ที่เหมาะสมกับชิ้นงานนี้ (อ้างอิงจากขนาดและน้ำหนักบรรทุกของกริปเปอร์)
+แต่คุณสามารถปิดการตรวจสอบ <strong>Filtered</strong> ได้ จากนั้นกริปเปอร์ทั้งหมด
+จะถูกแสดงในรายการ</p>
+</li>
+<li>
+<p>การวางเมาส์เหนือชื่อในรายชื่อกริปเปอร์จะแสดงสรุปข้อมูล
+ของกริปเปอร์ดังกล่าวพร้อมภาพย่อ:<br>
+<span class="image"><img src="img/gripperthumbnail.png" alt="Gripper thumbnail" width="309"></span></p>
+</li>
+<li>
+<p>ใช้ช่องป้อนข้อมูล <strong>Position</strong> เพื่อเลื่อนตำแหน่งจุดกึ่งกลางของกริปเปอร์
+เมื่อเทียบกับจุดกึ่งกลางของชิ้นงาน และใช้ช่องป้อนข้อมูล <strong>Angle</strong>
+เพื่อหมุนกริปเปอร์เมื่อเทียบกับทิศทางของชิ้นงาน</p>
+</li>
+<li>
+<p>ใช้ลิงก์ <strong>Suction</strong> เพื่อเข้าสู่_การแก้ไขแบบละเอียด_ของกริปเปอร์ (เลือกถ้วยดูดสูญญากาศที่แตกต่างกันและเปิด/ปิดการทำงานของถ้วยดูด)</p>
+</li>
+<li>
+<p>ปุ่ม <strong>Set Grip Plane</strong> ใช้สำหรับตั้งตำแหน่งกริปเปอร์
+บนระนาบอื่น โดยปกติแล้วจะใช้ระนาบที่ใหญ่ที่สุดในโมเดลเพื่อตั้งตำแหน่งกริปเปอร์ หากต้องการเปลี่ยน ให้คลิกปุ่มนี้ จากนั้น ให้คลิกที่ระนาบที่ต้องการให้กริปเปอร์ตั้งอยู่:<br>
+<span class="image"><img src="img/setonplane.png" alt="Set on Plane" width="753"></span></p>
+</li>
+<li>
+<p>ปุ่ม <strong>Use Jaw Gripper</strong> ใช้สำหรับสลับการใช้ชิ้นงานนี้กับ
+ตัวจ่ายชิ้นงานและกริปเปอร์แบบขากรรไกร ขั้นตอนทั้งหมด
+ของรอบการดัดตั้งแต่การหยิบจนถึงการวางจะถูกคำนวณใหม่โดยใช้กริปเปอร์แบบขากรรไกร
+gripper<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_คำเตือนเกี่ยวกับถ้วยดูด">คำเตือนเกี่ยวกับถ้วยดูด<a id="h000127"></a></h3>
+<div class="paragraph">
+<p>หากกริปเปอร์ถูกเลื่อนจนถ้วยดูดบางส่วนออกนอกแผ่น
+หรือวางทับบนรูของชิ้นงาน ถ้วยดูดดังกล่าวจะถูกไฮไลต์และจะแสดงข้อผิดพลาด</p>
+</div>
+<div id="h000128" class="paragraph">
+<p><strong>ในคอลัมน์ Pickup</strong> ของตัวนำทางตามภาพด้านล่าง:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/gripperhole.png" alt="Suction Missing" width="614">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_เมนู_actions">เมนู Actions<a id="h000129"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/gripperactions.png" alt="Gripper Actions" width="236">
+</div>
+</div>
+<div class="paragraph">
+<p>ปุ่ม <strong>Actions</strong> ใช้สำหรับเรียกเมนูที่มีการทำงานที่เป็นประโยชน์
+กับกริปเปอร์:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Auto-place: Shift</strong> พยายามจัดตำแหน่งกริปเปอร์ใหม่ให้อยู่เหนือชิ้นงาน
+เพื่อให้ถ้วยดูดทั้งหมดอยู่ภายในชิ้นงานและไม่อยู่เหนือรู
+(ถ้าเป็นไปได้)</p>
+</li>
+<li>
+<p><strong>Turn off leaking cups</strong>: ปิดการทำงานของถ้วยดูดทั้งหมด
+ที่อยู่เหนือรูหรืออยู่นอกขอบเขต part<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</li>
+<li>
+<p><strong>Turn on all cups</strong>: เปิดการทำงานของถ้วยดูดทั้งหมดที่ถูกปิดอยู่่</p>
+</li>
+<li>
+<p><strong>Save Config</strong>: หากคุณ_กำหนดค่า_กริปเปอร์โดยการปิด
+หรือถอดถ้วยดูดบางส่วนออกหรือเปลี่ยนความยาวหรือมุมของแขน (สำหรับ
+MultiGrippers ที่สามารถเปลี่ยนรูปร่างได้) คุณสามารถบันทึกการกำหนดค่าใหม่ของ
+กริปเปอร์โดยใช้ชื่อใหม่เพื่อใช้งานซ้ำได้ง่าย</p>
+</li>
+<li>
+<p><strong>Export Gripper</strong>: บันทึกกริปเปอร์ปัจจุบันเป็นไฟล์ <strong>.fxbgrip</strong>
+ซึ่งสามารถนำเข้าไปยังการติดตั้ง TecZone Bend อื่นได้ วิธีนี้มีประโยชน์
+หากคุณได้นำเข้ากริปเปอร์แบบกำหนดเองและต้องการแชร์ให้กับการติดตั้งอื่น</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_แผง_suction">แผง Suction<a id="h000130"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>แผง <strong>Suction</strong> ใช้สำหรับกำหนดโครงร่างการจัดวางถ้วยดูดสูญญากาศของกริปเปอร์ คุณสามารถ
+เปิดแผงนี้ได้โดยการคลิกโดยตรงบนถ้วยดูดสูญญากาศ หรือโดยการเลือกที่ลิงก์ <strong>Suction</strong>
+จากแผง Gripper</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/suction.png" alt="Suction" width="672">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ใช้ตัวเลือก <strong>Cup #</strong> เพื่อเลือกถ้วยดูดสูญญากาศเฉพาะใน
+กริปเปอร์หรือใช้ปุ่ม <strong>Next</strong> และ <strong>Prev</strong> เพื่อเลื่อนไปยัง
+ถ้วยดูดสูญญากาศอื่นๆ ถ้วยดูดสูญญากาศที่เลือกจะถูกไฮไลต์เป็นสีน้ำเงิน
+และสามารถแก้ไขได้</p>
+</li>
+<li>
+<p>สำหรับถ้วยดูดสูญญากาศแต่ละตัว คุณสามารถตั้งค่า <strong>State</strong> เป็น On, Off หรือ Removed ได้
+ดูคำอธิบายด้านล่างสำหรับรายละเอียดเพิ่มเติม</p>
+</li>
+<li>
+<p>ใช้แผง <strong>Type</strong> เพื่อเปลี่ยนไปใช้ถ้วยดูดสูญญากาศชนิดอื่น
+โดยปกติแล้ว จะมีการเปลี่ยนถ้วยดูดสูญญากาศทั้งหมดในกริปเปอร์ไปเป็นชนิดใหม่ แต่คุณยังสามารถ
+ผสมผสานถ้วยดูดสูญญากาศต่างชนิดกันได้ โดยปิดปุ่ม <strong>Change All</strong> แล้วจึง
+เปลี่ยนถ้วยดูดสูญญากาศ (หมายเหตุ: เมื่อคุณทำเช่นนี้ การเลือกถ้วยดูดสูญญากาศจะถูกจำกัด
+เนื่องจากถ้วยดูดสูญญากาศทั้งหมดที่ติดตั้งบนโครงกริปเปอร์ต้องมี
+ความสูงการทำงานเท่ากัน) ภาพด้านบนแสดงถ้วยดูดสูญญากาศสองตัวที่ถูกแทนที่ด้วยขนาดเล็กกว่า
+(SAXM50 แทน SAXM80 ซึ่งเป็นค่าเริ่มต้น)</p>
+</li>
+<li>
+<p>ใช้ปุ่ม <strong>Reset</strong> เพื่อคืนค่ากริปเปอร์กลับสู่สภาพเดิม
+เปิดถ้วยดูดสูญญากาศทั้งหมด และรีเซ็ตกลับไปใช้
+ชนิดถ้วยดูดสูญญากาศเริ่มต้นที่กำหนดไว้ในกริปเปอร์</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>สถานะเริ่มต้นของถ้วยดูดสูญญากาศคือ <strong>On</strong> ซึ่งหมายถึงถ้วยดูดสูญญากาศ
+เชื่อมต่อกับท่อสุญญากาศและช่วยในการยก</p>
+</div>
+<div class="paragraph">
+<p>หากถ้วยดูดสูญญากาศอยู่เหนือรูในชิ้นงาน คุณสามารถเปลี่ยนสถานะเป็น <strong>ปิด</strong> ได้
+ซึ่งหมายถึงไม่มีการดูดสุญญากาศ (ซึ่งจะลดแรงยกของกริปเปอร์และเปลี่ยนจุดศูนย์กลางแรงยก
+ซึ่ง Flux จะนำมาคำนวณตรวจสอบความสามารถในการยกของกริปเปอร์) โปรดทราบว่า
+ถ้วยดูดยังคงติดตั้งอยู่บนโครงและมีส่วนในการตรวจสอบการชน Flux แสดง
+ถ้วยดูดสูญญากาศที่ปิดการทำงานเป็นเส้นโครงดังที่เห็นในภาพด้านบน
+ซึ่งมีถ้วยดูดสองตัวถูกปิดการทำงาน</p>
+</div>
+<div class="paragraph">
+<p>สุดท้าย คุณสามารถตั้งค่าถ้วยดูดสูญญากาศเป็น <strong>Removed</strong> ได้ ซึ่งหมายถึงถ้วยดูดถูกถอดออกจาก
+โครงในเครื่องจริง โดยจะไม่มีแรงยกจากถ้วยดูดนี้
+และจะไม่ก่อให้เกิดการชน ซึ่งอาจมีประโยชน์หากถ้วยดูดตกลงบนบริเวณที่ขึ้นรูปแล้ว
+หรือทำให้เกิดการชนกับดายหรือโต๊ะเครื่องจักรระหว่างการทำงาน</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_แผง_camera">แผง Camera<a id="h000131"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ขั้นตอนการหยิบชิ้นงานต้องมีการถ่ายภาพหนึ่งภาพหรือมากกว่าด้วยกล้อง
+และระบบประมวลผลภาพจะใช้ภาพนี้เพื่อประมาณตำแหน่งที่แน่นอน
+ของชิ้นงานบนพาเลท การคลิกที่กล้องซึ่งติดตั้งบนหุ่นยนต์หรือการเลือกปุ่มนำทาง <strong>Camera</strong>
+จากแผง <strong>Pickup</strong> จะเปิดแผง Camera Flux จะจัดตำแหน่ง
+การจำลองให้หุ่นยนต์อยู่ในท่าที่ต้องการเพื่อถ่ายภาพ:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/camera.png" alt="Camera" width="472">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ใช้รายการ <strong>Index</strong> (หรือปุ่ม <strong>Next</strong> และ <strong>Prev</strong>)
+เพื่อเลื่อนไปยังภาพการจดจำรายละเอียดต่างๆ ที่ใช้สำหรับชิ้นงานนี้
+เมื่อคุณทำเช่นนี้ Flux จะแสดงเส้นขอบสีส้มที่ระบุโซนการจดจำ
+ภาพบนชิ้นงาน (ดูภาพด้านบน)</p>
+</li>
+<li>
+<p>ใช้ช่องป้อนข้อมูล <strong>Position</strong> เพื่อปรับตำแหน่งโซนนี้ในแกน <strong>Z</strong>
+และ <strong>X</strong> เพื่อรวมคุณลักษณะที่น่าสนใจซึ่งช่วยปรับปรุงความแม่นยำ
+ในการจดจำ (เช่น มุม รูเล็ก รอยบาก)</p>
+</li>
+<li>
+<p>ใช้ปุ่ม <strong>Add</strong> เพื่อเพิ่มภาพจดจำเพิ่มเติม
+(สูงสุด 4 ภาพ) และใช้ปุ่ม <strong>Remove</strong> เพื่อลบ
+ภาพจดจำปัจจุบัน ระหว่างการจำลองขั้นตอนการหยิบชิ้นงาน Flux จะแสดงหุ่นยนต์
+เคลื่อนไปยังพื้นที่จดจำแต่ละจุดโดยกล้องจะหันลงและหยุด
+เพื่อถ่ายภาพ</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>หากเปิดสวิตช์ <strong>Use backlight table</strong> ชิ้นงาน
+จะถูกย้ายไปยังโต๊ะที่มีการให้แสงสว่างก่อนที่กล้องจะใช้
+ถ่ายภาพ ซึ่งช่วยเพิ่มความคมชัดและเป็นประโยชน์สำหรับชิ้นงานที่มีการสะท้อนแสงสูง TecZone Bend
+เพิ่มโต๊ะให้แสงด้านหลังและวางตำแหน่งไว้ใกล้พาเลทยกชิ้นงานโดยอัตโนมัติ
+แต่คุณสามารถกำหนดตำแหน่งใหม่ได้โดยการคลิกที่โต๊ะ:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/lighttable.png" alt="Light Table" width="438">
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. ซึ่งใช้ได้เฉพาะกับชิ้นงานที่อยู่ในช่วงขนาดการทำงานของ ทั้งกริปเปอร์แบบดูดสูญญากาศและกริปเปอร์แบบขากรรไกร
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. หมายเหตุ: อาจทำให้แรงดูดของกริปเปอร์ต่ำกว่าระดับที่สามารถ หยิบชิ้นงานได้อย่างมั่นคง ซึ่งจะแสดงเป็นข้อผิดพลาดในคอลัมน์ <strong>Pickup</strong> ของตัวนำทาง
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_พาเนล_pallet">พาเนล Pallet</a>
+  </li>
+  <li level="1">
+   <a href="#_แผง_pickup">แผง Pickup</a>
+  </li>
+  <li level="1">
+   <a href="#_พาเนล_gripper">พาเนล Gripper</a>
+  </li>
+  <li level="2">
+   <a href="#_คำเตือนเกี่ยวกับถ้วยดูด">คำเตือนเกี่ยวกับถ้วยดูด</a>
+  </li>
+  <li level="2">
+   <a href="#_เมนู_actions">เมนู Actions</a>
+  </li>
+  <li level="1">
+   <a href="#_แผง_suction">แผง Suction</a>
+  </li>
+  <li level="1">
+   <a href="#_แผง_camera">แผง Camera</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="index.html">การหยิบชิ้นงาน</a></span>
+ <span class="next"><a href="fromdispenser.html">Pickup from Dispenser</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

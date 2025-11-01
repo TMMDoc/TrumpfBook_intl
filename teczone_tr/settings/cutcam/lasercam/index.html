@@ -1,0 +1,847 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../res/bento.css">
+  <link rel="stylesheet" href="../../../res/site.css">
+  <link rel="stylesheet" href="../../../res/tree.css">
+  <link rel="stylesheet" href="../../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../../img/trumpf-icon.png">
+  <title>Lazer CAM</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../../index.html">TecZone'a Hoş Geldiniz</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../intro/index.html">Giriş</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../intro/install.html">Yazılımı Yükleme</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/clarity.html">Operasyon Yüzeyi</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/workflow.html">Parça İş Akışı</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/2dimport/index.html">2-D içe aktarma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/2dimport/2dcleanup.html">2-D Temizleme</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/3dimport/index.html">3-D içe aktarma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prep3dmodel.html">3D Modeli İçe Aktarma</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prepassembly.html">Montajı İçe Aktarma</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/formdetect.html">Form Algılama</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/componentdetect.html">Komponent Algılama</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../cad/sketch.html">Geometriyi Değiştirme</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cut/index.html">Lazer CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/partworkflow/index.html">Parça İş Akışı</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/partworkflow/panels/index.html">Panelleri Düzenleme</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../../cut/partworkflow/panels/lasercut/index.html">Lazer Kesim</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/approach.html">Yaklaşma</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/withdrawal.html">Geri çekme</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/advanced.html">Gelişmiş</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/scrapcut.html">Hurda Kesimi</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/part.html">Parça</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/cornertreatment.html">Köşe İşleme</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/partworkflow/quicknest.html">Hızlı Yerleştirme</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/jobworkflow/index.html">Görev İş Akışı</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/jobpanel/index.html">İş Paneli</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/sheets.html">Saclar Sekmesi</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/parts.html">Parçalar Sekmesi</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/layouts.html">Yerleşim Düzenleri Sekmesi</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/summary.html">Özet Sekmesi</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/editlayout/index.html">Yerleşim Düzenini Düzenleme</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/nestingmodes.html">Yerleştirme Modları</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/placementpanel.html">Konumlandırma Paneli</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/sequencing.html">Sıralama</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/slicesheet.html">Sac Dilimleme</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/bevelcut/index.html">Eğimli Kesim</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/opencontours.html">Açık Konturlar</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/variablebevel.html">Değişken Eğim</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/miscellaneous.html">Diğer</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/finishingrules.html">Bitirme Kuralları</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/editltt.html">LTT'yi düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/strategies.html">Strateji</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/microjoints.html">Mikrojointler</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/stability.html">Diğer ayarlar</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bend/index.html">Bend CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">Bükme parametreleri oluşturma</a></li>
+    <li><button class="tree blank"></button><a href="../../../bend/navigator.html">Büküm gezinti öğesi</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/editing/index.html">Büküm verilerini düzenleme</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editbend.html">Bir bükümü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editmount.html">Bir takım montajını düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editsetup.html">Bir büküm kurulumunu düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editgauge.html">Arka dayanakları düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editacb.html">Açı ölçümünü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/bendsheet.html">Bükümler elektronik tablosu</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/sequencing.html">Sıralamayı değiştirme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/addsetup.html">Kurulumlar ve istasyonlar ekleme</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/anglemeasurement.html">Açı ölçümü</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/batchprocess.html">Toplu işleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/recompute.html">Çözümü yeniden hesaplama</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">Tonaj kontrolü</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bcell/navigator.html">Bend gezinti öğesi</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/pickup/index.html">Parça Alma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/frompallet.html">Paletten Alma</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/fromdispenser.html">Dağıtıcıdan Alma</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/bending/index.html">Robotik Bükme</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/insertion.html">Yerleştirme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/bending.html">Bükme İşlemi</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/extraction.html">Parça çıkarma</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/regrip/index.html">Kavrama</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/regrippanel.html">Kavrama Paneli</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/addregrip.html">Kavrama Ekleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/editregrip.html">Kavramayı Düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/jawregrip.html">Çeneyle Kavrama</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/rgstationpanel.html">Kavrama İstasyonu Paneli</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/deposit/index.html">Parça Bırakma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/patterns.html">Bırakma Örüntüleri</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/repeat.html">Tekrarlama ve Sıralama</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/separatorsheet.html">Separatör Sac</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/waypoints.html">Geçiş Noktaları</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/cellconfig.html">Hücre Konfigürasyonu</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb.html">Kavrayıcı Veritabanı</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/reports.html">Raporlar</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../fold/index.html">Katlama CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../fold/createfolddata.html">Katlama verisi oluşturma</a></li>
+    <li><button class="tree blank"></button><a href="../../../fold/foldview.html">Katlama görünümü</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/editing/index.html">Katlama verilerini düzenleme</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbend.html">Bir bükümü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editside.html">Bir tarafı/bölümü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editseq.html">Sırayı değiştirme</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbh.html">Sabitleyicileri düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editgauge.html">Dayamayı düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editblade.html">Bıçakları düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editload.html">Yüklemeyi düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editunload.html">Boşaltmayı düzenleme</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../fold/toolinventory.html">Takım stoğu</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/airgaptables.html">Özel hava boşluğu tabloları</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/manualbend.html">Manuel büküm tamamlama</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/minflangelength.html">Gerekli Flanş Uzunluğu</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../../index.html">Ayarlar</a>
+   <ul>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../drawing/index.html">Çizim</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../drawing/layers.html">Katmanlar</a></li>
+      <li><button class="tree blank"></button><a href="../../drawing/dimensions.html">Ölçüler</a></li>
+      <li><button class="tree blank"></button><a href="../../drawing/view.html">Görünüm</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bendcam/benddefaults.html">Makine Varsayılanları</a></li>
+      <li><button class="tree blank"></button><a href="../../bendcam/bendoutputs.html">Büküm Çıkışları</a></li>
+      <li><button class="tree blank"></button><a href="../../bendcam/bendview.html">Büküm Görünümü</a></li>
+      <li><button class="tree blank"></button><a href="../../bendcam/bendcell.html">Büküm Hücresi</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="../index.html">Cut CAM</a>
+     <ul>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../layout/index.html">Yerleşim Düzeni</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../layout/nesting.html">Yerleştirme Ayarları</a></li>
+        <li><button class="tree blank"></button><a href="../layout/sheet.html">Sac</a></li>
+        <li><button class="tree blank"></button><a href="../layout/sheethandling.html">Sac İşleme</a></li>
+        <li><button class="tree blank"></button><a href="../layout/skeletoncuts.html">İskelet Kesimleri</a></li>
+        <li><button class="tree blank"></button><a href="../layout/worksupport.html">İş Desteği</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree open"></button>
+       <a class="active" href="index.html">Lazer CAM</a>
+       <ul>
+        <li><button class="tree blank"></button><a href="sequence.html">Sıralama</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cutoutputs.html">Kesim Çıkışları</a></li>
+      <li><button class="tree blank"></button><a href="../cutview.html">Kesim Görünümü</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../foldcam/index.html">Panel Büküm</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../foldcam/defaults.html">Varsayılanlar</a></li>
+      <li><button class="tree blank"></button><a href="../../foldcam/zbwcarriers.html">İBT Taşıyıcı Parçaları</a></li>
+      <li><button class="tree blank"></button><a href="../../foldcam/foldoutputs.html">Çıkışlar</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../reports/index.html">Raporlar</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../reports/itemdefaults.html">Öğe Varsayılanları</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../importexport.html">İçe/Dışa Aktarma</a></li>
+    <li><button class="tree blank"></button><a href="../../environment.html">Çevre</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../database/index.html">Veri tabanı</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../database/materials.html">Malzemeler</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/machines.html">Makineler</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendtools.html">Bükme Takımları</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">Bükme Kavrayıcıları</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Formlar/Komponentler</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../report/index.html">Raporlar</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../report/designer.html">Rapor Tasarımcısı</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/fields.html">Alanlar, Resimler ve Tablolar</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/bands.html">Bantlar (alt raporlar)</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/labels.html">Etiketler, Bit Eşlemler ve Şekiller</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../appendix/index.html">Ek</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">Desteklenen 3D Formatları</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">Separatör Sac DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">Bükme Takımı DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../../impressum.html">Künyemiz</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../../index.html">Ayarlar</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="../index.html">Cut CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Lazer CAM</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Lazer CAM</h1>
+<div class="sect1">
+<h2 id="_kesim">Kesim<a id="h000955"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bir sacın kesiminin bağlı olduğu üç koşul mevcuttur.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne28.png" alt="ne28">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Choose cutting condition by</strong> - Bu ayar,
+kesme koşulunun nasıl seçileceğini tanımlar. Seçeneklere Maksimum segment uzunluğu, Ortalama segment uzunluğu ve Alan dahildir.</p>
+</div>
+<div class="paragraph">
+<p><strong>Maximum segment length</strong> - En uzun segment,
+eşik olarak kullanılır.</p>
+</div>
+<div class="paragraph">
+<p><strong>Average segment length</strong> - Tüm segmentlerin ortalama uzunluğu
+hesaplanır ve bu eşik olarak kullanılır. TecZone Laser dahilinde varsayılan ayardır.</p>
+</div>
+<div class="paragraph">
+<p><strong>Area</strong> -  - Konturla çevrili olan alan, eşik
+olarak kullanılır.</p>
+</div>
+<div class="paragraph">
+<p><strong>Switch to slower cutting condition when approach is constrained</strong> -
+Yaklaşmaya yönelik sac geometrisi karmaşık olduğunda, lazer kafası yavaş hızda kesme durumuna geçer.</p>
+</div>
+<div class="paragraph">
+<p><strong>Process for open polylines</strong> - Bir parçada açık bileşik çizgiler bulunduğunda, seçilmiş olan seçeneğe bağlı
+olarak Kesme fonksiyonu bileşik çizgiyi gerektiği gibi işler. Seçeneklere <em>Kes</em>, <em>İşaretle</em>,
+<em>Kapalı</em>, ve <em>Tabaka tabanlı</em> dahildir.</p>
+</div>
+<div class="paragraph">
+<p><strong>Kapalı</strong>: Lazer, parça çizimindeki bu hattı göz ardı
+edecektir.</p>
+</div>
+<div class="paragraph">
+<p><strong>İşaretle</strong>: Lazer sadece bu hattı markalar; yani sac üzerinde ilk
+giriş yapmadan görünür bir hat çizer.</p>
+</div>
+<div class="paragraph">
+<p><strong>Kes</strong>: TecZone Laser bu bileşik çizgiye yönelik uygun lazer koşulunu seçer ve
+lazer de buna göre kesim yapar.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Bu ayarın etkili olabilmesi için, donatımın yeniden hesaplanması gerekecektir.
+Manuel donatımlarda yapılan değişiklikler, bu ayardaki tüm değişiklikleri geçersiz kılar. Eğer açık bileşik çizgi, etkileşimli yerleşim düzeninde manuel olarak "markalama" şeklinde ayarlanmışsa, ayarlarda "kesim" olarak değiştirilmesi bir etki göstermez.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Cut/Mark open polylines backwards</strong> - Bu seçenek, açık bileşik çizgileri kesmek veya markalamaya yöneliktir. Bu ayar, yalnızca açık bileşik çizgiler için kesme
+veya markalama ayarlanmışsa geçerlidir.</p>
+</div>
+<div class="paragraph">
+<p><strong>Mark forming footprint</strong> - Kesim modülü tarafından bir karşı çökme algılandığında, dış daireyi otomatik olarak katman form verme
+ayak izine katmanına taşır. Bu seçenek işaretlenirse, Form ayak izi
+katmanındaki geometri markalanır.</p>
+</div>
+<div class="paragraph">
+<p><strong>Stitch cutting threshold distance (0=disable)</strong> - Bu seçenek, iki kesim arasındaki
+dikiş kesimi için dikkate alınacak olan maksimum
+mesafeyi tanımlar.</p>
+</div>
+<div class="paragraph">
+<p><strong>Dynamics</strong> - Dinamik açılır menüsü Normal,
+Yüksek ve Azaltılmış seçeneklerini içerir.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pierce_settings">Pierce settings</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/pierce.png" alt="pierce">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Allow approach that is more than 0.5 distance to opposite side</strong> -
+Bu seçenek, bir yaklaşımın karşı tarafa olan mesafeden
+daha fazlasını kapsayıp kapsayamayacağını tanımlar.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_corner_processing">Corner Processing</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/cornerprocess.png" alt="cornerprocess">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Rounding tolerance (distance of corner from rounding tip)</strong> -
+Bu seçenek, aşağıda gösterildiği üzere, köşeden yuvarlama ucuna kadar
+izin verilen maksimum mesafeyi tanımlamak içindir. Köşenin yuvarlama ucundan uzaklığı,
+yuvarlama yarıçapıyla doğru orantılı olacaktır. Buraya girilen değer uyarınca Kesim modülü, min. ve maks.
+aralığında yuvarlama yarıçapını seçer. En küçük yarıçapın seçilmesi
+bu mesafeyi tolerans değeri içine getirmezse, yuvarlama uygulanmaz
+(döngüleme veya soğutma uygulanabilir).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cornprocess1.png" alt="cornprocess1">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Maximum distance of corner from outermost point on loop</strong> -
+Bu seçenek, köşeden döngünün maksimum uzantısını
+tanımlamak içindir. Döngü uzantısı, yarıçap ile doğru orantılıdır. Keskin bir köşede, en küçük yarıçapın seçilmesi bu mesafeyi
+burada girilmiş olan değere getirmezse, döngüleme uygulanmaz (yuvarlama veya
+soğutma buna rağmen uygulanabilir).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cornprocess2.png" alt="cornprocess2">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_twinline">TwinLine</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/cornerprocess.png" alt="cornerprocess">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Twinline processing strategy</strong> - Bu açılır menü, kullanılacak olan TwinLine stratejisini
+tanımlamak içindir.</p>
+</div>
+<div class="paragraph">
+<p><em>Partwise</em> - Kesimler parça parça yapılır. Konturların devrilme riski bulunmadığı kalın
+saclar için uygundur.</p>
+</div>
+<div class="paragraph">
+<p><em>Partwise-Safe</em> -Kesimler parça parça yapılır, ancak
+bitişik parçalara hazırlık kesimleri uygulanır. Parçaların devrilebileceği ince saclar için uygundur.</p>
+</div>
+<div class="paragraph">
+<p><em>TIO (Twinline-Islands-Outer)</em> - Önce TwinLine kenarları kesilir, ardından parçalar arasında oluşan adalar ve son olarak da dış kontur kesilir.</p>
+</div>
+<div class="paragraph">
+<p><strong>Use TIO strategy of there are no islands</strong> -
+Eğer TwinLine bloğunda ada oluşturulmamışsa,
+yazılım daima TIO (Twinline-Islands-Outer) stratejisini seçer. Bu seçenek
+varsayılan olarak işaretlenmiştir.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scrap_cutting">Scrap cutting</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/scrap.png" alt="scrap">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Scrap grid width</strong> - Bu, donatım aracılığıyla oluşturulan ızgaradaki
+her bir hücrenin genişliğidir. Buraya girilen değer,
+elde edilen karenin pozisyondan bağımsız olarak destekleyici profilllerden geçeceğini
+garanti edecek bir değer olmalıdır.</p>
+</div>
+<div class="paragraph">
+<p><strong>Approach length for separating cuts</strong> -Bu, hurda kesimlerinde tercih edilen
+yaklaşma uzunluğudur.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vaporization">Vaporization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Vaporize</strong> - Bu ayar, buharlaştırma uygulanıp
+uygulanmayacağını belirler. Ve, eğer yapılması gerekiyorsa, lazer kesim yolunun hangi
+kısımlarına buharlaştırma uygulanacağını belirler.</p>
+</div>
+<div class="paragraph">
+<p><em>None</em> - Buharlaştırma yok</p>
+</div>
+<div class="paragraph">
+<p><em>Pierce</em> - Sadece ilk giriş noktaları için buharlaştırma uygulanır</p>
+</div>
+<div class="paragraph">
+<p><em>Pierce &amp; approach</em> - Lazer kesim yolunun ilk giriş ve yaklaşma kısımlarına
+buharlaştırma uygulanır.</p>
+</div>
+<div class="paragraph">
+<p><em>Full laser path</em> - İlk giriş, yaklaşma ve kontur dahil olmak üzere
+tüm kesme yoluna buharlaştırma uygulanır.</p>
+</div>
+<div class="paragraph">
+<p><strong>Pierce point vaporization circle radius</strong> - Buraya sıfırdan
+büyük bir değer girilirse, yazılım buharlaştırma lazeri açıkken lazer kafasını ilk giriş noktası
+etrafında küçük bir daire çizerek hareket ettirir (dairesel buharlaştırma). Değer, bu dairenin yarıçapını belirler. Bu değer sıfır ise, buharlaştırıcı lazer ilk giriş noktasının tam üzerinde açılır ve derhal kapatılır (noktasal buharlaştırma).</p>
+</div>
+<div class="paragraph">
+<p><strong>Vaporize marking</strong> - Bu seçenek buharlaştırmayı etkinleştirmek
+veya devre dışı bırakmak içindir. TC_WRITE makrosu kullanılarak kazınan lazer metin markalamalarına kesinlikle buharlaştırma uygulandığını dikkate alın.</p>
+</div>
+<div class="paragraph">
+<p>Bu ayarlar değiştirildiğinde, daha önce devre dışı bırakılmışsa
+NC kodu simgesinin yeniden etkinleştirilecek olması dışında Kesim modülü
+arayüzünde görünür bir değişiklik olmaz.
+Bunun nedeni, bu ayarların kod oluşturma üzerinde bir etkisinin olmasıdır. Farklı kesimler için oluşturulan buharlaştırma kodu, aşağıdaki tabloda açıklanmıştır.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Kesme</th>
+<th class="tableblock halign-left valign-top">Davranış</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Laser Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bu, parçanın konturunu kesmek amacıyla kullanılan olağan kesme parçasıdır.<br>
+Eğer Vaporize = Full laser path ise,
+ilk giriş ve yaklaşma dahil
+olarak tüm kontura buharlaştırma uygulanır. Bununla birlikte, buharlaştırma geçişi sırasında üst koç
+telafisi kapatılır. Kesimin buharlaştırmadan hemen sonra yapılması
+zorunlu değildir. Bir konturda 1&#8217;den fazla microjoint ve dolayısıyla
+birden fazla lazer kesim parçası varsa, önce
+o kontura ait tüm kesim parçalarına buharlaştırma uygulanır. Ardından, konturun kesimi başlar.
+Bu buharlaştırma sırası, her bir kontur kesilmeden önce
+buharlaştırma uygulandığı için "kontur bazlı" olarak adlandırılır. Bu genelde verimli kafa hareketi ile
+sonuçlanır.</p>
+<p class="tableblock"><span class="image"><img src="img/scraplasercut.png" alt="scraplasercut"></span></p>
+<p class="tableblock">Eğer Vaporize = Pierce &amp; approach ise,
+Önce sadece ilk giriş noktası ve yaklaşma yoluna buharlaştırma uygulanır ve
+bunun hemen ardından lazer kafası ilk giriş noktasının üzerine yeniden konumlanır ve
+gerçek kesme başlatılır. Bu buharlaştırma seçeneği ve “Buharlaştırma = İlk Giriş” için, ilk girişe ve yaklaşmaya daima kesme yürütülmeden hemen önce buharlaştırma uygulanır. Bu tipte bir buharlaştırma sırası,
+her kesilen parçaya kesilmeden önce buharlaştırma uygulandığı için "kesim bazlı"
+olarak adlandırılır.</p>
+<p class="tableblock">Vaporize = Pierce davranışı, sadece ilk giriş noktalarına buharlaştırma uygulanması dışında yukarıdaki gibidir.</p>
+<p class="tableblock">Vaporize = iseNone, oluşturulan kodda hiçbir değişiklik yoktur.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Scrap Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vaporize = Full laser path ise,
+buharlaştırma ve kesme sırası aşağıdaki gibi olacaktır:
+<br>
+-  Tüm hurda ızgarasına ilk önce aynı kesimde
+olduğu gibi buharlaştırma uygulanır.</p>
+<p class="tableblock">- Kontura, ilk giriş ve yaklaşma ile birlikte
+buharlaştırma uygulanır.</p>
+<p class="tableblock">- Hurda ızgarası kesilecektir.</p>
+<p class="tableblock">- Kontur kesilecektir.</p>
+<p class="tableblock">Böylece, ızgaraya ve kontura buharlaştırma uygulanır ve ardından bunlar kesilir.
+Eğer Vaporize = Pierce &amp; approach ise
+veya Pierce ise, hurda ve kontura
+yönelik ilk giriş ve yaklaşma segmentlerine kesilmeden hemen önce
+buharlaştırma uygulanır.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Sheet Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir sac kesimine daima kesilmeden hemen önce buharlaştırma uygulanır.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">FlyLine Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bu kesimlere, buharlaştırma ayarlarından bağımsız olarak hiçbir zaman buharlaştırma uygulanmaz.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Point Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Buna kesilmeden hemen önce buharlaştırma uygulanır.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lazerle_markalama">Lazerle Markalama<a id="h000956"></a></h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/lasermarking.png" alt="lasermarking">
+</div>
+</div>
+<div class="paragraph">
+<p>Parçaya bir veya daha fazla metin markalama
+eklemeye yönelik kurallar şurada tanımlanabilir: <strong>Settings &#8594; Cut CAM &#8594; Laser CAM &#8594; Laser marking</strong>.
+Aşağıdaki tabloda, kullanıcı birden fazla kural ekleyebilir ve her bir kural
+tek bir satırdan oluşan metin konumlandırılmasına neden olur.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne94.png" alt="ne94">
+</div>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Sütun</th>
+<th class="tableblock halign-left valign-top">Açıklama</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Kontrol kutucuğu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">İlk sütundaki kontrol kutucuğunu kullanarak bir kuralı etkinleştirebilir veya devre dışı bırakabilirsiniz.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parçaya eklenecek olan metin. Bu metin, Parça bilgilerinden gelen ilgili değerle
+değiştirilecek olan aşağıdaki belirteçleri içerebilir. Bu tokenlar büyük/küçük harfe duyarlı değildir.</p>
+<p class="tableblock">$PARTNAME - Parçanın adı.</p>
+<p class="tableblock">$FILENAME - FX dosyasının adı.</p>
+<p class="tableblock">$ROOTFILE - Orijinal CAD dosyasının adı.</p>
+<p class="tableblock">$PARTID - Parça-ID.</p>
+<p class="tableblock">$CUSTOMER - Müşteri.</p>
+<p class="tableblock">$AUTHOR - Yazar.</p>
+<p class="tableblock">$JOBNUMBER - Parça&#8594;Bilgi bölümünden alınan görev no.</p>
+<p class="tableblock">Bu değişkenler bir araç ipucunda gösterilir.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Height</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bu, mm veya inç cinsinden yazı tipi yüksekliğidir (temel hattan yükselme hattına kadar). Bu metni eklerken, metni belirtilen yazı tipi yüksekliğinde
+eklemek için yeterli mesafe bulunmayabilir.
+Böyle durumlarda TecZone Laser, metin sığana kadar metin ölçüsünü
+%10&#8217;luk adımlarla otomatik olarak küçültür. Bu adım, mevcut olarak izin verilen
+2 mm&#8217;ye kadar indirilmiştir.</p>
+<p class="tableblock">Minimum 2 mm olarak ayarlanmıştır.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Orientation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bu sütun, metin yönünü belirler.
+Aşağıdaki değerler mümkündür:</p>
+<p class="tableblock"><em>Horizontal</em> - Metin yatay olacaktır.</p>
+<p class="tableblock"><em>Vertical</em> - Metin dikey olacaktır.</p>
+<p class="tableblock"><em>Along longer side</em>: Metin parçanın daha uzun tarafı
+ile hizalanacaktır. Parça yatay ise yatay,
+parça dikey ise de dikey olacaktır.</p>
+<p class="tableblock"><em>Along shorter side</em>: Metin, parçanın kısa kenarına hizalanır (yukarıdakinin tersi).
+Parçaya iki metin ekliyorken, metinlerin üst üste gelme riskini
+minimuma indirmek için bu seçenek ile önceki seçenek
+birlikte kullanılabilir.</p>
+<p class="tableblock"><em>Along longest segment</em>:
+Metin, dış konturun en uzun lineer
+segmentine hizalanacaktır. Bu durumda metin
+eksenle hizalı olmayabilir. Metnin yatay, dikey veya eğik olarak konumlandırılmasından bağımsız olarak, metin TecZone Laser tarafından daima
+kullanıcı parçaya metnin en yakınından baktığında metni doğru yönde görebilecek
+şekilde yönlendirilir. Yani, alt kenarın orta kısmına
+konumlandırılan yatay metin soldan sağa, üst kenarın orta kısmına konumlandırılan
+metin ise sağdan sola doğru akacaktır.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Horizontal pos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metnin yatay hizalaması. Olası değerler:
+<em>center</em>, <em>left</em>
+ve <em>right</em>. Eğer gerekli yön olarak <em>Along longest segment</em> seçilmişse
+bu ayar bir etki göstermez.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Vertical pos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metnin dikey hizalaması. Olası değerler:
+<em>center</em>, <em>bottom</em>
+ve <em>top</em>. Eğer gerekli yön olarak <em>Along longest segment</em> seçilmişse
+bu ayar bir etki göstermez.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Bu markalamaları eklerken, TecZone Laser daima eklenen metnin hiçbir konturla çakışmadığından emin olur. Çok küçük parçalar veya çok az açık alana sahip olan parçalar durumunda,
+yazı tipi boyutunu otomatik olarak gerekli miktarda küçülterek metni parçanın içine
+sığdırır ve olası deliklerden uzak tutar.</p>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_kesim">Kesim</a>
+  </li>
+  <li level="1">
+   <a href="#_pierce_settings">Pierce settings</a>
+  </li>
+  <li level="1">
+   <a href="#_corner_processing">Corner Processing</a>
+  </li>
+  <li level="1">
+   <a href="#_twinline">TwinLine</a>
+  </li>
+  <li level="1">
+   <a href="#_scrap_cutting">Scrap cutting</a>
+  </li>
+  <li level="1">
+   <a href="#_vaporization">Vaporization</a>
+  </li>
+  <li level="1">
+   <a href="#_lazerle_markalama">Lazerle Markalama</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="../layout/worksupport.html">İş Desteği</a></span>
+ <span class="next"><a href="sequence.html">Sıralama</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../../res/index.js"></script>
+    <script src="../../../res/files.js"></script>
+    <script src="../../../res/site.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,810 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>Bir takım montajını düzenleme</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">TecZone'a Hoş Geldiniz</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">Giriş</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">Yazılımı Yükleme</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">Operasyon Yüzeyi</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Parça İş Akışı</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">2-D içe aktarma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">2-D Temizleme</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">3-D içe aktarma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">3D Modeli İçe Aktarma</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Montajı İçe Aktarma</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">Form Algılama</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">Komponent Algılama</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">Geometriyi Değiştirme</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">Lazer CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Parça İş Akışı</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Panelleri Düzenleme</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Lazer Kesim</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Yaklaşma</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Geri çekme</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">Gelişmiş</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">Hurda Kesimi</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">Parça</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Köşe İşleme</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Hızlı Yerleştirme</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">Görev İş Akışı</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">İş Paneli</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">Saclar Sekmesi</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Parçalar Sekmesi</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Yerleşim Düzenleri Sekmesi</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">Özet Sekmesi</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">Yerleşim Düzenini Düzenleme</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">Yerleştirme Modları</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Konumlandırma Paneli</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">Sıralama</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">Sac Dilimleme</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Eğimli Kesim</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">Açık Konturlar</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">Değişken Eğim</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">Diğer</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">Bitirme Kuralları</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">LTT'yi düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">Strateji</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Mikrojointler</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">Diğer ayarlar</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">Bend CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../createbenddata.html">Bükme parametreleri oluşturma</a></li>
+    <li><button class="tree blank"></button><a href="../navigator.html">Büküm gezinti öğesi</a></li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">Büküm verilerini düzenleme</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="editbend.html">Bir bükümü düzenleme</a></li>
+      <li><button class="tree blank"></button><a class="active" href="editmount.html">Bir takım montajını düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="editsetup.html">Bir büküm kurulumunu düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="editgauge.html">Arka dayanakları düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="editacb.html">Açı ölçümünü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="bendsheet.html">Bükümler elektronik tablosu</a></li>
+      <li><button class="tree blank"></button><a href="sequencing.html">Sıralamayı değiştirme</a></li>
+      <li><button class="tree blank"></button><a href="addsetup.html">Kurulumlar ve istasyonlar ekleme</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../advanced/anglemeasurement.html">Açı ölçümü</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/batchprocess.html">Toplu işleme</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/recompute.html">Çözümü yeniden hesaplama</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/tonnage.html">Tonaj kontrolü</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">Bend gezinti öğesi</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">Parça Alma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">Paletten Alma</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">Dağıtıcıdan Alma</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">Robotik Bükme</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">Yerleştirme</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">Bükme İşlemi</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Parça çıkarma</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Kavrama</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Kavrama Paneli</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Kavrama Ekleme</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Kavramayı Düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Çeneyle Kavrama</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Kavrama İstasyonu Paneli</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Parça Bırakma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Bırakma Örüntüleri</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Tekrarlama ve Sıralama</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Separatör Sac</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Geçiş Noktaları</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Hücre Konfigürasyonu</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Kavrayıcı Veritabanı</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Raporlar</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">Katlama CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Katlama verisi oluşturma</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">Katlama görünümü</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">Katlama verilerini düzenleme</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">Bir bükümü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">Bir tarafı/bölümü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">Sırayı değiştirme</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">Sabitleyicileri düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">Dayamayı düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">Bıçakları düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">Yüklemeyi düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">Boşaltmayı düzenleme</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">Takım stoğu</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">Özel hava boşluğu tabloları</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">Manuel büküm tamamlama</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">Gerekli Flanş Uzunluğu</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Ayarlar</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Çizim</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Katmanlar</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Ölçüler</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">Görünüm</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Makine Varsayılanları</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Büküm Çıkışları</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Büküm Görünümü</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Büküm Hücresi</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">Yerleşim Düzeni</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Yerleştirme Ayarları</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Sac</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Sac İşleme</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">İskelet Kesimleri</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">İş Desteği</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">Lazer CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Sıralama</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Kesim Çıkışları</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Kesim Görünümü</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Panel Büküm</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">Varsayılanlar</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">İBT Taşıyıcı Parçaları</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Çıkışlar</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Raporlar</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Öğe Varsayılanları</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">İçe/Dışa Aktarma</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Çevre</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">Veri tabanı</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">Malzemeler</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">Makineler</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">Bükme Takımları</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Bükme Kavrayıcıları</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Formlar/Komponentler</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Raporlar</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Rapor Tasarımcısı</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">Alanlar, Resimler ve Tablolar</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Bantlar (alt raporlar)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Etiketler, Bit Eşlemler ve Şekiller</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">Ek</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Desteklenen 3D Formatları</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separatör Sac DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bükme Takımı DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Künyemiz</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">Bend CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Büküm verilerini düzenleme</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="editmount.html">Bir takım montajını düzenleme</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Bir takım montajını düzenleme</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bir araç montajına tıkladığınızda, <strong>Büküm Montajı</strong> paneli gösterilir ve bu panel, büküm montajının
+farklı ayarlarını düzenlemek ve belirli faaliyetler yürütmek üzere kullanılabilir.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_büküm_montaj_paneli">Büküm Montaj paneli<a id="h000207"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/edit-mount.png" alt="Bend Mount" width="140">
+</div>
+</div>
+<div class="paragraph">
+<p>Büküm Montaj paneli yan taraftaki gibi bir görüntüye sahiptir. Kullanılabilir ayar ve faaliyetlerin tam içeriği, bir
+zımba, dişi takım veya adaptör montajına tıklayıp
+tıklamadığınıza göre değişiklik gösterir. Ayrıca, bazı ayarlar makinenin özelliklerine bağlı olarak
+mevcut olabilir veya olmayabilir.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Seçilmiş durumdaki montaj için kullanılan takımı farklı
+bir takımla değiştirmek için <strong>Takım tipini değiştir</strong> düğmesine tıklayın. (Yedek takım seçmek için kullanılan <em>takım seçici</em> hakkında
+ayrıntılar için aşağıdaki bölüme bakın).</p>
+</li>
+<li>
+<p><strong>Uzunluk</strong> girişi, istasyonun uzunluğunu ayarlamak için kullanılır. Buraya yeni bir değer girdiğinizde TecZone Bend, istenen
+uzunluğa olabildiğince yakın eşleşmesi için uygun <em>segmentler</em>
+kullanarak istasyonu yeniden oluşturur. Büküm montajında üzerinde gösterilen segment sınır hatlarına bakarak,
+kullanılan segmentleri görsel olarak inceleyebilirsiniz.</p>
+</li>
+<li>
+<p><strong>Pozisyon</strong> girişi, makinenin tabla veya üst koçu boyunca montajın
+<em>sol</em> kenarının pozisyonunu ayarlamak için kullanılır. Pozisyon ayrıca, montajı sola veya
+sağa <em>sürükleyerek</em> de ayarlanabilir. (Montajı sürükleme ile ilgili olarak aşağıdaki bölüme bakın).</p>
+</li>
+<li>
+<p><strong>Topuk</strong> seçicisi (yalnızca zımba montajları için gösterilir), TecZone Bend tarafından sol ve/veya sağ tarafın kullanılmasını zorlamak için kullanılabilir. ear<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> kompozisyondaki parçalar).</p>
+</li>
+<li>
+<p><strong>Takımı döndür</strong>, takımı ters çevirmek için kullanılır (önden arkaya). <em>Asimetrik</em> bir takım
+(ör. bir kıvrılan takım gibi) kullanan bir
+montajı düzenliyorken görüntülenir. Çevirme faaliyeti, tutarlılığı korumak amacıyla ek tutucuların ve takımların
+çevrilmesinin gerekip gerekmediğini anlayacak kadar akıllıdır.
+  Örnek olarak aşağıdaki resimde, <strong>OW_Z4</strong> zımbayı
+(Z büküm için kullanılır) çevirmek, işlem tutarlılığını
+korumak adına dişi takımın, tutucunun ve hatta parçanın da çevrilmesine yol açar:<br>
+<span class="image"><img src="img/flip-tool.png" alt="Flip Tool" width="550"></span></p>
+</li>
+<li>
+<p><strong>Adaptör ekle</strong>, bir zımba veya dişi takımın yüksekliğini artırmak için <em>uzatıcı</em> eklemek için kullanılır. Bir adaptör eklediğinizde, ilgili adaptör seçilir ve
+adaptöre yönelik panel gösterilir (bu, kullanılan
+adaptörü değiştirmenize veya kaldırmanıza imkan sağlar).<br>
+<span class="image"><img src="img/addadapter.png" alt="Add Adapter" width="460"></span></p>
+</li>
+<li>
+<p><strong>Aralık ekle</strong>, bir flanşın çarpışma olmaksızın geçebilmesi için
+takım tutucusuna bir boşluk eklemek amacıyla kullanılır (daha fazla bilgi
+için aşağıdaki Bir Boşluk Ekleme bölümüne bakın).</p>
+</li>
+<li>
+<p><strong>Gr. Takım yüksekliği</strong>, seçilen takımları aynı aileden daha uzun tasarıma
+sahip farklı takımlarla değiştirmek için kullanılır.</p>
+</li>
+<li>
+<p>Takım montajını kaldırmak için <strong>Sil</strong> öğesine tıklayın. Bu istasyonu kullanan bükümler için büküm gezinti öğesinde
+<em>eksik zımba</em> veya <em>eksik dişi takım</em> hatası gösterilir ve bu, soldaki komut
+çubuğunda <strong>Ekle</strong> seçeneği üzerinden yeni bir yuva eklenerek düzeltilebilir.</p>
+</li>
+<li>
+<p><strong>Sensör takımı</strong> seçicisi, bu parça için kullanılabilecek farklı ACB açı sensörü plaka çiftleri arasında
+geçiş yapmak amacıyla kullanılır. Seçim, sac kalınlığına ve
+kullanılan zımbaya bağlıdır.</p>
+</li>
+<li>
+<p><strong>Parça sayısı kontrolü</strong> kontrol kutucuğu seçiliyse, kullanılan segmentler mevcut <em>envanterle</em> karşılaştırılır
+(bu, <strong>Takım yönetme…</strong> bağlantısına tıklanarak düzenlenebilir). Envanterde bulunmayan segmentler kullanılırsa,
+aşağıda görüldüğü üzere, zımbanın ortasına yakın 40 mm ve 45 mm parçaların üzerine
+özel bir yonca sembolü çizilir:<br>
+<span class="image"><img src="img/inventoryerror.png" alt="Inventory Error" width="253"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Bu ayarlar ve faaliyetler yardımıyla bir takım montajını
+düzenlediğinizde, TecZone Bend tüm büküm faaliyetlerinin durumunu derhal doğrular ve
+çarpışma, takım kullanılabilirliği vb. için belirli kontroller yürütür. Büküm gezinti öğesinin durumu derhal ve gerçek
+zamanlı güncellenir, böylece farklı ayarları denemek çok kolaylaşır ve
+anında, doğru geri bildirim sağlanır.</p>
+</div>
+<div class="sect2">
+<h3 id="_takım_değiştirme_penceresi">Takım Değiştirme penceresi<a id="h000208"></a></h3>
+<div class="paragraph">
+<p><strong>Takım tipini değiştir</strong> düğmesine tıkladığınızda, <strong>Takım Değiştirme</strong> penceresi gösterilir:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/tool-replace.png" alt="Tool replacer" width="750">
+</div>
+</div>
+<div class="paragraph">
+<p>Bu pencere, olası tüm ikame edilebilecek takımları görüntüler.</p>
+</div>
+<div id="h000209" class="ulist">
+<ul>
+<li>
+<p>Seçenekleri daraltmak için soldaki hiyerarşiyi kullanın; örnek olarak,
+seçimi kolaylaştırmak için yalnızca kıvrılan takımları görüntülemeyi seçebilirsiniz.</p>
+</li>
+<li>
+<p>Üst kısımdaki <strong>Sıralama</strong> seçiciyi kullanarak takımları ada, yüksekliğe, yarıçapa veya diğer sıralama kriterlerine
+göre sıralayabilirsiniz (sıralama kriterlerinin tam listesi, değiştirilen parçanın
+zımba, dişi takım veya adaptör olma durumuna bağlıdır).</p>
+</li>
+<li>
+<p><strong>Arama</strong> kutusuna bir takım adı (veya kısa adı) girerek
+listeyi hızlıca daraltabilirsiniz. Kısmi takım adını girmek de yeterlidir - örnek olarak, <strong>OW200</strong> girildiğinde
+OW200, OW200/S ve OW200/K takımlarının tümü bununla eşleşecektir.</p>
+</li>
+<li>
+<p>Takım görüntülerinin ölçülerini ayarlamak için <strong>Ölçek</strong> kaydırıcısını kullanın. Mevcut olarak kullanılıyor olan takım,
+mavi dolgulu ve kalın kenarlıklıdır. Açık mavi çapraz çizgi, bu bölümde kullanılıyor olan
+<em>diğer takımları</em> gösterir.</p>
+</li>
+<li>
+<p>Tüm takımları (uygun olup olmadıkları fark etmeksizin) kısıtlama olmadan
+görüntülemek için, <strong>Filtre</strong> kontrol kutucuğunu kapatın. Bu görünümde, uygun olmayan takımlar gri renkle
+gösterilir ve fareyi bu takımlardan birinin üzerine getirirseniz de bu
+takımın <em>neden</em> seçilemeyeceği belirtilir:<br>
+<span class="image"><img src="img/tool-replace2.png" alt="Tool error" width="650"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Fareyi takım resimlerinin üzerine getirdiğinizde, seçilen takım montajları yeni
+seçilen takımla TecZone Bend tarafından <em>derhal</em> yeniden hesaplanır ve bu yeni takımın bir
+çarpışmaya yol açıp açmayacağını gerçek zamanlı olarak görebilirsiniz (çarpışma
+varsa, büküm gezinti öğesindeki ilgili bükümler derhal kırmızı renkte yanar). Bu gerçek zamanlı önizleme, uygun olanı bulana kadar
+farklı takım seçeneklerini denemenizi özellikle kolaylaştırır.</p>
+</div>
+<div class="paragraph">
+<p>Takımlardan birine <strong>tıkladığınızda</strong>, seçim yapılır ve yeni takım
+parçaya uygulanır. Bunun yerine <kbd>Esc</kbd> düğmesine basarsanız, yapmış olduğunuz önizleme seçimleri
+geri alınır ve orijinal takım değişmeden kalır.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gezinme_ve_seçim">Gezinme ve seçim<a id="h000214"></a></h3>
+<div class="paragraph">
+<p>Büküm montaj paneli,
+<em>Gezinme</em> ve <em>seçim</em> alt panellerinde çeşitli düğmeler görüntüler.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Tüm büküm ayarlarını düzenlemek için <strong>Gerdirme</strong>
+gezinme düğmesini kullanın. Bununla ilgili daha fazla ayrıntı için <a href="editsetup.html">Kurulum editörü</a> sayfasına bakın.</p>
+</li>
+<li>
+<p><strong>Geri</strong> ve <strong>Devam</strong> düğmelerini kullanarak bu kurulumdaki farklı takım montajları arasında
+geçiş yapabilirsiniz.</p>
+</li>
+<li>
+<p><strong>Parçalara ayırma</strong> navigasyon düğmesini kullanarak bir seviye aşağı inin ve
+bu montajı oluşturan <em>münferit segmentleri</em> düzenleyin. Aşağıdaki bölüm, takım montaj segmentlerini
+düzenlemeye yönelik olup bu konuda daha fazla bilgi sağlar.</p>
+</li>
+<li>
+<p><strong>Takım istasyonu</strong> seçicisini kullanarak bu <em>istasyonu</em> oluşturan
+tüm takım montajlarını seçin. Bu, hepsinin birlikte düzenlenebilmesi veya taşınabilmesi için,
+seçilen montaj parçasıyla hizalı olan tüm zımba, dişi takım ve tutucuları seçer.</p>
+</li>
+<li>
+<p>Aynı takım kullanan diğer takım tutucularını seçmek
+için <strong>Aynı takım</strong> seçicisini kullanın. Bu, genelde bir <em>takım değiştirme</em> faaliyetini
+kullanmadan önce faydalıdır; belirtilen takım aracılığıyla
+tüm istasyonları seçtiğinizde, kullanılabilir yedek takımların seçimi genişletilir.<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_birden_fazla_montajı_düzenleme">Birden fazla montajı düzenleme<a id="h000215"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/edit-mounts.png" alt="Multiple mounts" width="138">
+</div>
+</div>
+<div class="paragraph">
+<p>Eğer birden fazla montajı <kbd>Shift</kbd>+tıklama uygulayarak seçerseniz, bunlar
+birlikte düzenlenebilir. Yalnızca tüm montajlar için ortak olan
+ayar ve faaliyetler düzenlenebilir.</p>
+</div>
+<div class="paragraph">
+<p><strong>Uzunluk</strong> veya <strong>Pozisyon</strong> gibi alanlar, yalnızca tüm
+bağlantılar için aynıysa düzenlenmek üzere görüntülenir.</p>
+</div>
+<div class="paragraph">
+<p>Birden fazla istasyonunuz varsa, <strong>Takımı değiştirme</strong> faaliyetini yürütmeden önce
+tüm zımbaları veya tüm dişi takımları seçmeniz faydalı olacaktır. Bu durumda, mevcut yedek takımların seçimi daha
+geniş olur (farklı yükseklikteki zımba ve dişi
+takımlar için çarpışma tehlikesi bulunmamasından dolayı).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bir_bükme_aleti_montajını_sürükleme">Bir bükme aleti montajını sürükleme<a id="h000216"></a></h3>
+<div class="imageblock right">
+<div class="content">
+<img src="img/drag-mount.png" alt="Dragging a mount" width="450">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Pozisyon</strong> girişi, bir montaj için kesin bir pozisyon ayarlamak amacıyla kullanılabilir.
+Bazı durumlarda, bir büküm montajını yeni bir pozisyona sürüklemek daha kolay olacaktır. Bunu yapmak için:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Büküm montajını seçmek için üzerine tıklayın (<kbd>Shift</kbd>+tıklama yaparak birden fazla montajı seçebilirsiniz)</p>
+</li>
+<li>
+<p>Seçilen montajı taşımak için tıklayın ve sola/sağa sürüklemeye başlayın.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Yukarıda gösterildiği üzere, fareyi seçili bir montajın üzerine getirdiğinizde, seçili
+montajı sürükleyebileceğinizi belirten bir ok başı gösterilir. Montajı sürüklüyorken,
+kenetleme göstergeleri montajı diğer mevcut
+montajlara kolayca hizalamanıza imkan tanır.</p>
+</div>
+<div class="paragraph">
+<p>Eğer bir montajı sol kenarına yakın bir yerden <em>tutarsanız</em>,
+kenetlenme için tüm montajların sol kenarları kullanılır. Eğer bir montajı ortasından tutarsanız, ortadaki hat
+kenetleme için kullanılır ve bu böylece devam eder.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gelişmiş_faaliyetler">Gelişmiş faaliyetler<a id="h000218"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Büküm Montajı Editörü panelindeyürütebileceğiniz daha gelişmiş faaliyetlerden bazıları aşağıda açıklanmıştır.</p>
+</div>
+<div class="sect2">
+<h3 id="_alet_montaj_segmentlerini_düzenleme">Alet montaj segmentlerini düzenleme<a id="h000219"></a></h3>
+<div class="paragraph">
+<p>Bir büküm takımı montajı düzenleniyorken <strong>Segmentler</strong> gezinme
+düğmesine tıklandığında, yandaki resimdeki gibi bir <em>Takım Segmenti</em> paneli açılır.
+<span class="image right"><img src="img/edit-mount2.png" alt="Edit tool Segments" width="525"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Takım</strong> seçicisi, seçilen takım segmentini daha uzun veya daha kısa bir parça ile veya
+farklı bir parça tipi ile değiştirmek amacıyla kullanılır.</p>
+</li>
+<li>
+<p><strong>&lt; Taşı</strong> ve <strong>Taşı &gt;</strong> düğmeleri, kompozisyonda seçilmiş olan segmenti sola veya sağa kaydırmak amacıyla kullanılır. Bu, kompozisyonun toplam uzunluğunu değiştirmez;
+ancak ör. deliklerden kaçınmak üzere bir dayanak sensörü parçasını sola veya
+sağa hareket ettirmek için faydalıdır.</p>
+</li>
+<li>
+<p><strong>Ekle</strong> ve Sil** düğmeleri, kompozisyona yeni
+segmentler eklemek veya seçilmiş olan segmenti kaldırmak için kullanılır.</p>
+</li>
+<li>
+<p><strong>Geri</strong> ve <strong>Devam</strong> navigasyon düğmeleri, büküm montajında bulunan farklı
+segmentleri düzenlemek üzere geçiş yapmak için kullanılır. Yukarıda gösterildiği üzere, halihazırda düzenleniyor olan
+takım segmenti mavi renkle vurgulanır.</p>
+</li>
+<li>
+<p><strong>Donatma</strong> gezinme düğmesi, bir üst düzeye çıkmak ve
+münferit segmentler yerine büküm montajının tamamını düzenlemek amacıyla kullanılır.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bir_montaja_boşluk_ekleme">Bir montaja boşluk ekleme<a id="h000220"></a></h3>
+<div class="paragraph">
+<p>Bazı durumlarda, genelde bir flanşın çarpışmasız
+geçebilmesi için takım montajına dar bir <em>boşluk</em> eklemek faydalı olabilir. Bunu yapmak için:
+<strong>Aralık ekle</strong> düğmesine tıklayın (takım montajı yeterince uzunsa görünür). Panel üzerinde,
+sol kenar boşluğu, sağ kenar boşluğu ve gerçek
+boşluğu ayarlamak için birbirine bağlantılı bir dizi girişi içeren küçük bir bölüm açılır. Bu üçünün toplamının takım montaj
+uzunluğuna eşit olması gerektiği için, bunlardan ikisini
+düzenlediğinizde üçüncüsü otomatik olarak ayarlanır.</p>
+</div>
+<div class="paragraph">
+<p>Aşağıdaki resim bu faliyeti devam ediyorken göstermektedir. Zımba ile çarpışan bir flanşımız var ve önerilen boşlukla flanşın
+zımbayla kesiştiği nokta birbirine hizalanana kadar Sol/Sağ kenar
+boşluklarını ayarlıyoruz (önerilen boşluk, büküm montajı üzerinde iki
+turuncu hat olarak gösterilir).<br>
+<span class="image"><img src="img/add-gap1.png" alt="Adding a gap"></span></p>
+</div>
+<div class="paragraph">
+<p>Bu alt paneldeki <strong>Tamam</strong> düğmesine tıkladığınızda, ilgili
+boşluk oluşturulur ve çarpışma hatasının artık çözüldüğünü görebilirsiniz:<br>
+<span class="image"><img src="img/add-gap2.png" alt="Adding a gap"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Zımba tutucu kullanan bir istasyonu düzenliyorken TecZone Bend, boşluğun yalnızca <strong>zımba</strong> için mi
+yoksa <strong>zımba</strong> ve <strong>tutucu</strong> için mi eklenmesi gerektiğini sorar.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bir_çift_v_tipi_adaptör_kullanma">Bir çift V tipi adaptör kullanma<a id="h000221"></a></h3>
+<div class="paragraph">
+<p>İki dişi takımın yan yana monte edilmesi için,
+çift V tipi adaptör kullanılabilir. Bunu manuel olarak yapmak için,
+<strong>Adaptör ekle</strong> düğmesi ile bir dişi takıma adaptör ekleyin ve sonra da <strong>Takım tipini değiştir</strong>
+düğmesi ile bu adaptörü bir çift V tipi adaptöre değiştirin. Artık komut çubuğundaki <strong>Ekle</strong>
+komutu üzerinden bir dişi takım montajı seçerek, çift V tipi
+adaptörün diğer oluğuna ikinci bir dişi takım eklenebilir.</p>
+</div>
+<div class="paragraph">
+<p>Çift V tipi tutucunun bir oluğuna bir dişi takım takılı olduğunda, gösterilen <strong>I eksenini değiştirme</strong> düğmesine
+tıklayarak dişi takımın diğer oluğa kaydırılmasını sağlayabilirsiniz:<br>
+<span class="image"><img src="img/dv-shift.png" alt="Double-V Shift" width="465"></span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Bunlar bazen <em>omuz</em> parçaları olarak da adlandırılır.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Örnek olarak, yalnızca bir zımba istasyonunda <strong>Takımı değiştirme</strong> faaliyetini yürütüyorsanız ve birden fazla zımba istasyonu bulunuyorsa, düzensiz boşluklardan dolayı olası zımba-dişi takım çarpışmalarını önlemek için yalnızca <em>aynı yüksekliğe</em> sahip olan diğer zımba takımlarını seçmeniz gerekir.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_büküm_montaj_paneli">Büküm Montaj paneli</a>
+  </li>
+  <li level="2">
+   <a href="#_takım_değiştirme_penceresi">Takım Değiştirme penceresi</a>
+  </li>
+  <li level="2">
+   <a href="#_gezinme_ve_seçim">Gezinme ve seçim</a>
+  </li>
+  <li level="2">
+   <a href="#_birden_fazla_montajı_düzenleme">Birden fazla montajı düzenleme</a>
+  </li>
+  <li level="2">
+   <a href="#_bir_bükme_aleti_montajını_sürükleme">Bir bükme aleti montajını sürükleme</a>
+  </li>
+  <li level="1">
+   <a href="#_gelişmiş_faaliyetler">Gelişmiş faaliyetler</a>
+  </li>
+  <li level="2">
+   <a href="#_alet_montaj_segmentlerini_düzenleme">Alet montaj segmentlerini düzenleme</a>
+  </li>
+  <li level="2">
+   <a href="#_bir_montaja_boşluk_ekleme">Bir montaja boşluk ekleme</a>
+  </li>
+  <li level="2">
+   <a href="#_bir_çift_v_tipi_adaptör_kullanma">Bir çift V tipi adaptör kullanma</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="editbend.html">Bir bükümü düzenleme</a></span>
+ <span class="next"><a href="editsetup.html">Bir büküm kurulumunu düzenleme</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

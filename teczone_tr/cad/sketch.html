@@ -1,0 +1,831 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>Geometriyi Değiştirme</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">TecZone'a Hoş Geldiniz</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">Giriş</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">Yazılımı Yükleme</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">Operasyon Yüzeyi</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">Parça İş Akışı</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">CAD</a>
+   <ul>
+    <li>
+     <button class="tree closed"></button>
+     <a href="2dimport/index.html">2-D içe aktarma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="2dimport/2dcleanup.html">2-D Temizleme</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="3dimport/index.html">3-D içe aktarma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="3dimport/prep3dmodel.html">3D Modeli İçe Aktarma</a></li>
+      <li><button class="tree blank"></button><a href="3dimport/prepassembly.html">Montajı İçe Aktarma</a></li>
+      <li><button class="tree blank"></button><a href="3dimport/formdetect.html">Form Algılama</a></li>
+      <li><button class="tree blank"></button><a href="3dimport/componentdetect.html">Komponent Algılama</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a class="active" href="sketch.html">Geometriyi Değiştirme</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Lazer CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Parça İş Akışı</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Panelleri Düzenleme</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Lazer Kesim</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Yaklaşma</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Geri çekme</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Gelişmiş</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Hurda Kesimi</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Parça</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Köşe İşleme</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Hızlı Yerleştirme</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Görev İş Akışı</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">İş Paneli</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Saclar Sekmesi</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Parçalar Sekmesi</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Yerleşim Düzenleri Sekmesi</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Özet Sekmesi</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Yerleşim Düzenini Düzenleme</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Yerleştirme Modları</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Konumlandırma Paneli</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Sıralama</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Sac Dilimleme</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Eğimli Kesim</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Açık Konturlar</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Değişken Eğim</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Diğer</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Bitirme Kuralları</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">LTT'yi düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Strateji</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Mikrojointler</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Diğer ayarlar</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Bend CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Bükme parametreleri oluşturma</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Büküm gezinti öğesi</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Büküm verilerini düzenleme</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Bir bükümü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Bir takım montajını düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Bir büküm kurulumunu düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Arka dayanakları düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Açı ölçümünü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Bükümler elektronik tablosu</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Sıralamayı değiştirme</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Kurulumlar ve istasyonlar ekleme</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Açı ölçümü</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Toplu işleme</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Çözümü yeniden hesaplama</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Tonaj kontrolü</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Bend gezinti öğesi</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Parça Alma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Paletten Alma</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Dağıtıcıdan Alma</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Robotik Bükme</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Yerleştirme</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Bükme İşlemi</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Parça çıkarma</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Kavrama</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Kavrama Paneli</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Kavrama Ekleme</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Kavramayı Düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Çeneyle Kavrama</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Kavrama İstasyonu Paneli</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Parça Bırakma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Bırakma Örüntüleri</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Tekrarlama ve Sıralama</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Separatör Sac</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Geçiş Noktaları</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Hücre Konfigürasyonu</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">Kavrayıcı Veritabanı</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">Raporlar</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">Katlama CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Katlama verisi oluşturma</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">Katlama görünümü</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Katlama verilerini düzenleme</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Bir bükümü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Bir tarafı/bölümü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">Sırayı değiştirme</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">Sabitleyicileri düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Dayamayı düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">Bıçakları düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Yüklemeyi düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Boşaltmayı düzenleme</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Takım stoğu</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Özel hava boşluğu tabloları</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Manuel büküm tamamlama</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Gerekli Flanş Uzunluğu</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Ayarlar</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Çizim</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Katmanlar</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Ölçüler</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Görünüm</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Makine Varsayılanları</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Büküm Çıkışları</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Büküm Görünümü</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Büküm Hücresi</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Yerleşim Düzeni</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Yerleştirme Ayarları</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Sac</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Sac İşleme</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">İskelet Kesimleri</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">İş Desteği</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">Lazer CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Sıralama</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Kesim Çıkışları</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Kesim Görünümü</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Panel Büküm</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Varsayılanlar</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">İBT Taşıyıcı Parçaları</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Çıkışlar</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Raporlar</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Öğe Varsayılanları</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">İçe/Dışa Aktarma</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Çevre</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Veri tabanı</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Malzemeler</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Makineler</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Bükme Takımları</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Bükme Kavrayıcıları</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Formlar/Komponentler</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Raporlar</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Rapor Tasarımcısı</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Alanlar, Resimler ve Tablolar</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Bantlar (alt raporlar)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Etiketler, Bit Eşlemler ve Şekiller</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">Ek</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Desteklenen 3D Formatları</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">Separatör Sac DXF</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Bükme Takımı DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Künyemiz</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">CAD</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="sketch.html">Geometriyi Değiştirme</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Geometriyi Değiştirme</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>TecZone Bend içerisinde, geometrinizi değiştirmek,
+temizlemek veya eklemek için güçlü bir 2D çizim editörüne sahip olursunuz. Taslak moduna geçmek için <kbd>S</kbd> Kısayol düğmesini kullanın. Editör, parçayı kat açılma görünümünde
+görüntüler.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/unfold2d.png" alt="image" width="528" height="243">
+</div>
+</div>
+<div class="paragraph">
+<p>Geişmiş görünüm altında, <strong>Temizleme</strong> simgesine <span class="image"><img src="img/pencil.png" alt="Sketch" width="16"></span> veya
+<kbd>S</kbd> Kısayol düğmesine basın.</p>
+</div>
+<div class="paragraph">
+<p>Kat açılma işlemini yürütmek için farklı simgeler içeren bir menü açılır:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/movepanel.png" alt="movepanel">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_taslak_paneli">Taslak Paneli<a id="h000261"></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Simge</th>
+<th class="tableblock halign-left valign-top">Sembol</th>
+<th class="tableblock halign-left valign-top">Anlamı</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/pick.png" alt="pick" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Seçim</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nesneleri, hatları, girişleri vb. seçme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/line.png" alt="line" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir hat çizme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/lines.png" alt="lines" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bağlı hatlar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Herhangi bir sayıda hat çizme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/parallel.png" alt="parallel" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Paraleller</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir hatta paralel çizme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/lineperpendicular.png" alt="lineperpendicular" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Normal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir yaya teğet çizme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/bendline.png" alt="bendline" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Büküm hattı</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir hatta normal bir hat çizme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arc.png" alt="arc" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Orta nokta yayı</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir büküm hattı çizme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arc2p.png" alt="arc2p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 nokta yayı</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir merkez noktası, start noktası ve bitiş noktasından bir yay çizme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arc3p.png" alt="arc3p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 nokta yayı</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">İki tanımlanmış nokta (start noktası ve bitiş noktası) üzerinden bir dairesel yay çizme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arctangent.png" alt="arctangent" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tanjantal yay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Taslak elemanlarına teğet bir yay çizme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rect.png" alt="rect" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dikdörtgen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir dikdörtgen çizme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rectcenter.png" alt="rectcenter" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Orta nokta-Dikdörtgen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merkezden bir dikdörtgen çizme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle.png" alt="circle" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Daire</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir daire çizme Dairenin merkez noktasını seçin ve imleci sürükleyerek
+yarıçapı belirleyin ya da yarıçapa yönelik bir değer girin.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle2p.png" alt="circle2p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 noktalı çevre</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Çevre uzunluğuna göre bir daire çizme Çevre üzerinde
+bir nokta seçin, ardından ikinci ve üçüncü noktaları seçin.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle3p.png" alt="circle3p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 noktalı çevre</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Çevre uzunluğuna göre bir daire çizme Çevre üzerinde
+bir nokta seçin, ardından ikinci ve üçüncü noktaları seçin.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle2t.png" alt="circle2t" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 tanjantlı daire</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">İki teğetli bir daire çizme. Daire çapını girin,
+ardından birinci teğeti ve ikinci teğeti seçin.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle3t.png" alt="circle3t" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 tanjantlı daire</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Üç teğetli bir daire çizme. Daire çapını girin, ardından
+birinci teğeti, ikinci teğeti ve sonra da üçüncü teğeti seçin.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polygonins.png" alt="polygonins" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Poligon orta noktası - Köşe noktası</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Üç teğetli bir daire çizme. Daire çapını girin, ardından
+birinci teğeti, ikinci teğeti ve sonra da üçüncü teğeti seçin.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polygoncircum.png" alt="polygoncircum" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Poligon orta noktası - Yan kenarın ortası</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir poligon çizer. Kenar sayısını belirtin ve bir merkez noktasını ve
+bir kenarın ortasını seçin.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polygonedge.png" alt="polygonedge" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yan kenarlı poligon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir poligon çizer. Kenar sayısını belirtin ve bir kenarın start noktası ve bitiş noktasını tanımlayın.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/fillet.png" alt="fillet" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yuvarlatma</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Köşeyi iki taslak elemanının köşe noktasında girilen yarıçapla yuvarlar, bu
+sayede teğet bir yay oluşturulur.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/chamfer.png" alt="chamfer" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Faz</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">İki taslak elemanının kesiştiği köşede bir eğim oluşturur.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/infillet.png" alt="infillet" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yuvarlak kenar kırpma</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Girilen yarıçap ile iki taslak elemanının kesiştiği köşeyi keser.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/cornerstep.png" alt="cornerstep" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Köşeli kenar kırpma</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir dikdörtgenle iki taslak elemanının kesiştiği köşeyi keser. Bu dikdörtgenin boyutu
+önceden girilebilir.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/edgerecess.png" alt="edgerecess" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kare biçimli serbest kesim</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir dikdörtgen serbest kesim oluşturur. Köşe mesafesini ve serbest kesim derinliğini girip ardından
+bir köşe seçmeniz gerekir.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/edgeu.png" alt="edgeu" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uzunlamasına delik serbest kesimi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uzunlamasına delik şeklinde bir serbest kesim oluşturur. Köşe mesafesini, serbest kesim genişliğini ve serbest
+kesim derinliğini girip ardından bir köşe seçin.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/edgev.png" alt="edgev" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Üçgen serbest kesim</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir üçgen serbest kesim oluşturur. Köşe mesafesini, serbest kesim genişliğini ve serbest
+kesim derinliğini girip ardından bir köşe seçin.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/keyslot.png" alt="keyslot" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anahtar deliği</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Girilen değerlerle bir daire içinde bir anahtar deliği oluşturur.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/fillet3seg.png" alt="fillet3seg" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tam yuvarlatma 3 segment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Birbirine bağlı üç taslak elemanını yuvarlar</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/extend.png" alt="extend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Elemanı uzat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uzatılacak taslak elemanını seçin<br>
+<kbd>ctrl</kbd> Sınır seç<br>
+<kbd>Shift</kbd> Bağlan<br>
+<kbd>Alt</kbd> Sürükle</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/trim.png" alt="trim" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Elemanı kırp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kısaltılacak taslak elemanını seçin<br>
+<kbd>Ctrl</kbd> Sınır seç<br>
+<kbd>Shift</kbd> Elemanı sil<br>
+<kbd>Alt</kbd> Bileşik çizgiyi sil<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/join.png" alt="join" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Birleştir</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Birkaç ayrı bileşik çizgiyi kısaltmak ve birleştirmek için kullanılır</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/offset.png" alt="offset" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ofset elemanları</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir veya daha fazla taslak elemanını, taslak model kenarlarını veya model yüzlerini belirtilen
+bir mesafe kadar ofsetleyin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/move.png" alt="move" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Taşı</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>ctrl</kbd> ile bir taslak elemanı seçin, bir referans noktası seçin ve taslak
+elemanını taşıyın</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rotate.png" alt="rotate" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Döndür</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>ctrl</kbd> ile bir taslak elemanı seçin, bir dönme merkezi noktası, ardından bir start noktası
+ve bir bitiş noktası seçerek taslak elemanını döndürün.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/scale.png" alt="scale" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ölçekleme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>ctrl</kbd> ile bir taslak elemanı seçin, bir taban noktası, ardından bir start referans noktası
+ve bir bitiş noktası seçerek taslak elemanını ölçekleyin.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/mirror.png" alt="mirror" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refleksiyon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>ctrl</kbd> ile bir taslak elemanını seçin, ardından ayna çizgisinin başlangıcını ve
+sonra da ayna çizgisinin bitişini seçerek taslak elemanını aynalayın.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rectarray.png" alt="rectarray" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doğrusal örnek</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir veya daha fazla taslak elemanını bir veya iki doğrusal yol boyunca eşit mesafelerle yerleştirebileceğiniz
+çok sayıda referanslı kopyasını oluşturmak için, doğrusal örnekleri kullanın. Doğrusal örneğe
+tıklayın ve istediğiniz değerleri girin.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polararray.png" alt="polararray" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Daire örneği</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir veya daha fazla taslak elemanını bir eksen etrafında eşit mesafelerle yerleştirebileceğiniz
+çok sayıda referanslı kopyasını oluşturmak için, dairesel örnekleri kullanın. Dairesel örneklere
+tıklayın ve istediğiniz değerleri girin.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/union.png" alt="union" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yüzeyleri kombine et</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yüzeyleri birbiriyle kombine etmek için iki veya daha fazla kapalı taslak elemanı seçin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/intersection.png" alt="intersection" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kesit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Seçilen elemanların bir kesim alanını oluşturmak için iki veya daha fazla kapalı taslak elemanı seçin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/subtraction.png" alt="subtraction" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yüzeyi kırp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yüzeyi kısaltmak için iki veya daha fazla kapalı taslak elemanı seçin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/copynotch.png" alt="copynotch" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Serbest kesimi kopyala</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bu takım aracılığıyla bir kenar boyunca bir çentiğin birden fazla kopyasını oluşturabilirsiniz. İlk olarak, kopyalar arasındaki mesafeyi
+ve oluşturmak istediğiniz çentik sayısını girin. Ardından, çentiğin bitişiğinde bulunan iki çizgi segmentine tıklayarak
+ilgili çentiği seçin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/deletenotch.png" alt="deletenotch" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Serbest kesimi sil</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bu araç yardımıyla köşede veya bir çizgi segmenti boyunca bir çentiği silebilirsiniz. Çentik bitişiğinde
+bulunan iki çizgi segmentine tıklayın, çentik kaldırılır.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/mirrornotch.png" alt="mirrornotch" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Serbest kesimi yansıt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bu araç yardımıyla köşede veya bir çizgi segmenti boyunca bir çentiği yansıtabilirsiniz. Çentik bitişiğinde
+bulunan iki çizgi segmentine tıklayın, çentik yansıtılır</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/spline.png" alt="spline" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geometrik yeri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yeni bir Spline başlatmak için, start noktasına tıklayın; siz sonraki noktalara tıkladıkça
+Spline oluşturulacaktır. Spline&#8217;ı kapatmak istiyorsanız, ALT tuşuna basılı tutun ve ardından tıklayın</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/profile.png" alt="profile" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profil</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Taban uzunluğu, flanş yüksekliği, kalınlık, flanş açısı, iç yarıçapı değerlerini girin ve Enter&#8217;a basarak
+bir profil oluşturun</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/text.png" alt="text" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lazer makinesi tarafından parçanın üzerine markalanacak metni çizmek amacıyla kullanılır. Bu araç düğmesine tıkladığınızda, giriş çubuğu size metin, ölçü
+ve dönüş açısına yönelik giriş kutularını gösterir</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/truetype.png" alt="truetype" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Herhangi bir TrueType yazı tipindeki karakterlerin şekillerini alıp bileşik çizgilere dönüştürmek amacıyla kullanılır. Daha sonra bileşik çizgilere lazer takımları uygulanabilir ve kesilebilirler.
+  Bu düğmeye ilk kez tıklandığında, metin için kullanılacak yazı tipini seçmeniz için
+Yazı Tipi iletişim penceresi açılır.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/commonshape.png" alt="commonshape" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standart şekiller</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Farklı yaygın şekilleri oluşturmak ve bunları çizime eklemek için kullanılır. Bu düğmeye tıkladığınızda, listelenen yaygın şekiller paletinden seçim yapmanıza imkan tanıyan
+Şekil Oluştur iletişim kutusu görüntülenir.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dsimple.png" alt="dsimple" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Basit boyut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">İlk ölçülendirme noktasını ve ardından da ikinci ölçülendirme noktasını seçin ve
+ölçülendirme çizgisini pozisyonlayın.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dbaseline.png" alt="dbaseline" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Referans boyut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">İlk ölçülendirme noktasını ve ardından da ikinci ölçülendirme noktasını seçin ve
+ölçülendirme çizgisini pozisyonlayın.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dcontinue.png" alt="dcontinue" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ölçüm zinciri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">İlk ölçülendirme noktasını ve ardından da ikinci ölçülendirme noktasını seçin, ölçülendirme çizgisini
+konumlandırın ve bir sonraki ölçülendirme noktasını seçin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dhorzordinate.png" alt="dhorzordinate" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yatay ordinat ölçüsü</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ordinat ölçüleri, çizimde ordinat sıfırından ölçülen
+bir dizi ölçüdür. Bir referans noktası seçip ölçülendirmeyi konumlandırın</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dvertordinate.png" alt="dvertordinate" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dikey ordinat ölçüsü</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ordinat ölçüleri, çizimde ordinat sıfırından ölçülen
+bir dizi ölçüdür. Bir referans noktası seçip ölçülendirmeyi konumlandırın</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dangular.png" alt="dangular" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Açı Boyut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir açı için bir ölçülendirme oluşturur. İlk satırı ve ardından açı ölçüsünü almak istediğiniz
+ikinci satırı seçin.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dradius.png" alt="dradius" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yarıçap Boyut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir yarıçap için bir ölçülendirme oluşturur. Yarıçapını boyutlandırmak istediğiniz
+daireyi seçin. Çapı <kbd>ctrl</kbd> ile boyutlandırın</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dradius.png" alt="dradius" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yarıçap Boyut, kesiksiz uyarı hattı ile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bir yarıçap için sürekli kılavuz ile bir ölçü oluşturur. Yarıçapını boyutlandırmak istediğiniz
+daireyi seçin. Çapı <kbd>ctrl</kbd> ile boyutlandırın</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dcallout.png" alt="dcallout" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Etiketlendirme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Çizime açıklama biçiminde notlar eklemek için kullanın. Bir açıklama oluşturmak için,
+gösterilecek metni yazın, okun işaret edeceği yere tıklayın ve
+tekrar metnin yerleştirileceği yere tıklayın.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dsegment.png" alt="dsegment" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bölüm ölçülendirme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Düz çizgi ve eğri segmentler için ölçülendirme eklemek amacıyla kullanın. Ölçülendirmek istediğiniz
+segmente tıklayın ve ölçüyü yerleştirmek için tekrar tıklayın. Veya <kbd></kbd> öğesine basılı tutun
+ve bir segmente tıklayarak ölçüyü otomatik olarak pozisyonlayın.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_taslak_paneli">Taslak Paneli</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="3dimport/componentdetect.html">Komponent Algılama</a></span>
+ <span class="next"><a href="../cut/index.html">Lazer CAM</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

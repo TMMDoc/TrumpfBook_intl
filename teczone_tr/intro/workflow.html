@@ -1,0 +1,810 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>Parça İş Akışı</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">TecZone'a Hoş Geldiniz</a></li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Giriş</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="install.html">Yazılımı Yükleme</a></li>
+    <li><button class="tree blank"></button><a href="clarity.html">Operasyon Yüzeyi</a></li>
+    <li><button class="tree blank"></button><a class="active" href="workflow.html">Parça İş Akışı</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">2-D içe aktarma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">2-D Temizleme</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">3-D içe aktarma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">3D Modeli İçe Aktarma</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">Montajı İçe Aktarma</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">Form Algılama</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">Komponent Algılama</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">Geometriyi Değiştirme</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Lazer CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Parça İş Akışı</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Panelleri Düzenleme</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Lazer Kesim</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Yaklaşma</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Geri çekme</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Gelişmiş</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Hurda Kesimi</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Parça</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Köşe İşleme</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Hızlı Yerleştirme</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Görev İş Akışı</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">İş Paneli</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Saclar Sekmesi</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Parçalar Sekmesi</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Yerleşim Düzenleri Sekmesi</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Özet Sekmesi</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Yerleşim Düzenini Düzenleme</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Yerleştirme Modları</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Konumlandırma Paneli</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Sıralama</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Sac Dilimleme</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Eğimli Kesim</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Açık Konturlar</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Değişken Eğim</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Diğer</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Bitirme Kuralları</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">LTT'yi düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Strateji</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Mikrojointler</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Diğer ayarlar</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Bend CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Bükme parametreleri oluşturma</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Büküm gezinti öğesi</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Büküm verilerini düzenleme</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Bir bükümü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Bir takım montajını düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Bir büküm kurulumunu düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Arka dayanakları düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Açı ölçümünü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Bükümler elektronik tablosu</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Sıralamayı değiştirme</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Kurulumlar ve istasyonlar ekleme</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Açı ölçümü</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Toplu işleme</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Çözümü yeniden hesaplama</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Tonaj kontrolü</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Bend gezinti öğesi</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Parça Alma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Paletten Alma</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Dağıtıcıdan Alma</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Robotik Bükme</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Yerleştirme</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Bükme İşlemi</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Parça çıkarma</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Kavrama</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Kavrama Paneli</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Kavrama Ekleme</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Kavramayı Düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Çeneyle Kavrama</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Kavrama İstasyonu Paneli</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Parça Bırakma</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Bırakma Örüntüleri</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Tekrarlama ve Sıralama</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Separatör Sac</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Geçiş Noktaları</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Hücre Konfigürasyonu</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">Kavrayıcı Veritabanı</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">Raporlar</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">Katlama CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Katlama verisi oluşturma</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">Katlama görünümü</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Katlama verilerini düzenleme</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Bir bükümü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Bir tarafı/bölümü düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">Sırayı değiştirme</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">Sabitleyicileri düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Dayamayı düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">Bıçakları düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Yüklemeyi düzenleme</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Boşaltmayı düzenleme</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Takım stoğu</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Gelişmiş</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Özel hava boşluğu tabloları</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Manuel büküm tamamlama</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Gerekli Flanş Uzunluğu</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Ayarlar</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Çizim</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Katmanlar</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Ölçüler</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Görünüm</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Makine Varsayılanları</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Büküm Çıkışları</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Büküm Görünümü</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Büküm Hücresi</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Yerleşim Düzeni</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Yerleştirme Ayarları</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Sac</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Sac İşleme</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">İskelet Kesimleri</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">İş Desteği</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">Lazer CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Sıralama</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Kesim Çıkışları</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Kesim Görünümü</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Panel Büküm</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Varsayılanlar</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">İBT Taşıyıcı Parçaları</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Çıkışlar</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Raporlar</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Öğe Varsayılanları</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">İçe/Dışa Aktarma</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Çevre</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Veri tabanı</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Malzemeler</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Makineler</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Bükme Takımları</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Bükme Kavrayıcıları</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Formlar/Komponentler</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Raporlar</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Rapor Tasarımcısı</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Alanlar, Resimler ve Tablolar</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Bantlar (alt raporlar)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Etiketler, Bit Eşlemler ve Şekiller</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">Ek</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Desteklenen 3D Formatları</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">Separatör Sac DXF</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Bükme Takımı DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Künyemiz</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Giriş</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="workflow.html">Parça İş Akışı</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Parça İş Akışı</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>TecZone Bend birçok entegre modül içerdiği için, parça verilerinin hareket edebileceği birden fazla <em>yol</em> mevcuttur.</p>
+</div>
+<div id="h000514" class="paragraph">
+<p><strong>Örnek 1</strong>: Düz parça verilerini (GEO dosyası veya DXF dosyasından)
+yüklediğinizde, şunu yapabilirsiniz:</p>
+</div>
+<div id="h000515" class="ulist">
+<ul>
+<li>
+<p>Diğer parçalarla birlikte saca yerleştirilip kesilebilmesi için parçaya
+Lazer Donatımı atayın,.</p>
+</li>
+<li>
+<p>İşlenebilmesi ve bükme presi için bir büküm sırası hesaplanabilmesi için parçayı büküm hatları boyunca bir 3-D parça haline gelecek şekilde katlayın.</p>
+</li>
+</ul>
+</div>
+<div id="h000517" class="paragraph">
+<p><strong>Örnek 2</strong>: Bir 3-D yüzey modelini (IGES veya STEP dosyasından) içe aktardığınızda, şunu yapabilirsiniz:</p>
+</div>
+<div id="h000518" class="ulist">
+<ul>
+<li>
+<p>Yüzeyleri analiz edin ve kesilmesi gereken delikler boyunca
+5 eksenli lazer CAM donatımlarını yerleştirin.</p>
+</li>
+<li>
+<p>Özellik algılama yürütün, yüzey modelini sac modeline dönüştürün ve
+zımba presiyle delmek üzere katını düz bir desene açın.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_i̇ş_akışı_paneli">İş Akışı Paneli<a id="h000520"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/workflow1.png" alt="Workflow 1" width="248">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>İş akışı</strong> paneli, tüm bu hareketleri yönlendirebileceğiniz merkezi bir
+nokta niteliğindedir. Bir parça açıkken, <kbd>W</kbd> tuşuna basarak veya sol taraftaki komut
+çubuğunda iş akışı simgesine tıklayarak dilediğiniz zaman iş akışı
+panelini açabilirsiniz. Şimdi iş akışı panelini inceleyelim; büküm bilgilerine sahip bir 2D parçayı (ör. bir GEO dosyası) içe aktararak başlayalım.
+Bu noktada iş akışı paneli açıldığında şu görülebilir:</p>
+</div>
+<div id="h000521" class="ulist">
+<ul>
+<li>
+<p>Bend_28.geo ile başladık, içe aktarıp temizleyerek bir 2D sac parça oluşturduk (parça ölçüleri gösterilmiştir).</p>
+</li>
+<li>
+<p>Bu durumda iş akışında bir dal bulunur.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>İlgili Lazer Teknolojisini parçaya atayabiliriz (bu, lazer kesim yollarının
+parça konturlarına atanması demektir).</p>
+</li>
+<li>
+<p>Düz parçayı 3D&#8217;ye katlayabiliriz (9 büküm algılanır).</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_i̇ş_akışı_düğümlerini_genişletme_aşama_1">İş akışı düğümlerini genişletme: Aşama 1<a id="h000523"></a></h3>
+<div class="paragraph">
+<p>Parçaya lazer donatımı atamak için Lazer Teknolojisi simgesine tıklayın. Parçanın derhal analiz edildiğini ve lazer donatımı
+eklendiğini göreceksiniz. Ardından, düz parçayı 3D olarak katlamak için 3D&#8217;ye Katla simgesine tıklayın. Bu adımlardan sonra, iş akışı paneli şöyle görünür:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow2.png" alt="Workflow 2" width="698">
+</div>
+</div>
+<div class="paragraph">
+<p>Açıklamalarda da görüldüğü üzere, iş akışı diyagramında farklı tipte
+düğümler mevcuttur.</p>
+</div>
+<div id="h000524" class="ulist">
+<ul>
+<li>
+<p>Parça üzerinde yürütülebilecek farklı işleme tiplerini temsil eden
+Parça Görünümü düğümleri mevcuttur. Bu düğümlere tıklandığında parça ilgili görünüme geçer
+ve parçada yürütülebilecek faaliyetler de o <em>görünümü</em>
+temsil eder. Örnek olarak, Lazer Parça görünümünde, parçaya atanmış olan
+lazer donatımlarını görebilir ve düzenleyebilirsiniz.</p>
+</li>
+<li>
+<p>Bu simgelere tıklayarak, bu görünümler arasında geçiş yapabilirsiniz. Tüm bu farklı parça görünümleri için kısayol tuşları da mevcuttur;
+bu tuşları, fareyi görünüm simgelerinden birinin üzerine
+getirerek görebilirsiniz. İş akışında hızlıca gezinebilmek için
+bu kısayol tuşlarını öğrenin. Böylece, bir süre geçtikten sonra, iş akışı panelini açmak,
+büküm görünümüne geçmek ve ardından iş akışı panelini
+kapatmak için <kbd>W</kbd>, <kbd>B</kbd>, <kbd>Esc</kbd> gibi düğme
+dizilerini kullanabilirsiniz.</p>
+</li>
+<li>
+<p>Parça verileri farklı prosesler kapsamında
+bu düğümler arasında aktarılır ve bu prosesler de iş akışı panelinde 13 köşeli
+yıldız simgeleriyle gösterilir. Örnek olarak, 2D Parça görünümünden Lazer
+Teknolojisi prosesiyle (2D parçayı analiz eder ve lazer donatımı atar) Lazer Parçası
+görünümüne geçersiniz.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Tamamladığınız proseslerin içinde bir onay işareti gösterilir. Henüz
+tamamlamadığınız (ancak mevcut olan)
+proseslerin içinde bir çarpı gösterilir. Bu proses düğümlerine tıklayarak prosesi tamamlayabilirsiniz.</p>
+</div>
+<div class="paragraph">
+<p>Şimdi iş akışımızın bu aşamasında görebildiklerimizi özetleyelim:</p>
+</div>
+<div id="h000527" class="ulist">
+<ul>
+<li>
+<p>Mevcut olarak 3 parça görünümü mevcuttur (2D Parça, Lazer Parçası ve
+3D Model arasında geçiş yapabiliriz).</p>
+</li>
+<li>
+<p>Dört proses daha mevcuttur:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Düz Parçayı Gözden Geçirebiliriz (bu, lazer
+veya zımba pres operatörleri için faydalı olabilecek bir düz parça raporu oluşturur;
+temelde lazer kesim sürelerini, zımba makinelerine yönelik donatım kurulumunu
+ve bu parçaya ilişkin diğer özel donatım gerekliliklerini içerir).</p>
+</li>
+<li>
+<p>Bir Hızlı Yerleştirme (hızlı yerleştirme, yalnızca bir tip parça içeren
+yerleştirme işlemidir) yapabilir ve bu parça ile doldurulmuş bir tam sac oluşturabiliriz. Bu, sadece bu parçanın bulunduğu bir sac oluşturmak
+amacıyla veya bu parça için hızlı bir maliyet veya zaman tahmini yürütmek
+için kullanılabilir.</p>
+</li>
+<li>
+<p>Parça için Bükme Teknolojisi (bükme presi donatımı) atayabiliriz.</p>
+</li>
+<li>
+<p>Parça için Kaynaklama Teknolojisi (kaynak robotu donatımı) atayabiliriz.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_i̇ş_akışı_düğümlerini_genişletme_aşama_2">İş akışı düğümlerini genişletme: Aşama 2<a id="h000529"></a></h3>
+<div class="paragraph">
+<p>Daha da ileri gidelim: Mevcut tüm proses düğümlerine teker teker tıklayın ve iş akışı
+panelinin nasıl genişlediğini görün. Başka düğüm kalmayıncaya kadar
+devam edin. Bu işlemlerden sonra görünümü şöyle olmalıdır:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow3.png" alt="Workflow 3" width="542">
+</div>
+</div>
+<div class="paragraph">
+<p>Tamamen genişletilmiş bu durumunda iş
+akışı paneli, farklı işleme modüllerinde parçanın altı farklı görünümü arasında
+anlık olarak geçiş yapmanızı kolaylaştırır. Ayrıca bu modüller tarafından üretilen tüm çıktıları görüntüleyebilir,
+iletebilir veya yazdırabilirsiniz. (Çıktılar olarak raporlar, NC
+kodu veya zaman çalışmaları söz konusu olabilir).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_i̇ş_akışı_panelinde_gezinme">İş akışı panelinde gezinme<a id="h000530"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>İş akışı paneli, birçok bilgi ve faaliyetin kompakt ve
+grafiksel bir biçimde gösterilmesini mümkün kılar. Çoğunlukla, bu öğe, parçalarla çalışırken temel
+merkeziniz olarak işlev gösterecektir. İş akışı panelindeki bazı simgelerin nasıl
+kullanılabileceğini görmek için daha yakından görelim.</p>
+</div>
+<div class="sect2">
+<h3 id="_mevcut_proses_düğümleri">Mevcut proses düğümleri<a id="h000531"></a></h3>
+<div class="paragraph">
+<p>İçinde + işareti bulunan 13 köşeli bir yıldız, halihazırda
+kullanılabilir durumdaki bir işleme adımını temsil eder. Bu örnek olark, 2-D bir düzlemin 3-D bir parçaya katlanması
+veya lazer teknolojisi donatımlarının atanması için olabilir. Fareyi böyle bir düğümün üzerine getirdiğinizde, düğümün
+ne işe yaradığını açıklayan bir araç ipucu gösterilir.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow4.png" alt="Workflow4" width="260">
+</div>
+</div>
+<div class="paragraph">
+<p>Bu, birçok Kullanılabilir proses düğümü için
+tipik bir deseni takip eder. Düğüme tıklamak, prosesi
+varsayılan ayarlarla yürütecektir. Düğümdeki bir <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span>, önce ayarlar sayfasını açar; siz ayarları inceleyip
+düzelttikten sonra da proses yürütülür. Örneğin, Quick-Nest düğümüne <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> uyguladığınızda şu gösterilir:
+:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow5.png" alt="Workflow5" width="510">
+</div>
+</div>
+<div class="paragraph">
+<p>Yerleştirmeyi yapmadan önce düzenleyebilmeniz için hızlı yerleştirme ayarları görüntülenir.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tamamlanan_proses_düğümleri">Tamamlanan proses düğümleri<a id="h000532"></a></h3>
+<div class="paragraph">
+<p>Bir proses tamamlandığında, ilgili düğüm kullanılabilir
+işlem düğümünden tamamlanmış işlem düğümüne geçiş yapar; sembol, içinde
+onay işareti bulunan bir yıldıza dönüşür. Bu noktada, o düğüm için mevcut olan seçenekler değişir.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow6.png" alt="Workflow 6" width="428">
+</div>
+</div>
+<div class="paragraph">
+<p>Bu, tamamlanmış bir proses düğümünde bulunan
+tipik bir seçenekler setidir. Düğüme tıkladığınızda
+proses ayarları tekrar açılır; bu sayede ayarları değiştirebilir ve
+tekrar işlemeyi deneyebilirsiniz. Bir <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> seçeneği de işlem verilerini silmek için genellikle mevcut durumdadır. Bu seçeneği seçerseniz, silme gerçekleştirilmeden
+önce bir uyarı görüntülenir. Örneğin, tamamen işlenmiş bir parça için 3D Model
+düğümü üzerinde <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> uyguladığınızda şu yapılır:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow7.png" alt="Workflow7" width="641">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_yardımcı_komutlar">Yardımcı komutlar<a id="h000533"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Birçok düğümün yanında, yardımcı komutlar sunan
+küçük simgeler yer alır. Bu komutlar, söz konusu düğümle ilgili belirli
+fonksiyonlar sunar. Bazı örnekler
+aşağıda sağlanmıştır.</p>
+</div>
+<div id="h000534" class="ulist">
+<ul>
+<li>
+<p>Her bir teknoloji düğümünün yanındaki yardımcı simgeler genelde
+farklı bir makine seçmenize ve o makine için donatım yapmanıza imkan sağlar.<br>
+<span class="image"><img src="img/workflow8.png" alt="Workflow 8" width="440"></span></p>
+</li>
+<li>
+<p>Hızlı yerleştirme düğümünün yanında bulunan simge,
+farklı bir sac ölçüsünde yerleştirme yapmanıza olanak tanır.</p>
+</li>
+</ul>
+</div>
+<div id="h000536" class="ulist">
+<ul>
+<li>
+<p>Çıkış düğümlerinin yanında bulunan simgeler,
+bir işleme düğümünden gelen farklı çıktıları (raporlar, NC programları veya süre
+incelemeleri) görmenizi mümkün kılar.<br>
+<span class="image"><img src="img/workflow9.png" alt="Workflow 9" width="324"></span></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_kaynak_dosya_izleme">Kaynak dosya izleme<a id="h000537"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/srcfiletrack.png" alt="Source File Tracking" width="257">
+</div>
+</div>
+<div class="paragraph">
+<p>TecZone Bend dahilinde işleme süreci çoğunlukla, CAD verilerinin (2 boyutlu veya 3 boyutlu) içe aktarılması ile başlar. Bu
+CAD verilerinden oluşturulan TecZone Bend parçaları, bu kaynak parçaları izlemeye
+devam edebilir. Bir parça açıldığında TecZone Bend,
+parçanın oluşturulduğu orijinal CAD dosyasının arada geçen zaman boyunca
+değiştirilip değiştirilmediğini kontrol edebilir. Eğer bu durum söz konusuysa, parça artık güncel değildir
+ve bu iş akışı panelinde görülebilir.</p>
+</div>
+<div id="h000538" class="ulist">
+<ul>
+<li>
+<p>Kaynak parça düğümünün yanında bulunan Parçayı
+Yenile yardımcı simgesine tıklayarak parçayı yenileyebilirsiniz. TecZone Bend, CAD geometrisini yeniden içe aktaracak ve
+parçayı yeniden oluşturacaktır.</p>
+</li>
+<li>
+<p>Ayrıca, orijinal CAD geometrisinin izlenmesini
+durdurmayı da seçebilirsiniz. Bu, örnek olarak orijinal CAD dosyası bir çıkarılabilir
+diskte veya gelecekte erişilemeyecek olan bir uzak
+sürücüde bulunuyorsa faydalı olabilir.
+Bunun için, kaynak parça düğümünün yanındaki Bağlantısı Kesme yardımcı simgesine tıklayın. Bu, kaynak dosyayı izlemeyi durdurmaya yönelik bir
+uyarı mesajı görüntüler:<br>
+<span class="image"><img src="img/srcfiletrack2.png" alt="Source File Disconnect" width="508"></span></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_özet">Özet<a id="h000540"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>İş akışı panelindeki prensiplerin kısa bir özeti aşağıda sağlanmıştır.</p>
+</div>
+<div id="h000541" class="ulist">
+<ul>
+<li>
+<p>İş akışı paneli, farklı parça görünümlerini (lazer parçası, büküm parçası gibi)
+temsil eden düğümleri ve farklı işlemleri (3D&#8217;ye katlama,
+lazer donatımı atama gibi) temsil eden düğümleri gösterir.</p>
+</li>
+<li>
+<p>Mevcut olan (henüz işlenmemiş) proses düğümleri, içleri <span class="icon"><i class="fa fa-plus-circle"></i></span> işaretli
+13 köşeli yıldızlar olarak gösterilir. Tamamlanmış proses
+düğümleri, içleri <span class="icon"><i class="fa fa-check-circle"></i></span> işaretli yıldızlarla
+gösterilir.</p>
+</li>
+<li>
+<p>Mevcut bir proses düğümüne tıklamak, o prosesi varsayılan
+ayarlarla başlatır. Mevcut proses düğümlerine <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> uygulanması, önce proses ayarlarını düzenlemek üzere bir editörü açar ve ardından da prosesi harekete geçirir.</p>
+</li>
+<li>
+<p>Tamamlanan bir işlem düğümüne tıklanması,
+proses ayarlarını değiştirmenize ve prosesi tekrar uygulamanıza imkan tanır. Tamamlanmış bir proses düğümüne <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> uygulanması, proses verilerini kaldırır.</p>
+</li>
+<li>
+<p>Bir proses düğümünün veya parça görünümü düğümünün yanında
+bulunan küçük yardımcı simgeler, ilgili proses düğümünün bazı önemli
+parametrelerini (hedef makine veya yerleştirme sac ölçüsü gibi) değiştirmeye olanak sağlar.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_i̇ş_akışı_paneli">İş Akışı Paneli</a>
+  </li>
+  <li level="2">
+   <a href="#_i̇ş_akışı_düğümlerini_genişletme_aşama_1">İş akışı düğümlerini genişletme: Aşama 1</a>
+  </li>
+  <li level="2">
+   <a href="#_i̇ş_akışı_düğümlerini_genişletme_aşama_2">İş akışı düğümlerini genişletme: Aşama 2</a>
+  </li>
+  <li level="1">
+   <a href="#_i̇ş_akışı_panelinde_gezinme">İş akışı panelinde gezinme</a>
+  </li>
+  <li level="2">
+   <a href="#_mevcut_proses_düğümleri">Mevcut proses düğümleri</a>
+  </li>
+  <li level="2">
+   <a href="#_tamamlanan_proses_düğümleri">Tamamlanan proses düğümleri</a>
+  </li>
+  <li level="1">
+   <a href="#_yardımcı_komutlar">Yardımcı komutlar</a>
+  </li>
+  <li level="1">
+   <a href="#_kaynak_dosya_izleme">Kaynak dosya izleme</a>
+  </li>
+  <li level="1">
+   <a href="#_özet">Özet</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="clarity.html">Operasyon Yüzeyi</a></span>
+ <span class="next"><a href="../cad/index.html">CAD</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,755 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>การวัดมุม</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">ยินดีต้อนรับสู่ TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">บทนำ</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">การติดตั้งซอฟต์แวร์</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">ส่วนติดต่อผู้ใช้</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">Part Workflow</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">การนำเข้า 2 มิติ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">การล้างข้อมูล 2D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">การนำเข้า 3 มิติ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">การนำเข้าโมเดล 3 มิติ</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">การนำเข้าแอสเซมบลี</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">การตรวจจับฟอร์ม</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">การตรวจหาส่วนประกอบ</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">การปรับแก้เรขาคณิต</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">Laser CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">Part Workflow</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">Editing Panels</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">Laser Cut</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">Approach</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">Withdrawal</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">ขั้นสูง</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">Contour</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">การตัดเศษ</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">ชิ้นส่วน</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">Corner Treatment</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">Quick-Nest</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">ขั้นตอนการทำงานของงาน</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">Job Panel</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">แท็บ Sheets</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">Parts Tab</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">Layouts Tab</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">แท็บ Summary</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">การแก้ไขเลย์เอาต์</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">โหมดการ Nest</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">Placement Panel</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">การจัดลำดับ</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">แผ่นตัด</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">Bevel Cut</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">การเปิดเส้นโค้ง</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">การเอียงที่ปรับค่าได้</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">เบ็ดเตล็ด</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">กฎการเก็บชิ้นงาน</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">การแก้ไข LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">กลยุทธ์</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">Microjoints</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">การตั้งค่าเพิ่มเติม</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">Bend CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../createbenddata.html">สร้างข้อมูลการดัด</a></li>
+    <li><button class="tree blank"></button><a href="../navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../editing/index.html">การแก้ไขข้อมูลการดัด</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../editing/editbend.html">การแก้ไขการพับ</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editmount.html">การแก้ไขตัวยึดเครื่องมือ</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editsetup.html">การแก้ไข Bend Setup</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editgauge.html">การแก้ไข Back-gauge</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editacb.html">การแก้ไขการวัดมุม</a></li>
+      <li><button class="tree blank"></button><a href="../editing/bendsheet.html">ตารางการพับ</a></li>
+      <li><button class="tree blank"></button><a href="../editing/sequencing.html">การเปลี่ยนลำดับ</a></li>
+      <li><button class="tree blank"></button><a href="../editing/addsetup.html">การเพิ่มการตั้งค่าและสถานี</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">ขั้นสูง</a>
+     <ul>
+      <li><button class="tree blank"></button><a class="active" href="anglemeasurement.html">การวัดมุม</a></li>
+      <li><button class="tree blank"></button><a href="batchprocess.html">การประมวลผลแบบชุด</a></li>
+      <li><button class="tree blank"></button><a href="recompute.html">Recompute solution</a></li>
+      <li><button class="tree blank"></button><a href="tonnage.html">การตรวจสอบแรงกด</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">การหยิบชิ้นงาน</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">การหยิบจากพาเลท</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">Pickup from Dispenser</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">การดัดด้วยหุ่นยนต์</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">การแทรก</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">Bending</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">การนำชิ้นงานออก</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Regripping</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">แผง Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Add Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Edit Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Regrip ด้วยกริปเปอร์แบบขากรรไกร</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">แผงสถานี Regrip</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Part Deposit</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Deposit Patterns</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Repeat and Sequence</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Separator Sheet</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Cell Configuration</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Gripper Database</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Reports</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">Fold CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">การสร้างข้อมูลการพับ</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">มุมมอง Fold</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">การแก้ไขข้อมูลการพับ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">การแก้ไขการพับ</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">การแก้ไขด้าน/เซกชัน</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">การเปลี่ยนลำดับ</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">การแก้ไข blank-holder</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">การแก้ไขการวัดด้วยเกจ</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">การแก้ไขใบมีด</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">การแก้ไขการโหลด</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">การแก้ไขการถอดชิ้นงาน</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">สต็อกเครื่องมือ</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">ตารางระยะช่องว่างอากาศแบบกำหนดเอง</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">การทำงานของการดัดแบบแมนนวล</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">ความยาวขอบพับขั้นต่ำ</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">Settings</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">Drawing</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">Layers</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">Dimensions</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">View</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">Machine Defaults</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">Bend Outputs</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">Bend View</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">Bend Cell</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">เลย์เอาต์</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">Nest Settings</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">Sheet</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">Sheet Handling</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">Skeleton Cuts</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">Work Support</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">Sequence</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">Cut Outputs</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">Cut View</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">Panel Bending</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">ค่าเริ่มต้น</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">ZBW Carriers</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">Outputs</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">Reports</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">Item Defaults</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">Import/Export</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">Environment</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">ฐานข้อมูล</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">วัสดุ</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">เครื่องจักร</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">เครื่องมือดัด</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">ตัวจับดัด</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">ฟอร์ม/ส่วนประกอบ</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">Reports</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">ฟิลด์ รูปภาพ และตาราง</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">Bands (sub-reports)</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">Labels, Bitmaps และ Shapes</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">ภาคผนวก</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Supported 3D Formats</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">แผ่นคั่น DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">เครื่องมือดัด DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">Bend CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">ขั้นสูง</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="anglemeasurement.html">การวัดมุม</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>การวัดมุม</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>ระบบ Angle measurement</strong> เช่น ACB&#8482;, ACBLaser&#8482;, หรือ LCB&#8482; สามารถใช้เพื่อ
+ปรับปรุงความแม่นยำของมุมระหว่างการดัด ระบบนี้จะวัดมุมจริงที่ได้ระหว่าง
+การดัดและค่าการคืนตัวของแผ่นโลหะ รวมถึงใช้ข้อมูลนี้
+ในการปรับตำแหน่งจุดกึ่งกลางล่างสุดของคานแบบไดนามิกเพื่อให้ได้มุมดัดตามเป้าหมาย</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ระบบดิสก์และเลเซอร์">ระบบดิสก์และเลเซอร์<a id="h000136"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ระบบวัดมุมบางระบบใช้_ดิสก์เซ็นเซอร์_ที่ติดตั้งในหัวเจาะ หรือใช้_ระบบแสงเลเซอร์_ที่ฉายลงบนชิ้นงาน TecZone Bend รองรับ
+ทั้งสองแบบ และเมื่อคุณกำหนดค่าเครื่องจักร จะมีตัวเลือกบางอย่างที่สามารถ
+<strong>เปิดใช้งานได้</strong> โดยขึ้นอยู่กับอุปกรณ์ที่ติดตั้ง</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/acb-1.png" alt="Machine Settings" width="513">
+</div>
+</div>
+<div class="paragraph">
+<p>ภาพด้านบนแสดงแผงการตั้งค่าสำหรับเครื่อง Trumpf 5085 B23 เครื่องนี้
+รองรับการวัดมุมด้วยดิสก์ 2 แบบ (<strong>ACB-Classic</strong> และ <strong>ACB-Wireless</strong>)
+รวมถึงการวัดมุมด้วยเลเซอร์ (<strong>ACB-Laser</strong>) เครื่องนี้ถูกกำหนดค่า
+ให้ใช้ได้ทั้งสามตัวเลือก</p>
+</div>
+<div class="paragraph">
+<p>หากเครื่องพับโลหะมี_ระบบ_วัดมุมทั้งสองแบบ คุณอาจต้องการ
+กำหนดลำดับความสำคัญของแบบใดแบบหนึ่งหรือปิดการวัดมุมสำหรับ
+ชิ้นงานบางชิ้น คุณสามารถทำได้โดยใช้แผง <strong>Settings</strong><sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/acb-2.png" alt="ACB Settings" width="705">
+</div>
+</div>
+<div class="paragraph">
+<p>ส่วน <strong>Angle measurement</strong> ของหน้า <strong>Settings/BendCAM</strong> จะมีรายการให้เลือก
+ซึ่งคุณสามารถเปิดหรือปิดระบบวัดมุมต่างๆ ได้ คุณสามารถกำหนดลำดับความสำคัญ
+ของระบบได้ โดยเลือกและย้ายขึ้นหรือลงด้วย
+ปุ่มลูกศรขึ้น/ลงที่อยู่ข้างๆ ในตัวอย่างนี้ ได้เปิดใช้งานทั้งระบบวัดมุมแบบดิสก์และแบบเลเซอร์
+โดยให้ความสำคัญกับแบบเลเซอร์เป็นอันดับแรก<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</div>
+<div class="paragraph">
+<p>ตัวเลือก <strong>Use ACB Speed</strong> จะกำหนดว่าจะใช้กลยุทธ์ <strong>ACB Speed</strong> (ซึ่งใช้ได้ในเครื่องที่มี
+Touchpoint) เป็นค่าเริ่มต้นหรือไม่</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_วิธีการ_acb">วิธีการ ACB<a id="h000137"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>มี<strong>วิธีการ ACB</strong>หลายแบบที่สามารถใช้งานได้TecZone Bend วิธีการส่วนใหญ่ใช้ได้
+ทั้งในระบบวัดมุมแบบดิสก์และแบบเลเซอร์ ดังนั้นเราจะอธิบาย
+แต่ละวิธีก่อน</p>
+</div>
+<div class="sect2">
+<h3 id="_identify">Identify<a id="h000138"></a></h3>
+<div class="paragraph">
+<p>วิธี <strong>Identify</strong> หรือ <strong>Identification</strong> หรือ <strong>Identify Springback</strong> เป็นการใช้งาน ACB
+ในแบบมาตรฐาน เครื่องพับโลหะจะใช้ระบบวัดมุมเพื่อตรวจวัด
+มุมจริงที่กำลังเกิดขึ้นขณะพับชิ้นงาน เมื่อพับชิ้นงานเสร็จแล้ว เครื่องจักรจะเข้าสู่
+สถานะ <em>decompression</em> เพื่อให้โลหะ_คืนตัว_ การคืนตัวนี้จะถูกวัด
+ด้วย ACB และชดเชยด้วยการพับเกินอย่างแม่นยำ เพื่อหลีกเลี่ยง
+_การพับเกิน_มุมเป้าหมายระหว่างการวัด เครื่องจะ
+_พับให้ต่ำกว่า_มุมเล็กน้อยก่อน แล้วจึงพับซ้ำเพื่อให้ได้มุมตาม
+เป้าหมาย นี่เป็นวิธี ACB ที่แม่นยำที่สุด แต่ก็ใช้เวลามากที่สุดเช่นกัน</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_learn_y">Learn Y<a id="h000139"></a></h3>
+<div class="paragraph">
+<p>ในวิธี <strong>Learn Y</strong> จะไม่ใช้ระบบ ACB เลย ค่ามุมเป้าหมายของคานกด
+(bottom dead center) จะคัดลอกมาจากการพับครั้งก่อน (เรียกว่า <em>Reference bend</em>)
+ที่เคยวัดด้วยวิธี <strong>Identify</strong> การพับครั้งก่อนนี้ต้องมี
+มุม รัศมี และการใช้เครื่องมือเหมือนกันทุกประการ</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_learn_sb">Learn SB</h3>
+<div class="paragraph">
+<p>ในวิธี <strong>Learn SB</strong> หรือ <strong>Learn Springback</strong> ระบบ ACB จะใช้ค่ามุมคืนตัว
+จากการพับครั้งก่อนที่วัดด้วยวิธี <strong>Identify</strong> ระบบ ACB
+จะยังคงใช้เพื่อควบคุมการพับ แต่เนื่องจากไม่ต้องวัดครั้งที่สองหลังจากการคลายแรง
+ทำให้รอบการทำงานเร็วกว่าแบบ <strong>Identify</strong> เต็มรูปแบบ</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_enter_sb">Enter SB</h3>
+<div class="paragraph">
+<p>วิธี <strong>Enter SB</strong> หรือ <strong>Enter Springback</strong> หรือ <strong>Corrected</strong> หรือ <strong>ACB Smart</strong> จะใช้ระบบ ACB
+วัดมุมเป้าหมาย แต่ใช้ค่ามุมคืนตัวที่ผู้ใช้ป้อน
+เข้าไป พูดอีกอย่างคือ ACB จะพับชิ้นงานให้ได้มุมเป้าหมาย<br>
+ค่าการแก้ไขที่ผู้ใช้ป้อน จะไม่มีการวัดครั้งที่สองหลังการคลายแรง</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_สัญลักษณ์สำหรับ_acb">สัญลักษณ์สำหรับ ACB<a id="h000140"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TecZone Bend ใช้ไอคอนหลายแบบเพื่อแสดงวิธี ACB ต่างๆ หรือข้อผิดพลาดและ
+คำเตือนของ ACB ต่อไปนี้คือไอคอนที่ใช้แสดงระบบ ACB และโหมดต่างๆ ใน
+ตัวนำทางการพับ:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>ไอคอน</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ความหมาย</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-ok.png" alt="acb ok" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ระบบดิสก์, วิธี <strong>Identify</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-learned.png" alt="acb learned" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ระบบดิสก์, วิธี <strong>Learn Y</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-corrected.png" alt="acb corrected" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ระบบดิสก์, วิธี <strong>Enter SB</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-ok.png" alt="lcb ok" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ระบบเลเซอร์, วิธี <strong>Identify</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-learned.png" alt="lcb learned" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ระบบเลเซอร์, วิธี <strong>Learn Y</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-corrected.png" alt="lcb corrected" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ระบบเลเซอร์, วิธี <strong>Enter SB</strong></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>ต่อไปนี้คือไอคอนที่ใช้แสดงคำเตือนและข้อผิดพลาด:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>ไอคอน</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ความหมาย</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-flange.png" alt="acb flange" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flange too narrow สำหรับดิสก์เซ็นเซอร์</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-range.png" alt="acb range" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ดิสก์เซ็นเซอร์อยู่ใกล้ขอบชิ้นงานเกินไป</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-hole.png" alt="acb hole" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ดิสก์เซ็นเซอร์ตกลงไปในรู (มีความเสี่ยงต่อการแตกหัก)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-reference.png" alt="acb reference" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ไม่ถูกต้อง Reference bend (ไม่สามารถเรียนรู้จากการพับนี้ได้)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-flange.png" alt="lcb flange" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ความยาวรอยเลเซอร์น้อยกว่าค่าที่เหมาะสม (คำเตือน)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-single.png" alt="lcb single" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ใช้เลเซอร์เพียงตัวเดียว (ด้านหน้าหรือด้านหลัง) ในการวัด</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-flange-err.png" alt="lcb flange err" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ความยาวรอยเลเซอร์ต่ำเกินไปที่จะวัดได้ (ข้อผิดพลาด)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>ไอคอนเหล่านี้พร้อมข้อมูลอื่นเกี่ยวกับระบบ ACB และวิธีการที่ใช้อยู่จะแสดงอยู่ในแถว <strong>ACB</strong> ของตัวนำทาง:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/acb-3.png" alt="ACB-Navigator" width="333">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_หมายเหตุเกี่ยวกับการวัดมุม">หมายเหตุเกี่ยวกับการวัดมุม<a id="h000141"></a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_ชื่อของระบบเลเซอร์">ชื่อของระบบเลเซอร์<a id="h000142"></a></h3>
+<div class="paragraph">
+<p>ระบบวัดมุมแบบเลเซอร์มีชื่อเรียกต่างกัน เช่น <strong>ACB-Laser</strong> หรือ <strong>LCB</strong>
+ระบบเหล่านี้ทั้งหมดถูกตั้งโปรแกรมเหมือนกันใน TecZone Bend แม้ว่าฮาร์ดแวร์และการทำงานของเครื่องจักรจริง
+จะต่างกันก็ตาม ส่วนใหญ่ในส่วนติดต่อผู้ใช้ TecZone Bend จะใช้คำว่า <strong>ACB</strong> หรือ</p>
+</div>
+<div class="paragraph">
+<p><strong>ACB-Laser</strong> ดังนั้นเราจะใช้คำนี้ในคำอธิบายนี้เช่นกัน</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_พฤติกรรมของ_auto_tooler">พฤติกรรมของ Auto-tooler<a id="h000143"></a></h3>
+<div class="paragraph">
+<p>TecZone Bend Auto-tooler จะกำหนดวิธี ACB แบบเลเซอร์ _methods_ให้กับการพับแต่ละครั้งอย่างเหมาะสมที่สุด
+เริ่มแรกจะใช้วิธี <strong>Identify</strong> กับการพับครั้งแรก แล้วพยายาม
+ใช้วิธี <strong>Learn Y</strong> กับการพับถัดไปเมื่อเป็นไปได้ ถ้ามีการพับที่มี
+มุม รัศมี ชุดเครื่องมือ และ_ทิศทางเสี้ยนของวัสดุ_คล้ายกันอยู่แล้ว TecZone Bend
+จะใช้วิธี <strong>Learn Y</strong> แทนที่จะทำการ Identify ซ้ำอีกครั้ง</p>
+</div>
+<div class="paragraph">
+<p>การพับบางครั้งอาจถูกข้ามโดยอัตโนมัติเนื่องจาก:</p>
+</div>
+<div id="h000144" class="ulist">
+<ul>
+<li>
+<p>มุมพับอยู่นอกช่วงการวัดของเซนเซอร์ (แหลมเกินไป/ป้านเกินไป)</p>
+</li>
+<li>
+<p>ไม่ใช่การพับแบบ Air-bending (เช่น Coining, Z-bending, Hemming หรือ Folding)</p>
+</li>
+<li>
+<p>เป็นการพับก่อนเพื่อใช้กับการพับอื่น (ไม่จำเป็นต้องวัดมุมแม่นยำ)</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/acb-4.png" alt="Skipped" width="523">
+</div>
+</div>
+<div class="paragraph">
+<p>ภาพด้านบนแสดงชิ้นงานที่บางการพับไม่มีการใช้วิธี ACB จะแสดงด้วย
+ไอคอนวงกลมโปร่งในแถว ACB และเมื่อเลื่อนเมาส์ไปบนแต่ละช่องจะแสดง_เหตุผล_ที่ไม่ได้
+ทำการวัด ACB</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_การได้ค่าการวัดที่ถูกต้อง">การได้ค่าการวัดที่ถูกต้อง<a id="h000147"></a></h3>
+<div class="paragraph">
+<p>เมื่อมีการวัดด้วย ACB TecZone Bend จะตัดสินใจว่าจะต้องวัดหนึ่งครั้ง สองครั้ง หรือสามครั้ง
+โดยขึ้นอยู่กับความยาวของเส้นพับ ตำแหน่งการวัดจริง
+จะถูกคำนวณโดยอัตโนมัติ แต่สามารถแก้ไขได้โดยใช้<strong>แผง ACB</strong>
+อธิบายด้านล่าง) โดยปกติ TecZone Bend จะเลื่อนเซ็นเซอร์ ACB ทั้งสองตัว_เข้าด้วยกัน_ และจะใช้เซ็นเซอร์ทั้งด้านหน้าและด้านหลังสำหรับ ACB measurement แต่สามารถแก้ไขได้</p>
+</div>
+<div class="paragraph">
+<p>TecZone Bend สามารถประเมิน_ความยาวรอยเลเซอร์_สำหรับ ACB measurement ได้ นี่คือความยาว
+ของเส้นเลเซอร์ที่ฉายซึ่งกล้องสามารถมองเห็นได้ บางส่วนของเส้นอาจ
+ถูกบังด้วยดายหรือเกจวัด บางส่วนของเส้นอาจผ่านรูในแผ่นโลหะ
+หรือผ่านรอยขึ้นรูป การประเมินนี้นำปัจจัยทั้งหมดมาพิจารณาและสามารถคำนวณ
+ความยาวของเส้นที่มีให้กับระบบออปติกได้จริง TecZone Bend จะเปรียบเทียบความยาว
+ที่มีนี้กับค่าความยาว_ขั้นต่ำ_และความยาว_เหมาะสม_ ที่เครื่องกำหนดไว้ และจะแสดงข้อผิดพลาด
+หรือคำเตือนที่เหมาะสม (ดังที่แสดงในส่วน Symbols TecZone Bend ด้านบน)</p>
+</div>
+<div class="paragraph">
+<p>TecZone Bend มีความสามารถในการเลื่อนตำแหน่งการวัดไปทางซ้ายหรือขวา
+เพื่อหลีกเลี่ยงรู รอยขึ้นรูป หรือปัจจัยอื่นที่อาจจำกัดความยาวรอยเลเซอร์้ นอกจากนี้
+TecZone Bend จะเพิ่มการถอยอัตโนมัติให้กับเกจวัดหากเกจวัดอยู่ในตำแหน่งที่ขวาง
+การวัดด้วยเลเซอร์์ นอกจากนี้ การประเมินความยาวรอยเลเซอร์จะทำอย่างต่อเนื่อง
+ดังนั้นหากคุณเลื่อนตำแหน่งเซ็นเซอร์ ACB หรือปรับเกจวัด
+คุณจะเห็นผลลัพธ์ได้ทันทีในตัวนำทาง</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. เช่นเดียวกับการตั้งค่าอื่นๆ คุณสามารถใช้ <strong>Application Settings</strong> เพื่อกำหนดการตั้งค่านี้ในระดับรวม (สำหรับเครื่องทั้งหมด) ใช้ <strong>Machine Settings</strong> เพื่อกำหนดค่าเริ่มต้นสำหรับเครื่องเฉพาะ และใช้ <strong>Part Settings</strong> เพื่อเปลี่ยนค่าเริ่มต้นสำหรับชิ้นงานนั้นๆ
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. การเปิดใช้งานระบบวัดมุมในที่นี้จะมีผลต่อเมื่อเครื่องจักรติดตั้งระบบวัดมุมประเภทนั้น เป็นอุปกรณ์เสริมไว้แล้ว พูดอีกอย่างก็คือ ฟังก์ชันนี้ใช้ได้จริงเพื่อ_ปิดกั้น_ ไม่ให้ใช้ระบบใดระบบหนึ่งเท่านั้น
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_ระบบดิสก์และเลเซอร์">ระบบดิสก์และเลเซอร์</a>
+  </li>
+  <li level="1">
+   <a href="#_วิธีการ_acb">วิธีการ ACB</a>
+  </li>
+  <li level="2">
+   <a href="#_identify">Identify</a>
+  </li>
+  <li level="2">
+   <a href="#_learn_y">Learn Y</a>
+  </li>
+  <li level="2">
+   <a href="#_learn_sb">Learn SB</a>
+  </li>
+  <li level="2">
+   <a href="#_enter_sb">Enter SB</a>
+  </li>
+  <li level="1">
+   <a href="#_สัญลักษณ์สำหรับ_acb">สัญลักษณ์สำหรับ ACB</a>
+  </li>
+  <li level="1">
+   <a href="#_หมายเหตุเกี่ยวกับการวัดมุม">หมายเหตุเกี่ยวกับการวัดมุม</a>
+  </li>
+  <li level="2">
+   <a href="#_ชื่อของระบบเลเซอร์">ชื่อของระบบเลเซอร์</a>
+  </li>
+  <li level="2">
+   <a href="#_พฤติกรรมของ_auto_tooler">พฤติกรรมของ Auto-tooler</a>
+  </li>
+  <li level="2">
+   <a href="#_การได้ค่าการวัดที่ถูกต้อง">การได้ค่าการวัดที่ถูกต้อง</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="index.html">ขั้นสูง</a></span>
+ <span class="next"><a href="batchprocess.html">การประมวลผลแบบชุด</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

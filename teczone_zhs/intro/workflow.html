@@ -1,0 +1,719 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>零件工作流程</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">欢迎使用 TecZone</a></li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">介绍</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="install.html">安装软件</a></li>
+    <li><button class="tree blank"></button><a href="clarity.html">用户界面</a></li>
+    <li><button class="tree blank"></button><a class="active" href="workflow.html">零件工作流程</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">2D导入</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">2D清理</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">3D导入</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">导入 3D 模型</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">导入组件</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">成形加工检测</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">部件检测</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">修改几何形状</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">激光 CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">零件工作流程</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">编辑面板</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">激光切割</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">驶入</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">出刀</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">微连接</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">高级</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">轮廓</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">废料切割</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">零件</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">转角处理</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">快速排样</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">套料工作流程</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">任务面板</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">板材选项卡</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">零件选项卡</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">布局选项卡</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">摘要选项卡</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">编辑布局</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">排样模式</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">放置面板</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">顺序</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">板材切片</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">斜切</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">打开轮廓</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">可变斜角</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">杂项</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">高级</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">精加工规则</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">编辑LTT</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">策略</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">微连接</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">其他设置</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">折弯 CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">创建折弯数据</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">折弯导航器</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">编辑折弯数据</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">编辑折弯</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">编辑模具装置</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">编辑折弯设置</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">编辑后挡料</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">编辑角度测量</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">折弯电子表格</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">更改顺序</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">添加设置和工站</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">高级</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">角度测量</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">批处理</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">重新计算解决方案</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">吨位检查</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">折弯导航器</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">零件拾取</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">从托盘拾取</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">从分配器拾取</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">机器人折弯</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">插入</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">折弯</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">提取</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">改抓</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">改抓面板</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">添加改抓</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">编辑改抓</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">用夹爪改抓</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">改抓站面板</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">零件存储</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">存储模式</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">重复和顺序</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">分张板材</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">高级</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">位移点</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">单元配置</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">夹钳数据库</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">报告</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">折边 CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">创建折边数据</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">折边视图</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">编辑折边数据</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">编辑折弯</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">编辑边/区域</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">更改顺序</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">编辑压边模</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">编辑止挡件</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">编辑刀片</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">编辑上料</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">编辑下料</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">模具库存</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">高级</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">自定义气隙表</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">手动折弯完成</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">所需法兰长度</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">设置</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">图纸</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">图层</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">尺寸</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">视图</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">折弯 CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">机床默认设置</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">折弯输出</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">折弯视图</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">折弯单元</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">切割 CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">布局</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">排样设置</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">板材</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">板材处理</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">骨架切割</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">置放支架</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">激光 CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">顺序</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">切割输出</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">切割视图</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">翻板折弯</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">默认设置</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">ZBW托架</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">输出</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">报告</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">条目规定</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">导入/导出</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">环境</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">数据库</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">材料</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">机床</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">折弯模具</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">折弯夹钳</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">成形加工/部件</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">报告</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">报告设计器</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">字段、图片和表格</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">图素集（子报告）</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">标签、位图和形状</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">附录</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">支持的3D格式</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">分张板材DXF</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">折弯模具DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">版权声明</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">介绍</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="workflow.html">零件工作流程</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>零件工作流程</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>由于TecZone Bend 具有许多集成模块，因此通常有多个_路径_可移动零件数据。</p>
+</div>
+<div id="h000514" class="paragraph">
+<p><strong>示例1</strong>：当您加载平面零件数据（从GEO文件或DXF文件）时，您可以选择</p>
+</div>
+<div id="h000515" class="ulist">
+<ul>
+<li>
+<p>将激光加工分配给零件，以便将其放置在板材上并切割，与其他零件一起。</p>
+</li>
+<li>
+<p>将零件沿折弯线折边成3D零件，以便加工和为折弯机计算折弯顺序。</p>
+</li>
+</ul>
+</div>
+<div id="h000517" class="paragraph">
+<p><strong>示例2</strong>：当您导入3D平面模型（从IGES或STEP文件）时，您可以选择</p>
+</div>
+<div id="h000518" class="ulist">
+<ul>
+<li>
+<p>分析表面，并沿着需要切割的孔放置5轴激光 CAM 加工。</p>
+</li>
+<li>
+<p>进行特征识别，将平面模型转换为板材模型，然后将其展开成平面图案，以便用冲裁折弯机冲裁出来。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_工作流程面板">工作流程面板<a id="h000520"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/workflow1.png" alt="Workflow 1" width="248">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>工作流程</strong>面板就像一个中央枢纽，您可以由此指挥所有这些动作。当您打开零件时，您始终可以调出工作流程操作面板：只需按 <kbd>W</kbd> 或点击左侧指令栏中的工作流程图标即可。让我们探索一下工作流程操作面板；从导入一个带有折弯参数的2D零件开始（例如 GEO 文件）。此时调出工作流程操作面板将显示以下内容：</p>
+</div>
+<div id="h000521" class="ulist">
+<ul>
+<li>
+<p>我们从Bend_28.geo开始，导入并清理，以创建2D板材零件（显示零件尺寸）</p>
+</li>
+<li>
+<p>然后在工作流程中出现一个分支。</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>我们可以将激光工艺分配给零件（这仅仅意味着分配激光切割路径至零件轮廓）。</p>
+</li>
+<li>
+<p>我们可以将平面零件折边成3D（检测到9个折弯）。</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_扩展工作流程节点第1阶段">扩展工作流程节点：第1阶段<a id="h000523"></a></h3>
+<div class="paragraph">
+<p>单击激光工艺图标为零件分配激光加工。您将看到零件会立即被分析并添加激光加工。然后，单击“折边成3D”图标，将平面零件折边成3D。完成这些步骤后，工作流程面板如下所示：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow2.png" alt="Workflow 2" width="698">
+</div>
+</div>
+<div class="paragraph">
+<p>如注释所示，工作流程图中有不同类型的节点。</p>
+</div>
+<div id="h000524" class="ulist">
+<ul>
+<li>
+<p>零件视图节点代表可在零件上执行的各种类型的加工。单击这些节点可将零件切换为该_视图_，零件上可用的操作集对该视图具有代表性。例如，在“激光零件”视图中，可以查看和编辑分配给零件的激光加工。</p>
+</li>
+<li>
+<p>您可以通过单击这些图标在这些视图之间切换。所有这些不同的零件视图也有快捷键，只要将鼠标放置在其中一个视图图标处，即可进行查看。学习这些快捷键，以快速浏览整个工作流程。由此，一段时间后，您将可使用键顺序（如<kbd>W</kbd><kbd>B</kbd><kbd>Esc</kbd>）打开工作流程面板，切换到零件折弯视图，然后关闭工作流程面板。</p>
+</li>
+<li>
+<p>零件数据通过不同过程在这些节点之间推送，这些过程在工作流程面板中使用13点星形图标表示。例如，您从2D零件视图移动到激光工艺流程的激光零件视图（分析2D零件并为其分配激光加工）。您已完成的流程中会显示一个勾选标记。您还没有完成（但可用）的流程中会显示一个打叉标记。您可以单击这些流程节点来完成流程。让我们总结一下我们在这个阶段的工作流程：</p>
+</li>
+</ul>
+</div>
+<div id="h000527" class="ulist">
+<ul>
+<li>
+<p>现在有3个零件视图可用（2D零件，激光零件和3D模式，我们可以在其之间切换）。</p>
+</li>
+<li>
+<p>还有四个可用的流程：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>我们可以后处理扁平零件（这将生成一个扁平零件报告，后者对激光或冲裁折弯机操作员很有用；它通常包括激光切割时间、冲裁折弯机加工设置和此零件的其他特殊加工要求）。</p>
+</li>
+<li>
+<p>我们可以执行快速排样（快速排样是只包含一种零件类型的排样）并生成用该零件填充的完整板材。这可用于生产仅包含此零件的板材，或帮助快速估算此零件的成本或时间。</p>
+</li>
+<li>
+<p>我们可以为零件分配折弯工艺（折弯机加工）。</p>
+</li>
+<li>
+<p>我们可以为零件分配焊接工艺（焊接机器人加工）。</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_扩展工作流程节点第2阶段">扩展工作流程节点：第2阶段<a id="h000529"></a></h3>
+<div class="paragraph">
+<p>让我们更进一步：一次单击所有可用的流程节点，然后查看工作流程面板的展开方式。继续操作，直到您没有更多节点剩余。以下是完成这些流程后应采取的措施：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow3.png" alt="Workflow 3" width="542">
+</div>
+</div>
+<div class="paragraph">
+<p>在这种完全展开的状态下，工作流程面板使您可以轻松地在各种加工模块中即时切换零件的六个不同视图。您还可以查看和传输或打印所有这些模块生成的各种输出。（输出可以是报告，NC代码或时间研究）。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_浏览工作流程面板">浏览工作流程面板<a id="h000530"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>工作流程面板以紧凑的图纸形式呈现大量信息和操作。大多数情况下，这里将作为您处理零件的中心枢纽。让我们更仔细地看看工作流程面板中的一些图标，以了解如何使用它们。</p>
+</div>
+<div class="sect2">
+<h3 id="_可用的流程节点">可用的流程节点<a id="h000531"></a></h3>
+<div class="paragraph">
+<p>一个内部带有+的13角星代表一个现在可用的加工步骤。例如，它可以是将2D平面折边成3D零件，或激光工艺加工的分配。将鼠标悬停在这样的节点上，可显示一个解释节点将如何执行的工具提示。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow4.png" alt="Workflow4" width="260">
+</div>
+</div>
+<div class="paragraph">
+<p>这遵循许多可用流程节点的典型模式。点击节点将使用默认设置执行流程。节点上的<span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span>首先会显示一个设置页面，在您查看/编辑设置后，将执行该过程。例如，当您<span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span>快速排样节点时：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow5.png" alt="Workflow5" width="510">
+</div>
+</div>
+<div class="paragraph">
+<p>将显示快速排样设置，以便您可以在进行排样之前对其进行编辑。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_已完成的流程节点">已完成的流程节点<a id="h000532"></a></h3>
+<div class="paragraph">
+<p>过程完成后，节点从可用的流程节点更改为已完成的流程节点；符号变为内部带有勾选标记的星形。此时，该节点的可用选项会发生变化。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow6.png" alt="Workflow 6" width="428">
+</div>
+</div>
+<div class="paragraph">
+<p>这是已完成流程节点上典型的可用选项集。点击节点将再次显示过程设置，由此您可以调整它们并再次尝试加工。通常还有一个<span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span>选项可用于删除过程数据。如果选择此选项，在执行删除之前系统将提示您。例如，当您<span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span>3D模型节点时，对于完全加工的零件：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow7.png" alt="Workflow7" width="641">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_辅助命令">辅助命令<a id="h000533"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>许多节点附近都有小图标，提供辅助命令。这些命令提供一些与该节点相关的功能。以下是一些示例。</p>
+</div>
+<div id="h000534" class="ulist">
+<ul>
+<li>
+<p>每个工艺节点附近的辅助图标通常允许您选择不同的机床并为该机床执行装备。<br>
+<span class="image"><img src="img/workflow8.png" alt="Workflow 8" width="440"></span></p>
+</li>
+<li>
+<p>快速排样节点附近的图标允许您以不同的板材大小排样。</p>
+</li>
+</ul>
+</div>
+<div id="h000536" class="ulist">
+<ul>
+<li>
+<p>输出节点附近的图标可让您查看加工节点的各种输出（报告、数控程序或时间研究）。<br>
+<span class="image"><img src="img/workflow9.png" alt="Workflow 9" width="324"></span></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_源文件追踪">源文件追踪<a id="h000537"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/srcfiletrack.png" alt="Source File Tracking" width="257">
+</div>
+</div>
+<div class="paragraph">
+<p>TecZone Bend中的大多数加工都是从导入CAD数据（2D或3D）开始的。从此CAD数据构建的TecZone Bend零件可以继续追踪这些源零件。打开零件时，TecZone Bend可以检查用于创建零件的原始CAD文件在此期间是否已被更改。如果已更改，则零件现在已过时，这可以在工作流程面板中看到。</p>
+</div>
+<div id="h000538" class="ulist">
+<ul>
+<li>
+<p>您可以选择刷新零件，方法是单击源零件节点附近的刷新零件辅助图标。TecZone Bend 将重新导入CAD几何形状并重建零件。</p>
+</li>
+<li>
+<p>您还可以选择停止追踪原始CAD几何形状。例如，如果原始CAD文件存在于可移除介质或在将来可能无法访问的远程驱动器上，此功能可能有用。要执行此操作，请单击源零件节点附近的断开链接辅助图标。这将提示您停止追踪源文件：<br>
+<span class="image"><img src="img/srcfiletrack2.png" alt="Source File Disconnect" width="508"></span></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_总结">总结<a id="h000540"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>以下是工作流程面板中原理的简要总结。</p>
+</div>
+<div id="h000541" class="ulist">
+<ul>
+<li>
+<p>工作流程面板显示代表各种零件视图的节点（例如激光零件、折弯零件）和代表各种过程的节点（如折边到3D、分配激光加工）。</p>
+</li>
+<li>
+<p>可用（尚未执行）的流程节点表示为13角星，里面有<span class="icon"><i class="fa fa-plus-circle"></i></span>符号。已经完成的流程节点由内有<span class="icon"><i class="fa fa-check-circle"></i></span>标记的星形表示。</p>
+</li>
+<li>
+<p>单击可用的流程节点会以默认设置调用该流程。<span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> 一个可用的流程节点，会显示一个编辑器，先编辑流程设置，然后调用流程。</p>
+</li>
+<li>
+<p>单击已完成的流程节点可以调整过程设置和再次应用加工。<span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> 已完成的流程节点可删除加工数据。</p>
+</li>
+<li>
+<p>通过流程节点或零件视图节点附近的小型辅助图标，可控制以更改该流程节点的一些重要参数（例如目标机床，或排样板材尺寸）。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_工作流程面板">工作流程面板</a>
+  </li>
+  <li level="2">
+   <a href="#_扩展工作流程节点第1阶段">扩展工作流程节点：第1阶段</a>
+  </li>
+  <li level="2">
+   <a href="#_扩展工作流程节点第2阶段">扩展工作流程节点：第2阶段</a>
+  </li>
+  <li level="1">
+   <a href="#_浏览工作流程面板">浏览工作流程面板</a>
+  </li>
+  <li level="2">
+   <a href="#_可用的流程节点">可用的流程节点</a>
+  </li>
+  <li level="2">
+   <a href="#_已完成的流程节点">已完成的流程节点</a>
+  </li>
+  <li level="1">
+   <a href="#_辅助命令">辅助命令</a>
+  </li>
+  <li level="1">
+   <a href="#_源文件追踪">源文件追踪</a>
+  </li>
+  <li level="1">
+   <a href="#_总结">总结</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="clarity.html">用户界面</a></span>
+ <span class="next"><a href="../cad/index.html">CAD</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

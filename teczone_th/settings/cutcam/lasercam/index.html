@@ -1,0 +1,870 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../res/bento.css">
+  <link rel="stylesheet" href="../../../res/site.css">
+  <link rel="stylesheet" href="../../../res/tree.css">
+  <link rel="stylesheet" href="../../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../../img/trumpf-icon.png">
+  <title>Laser CAM</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../../index.html">ยินดีต้อนรับสู่ TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../intro/index.html">บทนำ</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../intro/install.html">การติดตั้งซอฟต์แวร์</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/clarity.html">ส่วนติดต่อผู้ใช้</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/workflow.html">Part Workflow</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/2dimport/index.html">การนำเข้า 2 มิติ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/2dimport/2dcleanup.html">การล้างข้อมูล 2D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/3dimport/index.html">การนำเข้า 3 มิติ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prep3dmodel.html">การนำเข้าโมเดล 3 มิติ</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prepassembly.html">การนำเข้าแอสเซมบลี</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/formdetect.html">การตรวจจับฟอร์ม</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/componentdetect.html">การตรวจหาส่วนประกอบ</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../cad/sketch.html">การปรับแก้เรขาคณิต</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cut/index.html">Laser CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/partworkflow/index.html">Part Workflow</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/partworkflow/panels/index.html">Editing Panels</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../../cut/partworkflow/panels/lasercut/index.html">Laser Cut</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/approach.html">Approach</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/withdrawal.html">Withdrawal</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/advanced.html">ขั้นสูง</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/contour.html">Contour</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/scrapcut.html">การตัดเศษ</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/part.html">ชิ้นส่วน</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/cornertreatment.html">Corner Treatment</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/partworkflow/quicknest.html">Quick-Nest</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/jobworkflow/index.html">ขั้นตอนการทำงานของงาน</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/jobpanel/index.html">Job Panel</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/sheets.html">แท็บ Sheets</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/parts.html">Parts Tab</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/layouts.html">Layouts Tab</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/summary.html">แท็บ Summary</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/editlayout/index.html">การแก้ไขเลย์เอาต์</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/nestingmodes.html">โหมดการ Nest</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/placementpanel.html">Placement Panel</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/sequencing.html">การจัดลำดับ</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/slicesheet.html">แผ่นตัด</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/bevelcut/index.html">Bevel Cut</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/opencontours.html">การเปิดเส้นโค้ง</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/variablebevel.html">การเอียงที่ปรับค่าได้</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/miscellaneous.html">เบ็ดเตล็ด</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/finishingrules.html">กฎการเก็บชิ้นงาน</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/editltt.html">การแก้ไข LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/strategies.html">กลยุทธ์</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/microjoints.html">Microjoints</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/stability.html">การตั้งค่าเพิ่มเติม</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bend/index.html">Bend CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">สร้างข้อมูลการดัด</a></li>
+    <li><button class="tree blank"></button><a href="../../../bend/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/editing/index.html">การแก้ไขข้อมูลการดัด</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editbend.html">การแก้ไขการพับ</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editmount.html">การแก้ไขตัวยึดเครื่องมือ</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editsetup.html">การแก้ไข Bend Setup</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editgauge.html">การแก้ไข Back-gauge</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editacb.html">การแก้ไขการวัดมุม</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/bendsheet.html">ตารางการพับ</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/sequencing.html">การเปลี่ยนลำดับ</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/addsetup.html">การเพิ่มการตั้งค่าและสถานี</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/anglemeasurement.html">การวัดมุม</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/batchprocess.html">การประมวลผลแบบชุด</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/recompute.html">Recompute solution</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">การตรวจสอบแรงกด</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bcell/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/pickup/index.html">การหยิบชิ้นงาน</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/frompallet.html">การหยิบจากพาเลท</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/pickup/fromdispenser.html">Pickup from Dispenser</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/bending/index.html">การดัดด้วยหุ่นยนต์</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/insertion.html">การแทรก</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/bending.html">Bending</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/bending/extraction.html">การนำชิ้นงานออก</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/regrip/index.html">Regripping</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/regrippanel.html">แผง Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/addregrip.html">Add Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/editregrip.html">Edit Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/jawregrip.html">Regrip ด้วยกริปเปอร์แบบขากรรไกร</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/rgstationpanel.html">แผงสถานี Regrip</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/deposit/index.html">Part Deposit</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/patterns.html">Deposit Patterns</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/repeat.html">Repeat and Sequence</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/separatorsheet.html">Separator Sheet</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/cellconfig.html">Cell Configuration</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb.html">Gripper Database</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/reports.html">Reports</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../fold/index.html">Fold CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../fold/createfolddata.html">การสร้างข้อมูลการพับ</a></li>
+    <li><button class="tree blank"></button><a href="../../../fold/foldview.html">มุมมอง Fold</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/editing/index.html">การแก้ไขข้อมูลการพับ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbend.html">การแก้ไขการพับ</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editside.html">การแก้ไขด้าน/เซกชัน</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editseq.html">การเปลี่ยนลำดับ</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbh.html">การแก้ไข blank-holder</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editgauge.html">การแก้ไขการวัดด้วยเกจ</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editblade.html">การแก้ไขใบมีด</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editload.html">การแก้ไขการโหลด</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editunload.html">การแก้ไขการถอดชิ้นงาน</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../fold/toolinventory.html">สต็อกเครื่องมือ</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/airgaptables.html">ตารางระยะช่องว่างอากาศแบบกำหนดเอง</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/manualbend.html">การทำงานของการดัดแบบแมนนวล</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/minflangelength.html">ความยาวขอบพับขั้นต่ำ</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../../index.html">Settings</a>
+   <ul>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../drawing/index.html">Drawing</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../drawing/layers.html">Layers</a></li>
+      <li><button class="tree blank"></button><a href="../../drawing/dimensions.html">Dimensions</a></li>
+      <li><button class="tree blank"></button><a href="../../drawing/view.html">View</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bendcam/benddefaults.html">Machine Defaults</a></li>
+      <li><button class="tree blank"></button><a href="../../bendcam/bendoutputs.html">Bend Outputs</a></li>
+      <li><button class="tree blank"></button><a href="../../bendcam/bendview.html">Bend View</a></li>
+      <li><button class="tree blank"></button><a href="../../bendcam/bendcell.html">Bend Cell</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="../index.html">Cut CAM</a>
+     <ul>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../layout/index.html">เลย์เอาต์</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../layout/nesting.html">Nest Settings</a></li>
+        <li><button class="tree blank"></button><a href="../layout/sheet.html">Sheet</a></li>
+        <li><button class="tree blank"></button><a href="../layout/sheethandling.html">Sheet Handling</a></li>
+        <li><button class="tree blank"></button><a href="../layout/skeletoncuts.html">Skeleton Cuts</a></li>
+        <li><button class="tree blank"></button><a href="../layout/worksupport.html">Work Support</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree open"></button>
+       <a class="active" href="index.html">Laser CAM</a>
+       <ul>
+        <li><button class="tree blank"></button><a href="sequence.html">Sequence</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cutoutputs.html">Cut Outputs</a></li>
+      <li><button class="tree blank"></button><a href="../cutview.html">Cut View</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../foldcam/index.html">Panel Bending</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../foldcam/defaults.html">ค่าเริ่มต้น</a></li>
+      <li><button class="tree blank"></button><a href="../../foldcam/zbwcarriers.html">ZBW Carriers</a></li>
+      <li><button class="tree blank"></button><a href="../../foldcam/foldoutputs.html">Outputs</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../reports/index.html">Reports</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../reports/itemdefaults.html">Item Defaults</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../importexport.html">Import/Export</a></li>
+    <li><button class="tree blank"></button><a href="../../environment.html">Environment</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../database/index.html">ฐานข้อมูล</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../database/materials.html">วัสดุ</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/machines.html">เครื่องจักร</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendtools.html">เครื่องมือดัด</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">ตัวจับดัด</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">ฟอร์ม/ส่วนประกอบ</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../report/index.html">Reports</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/fields.html">ฟิลด์ รูปภาพ และตาราง</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/bands.html">Bands (sub-reports)</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/labels.html">Labels, Bitmaps และ Shapes</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../appendix/index.html">ภาคผนวก</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">Supported 3D Formats</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">แผ่นคั่น DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">เครื่องมือดัด DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../../index.html">Settings</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="../index.html">Cut CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Laser CAM</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Laser CAM</h1>
+<div class="sect1">
+<h2 id="_cutting">Cutting<a id="h000955"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>มีสามเงื่อนไขที่ใช้ในการตัดแผ่นโลหะ</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne28.png" alt="ne28">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Choose cutting condition by</strong> - การตั้งค่านี้ใช้เพื่อกำหนดว่า
+จะเลือกเงื่อนไขการตัดอย่างไร ตัวเลือกประกอบด้วยความยาวเซกเมนต์สูงสุด
+ความยาวเฉลี่ยของเซกเมนต์ และพื้นที่</p>
+</div>
+<div class="paragraph">
+<p><strong>Maximum segment length</strong> - ใช้ความยาวเซกเมนต์
+ที่ยาวที่สุดเป็นเกณฑ์</p>
+</div>
+<div class="paragraph">
+<p><strong>Average segment length</strong> - ใช้ค่าเฉลี่ยความยาว
+ของทุกเซกเมนต์เป็นเกณฑ์ การตั้งค่าเริ่มต้นใน TecZone Laser</p>
+</div>
+<div class="paragraph">
+<p><strong>Area</strong> - ใช้พื้นที่ที่ถูกล้อมรอบโดยคอนทัวร์เป็น
+เกณฑ์</p>
+</div>
+<div class="paragraph">
+<p><strong>Switch to slower cutting condition when approach is constrained</strong> -
+หัวเลเซอร์จะเปลี่ยนไปใช้การตัดที่ช้าลงเมื่อรูปทรงของแผ่นโลหะสำหรับการเข้าถึง
+ซับซ้อน</p>
+</div>
+<div class="paragraph">
+<p><strong>Process for open polylines</strong> - เมื่อพบ open polyline ในชิ้นงาน
+โดยขึ้นอยู่กับตัวเลือกที่เลือก Cut จะประมวลผล polyline ตามความเหมาะสม ตัวเลือก
+ประกอบด้วย <em>Cut</em>, <em>Mark</em>,
+<em>None</em>, และ <em>Based on layer</em></p>
+</div>
+<div class="paragraph">
+<p><strong>None</strong>: เลเซอร์จะเพิกเฉยเส้นนี้ในแบบร่าง
+ชิ้นงาน</p>
+</div>
+<div class="paragraph">
+<p><strong>Mark</strong>: เลเซอร์จะเพียงแค่ทำเครื่องหมายเส้นนี้
+โดยวาดเส้นที่มองเห็นได้บนแผ่นโลหะ โดยไม่เจาะทะลุ</p>
+</div>
+<div class="paragraph">
+<p><strong>Cut</strong>: TecZone Laser จะเลือกเงื่อนไขเลเซอร์
+ที่เหมาะสมสำหรับ polyline นี้ และเลเซอร์จะตัดตามนั้น</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+เพื่อให้การตั้งค่านี้มีผล การกำหนดค่า tooling จะต้องถูกคำนวณใหม่ การเปลี่ยนแปลง
+แบบ manual จะเขียนทับการตั้งค่าใดๆ ที่ทำไว้ หาก open
+polyline ถูกตั้งค่าเป็น "mark" ใน layout แบบ interactive การเปลี่ยนเป็น
+"Cut" ในการตั้งค่าจะไม่ทำงาน
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Cut/Mark open polylines backwards</strong> - ตัวเลือกนี้คือ
+การตัดหรือทำเครื่องหมาย open polylines แบบย้อนกลับ การตั้งค่านี้จะมีผลเฉพาะเมื่อการตัดหรือ
+ทำเครื่องหมายถูกตั้งค่าสำหรับกระบวนการ open polylines</p>
+</div>
+<div class="paragraph">
+<p><strong>Mark forming footprint</strong> - เมื่อ counter sink
+ถูกตรวจจับโดย Cut วงกลมด้านนอกจะถูกย้ายไปยังเลเยอร์
+Forming footprint โดยอัตโนมัติ หากเลือกตัวเลือกนี้ geometry ในเลเยอร์ Form footprint
+จะถูกทำเครื่องหมาย</p>
+</div>
+<div class="paragraph">
+<p><strong>Stitch cutting threshold distance (0=disable)</strong> - ตัวเลือกนี้
+จะกำหนดระยะห่างสูงสุดระหว่างการตัดสองครั้งที่จะถือว่า
+เป็น stitch cut</p>
+</div>
+<div class="paragraph">
+<p><strong>Dynamics</strong> - เมนูแบบเลื่อนลงของ Dynamics มี Normal, High และ
+Reduced</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pierce_settings">Pierce settings</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/pierce.png" alt="pierce">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Allow approach that is more than 0.5 distance to opposite side</strong> -
+ตัวเลือกนี้กำหนดว่าการเข้าถึงจะครอบคลุมระยะทางมากกว่าด้านตรงข้าม
+หรือไม่</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_corner_processing">Corner Processing</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/cornerprocess.png" alt="cornerprocess">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Rounding tolerance (distance of corner from rounding tip)</strong> -
+ตัวเลือกนี้กำหนดระยะสูงสุดที่อนุญาตจากมุมไปยัง rounding tip
+ตามภาพด้านล่าง ระยะจากมุมถึง rounding tip เป็นสัดส่วนโดยตรง
+กับรัศมีการปัดมุม จากค่าที่ป้อน Cut จะเลือก
+รัศมีการปัดมุมในช่วงค่าต่ำสุดและสูงสุด หากการเลือกค่ารัศมีต่ำสุดไม่ทำให้
+ระยะนี้อยู่ในค่าความคลาดเคลื่อน การปัดมุมจะไม่ถูกใช้
+(อาจใช้ looping หรือ cooling แทน)</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cornprocess1.png" alt="cornprocess1">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Maximum distance of corner from outermost point on loop</strong> -
+ตัวเลือกนี้กำหนดความยาวสูงสุดของการขยาย loop
+จากมุม การขยาย loop มีความสัมพันธ์โดยตรงกับรัศมี ที่มุมแหลม
+หากการเลือกค่ารัศมีต่ำสุดไม่ทำให้ระยะนี้อยู่ในค่าที่ป้อนไว้
+การปัดมุมจะไม่ถูกใช้ (แต่การ looping หรือ cooling
+อาจยังถูกใช้แทน)</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/cornprocess2.png" alt="cornprocess2">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_twinline">TwinLine</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/cornerprocess.png" alt="cornerprocess">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Twinline processing strategy</strong> - ตัวเลือกแบบดรอปดาวน์นี้ใช้เพื่อกำหนด
+กลยุทธ์ twinline ที่จะใช้</p>
+</div>
+<div class="paragraph">
+<p><em>Partwise</em> - การตัดจะทำในลักษณะ partwise เหมาะสำหรับ
+แผ่นโลหะหนาที่ไม่มีความเสี่ยงของ tipping contours</p>
+</div>
+<div class="paragraph">
+<p><em>Partwise-Safe</em> - การตัดจะทำแบบ partwise
+แต่จะมีการตัดเตรียมลงในชิ้นงานที่อยู่ติดกัน เหมาะสำหรับแผ่นโลหะบาง
+ที่ชิ้นงานอาจเอียงได้</p>
+</div>
+<div class="paragraph">
+<p><em>TIO (Twinline-Islands-Outer)</em> - ขอบ twinline จะถูกตัดก่อน
+ตามด้วยเกาะ (islands) ที่เกิดขึ้นระหว่างชิ้นงาน และจากนั้นจึงตัดคอนทัวร์ด้านนอก</p>
+</div>
+<div class="paragraph">
+<p><strong>Use TIO strategy of there are no islands</strong> -
+ซอฟต์แวร์จะเลือกกลยุทธ์ TIO (Twinline-Islands-Outer)
+โดยอัตโนมัติ หากไม่มีเกาะ (islands) ที่เกิดขึ้นในบล็อก twinline ตัวเลือกนี้
+ถูกเปิดใช้งานโดยค่าเริ่มต้น</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scrap_cutting">Scrap cutting</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/scrap.png" alt="scrap">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Scrap grid width</strong> - ความกว้างของแต่ละเซลล์
+ในกริดที่สร้างขึ้นโดย tooling ค่าที่ป้อนเข้ามาจะต้องทำให้มั่นใจได้ว่า
+สี่เหลี่ยมที่ได้จะตกลงไปในช่องว่างของแผ่นรองรับได้ โดยไม่ขึ้นอยู่กับตำแหน่ง</p>
+</div>
+<div class="paragraph">
+<p><strong>Approach length for separating cuts</strong> - ความยาวของ
+ระยะเข้าใกล้ที่ต้องการในการตัดเศษ</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vaporization">Vaporization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Vaporize</strong> - การตั้งค่านี้จะควบคุมว่าจะต้องมีการ vaporization
+หรือไม่ และหากต้องทำ จะกำหนดได้ว่าส่วนใดของเส้นทางการตัดด้วยเลเซอร์
+จะต้องถูก vaporize</p>
+</div>
+<div class="paragraph">
+<p><em>None</em> - ไม่มีการ vaporize</p>
+</div>
+<div class="paragraph">
+<p><em>Pierce</em> - มีเพียงจุดเจาะเท่านั้นที่จะถูก vaporize</p>
+</div>
+<div class="paragraph">
+<p><em>Pierce &amp; approach</em> - ทั้งจุดเจาะ
+และส่วน approach ของเส้นทางการตัดเลเซอร์จะถูก vaporize</p>
+</div>
+<div class="paragraph">
+<p><em>Full laser path</em> - เส้นทางการตัดทั้งหมด
+รวมถึงจุดเจาะ, approach และคอนทัวร์ จะถูก vaporize</p>
+</div>
+<div class="paragraph">
+<p><strong>Pierce point vaporization circle radius</strong> - หากป้อนค่า
+มากกว่าศูนย์ ซอฟต์แวร์จะเคลื่อนหัวเลเซอร์เป็น
+วงเล็กๆ รอบจุดเจาะ โดยเปิดเลเซอร์ vaporizing (เรียกว่า circle
+vaporization) ค่านี้กำหนดรัศมีของวงกลมดังกล่าว หากค่าที่ป้อนคือ
+ศูนย์ หัวเลเซอร์ vaporizing จะเปิดตรงกับจุดเจาะพอดี
+และจะปิดทันที (เรียกว่า point vaporization)</p>
+</div>
+<div class="paragraph">
+<p><strong>Vaporize marking</strong> - ตัวเลือกนี้ใช้เพื่อเปิดหรือปิดการทำงานของ
+vaporization หมายเหตุ: ข้อความเลเซอร์ที่ถูกสลักด้วย TC_WRITE
+macro จะไม่ถูก vaporize</p>
+</div>
+<div class="paragraph">
+<p>เมื่อการตั้งค่าเหล่านี้ถูกแก้ไข จะไม่ปรากฏการเปลี่ยนแปลงใน Cut UI
+ยกเว้นไอคอน NC-code จะถูกเปิดใช้งานใหม่ หากเคยถูกปิดไปก่อนหน้านี้
+นี่เป็นเพราะการตั้งค่าเหล่านี้มีผลกระทบต่อการสร้างโค้ด โค้ด
+vaporizing ที่ถูกสร้างขึ้นสำหรับการตัดประเภทต่างๆ ถูกอธิบายไว้ในตารางด้านล่าง</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Cut</th>
+<th class="tableblock halign-left valign-top">Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Laser Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">นี่คืองานตัดปกติที่ใช้ตัดคอนทัวร์ของชิ้นงาน<br>
+หาก Vaporize = Full laser path
+ทั้งคอนทัวร์ รวมถึงจุดเจาะและ
+approach จะถูก vaporize อย่างไรก็ตาม ระหว่างการทำ vaporizing
+ระบบชดเชยลำแสงจะถูกปิด ไม่จำเป็นว่าการตัด
+จะต้องทำทันทีหลังจากการ vaporize หากคอนทัวร์มีมากกว่า
+1 microjoint และมีเลเซอร์หลายลำที่ตัดพร้อมกัน ชิ้นส่วนทั้งหมดของ
+คอนทัวร์นั้นจะถูก vaporize ก่อน จากนั้น การตัดคอนทัวร์จึงเริ่มขึ้น
+ลำดับการ vaporize แบบนี้เรียกว่า contour-wise เนื่องจากแต่ละคอนทัวร์จะถูก
+vaporize ก่อนที่จะถูกตัด โดยทั่วไปจะช่วยให้การเคลื่อนที่ของหัวเลเซอร์มีประสิทธิภาพมากขึ้น</p>
+<p class="tableblock"><span class="image"><img src="img/scraplasercut.png" alt="scraplasercut"></span></p>
+<p class="tableblock">หาก Vaporize = Pierce &amp; approach
+มีเพียงจุดเจาะและเส้นทาง approach
+เท่านั้นที่จะถูก vaporize ก่อน จากนั้นหัวเลเซอร์จะ
+กลับมาตำแหน่งจุดเจาะและเริ่มการตัดจริง สำหรับตัวเลือก
+vaporizing นี้ และตัวเลือก Vaporize = Pierce จุดเจาะและ approach
+จะถูก vaporize ก่อนการตัดเสมอ ลำดับการระเหย
+ชนิดนี้เรียกว่า cut-wise เนื่องจากแต่ละชิ้นส่วนที่จะตัดจะถูกทำการระเหย
+ก่อนที่จะถูกตัดจริง</p>
+<p class="tableblock">พฤติกรรมของ Vaporize = Pierce
+จะคล้ายกับข้างต้น เพียงแต่จะทำการระเหยเฉพาะ
+จุดเจาะเท่านั้น</p>
+<p class="tableblock">หาก Vaporize = None จะไม่มีการเปลี่ยนแปลงในโค้ดที่สร้างขึ้น</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Scrap Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หาก Vaporize =
+Full laser path ลำดับการระเหยและการตัดจะเป็น
+ดังนี้:<br>
+-  ตะแกรงเศษทั้งหมดจะถูกระเหยก่อน
+ในลักษณะเดียวกับตอนที่ถูกตัด</p>
+<p class="tableblock">- เส้นรอบรูปพร้อมทั้งจุดเจาะและเส้นทางเข้า
+จะถูกระเหย</p>
+<p class="tableblock">- ตะแกรงเศษจะถูกตัด</p>
+<p class="tableblock">- เส้นรอบรูปจะถูกตัด</p>
+<p class="tableblock">ดังนั้น ทั้งตะแกรงและเส้นรอบรูปจะถูกระเหยก่อน แล้วจึงถูกตัด
+หาก Vaporize = Pierce &amp; approach
+หรือ Pierce เส้นทางเจาะและทางเข้า
+สำหรับตะแกรงและเส้นรอบรูปจะถูกระเหย
+ก่อนที่จะถูกตัด</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Sheet Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">การตัดแผ่นงานจะถูกระเหยก่อนที่จะถูกตัดเสมอ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">FlyLine Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">การตัดประเภทนี้จะไม่ถูกระเหย ไม่ว่าจะมีการตั้งค่าการระเหยไว้อย่างไร</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Point Cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ซึ่งจะถูกระเหยก่อนที่จะถูกตัด</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_laser_marking">Laser Marking<a id="h000956"></a></h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="img/lasermarking.png" alt="lasermarking">
+</div>
+</div>
+<div class="paragraph">
+<p>กฎสำหรับการเพิ่มข้อความมาร์กบนชิ้นงาน สามารถ
+กำหนดได้ใน <strong>Settings &#8594; Cut CAM &#8594; Laser CAM &#8594; Laser marking</strong>
+ในตารางด้านล่าง
+ผู้ใช้สามารถเพิ่มกฎได้หลายกฎ โดยแต่ละกฎจะกำหนดตำแหน่งของข้อความหนึ่งบรรทัด</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ne94.png" alt="ne94">
+</div>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">คอลัมน์</th>
+<th class="tableblock halign-left valign-top">คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ช่องทำเครื่องหมาย</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">คุณสามารถเปิดหรือปิดใช้งานกฎได้ โดยใช้ช่องกาในคอลัมน์แรก</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ข้อความที่ต้องแทรกบนชิ้นงาน ข้อความนี้สามารถ
+มีโทเคนต่อไปนี้ ซึ่งจะถูกแทนค่าด้วยค่าที่ตรงกันจาก
+ข้อมูลของชิ้นงาน โทเคนเหล่านี้ไม่ขึ้นกับตัวพิมพ์เล็กหรือใหญ่</p>
+<p class="tableblock">$PARTNAME - ชื่อชิ้นงาน</p>
+<p class="tableblock">$FILENAME - ชื่อไฟล์ FX</p>
+<p class="tableblock">$ROOTFILE - ชื่อไฟล์ CAD 2D ต้นฉบับ</p>
+<p class="tableblock">$PARTID - Part identifier</p>
+<p class="tableblock">$CUSTOMER - ลูกค้า</p>
+<p class="tableblock">$AUTHOR - ผู้เขียน</p>
+<p class="tableblock">$JOBNUMBER - หมายเลขงาน จาก Part&#8594;Info</p>
+<p class="tableblock">ตัวแปรนี้จะแสดงใน tooltip</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Height</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ค่านี้คือความสูงฟอนต์ (จากเส้นฐานถึงเส้น ascent)
+ในหน่วยมม. หรือ นิ้ว เมื่อแทรกข้อความ อาจเกิด
+กรณีที่ไม่มีพื้นที่เพียงพอที่จะใส่ข้อความด้วยขนาดฟอนต์ที่กำหนดไว้
+ในกรณีดังกล่าว TecZone Laser จะลดขนาดฟอนต์โดยอัตโนมัติ
+ครั้งละ 10% จนกว่าจะสามารถวางข้อความได้ การลดขนาดนี้
+อนุญาตให้ลดได้สูงสุดถึง 2 มม.</p>
+<p class="tableblock">โดยได้ตั้งค่าขั้นต่ำไว้ที่ 2 มม.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Orientation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">คอลัมน์นี้จะกำหนดการจัดวางทิศทางของข้อความ
+ค่าที่เป็นไปได้:</p>
+<p class="tableblock"><em>Horizontal</em> - ข้อความจะเป็นแนวนอน</p>
+<p class="tableblock"><em>Vertical</em> - ข้อความจะเป็นแนวตั้ง</p>
+<p class="tableblock"><em>Along longer side</em>: ข้อความจะถูกจัดวางตาม
+ด้านที่ยาวกว่าของชิ้นงาน ถ้าชิ้นงานเป็นแนวนอน ข้อความจะเป็นแนวนอน
+และถ้าชิ้นงานเป็นแนวตั้ง ข้อความจะเป็นแนวตั้ง</p>
+<p class="tableblock"><em>Along shorter side</em>: ข้อความจะถูกจัดวาง
+ตามด้านที่สั้นกว่าของชิ้นงาน (ตรงข้ามกับตัวเลือกด้านบน) เมื่อเพิ่มข้อความสองข้อความ
+ลงในชิ้นงาน ตัวเลือกนี้และตัวเลือกก่อนหน้าสามารถใช้ร่วมกัน
+เพื่อลดความเสี่ยงของการทับซ้อนของข้อความ</p>
+<p class="tableblock"><em>Along longest segment</em>:
+ข้อความจะถูกจัดวาง
+ตามเส้นตรงที่ยาวที่สุดของเส้นรอบนอก ในกรณีนี้
+ข้อความอาจไม่ตรงตามแกน ไม่ว่าข้อความจะอยู่ในแนวนอน
+แนวตั้ง หรือเอียง TecZone Laser จะจัดข้อความโดยอัตโนมัติ เพื่อให้ผู้ใช้
+มองเห็นข้อความในทิศทางที่ถูกต้องเมื่อดูจาก
+ด้านที่ใกล้กับข้อความที่สุด กล่าวคือ ข้อความแนวนอนที่วางไว้กึ่งกลางด้านล่าง
+จะเรียงจากซ้ายไปขวา และเมื่อวางไว้กึ่งกลางด้านบน
+จะเรียงจากขวาไปซ้าย</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Horizontal pos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">การจัดตำแหน่งแนวนอนของข้อความ ค่าที่เป็นไปได้คือ
+<em>center</em>, <em>left</em>
+และ <em>right</em> การตั้งค่านี้ไม่เกี่ยวข้อง หาก
+เลือก <em>Along longest segment</em>
+เป็นการจัดวางทิศทางที่ต้องการ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Vertical pos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">การจัดตำแหน่งแนวตั้งของข้อความ ค่าที่เป็นไปได้คือ
+<em>center</em>, <em>bottom</em>
+และ <em>top</em> การตั้งค่านี้ไม่เกี่ยวข้อง หาก
+เลือก <em>Along longest segment</em>
+เป็นการจัดวางทิศทางที่ต้องการ</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>เมื่อเพิ่มมาร์กเหล่านี้ TecZone Laser จะมั่นใจได้ว่าข้อความที่เพิ่ม
+จะไม่ชนกับเส้นรอบรูปของชิ้นงาน สำหรับชิ้นงานที่เล็กมาก
+หรือชิ้นงานที่มีพื้นที่ว่างน้อย ระบบจะปรับลดขนาดฟอนต์ลง
+โดยอัตโนมัติเท่าที่จำเป็น เพื่อให้ข้อความพอดีกับพื้นที่ภายในชิ้นงาน
+และห่างจากรูเจาะ</p>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_cutting">Cutting</a>
+  </li>
+  <li level="1">
+   <a href="#_pierce_settings">Pierce settings</a>
+  </li>
+  <li level="1">
+   <a href="#_corner_processing">Corner Processing</a>
+  </li>
+  <li level="1">
+   <a href="#_twinline">TwinLine</a>
+  </li>
+  <li level="1">
+   <a href="#_scrap_cutting">Scrap cutting</a>
+  </li>
+  <li level="1">
+   <a href="#_vaporization">Vaporization</a>
+  </li>
+  <li level="1">
+   <a href="#_laser_marking">Laser Marking</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="../layout/worksupport.html">Work Support</a></span>
+ <span class="next"><a href="sequence.html">Sequence</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../../res/index.js"></script>
+    <script src="../../../res/files.js"></script>
+    <script src="../../../res/site.js"></script>
+
+    
+</body>
+</html>

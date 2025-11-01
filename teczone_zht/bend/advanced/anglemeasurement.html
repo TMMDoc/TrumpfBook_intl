@@ -1,0 +1,681 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../res/bento.css">
+  <link rel="stylesheet" href="../../res/site.css">
+  <link rel="stylesheet" href="../../res/tree.css">
+  <link rel="stylesheet" href="../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../img/trumpf-icon.png">
+  <title>角度測量</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../index.html">歡迎使用 TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../intro/index.html">導言</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../intro/install.html">安裝軟體</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/clarity.html">使用者介面</a></li>
+    <li><button class="tree blank"></button><a href="../../intro/workflow.html">零件工作流程</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/2dimport/index.html">2D匯入</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/2dimport/2dcleanup.html">2D清理</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cad/3dimport/index.html">3D匯入</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">匯入3D模型</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">匯入組件</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/formdetect.html">成型加工辨識</a></li>
+      <li><button class="tree blank"></button><a href="../../cad/3dimport/componentdetect.html">部件辨識</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../cad/sketch.html">修改幾何形狀</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../cut/index.html">雷射 CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/partworkflow/index.html">零件工作流程</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/partworkflow/panels/index.html">編輯面板</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../cut/partworkflow/panels/lasercut/index.html">雷射切割</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/approach.html">進刀</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/withdrawal.html">回縮</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/microjoint.html">微連</a></li>
+          <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/lasercut/advanced.html">進階</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/contour.html">輪廓</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/scrapcut.html">廢料切割</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/part.html">零件</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/partworkflow/panels/cornertreatment.html">轉角加工</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/partworkflow/quicknest.html">快速排樣</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/jobworkflow/index.html">套裁工作流程</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/jobpanel/index.html">套裁面板</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/sheets.html">板材選項卡</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/parts.html">零件選項卡</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/layouts.html">佈局選項卡</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/jobpanel/summary.html">摘要選項卡</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/jobworkflow/editlayout/index.html">編輯佈局</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/nestingmodes.html">排樣模式</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/placementpanel.html">放置面板</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/sequencing.html">排序</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/jobworkflow/editlayout/slicesheet.html">切片板材</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/bevelcut/index.html">斜切</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/opencontours.html">開放輪廓</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/variablebevel.html">可變斜角</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/bevelcut/miscellaneous.html">雜項</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../cut/advanced/index.html">進階</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../cut/advanced/finishingrules.html">精加工規則</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/editltt.html">編輯LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/strategies.html">策略</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/microjoints.html">微連</a></li>
+        <li><button class="tree blank"></button><a href="../../cut/advanced/twinline/stability.html">其他設定</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../index.html">折彎 CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../createbenddata.html">建立折彎資料</a></li>
+    <li><button class="tree blank"></button><a href="../navigator.html">折彎導航器</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../editing/index.html">編輯折彎數據</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../editing/editbend.html">編輯折彎</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editmount.html">編輯模具裝置</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editsetup.html">編輯折彎設定</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editgauge.html">編輯後定規</a></li>
+      <li><button class="tree blank"></button><a href="../editing/editacb.html">編輯角度測量</a></li>
+      <li><button class="tree blank"></button><a href="../editing/bendsheet.html">折彎試算表</a></li>
+      <li><button class="tree blank"></button><a href="../editing/sequencing.html">更改順序</a></li>
+      <li><button class="tree blank"></button><a href="../editing/addsetup.html">添加設定和工站</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="index.html">進階</a>
+     <ul>
+      <li><button class="tree blank"></button><a class="active" href="anglemeasurement.html">角度測量</a></li>
+      <li><button class="tree blank"></button><a href="batchprocess.html">批量加工</a></li>
+      <li><button class="tree blank"></button><a href="recompute.html">重新計算程式</a></li>
+      <li><button class="tree blank"></button><a href="tonnage.html">噸位檢查</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../bcell/navigator.html">折彎導航器</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/pickup/index.html">零件拾取</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/frompallet.html">從托盤拾取</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/pickup/fromdispenser.html">從分配器拾取</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/bending/index.html">機器人折彎</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/bending/insertion.html">插入</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/bending.html">折彎</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">提取</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">改抓</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">改抓面板</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">添加改抓</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">編輯改抓</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">用卡爪改抓</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">改抓站面板</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">零件存儲</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">存儲模式</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">重復和順序</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">分張板材</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">進階</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">位移點</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">單元配置</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">夾鉗資料庫</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">報告</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../fold/index.html">折邊 CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">建立折邊數據</a></li>
+    <li><button class="tree blank"></button><a href="../../fold/foldview.html">折邊視圖</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/editing/index.html">編輯折邊資料</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbend.html">編輯折彎</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editside.html">編輯邊/區域</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editseq.html">更改順序</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editbh.html">編輯板坯支架</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editgauge.html">編輯止擋</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editblade.html">編輯刀片</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editload.html">編輯上料</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/editing/editunload.html">編輯下料</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../fold/toolinventory.html">模具庫存</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../fold/advanced/index.html">進階</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../fold/advanced/airgaptables.html">自定義氣隙表</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/manualbend.html">手動折彎完成</a></li>
+      <li><button class="tree blank"></button><a href="../../fold/advanced/minflangelength.html">所需法蘭長度</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../settings/index.html">設定</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/drawing/index.html">圖紙</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/drawing/layers.html">圖層</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/dimensions.html">尺寸</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/drawing/view.html">視圖</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/bendcam/index.html">折彎 CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/benddefaults.html">機台預配置</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendoutputs.html">折彎輸出</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendview.html">折彎視圖</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/bendcam/bendcell.html">折彎單元</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/cutcam/index.html">切割 CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/layout/index.html">布局</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/nesting.html">排樣設定</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheet.html">板材</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/sheethandling.html">板材搬運</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/skeletoncuts.html">骨架切割</a></li>
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/layout/worksupport.html">工作支座</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../settings/cutcam/lasercam/index.html">雷射 CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../settings/cutcam/lasercam/sequence.html">順序</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutoutputs.html">切割輸出</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/cutcam/cutview.html">切割視圖</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/foldcam/index.html">翻板折彎機</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/defaults.html">預配置</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/zbwcarriers.html">ZBW托架</a></li>
+      <li><button class="tree blank"></button><a href="../../settings/foldcam/foldoutputs.html">輸出</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../settings/reports/index.html">報告</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../settings/reports/itemdefaults.html">項目預配置</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../settings/importexport.html">匯入/匯出</a></li>
+    <li><button class="tree blank"></button><a href="../../settings/environment.html">環境</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../database/index.html">資料庫</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../database/materials.html">材料</a></li>
+    <li><button class="tree blank"></button><a href="../../database/machines.html">機台</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendtools.html">折彎模具</a></li>
+    <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">折彎夾鉗</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">成型加工/部件</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../report/index.html">報告</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../report/designer.html">報告設計器</a></li>
+    <li><button class="tree blank"></button><a href="../../report/fields.html">字段、圖片和表格</a></li>
+    <li><button class="tree blank"></button><a href="../../report/bands.html">圖素集（子報告）</a></li>
+    <li><button class="tree blank"></button><a href="../../report/labels.html">標籤、點陣圖和形狀</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../appendix/index.html">附錄</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">支持的3D格式</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">分張板材DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">折彎模具DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../../impressum.html">版本資訊（Impressum）</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../index.html">折彎 CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">進階</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="anglemeasurement.html">角度測量</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>角度測量</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>ACB&#8482;、ACBLaser或&#8482;LCB等角度測量</strong>系統&#8482;可用於提高折彎時的角度精度。這些系統測量在板材的折彎和回彈過程中實現的實際角度，並使用此資訊動態調整壓板下止點以實現目標折彎角度。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_探片和雷射系統">探片和雷射系統<a id="h000136"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>角度測量系統基於安裝在沖模中的_探片_，光學系統使用投射在工件上的_雷射束_。TecZone Bend支援兩種方式，當您配置機台時，您可以打<strong>開</strong>一些選項開關，具體取決於您已安裝的機台選項。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/acb-1.png" alt="Machine Settings" width="513">
+</div>
+</div>
+<div class="paragraph">
+<p>上圖顯示Trumpf 5085 B23機台的設定面板。本機台支援兩種基於探片的角度測量（<strong>ACB-Classic*和*ACB-Wireless</strong>）以及基於雷射的測量（<strong>ACB-Laser</strong>）。此特定的機台配置了所有三個選項。如果折彎機具有兩種角度測量_系統_，您可能需要優先考慮其中一個，或者為特定零件關閉角度測量。您可以使用<strong>設定</strong>面板執行此操作。<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/acb-2.png" alt="ACB Settings" width="705">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>設定/BendCAM</strong>頁面的<strong>角度測量</strong>部分有一個選項清單，可讓您打開或關閉各種角度測量系統。透過選擇並使用旁邊的向上/向下箭頭按鈕向上或向下移動，您可以安排優先級。在這個特定的示例中，基於探片和雷射的角度測量已啟用，我們優先考慮雷射。<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup> <strong>使用ACB速度</strong>選項決定預設情況下是否將使用<strong>ACB Speed</strong>策略（在Touchpoint機台上可用）。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_acb方法">ACB方法<a id="h000137"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>有不同的<strong>ACB方法</strong>可用於TecZone Bend。其中大多數是常見的基於探片和基於雷射的角度測量，所以我們先討論不同的方法。</p>
+</div>
+<div class="sect2">
+<h3 id="_識別">識別<a id="h000138"></a></h3>
+<div class="paragraph">
+<p><strong>識別</strong>或<strong>辨識</strong>或<strong>識別回彈</strong>方法是ACB系統的典型用法。折彎機使用角度測量系統來測量零件折彎時形成的角度。零件完全折彎後，機台進入_減壓_狀態，讓金屬_回彈_。回彈也使用ACB測量，並透過精確的過度折彎進行補償。為避免在測量過程中_超出_目標角度的可能性，機台將首先稍微_低折彎_，然後再進行一次重新折彎以達到目標。這是最準確，但也是最耗時的ACB方法。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_學習y">學習Y<a id="h000139"></a></h3>
+<div class="paragraph">
+<p>在<strong>學習Y</strong>方法中，根本不使用ACB系統。壓板Y目標（下止點）僅從早前折彎（稱為<strong>基準折彎</strong>）複製而來，後者已使用<strong>識別</strong>方法進行了測量。這個早前折彎必須在角度、半徑和模具使用方面完全相同。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_經示教的回彈">經示教的回彈</h3>
+<div class="paragraph">
+<p>在<strong>經示教的回彈</strong> 或<strong>學習回彈</strong>方法中， ACB系統使用來自先前折彎的回彈角度，先前折彎已使用<strong>識別</strong>方法完成測量。ACB系統仍然用於調節折彎，但由於不需要減壓後的第二次測量，循環比完整的<strong>識別</strong>循環更快。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_回彈量輸入">回彈量輸入</h3>
+<div class="paragraph">
+<p><strong>回彈量輸入</strong>，或<strong>輸入回彈</strong>或<strong>已修正</strong>或<strong>ACB Smart</strong>方法使用ACB系統來測量目標角度，但使用使用者輸入的回彈值。換句話說， ACB只需將零件折彎到目標角度+使用者輸入的修正值。減壓後不進行第二次測量。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_acb的符號">ACB的符號<a id="h000140"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TecZone Bend 使用多個圖示來表示各種ACB方法或ACB錯誤和警告。以下是折彎導航器中用於顯示各種ACB系統和模式的圖示：</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>圖示</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>含義</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-ok.png" alt="acb ok" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">探片系統，<strong>識別</strong>方法</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-learned.png" alt="acb learned" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">探片系統，<strong>學習Y</strong>方法</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-corrected.png" alt="acb corrected" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">探片系統，<strong>回彈量輸入</strong>方法</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-ok.png" alt="lcb ok" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">雷射系統，<strong>識別</strong>方法</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-learned.png" alt="lcb learned" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">雷射系統，<strong>學習Y</strong>方法</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-corrected.png" alt="lcb corrected" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">雷射系統，<strong>回彈量輸入</strong>方法</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>以下是用於顯示警告和錯誤的圖示：</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>圖示</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>含義</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-flange.png" alt="acb flange" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">彎邊長度過短。 用於探片</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-range.png" alt="acb range" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">探片太靠近零件邊緣</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-hole.png" alt="acb hole" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">探片落入孔中（破損風險）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-reference.png" alt="acb reference" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">無效基準折彎（無法從此折彎學習）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-flange.png" alt="lcb flange" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">雷射軌跡長度小於理想值（警告）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-single.png" alt="lcb single" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">只有一個雷射器（前或後）用於測量</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-flange-err.png" alt="lcb flange err" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">雷射軌跡長度太低，無法測量（錯誤）</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>這些圖示以及有關所使用的ACB系統和方法的其他資訊，全部顯示在導航器的<strong>ACB</strong>行上：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/acb-3.png" alt="ACB-Navigator" width="333">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_有關角度測量的注意事項">有關角度測量的注意事項<a id="h000141"></a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_雷射系統名稱">雷射系統名稱<a id="h000142"></a></h3>
+<div class="paragraph">
+<p>基於雷射的角度測量系統有不同的名稱，如<strong>ACB-Laser或LCB</strong>。雖然實際的硬體和機台有所不同，但這些在TecZone Bend中都採用相同的編程設定。大多數TecZone Bend使用者介面只使用<strong>ACB</strong>或
+<strong>ACB-Laser</strong>，所以我們也會在這個討論中使用這個術語。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_自動裝備器行為">自動裝備器行為<a id="h000143"></a></h3>
+<div class="paragraph">
+<p>TecZone Bend 自動裝備器以最佳方式為每個折彎分配ACB Laser_方法_。最初，它首先使用<strong>識別</strong>方法進行第一次折彎，然後嘗試盡可能使用<strong>學習Y</strong>方法進行連續折彎。如果已經有相同角度、半徑、模具組和類似的_軋制方向_的折彎， TecZone Bend將使用<strong>學習Y</strong>方法，而不進行其他識別。某些折彎可能會自動跳過，因為：</p>
+</div>
+<div id="h000144" class="ulist">
+<ul>
+<li>
+<p>折彎角度不在感應器的測量範圍內（太急促/太遲鈍）。</p>
+</li>
+<li>
+<p>這不是懸空彎折（例如，模壓、Z折彎、壓合或折邊）</p>
+</li>
+<li>
+<p>這是另一個折彎的預折彎（不需要精確的角度）</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/acb-4.png" alt="Skipped" width="523">
+</div>
+</div>
+<div class="paragraph">
+<p>上圖顯示了一個零件，其中一些折彎沒有ACB方法 - 這些用ACB行中的空心圓圈指示，每個單元的工具提示會指出不進行ACB測量的_原因_。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_獲得有效的測量值">獲得有效的測量值<a id="h000147"></a></h3>
+<div class="paragraph">
+<p>進行ACB測量時，根據折彎線的長度TecZone Bend將決定需要進行一個、兩個或三個測量。實際測量位置會自動計算，但也可以使用<strong>ACB面板</strong>進行修改（下文討論）。通常，TecZone Bend會_一起_移動兩個ACB感應器，並使用前後感應器進行ACB Laser 測量，但此操作也可以編輯。TecZone Bend可以評估_雷射軌跡長度_以進行ACB Laser 測量。這是相機可見的投影雷射線長度。生產線的零件可能被凹模或止擋阻擋。有些零件可能會越過板材上的孔，或成型加工。評估將考慮所有這些因素，並可以計算出光學系統可用的線路實際長度。TecZone Bend 比較此可用長度與機台定義的的_最小_和_理想_長度，並引發適當的錯誤或警告（如上面的TecZone Bend符號部分所示）。TecZone Bend 有一些智慧可以將測量位置向左或向右移動，從而避免可能限制軌跡長度的孔、成型加工或其他因素。此外，如果止擋妨礙雷射測量，TecZone Bend將自動增加退回操作。此外，將連續進行雷射軌跡長度評估，因此，如果您移動ACB感應器位置或調整止擋，您可以立即在導航器中看到結果。</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. 與所有設定類似，<strong>應用設置</strong>用於全局配置（適用於所有機台），使用<strong>機台設定</strong>可為特定機台設置預設值，使用 <strong>零件設置</strong> 可更改此特定零件的預設值。
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. 只有在機台安裝有特定類型的角度測量作為選項時，此處啟用的角度測量系統才會生效。換句話說，您可以用它來_防止_特定的系統被使用。
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_探片和雷射系統">探片和雷射系統</a>
+  </li>
+  <li level="1">
+   <a href="#_acb方法">ACB方法</a>
+  </li>
+  <li level="2">
+   <a href="#_識別">識別</a>
+  </li>
+  <li level="2">
+   <a href="#_學習y">學習Y</a>
+  </li>
+  <li level="2">
+   <a href="#_經示教的回彈">經示教的回彈</a>
+  </li>
+  <li level="2">
+   <a href="#_回彈量輸入">回彈量輸入</a>
+  </li>
+  <li level="1">
+   <a href="#_acb的符號">ACB的符號</a>
+  </li>
+  <li level="1">
+   <a href="#_有關角度測量的注意事項">有關角度測量的注意事項</a>
+  </li>
+  <li level="2">
+   <a href="#_雷射系統名稱">雷射系統名稱</a>
+  </li>
+  <li level="2">
+   <a href="#_自動裝備器行為">自動裝備器行為</a>
+  </li>
+  <li level="2">
+   <a href="#_獲得有效的測量值">獲得有效的測量值</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="index.html">進階</a></span>
+ <span class="next"><a href="batchprocess.html">批量加工</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../res/index.js"></script>
+    <script src="../../res/files.js"></script>
+    <script src="../../res/site.js"></script>
+
+    
+</body>
+</html>

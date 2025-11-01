@@ -1,0 +1,1375 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>เครื่องมือดัด DXF</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">ยินดีต้อนรับสู่ TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">บทนำ</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">การติดตั้งซอฟต์แวร์</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">ส่วนติดต่อผู้ใช้</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">Part Workflow</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">การนำเข้า 2 มิติ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">การล้างข้อมูล 2D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">การนำเข้า 3 มิติ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">การนำเข้าโมเดล 3 มิติ</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">การนำเข้าแอสเซมบลี</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">การตรวจจับฟอร์ม</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">การตรวจหาส่วนประกอบ</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">การปรับแก้เรขาคณิต</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Laser CAM</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Part Workflow</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Editing Panels</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Laser Cut</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Approach</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Withdrawal</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">ขั้นสูง</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Contour</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">การตัดเศษ</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">ชิ้นส่วน</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Corner Treatment</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Quick-Nest</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">ขั้นตอนการทำงานของงาน</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Job Panel</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">แท็บ Sheets</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Parts Tab</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Layouts Tab</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">แท็บ Summary</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">การแก้ไขเลย์เอาต์</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">โหมดการ Nest</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Placement Panel</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">การจัดลำดับ</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">แผ่นตัด</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Bevel Cut</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">การเปิดเส้นโค้ง</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">การเอียงที่ปรับค่าได้</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">เบ็ดเตล็ด</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">กฎการเก็บชิ้นงาน</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">การแก้ไข LTT</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">กลยุทธ์</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Microjoints</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">การตั้งค่าเพิ่มเติม</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Bend CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">สร้างข้อมูลการดัด</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">การแก้ไขข้อมูลการดัด</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">การแก้ไขการพับ</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">การแก้ไขตัวยึดเครื่องมือ</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">การแก้ไข Bend Setup</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">การแก้ไข Back-gauge</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">การแก้ไขการวัดมุม</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">ตารางการพับ</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">การเปลี่ยนลำดับ</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">การเพิ่มการตั้งค่าและสถานี</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">การวัดมุม</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">การประมวลผลแบบชุด</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Recompute solution</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">การตรวจสอบแรงกด</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">การหยิบชิ้นงาน</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">การหยิบจากพาเลท</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Pickup from Dispenser</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">การดัดด้วยหุ่นยนต์</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">การแทรก</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Bending</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">การนำชิ้นงานออก</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Regripping</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">แผง Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Add Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Edit Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Regrip ด้วยกริปเปอร์แบบขากรรไกร</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">แผงสถานี Regrip</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Part Deposit</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Deposit Patterns</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Repeat and Sequence</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Separator Sheet</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Cell Configuration</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb.html">Gripper Database</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/reports.html">Reports</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">Fold CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">การสร้างข้อมูลการพับ</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">มุมมอง Fold</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">การแก้ไขข้อมูลการพับ</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">การแก้ไขการพับ</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">การแก้ไขด้าน/เซกชัน</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">การเปลี่ยนลำดับ</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">การแก้ไข blank-holder</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">การแก้ไขการวัดด้วยเกจ</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">การแก้ไขใบมีด</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">การแก้ไขการโหลด</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">การแก้ไขการถอดชิ้นงาน</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">สต็อกเครื่องมือ</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">ขั้นสูง</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">ตารางระยะช่องว่างอากาศแบบกำหนดเอง</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">การทำงานของการดัดแบบแมนนวล</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">ความยาวขอบพับขั้นต่ำ</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Settings</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Drawing</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Layers</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Dimensions</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">View</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Machine Defaults</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Bend Outputs</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Bend View</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Bend Cell</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">เลย์เอาต์</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Nest Settings</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Sheet</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Sheet Handling</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Skeleton Cuts</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Work Support</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Sequence</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Cut Outputs</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Cut View</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Panel Bending</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">ค่าเริ่มต้น</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">ZBW Carriers</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Outputs</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Reports</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Item Defaults</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Import/Export</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Environment</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">ฐานข้อมูล</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">วัสดุ</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">เครื่องจักร</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">เครื่องมือดัด</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">ตัวจับดัด</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">ฟอร์ม/ส่วนประกอบ</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Reports</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">ฟิลด์ รูปภาพ และตาราง</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Bands (sub-reports)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Labels, Bitmaps และ Shapes</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">ภาคผนวก</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="3dformats.html">Supported 3D Formats</a></li>
+    <li><button class="tree blank"></button><a href="bseparatordxf.html">แผ่นคั่น DXF</a></li>
+    <li><button class="tree blank"></button><a class="active" href="bendtooldxf.html">เครื่องมือดัด DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Impressum</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">ภาคผนวก</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="bendtooldxf.html">เครื่องมือดัด DXF</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>เครื่องมือดัด DXF</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Flux มาพร้อมกับแค็ตตาล็อกเครื่องมือดัดหลากหลายประเภท (เช่น Trumpf, Wila, Wilson,
+Rolleri, Amada และอื่นๆ) หากคุณใช้เครื่องมือจากแค็ตตาล็อกประมาณ 40 รายการที่ Flux มีให้
+คุณสามารถติดตั้งแค็ตตาล็อกและเริ่มใช้งานเครื่องมือเหล่านั้น
+ได้ทันที บางครั้งอาจจำเป็นต้องสร้างเครื่องมือเฉพาะเองหรือเครื่องมือจากแค็ตตาล็อก
+ที่ไม่ได้ถูกรวมไว้ใน Flux</p>
+</div>
+<div class="paragraph">
+<p><strong>รูปแบบไฟล์ DXF สำหรับเครื่องมือดัด</strong>เป็นกลไกมาตรฐานสำหรับการดำเนินการดังกล่าว ขณะนี้ Flux
+สามารถส่งออกเครื่องมือดัดเป็นไฟล์ DXF และยังสามารถนำเข้าเครื่องมือดัดจากไฟล์ DXF ได้อีกด้วย
+ไฟล์ DXF ที่ใช้แทนเครื่องมือดัดต้องเป็นไปตามกฎบางประการ เพื่อให้ Flux
+สามารถดึงข้อมูลที่จำเป็นทั้งหมดได้ วิธีที่รวดเร็วในการสร้างเครื่องมือดัดมักจะเป็นการใช้ฟังก์ชัน "ส่งออกเป็น DXF"
+เพื่อสร้างไฟล์ DXF จากเครื่องมือที่มีอยู่เดิม จากนั้น ไฟล์ DXF สามารถแก้ไขได้
+(ทั้งใน Flux หรือในซอฟต์แวร์ CAD 2D อื่นๆ) สุดท้าย ไฟล์ DXF ที่ได้รับการแก้ไขแล้ว
+สามารถนำกลับเข้าสู่ Flux ได้โดยใช้ฟังก์ชัน "นำเข้าจาก DXF"</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ตัวอย่าง_dxf">ตัวอย่าง DXF<a id="h000015"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ด้านล่างคือตัวอย่างของเครื่องมือดัดในรูปแบบ DXF ที่สร้างขึ้นโดยใช้คำสั่ง "ส่งออกเป็น DXF":</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name2013.png" alt="Name2013" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>เครื่องมือ DXF ต้องประกอบด้วย:</p>
+</div>
+<div id="h000016" class="ulist">
+<ul>
+<li>
+<p>รูปร่างปิดหนึ่งรูป (ประกอบด้วยเส้นตรง โค้ง หรือเส้นหลายมุม) ที่ใช้กำหนด_โปรไฟล์ด้านข้าง_
+ของเครื่องมือ เส้นโพลีไลน์ของโปรไฟล์นี้ต้องเป็น POLYLINE แบบปิดที่อยู่ทางซ้ายสุดในภาพวาด
+(ดูรูปตัวอย่างด้านบน)</p>
+</li>
+<li>
+<p>เอนทิตีประเภท POINT ที่ใช้กำหนดจุดอ้างอิงของเครื่องมือ เอนทิตีของจุดนี้ต้องอยู่
+ภายในเส้นโพลีไลน์ปิดของโปรไฟล์และใช้บ่งชี้ว่า
+ความสูงของเครื่องมือถูกวัดจากจุดใด (ดูภาพตัวอย่างด้านบน)</p>
+</li>
+<li>
+<p>สำหรับชิ้นส่วนเครื่องมือแต่ละชิ้นที่ไม่ได้เป็นรูปสี่เหลี่ยมผืนผ้าธรรมดาเมื่อมองจากด้านหน้าจะต้องมี_ภาพวาดด้านหน้า_
+แยกต่างหาก โดยทั่วไปจะเป็นชิ้นส่วนหูซ้ายหรือหูขวาแต่ก็อาจรวมถึงชิ้นส่วนแบบกำหนดเอง
+เช่น ชิ้นส่วนที่มี_ช่องหน้าต่าง_</p>
+</li>
+<li>
+<p>ภาพวาดด้านหน้าทุกภาพต้องอยู่ทางขวาของภาพวาดโปรไฟล์และต้อง
+จัดวางในแนวระนาบเดียวกันในแนวนอน ภาพวาดด้านหน้าทุกภาพต้องมีความสูง
+เท่ากันกับภาพวาดโปรไฟล์ด้านข้าง ไม่เช่นนั้น ระบบจะไม่รับรู้ภาพดังกล่าว ภาพตัวอย่างด้านบนแสดง
+ตัวอย่างทั่วไป ซึ่งประกอบด้วยชิ้นส่วนหูซ้ายและหูขวา</p>
+</li>
+<li>
+<p>ข้อมูลอื่นๆ เกี่ยวกับเครื่องมือจะแสดงด้วยข้อความ (ดูหมายเหตุด้านล่าง)</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_เมตาดาทาในเอนทิตีข้อความ">เมตาดาทาในเอนทิตีข้อความ<a id="h000021"></a></h3>
+<div class="paragraph">
+<p>ข้อความใดๆ ที่อยู่ในรูปแบบ <strong>KEY=value</strong> จะถูกอ่านโดยระบบส่งออกข้อมูลเครื่องมือ
+และจะถูกวิเคราะห์เพื่อนำข้อมูลเพิ่มเติมของเครื่องมือมาใช้งาน คีย์ที่รองรับในปัจจุบัน
+มีดังต่อไปนี้:</p>
+</div>
+<div id="h000022" class="paragraph">
+<p><strong>NAME=OW200/K R3.2/86 CUSTOM-A</strong><br>
+ใช้ระบุชื่อของเครื่องมือ จำเป็นต้องระบุ</p>
+</div>
+<div id="h000023" class="paragraph">
+<p><strong>TONNAGE=800</strong><br>
+ใช้ระบุโหลดสูงสุดที่เครื่องมือรองรับได้ในหน่วย kN/m จำเป็นต้องระบุ หากคุณต้องการ
+หลีกเลี่ยงข้อความแสดงข้อผิดพลาดเกี่ยวกับการใช้โหลดเกินโดยไม่จำเป็น</p>
+</div>
+<div id="h000024" class="paragraph">
+<p><strong>UPPER=PTrumpf</strong><br>
+จำเป็นสำหรับหัวเจาะโดยใช้ระบุประเภทของตัวเชื่อมต่อ (ประเภทการยึด
+เครื่องมือกับคานกด) ประเภทของการเชื่อมต่อที่รองรับมีดังต่อไปนี้:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ชื่อ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ความหมาย</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PTrumpf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะของ Trumpf (ใช้ข้อต่อแบบ Modufix)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PAmada</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะของ Amada</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PWila</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะของ Wila รุ่นคลาสสิก</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PWilaNS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะของ Wila New-Standard</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PAmerican</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะแบบอเมริกัน (US type)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PEHT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะของ EHT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะ LVD ขนาด A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะ LVD ขนาด B</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะ LVD ขนาด C</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PLVDD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะ LVD ขนาด D</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PGasparini</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะของ Gasparini</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PBayelerR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะของ Bayeler รุ่น R</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PBayelerS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะของ Bayeler รุ่น S</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUrsviken</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะ OEM ของ Ursviken</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PBayelerEuro</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะ Bayeler รุ่น Euro</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PColgar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะของ Colgar</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PKomatsu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">หัวเจาะของ Komatsu</p></td>
+</tr>
+</tbody>
+</table>
+<div id="h000025" class="paragraph">
+<p><strong>LOWER=DTrumpf</strong><br>
+ใช้สำหรับดายและระบุประเภทของตัวเชื่อมต่อ (รูปแบบ
+การติดตั้งเครื่องมือกับฐานดาย) ประเภทของการเชื่อมต่อที่รองรับมีดังต่อไปนี้:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ชื่อ</th>
+<th class="tableblock halign-left valign-top">ความหมาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DTrumpf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ดายของ Trumpf</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ดายของ Amada กว้าง 30 มม.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada60</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ดายของ Amada กว้าง 60 มม.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmadaF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ดายของ Amada แบบแบน</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada2V</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ดายของ Amada แบบ 2-V</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmadaQuick</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ดายของ Amada แบบถอดเปลี่ยนเร็ว</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada90</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ดายของ Amada กว้าง 90 มม.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DEHT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ดายของ EHT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAmada120</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ดายของ Amada กว้าง 120 มม.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DWeinbrenner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ดายของ Weinbrenner</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DWila</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ดายของ Wila</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DKomatsu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ดายของ Komatsu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DBeyeler110</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ดายของ Beyeler ขนาด 110 มม.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DLVD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ดายของ LVD</p></td>
+</tr>
+</tbody>
+</table>
+<div id="h000026" class="paragraph">
+<p><strong>PIECES=2x25,30,45,50,2x100,200,4x500</strong><br>
+ระบุชิ้นส่วนมาตรฐานของเครื่องมือนี้ (ชิ้นส่วนหูซ้ายและหูขวา
+จะระบุไว้แล้วโดยการวาดโปรไฟล์ของชิ้นส่วนนั้น) รายการนี้ประกอบด้วยความยาวของชิ้นส่วนที่คั่น
+ด้วยเครื่องหมายจุลภาค และในแต่ละความยาวอาจระบุ_ตัวคูณจำนวนชิ้น_ไว้
+ด้านหน้าได้ ดังนั้น รายการด้านบนหมายความว่ามีชิ้นส่วน 25 มม. จำนวน 2 ชิ้น, 30 มม. จำนวน 1 ชิ้น,
+และ 500 มม. จำนวน 4 ชิ้น และอื่นๆ</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+หากต้องการระบุตัวคูณจำนวนสำหรับชิ้นส่วนรูปทรงพิเศษ (เช่น ชิ้นส่วนหู)
+ให้ใส่เอนทิตีข้อความ เช่น 2x ลงไปภายในเส้นโครงของชิ้นส่วนดังกล่าว
+</td>
+</tr>
+</table>
+</div>
+<div id="h000027" class="paragraph">
+<p><strong>VWIDTHTYPE=Sharp</strong><br>
+จำเป็นต้องระบุค่านี้สำหรับดายที่คำจำกัดความของความกว้างตัว V ไม่ตรงกับของ Trumpf (ดู
+ภาพด้านล่าง)</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ชื่อ</th>
+<th class="tableblock halign-left valign-top">ความหมาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ชาร์ป</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">จุดปลายทฤษฎีของดาย</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tangent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">จุดสัมผัสบนสุดของดาย</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="img/vwidthtype.png" alt="vwidthtype" width="400">
+</div>
+</div>
+<div id="h000028" class="paragraph">
+<p><strong>ISUPPERTOOL=0</strong><br>
+ระบุว่าเครื่องมือนั้นเป็นเครื่องมือด้านบนหรือด้านล่าง สำหรับเครื่องมือด้านบน ค่าอยู่ที่ 1
+สำหรับเครื่องมือด้านล่าง ค่าอยู่ที่ 0 การระบุค่านี้จำเป็นสำหรับเครื่องมือที่ต้องนำเข้าโดยมีความสูงเป็นศูนย์ (ดูภาพด้านล่าง):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/isuppertool.png" alt="isuppertool" width="250">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_การจดจำรูปร่าง">การจดจำรูปร่าง<a id="h000029"></a></h3>
+<div class="paragraph">
+<p>ในรูปแบบไฟล์ DXF สำหรับเครื่องมือดัด ไม่จำเป็นต้องระบุพารามิเตอร์สำคัญบางอย่าง
+ของหัวเจาะหรือดาย เช่น ความสูง รัศมี มุม หรือความกว้างตัว V Flux
+จะวิเคราะห์ภาพวาดของเครื่องมือและดึงค่าพารามิเตอร์นี้โดยอัตโนมัติ สำหรับหัวเจาะ
+Flux คาดว่าจะพบเซ็กเมนต์โค้ง (bc) ที่ด้านล่าง ซึ่งมีเส้นตรง (ab และ cd) อยู่ด้านข้าง</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name20133.png" alt="Name20133" width="350">
+</div>
+</div>
+<div class="paragraph">
+<p>จากสามเซ็กเมนต์นี้ ระบบจะสามารถจดจำมุมและรัศมีของหัวเจาะได้โดยอัตโนมัติิ
+สำหรับดาย Flux จะวิเคราะห์บริเวณไหล่ด้านซ้ายของดายเพื่อตรวจจับพารามิเตอร์ ระบบคาดว่า
+จะพบเซ็กเมนต์โค้งของไหล่ (bc) ซึ่งมีเส้นบนแนวนอน (ab) และเซ็กเมนต์เอียง (cd) อยู่ข้างเคียง</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/name20134.png" alt="Name20134" width="350">
+</div>
+</div>
+<div class="paragraph">
+<p>หากหัวเจาะหรือดายไม่ตรงตามข้อกำหนดของการจดจำรูปร่าง Flux
+จะไม่สามารถจดจำรูปร่างนั้นว่าเป็นหัวเจาะหรือดายได้</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ข้อมูลเพิ่มเติม">ข้อมูลเพิ่มเติม:<a id="h000030"></a></h3>
+<div id="h000031" class="ulist">
+<ul>
+<li>
+<p>โปรไฟล์ของเครื่องมือสามารถวางตำแหน่งใดก็ได้ในภาพวาด — ตำแหน่งที่แน่นอนไม่สำคัญ
+เนื่องจากมีการใช้เอนทิตีจุดอ้างอิงเป็นจุดอ้างอิงของเครื่องมือ</p>
+</li>
+<li>
+<p>นอกเหนือจากเอนทิตีที่กล่าวถึงข้างต้น ไม่ควรมีเอนทิตีอื่นใดใน
+ภาพวาด โดยเฉพาะอย่างยิ่ง ไม่ควรมีกรอบชื่อเรื่องหรือโพลีไลน์ปิดใดๆ เพิ่มเติมใน
+ภาพวาด</p>
+</li>
+<li>
+<p>พวาดควรใช้หน่วยเมตริกเสมอ (ไม่ขึ้นกับว่าขณะนั้น Flux ใช้
+หน่วยใดอยู่)</p>
+</li>
+<li>
+<p>แม้ว่าคำสั่งจะระบุว่า “นำเข้าจาก DXF” (Import from DXF) แต่ Flux ก็สามารถรับไฟล์ GEO แทนได้
+หากไฟล์ดังกล่าวปฏิบัติตามข้อกำหนดเดียวกันตามที่กล่าวไว้ข้างต้น</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_เครื่องมือพิเศษ">เครื่องมือพิเศษ<a id="h000035"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ระบบนำเข้าเครื่องมือสามารถจดจำ_เครื่องมือพิเศษ_บางประเภทได้ เครื่องมือนี้จำเป็นต้อง
+ถูกระบุด้วยข้อความในรูปแบบ <strong>FLAVOR=XYX</strong> ภายในไฟล์ DXF</p>
+</div>
+<div class="sect2">
+<h3 id="_หัวเจาะ_hem">หัวเจาะ Hem<a id="h000036"></a></h3>
+<div class="paragraph">
+<p>สำหรับหัวเจาะ Hem ต้องมีข้อมูลเพิ่มเติมดังต่อไปนี้:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ข้อความ <strong>FLAVOR=HemPunch</strong> จะระบุว่าเป็นเครื่องมือสำหรับการ Hem</p>
+</li>
+<li>
+<p>ข้อความ <strong>PARAMS=-1,12.15,70</strong> จะระบุค่าพารามิเตอร์ที่จำเป็นต่อการจำลองอย่างถูกต้อง</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hempunch.png" alt="HemPunch" width="300">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hempunch2.png" alt="HemPunch2" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>จำเป็นต้องมีสามพารามิเตอร์เพื่อกำหนดกระบวนการ Hemming สามารถดู
+ค่าทั้งสามเป็น A, B และ C ตามภาพด้านบน พารามิเตอร์ตัวแรก (-1 มม. ในตัวอย่างนี้) กำหนด
+ระยะห่าง ด้านหลังแนวพับ ถึงผิวตั้งฉากของหัวเจาะ ในกรณีนี้ เนื่องจาก
+ผิวตั้งฉากอยู่เลยแนวพับไปด้านหน้า ค่าจึงเป็น -1 พารามิเตอร์ตัวที่สอง (12.15 มม. ที่นี่)
+กำหนดระยะที่ปลายหัว Hem อยู่เลยแนวพับไปด้านหน้า พารามิเตอร์ตัวสุดท้าย (70 มม. ที่นี่)
+คือระยะแนวดิ่งจากปลายหัวเจาะถึงจุดปลายของหัว Hem</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ดาย_hem_block">ดาย Hem block<a id="h000037"></a></h3>
+<div class="paragraph">
+<p>Hemming block คือชิ้นส่วนเสริมที่ติดตั้งไว้ด้านหน้าหรือด้านหลังของดาย เพื่อใช้ในกระบวนการ Hemming
+โดยทำหน้าที่เป็นพื้นผิวเรียบสำหรับให้แผ่นงานพับชนเพื่อให้เกิดรอยพับที่เรียบร้อยและแม่นยำ</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hemblock.png" alt="HemBlock" width="270">
+</div>
+</div>
+<div class="paragraph">
+<p>สำหรับ Hem block ต้องมีข้อมูลเพิ่มเติมดังต่อไปนี้:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ข้อความ <strong>FLAVOR=HemBlock</strong> จะระบุว่าเป็น Hem block</p>
+</li>
+<li>
+<p>ข้อความ <strong>PARAMS=0,13.9</strong> จะระบุค่าพารามิเตอร์ที่จำเป็นต่อการจำลองอย่างถูกต้อง</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/hemblock2.png" alt="Hemblock2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>ต้องมีพารามิเตอร์สองค่ากำหนด Hem block ดังนี้: พารามิเตอร์ตัวแรกระบุตำแหน่ง Hemming
+ว่า Hem block นี้จะถูกใช้ด้านหน้าหรือด้านหลังของดาย
+0 = ด้านหน้า, 1 = ด้านหลัง ตัวอย่างข้างต้นแสดงว่า Hem block นี้สามารถใช้ที่ด้านหน้าดาย
+พารามิเตอร์อีกค่าคือ ระยะเลื่อนสำหรับการทำ Hem ซึ่งเป็นการเคลื่อนที่ตามแกน I ในภาพตัวอย่างข้างบนจะแสดง
+ค่าดังกล่าวเป็นค่าระยะ B</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ดาย_z_bend">ดาย Z-Bend<a id="h000038"></a></h3>
+<div class="paragraph">
+<p>สำหรับดาย Z-Bend ต้องมีข้อความในไฟล์ DXF: <strong>FLAVOR=ZBendDie</strong></p>
+</div>
+<div class="paragraph">
+<p>นอกจากนี้ ภาพวาดของเครื่องมือควรแสดงแถบกลางที่เป็นแนวราบ
+จากล่างซ้ายไปยังบนขวา กล่าวอีกนัยหนึ่ง การวางแนวของภาพวาดต้อง เหมือนกับภาพตัวอย่างด้านล่าง
+และไม่ใช่เวอร์ชัน_กลับด้าน_ของภาพนั้น:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/zdie.png" alt="ZDie" width="350">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_หัวเจาะ_z_bend">หัวเจาะ Z-Bend<a id="h000039"></a></h3>
+<div class="paragraph">
+<p>สำหรับหัวเจาะ Z-Bend ต้องมีข้อความในไฟล์ DXF: <strong>FLAVOR=ZBendPunch</strong></p>
+</div>
+<div class="paragraph">
+<p>นอกจากนี้ ภาพวาดของเครื่องมือควรแสดงแถบกลางที่เป็นแนวราบ
+จากล่างซ้ายไปยังบนขวา กล่าวอีกนัยหนึ่ง การวางแนวของภาพวาดต้อง เหมือนกับภาพตัวอย่างด้านล่าง
+และไม่ใช่เวอร์ชัน_กลับด้าน_ของภาพนั้น:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/zpunch.png" alt="ZPunch" width="350">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_หัวเจาะแบบแกนโค้ง">หัวเจาะแบบแกนโค้ง<a id="h000040"></a></h3>
+<div class="paragraph">
+<p>เป็นหัวเจาะแบบแกนโค้ง ซึ่งต้องใช้ตัวยึดสำหรับแกนโค้ง</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/radiuspunch.png" alt="RadiusPunch" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>สำหรับหัวเจาะประเภทนี้ ต้องมีข้อมูลเพิ่มเติมดังนี้:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ข้อความ <strong>FLAVOR=RShaft</strong> จะระบุว่าเป็นหัวเจาะแบบแกนโค้ง</p>
+</li>
+<li>
+<p>ข้อความ <strong>PARAMS=80</strong> ระบุความสูงของเครื่องมือ ซึ่งจะใช้ในการสร้างโปรแกรม NC</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+เอนทิตีประเภท POINT คือจุดอ้างอิงของเครื่องมือเครื่องมือนี้ควรวาดโดยให้จุดอ้างอิงอยู่ที่ปลายยอดตัว V กลับหัว
+ของตัวยึด
+</td>
+</tr>
+</table>
+</div>
+<div id="h000041" class="ulist">
+<ul>
+<li>
+<p>วาดชิ้นส่วนสอดแบบแกนโค้งพร้อมกับตัวยึดที่เกี่ยวข้องให้เหมือนกับการติดตั้งในเครื่องจักรตามภาพด้านล่าง</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/radiuspunch3.png" alt="RadiusPunch3" width="250">
+</div>
+</div>
+<div id="h000042" class="ulist">
+<ul>
+<li>
+<p>ลบเส้นโพลีไลน์ของตัวยึดออกและบันทึกเฉพาะ DXF ของชิ้นส่วนสอดแบบแกนโค้ง เฉพาะเอนทิตี POINT ที่
+ปลายยอดตัว V กลับหัวของตัวยึดและเส้นโพลีไลน์ของชิ้นส่วนสอด ที่อยู่ต่ำกว่าจุด POINT เล็กน้อย
+จะถือเป็นโปรไฟล์ DXF ของชิ้นส่วนสอด</p>
+</li>
+<li>
+<p>ความสูงของเครื่องมือนี้วัดจากเอนทิตี POINT ในภาพตัวอย่างข้างล่างจะแสดง
+ค่าดังกล่าวเป็นค่าระยะ A</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/radiuspunch2.png" alt="RadiusPunch2" width="250">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ดาย_ev_f_hem">ดาย EV-F hem<a id="h000044"></a></h3>
+<div class="paragraph">
+<p>เครื่องมือ EV-F นี้ใช้สำหรับการพับริมโดยไม่เกิดการเลื่อนตำแหน่ง ดายประเภทนี้
+เรียกว่า I0HemDie</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hemdie.png" alt="I0HemDie" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>สำหรับดายประเภทนี้ ต้องมีข้อมูลเพิ่มเติมดังนี้:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ข้อความ <strong>FLAVOR=I0HemDie</strong> จะระบุว่าเป็น I0HemDie</p>
+</li>
+<li>
+<p>ข้อความ <strong>PARAMS=8.5,95.5</strong> จะระบุค่าพารามิเตอร์ที่จำเป็นต่อการจำลองอย่างถูกต้อง</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hemdie2.png" alt="I0HemDie2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>ดายสำหรับการพับริมนี้มีพารามิเตอร์สองค่า สามารถดู
+ค่าทั้งสามเป็น A และ B ตามภาพด้านบน พารามิเตอร์แรก (8.5 มม. ในตัวอย่างนี้) คือระยะห่างจากแนวกึ่งกลาง
+ถึงตำแหน่งของชิ้นงานระหว่างการพับริม พารามิเตอร์ที่สอง (95.5 มม. ที่นี่) คือระยะทางแนวตั้งจากตำแหน่งชิ้นงาน
+ระหว่างการพับริมจนถึงด้านล่างของดาย</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_หัวเจาะ_ev_f_hem">หัวเจาะ EV-F hem<a id="h000045"></a></h3>
+<div class="paragraph">
+<p>หัวเจาะ EV-F นี้ใช้สำหรับการพับริมโดยไม่เกิดการเลื่อนตำแหน่ง หัวเจาะประเภทนี้
+เรียกว่า I0HemPunch</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hempunch.png" alt="I0HemPunch" width="450">
+</div>
+</div>
+<div class="paragraph">
+<p>สำหรับหัวเจาะประเภทนี้ ต้องมีข้อมูลเพิ่มเติมดังนี้:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ข้อความ <strong>FLAVOR=I0HemPunch</strong> จะระบุว่าเป็น I0HemPunch</p>
+</li>
+<li>
+<p>ข้อความ <strong>PARAMS=-8,16,57.5</strong> จะระบุค่าพารามิเตอร์ที่จำเป็นต่อ
+การจำลองอย่างถูกต้อง</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/i0hempunch2.png" alt="I0HemPunch2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>จำเป็นต้องมีสามพารามิเตอร์เพื่อกำหนดกระบวนการ Hemming สามารถดู
+ค่าทั้งสามเป็น A, B และ C ตามภาพด้านบน พารามิเตอร์เหล่านี้เหมือนกับ
+ที่กำหนดไว้ใน HemPunch</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ดาย_roll_bend">ดาย Roll-Bend<a id="h000046"></a></h3>
+<div class="paragraph">
+<p>ดาย Roll-Bend เรียกอีกชื่อว่าดาย Wing</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rollbenddie.png" alt="RollbendDie" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>เครื่องมือนี้ต้องมีข้อมูลเพิ่มเติมดังต่อไปนี้:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ข้อความ <strong>FLAVOR=WingDie</strong> จะระบุว่าเป็นเครื่องมือแบบปีก</p>
+</li>
+<li>
+<p>ข้อความ <strong>PARAMS=10.49,100</strong> จะระบุค่าพารามิเตอร์ที่จำเป็นต่อ
+การจำลองปีกอย่างถูกต้อง</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rollbenddie2.png" alt="RollbendDie2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>มีพารามิเตอร์สองค่าที่ใช้กำหนดการเคลื่อนที่ของชิ้นส่วน Wing-Bend พารามิเตอร์แรก
+คือระยะทางแนวนอนจากเส้นกึ่งกลางของดายไปยังจุดศูนย์กลางของการหมุน
+ของปีกด้านหนึ่ง ในภาพตัวอย่างข้างบนจะแสดงค่าดังกล่าวเป็นค่าระยะ A พารามิเตอร์ที่สอง
+คือระยะทางแนวตั้งจากด้านล่างของดายไปยังจุดศูนย์กลางของการหมุน
+ของปีก ในภาพตัวอย่างข้างบนจะแสดงค่าดังกล่าวเป็นค่าระยะ B โดยปกติแล้ว ค่า B และความสูงจะมีค่าเท่ากัน</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ดาย_self_hem">ดาย Self hem<a id="h000047"></a></h3>
+<div class="paragraph">
+<p>ดายนี้เป็น V-Dies ที่มีโต๊ะสำหรับการพับริมแยกออกมาดังแสดงในภาพด้านล่าง
+สำหรับดายประเภทนี้ ไฟล์ DXF ต้องมีข้อความ: <strong>FLAVOR=SelfHemDie</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/selfhemdie.png" alt="SelfHemDie" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p>และต้องมีคำสั่ง <strong>PARAMS</strong> ที่ระบุพารามิเตอร์ 2 ค่า
+พารามิเตอร์ทั้งสองนี้เหมือนกับที่ใช้ใน I0HemDie</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/selfhemdie2.png" alt="SelfHemDie2" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p>สามารถดูค่าทั้งสามเป็น A และ B ตามภาพด้านบน พารามิเตอร์แรกคือ
+ระยะห่างจากแนวกึ่งกลางถึงตำแหน่งของชิ้นงานระหว่างการพับริม พารามิเตอร์ที่สองคือ
+ระยะทางแนวตั้งจากตำแหน่งชิ้นงานระหว่างการพับริมจนถึงด้านล่างของดาย</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ดาย_double_v">ดาย Double V<a id="h000048"></a></h3>
+<div class="paragraph">
+<p>ดายที่มีความกว้าง V หลายขนาดและต้องใช้การเลื่อน IAxis เพื่อเลือกใช้ V อื่น
+เรียกว่าดาย Double V มีข้อกำหนดบางประการที่ต้องปฏิบัติตาม:</p>
+</div>
+<div id="h000049" class="ulist">
+<ul>
+<li>
+<p>สร้างไฟล์ DXF สำหรับแต่ละดาย โดยใช้ <strong>FLAVOR=DoubleV</strong> หนึ่งไฟล์สำหรับแต่ละขนาดความกว้าง V</p>
+</li>
+<li>
+<p>ตั้งค่าคำสั่ง <strong>ORDERNO</strong> ให้เหมือนกันสำหรับทั้งสองไฟล์ดาย (สามารถใช้ข้อความใดก็ได้ที่ไม่เว้นว่าง)</p>
+</li>
+<li>
+<p>ตั้งค่าพารามิเตอร์ <strong>YSHIFT</strong> ให้เป็นค่าที่ถูกต้องสำหรับการใช้แ IAxis</p>
+</li>
+<li>
+<p>วาดเครื่องหมายจุดที่ด้านล่างของดายตรงกับจุดกึ่งกลางใต้รูปตัว V
+เพื่อแสดงตำแหน่งรูปทรงของการขึ้นรูป</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>ตัวอย่างเช่น ดายที่มีความกว้างตัว V เท่ากับ 12 และ 6 ต้องแยกสร้างเป็นไฟล์ DXF สองไฟล์
+ตามภาพด้านล่าง:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/doublevdie.png" alt="DoubleVdie" width="300">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ดาย_spring_loaded_hemming_feather_hemming_dies">ดาย Spring-loaded hemming (feather-hemming-dies)<a id="h000053"></a></h3>
+<div class="paragraph">
+<p>สำหรับดายพับริมแบบมีสปริง ต้องมีข้อความต่อไปนี้ในไฟล์ DXF: <strong>FLAVOR=SpringHem</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/springhemdie.png" alt="SpringHemDie" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>นอกจากนี้ ต้องมีการระบุเพิ่มเติมดังต่อไปนี้:</p>
+</div>
+<div id="h000054" class="ulist">
+<ul>
+<li>
+<p>ข้อความ <strong>PARAMS=-2,30,10</strong> จะระบุค่าพารามิเตอร์ที่จำเป็นต่อการจำลองอย่างถูกต้อง</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/springhemdie2.png" alt="SpringHemDie2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>ดายนี้ประกอบด้วยสองส่วน โดยส่วนบนจะเคลื่อนที่ลงเพื่อทำให้
+ขอบแผ่นเรียบ มีพารามิเตอร์สามค่าที่ใช้กำหนดร่องกด พารามิเตอร์แรก
+คือระยะห่างจากแนวกึ่งกลางของดายถึงตำแหน่งของชิ้นงานระหว่างการพับริม ค่าเป็นบวก (+ve)
+หมายความว่าอยู่ด้านหน้าของเส้นกึ่งกลาง และค่าเป็นลบ (-ve) หมายความว่าอยู่
+ด้านหลังของเส้นกึ่งกลาง ในภาพตัวอย่างข้างบนจะแสดงค่าดังกล่าวเป็นค่าระยะ A พารามิเตอร์ที่สอง
+คือระยะห่างของรอยเว้าสำหรับการรีดขอบจากฐานของแม่พิมพ์ในระหว่าง
+กระบวนการรีดขอบ ในภาพตัวอย่างข้างบนจะแสดงค่าดังกล่าวเป็นค่าระยะ B พารามิเตอร์ที่สามคือระยะสปริง
+ซึ่งเป็นความสูงของรอยเว้า ในภาพตัวอย่างข้างบนจะแสดงค่าดังกล่าวเป็นค่าระยะ C</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_อะแดปเตอร์ของหัวเจาะ">อะแดปเตอร์ของหัวเจาะ<a id="h000055"></a></h3>
+<div class="paragraph">
+<p>ระบบนำเข้าเครื่องมือสามารถนำเข้า_อะแดปเตอร์ของหัวเจาะ_ได้
+ เพื่อให้ Flux จดจำได้อย่างถูกต้องว่า
+เป็นอะแดปเตอร์ของหัวเจาะต้องมีเอนทิตีข้อความต่อไปนี้ในไฟล์:</p>
+</div>
+<div id="h000056" class="ulist">
+<ul>
+<li>
+<p>ข้อความ <strong>UPPER=PTrumpf</strong> ระบุประเภทตัวเชื่อมต่อด้านบน (โดยทั่วไปคือ
+PTrumpf หากจะติดตั้งอะแดปเตอร์กับเครื่องของ TRUMPF)</p>
+</li>
+<li>
+<p>ข้อความ <strong>LOWER=PEHT</strong> ระบุประเภทตัวเชื่อมต่อด้านล่าง
+(เป็นประเภทของหัวเจาะที่สามารถติดตั้งกับอะแดปเตอร์นี้ได้)</p>
+</li>
+<li>
+<p>ข้อความ <strong>HEIGHT=64</strong> ระบุความสูงในการทำงานที่แท้จริงของอะแดปเตอร์ ซึ่งจำเป็นต้องระบุ เพราะ Flux ไม่สามารถสรุปความสูงของอะแดปเตอร์ได้โดยอัตโนมัติ</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>ด้านล่างคือตัวอย่างภาพของอะแดปเตอร์ของหัวเจาะที่สามารถนำเข้าได้จากไฟล์ DXF:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/padapter.png" alt="PAdapter" width="300">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ตัวยึดใบมีด">ตัวยึดใบมีด<a id="h000059"></a></h3>
+<div class="paragraph">
+<p>ระบบนำเข้าเครื่องมือสามารถนำเข้า_ตัวยึดใบมีด_ได้ ตัวยึดใบมีดบางรุ่น (เช่น
+รุ่นที่คล้ายกับ OW209/S) ใช้เป็นหัวเจาะพับขอบ
+เพื่อทำให้ขอบแผ่นโลหะเรียบได้เช่นกัน สำหรับตัวยึดใบมีดประเภทนี้
+ต้องมีข้อมูลเพิ่มเติมดังนี้</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bholder1.png" alt="BHolder1" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>พารามิเตอร์ UPPER, LOWER, HEIGHT ซึ่งอธิบายไว้ในหัวข้อของอะแดปเตอร์ของหัวเจาะ
+และมีความหมายเหมือนกัน เพื่อช่วยให้ Flux
+ใช้ตัวยึดนี้เป็นเครื่องมือพับขอบได้ ต้องมีข้อความเพิ่มเติมดังต่อไปนี้:</p>
+</div>
+<div id="h000060" class="ulist">
+<ul>
+<li>
+<p>ข้อความ <strong>SPLFLAVOR=HemPunch</strong> ระบุว่าอะแดปเตอร์เป็นเครื่องมือพับขอบ</p>
+</li>
+<li>
+<p>ข้อความ <strong>PARAMS=-6,18,60</strong> จะระบุค่าพารามิเตอร์ที่จำเป็นต่อ
+การจำลองกระบวนการพับขอบอย่างถูกต้อง</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bholder2.png" alt="BHolder2" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>จำเป็นต้องมีสามพารามิเตอร์เพื่อกำหนดกระบวนการ Hemming สามารถดู
+ค่าทั้งสามเป็น A, B และ C ตามภาพด้านบน พารามิเตอร์ตัวแรก (-6 มม. ในตัวอย่างนี้) กำหนด
+ระยะห่าง ด้านหลังแนวพับ ถึงผิวตั้งฉากของหัวเจาะ
+ในกรณีนี้ เนื่องจากผิวตั้งฉากอยู่เลยแนวพับไปด้านหน้า ค่าจึงเป็น
+-6 พารามิเตอร์ตัวที่สอง (18 มม. ที่นี่) กำหนดระยะที่ปลายหัว Hem
+อยู่เลยแนวพับไปด้านหน้า พารามิเตอร์ตัวสุดท้าย (60 มม. ที่นี่) คือระยะแนวดิ่งจากปลายหัวเจาะถึง
+จุดปลายของหัว Hem</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ตัวยึดแบบแกนโค้ง">ตัวยึดแบบแกนโค้ง<a id="h000062"></a></h3>
+<div class="paragraph">
+<p>ตัวยึดนี้ใช้กับเครื่องมือหัวเจาะแบบแกนโค้ง</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rholder.png" alt="Rholder" width="220">
+</div>
+</div>
+<div class="paragraph">
+<p>ต้องมีข้อมูลเพิ่มเติมดังนี้:</p>
+</div>
+<div id="h000063" class="ulist">
+<ul>
+<li>
+<p>ข้อความ <strong>FLAVOR=RShaft</strong> จะระบุว่าอะแดปเตอร์เป็นหัวเจาะแบบแกนโค้ง</p>
+</li>
+<li>
+<p>ข้อความ <strong>PARAMS=100</strong> ระบุความสูงของเครื่องมือ ซึ่งจะใช้ในการสร้างโปรแกรม NC</p>
+</li>
+<li>
+<p>ความสูงของเครื่องมือนี้วัดจากจุดกำเนิดไปจนถึงยอดของรูปตัว V กลับหัวของตัวยึด
+ในภาพตัวอย่างข้างล่างจะแสดงค่าดังกล่าวเป็นค่าระยะ A</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/rholder2.png" alt="RHolder2" width="220">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ตัวยึด_double_v">ตัวยึด Double V<a id="h000066"></a></h3>
+<div class="paragraph">
+<p>ตัวยึดประเภทนี้สามารถรองรับดายได้ 2 ตัว</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/dvholder.png" alt="DVHolder" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>ต้องมีข้อมูลเพิ่มเติมดังนี้:</p>
+</div>
+<div id="h000067" class="ulist">
+<ul>
+<li>
+<p>ข้อความ <strong>FLAVOR=DVHolder</strong> จะระบุว่าอะแดปเตอร์เป็น DVHolder</p>
+</li>
+<li>
+<p>ข้อความ <strong>PARAMS=0,36.2</strong> ระบุพารามิเตอร์ที่ใช้ในการเลื่อนดายไปยังช่องอื่นในตัวยึด</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/dvholder2.png" alt="DVHolder2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p>ต้องมีพารามิเตอร์ 2 ตัวในการกำหนดตัวยึดประเภทนี้ ค่าตัวแรก (0 มม. ในตัวอย่างนี้)
+ ระบุว่าช่องแรกอยู่ห่างจากจุดอ้างอิงของตัวยึดเท่าใด ในกรณีนี้ เนื่องจาก
+ช่องแรกจัดอยู่ในแนวเดียวกับจุดอ้างอิง ค่าจึงเป็น 0 ส่วนพารามิเตอร์ที่สอง (36.2 มม. ในที่นี้)
+ซึ่งแสดงเป็นค่า A ในภาพด้านบนใช้กำหนดระยะของช่องที่สอง
+จากจุดอ้างอิงของตัวยึด</p>
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_ตัวอย่าง_dxf">ตัวอย่าง DXF</a>
+  </li>
+  <li level="2">
+   <a href="#_เมตาดาทาในเอนทิตีข้อความ">เมตาดาทาในเอนทิตีข้อความ</a>
+  </li>
+  <li level="2">
+   <a href="#_การจดจำรูปร่าง">การจดจำรูปร่าง</a>
+  </li>
+  <li level="2">
+   <a href="#_ข้อมูลเพิ่มเติม">ข้อมูลเพิ่มเติม:</a>
+  </li>
+  <li level="1">
+   <a href="#_เครื่องมือพิเศษ">เครื่องมือพิเศษ</a>
+  </li>
+  <li level="2">
+   <a href="#_หัวเจาะ_hem">หัวเจาะ Hem</a>
+  </li>
+  <li level="2">
+   <a href="#_ดาย_hem_block">ดาย Hem block</a>
+  </li>
+  <li level="2">
+   <a href="#_ดาย_z_bend">ดาย Z-Bend</a>
+  </li>
+  <li level="2">
+   <a href="#_หัวเจาะ_z_bend">หัวเจาะ Z-Bend</a>
+  </li>
+  <li level="2">
+   <a href="#_หัวเจาะแบบแกนโค้ง">หัวเจาะแบบแกนโค้ง</a>
+  </li>
+  <li level="2">
+   <a href="#_ดาย_ev_f_hem">ดาย EV-F hem</a>
+  </li>
+  <li level="2">
+   <a href="#_หัวเจาะ_ev_f_hem">หัวเจาะ EV-F hem</a>
+  </li>
+  <li level="2">
+   <a href="#_ดาย_roll_bend">ดาย Roll-Bend</a>
+  </li>
+  <li level="2">
+   <a href="#_ดาย_self_hem">ดาย Self hem</a>
+  </li>
+  <li level="2">
+   <a href="#_ดาย_double_v">ดาย Double V</a>
+  </li>
+  <li level="2">
+   <a href="#_ดาย_spring_loaded_hemming_feather_hemming_dies">ดาย Spring-loaded hemming (feather-hemming-dies)</a>
+  </li>
+  <li level="2">
+   <a href="#_อะแดปเตอร์ของหัวเจาะ">อะแดปเตอร์ของหัวเจาะ</a>
+  </li>
+  <li level="2">
+   <a href="#_ตัวยึดใบมีด">ตัวยึดใบมีด</a>
+  </li>
+  <li level="2">
+   <a href="#_ตัวยึดแบบแกนโค้ง">ตัวยึดแบบแกนโค้ง</a>
+  </li>
+  <li level="2">
+   <a href="#_ตัวยึด_double_v">ตัวยึด Double V</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="bseparatordxf.html">แผ่นคั่น DXF</a></span>
+ <span class="next"><a href="../impressum.html">Impressum</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>
