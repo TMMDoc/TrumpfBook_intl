@@ -231,7 +231,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../fold/index.html">CAM de doblado</a>
+   <a href="../../fold/index.html">Plegado basculante</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Crear datos de plegado</a></li>
     <li><button class="tree blank"></button><a href="../../fold/foldview.html">La vista de plegado</a></li>
@@ -392,7 +392,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>TecZone Laser utiliza un sistema de <strong>Reglas de acabado</strong> para determinar qué hacer cuando se completa el corte de un agujero o una pieza. A medida que estos agujeros y piezas se desprenden de la chapa (por el corte láser), pueden suceder varias cosas:</p>
+<p>TecZone Laser utiliza un sistema de <strong>Finishing rules</strong> para determinar qué hacer cuando se completa el corte de un agujero o una pieza. A medida que estos agujeros y piezas se desprenden de la chapa (por el corte láser), pueden suceder varias cosas:</p>
 </div>
 <div id="h000273" class="ulist">
 <ul>
@@ -449,8 +449,8 @@
 <h2 id="_configuración_de_las_normas_de_acabado">Configuración de las normas de acabado<a id="h000280"></a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Reglas de acabado</strong> están configurados en la página <a href="../../settings/cutcam/index.html">Cortar CAM</a> del
-<strong>cuadro de diálogo Ajustes</strong>.</p>
+<p><strong>Finishing rules</strong> están configurados en la página <a href="../../settings/cutcam/index.html">Cortar CAM</a> del
+<strong>cuadro de diálogo Settings</strong>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -459,52 +459,52 @@
 </div>
 <div class="paragraph">
 <p>Cada regla especifica un <em>tipo de contorno</em>, un <em>tamaño</em> y la <em>acción</em> que debe realizarse cuando se produce una coincidencia. El orden de estas normas es importante. A medida que TecZone Laser termina de procesar cada contorno, recorre estas reglas y aplica la primera que coincide. En general, esto significa que primero hay que escribir reglas más específicas o utilizar tamaños más pequeños. (Los
-<strong>botones Arriba</strong> y <strong>Abajo</strong> situados junto a las reglas se pueden utilizar para mezclarlas en orden ascendente o descendente).</p>
+<strong>botones Up</strong> y <strong>Down</strong> situados junto a las reglas se pueden utilizar para mezclarlas en orden ascendente o descendente).</p>
 </div>
 <div class="sect2">
 <h3 id="_tipos_de_contorno">Tipos de contorno<a id="h000281"></a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Todo</strong> coincide con todos los contornos (agujeros o contornos exteriores).</p>
+<p><strong>All</strong> coincide con todos los contornos (agujeros o contornos exteriores).</p>
 </li>
 <li>
-<p><strong>Estable</strong> coincide con todos los contornos que permanecerán estables en los listones de apoyo o en las clavijas.</p>
+<p><strong>Stable</strong> coincide con todos los contornos que permanecerán estables en los listones de apoyo o en las clavijas.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Interior estable</strong> es el conjunto de contornos <em>interiores</em> que son estables.</p>
+<p><strong>Stable inner</strong> es el conjunto de contornos <em>interiores</em> que son estables.</p>
 </li>
 <li>
-<p><strong>Exterior estable</strong> es el conjunto de contornos <em>exteriores</em> que son estables.</p>
+<p><strong>Stable outer</strong> es el conjunto de contornos <em>exteriores</em> que son estables.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Inestable</strong> coincide con todos los contornos que se <em>inclinarán</em> o que se <em>caerán por</em> las clavijas.</p>
+<p><strong>Unstable</strong> coincide con todos los contornos que se <em>inclinarán</em> o que se <em>caerán por</em> las clavijas.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Interior inestable</strong> es el conjunto de contornos <em>interiores</em> que son inestables.</p>
+<p><strong>Unstable inner</strong> es el conjunto de contornos <em>interiores</em> que son inestables.</p>
 </li>
 <li>
-<p><strong>Exterior inestable</strong> es el conjunto de contornos <em>exteriores</em> que son inestables.</p>
+<p><strong>Unstable outer</strong> es el conjunto de contornos <em>exteriores</em> que son inestables.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Colisión</strong> coincide con todos los contornos que son inestables y también están cerca de otro contorno en la pieza. Cuando un contorno <em>interior</em> inestable está cerca de otro contorno <em>interior</em> inestable, ambos se marcan como potencialmente colisionables, ya que no se sabe cuál de los dos se cortará primero (y esa secuencia puede cambiar a medida que se coloca la pieza en un diseño). Cuando un contorno <em>interior</em> inestable está cerca de un contorno <em>exterior</em> inestable, solo se marca como colisionante el contorno interior (ya que siempre se cortará antes que el otro).</p>
+<p><strong>Colliding</strong> coincide con todos los contornos que son inestables y también están cerca de otro contorno en la pieza. Cuando un contorno <em>interior</em> inestable está cerca de otro contorno <em>interior</em> inestable, ambos se marcan como potencialmente colisionables, ya que no se sabe cuál de los dos se cortará primero (y esa secuencia puede cambiar a medida que se coloca la pieza en un diseño). Cuando un contorno <em>interior</em> inestable está cerca de un contorno <em>exterior</em> inestable, solo se marca como colisionante el contorno interior (ya que siempre se cortará antes que el otro).</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Colisión en interior</strong> es el conjunto de contornos _ interiores_ que están clasificados como colisionantes.</p>
+<p><strong>Colliding inner</strong> es el conjunto de contornos _ interiores_ que están clasificados como colisionantes.</p>
 </li>
 <li>
-<p><strong>Colisión en exterior</strong> es el conjunto de contornos _ exteriores_ que están clasificados como colisionantes.El análisis para determinar si un contorno es
-<strong>Estable</strong>, o
-<strong>Colisión</strong> es complejo.La sección <strong>Cálculo de estabilidad</strong> a continuación explica parte de esta complejidad.</p>
+<p><strong>Colliding outer</strong> es el conjunto de contornos _ exteriores_ que están clasificados como colisionantes.El análisis para determinar si un contorno es
+<strong>Stable</strong>, o
+<strong>Colliding</strong> es complejo.La sección <strong>Cálculo de estabilidad</strong> a continuación explica parte de esta complejidad.</p>
 </li>
 </ul>
 </div>
@@ -515,23 +515,23 @@
 <div class="sect2">
 <h3 id="_acciones">Acciones<a id="h000282"></a></h3>
 <div class="paragraph">
-<p>El <strong>Tipo de contorno</strong> y <strong>Tamaño del archivo</strong> se utilizan para configurar los criterios con los que se comprueba cada contorno a medida que se mecaniza. Cuando se encuentra una coincidencia (evaluando las reglas en orden), se realiza el <strong>Acción</strong> correspondiente en ese contorno.</p>
+<p>El <strong>Tipo de contorno</strong> y <strong>Size</strong> se utilizan para configurar los criterios con los que se comprueba cada contorno a medida que se mecaniza. Cuando se encuentra una coincidencia (evaluando las reglas en orden), se realiza el <strong>Action</strong> correspondiente en ese contorno.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Off</strong>: No se toma ninguna medida especial.</p>
+<p><strong>None</strong>: No se toma ninguna medida especial.</p>
 </li>
 <li>
 <p><strong>Auto microjoint</strong>: Aplica una o más microjoint(s) en el contorno. El número de microjoints necesarias se determina automáticamente (véase la sección <strong>Cálculo de estabilidad</strong> a continuación).</p>
 </li>
 <li>
-<p><strong>Corte de desecho</strong>: Corta las pepitas de los agujeros en trozos más pequeños que caerán a través de los listones de apoyo. El tamaño de los desechos se ajusta en la página <a href="../../settings/cutcam/index.html">Cortar CAM</a> del
-<strong>cuadro de diálogo Ajustes</strong>.</p>
+<p><strong>Cut up scrap</strong>: Corta las pepitas de los agujeros en trozos más pequeños que caerán a través de los listones de apoyo. El tamaño de los desechos se ajusta en la página <a href="../../settings/cutcam/index.html">Cut CAM</a> del
+<strong>cuadro de diálogo Settings</strong>.</p>
 </li>
 <li>
-<p><strong>Un microjoint</strong>, <strong>Dos microjoints</strong>
-y <strong>Tres microjoints</strong>: crean un número preciso de microjoints en el contorno.</p>
+<p><strong>One microjoint</strong>, <strong>Two microjoints</strong>
+y <strong>Three microjoints</strong>: crean un número preciso de microjoints en el contorno.</p>
 </li>
 </ul>
 </div>
@@ -543,7 +543,7 @@ y <strong>Tres microjoints</strong>: crean un número preciso de microjoints en 
 <div class="sectionbody">
 <div class="paragraph">
 <p>Los cálculos de <strong>estabilidad de inclinación</strong> dependen de la posición de los contornos en relación con los dedos de tope de la máquina. Para entender los resultados de este análisis, es útil activar la visualización de los dedos de tope desde la
-<strong>página Vista de corte</strong> del cuadro de diálogo de ajustes:</p>
+<strong>página Cut View</strong> del cuadro de diálogo de ajustes:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -600,7 +600,7 @@ y <strong>Tres microjoints</strong>: crean un número preciso de microjoints en 
 <div class="sect2">
 <h3 id="_nesting_pieza_en_pieza">Nesting pieza en pieza<a id="h000287"></a></h3>
 <div class="paragraph">
-<p>Un gran contorno de agujero interior puede estar sostenido por un número suficiente de clavijas y podría considerarse <strong>Estable</strong>. No es necesario realizar ningún acabado especial en este orificio, ya que la pepita quedaría estable sobre las clavijas (como se muestra en la imagen inferior izquierda):</p>
+<p>Un gran contorno de agujero interior puede estar sostenido por un número suficiente de clavijas y podría considerarse <strong>Stable</strong>. No es necesario realizar ningún acabado especial en este orificio, ya que la pepita quedaría estable sobre las clavijas (como se muestra en la imagen inferior izquierda):</p>
 </div>
 <div class="imageblock">
 <div class="content">

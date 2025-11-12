@@ -231,7 +231,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../fold/index.html">Fold CAM</a>
+   <a href="../../fold/index.html">Pliage à plat</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Création de données de plis écrasés</a></li>
     <li><button class="tree blank"></button><a href="../../fold/foldview.html">La vue Pli écrasé</a></li>
@@ -401,22 +401,22 @@
 <strong>Extraction</strong> vous permet de choisir une <em>stratégie</em> puis d&#8217;ajuster les différents paramètres contrôlant cette stratégie.</p>
 </div>
 <div class="paragraph">
-<p>Les paramètres apparaissent dans la section <strong>Avancé</strong> du panneau, et vous pouvez utiliser le curseur <strong>Simuler</strong> pour avancer et reculer dans la simulation de ce pliage, y compris l&#8217;extraction. Voici les réglages de base :</p>
+<p>Les paramètres apparaissent dans la section <strong>Advanced</strong> du panneau, et vous pouvez utiliser le curseur <strong>Simulate</strong> pour avancer et reculer dans la simulation de ce pliage, y compris l&#8217;extraction. Voici les réglages de base :</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>La liste <strong>Stratégie de retrait</strong> vous permet de choisir l&#8217;une des différentes stratégies d&#8217;extraction, chacune étant expliquée ci-dessous.</p>
+<p>La liste <strong>Extraction</strong> vous permet de choisir l&#8217;une des différentes stratégies d&#8217;extraction, chacune étant expliquée ci-dessous.</p>
 </li>
 </ul>
 </div>
 <div id="h000076" class="ulist">
 <ul>
 <li>
-<p>Une fois le pliage terminé, le coulisseau qui maintient le poinçon est relevé pour dégager la pièce. Le commutateur <strong>Déplacer avec le coulisseau</strong> ordonne au robot de soulever la pièce en tandem afin qu&#8217;elle se déplace vers le haut avec le coulisseau. Cela est utile pour certaines stratégies et <em>nécessaire</em> pour d&#8217;autres.</p>
+<p>Une fois le pliage terminé, le coulisseau qui maintient le poinçon est relevé pour dégager la pièce. Le commutateur <strong>Up with Ram</strong> ordonne au robot de soulever la pièce en tandem afin qu&#8217;elle se déplace vers le haut avec le coulisseau. Cela est utile pour certaines stratégies et <em>nécessaire</em> pour d&#8217;autres.</p>
 </li>
 <li>
-<p>Le réglage <strong>Ouvrir</strong> contrôle l'<em>ouverture du coulisseau</em>
+<p>Le réglage <strong>Opening</strong> contrôle l'<em>ouverture du coulisseau</em>
 <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> après que le pliage soit terminédone<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
 </li>
 </ul>
@@ -424,8 +424,8 @@
 <div id="h000077" class="ulist">
 <ul>
 <li>
-<p>Au début de l&#8217;extraction, la pièce est soulevée de sa position de repos sur la matrice par le réglage <strong>Soulever la pièce</strong> avant que l&#8217;extraction ne se poursuive.
-Cependant, si le réglage <strong>Déplacer avec le coulisseau</strong> est activé, la pièce est soulevée avec le coulisseau, et ce réglage est remplacé par le réglage <strong>Abaisser la pièce</strong>, qui contrôle la hauteur à laquelle la pièce est <em>abaissée</em> après la phase initiale de <em>montée</em> avec le coulisseau.</p>
+<p>Au début de l&#8217;extraction, la pièce est soulevée de sa position de repos sur la matrice par le réglage <strong>Part lift</strong> avant que l&#8217;extraction ne se poursuive.
+Cependant, si le réglage <strong>Up with Ram</strong> est activé, la pièce est soulevée avec le coulisseau, et ce réglage est remplacé par le réglage <strong>Part lower</strong>, qui contrôle la hauteur à laquelle la pièce est <em>abaissée</em> après la phase initiale de <em>montée</em> avec le coulisseau.</p>
 </li>
 </ul>
 </div>
@@ -449,7 +449,7 @@ TecZone Bend choisira automatiquement l&#8217;une de ces stratégies pour évite
 </div>
 </div>
 <div class="sect1">
-<h2 id="_pas_de_préhension">Pas de préhension</h2>
+<h2 id="_no_extraction">No Extraction</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Si le pliage suivant est proche du pliage qui vient d&#8217;être effectué, s&#8217;il est approximativement parallèle à celui-ci et s&#8217;il a le même sens de pliage, il n&#8217;est pas nécessaire d&#8217;extraire la pièce et de l&#8217;insérer à nouveau. La pièce pivote simplement autour de l&#8217;axe Z jusqu&#8217;à la position souhaitée pour le pliage suivant, comme illustré dans la séquence ci-dessous.</p>
@@ -462,14 +462,14 @@ TecZone Bend choisira automatiquement l&#8217;une de ces stratégies pour évite
 </div>
 </div>
 <div class="sect1">
-<h2 id="_a_gauche_a_droite">A gauche / A droite</h2>
+<h2 id="_left_right">Left / Right</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Une extraction directe vers l&#8217;arrière est parfois difficile car le coulisseau peut ne pas pouvoir être suffisamment ouvert, ou lorsque la pièce présente des bords de pli profonds qui s&#8217;emboîtent avec l&#8217;outil col de cygne, comme le montre l&#8217;image ci-dessous.</p>
 </div>
 <div class="paragraph">
 <p>La pièce peut ensuite être extraite vers la gauche ou vers la droite en utilisant cette stratégie. Le
-<strong>réglage Déplacement latéral</strong> contrôle le décalage latéral de la pièce (en Z) avant extraction.</p>
+<strong>réglage Side shift</strong> contrôle le décalage latéral de la pièce (en Z) avant extraction.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -479,11 +479,11 @@ TecZone Bend choisira automatiquement l&#8217;une de ces stratégies pour évite
 </div>
 </div>
 <div class="sect1">
-<h2 id="_préhension_tôle">Préhension tôle</h2>
+<h2 id="_unhook">Unhook</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Avec cette stratégie, la pièce est glissée diagonalement vers l&#8217;avant et vers le bas par le
-<strong>réglage Déplacer</strong>, puis abaissée et extraite. L&#8217;image ci-dessous illustre les différentes étapes de ce processus.</p>
+<strong>réglage Slide</strong>, puis abaissée et extraite. L&#8217;image ci-dessous illustre les différentes étapes de ce processus.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -493,7 +493,7 @@ TecZone Bend choisira automatiquement l&#8217;une de ces stratégies pour évite
 </div>
 </div>
 <div class="sect1">
-<h2 id="_pivoter">Pivoter</h2>
+<h2 id="_swivel">Swivel</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Cette stratégie est utilisée pour extraire des formes complexes en boîte avec des bords de pli vers l&#8217;intérieur qui nécessitent des outils bigornes en segment pour être usinés. L&#8217;extraction comprend plusieurs étapes, comme le montre la séquence d&#8217;images ci-dessous.</p>
@@ -506,10 +506,10 @@ TecZone Bend choisira automatiquement l&#8217;une de ces stratégies pour évite
 <div class="ulist">
 <ul>
 <li>
-<p>La pièce est d&#8217;abord glissée vers l&#8217;avant et vers le bas par le réglage <strong>Déplacer</strong>.</p>
+<p>La pièce est d&#8217;abord glissée vers l&#8217;avant et vers le bas par le réglage <strong>Slide</strong>.</p>
 </li>
 <li>
-<p>Ensuite, la pièce est inclinée vers l&#8217;arrière par le réglage <strong>Distance</strong>, puis <em>pivotée</em> autour de l&#8217;axe de la main par le réglage <strong>Pivoter</strong>.</p>
+<p>Ensuite, la pièce est inclinée vers l&#8217;arrière par le réglage <strong>Pitch</strong>, puis <em>pivotée</em> autour de l&#8217;axe de la main par le réglage <strong>Swivel</strong>.</p>
 </li>
 <li>
 <p>Les bords de pli latéraux doivent maintenant être dégagés des outils bigornes extérieurs du poinçon, la pièce peut alors être abaissée et extraite.</p>
@@ -519,7 +519,7 @@ TecZone Bend choisira automatiquement l&#8217;une de ces stratégies pour évite
 </div>
 </div>
 <div class="sect1">
-<h2 id="_rabattu_en_bas">Rabattu, en bas</h2>
+<h2 id="_tilt_back_lower">Tilt-back, lower</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Cette stratégie est utilisée lorsqu&#8217;un bord de pli haut est usiné avec un outil silencieux.
@@ -533,10 +533,10 @@ Pour faciliter l&#8217;extraction, la pièce est <em>inclinée vers l&#8217;arri
 </div>
 </div>
 <div class="sect1">
-<h2 id="_retirer">Retirer</h2>
+<h2 id="_slide_back">Slide back</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Il s&#8217;agit d&#8217;une autre stratégie qui peut s&#8217;avérer utile avec les bords de pli hauts. La pièce est glissée <em>vers l&#8217;arrière et vers le bas</em> par le réglage <strong>Déplacer</strong> avant d&#8217;être extraite.</p>
+<p>Il s&#8217;agit d&#8217;une autre stratégie qui peut s&#8217;avérer utile avec les bords de pli hauts. La pièce est glissée <em>vers l&#8217;arrière et vers le bas</em> par le réglage <strong>Slide</strong> avant d&#8217;être extraite.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -565,22 +565,22 @@ Pour faciliter l&#8217;extraction, la pièce est <em>inclinée vers l&#8217;arri
    <a href="#_standard">Standard</a>
   </li>
   <li level="1">
-   <a href="#_pas_de_préhension">Pas de préhension</a>
+   <a href="#_no_extraction">No Extraction</a>
   </li>
   <li level="1">
-   <a href="#_a_gauche_a_droite">A gauche / A droite</a>
+   <a href="#_left_right">Left / Right</a>
   </li>
   <li level="1">
-   <a href="#_préhension_tôle">Préhension tôle</a>
+   <a href="#_unhook">Unhook</a>
   </li>
   <li level="1">
-   <a href="#_pivoter">Pivoter</a>
+   <a href="#_swivel">Swivel</a>
   </li>
   <li level="1">
-   <a href="#_rabattu_en_bas">Rabattu, en bas</a>
+   <a href="#_tilt_back_lower">Tilt-back, lower</a>
   </li>
   <li level="1">
-   <a href="#_retirer">Retirer</a>
+   <a href="#_slide_back">Slide back</a>
   </li>
  </ul>
 </aside>

@@ -231,7 +231,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../fold/index.html">CAM risvolto</a>
+   <a href="../../fold/index.html">Piegatura a rotazione</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Creazione di dati risvolto</a></li>
     <li><button class="tree blank"></button><a href="../../fold/foldview.html">La vista Risvolto</a></li>
@@ -392,7 +392,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Sistemi Misurazione degli angoli</strong> come ACB&#8482;, ACB Laser&#8482; o LCB&#8482; possono essere usati per
+<p><strong>Sistemi Angle measurement</strong> come ACB&#8482;, ACB Laser&#8482; o LCB&#8482; possono essere usati per
 migliorare la precisione degli angoli durante la piegatura. Questi sistemi misurano l&#8217;angolo effettivo
 ottenuto durante la piegatura e il ritorno elastico della lamiera e utilizzano queste informazioni
 per regolare dinamicamente il punto morto inferiore del pestone in modo da ottenere l&#8217;angolo di piegatura
@@ -427,7 +427,7 @@ un particolare pezzo. È possibile farlo utilizzando il pannello <strong>Imposta
 image::acb-2.png[ACB Settings,705]</p>
 </div>
 <div class="paragraph">
-<p>La sezione <strong>Misurazione degli angoli</strong> della pagina <strong>Settings/BendCAM</strong> ha un elenco di scelte
+<p>La sezione <strong>Angle measurement</strong> della pagina <strong>Settings/BendCAM</strong> ha un elenco di scelte
 che consente di attivare o disattivare i vari sistemi di misurazione degli angoli. È possibile dare la priorità
 a una soluzione rispetto all&#8217;altra selezionandola e spostandola verso l&#8217;alto o verso il basso utilizzando i pulsanti con la freccia su/giù
 a fianco. In questo particolare esempio, sia la misurazione degli angoli basata su dischi che quella basata su laser
@@ -464,24 +464,24 @@ target. Questo è il metodo ACB più preciso, ma anche il più dispendioso in te
 <h3 id="_apprendimento_y">Apprendimento Y<a id="h000139"></a></h3>
 <div class="paragraph">
 <p>Nel metodo <strong>Apprendimento Y</strong>, il sistema ACB non viene affatto utilizzato. Il target del pestone Y
-(punto morto inferiore) viene semplicemente copiato da una piega precedente (nota come <em>Piegatura di riferimento</em>)
+(punto morto inferiore) viene semplicemente copiato da una piega precedente (nota come <em>Reference bend</em>)
 che è già stata misurata utilizzando il metodo <strong>Identica</strong>. Questa piega precedente deve essere
 identica in termini di angolo, raggio e utilizzo dell&#8217;utensile.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ritorno_elastico_appreso">Ritorno elastico appreso</h3>
+<h3 id="_learn_sb">Learn SB</h3>
 <div class="paragraph">
-<p>Nel metodo <strong>Ritorno elastico appreso</strong> o <strong>Apprendi ritorno elastico</strong>, il sistema ACB utilizza l&#8217;angolo di ritorno elastico
+<p>Nel metodo <strong>Learn SB</strong> o <strong>Apprendi ritorno elastico</strong>, il sistema ACB utilizza l&#8217;angolo di ritorno elastico
 da una piega precedente che è stata misurata utilizzando il metodo <strong>Identifica</strong>. Il sistema ACB
 è ancora utilizzato per regolare la piegatura, ma da una seconda misurazione dopo la decompressione
 non è richiesto, il ciclo è più veloce di un ciclo <strong>Identifica</strong> completo.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_immissione_ritorno_elastico">Immissione ritorno elastico</h3>
+<h3 id="_enter_sb">Enter SB</h3>
 <div class="paragraph">
-<p>Il metodo <strong>Immissione ritorno elastico</strong>, <strong>Inserisci ritorno elastico</strong>, <strong>Corretto</strong> o <strong>ACB Smart</strong> utilizza il sistema ACB
+<p>Il metodo <strong>Enter SB</strong>, <strong>Inserisci ritorno elastico</strong>, <strong>Corretto</strong> o <strong>ACB Smart</strong> utilizza il sistema ACB
 per misurare l&#8217;angolo target, ma utilizza un valore di ritorno elastico inserito
 dall&#8217;utente. In altre parole, il sistema ACB piega semplicemente il pezzo raggiungendo l&#8217;angolo target + il
 valore di correzione inserito dall&#8217;utente. Dopo la decompressione non viene effettuata una seconda misurazione.</p>
@@ -517,7 +517,7 @@ Bend Navigator:</p>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-corrected.png" alt="acb corrected" width="20"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sistema a dischi, metodo <strong>Immissione ritorno elastico</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sistema a dischi, metodo <strong>Enter SB</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-ok.png" alt="lcb ok" width="20"></span></p></td>
@@ -529,7 +529,7 @@ Bend Navigator:</p>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-corrected.png" alt="lcb corrected" width="20"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sistema laser, metodo <strong>Immissione ritorno elastico</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sistema laser, metodo <strong>Enter SB</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -548,7 +548,7 @@ Bend Navigator:</p>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-flange.png" alt="acb flange" width="20"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lunghezza lato insufficiente. per disco del sensore</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flange too narrow per disco del sensore</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-range.png" alt="acb range" width="20"></span></p></td>
@@ -560,7 +560,7 @@ Bend Navigator:</p>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/acb-reference.png" alt="acb reference" width="20"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Piegatura di riferimento non valido (non può apprendere da questa piega)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference bend non valido (non può apprendere da questa piega)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../../img/icons/lcb-flange.png" alt="lcb flange" width="20"></span></p></td>
@@ -642,10 +642,10 @@ viene eseguita la misurazione ACB.</p>
 misurazione in base alla lunghezza della linea di piegatura. Le posizioni di misurazione effettive
 vengono calcolate automaticamente, ma possono anche essere modificate utilizzando il <strong>pannello ACB</strong>
 (ne parleremo di seguito). In genere, TecZone Bend sposterà entrambi i sensori ACB _raggruppati _ e utilizzerà
-i sensori sia anteriori che posteriori per un Misurazione ACB Laser, ma questo può anche essere modificato.</p>
+i sensori sia anteriori che posteriori per un ACB measurement, ma questo può anche essere modificato.</p>
 </div>
 <div class="paragraph">
-<p>TecZone Bend può valutare la <em>lunghezza della traccia laser</em> per un Misurazione ACB Laser. Si tratta della lunghezza
+<p>TecZone Bend può valutare la <em>lunghezza della traccia laser</em> per un ACB measurement. Si tratta della lunghezza
 della linea laser proiettata visibile alla telecamera. Pezzi della linea possono essere
 ostruiti dalla matrice o dalle battute di riscontro. Alcuni pezzi possono andare oltre i fori nella lamiera
 o sopra le formature. La valutazione tiene conto di tutti questi fattori e può calcolare l&#8217;effettiva
@@ -667,7 +667,7 @@ immediatamente nel navigatore.</p>
 <div id="footnotes">
 <hr>
 <div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. Come per tutte le impostazioni, utilizzare <strong>Impostazioni generali</strong> per la configurazione globale (per tutte le macchine); utilizzare <strong>Impostazioni della macchina</strong> per impostare i valori predefiniti per una particolare macchina; utilizzare <strong>Impostazioni del pezzo</strong> per modificare i valori predefiniti per questo particolare pezzo.
+<a href="#_footnoteref_1">1</a>. Come per tutte le impostazioni, utilizzare <strong>Application Settings</strong> per la configurazione globale (per tutte le macchine); utilizzare <strong>Impostazioni della macchina</strong> per impostare i valori predefiniti per una particolare macchina; utilizzare <strong>Part Settings</strong> per modificare i valori predefiniti per questo particolare pezzo.
 </div>
 <div class="footnote" id="_footnotedef_2">
 <a href="#_footnoteref_2">2</a>. In questo caso, abilitando un sistema di misurazione degli angoli ha effetto solo se la macchina vanta quel particolare tipo di sistema di misurazione degli angoli installato come opzione. In altre parole, può essere utilizzato davvero solo per <em>impedire</em> che un particolare sistema venga utilizzato.
@@ -693,10 +693,10 @@ immediatamente nel navigatore.</p>
    <a href="#_apprendimento_y">Apprendimento Y</a>
   </li>
   <li level="2">
-   <a href="#_ritorno_elastico_appreso">Ritorno elastico appreso</a>
+   <a href="#_learn_sb">Learn SB</a>
   </li>
   <li level="2">
-   <a href="#_immissione_ritorno_elastico">Immissione ritorno elastico</a>
+   <a href="#_enter_sb">Enter SB</a>
   </li>
   <li level="1">
    <a href="#_simboli_per_lacb">Simboli per l&#8217;ACB</a>

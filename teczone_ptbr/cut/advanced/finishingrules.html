@@ -231,7 +231,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../fold/index.html">Fold CAM</a>
+   <a href="../../fold/index.html">Dobra oscilante</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">Criar dados de dobra</a></li>
     <li><button class="tree blank"></button><a href="../../fold/foldview.html">A visualização Dobrar</a></li>
@@ -392,7 +392,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>O TecZone Laser usa um sistema de <strong>Regras de acabamento</strong> para determinar o que fazer quando o corte de um furo ou de uma peça estiver completo. À medida que esses furos e peças são separados da chapa (pelo corte a laser), várias coisas podem acontecer:</p>
+<p>O TecZone Laser usa um sistema de <strong>Finishing rules</strong> para determinar o que fazer quando o corte de um furo ou de uma peça estiver completo. À medida que esses furos e peças são separados da chapa (pelo corte a laser), várias coisas podem acontecer:</p>
 </div>
 <div id="h000273" class="ulist">
 <ul>
@@ -450,8 +450,8 @@ As regras de acabamento são usadas para evitar esses problemas. Quando uma peç
 <h2 id="_configurando_regras_de_acabamento">Configurando Regras de Acabamento<a id="h000280"></a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Regras de acabamento</strong> estão configuradas na página <a href="../../settings/cutcam/index.html">CAM de corte</a> do
-<strong>diálogo Ajustes</strong>.</p>
+<p><strong>Finishing rules</strong> estão configuradas na página <a href="../../settings/cutcam/index.html">CAM de corte</a> do
+<strong>diálogo Settings</strong>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -460,53 +460,53 @@ As regras de acabamento são usadas para evitar esses problemas. Quando uma peç
 </div>
 <div class="paragraph">
 <p>Cada regra especifica um <em>tipo de contorno</em>, um <em>tamanho</em> e a <em>ação</em> que deve ser tomada quando uma combinação acontece. A ordenação dessas regras é importante. À medida que o TecZone Laser termina de processar cada contorno, ele percorre essas regras e aplica a primeira que combina. Em geral, isso significa que você precisa escrever regras mais específicas primeiro ou use tamanhos menores primeiro. (Os botões
-<strong>Em cima</strong> e <strong>Embaixo</strong> ao lado das regras podem ser usados para rolá-las para cima e para baixo).</p>
+<strong>Up</strong> e <strong>Down</strong> ao lado das regras podem ser usados para rolá-las para cima e para baixo).</p>
 </div>
 <div class="sect2">
 <h3 id="_tipos_de_contorno">Tipos de contorno<a id="h000281"></a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>As <strong>Todos</strong> correspondem a todos os contornos (buracos ou contornos externos).</p>
+<p>As <strong>All</strong> correspondem a todos os contornos (buracos ou contornos externos).</p>
 </li>
 <li>
-<p>As <strong>Estável</strong> correspondem a todos os contornos que vão permanecer estáveis nas barras de suporte ou nos pinos.</p>
+<p>As <strong>Stable</strong> correspondem a todos os contornos que vão permanecer estáveis nas barras de suporte ou nos pinos.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Interior estável</strong> é o conjunto de
+<p><strong>Stable inner</strong> é o conjunto de
 contornos <em>internos</em> que são estáveis.</p>
 </li>
 <li>
-<p><strong>Exterior estável</strong> é o conjunto de
+<p><strong>Stable outer</strong> é o conjunto de
 contornos <em>externos</em> que são estáveis.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Instável</strong> corresponde a todos os contornos que irão <em>inclinar</em> ou que irão <em>cair através</em> dos pinos.</p>
+<p><strong>Unstable</strong> corresponde a todos os contornos que irão <em>inclinar</em> ou que irão <em>cair através</em> dos pinos.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Interior instável</strong> é o conjunto de contornos <em>internos</em> que são instáveis.</p>
+<p><strong>Unstable inner</strong> é o conjunto de contornos <em>internos</em> que são instáveis.</p>
 </li>
 <li>
-<p><strong>Exterior instável</strong> é o conjunto de contornos <em>externos</em> que são instáveis.</p>
+<p><strong>Unstable outer</strong> é o conjunto de contornos <em>externos</em> que são instáveis.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Colidindo</strong> corresponde a todos os contornos que são instáveis, e também estão próximos de outro contorno na peça. Quando um contorno <em>interno</em> instável está próximo de outro contorno <em>interno</em> instável, ambos são marcados como potencialmente colidindo, uma vez que não está fixo qual destes irá
+<p><strong>Colliding</strong> corresponde a todos os contornos que são instáveis, e também estão próximos de outro contorno na peça. Quando um contorno <em>interno</em> instável está próximo de outro contorno <em>interno</em> instável, ambos são marcados como potencialmente colidindo, uma vez que não está fixo qual destes irá
 ser cortado primeiro (e essa sequência pode ser alterada à medida que a peça é colocada em um layout). Quando um contorno <em>interno</em> instável está próximo de um contorno <em>externo</em> instável, apenas o contorno interno é marcado como colidindo (já que este sempre será cortado antes do outro).</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Interior colidindo</strong> é o conjunto de contornos <em>internos</em> que são classificados como colidindo.</p>
+<p><strong>Colliding inner</strong> é o conjunto de contornos <em>internos</em> que são classificados como colidindo.</p>
 </li>
 <li>
-<p><strong>Exterior colidindo</strong> é o conjunto de contornos <em>externos</em> que são classificados como colidindo.</p>
+<p><strong>Colliding outer</strong> é o conjunto de contornos <em>externos</em> que são classificados como colidindo.</p>
 </li>
 </ul>
 </div>
@@ -515,8 +515,8 @@ ser cortado primeiro (e essa sequência pode ser alterada à medida que a peça 
 </div>
 <div class="paragraph">
 <p>A análise para determinar se um contorno é
-<strong>Estável</strong> ou
-<strong>Colidindo</strong> é complexa.</p>
+<strong>Stable</strong> ou
+<strong>Colliding</strong> é complexa.</p>
 </div>
 <div class="paragraph">
 <p>A seção <strong>Cálculo de Estabilidade</strong> abaixo explica um pouco dessa complexidade.</p>
@@ -525,22 +525,22 @@ ser cortado primeiro (e essa sequência pode ser alterada à medida que a peça 
 <div class="sect2">
 <h3 id="_ações">Ações<a id="h000282"></a></h3>
 <div class="paragraph">
-<p>O <strong>Tipo de Contorno</strong> e <strong>Grau de letra</strong> são usados para configurar os critérios contra o qual cada contorno é verificado à medida que é ferramentado. Quando uma correspondência é encontrada (com as regras sendo avaliadas em ordem), a <strong>Ação</strong> correspondente é realizada nesse contorno.</p>
+<p>O <strong>Tipo de Contorno</strong> e <strong>Size</strong> são usados para configurar os critérios contra o qual cada contorno é verificado à medida que é ferramentado. Quando uma correspondência é encontrada (com as regras sendo avaliadas em ordem), a <strong>Action</strong> correspondente é realizada nesse contorno.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Desligado</strong>: Nenhuma ação especial é tomada.</p>
+<p><strong>None</strong>: Nenhuma ação especial é tomada.</p>
 </li>
 <li>
-<p><strong>Microjoint automático</strong>: Aplica uma ou mais microjoints no contorno. O número de microjoints necessárias é determinado automaticamente (veja a seção <strong>Cálculo de Estabilidade</strong> abaixo).</p>
+<p><strong>Auto microjoint</strong>: Aplica uma ou mais microjoints no contorno. O número de microjoints necessárias é determinado automaticamente (veja a seção <strong>Cálculo de Estabilidade</strong> abaixo).</p>
 </li>
 <li>
-<p><strong>Corte de refugo</strong>: Corta as aparas dos furos em partes menores que vão cair através das barras de suporte. O tamanho da sucata é configurado na página <a href="../../settings/cutcam/index.html">Corte CAM</a> do
-<strong>diálogo Ajustes</strong>.</p>
+<p><strong>Cut up scrap</strong>: Corta as aparas dos furos em partes menores que vão cair através das barras de suporte. O tamanho da sucata é configurado na página <a href="../../settings/cutcam/index.html">Cut CAM</a> do
+<strong>diálogo Settings</strong>.</p>
 </li>
 <li>
-<p><strong>Um microjoint</strong>, <strong>Dois microjoints</strong> e <strong>Três microjoints</strong>: Criar um número preciso de
+<p><strong>One microjoint</strong>, <strong>Two microjoints</strong> e <strong>Three microjoints</strong>: Criar um número preciso de
 microjoints no contorno.</p>
 </li>
 </ul>
@@ -553,7 +553,7 @@ microjoints no contorno.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Os cálculos de <strong>estabilidade de inclinação</strong> dependem da posição dos contornos em relação aos pinos de suporte da máquina. Para entender os resultados desta análise, é útil ligar a exibição dos pinos de suporte da
-<strong>página Vista do corte</strong> da caixa de diálogo de configurações:</p>
+<strong>página Cut View</strong> da caixa de diálogo de configurações:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -595,7 +595,7 @@ Peças que possam tombar ou ficar instáveis serão marcadas com contornos verme
 </div>
 </div>
 <div class="paragraph">
-<p>Conforme explicado na imagem, quando o cabeçote se move sobre a protrusão longa perto do fundo do contorno, o torque resultante na microjoint (por causa do braço de alavanca longo) pode fazer com que ela se quebre, e microjoints adicionais são aplicadas automaticamente para neutralizar, se a ação <strong>Microjoint automático</strong> foi especificada na regra de acabamento que se aplica a este contorno.</p>
+<p>Conforme explicado na imagem, quando o cabeçote se move sobre a protrusão longa perto do fundo do contorno, o torque resultante na microjoint (por causa do braço de alavanca longo) pode fazer com que ela se quebre, e microjoints adicionais são aplicadas automaticamente para neutralizar, se a ação <strong>Auto microjoint</strong> foi especificada na regra de acabamento que se aplica a este contorno.</p>
 </div>
 </div>
 <div class="sect2">
@@ -613,7 +613,7 @@ Peças que possam tombar ou ficar instáveis serão marcadas com contornos verme
 <h3 id="_nesting_de_peças_em_peças">Nesting de peças em peças<a id="h000287"></a></h3>
 <div class="paragraph">
 <p>Um grande contorno de furo interno pode ser suportado por um número suficiente de pinos e
-poderia ser avaliado como <strong>Estável</strong>. Nenhuma ação de acabamento específica pode ser aplicada a este furo, uma vez que o resíduo descansaria estável sobre os pinos (como mostrado na imagem abaixo à esquerda):</p>
+poderia ser avaliado como <strong>Stable</strong>. Nenhuma ação de acabamento específica pode ser aplicada a este furo, uma vez que o resíduo descansaria estável sobre os pinos (como mostrado na imagem abaixo à esquerda):</p>
 </div>
 <div class="imageblock">
 <div class="content">

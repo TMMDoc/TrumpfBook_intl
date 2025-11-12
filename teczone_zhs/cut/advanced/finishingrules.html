@@ -231,7 +231,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../fold/index.html">折边 CAM</a>
+   <a href="../../fold/index.html">翻板折弯</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">创建折边数据</a></li>
     <li><button class="tree blank"></button><a href="../../fold/foldview.html">折边视图</a></li>
@@ -392,7 +392,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>TecZone Laser 使用<strong>完成规则</strong>的系统来确定“当一个孔或一个零件的切割完成时将如何操作”。当这些孔和零件从板材上分离（通过激光切割）时，可能会发生不同的情况：</p>
+<p>TecZone Laser 使用<strong>Finishing rules</strong>的系统来确定“当一个孔或一个零件的切割完成时将如何操作”。当这些孔和零件从板材上分离（通过激光切割）时，可能会发生不同的情况：</p>
 </div>
 <div id="h000273" class="ulist">
 <ul>
@@ -449,8 +449,8 @@
 <h2 id="_设置精加工规则">设置精加工规则<a id="h000280"></a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>完成规则</strong> 设置在<a href="../../settings/cutcam/index.html">切割 CAM </a>页面——
-<strong>设置</strong> 对话框。</p>
+<p><strong>Finishing rules</strong> 设置在<a href="../../settings/cutcam/index.html">切割 CAM </a>页面——
+<strong>Settings</strong> 对话框。</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -459,52 +459,52 @@
 </div>
 <div class="paragraph">
 <p>每个规则指定_轮廓类型_、<em>大小_和匹配发生时应执行的_操作</em>。这些规则的顺序很重要。当TecZone Laser处理完每个轮廓时，它会浏览这些规则并应用第一个匹配的规则。一般来说，这意味着您需要先编写更具体的规则，或先使用更小的尺寸。（
-<strong>规则旁边的上部</strong> 和<strong>下部</strong>按钮可以用来上下切换）。</p>
+<strong>规则旁边的Up</strong> 和<strong>Down</strong>按钮可以用来上下切换）。</p>
 </div>
 <div class="sect2">
 <h3 id="_轮廓类型">轮廓类型<a id="h000281"></a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>全部</strong> 匹配所有轮廓（孔或外轮廓）。</p>
+<p><strong>All</strong> 匹配所有轮廓（孔或外轮廓）。</p>
 </li>
 <li>
-<p><strong>稳定</strong> 匹配在剑栅或销钉上保持稳定的所有轮廓。</p>
+<p><strong>Stable</strong> 匹配在剑栅或销钉上保持稳定的所有轮廓。</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>稳定内轮廓</strong> 是稳定_内_轮廓的集合。</p>
+<p><strong>Stable inner</strong> 是稳定_内_轮廓的集合。</p>
 </li>
 <li>
-<p><strong>稳定外轮廓</strong> 是稳定_外_轮廓的集合。</p>
+<p><strong>Stable outer</strong> 是稳定_外_轮廓的集合。</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>不稳定</strong> 匹配所有会_倾斜_或会从销钉中_穿过_的轮廓。</p>
+<p><strong>Unstable</strong> 匹配所有会_倾斜_或会从销钉中_穿过_的轮廓。</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>不稳定内轮廓</strong> 是不稳定_内_轮廓的集合。</p>
+<p><strong>Unstable inner</strong> 是不稳定_内_轮廓的集合。</p>
 </li>
 <li>
-<p><strong>不稳定外轮廓</strong> 是不稳定_外_轮廓的集合。</p>
+<p><strong>Unstable outer</strong> 是不稳定_外_轮廓的集合。</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>碰撞</strong> 匹配所有不稳定并且也靠近零件上的另一个轮廓的轮廓。当不稳定的_内_轮廓接近另一个不稳定的_内_轮廓时，两者都被标记为潜在碰撞，因为未确定它们中的哪一个将首先切割（并且该顺序可以在零件放置在布局中时更改）。当不稳定的_内_轮廓接近不稳定的_外_轮廓时，只有内轮廓被标记为碰撞（因为它将始终在另一个之前被切断）。</p>
+<p><strong>Colliding</strong> 匹配所有不稳定并且也靠近零件上的另一个轮廓的轮廓。当不稳定的_内_轮廓接近另一个不稳定的_内_轮廓时，两者都被标记为潜在碰撞，因为未确定它们中的哪一个将首先切割（并且该顺序可以在零件放置在布局中时更改）。当不稳定的_内_轮廓接近不稳定的_外_轮廓时，只有内轮廓被标记为碰撞（因为它将始终在另一个之前被切断）。</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>碰撞内轮廓</strong> 是被归为碰撞的_内_轮廓的集合。</p>
+<p><strong>Colliding inner</strong> 是被归为碰撞的_内_轮廓的集合。</p>
 </li>
 <li>
-<p><strong>碰撞外轮廓</strong> 是被归为碰撞的_外_轮廓的集合。分析用于确定轮廓是
-<strong>稳定</strong>，或
-<strong>碰撞</strong> 是 compex。下面的<strong>稳定性计算</strong>部分解释了其复杂性中的一些。</p>
+<p><strong>Colliding outer</strong> 是被归为碰撞的_外_轮廓的集合。分析用于确定轮廓是
+<strong>Stable</strong>，或
+<strong>Colliding</strong> 是 compex。下面的<strong>稳定性计算</strong>部分解释了其复杂性中的一些。</p>
 </li>
 </ul>
 </div>
@@ -515,22 +515,22 @@
 <div class="sect2">
 <h3 id="_操作">操作<a id="h000282"></a></h3>
 <div class="paragraph">
-<p><strong>轮廓类型</strong>和<strong>字体大小</strong>用于设置标准，每个轮廓在装备时都会根据该标准进行检查。找到匹配项时（规则按顺序评估），对应的 <strong>操作</strong>在该轮廓上执行。</p>
+<p><strong>轮廓类型</strong>和<strong>Size</strong>用于设置标准，每个轮廓在装备时都会根据该标准进行检查。找到匹配项时（规则按顺序评估），对应的 <strong>Action</strong>在该轮廓上执行。</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>关闭</strong>：不采取任何特殊动作。</p>
+<p><strong>None</strong>：不采取任何特殊动作。</p>
 </li>
 <li>
-<p><strong>自动微连接</strong>：在轮廓上应用一个或多个微连接。所需的微连接数量是自动确定的（见下面的<strong>稳定性计算</strong>部分）。</p>
+<p><strong>Auto microjoint</strong>：在轮廓上应用一个或多个微连接。所需的微连接数量是自动确定的（见下面的<strong>稳定性计算</strong>部分）。</p>
 </li>
 <li>
-<p><strong>废料剪切</strong>：将来自孔的冲切废屑切割成成更小的件，这些件会穿过剑栅。废料的大小在<a href="../../settings/cutcam/index.html">切割 CAM</a>页面中设置——
-<strong>设置</strong> 对话框。</p>
+<p><strong>Cut up scrap</strong>：将来自孔的冲切废屑切割成成更小的件，这些件会穿过剑栅。废料的大小在<a href="../../settings/cutcam/index.html">Cut CAM</a>页面中设置——
+<strong>Settings</strong> 对话框。</p>
 </li>
 <li>
-<p><strong>一个微连接</strong>、<strong>两个微连接</strong> 和 <strong>三个微连接</strong>：在轮廓上创建精确数量的微连接。</p>
+<p><strong>One microjoint</strong>、<strong>Two microjoints</strong> 和 <strong>Three microjoints</strong>：在轮廓上创建精确数量的微连接。</p>
 </li>
 </ul>
 </div>
@@ -542,7 +542,7 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>倾斜稳定性</strong>计算取决于轮廓相对于机床支撑销的位置。要理解此分析的结果，打开支撑销的显示将有帮助，操作时请
-进入设置对话框的<strong>切割视图</strong>页面：</p>
+进入设置对话框的<strong>Cut View</strong>页面：</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -582,7 +582,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>如图所示，当工作头在靠近轮廓底部的长突起上移动时，微连接上产生的扭矩（因为长力臂）可能会导致其断裂，因此将自动增加额外的微连接进行抵消，前提是 <strong>自动微连接</strong> 操作已在适用于此轮廓的精加工规则中被指定。</p>
+<p>如图所示，当工作头在靠近轮廓底部的长突起上移动时，微连接上产生的扭矩（因为长力臂）可能会导致其断裂，因此将自动增加额外的微连接进行抵消，前提是 <strong>Auto microjoint</strong> 操作已在适用于此轮廓的精加工规则中被指定。</p>
 </div>
 </div>
 <div class="sect2">
@@ -599,7 +599,7 @@
 <div class="sect2">
 <h3 id="_零件嵌套排样">零件嵌套排样<a id="h000287"></a></h3>
 <div class="paragraph">
-<p>一个大的内孔轮廓可以由足够数量的销钉支撑，可以判断为 <strong>稳定</strong>。没有特定的精加工动作可以应用于这个孔，因为冲切废屑会稳定地落在销钉上（如左下图所示）：</p>
+<p>一个大的内孔轮廓可以由足够数量的销钉支撑，可以判断为 <strong>Stable</strong>。没有特定的精加工动作可以应用于这个孔，因为冲切废屑会稳定地落在销钉上（如左下图所示）：</p>
 </div>
 <div class="imageblock">
 <div class="content">

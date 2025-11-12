@@ -231,7 +231,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../../fold/index.html">폴딩 CAM</a>
+   <a href="../../../fold/index.html">스위블 벤딩</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../../fold/createfolddata.html">폴딩 데이터 생성</a></li>
     <li><button class="tree blank"></button><a href="../../../fold/foldview.html">폴딩 보기</a></li>
@@ -396,7 +396,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>레이저 파트가 툴링될 때(<a href="../../partworkflow/index.html">파트 워크플로</a> 참조), TecZone Laser는 파트를 위한 툴링이 절단되어야 하는 <strong>벤딩 순서</strong>를 계산합니다. 기본 레벨에서, 외측 컨투어를 절단하기 전에 먼저 파트에 있는 홀을 절단해야 합니다.</p>
+<p>레이저 파트가 툴링될 때(<a href="../../partworkflow/index.html">파트 워크플로</a> 참조), TecZone Laser는 파트를 위한 툴링이 절단되어야 하는 <strong>sequence</strong>를 계산합니다. 기본 레벨에서, 외측 컨투어를 절단하기 전에 먼저 파트에 있는 홀을 절단해야 합니다.</p>
 </div>
 <div class="paragraph">
 <p>레이아웃이 네스팅 엔진에 의해 구성되거나 레이아웃에 파트를 추가하거나 편집하여 대화식으로 구성되는 경우, TecZone Laser는 레이아웃에 있는 모든 파트에 걸쳐 모든 툴링이 처리되는 시퀀스를 계산합니다. 일반적인 옵션은 툴링을 _파트별_로 처리하는 것입니다(한 파트의 내측 툴링과 외측 컨투어를 절단한 후 다음 파트로 넘어갑니다). 다른 시퀀싱 옵션도 있으며 이는 <a href="../../../settings/cutcam/lasercam/sequence.html">레이저 시퀀스</a> 설정을 사용하여 제어할 수 있습니다.</p>
@@ -429,7 +429,7 @@
 <div class="sect2">
 <h3 id="_툴링_재정렬">툴링 재정렬<a id="h000337"></a></h3>
 <div class="paragraph">
-<p>전체 파트를 나타내는 노드 또는 개별 레이저 절단을 나타내는 노드를 클릭하여 위아래로 드래그하여 툴링을 재정렬할 수 있습니다. 이를 수행하면, <strong>이송 시간</strong> 이 즉시 계산되고 업데이트되며, 시퀀스 네비게이터 하단에 표시됩니다. 시퀀스 네비게이터에서 <strong>모든 변경 내용 되돌리기</strong> 아이콘을 클릭하여 원래 시퀀스로 돌아갈 수 있습니다.</p>
+<p>전체 파트를 나타내는 노드 또는 개별 레이저 절단을 나타내는 노드를 클릭하여 위아래로 드래그하여 툴링을 재정렬할 수 있습니다. 이를 수행하면, <strong>Traverse time</strong> 이 즉시 계산되고 업데이트되며, 시퀀스 네비게이터 하단에 표시됩니다. 시퀀스 네비게이터에서 <strong>Revert all changes</strong> 아이콘을 클릭하여 원래 시퀀스로 돌아갈 수 있습니다.</p>
 </div>
 <div class="paragraph">
 <p><strong>대화식 시퀀스</strong> 버튼을 사용하여 툴링의 순서를 변경할 수 있습니다:</p>
@@ -470,7 +470,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>경고가 있으면 하단에 <strong>경고</strong> 표시 요소가 나타납니다. 각각의 경고를 강조표시하려면 이 표시 요소를 반복해서 클릭합니다.</p>
+<p>경고가 있으면 하단에 <strong>Warnings</strong> 표시 요소가 나타납니다. 각각의 경고를 강조표시하려면 이 표시 요소를 반복해서 클릭합니다.</p>
 </div>
 <div class="paragraph">
 <p><strong>틸팅 컨투어</strong> 표시 요소는 그리드를 통해 떨어질 수 있는 컨투어를 보여줍니다. 틸팅될 수 있는 모든 컨투어를 강조표시하려면 이 표시 요소를 반복해서 클릭합니다.</p>
@@ -496,7 +496,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/stop.png" alt="Stop" width="20"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">현재 위치에서 시뮬레이션을 <strong>백스톱</strong> 합니다.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">현재 위치에서 시뮬레이션을 <strong>Stop</strong> 합니다.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/skip-to-start.png" alt="Rewind" width="20"></span></p></td>
@@ -566,7 +566,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/asterisk2.png" alt="Pierce" width="20"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>피어싱만</strong>. <strong>레이저 가공 시퀀스</strong> 가 모든 컨투어에 피어싱이 먼저 수행되는 조건으로 설정된 적용됩니다(즉 <strong>피어싱 후 절단</strong> <strong>피어싱 &gt; 마킹 &gt; 절단</strong> 또는 <strong>마킹 &gt; 피어싱 &gt; 절단</strong>).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pierce only</strong>. <strong>Laser processing sequence</strong> 가 모든 컨투어에 피어싱이 먼저 수행되는 조건으로 설정된 적용됩니다(즉 <strong>Pierce then Cut</strong> <strong>Pierce &gt; Mark &gt; Cut</strong> 또는 <strong>Mark &gt; Pierce &gt; Cut</strong>).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/inner.png" alt="Inner" width="20"></span></p></td>

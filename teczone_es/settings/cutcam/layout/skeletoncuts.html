@@ -231,7 +231,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../../fold/index.html">CAM de doblado</a>
+   <a href="../../../fold/index.html">Plegado basculante</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../../fold/createfolddata.html">Crear datos de plegado</a></li>
     <li><button class="tree blank"></button><a href="../../../fold/foldview.html">La vista de plegado</a></li>
@@ -402,27 +402,27 @@
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Trocear rejilla de chapa</strong>: Si activa esta opción, TecZone Laser
+<p><strong>Slice sheet skeleton</strong>: Si activa esta opción, TecZone Laser
 añadirá automáticamente cortes horizontales y verticales espaciados al layout. Las líneas de corte se añaden desde la esquina inferior izquierda de la chapa. Si una línea de corte atraviesa algunas piezas, el TecZone Laser lo detectará automáticamente y añadirá varias líneas de corte para cortar solo la chapa de rejilla que queda entre las piezas.</p>
 </div>
 <div class="paragraph">
-<p><strong>Espacio X entre cortes de chapa verticales</strong>: Este es el espaciado entre líneas de corte verticales.</p>
+<p><strong>X spacing between vertical sheet cuts</strong>: Este es el espaciado entre líneas de corte verticales.</p>
 </div>
 <div class="paragraph">
-<p><strong>Espacio Y entre cortes de chapa horizontales</strong>: Este es el espaciado entre líneas de corte horizontales.</p>
+<p><strong>Y spacing between horizontal sheet cuts</strong>: Este es el espaciado entre líneas de corte horizontales.</p>
 </div>
 <div class="paragraph">
-<p><strong>Crear chapa recordatorio</strong>: Una chapa restante crea un corte limpio para separar la chapa restante de la rejilla.</p>
+<p><strong>Create remainder sheet</strong>: Una chapa restante crea un corte limpio para separar la chapa restante de la rejilla.</p>
 </div>
 <div class="paragraph">
-<p><strong>Anchura de chapa recordatorio mínima</strong>: Aunque se marque lo anterior, solo se añadirá un corte final cuando la anchura de la chapa no utilizada creada por el corte sea mayor o igual que este valor.</p>
+<p><strong>Minimum remainder sheet width</strong>: Aunque se marque lo anterior, solo se añadirá un corte final cuando la anchura de la chapa no utilizada creada por el corte sea mayor o igual que este valor.</p>
 </div>
 <div class="paragraph">
-<p><strong>Offset X de corte final</strong>: Es la distancia desde el extremo derecho del equipamiento de la pieza hasta el corte vertical final que crea la chapa remanente.</p>
+<p><strong>Final cut X offset</strong>: Es la distancia desde el extremo derecho del equipamiento de la pieza hasta el corte vertical final que crea la chapa remanente.</p>
 </div>
 <div class="paragraph">
-<p><strong>Espaciado de microjoint en cortes largos (0 = sin microjoint interno)</strong>:
-TecZone Laser tiene la capacidad de crear microjoints en cortes de chapa automáticamente. El usuario puede especificar la distancia de espaciado de las microjoints en las <strong>Normas de corte de chapa</strong> en los ajustes.Las microjoints se insertarán en cualquier corte que supere esta longitud. Por defecto, este ajuste se establece en 0 mm, lo que significa que las microjoints no son necesarias en los cortes de chapa.
+<p><strong>Microjoint spacing on long cuts (0 = no internal microjoints)</strong>:
+TecZone Laser tiene la capacidad de crear microjoints en cortes de chapa automáticamente. El usuario puede especificar la distancia de espaciado de las microjoints en las <strong>Sheet cutting rules</strong> en los ajustes.Las microjoints se insertarán en cualquier corte que supere esta longitud. Por defecto, este ajuste se establece en 0 mm, lo que significa que las microjoints no son necesarias en los cortes de chapa.
 Existen dos tipos de microjoints posibles en los cortes de chapa: <strong>duras</strong> y <strong>nano</strong>.</p>
 </div>
 <div class="admonitionblock tip">
@@ -438,21 +438,21 @@ Por defecto, se crean microjoints duras salvo que se prefieran nano.Incluso para
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Marcar chapa recordatorio con tamaño, material y espesor</strong>:
+<p><strong>Mark remainder sheet with size, material &amp; thickness</strong>:
 TecZone Laser puede marcar la chapa restante con el nombre del material, el espesor y el tamaño.Si se selecciona esta opción, se añadirá marcado si hay corte(s) de chapa(s) restante(s) en el layout. Si se elimina el corte de chapa restante debido a algún cambio en los ajustes, también se eliminará el marcado. El marcado siempre estará alineado a lo largo del corte de chapa, colocado en su centro. Si no hay espacio suficiente para insertar el texto, TecZone Laser
-reducirá de forma automática la dimensión del texto o cambiará la orientación del texto de marcado.El marcado también puede editarse utilizando los ajustes <strong>Texto láser</strong>.Los cambios aplicados al texto, la altura y el ángulo se recuerdan, pero la posición se vuelve a calcular cada vez que cambia la posición de los cortes de chapa restantes.</p>
+reducirá de forma automática la dimensión del texto o cambiará la orientación del texto de marcado.El marcado también puede editarse utilizando los ajustes <strong>Laser Text</strong>.Los cambios aplicados al texto, la altura y el ángulo se recuerdan, pero la posición se vuelve a calcular cada vez que cambia la posición de los cortes de chapa restantes.</p>
 </div>
 <div class="paragraph">
 <p><strong>Prefer remainder sheet along the longer dimension</strong>:
 Esta opción estará <strong>activada</strong> por defecto. Si esta opción está activada, el motor de nesting elegirá el patrón con las piezas empujadas a lo largo de la dimensión más grande a menos que el patrón con las piezas empujadas a lo largo de la dimensión más corta ahorre un 50% más de chapa que el primero. Si esta opción está desactivada, el motor de nesting elegirá el patrón que produzca mejor chapa remanente (basándose en el área de la chapa remanente) independientemente de la dirección de nesting.</p>
 </div>
 <div class="paragraph">
-<p>*Ejecutar cortes de chapa tras todas las piezas*Por defecto, al secuenciar, TecZone Laser procesará los cortes en tiras antes de procesar el equipamiento de las piezas. Suele ser una buena idea, ya que el cabezal láser puede desplazarse libremente por la chapa sin cortar mientras realiza los cortes en tiras. Sin embargo, si desea procesar los cortes en tiras al final, después de procesar todas las piezas, marque esta opción. Los siguientes parámetros afectan a cómo se programa cada corte en tiras individual.</p>
+<p>*Process sheet cuts after all parts*Por defecto, al secuenciar, TecZone Laser procesará los cortes en tiras antes de procesar el equipamiento de las piezas. Suele ser una buena idea, ya que el cabezal láser puede desplazarse libremente por la chapa sin cortar mientras realiza los cortes en tiras. Sin embargo, si desea procesar los cortes en tiras al final, después de procesar todas las piezas, marque esta opción. Los siguientes parámetros afectan a cómo se programa cada corte en tiras individual.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_parámetros_de_corte_de_chapa">Parámetros de corte de chapa</h2>
+<h2 id="_sheet_cut_parameters">Sheet cut parameters</h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
@@ -460,13 +460,13 @@ Esta opción estará <strong>activada</strong> por defecto. Si esta opción est�
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Medida de la ranura de microjoint en el borde de chapa</strong>: Ajústela a un valor mayor que cero si desea que quede una pequeña alma en los puntos en los que el corte en tiras toca el borde de la chapa.</p>
+<p><strong>Microjoint gap at sheet edge</strong>: Ajústela a un valor mayor que cero si desea que quede una pequeña alma en los puntos en los que el corte en tiras toca el borde de la chapa.</p>
 </div>
 <div class="paragraph">
-<p><strong>Medida de la ranura de microjoint en el borde de la pieza</strong>: Ajústela a un valor mayor que cero si desea que quede una pequeña alma en los puntos en los que el corte en tiras toca el borde de la pieza.</p>
+<p><strong>Microjoint gap at part edge</strong>: Ajústela a un valor mayor que cero si desea que quede una pequeña alma en los puntos en los que el corte en tiras toca el borde de la pieza.</p>
 </div>
 <div class="paragraph">
-<p><strong>Distancia de penetración desde el borde de la pieza</strong>: Esta es la distancia del punto de penetración desde el borde de la pieza. Si es un valor distinto de cero, TecZone Laser penetrará a esta distancia del borde, luego se moverá hacia el borde, antes de girar 180 grados a la derecha en el borde, volviendo sobre la aproximación realizada, para finalizar el corte principal.</p>
+<p><strong>Pierce distance from part edge</strong>: Esta es la distancia del punto de penetración desde el borde de la pieza. Si es un valor distinto de cero, TecZone Laser penetrará a esta distancia del borde, luego se moverá hacia el borde, antes de girar 180 grados a la derecha en el borde, volviendo sobre la aproximación realizada, para finalizar el corte principal.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -474,10 +474,10 @@ Esta opción estará <strong>activada</strong> por defecto. Si esta opción est�
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Distancia de medición desde el borde de la chapa</strong>: Si no se crea ninguna junta de alambre en el borde de la chapa, significa que la máquina tiene que cortar la chapa hasta el final. Pero esto no se puede hacer con el dispositivo de regulación de distancia activado, ya que se correría el riesgo de que el cabezal de la máquina colapsara en la bancada después de la chapa. Este parámetro identifica la distancia antes del borde de la chapa donde se bloquea la altura del cabezal láser y se desactiva el dispositivo de regulación de distancia. Al iniciar un corte en el borde de la chapa, la máquina alcanzará realmente el punto de medición definido por este parámetro, medirá la altura de la chapa, bloqueará la posición Z del cabezal, saldrá de la chapa, encenderá el láser y, a continuación, iniciará el corte con el dispositivo de regulación de distancia desactivado hasta que vuelva a alcanzar el mismo punto de medición.</p>
+<p><strong>Measuring distance from sheet edge</strong>: Si no se crea ninguna junta de alambre en el borde de la chapa, significa que la máquina tiene que cortar la chapa hasta el final. Pero esto no se puede hacer con el dispositivo de regulación de distancia activado, ya que se correría el riesgo de que el cabezal de la máquina colapsara en la bancada después de la chapa. Este parámetro identifica la distancia antes del borde de la chapa donde se bloquea la altura del cabezal láser y se desactiva el dispositivo de regulación de distancia. Al iniciar un corte en el borde de la chapa, la máquina alcanzará realmente el punto de medición definido por este parámetro, medirá la altura de la chapa, bloqueará la posición Z del cabezal, saldrá de la chapa, encenderá el láser y, a continuación, iniciará el corte con el dispositivo de regulación de distancia desactivado hasta que vuelva a alcanzar el mismo punto de medición.</p>
 </div>
 <div class="paragraph">
-<p><strong>Sobrecarrera tras el borde de la chapa</strong>: Es la distancia que recorre el cabezal de la máquina más allá del borde de la chapa con el láser encendido y la regulación de distancia desactivada. Es posible proporcionar una distancia de trayecto de marcha en inercia para los bordes izquierdo, inferior, derecho y superior de la chapa de forma individual.</p>
+<p><strong>Overtravel after sheet edge</strong>: Es la distancia que recorre el cabezal de la máquina más allá del borde de la chapa con el láser encendido y la regulación de distancia desactivada. Es posible proporcionar una distancia de trayecto de marcha en inercia para los bordes izquierdo, inferior, derecho y superior de la chapa de forma individual.</p>
 </div>
 <div class="paragraph">
 <p><strong>Start by piercing on sheet</strong>: Al cortar una chapa, la boquilla baja en la ruta del trayecto de marcha en inercia. Si el cabezal láser no se eleva antes de volver a entrar en la chapa, puede chocar contra ella y dañar la boquilla. La habilitación de la
@@ -496,7 +496,7 @@ Esta opción estará <strong>activada</strong> por defecto. Si esta opción est�
    <a href="#_sheet_cutting_rules">Sheet Cutting Rules</a>
   </li>
   <li level="1">
-   <a href="#_parámetros_de_corte_de_chapa">Parámetros de corte de chapa</a>
+   <a href="#_sheet_cut_parameters">Sheet cut parameters</a>
   </li>
  </ul>
 </aside>

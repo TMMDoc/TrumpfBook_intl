@@ -231,7 +231,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../fold/index.html">折边 CAM</a>
+   <a href="../../fold/index.html">翻板折弯</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../fold/createfolddata.html">创建折边数据</a></li>
     <li><button class="tree blank"></button><a href="../../fold/foldview.html">折边视图</a></li>
@@ -398,22 +398,22 @@
 </div>
 <div class="paragraph">
 <p>折弯完成后，需要从上模和下模间提取零件，为下一次折弯做好准备。设置
-<strong>提取</strong>允许您选择_策略_，然后调整不同的控制该策略的参数。参数显示在面板的<strong>已扩展</strong>部分中，您可以使用<strong>模拟</strong>滑块来回切换此折弯的模拟，包括提取。以下是基本设置：</p>
+<strong>提取</strong>允许您选择_策略_，然后调整不同的控制该策略的参数。参数显示在面板的<strong>Advanced</strong>部分中，您可以使用<strong>Simulate</strong>滑块来回切换此折弯的模拟，包括提取。以下是基本设置：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>提取策略</strong> 列表可让您从不同的提取策略中选择一个，每种策略在下面进行解释。</p>
+<p><strong>Extraction</strong> 列表可让您从不同的提取策略中选择一个，每种策略在下面进行解释。</p>
 </li>
 </ul>
 </div>
 <div id="h000076" class="ulist">
 <ul>
 <li>
-<p>当折弯完成时，支撑上模的滑块被抬起以清除零件。<strong>用滑块移动</strong> 开关指示机器人将零件串联抬起，使其与滑块一起向上移动。这对于某些策略是有用的，对于其他一些策略是_必要的_。</p>
+<p>当折弯完成时，支撑上模的滑块被抬起以清除零件。<strong>Up with Ram</strong> 开关指示机器人将零件串联抬起，使其与滑块一起向上移动。这对于某些策略是有用的，对于其他一些策略是_必要的_。</p>
 </li>
 <li>
-<p><strong>打开</strong> 设置控制滑块_打开_
+<p><strong>Opening</strong> 设置控制滑块_打开_
 <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>在折弯之后，done<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>。</p>
 </li>
 </ul>
@@ -421,7 +421,7 @@
 <div id="h000077" class="ulist">
 <ul>
 <li>
-<p>在提取启动时，零件通过<strong>抬起零件</strong>设置从下模上的静止位置抬起，然后继续提取。但是，如果<strong>用滑块移动</strong>设置已打开，则零件随滑块一起抬起，此设置被替换为 <strong>降下零件</strong> 设置，后者控制在零件随滑块_向上_移动的初始阶段过后而_向下_移动的程度。以下各节简要介绍了每种提取策略。
+<p>在提取启动时，零件通过<strong>Part lift</strong>设置从下模上的静止位置抬起，然后继续提取。但是，如果<strong>Up with Ram</strong>设置已打开，则零件随滑块一起抬起，此设置被替换为 <strong>Part lower</strong> 设置，后者控制在零件随滑块_向上_移动的初始阶段过后而_向下_移动的程度。以下各节简要介绍了每种提取策略。
 TecZone Bend 将自动选择其中一种策略以避免碰撞，取决于零件几何形状。本节中的设置允许您覆盖提取算法，或调整所选算法的参数。</p>
 </li>
 </ul>
@@ -429,7 +429,7 @@ TecZone Bend 将自动选择其中一种策略以避免碰撞，取决于零件�
 </div>
 </div>
 <div class="sect1">
-<h2 id="_标准">标准</h2>
+<h2 id="_standard">Standard</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>当零件需要被提取并翻转或旋转、以为下一次折弯做准备时，默认情况下使用标准提取方法。</p>
@@ -442,7 +442,7 @@ TecZone Bend 将自动选择其中一种策略以避免碰撞，取决于零件�
 </div>
 </div>
 <div class="sect1">
-<h2 id="_没有提取">没有提取</h2>
+<h2 id="_no_extraction">No Extraction</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>如果下一个折弯接近刚刚完成的折弯，并大约平行于它，且具有相同的折弯方向，实际上没有必要取出零件并再次插入。零件围绕Z轴旋转进入位置，如下面的顺序所示。</p>
@@ -455,11 +455,11 @@ TecZone Bend 将自动选择其中一种策略以避免碰撞，取决于零件�
 </div>
 </div>
 <div class="sect1">
-<h2 id="_左侧_右侧">左侧 / 右侧</h2>
+<h2 id="_left_right">Left / Right</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>直接向后提取有时很困难，因为滑块可能无法充分打开，或者当零件有深法兰与鹅颈模具互锁时，如下图所示。此时可以使用此策略将零件提取到左侧或右侧。
-<strong>侧面位移</strong> 参数控制提取前零件（在Z方向）的横向位移。</p>
+<strong>Side shift</strong> 参数控制提取前零件（在Z方向）的横向位移。</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -469,11 +469,11 @@ TecZone Bend 将自动选择其中一种策略以避免碰撞，取决于零件�
 </div>
 </div>
 <div class="sect1">
-<h2 id="_穿出">穿出</h2>
+<h2 id="_unhook">Unhook</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>通过这种策略，零件沿对角线向前和向下滑动，符合
-<strong>移动</strong> 参数，然后下降并提取出来。下图显示此过程的各个级。</p>
+<strong>Slide</strong> 参数，然后下降并提取出来。下图显示此过程的各个级。</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -483,7 +483,7 @@ TecZone Bend 将自动选择其中一种策略以避免碰撞，取决于零件�
 </div>
 </div>
 <div class="sect1">
-<h2 id="_转动">转动</h2>
+<h2 id="_swivel">Swivel</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>此策略用于提取需要牛角刀段模具加工的带向内法兰的复杂盒子形状。提取包括几个步骤，如下面的图像顺序所示。</p>
@@ -496,10 +496,10 @@ TecZone Bend 将自动选择其中一种策略以避免碰撞，取决于零件�
 <div class="ulist">
 <ul>
 <li>
-<p>零件首通过先<strong>移动</strong>参数向前和向下滑动。</p>
+<p>零件首通过先<strong>Slide</strong>参数向前和向下滑动。</p>
 </li>
 <li>
-<p>然后，通过参数<strong>距离</strong>将零件向后倾斜，再通过参数<strong>转动</strong>绕手腕轴_旋转_。</p>
+<p>然后，通过参数<strong>Pitch</strong>将零件向后倾斜，再通过参数<strong>Swivel</strong>绕手腕轴_旋转_。</p>
 </li>
 <li>
 <p>侧面法兰现在应远离上模的外侧牛角刀，然后零件可以降低并提取出来。</p>
@@ -509,7 +509,7 @@ TecZone Bend 将自动选择其中一种策略以避免碰撞，取决于零件�
 </div>
 </div>
 <div class="sect1">
-<h2 id="_已折回在下方">已折回，在&#8230;&#8203;下方</h2>
+<h2 id="_tilt_back_lower">Tilt-back, lower</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>这种策略用于使用狭窄的带角度模具加工高法兰之时。为了使提取更容易，将零件_向后倾斜_，直到法兰平行于模具背面。然后，在提取之前它沿着那个平行的方向向下滑动：</p>
@@ -522,10 +522,10 @@ TecZone Bend 将自动选择其中一种策略以避免碰撞，取决于零件�
 </div>
 </div>
 <div class="sect1">
-<h2 id="_拉回原处">拉回原处</h2>
+<h2 id="_slide_back">Slide back</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>这是另一种适用于高法兰的策略。在提取之前，零件通过<strong>移动</strong>参数_向后和向下_滑动。</p>
+<p>这是另一种适用于高法兰的策略。在提取之前，零件通过<strong>Slide</strong>参数_向后和向下_滑动。</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -551,25 +551,25 @@ TecZone Bend 将自动选择其中一种策略以避免碰撞，取决于零件�
  <h3>Contents</h3>
  <ul>
   <li level="1">
-   <a href="#_标准">标准</a>
+   <a href="#_standard">Standard</a>
   </li>
   <li level="1">
-   <a href="#_没有提取">没有提取</a>
+   <a href="#_no_extraction">No Extraction</a>
   </li>
   <li level="1">
-   <a href="#_左侧_右侧">左侧 / 右侧</a>
+   <a href="#_left_right">Left / Right</a>
   </li>
   <li level="1">
-   <a href="#_穿出">穿出</a>
+   <a href="#_unhook">Unhook</a>
   </li>
   <li level="1">
-   <a href="#_转动">转动</a>
+   <a href="#_swivel">Swivel</a>
   </li>
   <li level="1">
-   <a href="#_已折回在下方">已折回，在&#8230;&#8203;下方</a>
+   <a href="#_tilt_back_lower">Tilt-back, lower</a>
   </li>
   <li level="1">
-   <a href="#_拉回原处">拉回原处</a>
+   <a href="#_slide_back">Slide back</a>
   </li>
  </ul>
 </aside>
