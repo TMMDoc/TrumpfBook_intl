@@ -58,7 +58,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../cut/index.html">激光 CAM</a>
+   <a href="../../cut/index.html">激光切割</a>
    <ul class="hide">
     <li>
      <button class="tree closed"></button>
@@ -145,7 +145,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../bend/index.html">折弯 CAM</a>
+   <a href="../../bend/index.html">折弯机</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">创建折弯数据</a></li>
     <li><button class="tree blank"></button><a href="../../bend/navigator.html">折弯导航器</a></li>
@@ -197,36 +197,7 @@
       <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">提取</a></li>
      </ul>
     </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../bcell/regrip/index.html">改抓</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">改抓面板</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">添加改抓</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">编辑改抓</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">用夹爪改抓</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">改抓站面板</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../bcell/deposit/index.html">零件存储</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">存储模式</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">重复和顺序</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">分张板材</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../bcell/advanced/index.html">高级</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">位移点</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">单元配置</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">夹钳数据库</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">报告</a></li>
-     </ul>
-    </li>
+    <li><button class="tree blank"></button><a href="../../bcell/regrip/index.html">改抓</a></li>
    </ul>
   </li>
   <li>
@@ -409,11 +380,11 @@
 <p>按住<kbd>Ctrl</kbd>并单击折边导航器中的数字以打开该边的边面板。边面板看起来像旁边显示的面板（“编辑顺序”弹出窗口中可用选项的实际集合可能有所不同，具体取决于零件）。</p>
 </li>
 <li>
-<p>单击<strong>Flip Side</strong>按钮可将整个边颠倒过来。这将导致立即重新计算刀片、压边模和零件搬运。在自动机床上，这被替换为<strong>Flip Part</strong>
+<p>单击<strong>翻转工件</strong>按钮可将整个边颠倒过来。这将导致立即重新计算刀片、压边模和零件搬运。在自动机床上，这被替换为<strong>旋转零件</strong>
 button<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>，因为机床不能只翻转一边。</p>
 </li>
 <li>
-<p>单击<strong>Edit Sequence</strong>按钮以打开一个子菜单，显示您可以对此边进行的可能的顺序_切换_。在上图中，我们使用具有边顺序的零件，如`C1 C2 L1 L2`，且我们选择了`L1边`。可能的顺序选择解释如下：</p>
+<p>单击<strong>编辑折弯顺序</strong>按钮以打开一个子菜单，显示您可以对此边进行的可能的顺序_切换_。在上图中，我们使用具有边顺序的零件，如`C1 C2 L1 L2`，且我们选择了`L1边`。可能的顺序选择解释如下：</p>
 </li>
 <li>
 <p><strong>&lt;&lt; L1+L2 提前</strong>可将L1和L2都转移到C1和C2之前。因此，新顺序将是`L1 L2 C1 C2`。</p>
@@ -425,10 +396,10 @@ button<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_foo
 <p><strong>L1 推后 &gt;&gt;</strong>可将边L2后移，导致顺序变成`C1 C2 L2 L1`（当然，边将在此操作后立即重命名，因此，当生成代码时，顺序仍然为`C1 C2 L1 L2`）。此菜单中可用的选项集取决于当前顺序，以及您选择在哪一边重新排序。</p>
 </li>
 <li>
-<p>单击<strong>Prev</strong>或<strong>Next</strong>按钮以在这个零件的不同边之间导航。</p>
+<p>单击<strong>返回</strong>或<strong>继续</strong>按钮以在这个零件的不同边之间导航。</p>
 </li>
 <li>
-<p>单击<strong>Bends</strong>按钮，将从边向下导航到这一边的折弯集中（这与“折弯”面板中的<strong>Side</strong>按钮相反，由此您可从一个折弯向上导航到包含该折弯的边）。</p>
+<p>单击<strong>折弯</strong>按钮，将从边向下导航到这一边的折弯集中（这与“折弯”面板中的<strong>边</strong>按钮相反，由此您可从一个折弯向上导航到包含该折弯的边）。</p>
 </li>
 </ul>
 </div>

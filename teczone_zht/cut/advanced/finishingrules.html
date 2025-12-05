@@ -58,7 +58,7 @@
   </li>
   <li>
    <button class="tree open"></button>
-   <a href="../index.html">雷射 CAM</a>
+   <a href="../index.html">雷射切割</a>
    <ul>
     <li>
      <button class="tree closed"></button>
@@ -145,7 +145,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../bend/index.html">折彎 CAM</a>
+   <a href="../../bend/index.html">折彎機</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">建立折彎資料</a></li>
     <li><button class="tree blank"></button><a href="../../bend/navigator.html">折彎導航器</a></li>
@@ -197,36 +197,7 @@
       <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">提取</a></li>
      </ul>
     </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../bcell/regrip/index.html">改抓</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">改抓面板</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">添加改抓</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">編輯改抓</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">用卡爪改抓</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">改抓站面板</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../bcell/deposit/index.html">零件存儲</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">存儲模式</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">重復和順序</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">分張板材</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../bcell/advanced/index.html">進階</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">位移點</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">單元配置</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">夾鉗資料庫</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">報告</a></li>
-     </ul>
-    </li>
+    <li><button class="tree blank"></button><a href="../../bcell/regrip/index.html">改抓</a></li>
    </ul>
   </li>
   <li>
@@ -373,7 +344,7 @@
   </button>
  </div>
  <div>
-  <a href="../index.html">雷射 CAM</a>
+  <a href="../index.html">雷射切割</a>
  </div>
  <div>/</div>
  <div>
@@ -459,7 +430,7 @@
 </div>
 <div class="paragraph">
 <p>每個規則都指定_輪廓類型_、<em>大小_和匹配發生時應採取的_操作</em>。這些規則的順序很重要。當TecZone Laser加工完每個輪廓時，它會瀏覽這些規則並應用第一個匹配的規則。一般而言，這意味著您需要先撰寫更具體的規則，或先使用較小的尺寸。（
-規則旁邊的<strong>Up</strong>和<strong>Down</strong>按鈕可以用來上下切換）。</p>
+規則旁邊的<strong>上部</strong>和<strong>下部</strong>按鈕可以用來上下切換）。</p>
 </div>
 <div class="sect2">
 <h3 id="_輪廓類型">輪廓類型<a id="h000281"></a></h3>
@@ -502,14 +473,20 @@
 <p><strong>Colliding inner</strong> 是被歸為碰撞的_內_輪廓的集合。</p>
 </li>
 <li>
-<p><strong>Colliding outer</strong> 是被歸為碰撞的_外_輪廓的集合。分析用於確定輪廓是
-<strong>Stable</strong>, 或
-<strong>Colliding</strong> 是 compex。下面的<strong>穩定性計算</strong>部分解釋了其中的一些複雜性。</p>
+<p><strong>Colliding outer</strong> 是被歸為碰撞的_外_輪廓的集合。</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>分析用於確定輪廓是
+<strong>Stable</strong>, 或
+<strong>Colliding</strong> 是 compex。</p>
+</div>
+<div class="paragraph">
+<p>下面的<strong>穩定性計算</strong>部分解釋了其中的一些複雜性。</p>
 </div>
 </div>
 <div class="sect2">
@@ -517,10 +494,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>輪廓類型</strong>和 <strong>Size</strong>用於設定條件，每個輪廓在執行裝備時都會根據該條件進行檢查。當找到匹配項時（按順序評估規則），對應的 <strong>Action</strong> 在該輪廓上執行。</p>
+<p><strong>輪廓類型</strong>和 <strong>字體大小</strong>用於設定條件，每個輪廓在執行裝備時都會根據該條件進行檢查。當找到匹配項時（按順序評估規則），對應的 <strong>Action</strong> 在該輪廓上執行。</p>
 </li>
 <li>
-<p><strong>None</strong>：未採取任何特殊操作。</p>
+<p><strong>關閉</strong>：未採取任何特殊操作。</p>
 </li>
 <li>
 <p><strong>Auto microjoint</strong>：在輪廓上應用一個或多個微連。所需的微連數量會自動確定（請參閱下方的<strong>穩定性計算</strong>部分）。</p>
@@ -607,7 +584,10 @@
 </div>
 </div>
 <div class="paragraph">
-<p>在佈局中，可以將較小的零件排樣在此孔中以改進板材利用率，在這一點上，內輪廓可能無法被足夠的銷釘支撐而被認為穩定。TecZone Laser 將添加微連以穩定輪廓，如右上圖所示。如果排樣在該孔中的較小零件隨後被移除，微連也會消失。</p>
+<p>在佈局中，可以將較小的零件排樣在此孔中以改進板材利用率，在這一點上，內輪廓可能無法被足夠的銷釘支撐而被認為穩定。TecZone Laser 將添加微連以穩定輪廓，如右上圖所示。</p>
+</div>
+<div class="paragraph">
+<p>如果排樣在該孔中的較小零件隨後被移除，微連也會消失。</p>
 </div>
 </div>
 </div>

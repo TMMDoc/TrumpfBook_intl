@@ -58,7 +58,7 @@
   </li>
   <li>
    <button class="tree open"></button>
-   <a href="../../index.html">激光 CAM</a>
+   <a href="../../index.html">激光切割</a>
    <ul>
     <li>
      <button class="tree closed"></button>
@@ -145,7 +145,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../../bend/index.html">折弯 CAM</a>
+   <a href="../../../bend/index.html">折弯机</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">创建折弯数据</a></li>
     <li><button class="tree blank"></button><a href="../../../bend/navigator.html">折弯导航器</a></li>
@@ -197,36 +197,7 @@
       <li><button class="tree blank"></button><a href="../../../bcell/bending/extraction.html">提取</a></li>
      </ul>
     </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../../bcell/regrip/index.html">改抓</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/regrippanel.html">改抓面板</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/addregrip.html">添加改抓</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/editregrip.html">编辑改抓</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/jawregrip.html">用夹爪改抓</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/rgstationpanel.html">改抓站面板</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../../bcell/deposit/index.html">零件存储</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../../bcell/deposit/patterns.html">存储模式</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/deposit/repeat.html">重复和顺序</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/deposit/separatorsheet.html">分张板材</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../../bcell/advanced/index.html">高级</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../../bcell/advanced/waypoints.html">位移点</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/advanced/cellconfig.html">单元配置</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb.html">夹钳数据库</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/advanced/reports.html">报告</a></li>
-     </ul>
-    </li>
+    <li><button class="tree blank"></button><a href="../../../bcell/regrip/index.html">改抓</a></li>
    </ul>
   </li>
   <li>
@@ -373,7 +344,7 @@
   </button>
  </div>
  <div>
-  <a href="../../index.html">激光 CAM</a>
+  <a href="../../index.html">激光切割</a>
  </div>
  <div>/</div>
  <div>
@@ -402,7 +373,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p><strong>TIO (TwinLine-Island-Outer) 策略</strong>：</p>
+<p><strong>TIO（Twinlines 岛屿外轮廓） 策略</strong>：</p>
 </div>
 <div class="paragraph">
 <p>在此策略中，TecZone Laser将按以下顺序创建加工轨迹：</p>
@@ -426,7 +397,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Partwise-safe 策略（默认）</strong>：在此策略中，仅在当前零件完全自由切割后，切割才会进展到下一零件。在相邻零件接触的连接节点处，进行预备切割。这些预备切割的目的是为了避免激光头靠近已经切割（并且可能倾斜）的零件。此策略适用于零件可能倾斜的薄板。</p>
+<p><strong>按零件 - 安全加工策略 策略（默认）</strong>：在此策略中，仅在当前零件完全自由切割后，切割才会进展到下一零件。在相邻零件接触的连接节点处，进行预备切割。这些预备切割的目的是为了避免激光头靠近已经切割（并且可能倾斜）的零件。此策略适用于零件可能倾斜的薄板。</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -442,7 +413,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Partwise 策略</strong>：这个策略类似零件安全策略，但没有预备切割。在连接节点处，针对下一个零件的切割将恢复一小段距离进入 TwinLine 路径。切割会恢复一点距离再次远离连接节点，切割切割轨迹的一小部分。</p>
+<p><strong>按零件 策略</strong>：这个策略类似零件安全策略，但没有预备切割。在连接节点处，针对下一个零件的切割将恢复一小段距离进入 TwinLine 路径。切割会恢复一点距离再次远离连接节点，切割切割轨迹的一小部分。</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -452,7 +423,7 @@
 </td>
 <td class="content">
 此策略仅建议用于零件不会倾斜的厚板。选项
-<strong>Use TIO strategy if there are no islands</strong>在设置菜单中。如果选中此选项，TecZone Laser将始终选择TIO策略，前提是Twinline组中没有创建岛。
+<strong>如果没有岛屿则采用 TIO 策略</strong>在设置菜单中。如果选中此选项，TecZone Laser将始终选择TIO策略，前提是Twinline组中没有创建岛。
 </td>
 </tr>
 </table>

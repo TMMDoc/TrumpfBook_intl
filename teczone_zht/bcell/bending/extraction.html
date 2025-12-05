@@ -58,7 +58,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../cut/index.html">雷射 CAM</a>
+   <a href="../../cut/index.html">雷射切割</a>
    <ul class="hide">
     <li>
      <button class="tree closed"></button>
@@ -145,7 +145,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../bend/index.html">折彎 CAM</a>
+   <a href="../../bend/index.html">折彎機</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">建立折彎資料</a></li>
     <li><button class="tree blank"></button><a href="../../bend/navigator.html">折彎導航器</a></li>
@@ -197,36 +197,7 @@
       <li><button class="tree blank"></button><a class="active" href="extraction.html">提取</a></li>
      </ul>
     </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../regrip/index.html">改抓</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../regrip/regrippanel.html">改抓面板</a></li>
-      <li><button class="tree blank"></button><a href="../regrip/addregrip.html">添加改抓</a></li>
-      <li><button class="tree blank"></button><a href="../regrip/editregrip.html">編輯改抓</a></li>
-      <li><button class="tree blank"></button><a href="../regrip/jawregrip.html">用卡爪改抓</a></li>
-      <li><button class="tree blank"></button><a href="../regrip/rgstationpanel.html">改抓站面板</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../deposit/index.html">零件存儲</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../deposit/patterns.html">存儲模式</a></li>
-      <li><button class="tree blank"></button><a href="../deposit/repeat.html">重復和順序</a></li>
-      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">分張板材</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../advanced/index.html">進階</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../advanced/waypoints.html">位移點</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/cellconfig.html">單元配置</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/gripperdb.html">夾鉗資料庫</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/reports.html">報告</a></li>
-     </ul>
-    </li>
+    <li><button class="tree blank"></button><a href="../regrip/index.html">改抓</a></li>
    </ul>
   </li>
   <li>
@@ -398,22 +369,22 @@
 </div>
 <div class="paragraph">
 <p>折彎完成後，需要從沖模和凹模間提取零件，為下一次折彎做好準備。設定
-<strong>提取</strong>可讓您選擇_策略_，然後調整不同的控制該策略的參數。參數會顯示在<strong>Advanced</strong>面板的部分中，您可以使用<strong>Simulate</strong>滑塊來回切換此折彎的模擬，包括提取。以下是基本設定：</p>
+<strong>提取</strong>可讓您選擇_策略_，然後調整不同的控制該策略的參數。參數會顯示在<strong>已擴展</strong>面板的部分中，您可以使用<strong>模擬</strong>滑塊來回切換此折彎的模擬，包括提取。以下是基本設定：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>您可以在<strong>Extraction</strong>清單中選擇提取策略，每個策略在下面進行解釋。</p>
+<p>您可以在<strong>提取策略</strong>清單中選擇提取策略，每個策略在下面進行解釋。</p>
 </li>
 </ul>
 </div>
 <div id="h000076" class="ulist">
 <ul>
 <li>
-<p>當折彎完成時，支撐沖模的下壓式折床被提起以清除零件。<strong>Up with Ram</strong> 開關指示機器人將零件串聯抬起，使其與壓板一起向上移動。這對於某些策略是有用的，對於其他一些策略是_必要的_。</p>
+<p>當折彎完成時，支撐沖模的下壓式折床被提起以清除零件。<strong>隨壓力桿移動</strong> 開關指示機器人將零件串聯抬起，使其與壓板一起向上移動。這對於某些策略是有用的，對於其他一些策略是_必要的_。</p>
 </li>
 <li>
-<p><strong>Opening</strong> 設定控制壓板_開口_
+<p><strong>打開</strong> 設定控制壓板_開口_
 <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>折彎之後，done<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>。</p>
 </li>
 </ul>
@@ -421,14 +392,14 @@
 <div id="h000077" class="ulist">
 <ul>
 <li>
-<p>在提取開始時，零件透過<strong>Part lift</strong>設置從凹模上的靜止位置抬起，然後繼續提取。但是，如果<strong>Up with Ram</strong>設定已打開，則零件隨著壓板一起抬起，此設定被替換為 <strong>Part lower</strong> 設定，後者控制在零件隨壓板_向上_移動的初始階段過後而_向下_移動的程度。以下各節簡要介紹了每種提取策略。TecZone Bend 將根據零件幾何形狀自動選擇這些策略之一以避免碰撞。本節中的設置允許您覆蓋提取，或調整所選算法的參數。</p>
+<p>在提取開始時，零件透過<strong>抬起零件</strong>設置從凹模上的靜止位置抬起，然後繼續提取。但是，如果<strong>隨壓力桿移動</strong>設定已打開，則零件隨著壓板一起抬起，此設定被替換為 <strong>降下零件</strong> 設定，後者控制在零件隨壓板_向上_移動的初始階段過後而_向下_移動的程度。以下各節簡要介紹了每種提取策略。TecZone Bend 將根據零件幾何形狀自動選擇這些策略之一以避免碰撞。本節中的設置允許您覆蓋提取，或調整所選算法的參數。</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_standard">Standard</h2>
+<h2 id="_標準">標準</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>當零件需要提取並翻轉或旋轉，以準備下一次折彎時，預設將使用標準提取方法。</p>
@@ -441,7 +412,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_no_extraction">No Extraction</h2>
+<h2 id="_沒有提取">沒有提取</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>如果下一個折彎接近剛剛完成的折彎，並大約平行於它，且具有相同的折彎方向，實際上沒有必要取出零件並再次插入。零件繞Z軸旋轉進入位置，如下面的順序所示。</p>
@@ -454,11 +425,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_left_right">Left / Right</h2>
+<h2 id="_左側_右側">左側 / 右側</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>直接向後提取有時很困難，因爲壓板可能無法充分打開，或者當零件有深法蘭與鵝頸模具互鎖時，如下圖所示。然後可以使用此策略將零件提取到左側或右側。
-<strong>Side shift</strong> 參數控制提取前零件（在Z向）的側移。</p>
+<strong>側面位移</strong> 參數控制提取前零件（在Z向）的側移。</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -468,11 +439,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_unhook">Unhook</h2>
+<h2 id="_引出">引出</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>使用此策略，零件沿對角線向前和向下滑動，符合
-<strong>Slide</strong> 參數，然後降低並提取出來。下方圖片顯示此過程的各個級。</p>
+<strong>移動</strong> 參數，然後降低並提取出來。下方圖片顯示此過程的各個級。</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -482,7 +453,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_swivel">Swivel</h2>
+<h2 id="_轉動">轉動</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>此策略用於提取需要角式刀具段模具加工的具有向內法蘭的複雜盒子形狀。提取由幾個步驟組成，如下面的圖像順序所示。</p>
@@ -495,10 +466,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>零件首先由<strong>Slide</strong>參數向前和向下滑動。</p>
+<p>零件首先由<strong>移動</strong>參數向前和向下滑動。</p>
 </li>
 <li>
-<p>然後，零件被<strong>Pitch</strong>參數向後傾斜，然後根據<strong>Swivel</strong>參數繞著手腕軸_旋轉_。</p>
+<p>然後，零件被<strong>距離</strong>參數向後傾斜，然後根據<strong>轉動</strong>參數繞著手腕軸_旋轉_。</p>
 </li>
 <li>
 <p>側法蘭現在應遠離沖模的外側角式刀具，然後可以降低並提取出零件。</p>
@@ -508,7 +479,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_tilt_back_lower">Tilt-back, lower</h2>
+<h2 id="_已折回在下方">已折回，在&#8230;&#8203;下方</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>這種策略用於使用狹窄的帶角度的模具加工高法蘭之時。為了便於提取，零件_向後傾斜_，直到法蘭平行於模具的背面。然後，在提取之前它沿着那個平行的方向向下滑動：</p>
@@ -521,10 +492,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_slide_back">Slide back</h2>
+<h2 id="_拉回原處">拉回原處</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>這是另一種對高法蘭有用的策略。在提取之前，零件透過<strong>Slide</strong>參數_向後和向下_滑動。</p>
+<p>這是另一種對高法蘭有用的策略。在提取之前，零件透過<strong>移動</strong>參數_向後和向下_滑動。</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -550,25 +521,25 @@
  <h3>Contents</h3>
  <ul>
   <li level="1">
-   <a href="#_standard">Standard</a>
+   <a href="#_標準">標準</a>
   </li>
   <li level="1">
-   <a href="#_no_extraction">No Extraction</a>
+   <a href="#_沒有提取">沒有提取</a>
   </li>
   <li level="1">
-   <a href="#_left_right">Left / Right</a>
+   <a href="#_左側_右側">左側 / 右側</a>
   </li>
   <li level="1">
-   <a href="#_unhook">Unhook</a>
+   <a href="#_引出">引出</a>
   </li>
   <li level="1">
-   <a href="#_swivel">Swivel</a>
+   <a href="#_轉動">轉動</a>
   </li>
   <li level="1">
-   <a href="#_tilt_back_lower">Tilt-back, lower</a>
+   <a href="#_已折回在下方">已折回，在&#8230;&#8203;下方</a>
   </li>
   <li level="1">
-   <a href="#_slide_back">Slide back</a>
+   <a href="#_拉回原處">拉回原處</a>
   </li>
  </ul>
 </aside>

@@ -58,7 +58,7 @@
   </li>
   <li>
    <button class="tree open"></button>
-   <a href="../../index.html">激光 CAM</a>
+   <a href="../../index.html">激光切割</a>
    <ul>
     <li>
      <button class="tree closed"></button>
@@ -145,7 +145,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../../bend/index.html">折弯 CAM</a>
+   <a href="../../../bend/index.html">折弯机</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">创建折弯数据</a></li>
     <li><button class="tree blank"></button><a href="../../../bend/navigator.html">折弯导航器</a></li>
@@ -197,36 +197,7 @@
       <li><button class="tree blank"></button><a href="../../../bcell/bending/extraction.html">提取</a></li>
      </ul>
     </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../../bcell/regrip/index.html">改抓</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/regrippanel.html">改抓面板</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/addregrip.html">添加改抓</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/editregrip.html">编辑改抓</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/jawregrip.html">用夹爪改抓</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/rgstationpanel.html">改抓站面板</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../../bcell/deposit/index.html">零件存储</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../../bcell/deposit/patterns.html">存储模式</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/deposit/repeat.html">重复和顺序</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/deposit/separatorsheet.html">分张板材</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../../bcell/advanced/index.html">高级</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../../bcell/advanced/waypoints.html">位移点</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/advanced/cellconfig.html">单元配置</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb.html">夹钳数据库</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/advanced/reports.html">报告</a></li>
-     </ul>
-    </li>
+    <li><button class="tree blank"></button><a href="../../../bcell/regrip/index.html">改抓</a></li>
    </ul>
   </li>
   <li>
@@ -373,7 +344,7 @@
   </button>
  </div>
  <div>
-  <a href="../../index.html">激光 CAM</a>
+  <a href="../../index.html">激光切割</a>
  </div>
  <div>/</div>
  <div>
@@ -396,7 +367,13 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>当激光零件被执行装备时（请参阅<a href="../../partworkflow/index.html">零件工作流程</a>），TecZone Laser将计算零件应切割加工的<strong>sequence</strong>。在基本层面上，零件上的孔需要在外轮廓被切割之前先被切割出来。当布局由排样引擎构建或者通过在布局中添加或编辑零件交互式地构建，TecZone Laser将计算布局中所有零件上的所有加工都被处理的顺序。一个常见的选项是，加工是_逐件_处理的（先进行一个零件的内部加工并切割外轮廓，然后再转到下一个零件）。还有其他排序选项，后者可以使用<a href="../../../settings/cutcam/lasercam/sequence.html">激光顺序</a>设置进行控制。此自动计算的顺序（用于零件或布局）可以使用<strong>顺序导航器</strong>检查或更改。</p>
+<p>当激光零件被执行装备时（请参阅<a href="../../partworkflow/index.html">零件工作流程</a>），TecZone Laser将计算零件应切割加工的<strong>折弯顺序</strong>。在基本层面上，零件上的孔需要在外轮廓被切割之前先被切割出来。</p>
+</div>
+<div class="paragraph">
+<p>当布局由排样引擎构建或者通过在布局中添加或编辑零件交互式地构建，TecZone Laser将计算布局中所有零件上的所有加工都被处理的顺序。一个常见的选项是，加工是_逐件_处理的（先进行一个零件的内部加工并切割外轮廓，然后再转到下一个零件）。还有其他排序选项，后者可以使用<a href="../../../settings/cutcam/lasercam/sequence.html">激光顺序</a>设置进行控制。</p>
+</div>
+<div class="paragraph">
+<p>此自动计算的顺序（用于零件或布局）可以使用<strong>顺序导航器</strong>检查或更改。</p>
 </div>
 </div>
 </div>
@@ -412,12 +389,21 @@
 </div>
 </div>
 <div class="paragraph">
-<p>在此图像中，顺序导航器用于编辑布局的顺序。在这里，已经计算了逐个零件的顺序，您可以看到零件将在其中进行加工的顺序。您可以_打开_其中一个零件节点（如<strong>1 (lyly) 4</strong>节点已被打开），然后您可以看到该零件内的各个激光切割。我们点击的激光切割（图像中标有序号<strong>66</strong>）以蓝色突出显示。在此之前已完成切割的所有加工都用白色或粉红色填充（粉红色填充表示加工不稳定并可能掉落穿过剑栅）。作为背景将显示从_上一个_加工到所选加工的移动线，以及从此加工到_下一个_加工的移动线。</p>
+<p>在此图像中，顺序导航器用于编辑布局的顺序。在这里，已经计算了逐个零件的顺序，您可以看到零件将在其中进行加工的顺序。</p>
+</div>
+<div class="paragraph">
+<p>您可以_打开_其中一个零件节点（如<strong>1 (lyly) 4</strong>节点已被打开），然后您可以看到该零件内的各个激光切割。我们点击的激光切割（图像中标有序号<strong>66</strong>）以蓝色突出显示。在此之前已完成切割的所有加工都用白色或粉红色填充（粉红色填充表示加工不稳定并可能掉落穿过剑栅）。</p>
+</div>
+<div class="paragraph">
+<p>作为背景将显示从_上一个_加工到所选加工的移动线，以及从此加工到_下一个_加工的移动线。</p>
 </div>
 <div class="sect2">
 <h3 id="_重新排序加工">重新排序加工<a id="h000337"></a></h3>
 <div class="paragraph">
-<p>您可以单击表示完整零件的节点，也可以单击表示单个激光切割的节点，并向上或向下拖动以重新排序加工。当您这样做时，<strong>Traverse time</strong>会立即计算和更新，并且显示在顺序导航器的底部。您可以通过单击顺序导航器中的<strong>Revert all changes</strong>图标来返回原始顺序。您还可以使用<strong>交互式顺序</strong>按钮来更改加工顺序：</p>
+<p>您可以单击表示完整零件的节点，也可以单击表示单个激光切割的节点，并向上或向下拖动以重新排序加工。当您这样做时，<strong>移动时间</strong>会立即计算和更新，并且显示在顺序导航器的底部。您可以通过单击顺序导航器中的<strong>还原所有修改</strong>图标来返回原始顺序。</p>
+</div>
+<div class="paragraph">
+<p>您还可以使用<strong>交互式顺序</strong>按钮来更改加工顺序：</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -433,7 +419,10 @@
 </div>
 </div>
 <div class="paragraph">
-<p>要方便地实现操作，您可以首先单击<strong>8</strong>（无需按住<strong><kbd>Ctrl</kbd></strong>），直到该点之前的顺序被接受（显示为灰色圆圈）。然后，您可以<strong><kbd>Ctrl</kbd>+单击</strong>后续编号，以将其添加到该顺序。您可以看到通过上述连续点击设置的修改后的顺序。您也可以画一条粗糙的线，指示您希望切割零件的大致_方向_。要执行此操作，请<strong><kbd>Alt</kbd>+单击</strong>板材并拖动鼠标以创建曲线（如左下图所示）。</p>
+<p>要方便地实现操作，您可以首先单击<strong>8</strong>（无需按住<strong><kbd>Ctrl</kbd></strong>），直到该点之前的顺序被接受（显示为灰色圆圈）。然后，您可以<strong><kbd>Ctrl</kbd>+单击</strong>后续编号，以将其添加到该顺序。您可以看到通过上述连续点击设置的修改后的顺序。</p>
+</div>
+<div class="paragraph">
+<p>您也可以画一条粗糙的线，指示您希望切割零件的大致_方向_。要执行此操作，请<strong><kbd>Alt</kbd>+单击</strong>板材并拖动鼠标以创建曲线（如左下图所示）。</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -452,7 +441,13 @@
 </div>
 </div>
 <div class="paragraph">
-<p>如果有任何警告，则会显示底部的<strong>Warnings</strong>显示元素。反复单击此显示元素以突出显示每个警告。<strong>倾斜轮廓</strong>显示元素显示可能掉落穿过剑栅的轮廓。反复单击此显示元素以突出显示所有可能倾斜的轮廓。以下是顺序导航器中出现的其他符号。它们被用于调整加工项目的分层视图，模拟顺序并以其他方式进行调整。</p>
+<p>如果有任何警告，则会显示底部的<strong>警告</strong>显示元素。反复单击此显示元素以突出显示每个警告。</p>
+</div>
+<div class="paragraph">
+<p><strong>倾斜轮廓</strong>显示元素显示可能掉落穿过剑栅的轮廓。反复单击此显示元素以突出显示所有可能倾斜的轮廓。以下是顺序导航器中出现的其他符号。</p>
+</div>
+<div class="paragraph">
+<p>它们被用于调整加工项目的分层视图，模拟顺序并以其他方式进行调整。</p>
 </div>
 <table class="tableblock frame-all grid-all fit-content">
 <colgroup>
@@ -470,7 +465,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/stop.png" alt="Stop" width="20"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Stop</strong> 模拟在其当前位置。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>止挡</strong> 模拟在其当前位置。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/skip-to-start.png" alt="Rewind" width="20"></span></p></td>
@@ -540,7 +535,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/asterisk2.png" alt="Pierce" width="20"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pierce only</strong>. 当<strong>Laser processing sequence</strong>被设为“首先对所有轮廓进行刺穿“的条件时应用（即<strong>Pierce then Cut</strong>、<strong>Pierce &gt; Mark &gt; Cut</strong>或<strong>Mark &gt; Pierce &gt; Cut</strong>）。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>只刺穿</strong>. 当<strong>激光加工序列</strong>被设为“首先对所有轮廓进行刺穿“的条件时应用（即<strong>刺穿后切割</strong>、<strong>刺穿 &gt; 打标 &gt; 切割</strong>或<strong>打标 &gt; 刺穿 &gt; 切割</strong>）。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/inner.png" alt="Inner" width="20"></span></p></td>

@@ -58,7 +58,7 @@
   </li>
   <li>
    <button class="tree open"></button>
-   <a href="../index.html">Laser CAM</a>
+   <a href="../index.html">Laserskärning</a>
    <ul>
     <li>
      <button class="tree closed"></button>
@@ -145,7 +145,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../bend/index.html">Bend CAM</a>
+   <a href="../../bend/index.html">Kantpressar</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">Skapa bockningsdata</a></li>
     <li><button class="tree blank"></button><a href="../../bend/navigator.html">Bend Navigator</a></li>
@@ -197,36 +197,7 @@
       <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Uttag</a></li>
      </ul>
     </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../bcell/regrip/index.html">Omgrepp</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Omgreppspanel</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Lägga till omgrepp</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Bearbeta omgrepp</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Omgrepp med käft</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Panel för omgreppningsstation</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../bcell/deposit/index.html">Delavläggning</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Avläggningsmönster</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Upprepning och sekvensering</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Separatorplåt</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../bcell/advanced/index.html">Avancerat</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Vägpunkter</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Cellkonfiguration</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb.html">Gripdondatabas</a></li>
-      <li><button class="tree blank"></button><a href="../../bcell/advanced/reports.html">Rapporter</a></li>
-     </ul>
-    </li>
+    <li><button class="tree blank"></button><a href="../../bcell/regrip/index.html">Omgrepp</a></li>
    </ul>
   </li>
   <li>
@@ -373,7 +344,7 @@
   </button>
  </div>
  <div>
-  <a href="../index.html">Laser CAM</a>
+  <a href="../index.html">Laserskärning</a>
  </div>
  <div>/</div>
  <div>
@@ -459,7 +430,7 @@
 </div>
 <div class="paragraph">
 <p>Varje regel anger en <em>typ av kontur</em>, en <em>storlek</em> och den <em>åtgärd</em> som ska vidtas när en matchning sker. Ordningen på dessa regler är viktig. När TecZone Laser har avslutat bearbetningen av varje kontur går det igenom dessa regler och tillämpar den första som matchar. I allmänhet innebär detta att du måste skriva mer specifika regler först, eller använda mindre storlekar först. (Knapparna
-<strong>Up</strong> och <strong>Down</strong> bredvid reglerna kan användas för att blanda dem uppåt och nedåt.)</p>
+<strong>Uppe</strong> och <strong>Nere</strong> bredvid reglerna kan användas för att blanda dem uppåt och nedåt.)</p>
 </div>
 <div class="sect2">
 <h3 id="_konturtyper">Konturtyper<a id="h000281"></a></h3>
@@ -502,25 +473,31 @@
 <p><strong>Colliding inner</strong> är uppsättningen _inner_konturer som klassificeras som kolliderande.</p>
 </li>
 <li>
-<p><strong>Colliding outer</strong> är uppsättningen _ytter_konturer som klassificeras som kolliderande.Analysen för att avgöra om en kontur är
-<strong>Stable</strong> eller
-<strong>Colliding</strong> är komplex.Avsnittet <strong>Stabilitetsberäkning</strong> nedan förklarar en del av denna komplexitet.</p>
+<p><strong>Colliding outer</strong> är uppsättningen _ytter_konturer som klassificeras som kolliderande.</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Analysen för att avgöra om en kontur är
+<strong>Stable</strong> eller
+<strong>Colliding</strong> är komplex.</p>
+</div>
+<div class="paragraph">
+<p>Avsnittet <strong>Stabilitetsberäkning</strong> nedan förklarar en del av denna komplexitet.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_åtgärder">Åtgärder<a id="h000282"></a></h3>
 <div class="paragraph">
-<p><strong>Konturtyp</strong> och <strong>Size</strong> används för att ställa in kriterierna mot vilka varje kontur kontrolleras när den bearbetas. När en matchning hittas (med reglerna utvärderade i ordning) utförs motsvarande <strong>Action</strong> på den konturen.</p>
+<p><strong>Konturtyp</strong> och <strong>Filstorlek</strong> används för att ställa in kriterierna mot vilka varje kontur kontrolleras när den bearbetas. När en matchning hittas (med reglerna utvärderade i ordning) utförs motsvarande <strong>Action</strong> på den konturen.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>None</strong>: Ingen särskild åtgärd vidtas.</p>
+<p><strong>Från</strong>: Ingen särskild åtgärd vidtas.</p>
 </li>
 <li>
 <p><strong>Auto microjoint</strong>: Applicerar en eller flera microjoints på konturen. Antalet microjoints som behövs bestäms automatiskt (se avsnittet <strong>Stabilitetsberäkning</strong> nedan).</p>
@@ -607,7 +584,10 @@
 </div>
 </div>
 <div class="paragraph">
-<p>I en layout kan en mindre del placeras i detta hål för att förbättra utnyttjandet av plåten, och vid den punkten kanske innerkonturen inte stöds av tillräckligt många stift för att anses stabil. TecZone Laser lägger till en microjoint för att stabilisera konturen, som visas i bilden ovan till höger.Om den mindre delen som placeras i hålet sedan tas bort, försvinner också microjoints.</p>
+<p>I en layout kan en mindre del placeras i detta hål för att förbättra utnyttjandet av plåten, och vid den punkten kanske innerkonturen inte stöds av tillräckligt många stift för att anses stabil. TecZone Laser lägger till en microjoint för att stabilisera konturen, som visas i bilden ovan till höger.</p>
+</div>
+<div class="paragraph">
+<p>Om den mindre delen som placeras i hålet sedan tas bort, försvinner också microjoints.</p>
 </div>
 </div>
 </div>

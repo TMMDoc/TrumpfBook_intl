@@ -58,7 +58,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../cut/index.html">Laser CAM</a>
+   <a href="../../cut/index.html">Laserskärning</a>
    <ul class="hide">
     <li>
      <button class="tree closed"></button>
@@ -145,7 +145,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../bend/index.html">Bend CAM</a>
+   <a href="../../bend/index.html">Kantpressar</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">Skapa bockningsdata</a></li>
     <li><button class="tree blank"></button><a href="../../bend/navigator.html">Bend Navigator</a></li>
@@ -197,36 +197,7 @@
       <li><button class="tree blank"></button><a class="active" href="extraction.html">Uttag</a></li>
      </ul>
     </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../regrip/index.html">Omgrepp</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../regrip/regrippanel.html">Omgreppspanel</a></li>
-      <li><button class="tree blank"></button><a href="../regrip/addregrip.html">Lägga till omgrepp</a></li>
-      <li><button class="tree blank"></button><a href="../regrip/editregrip.html">Bearbeta omgrepp</a></li>
-      <li><button class="tree blank"></button><a href="../regrip/jawregrip.html">Omgrepp med käft</a></li>
-      <li><button class="tree blank"></button><a href="../regrip/rgstationpanel.html">Panel för omgreppningsstation</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../deposit/index.html">Delavläggning</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Avläggningsmönster</a></li>
-      <li><button class="tree blank"></button><a href="../deposit/repeat.html">Upprepning och sekvensering</a></li>
-      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Separatorplåt</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../advanced/index.html">Avancerat</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../advanced/waypoints.html">Vägpunkter</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/cellconfig.html">Cellkonfiguration</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/gripperdb.html">Gripdondatabas</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/reports.html">Rapporter</a></li>
-     </ul>
-    </li>
+    <li><button class="tree blank"></button><a href="../regrip/index.html">Omgrepp</a></li>
    </ul>
   </li>
   <li>
@@ -398,22 +369,22 @@
 </div>
 <div class="paragraph">
 <p>När bockningen är klar måste delen tas ut mellan stansen och dynan för att förberedas för nästa bockning. I inställningarna för
-<strong>Uttag</strong> kan du välja en <em>strategi</em> och sedan justera de olika parametrar som styr strategin.Parametrarna visas i avsnittet <strong>Advanced</strong> i panelen, och du kan använda skjutreglaget <strong>Simulate</strong> för att gå fram och tillbaka i simuleringen av denna bockning, inklusive uttaget. Här är de grundläggande inställningarna:</p>
+<strong>Uttag</strong> kan du välja en <em>strategi</em> och sedan justera de olika parametrar som styr strategin.Parametrarna visas i avsnittet <strong>Utökat</strong> i panelen, och du kan använda skjutreglaget <strong>Simulera</strong> för att gå fram och tillbaka i simuleringen av denna bockning, inklusive uttaget. Här är de grundläggande inställningarna:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>I listan <strong>Extraction</strong> kan du välja en av de olika uttagsstrategierna, som förklaras nedan.</p>
+<p>I listan <strong>Uttagningsstrategi</strong> kan du välja en av de olika uttagsstrategierna, som förklaras nedan.</p>
 </li>
 </ul>
 </div>
 <div id="h000076" class="ulist">
 <ul>
 <li>
-<p>När bockningen är klar lyfts pressbalken som håller stansen upp för att rensa delen. Omkopplaren <strong>Up with Ram</strong> instruerar roboten att lyfta upp delen i tandem så att den åker upp tillsammans med balken. Detta är användbart för vissa strategier och <em>nödvändigt</em> för andra.</p>
+<p>När bockningen är klar lyfts pressbalken som håller stansen upp för att rensa delen. Omkopplaren <strong>Kör upp med balk</strong> instruerar roboten att lyfta upp delen i tandem så att den åker upp tillsammans med balken. Detta är användbart för vissa strategier och <em>nödvändigt</em> för andra.</p>
 </li>
 <li>
-<p>Inställningen <strong>Opening</strong> styr balkens <em>öppning</em>
+<p>Inställningen <strong>Öppna</strong> styr balkens <em>öppning</em>
 <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> efter att bockningen är klardone<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
 </li>
 </ul>
@@ -421,7 +392,7 @@
 <div id="h000077" class="ulist">
 <ul>
 <li>
-<p>I början av uttaget lyfts delen upp från viloläget på dynan med inställningen <strong>Part lift</strong> innan uttaget fortsätter.Om inställningen <strong>Up with Ram</strong> är aktiverad lyfts dock delen upp tillsammans med balken, och denna inställning ersätts av inställningen <strong>Part lower</strong>, som styr hur mycket delen sänks <em>nedåt</em> efter det inledande stadiet av rörelsen <em>uppåt</em> med balken.I avsnitten nedan ges en kort förklaring av varje uttagsstrategi.TecZone Bend väljer automatiskt en av dessa strategier för att undvika kollisioner beroende på delens geometri. Med inställningarna i detta avsnitt kan du åsidosätta uttagsalgoritmen eller justera parametrarna för den valda algoritmen.</p>
+<p>I början av uttaget lyfts delen upp från viloläget på dynan med inställningen <strong>Lyft del</strong> innan uttaget fortsätter.Om inställningen <strong>Kör upp med balk</strong> är aktiverad lyfts dock delen upp tillsammans med balken, och denna inställning ersätts av inställningen <strong>Sänk delen</strong>, som styr hur mycket delen sänks <em>nedåt</em> efter det inledande stadiet av rörelsen <em>uppåt</em> med balken.I avsnitten nedan ges en kort förklaring av varje uttagsstrategi.TecZone Bend väljer automatiskt en av dessa strategier för att undvika kollisioner beroende på delens geometri. Med inställningarna i detta avsnitt kan du åsidosätta uttagsalgoritmen eller justera parametrarna för den valda algoritmen.</p>
 </li>
 </ul>
 </div>
@@ -441,7 +412,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_no_extraction">No Extraction</h2>
+<h2 id="_ingen_utlastning">Ingen utlastning</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Om nästa bockning ligger nära den bockning som just har slutförts, är ungefär parallell med den och har samma bockningsriktning, behöver delen inte tas ut och sättas in igen. Delen svänger bara runt Z-axeln till rätt position för nästa bockning, som visas i sekvensen nedan.</p>
@@ -454,11 +425,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_left_right">Left / Right</h2>
+<h2 id="_vänster_höger">Vänster / Höger</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Ett direkt uttag bakåt är ibland svårt eftersom balken kanske inte kan öppnas tillräckligt, eller när delen har djupa flänsar som låser sig med svanhalsverktyget, som visas i bilden nedan.Delen kan sedan tas ut åt vänster eller höger med hjälp av denna strategi. Parametrarna
-<strong>Side shift</strong> styr sidförskjutningen av delen (i Z) före uttag.</p>
+<strong>Sidoförskjutning</strong> styr sidförskjutningen av delen (i Z) före uttag.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -468,11 +439,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_unhook">Unhook</h2>
+<h2 id="_trä_ut">Trä ut</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Med denna strategi skjuts delen diagonalt framåt och nedåt med parametern
-<strong>Slide</strong>, sänks sedan och tas ut. Bilden nedan visar stegen i denna process.</p>
+<strong>Flytta</strong>, sänks sedan och tas ut. Bilden nedan visar stegen i denna process.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -482,7 +453,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_swivel">Swivel</h2>
+<h2 id="_sväng">Sväng</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Denna strategi används för att frigöra komplexa lådaformer med inåtböjda flänsar som kräver hornsegmentverktyg för bearbetning. Uttaget består av flera steg, som visas i bildsekvensen nedan.</p>
@@ -495,10 +466,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Delen skjuts först framåt och nedåt med parametern <strong>Slide</strong>.</p>
+<p>Delen skjuts först framåt och nedåt med parametern <strong>Flytta</strong>.</p>
 </li>
 <li>
-<p>Därefter lutas delen bakåt med parametern <strong>Pitch</strong> och <em>svängs</em> sedan runt handledsaxeln med parametern <strong>Swivel</strong>.</p>
+<p>Därefter lutas delen bakåt med parametern <strong>Avstånd</strong> och <em>svängs</em> sedan runt handledsaxeln med parametern <strong>Sväng</strong>.</p>
 </li>
 <li>
 <p>Sidoflänsarna ska nu vara fria från stansens yttre horn, och delen kan sedan sänkas och tas ut.</p>
@@ -508,7 +479,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_tilt_back_lower">Tilt-back, lower</h2>
+<h2 id="_tillbakavikt_under">Tillbakavikt, under</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Denna strategi används när en hög fläns bearbetas med ett smalt vinklat verktyg.För att underlätta uttaget <em>lutas delen bakåt</em> tills flänsen ligger parallellt med verktygets baksida. Därefter skjuts den nedåt i den parallella riktningen innan den tas ut:</p>
@@ -521,10 +492,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_slide_back">Slide back</h2>
+<h2 id="_dra_tillbaka">Dra tillbaka</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Detta är en annan strategi som kan vara användbar med höga flänsar. Delarna skjuts <em>bakåt och nedåt</em> med parametern <strong>Slide</strong> innan de tas ut.</p>
+<p>Detta är en annan strategi som kan vara användbar med höga flänsar. Delarna skjuts <em>bakåt och nedåt</em> med parametern <strong>Flytta</strong> innan de tas ut.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -553,22 +524,22 @@
    <a href="#_standard">Standard</a>
   </li>
   <li level="1">
-   <a href="#_no_extraction">No Extraction</a>
+   <a href="#_ingen_utlastning">Ingen utlastning</a>
   </li>
   <li level="1">
-   <a href="#_left_right">Left / Right</a>
+   <a href="#_vänster_höger">Vänster / Höger</a>
   </li>
   <li level="1">
-   <a href="#_unhook">Unhook</a>
+   <a href="#_trä_ut">Trä ut</a>
   </li>
   <li level="1">
-   <a href="#_swivel">Swivel</a>
+   <a href="#_sväng">Sväng</a>
   </li>
   <li level="1">
-   <a href="#_tilt_back_lower">Tilt-back, lower</a>
+   <a href="#_tillbakavikt_under">Tillbakavikt, under</a>
   </li>
   <li level="1">
-   <a href="#_slide_back">Slide back</a>
+   <a href="#_dra_tillbaka">Dra tillbaka</a>
   </li>
  </ul>
 </aside>

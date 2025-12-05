@@ -58,7 +58,7 @@
   </li>
   <li>
    <button class="tree open"></button>
-   <a href="../../index.html">Laser CAM</a>
+   <a href="../../index.html">Laserskärning</a>
    <ul>
     <li>
      <button class="tree closed"></button>
@@ -145,7 +145,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../../bend/index.html">Bend CAM</a>
+   <a href="../../../bend/index.html">Kantpressar</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">Skapa bockningsdata</a></li>
     <li><button class="tree blank"></button><a href="../../../bend/navigator.html">Bend Navigator</a></li>
@@ -197,36 +197,7 @@
       <li><button class="tree blank"></button><a href="../../../bcell/bending/extraction.html">Uttag</a></li>
      </ul>
     </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../../bcell/regrip/index.html">Omgrepp</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/regrippanel.html">Omgreppspanel</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/addregrip.html">Lägga till omgrepp</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/editregrip.html">Bearbeta omgrepp</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/jawregrip.html">Omgrepp med käft</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/rgstationpanel.html">Panel för omgreppningsstation</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../../bcell/deposit/index.html">Delavläggning</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../../bcell/deposit/patterns.html">Avläggningsmönster</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/deposit/repeat.html">Upprepning och sekvensering</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/deposit/separatorsheet.html">Separatorplåt</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../../bcell/advanced/index.html">Avancerat</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../../bcell/advanced/waypoints.html">Vägpunkter</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/advanced/cellconfig.html">Cellkonfiguration</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb.html">Gripdondatabas</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/advanced/reports.html">Rapporter</a></li>
-     </ul>
-    </li>
+    <li><button class="tree blank"></button><a href="../../../bcell/regrip/index.html">Omgrepp</a></li>
    </ul>
   </li>
   <li>
@@ -373,7 +344,7 @@
   </button>
  </div>
  <div>
-  <a href="../../index.html">Laser CAM</a>
+  <a href="../../index.html">Laserskärning</a>
  </div>
  <div>/</div>
  <div>
@@ -396,7 +367,13 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>När en laserdel riggas (se <a href="../../partworkflow/index.html">Delarbetsflöde</a>) beräknar TecZone Laser en <strong>sequence</strong> för hur delen ska skäras. På grundläggande nivå måste hålen i delen skäras ut först innan ytterkontur skärs. När en layout sammanställs antingen av nestingmotorn eller interaktivt genom att lägga till eller redigera delar i en layout, beräknar TecZone Laser en sekvens i vilken alla bearbetningar av alla delar i layouten bearbetas. Ett vanligt alternativ är att bearbetningen sker <em>del för del</em> (den inre bearbetningen och ytterkonturen av en del skärs ut innan man går vidare till nästa del). Det finns även andra sekvenseringsalternativ, och dessa kan styras med hjälp av inställningarna för <a href="../../../settings/cutcam/lasercam/sequence.html">Laser Sequence</a>. Denna automatiskt beräknade sekvens (antingen för en del eller för en layout) kan granskas eller ändras med hjälp av <strong>sekvensnavigatorn</strong>.</p>
+<p>När en laserdel riggas (se <a href="../../partworkflow/index.html">Delarbetsflöde</a>) beräknar TecZone Laser en <strong>Bockningsföljd</strong> för hur delen ska skäras. På grundläggande nivå måste hålen i delen skäras ut först innan ytterkontur skärs.</p>
+</div>
+<div class="paragraph">
+<p>När en layout sammanställs antingen av nestingmotorn eller interaktivt genom att lägga till eller redigera delar i en layout, beräknar TecZone Laser en sekvens i vilken alla bearbetningar av alla delar i layouten bearbetas. Ett vanligt alternativ är att bearbetningen sker <em>del för del</em> (den inre bearbetningen och ytterkonturen av en del skärs ut innan man går vidare till nästa del). Det finns även andra sekvenseringsalternativ, och dessa kan styras med hjälp av inställningarna för <a href="../../../settings/cutcam/lasercam/sequence.html">Laser Sequence</a>.</p>
+</div>
+<div class="paragraph">
+<p>Denna automatiskt beräknade sekvens (antingen för en del eller för en layout) kan granskas eller ändras med hjälp av <strong>sekvensnavigatorn</strong>.</p>
 </div>
 </div>
 </div>
@@ -412,12 +389,21 @@
 </div>
 </div>
 <div class="paragraph">
-<p>I den här bilden används sekvensnavigatorn för att redigera sekvensen för en layout. Här har en sekvens del för del beräknats och du kan se i vilken ordning delarna kommer att bearbetas.Du kan <em>öppna</em> en av dessa delnoder (som noden <strong>1 (lyly) 4</strong> som har öppnats) och sedan se de enskilda lasersnitten inom den delen. Lasersnittet som vi har klickat på (märkt med sekvensnummer <strong>66</strong> i bilden) är markerat med blått. Alla verktyg som har använts före detta visas i vitt eller rosa (den rosa fyllningen indikerar att verktyget är instabilt och kan falla igenom rastren). Flyttlinjen från det <em>föregående</em> verktyget till det valda, och även flyttlinjen från detta verktyg till det <em>nästa</em> visas båda för att ge sammanhang.</p>
+<p>I den här bilden används sekvensnavigatorn för att redigera sekvensen för en layout. Här har en sekvens del för del beräknats och du kan se i vilken ordning delarna kommer att bearbetas.</p>
+</div>
+<div class="paragraph">
+<p>Du kan <em>öppna</em> en av dessa delnoder (som noden <strong>1 (lyly) 4</strong> som har öppnats) och sedan se de enskilda lasersnitten inom den delen. Lasersnittet som vi har klickat på (märkt med sekvensnummer <strong>66</strong> i bilden) är markerat med blått. Alla verktyg som har använts före detta visas i vitt eller rosa (den rosa fyllningen indikerar att verktyget är instabilt och kan falla igenom rastren).</p>
+</div>
+<div class="paragraph">
+<p>Flyttlinjen från det <em>föregående</em> verktyget till det valda, och även flyttlinjen från detta verktyg till det <em>nästa</em> visas båda för att ge sammanhang.</p>
 </div>
 <div class="sect2">
 <h3 id="_omordna_riggning">Omordna riggning<a id="h000337"></a></h3>
 <div class="paragraph">
-<p>Du kan klicka på en nod som motsvarar en hel del eller en nod som motsvarar en enskild laserskärning och dra den uppåt eller nedåt för att omordna riggningen. När du gör det beräknas och uppdateras <strong>Traverse time</strong> omedelbart och visas längst ned i sekvensnavigatorn. Du kan återgå till den ursprungliga sekvensen genom att klicka på ikonen <strong>Revert all changes</strong> i sekvensnavigatorn. Du kan också använda knappen <strong>Interaktiv sekvens</strong> för att ändra riggningens ordning:</p>
+<p>Du kan klicka på en nod som motsvarar en hel del eller en nod som motsvarar en enskild laserskärning och dra den uppåt eller nedåt för att omordna riggningen. När du gör det beräknas och uppdateras <strong>Traverse time</strong> omedelbart och visas längst ned i sekvensnavigatorn. Du kan återgå till den ursprungliga sekvensen genom att klicka på ikonen <strong>Revert all changes</strong> i sekvensnavigatorn.</p>
+</div>
+<div class="paragraph">
+<p>Du kan också använda knappen <strong>Interaktiv sekvens</strong> för att ändra riggningens ordning:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -433,7 +419,10 @@
 </div>
 </div>
 <div class="paragraph">
-<p>För att göra det enkelt kan du först klicka på <strong>8</strong> (utan att hålla ned <kbd>Ctrl</kbd>) så accepteras sekvensen fram till den punkten (visas som grå cirklar). Sedan kan du <kbd>Ctrl</kbd>+klicka på efterföljande nummer för att lägga till dem i sekvensen i den ordningen. Du kan se en modifierad sekvens som ställs in genom de efterföljande klicken ovan. Du kan också bara rita en grov linje som anger det ungefärliga <em>flödet</em> längs vilket du vill att delarna ska skäras. För att göra detta, <kbd>Alt</kbd>+klicka på plåten och dra musen för att skapa en kurva (visas i bilden nedan till vänster).</p>
+<p>För att göra det enkelt kan du först klicka på <strong>8</strong> (utan att hålla ned <kbd>Ctrl</kbd>) så accepteras sekvensen fram till den punkten (visas som grå cirklar). Sedan kan du <kbd>Ctrl</kbd>+klicka på efterföljande nummer för att lägga till dem i sekvensen i den ordningen. Du kan se en modifierad sekvens som ställs in genom de efterföljande klicken ovan.</p>
+</div>
+<div class="paragraph">
+<p>Du kan också bara rita en grov linje som anger det ungefärliga <em>flödet</em> längs vilket du vill att delarna ska skäras. För att göra detta, <kbd>Alt</kbd>+klicka på plåten och dra musen för att skapa en kurva (visas i bilden nedan till vänster).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -452,7 +441,13 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Indikatorn <strong>Warnings</strong> längst ned visas om det finns några varningar. Klicka på denna indikator upprepade gånger för att markera var och en av varningarna. Indikatorn <strong>Lutande konturer</strong> visar de konturer som eventuellt kan falla igenom rastren. Klicka på denna indikator upprepade gånger för att markera alla konturer som kan luta. Här är de andra symbolerna som visas i sekvensnavigatorn. De används för att justera den hierarkiska vyn av riggningsobjekt, simulera sekvensen och justera den på andra sätt.</p>
+<p>Indikatorn <strong>Varningar</strong> längst ned visas om det finns några varningar.</p>
+</div>
+<div class="paragraph">
+<p>Klicka på denna indikator upprepade gånger för att markera var och en av varningarna. Indikatorn <strong>Lutande konturer</strong> visar de konturer som eventuellt kan falla igenom rastren.</p>
+</div>
+<div class="paragraph">
+<p>Klicka på denna indikator upprepade gånger för att markera alla konturer som kan luta. Här är de andra symbolerna som visas i sekvensnavigatorn. De används för att justera den hierarkiska vyn av riggningsobjekt, simulera sekvensen och justera den på andra sätt.</p>
 </div>
 <table class="tableblock frame-all grid-all fit-content">
 <colgroup>
@@ -470,7 +465,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/stop.png" alt="Stop" width="20"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Stop</strong> simuleringen vid dess aktuella position.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Anslag</strong> simuleringen vid dess aktuella position.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/skip-to-start.png" alt="Rewind" width="20"></span></p></td>

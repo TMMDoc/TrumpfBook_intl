@@ -58,7 +58,7 @@
   </li>
   <li>
    <button class="tree open"></button>
-   <a href="../../index.html">雷射 CAM</a>
+   <a href="../../index.html">雷射切割</a>
    <ul>
     <li>
      <button class="tree closed"></button>
@@ -145,7 +145,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../../bend/index.html">折彎 CAM</a>
+   <a href="../../../bend/index.html">折彎機</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">建立折彎資料</a></li>
     <li><button class="tree blank"></button><a href="../../../bend/navigator.html">折彎導航器</a></li>
@@ -197,36 +197,7 @@
       <li><button class="tree blank"></button><a href="../../../bcell/bending/extraction.html">提取</a></li>
      </ul>
     </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../../bcell/regrip/index.html">改抓</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/regrippanel.html">改抓面板</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/addregrip.html">添加改抓</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/editregrip.html">編輯改抓</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/jawregrip.html">用卡爪改抓</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/regrip/rgstationpanel.html">改抓站面板</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../../bcell/deposit/index.html">零件存儲</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../../bcell/deposit/patterns.html">存儲模式</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/deposit/repeat.html">重復和順序</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/deposit/separatorsheet.html">分張板材</a></li>
-     </ul>
-    </li>
-    <li>
-     <button class="tree closed"></button>
-     <a href="../../../bcell/advanced/index.html">進階</a>
-     <ul class="hide">
-      <li><button class="tree blank"></button><a href="../../../bcell/advanced/waypoints.html">位移點</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/advanced/cellconfig.html">單元配置</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb.html">夾鉗資料庫</a></li>
-      <li><button class="tree blank"></button><a href="../../../bcell/advanced/reports.html">報告</a></li>
-     </ul>
-    </li>
+    <li><button class="tree blank"></button><a href="../../../bcell/regrip/index.html">改抓</a></li>
    </ul>
   </li>
   <li>
@@ -373,7 +344,7 @@
   </button>
  </div>
  <div>
-  <a href="../../index.html">雷射 CAM</a>
+  <a href="../../index.html">雷射切割</a>
  </div>
  <div>/</div>
  <div>
@@ -396,7 +367,13 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>當雷射零件被執行裝備時（見<a href="../../partworkflow/index.html">零件工作流程</a>），TecZone Laser將計算零件應切割加工的 <strong>sequence</strong>。在基本層面上，零件上的孔需要在外輪廓被切割之前先被切割出來。當布局由排樣引擎構建或透過在佈局中添加或編輯零件交互式構建時，TecZone Laser將計算布局中所有零件的所有加工都被處理的順序。一個常見的選項是，加工是_逐個零件_處理的（先進行一個零件的內部加工並切割外輪廓，然後再移動到下一個零件）。還有其他排序選項，這些選項可以使用<a href="../../../settings/cutcam/lasercam/sequence.html">雷射順序</a>設定進行控制。此自動計算的順序（用於零件或佈局）可以使用<strong>順序導航器</strong>檢查或更改。</p>
+<p>當雷射零件被執行裝備時（見<a href="../../partworkflow/index.html">零件工作流程</a>），TecZone Laser將計算零件應切割加工的 <strong>折彎順序</strong>。在基本層面上，零件上的孔需要在外輪廓被切割之前先被切割出來。</p>
+</div>
+<div class="paragraph">
+<p>當布局由排樣引擎構建或透過在佈局中添加或編輯零件交互式構建時，TecZone Laser將計算布局中所有零件的所有加工都被處理的順序。一個常見的選項是，加工是_逐個零件_處理的（先進行一個零件的內部加工並切割外輪廓，然後再移動到下一個零件）。還有其他排序選項，這些選項可以使用<a href="../../../settings/cutcam/lasercam/sequence.html">雷射順序</a>設定進行控制。</p>
+</div>
+<div class="paragraph">
+<p>此自動計算的順序（用於零件或佈局）可以使用<strong>順序導航器</strong>檢查或更改。</p>
 </div>
 </div>
 </div>
@@ -412,12 +389,21 @@
 </div>
 </div>
 <div class="paragraph">
-<p>在此圖像中，順序導航器用於編輯佈局的順序。在這裡，已計算出逐個零件的順序，您可以看到零件將在其中進行加工的順序。您可以_打開_其中一個零件節點（如<strong>1（lyly）4</strong>節點已被打開），然後您可以看到該零件內的單個雷射切割。我們點擊的雷射切割（圖中以序號<strong>66</strong>標記）以藍色突出顯示。在此之前已完成切割的所有加工都用白色或粉紅色填充（粉紅色填充表示加工不穩定並可能掉落穿過劍柵）。作為背景將顯示從_上一個_加工到所選加工的移動線，以及從此加工到_下一個_加工的移動線。</p>
+<p>在此圖像中，順序導航器用於編輯佈局的順序。在這裡，已計算出逐個零件的順序，您可以看到零件將在其中進行加工的順序。</p>
+</div>
+<div class="paragraph">
+<p>您可以_打開_其中一個零件節點（如<strong>1（lyly）4</strong>節點已被打開），然後您可以看到該零件內的單個雷射切割。我們點擊的雷射切割（圖中以序號<strong>66</strong>標記）以藍色突出顯示。在此之前已完成切割的所有加工都用白色或粉紅色填充（粉紅色填充表示加工不穩定並可能掉落穿過劍柵）。</p>
+</div>
+<div class="paragraph">
+<p>作為背景將顯示從_上一個_加工到所選加工的移動線，以及從此加工到_下一個_加工的移動線。</p>
 </div>
 <div class="sect2">
 <h3 id="_重新排序加工">重新排序加工<a id="h000337"></a></h3>
 <div class="paragraph">
-<p>您可以點擊代表完整零件的節點，或代表單個雷射切割的節點，並向上或向下拖動以重新排序加工。當您這樣做時，<strong>Traverse time</strong>會立即計算並更新，並且顯示在順序導航器的底部。您可以點擊順序導航器中的<strong>Revert all changes</strong>圖示返回原始順序。您還可以使用<strong>交互式順序</strong>按鈕更改加工順序：</p>
+<p>您可以點擊代表完整零件的節點，或代表單個雷射切割的節點，並向上或向下拖動以重新排序加工。當您這樣做時，<strong>Traverse time</strong>會立即計算並更新，並且顯示在順序導航器的底部。您可以點擊順序導航器中的<strong>Revert all changes</strong>圖示返回原始順序。</p>
+</div>
+<div class="paragraph">
+<p>您還可以使用<strong>交互式順序</strong>按鈕更改加工順序：</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -433,7 +419,10 @@
 </div>
 </div>
 <div class="paragraph">
-<p>為了輕鬆做到這一點，您可以先點擊<strong>8</strong>（無需按住<strong><kbd>Ctrl</kbd></strong>），直到該點之前的順序被接受（顯示為灰色圓圈）。然後您可以<strong><kbd>Ctrl</kbd>+點擊</strong>後續編號，將它們添加到此順序。您可以看到透過上述連續點擊設置的修改後的順序。您也可以畫一條粗糙的線，指出您想要切割的零件的大致_方向_。若要執行此操作，請<strong><kbd>Alt</kbd>+點擊</strong>板材並拖動滑鼠以建立曲線（如左下圖所示）。</p>
+<p>為了輕鬆做到這一點，您可以先點擊<strong>8</strong>（無需按住<strong><kbd>Ctrl</kbd></strong>），直到該點之前的順序被接受（顯示為灰色圓圈）。然後您可以<strong><kbd>Ctrl</kbd>+點擊</strong>後續編號，將它們添加到此順序。您可以看到透過上述連續點擊設置的修改後的順序。</p>
+</div>
+<div class="paragraph">
+<p>您也可以畫一條粗糙的線，指出您想要切割的零件的大致_方向_。若要執行此操作，請<strong><kbd>Alt</kbd>+點擊</strong>板材並拖動滑鼠以建立曲線（如左下圖所示）。</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -452,7 +441,13 @@
 </div>
 </div>
 <div class="paragraph">
-<p>如果有任何警告，則會顯示底部的<strong>Warnings</strong>顯示圖素。重複點擊此顯示圖素以突出顯示每個警告。<strong>傾斜輪廓</strong>顯示圖素顯示可能掉落穿過劍柵的輪廓。重複點擊此顯示圖素以突出顯示所有可能傾斜的輪廓。以下是順序導航器中出現的其他符號。它們被用於調整加工項目的分層視圖，模擬順序並以其他方式進行調整。</p>
+<p>如果有任何警告，則會顯示底部的<strong>警告</strong>顯示圖素。重複點擊此顯示圖素以突出顯示每個警告。</p>
+</div>
+<div class="paragraph">
+<p><strong>傾斜輪廓</strong>顯示圖素顯示可能掉落穿過劍柵的輪廓。重複點擊此顯示圖素以突出顯示所有可能傾斜的輪廓。</p>
+</div>
+<div class="paragraph">
+<p>以下是順序導航器中出現的其他符號。它們被用於調整加工項目的分層視圖，模擬順序並以其他方式進行調整。</p>
 </div>
 <table class="tableblock frame-all grid-all fit-content">
 <colgroup>
@@ -470,7 +465,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/stop.png" alt="Stop" width="20"></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Stop</strong> 模擬在其當前位置。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>止擋</strong> 模擬在其當前位置。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/skip-to-start.png" alt="Rewind" width="20"></span></p></td>
