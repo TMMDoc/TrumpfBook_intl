@@ -359,20 +359,20 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Flux ships with a wide variety of bend tool catalogs (like Trumpf, Wila, Wilson,
+<p>TecZone ships with a wide variety of bend tool catalogs (like Trumpf, Wila, Wilson,
 Rolleri, Amada etc). If you are using tools from any of the approximately 40 different
-tool catalogs that Flux provides, you can simply install the catalog and start using
+tool catalogs that TecZone provides, you can simply install the catalog and start using
 the tools. Occasionally, it is necessary to model a custom tool, or a tool that is
-from a catalog not represented in Flux.</p>
+from a catalog not represented in TecZone.</p>
 </div>
 <div class="paragraph">
-<p>The <strong>Bend-Tool DXF Format</strong> is the standard mechanism by which this is done. Flux can
+<p>The <strong>Bend-Tool DXF Format</strong> is the standard mechanism by which this is done. TecZone can
 now export bend tools to DXF format, and can also import bend tools from a DXF format.
-The DXF files used to represent bend tools must follow certain rules so Flux can gather
+The DXF files used to represent bend tools must follow certain rules so TecZone can gather
 all the information it needs. Very often, a quick way of creating a bend tool is to use the
 Export to DXF function to create a DXF file from an existing tool. Then, the DXF can be
-edited (either in Flux, or in any other 2D CAD system). Finally, the modified DXF can be
-fed back into Flux using the Import from DXF function.</p>
+edited (either in TecZone, or in any other 2D CAD system). Finally, the modified DXF can be
+fed back into TecZone using the Import from DXF function.</p>
 </div>
 </div>
 </div>
@@ -668,9 +668,9 @@ imported with zero height (see the image below):</p>
 <h3 id="_shape_recognition">Shape recognition<a id="h000029"></a></h3>
 <div class="paragraph">
 <p>In the bend tool DXF format, note that it is not necessary to specify some critical
-parameters of the punch/die such as the height, radius, angle or V-width. Flux
+parameters of the punch/die such as the height, radius, angle or V-width. TecZone
 analyzes the tool drawing and extracts these parameters automatically. For a punch,
-Flux expects to find a curved segment at the bottom (bc) flanked by straight lines (ab and cd).</p>
+TecZone expects to find a curved segment at the bottom (bc) flanked by straight lines (ab and cd).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -679,7 +679,7 @@ Flux expects to find a curved segment at the bottom (bc) flanked by straight lin
 </div>
 <div class="paragraph">
 <p>From these three segments, the angle and radius of the punch are automatically recognized.
-For a die, Flux examines the left shoulder to extract the parameters. It expects to
+For a die, TecZone examines the left shoulder to extract the parameters. It expects to
 find a curved shoulder segment (bc) flanked by a horizontal top (ab) and the inclined
 angle segment (cd).</p>
 </div>
@@ -689,7 +689,7 @@ angle segment (cd).</p>
 </div>
 </div>
 <div class="paragraph">
-<p>If the punch or die do not meet these shape-recognition requirements, Flux will
+<p>If the punch or die do not meet these shape-recognition requirements, TecZone will
 not be able to recognize the shape as a punch or a die.</p>
 </div>
 </div>
@@ -708,10 +708,10 @@ drawing.</p>
 </li>
 <li>
 <p>The drawing should always be in metric units (regardless of the current operating
-unit of Flux).</p>
+unit of TecZone).</p>
 </li>
 <li>
-<p>While the command says Import from DXF, Flux will also accept a GEO file instead,
+<p>While the command says Import from DXF, TecZone will also accept a GEO file instead,
 provided it follows the same conventions listed above.</p>
 </li>
 </ul>
@@ -1107,7 +1107,7 @@ gap which is the height of the notch. This is shown as C in the picture above.</
 <div class="sect2">
 <h3 id="_punch_adapters">Punch Adapters<a id="h000055"></a></h3>
 <div class="paragraph">
-<p>The tool importer can import <em>punch adapters</em>. For Flux to recognize correctly that the
+<p>The tool importer can import <em>punch adapters</em>. For TecZone to recognize correctly that the
 drawing is a punch adapter, there should be the following text entities in the file:</p>
 </div>
 <div id="h000056" class="ulist">
@@ -1122,7 +1122,7 @@ that can be mounted on the adapter).</p>
 </li>
 <li>
 <p>A text like <strong>HEIGHT=64</strong> that maps the effective working height of the adapter. This
-is necessary, since Flux cannot infer the height of adapter automatically.</p>
+is necessary, since TecZone cannot infer the height of adapter automatically.</p>
 </li>
 </ul>
 </div>
@@ -1140,7 +1140,7 @@ is necessary, since Flux cannot infer the height of adapter automatically.</p>
 <div class="paragraph">
 <p>The tool importer can import <em>blade holders</em>. Some blade holders (for example, the
 ones similar to OW209/S) are also hemming punches used to flatten a hem. For such
-blade holders, some additional data is required</p>
+blade holders, some additional data is required.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1149,7 +1149,7 @@ blade holders, some additional data is required</p>
 </div>
 <div class="paragraph">
 <p>The mandatory parameters UPPER, LOWER, HEIGHT are explained in the section above
-on Punch Adapters, and they have the same meaning. In addition, to help Flux to
+on Punch Adapters, and they have the same meaning. In addition, to help TecZone to
 use the holder as a hemming tool, the following additional entries are required:</p>
 </div>
 <div id="h000060" class="ulist">

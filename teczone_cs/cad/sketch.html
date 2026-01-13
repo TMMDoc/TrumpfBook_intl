@@ -1,0 +1,807 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>Úprava geometrie</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Vítejte v TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">Úvod</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">Instalace softwaru</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">Uživatelské rozhraní</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">Workflow dílu</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">CAD</a>
+   <ul>
+    <li>
+     <button class="tree closed"></button>
+     <a href="2dimport/index.html">Import 2D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="2dimport/2dcleanup.html">2D vyčištění</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="3dimport/index.html">Import 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="3dimport/prep3dmodel.html">Import 3D modelu</a></li>
+      <li><button class="tree blank"></button><a href="3dimport/prepassembly.html">Import konstrukční skupiny</a></li>
+      <li><button class="tree blank"></button><a href="3dimport/formdetect.html">Rozpoznání tvarů</a></li>
+      <li><button class="tree blank"></button><a href="3dimport/componentdetect.html">Rozpoznání součástí</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a class="active" href="sketch.html">Úprava geometrie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Řezání laserem</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Workflow dílu</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Editační panely</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Laserový řez</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Najetí</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Zpětný pohyb</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Mikrospoj</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Pokročilé</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Kontura</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Řezání šrotu</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Díl</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Opracování rohů</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Rychlé optimální rozmístění</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Workflow úlohy</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Panel úloh</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Karta Plechy</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Karta Díly</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Karta Rozvržení</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Karta Souhrn</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Úprava rozložení</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Režimy optimálního rozmístění</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Panel Umístění</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Sekvencování</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Krájení plechu</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Šikmý řez</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Otevřené kontury</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Variabilní zkosení</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Různé</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Pokročilé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Pravidla dokončení</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">Úprava LTT</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Strategie</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Mikrospoje</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Další nastavení</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Ohraňovací lis</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Vytvoření parametrů ohýbání</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Navigátor ohýbání</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Úprava parametrů ohýbání</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Upravit ohyb</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Úprava montáže nástroje</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Úprava nastavení ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Úprava dorazových palců</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Úprava měření úhlu</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Tabulka ohybů</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Změna pořadí</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Přidávání nastavení a stanic</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Pokročilé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Měření úhlu</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Dávkový proces</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Přepočet řešení</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Kontrola tonáže</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Navigátor ohýbání</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Vyzvednutí dílů</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Vyzvednutí z palety</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Vyzvednutí z dávkovače</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Robotické ohýbání</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Vkládání</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Ohýbání</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Vyjmutí</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../bcell/regrip/index.html">Přeuchopení</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">Výklopné ohýbání</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Vytvoření dat skládání</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">Zobrazení skládání</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Úprava dat skládání</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Upravit ohyb</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Úprava strany/sekce</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">Změna pořadí</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">Úprava přidržovačů</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Úprava dorážení</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">Úprava nožů</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Úprava zakládání</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Úprava vykládání</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Stav nástrojů</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Pokročilé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Vlastní tabulky vzduchových mezer</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Ruční dokončení ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Požadovaná délka ramene</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Nastavení</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Výkres</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Vrstvy</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Rozměry</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Zobrazení</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Ohýbání CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Výchozí nastavení stroje</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Výstupy ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Zobrazení ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Ohýbací buňka</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Řezání CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Rozložení</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Nastavení optimálního rozmístění</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Plech</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Manipulace s plechem</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Řezy skeletu</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Podpora práce</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">Laserové CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Pořadí</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Výstupy řezání</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Zobrazení řezání</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Otočné ohýbání</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Výchozí</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">Nosiče ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Výstupy</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Reporty</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Výchozí nastavení položek</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Import/Export</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Prostředí</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Databáze</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Materiály</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Stroje</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Ohýbací nástroje</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Ohýbací upínače</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Tvary/součásti</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Reporty</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Pole, obrázky a tabulky</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Pásy (podřízené reporty)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Štítky, bitmapy a tvary</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">Příloha</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Podporované 3D formáty</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">DXF oddělovacího plechu</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Ohýbací nástroje DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Tiráž</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">CAD</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="sketch.html">Úprava geometrie</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Úprava geometrie</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>V TecZone Ohyb máte k dispozici výkonný 2D editor skic, který můžete upravovat, čistit nebo přidávat
+do své geometrie. Pomocí klávesové zkratky <kbd>S</kbd> přejděte do režimu skicování. Editor
+zobrazí díl v rozloženém zobrazení.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/unfold2d.png" alt="image" width="528" height="243">
+</div>
+</div>
+<div class="paragraph">
+<p>V rozbaleném zobrazení klikněte na ikonu <strong>Opravit</strong> <span class="image"><img src="img/pencil.png" alt="Sketch" width="16"></span> nebo stiskněte
+klávesovou zkratku <kbd>S</kbd>.</p>
+</div>
+<div class="paragraph">
+<p>Otevře se menu s různými ikonami pro zpracování rozvinutí:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/movepanel.png" alt="movepanel">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_panel_skic">Panel skic<a id="h000261"></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Ikona</th>
+<th class="tableblock halign-left valign-top">Symbol</th>
+<th class="tableblock halign-left valign-top">Význam</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/pick.png" alt="pick" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vybrat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Výběr objektů, čar, zadání atd.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/line.png" alt="line" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ČÁRA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skicování čáry</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/lines.png" alt="lines" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spojené čáry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí libovolný počet čar</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/parallel.png" alt="parallel" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rovnoběžka</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí rovnoběžku s čárou</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/lineperpendicular.png" alt="lineperpendicular" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Normal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí tečnu ke křivce</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/bendline.png" alt="bendline" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Čára ohybu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí normální čáru k čáře</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arc.png" alt="arc" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oblouk ze středu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skicování linie ohybu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arc2p.png" alt="arc2p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2bodový kruhový oblouk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí oblouk od středového bodu, počátečního bodu a koncového bodu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arc3p.png" alt="arc3p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3bodový kruhový oblouk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí kruhový oblouk přes dva definované body (počáteční a koncový bod)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/arctangent.png" alt="arctangent" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tečný kruhový oblouk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí oblouk, který je tečný k prvkům nákresu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rect.png" alt="rect" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obdélník</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí obdélník</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rectcenter.png" alt="rectcenter" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Střed-obdélník</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí obdélník ze středu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle.png" alt="circle" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kruh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí kružnici. Vyberte střed kružnice a přetažením kurzoru definujte
+ poloměr nebo zadejte hodnotu poloměru</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle2p.png" alt="circle2p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsaná kružnice se 2 body</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí kružnici podle obvodu. Vyberte bod na
+obvodu, poté druhý bod a třetí bod.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle3p.png" alt="circle3p" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsaná kružnice se 3 body</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí kružnici podle obvodu. Vyberte bod na
+ obvodu, poté druhý bod a třetí bod.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle2t.png" alt="circle2t" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kruh se 2 tečnami</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí kružnici se dvěma tečnami. Zadejte průměr kruhu,
+ poté vyberte první tečnu a poté druhou tečnu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/circle3t.png" alt="circle3t" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kruh se 3 tečnami</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí kružnici se třemi tečnami. Zadejte průměr kruhu,
+ poté vyberte první tečnu, poté druhou tečnu a poté třetí tečnu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polygonins.png" alt="polygonins" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mnohoúhelník střed - rohový bod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí kružnici se třemi tečnami. Zadejte průměr kruhu,
+ poté vyberte první tečnu, poté druhou tečnu a poté třetí tečnu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polygoncircum.png" alt="polygoncircum" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mnohoúhelník střed - prostředek boční hrany</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí mnohoúhelník. Zadejte počet stran a vyberte středový bod a
+střed hrany strany</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polygonedge.png" alt="polygonedge" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mnohoúhelník s boční hranou</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nakreslí mnohoúhelník. Zadejte počet stran a definujte počáteční a
+ koncový bod strany.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/fillet.png" alt="fillet" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zaoblení</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zaoblí rohový bod dvou prvků nákresu zadaným
+ poloměrem, čímž vznikne tečný oblouk</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/chamfer.png" alt="chamfer" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zkosení</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vytvoří zkosení na rohu průsečíku dvou prvků nákresu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/infillet.png" alt="infillet" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oříznutí rohů zaoblené</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ořízne roh na průsečíku dvou prvků nákresu zadaným poloměrem</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/cornerstep.png" alt="cornerstep" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oříznutí rohů lomené</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ořízne roh na průsečíku dvou prvků nákresu obdélníkem. Velikost
+ obdélníku lze zadat předem.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/edgerecess.png" alt="edgerecess" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volný řez čtvercový</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vytvoří obdélníkový uvolňovací řez. Musíte zadat vzdálenost od rohu, hloubku uvolňovacího řezu
+ a poté vybrat roh.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/edgeu.png" alt="edgeu" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volný řez podélného otvoru</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vytváří uvolňovací řez ve tvaru podélného otvoru. Musíte zadat vzdálenost od rohu, šířku uvolňovacího řezu,
+ hloubku uvolňovacího řezu a poté vybrat roh.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/edgev.png" alt="edgev" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volný řez trojúhelníkový</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vytvoří trojúhelníkový uvolňovací řez. Musíte zadat vzdálenost od rohu, šířku uvolňovacího řezu,
+ hloubku uvolňovacího řezu a poté vybrat roh.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/keyslot.png" alt="keyslot" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Klíčový otvor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vytvoří klíčový otvor v kruhu se zadanými hodnotami.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/fillet3seg.png" alt="fillet3seg" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plné Zaoblení 3 segmentů</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zaoblí tři propojené prvky nákresu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/extend.png" alt="extend" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prodloužení prvku</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vyberte prvek nákresu, který má být rozšířen<br>
+<kbd>ctrl</kbd> Výběr ohraničení<br>
+<kbd>Shift</kbd> Spojení<br>
+<kbd>Alt</kbd> Přetažení</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/trim.png" alt="trim" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oříznutí prvku</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vyberte prvek nákresu, který má být oříznut<br>
+<kbd>Ctrl</kbd> Výběr ohraničení<br>
+<kbd>Shift</kbd> Smazání prvku<br>
+<kbd>Alt</kbd> Smazání polyčáry<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/join.png" alt="join" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sloučení</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Slouží k oříznutí a spojení několika samostatných polyčar do jedné</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/offset.png" alt="offset" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Posun prvků</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Posun jednoho nebo více prvků nákresu, hrany nákresu modelu nebo ploch modelu o
+ zadanou vzdálenost</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/move.png" alt="move" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Přesunutí</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vyberte prvek nákresu pomocí <kbd>ctrl</kbd> výběru referenčního bodu a přesuňte
+ prvek nákresu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rotate.png" alt="rotate" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Otočení</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vyberte prvek nákresu pomocí <kbd>ctrl</kbd> výběru středu otáčení, poté
+ počáteční bod a koncový bod, aby se prvek nákresu otočil</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/scale.png" alt="scale" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Změna měřítka</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vyberte prvek nákresu pomocí <kbd>ctrl</kbd> výběru základního bodu, poté počátečního referenčního
+ bodu a koncového referenčního bodu pro změnu měřítka prvku nákresu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/mirror.png" alt="mirror" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zrcadlení</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vyberte prvek nákresu pomocí <kbd>ctrl</kbd>, poté začátek linie zrcadlení a
+ poté konec linie zrcadlení, aby se prvek nákresu zrcadlil</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/rectarray.png" alt="rectarray" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lineární vzor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pomocí lineárních vzorů můžete vytvořit více referencovaných kopií jednoho nebo více prvků nákresu,
+ které můžete rozmístit v rovnoměrných vzdálenostech podél jedné nebo dvou lineárních drah. Klikněte
+ na lineární vzor a zadejte požadované hodnoty</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/polararray.png" alt="polararray" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kruhový vzor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pomocí kruhových vzorů můžete vytvořit více referencovaných kopií jednoho nebo více prvků nákresu,
+ které můžete rozmístit ve stejných vzdálenostech kolem osy. Klikněte na kruhové
+ vzory a zadejte požadované hodnoty</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/union.png" alt="union" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kombinování ploch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vyberte dva nebo více uzavřených prvků nákresu, abyste spojili povrchy mezi sebou</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/intersection.png" alt="intersection" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Řezná plocha</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vyberte dva nebo více uzavřených prvků nákresu a vytvořte prostor řezání vybraných prvků</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/subtraction.png" alt="subtraction" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oříznutí plochy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vyberte dva nebo více uzavřených prvků nákresu, které chcete oříznout z povrchu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/copynotch.png" alt="copynotch" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kopírování volného řezu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pomocí tohoto nástroje můžete vytvořit více kopií výseku podél hrany. Nejprve
+ zadejte vzdálenost mezi kopiemi a počet kopií výseku, který
+ chcete vytvořit. Poté vyberte výsek kliknutím na dvoučárové segmenty, které
+ sousedí s výsekem</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/deletenotch.png" alt="deletenotch" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Smazání volného řezu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pomocí tohoto nástroje můžete smazat výsek v rohu nebo podél čáry. Klikněte
+ na dvoučárové segmenty sousedící s výsekem a výsek bude odstraněn</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/mirrornotch.png" alt="mirrornotch" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zrcadlení volného řezu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pomocí tohoto nástroje můžete zrcadlit výsek v rohu nebo podél čáry. Klikněte
+ na dvoučárové segmenty sousedící s výsekem a výsek bude zrcadlen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/spline.png" alt="spline" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Křivka</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Chcete-li začít novou spline křivku, klikněte na počáteční bod a jak budete klikat na další body,
+ spline křivka se vytvoří. Pokud chcete spline křivku uzavřít, stiskněte klávesu ALT a
+ poté klikněte</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/profile.png" alt="profile" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profil</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zadejte délku základny, výšku příruby, tloušťku, úhel příruby, vnitřní poloměr a
+ stiskněte klávesu Enter pro vytvoření profilu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/text.png" alt="text" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Slouží k nakreslení textu, který bude laserovým strojem vyznačen na dílu. Po
+ kliknutí na toto nástrojové tlačítko se na vstupním panelu zobrazí pole pro zadání textu, velikosti a úhlu otočení</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/truetype.png" alt="truetype" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Slouží k převodu tvarů znaků v libovolném fontu TrueType na
+ polyčáry. Na tyto polyčáry lze poté aplikovat laserové nástroje a provést jejich řezání.
+  Při prvním kliknutí na toto tlačítko se zobrazí dialogové okno Font, ve kterém můžete
+ vybrat písmo, které se použije pro text</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/commonshape.png" alt="commonshape" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardní tvary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Slouží k vytvoření několika běžných tvarů a jejich vložení do výkresu. Po
+ kliknutí na toto tlačítko se zobrazí dialogové okno Vytvořit tvar, ve kterém můžete vybírat
+ z palety běžných tvarů</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dsimple.png" alt="dsimple" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jednoduché kótování</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vyberte první kótovací bod, poté druhý kótovací bod a umístěte
+ kótovanou čáru</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dbaseline.png" alt="dbaseline" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Souřadnicové kótování</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vyberte první kótovací bod, poté druhý kótovací bod a umístěte
+ kótovanou čáru</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dcontinue.png" alt="dcontinue" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kótovací řetězec</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vyberte první kótovací bod, poté druhý kótovací bod, umístěte
+ kótovanou čáru a vyberte další kótovací bod</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dhorzordinate.png" alt="dhorzordinate" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vodorovná souřadnicová kóta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rozměry ordináty jsou sada rozměrů, které se měří od ordináty
+ nula ve výkresu. Vyberte referenční bod a umístěte kótování</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dvertordinate.png" alt="dvertordinate" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Svislá souřadnicová kóta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rozměry ordináty jsou sada rozměrů, které se měří od ordináty
+ nula ve výkresu. Vyberte referenční bod a umístěte kótování</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dangular.png" alt="dangular" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kótování úhlu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vytvoří kótování úhlu. Vyberte první čáru a poté druhou čáru,
+ na které chcete kótovat úhel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dradius.png" alt="dradius" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kótování poloměru</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vytvoří kótování poloměru. Vyberte kružnici, u které chcete kótovat
+ poloměr. Kótujte průměr pomocí <kbd>ctrl</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dradius.png" alt="dradius" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kótování poloměru s protaženou odkazovou čárou</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vytvoří kótování s průběžnou vodicí čarou pro poloměr. Vyberte kružnici, u které chcete kótovat
+ poloměr. Kótujte průměr pomocí <kbd>ctrl</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dcallout.png" alt="dcallout" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Popis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Slouží k přidávání poznámek k výkresu ve formě popisků. Chcete-li vytvořit popisek,
+ zadejte text, který se má zobrazit, kliknutím určete, kam má šipka směřovat,
+ a dalším kliknutím určete, kam se má text umístit.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="img/icons/dsegment.png" alt="dsegment" width="20"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Segment kótování</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Použijte k přidání kótování pro přímou čáru a zakřivené segmenty. Klikněte na segment,
+ který chcete kótovat, a klikněte znovu, abyste umístili rozměr. Nebo podržte
+ <kbd></kbd> a klikněte na segment, aby se rozměr umístil automaticky.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_panel_skic">Panel skic</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="3dimport/componentdetect.html">Rozpoznání součástí</a></span>
+ <span class="next"><a href="../cut/index.html">Řezání laserem</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,773 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>Workflow dílu</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Vítejte v TecZone</a></li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Úvod</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="install.html">Instalace softwaru</a></li>
+    <li><button class="tree blank"></button><a href="clarity.html">Uživatelské rozhraní</a></li>
+    <li><button class="tree blank"></button><a class="active" href="workflow.html">Workflow dílu</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">Import 2D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">2D vyčištění</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">Import 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">Import 3D modelu</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">Import konstrukční skupiny</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">Rozpoznání tvarů</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">Rozpoznání součástí</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">Úprava geometrie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Řezání laserem</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Workflow dílu</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Editační panely</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Laserový řez</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Najetí</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Zpětný pohyb</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Mikrospoj</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Pokročilé</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Kontura</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Řezání šrotu</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Díl</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Opracování rohů</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Rychlé optimální rozmístění</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Workflow úlohy</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Panel úloh</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Karta Plechy</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Karta Díly</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Karta Rozvržení</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Karta Souhrn</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Úprava rozložení</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Režimy optimálního rozmístění</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Panel Umístění</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Sekvencování</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Krájení plechu</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Šikmý řez</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Otevřené kontury</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Variabilní zkosení</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Různé</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Pokročilé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Pravidla dokončení</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">Úprava LTT</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Strategie</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Mikrospoje</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Další nastavení</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Ohraňovací lis</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Vytvoření parametrů ohýbání</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Navigátor ohýbání</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Úprava parametrů ohýbání</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Upravit ohyb</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Úprava montáže nástroje</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Úprava nastavení ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Úprava dorazových palců</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Úprava měření úhlu</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Tabulka ohybů</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Změna pořadí</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Přidávání nastavení a stanic</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Pokročilé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Měření úhlu</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Dávkový proces</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Přepočet řešení</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Kontrola tonáže</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Navigátor ohýbání</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Vyzvednutí dílů</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Vyzvednutí z palety</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Vyzvednutí z dávkovače</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Robotické ohýbání</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Vkládání</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Ohýbání</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Vyjmutí</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../bcell/regrip/index.html">Přeuchopení</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">Výklopné ohýbání</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Vytvoření dat skládání</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">Zobrazení skládání</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Úprava dat skládání</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Upravit ohyb</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Úprava strany/sekce</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">Změna pořadí</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">Úprava přidržovačů</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Úprava dorážení</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">Úprava nožů</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Úprava zakládání</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Úprava vykládání</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Stav nástrojů</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Pokročilé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Vlastní tabulky vzduchových mezer</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Ruční dokončení ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Požadovaná délka ramene</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Nastavení</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Výkres</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Vrstvy</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Rozměry</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Zobrazení</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Ohýbání CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Výchozí nastavení stroje</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Výstupy ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Zobrazení ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Ohýbací buňka</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Řezání CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Rozložení</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Nastavení optimálního rozmístění</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Plech</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Manipulace s plechem</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Řezy skeletu</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Podpora práce</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">Laserové CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Pořadí</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Výstupy řezání</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Zobrazení řezání</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Otočné ohýbání</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Výchozí</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">Nosiče ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Výstupy</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Reporty</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Výchozí nastavení položek</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Import/Export</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Prostředí</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Databáze</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Materiály</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Stroje</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Ohýbací nástroje</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Ohýbací upínače</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Tvary/součásti</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Reporty</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Pole, obrázky a tabulky</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Pásy (podřízené reporty)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Štítky, bitmapy a tvary</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">Příloha</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Podporované 3D formáty</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">DXF oddělovacího plechu</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Ohýbací nástroje DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Tiráž</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Úvod</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="workflow.html">Workflow dílu</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Workflow dílu</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vzhledem k tomu, že TecZone Bend má mnoho integrovaných modulů, existuje často více <em>cest</em>, kterými se mohou data o dílech pohybovat.</p>
+</div>
+<div id="h000514" class="paragraph">
+<p><strong>Příklad 1</strong>: při načítání dat plochých dílů (z GEO souboru nebo DXF souboru) můžete
+zvolit</p>
+</div>
+<div id="h000515" class="ulist">
+<ul>
+<li>
+<p>Přiřaďte k dílu laserové nástroje, aby mohl být umístěn na plech a vyříznut
+spolu s ostatními díly.</p>
+</li>
+<li>
+<p>Složte díl podél linií ohybu do 3D tvaru, aby mohl být zpracován a
+aby mohlo být vypočítáno pořadí ohýbání pro ohraňovací lis.</p>
+</li>
+</ul>
+</div>
+<div id="h000517" class="paragraph">
+<p><strong>Příklad 2</strong>: při importu 3D plošného modelu (ze souboru IGES nebo STEP)
+můžete zvolit</p>
+</div>
+<div id="h000518" class="ulist">
+<ul>
+<li>
+<p>Analyzujte povrchy a umístěte 5osé laserové CAM nástroje podél otvorů, které je třeba
+vyříznout.</p>
+</li>
+<li>
+<p>Proveďte rozpoznání prvků, převedete plošný model na model plechu a
+rozložte jej do rovinného vzoru pro vyražení pomocí lisovacího stroje.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_panel_workflow">Panel Workflow<a id="h000520"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/workflow1.png" alt="Workflow 1" width="248">
+</div>
+</div>
+<div class="paragraph">
+<p>Panel <strong>Workflow</strong> je jako centrální rozbočovač, ze kterého můžete řídit všechny tyto
+pohyby. Když máte otevřený díl, můžete kdykoli vyvolat panel Workflow
+stisknutím klávesy <kbd>W</kbd> nebo kliknutím na ikonu Workflow v
+příkazovém řádku vlevo. Prozkoumejme panel Workflow; začněte
+importem 2D dílu s informacemi o ohybu (například soubor GEO).
+Po zobrazení panelu Workflow se v tomto okamžiku zobrazí následující:</p>
+</div>
+<div id="h000521" class="ulist">
+<ul>
+<li>
+<p>Začali jsme s Bend_28.geo, importovali a vyčistili jsme jej, abychom vytvořili 2D
+plechový díl (jsou zobrazeny rozměry dílu)</p>
+</li>
+<li>
+<p>Ve Workflow se pak nachází odbočka.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Mohli bychom přiřadit Laser Tech k danému dílu (to jednoduše znamená přiřazení laserových řezacích
+drah ke konturám dílu).</p>
+</li>
+<li>
+<p>Můžeme složit plochý díl do 3D (detekováno 9 ohybů).</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_rozbalování_uzlů_workflow_stádium_1">Rozbalování uzlů Workflow: Stádium 1<a id="h000523"></a></h3>
+<div class="paragraph">
+<p>Klikněte na ikonu Laser Tech a přiřaďte k dílu laserové nastrojení. Uvidíte,
+ že díl je okamžitě analyzován a je k němu přidáno laserové nastrojení. Poté
+klikněte na ikonu Složit do 3D, aby se plochý díl složil do 3D. Po provedení těchto
+kroků vypadá panel Workflow takto:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow2.png" alt="Workflow 2" width="698">
+</div>
+</div>
+<div class="paragraph">
+<p>Jak ukazují anotace, v diagramu Workflow jsou různé typy uzlů.</p>
+</div>
+<div id="h000524" class="ulist">
+<ul>
+<li>
+<p>Existují uzly Zobrazení dílů, které představují různé typy zpracování, které lze
+ na dílu provést. Kliknutím na tyto uzly se díl přepne do tohoto pohledu a sada operací dostupných pro daný díl je
+ reprezentativní pro tento <em>pohled</em>. Například v zobrazení Laserový díl můžete
+ zobrazit a upravit laserové nastrojení přiřazené k dílu.</p>
+</li>
+<li>
+<p>Mezi těmito zobrazeními můžete přepínat kliknutím na tyto ikony. Všechny tyto různé
+ pohledy na díly mají také klávesové zkratky, které se zobrazí, když najedete
+ myší na jednu z ikon pohledů. Naučte se tyto klávesové zkratky, abyste mohli rychle
+ procházet Workflow. Takže po chvíli budete používat klávesové
+ zkratky jako <kbd>W</kbd>
+<kbd>B</kbd>
+<kbd>Esc</kbd> k otevření panelu Workflow, přepnutí do pohledu ohýbání a poté zavření panelu Workflow.</p>
+</li>
+<li>
+<p>Data dílů jsou mezi těmito uzly přenášena různými procesy a tyto
+procesy jsou v panelu Wworkflow znázorněny pomocí ikon ve tvaru 13cípé
+hvězdy. Například přecházíte z pohledu 2D díl na pohled Laser
+díl pomocí procesu Laser Tech (který analyzuje
+2D díl a
+přiřadí k němu laserové nástroje).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Procesy, které jste dokončili, jsou označeny zaškrtnutím. Procesy,
+ které jste ještě nedokončili (ale které jsou k dispozici), mají uvnitř zobrazený křížek. Kliknutím na tyto procesní uzly můžete proces dokončit.</p>
+</div>
+<div class="paragraph">
+<p>Shrňme si, co můžeme vidět v této fázi Workflow našeho dílu:</p>
+</div>
+<div id="h000527" class="ulist">
+<ul>
+<li>
+<p>Nyní jsou k dispozici 3 pohledy na díly (2D díl, laserový díl a 3D
+model, mezi kterými můžeme přepínat).</p>
+</li>
+<li>
+<p>K dispozici jsou další čtyři procesy:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Mohli bychom provést následné zpracování plochého dílu (tím se vygeneruje report o plochém dílu, který by byl užitečný pro operátora laseru nebo děrovacího lisu; obvykle by obsahoval časy řezání laserem, nastavení nástrojů pro děrovací lisy a další speciální požadavky na nástroje pro tento díl).</p>
+</li>
+<li>
+<p>Mohli bychom použít rychlé optimální rozmístění (rychlé optimální rozmístění je optimální rozmístění, které obsahuje pouze jeden typ dílu) a vygenerovat celý plech naplněný tímto dílem. To bylo možné použít k výrobě plechu pouze s tímto dílem
+nebo jako
+pomoc při rychlém odhadu nákladů nebo času pro tento díl.</p>
+</li>
+<li>
+<p>Pro tento díl bychom mohli přiřadit Bend Tech (nastrojení ohraňovacího lisu).</p>
+</li>
+<li>
+<p>Pro tento díl bychom mohli přidělit Weld Tech (nastrojení svařovacího robota).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rozbalování_uzlů_workflow_stádium_2">Rozbalování uzlů Workflow: Stádium 2<a id="h000529"></a></h3>
+<div class="paragraph">
+<p>Pojďme dále: Klikněte postupně na všechny dostupné procesní uzly a
+sledujte, jak se panel Workflow rozšiřuje. Pokračujte, dokud vám nezůstanou žádné
+uzly. Takto by to mělo vypadat po těchto procesech:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow3.png" alt="Workflow 3" width="542">
+</div>
+</div>
+<div class="paragraph">
+<p>V tomto plně rozbaleném stavu panel Workflow usnadňuje
+okamžité přepínání mezi šesti různými zobrazeními dílu v různých
+procesních modulech. Můžete také prohlížet a přenášet nebo tisknout všechny
+různé výstupy generované těmito moduly. (Výstupy mohou být reporty, NC
+kód nebo časové studie).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_navigace_v_panelu_workflow">Navigace v panelu Workflow<a id="h000530"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Panel Workflowu představuje mnoho informací a operací v kompaktní
+grafické podobě. Většinu času vám bude sloužit jako centrální uzel při
+práci s díly. Podívejme se blíže na některé ikony
+v panelu Workflow, abychom pochopili, jak je lze použít.</p>
+</div>
+<div class="sect2">
+<h3 id="_dostupné_procesní_uzly">Dostupné procesní uzly<a id="h000531"></a></h3>
+<div class="paragraph">
+<p>13cípá hvězda s + uvnitř představuje krok zpracování, který je nyní
+k dispozici. Může se například jednat o skládání 2D plochého dílu do 3D
+dílu nebo přiřazení laserového nastrojení. Přejděte myší nad
+takový uzel, aby se zobrazila bublinková nápověda vysvětlující, co uzel dělá.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow4.png" alt="Workflow4" width="260">
+</div>
+</div>
+<div class="paragraph">
+<p>To odpovídá typickému vzoru pro mnoho dostupných procesních uzlů. Kliknutím na
+uzel se proces spustí s výchozím nastavením. <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> na
+uzlu se nejprve zobrazí stránka nastavení a po kontrole/úpravě
+nastavení se proces provede. Například zde je to, co se zobrazí,
+když kliknete na <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> uzel Rychlé optimální rozmístění:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow5.png" alt="Workflow5" width="510">
+</div>
+</div>
+<div class="paragraph">
+<p>Zobrazí se nastavení rychlého optimálního rozmístění, které můžete před provedením optimálního rozmístění upravit.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dokončené_procesní_uzly">Dokončené procesní uzly<a id="h000532"></a></h3>
+<div class="paragraph">
+<p>Jakmile je proces dokončen, uzel se změní z dostupného procesního uzlu na
+uzavřený procesní uzel; symbol se změní na hvězdičku s zaškrtnutím
+uvnitř. V tomto okamžiku se změní možnosti dostupné pro daný uzel.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow6.png" alt="Workflow 6" width="428">
+</div>
+</div>
+<div class="paragraph">
+<p>Toto je typická sada možností dostupných na dokončeném procesním uzlu. Kliknutím
+na uzel se znovu zobrazí nastavení procesu, takže je můžete upravit a
+zkusit zpracování znovu. Obvykle je také k dispozici možnost <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> pro smazání procesních dat. Pokud zvolíte tuto možnost, budete před provedením odstranění vyzváni k potvrzení. Například zde je to, co se stane, když
+kliknete na <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> uzel 3D model u plně zpracovaného dílu:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/workflow7.png" alt="Workflow7" width="641">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pomocné_příkazy">Pomocné příkazy<a id="h000533"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Mnoho uzlů má vedle sebe malé ikony, které poskytují pomocné příkazy. Tyto
+příkazy poskytují některé funkce související s tímto uzlem. Zde je
+několik příkladů.</p>
+</div>
+<div id="h000534" class="ulist">
+<ul>
+<li>
+<p>Pomocné ikony u každého technologického uzlu obvykle umožňují vybrat
+ jiný stroj a nástroj pro tento stroj.<br>
+<span class="image"><img src="img/workflow8.png" alt="Workflow 8" width="440"></span></p>
+</li>
+<li>
+<p>Ikona vedle uzlu Rychlé optimální rozmístění umožňuje optimální rozmístění na plechu jiné velikosti.</p>
+</li>
+</ul>
+</div>
+<div id="h000536" class="ulist">
+<ul>
+<li>
+<p>Ikony v blízkosti výstupních uzlů umožňují zobrazit různé výstupy ze zpracovatelského
+ uzlu (zprávy, NC programy nebo časové studie).<br>
+<span class="image"><img src="img/workflow9.png" alt="Workflow 9" width="324"></span></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sledování_zdrojového_souboru">Sledování zdrojového souboru<a id="h000537"></a></h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/srcfiletrack.png" alt="Source File Tracking" width="257">
+</div>
+</div>
+<div class="paragraph">
+<p>Většina zpracování v TecZone Bend začíná importem CAD dat (2D nebo 3D). Díly TecZone Bend,
+ které jsou vytvořeny z těchto CAD dat, mohou pokračovat ve sledování těchto
+zdrojových dílů. Po otevření dílu TecZone Bend může zkontrolovat, zda byl mezitím změněn původní soubor CAD,
+ ze kterého byl vytvořen. Pokud ano,
+ je daný díl nyní zastaralý a je to vidět v panelu Workflow.</p>
+</div>
+<div id="h000538" class="ulist">
+<ul>
+<li>
+<p>Díl můžete obnovit kliknutím na pomocnou ikonu Obnovit díl
+vedle uzlu zdrojového dílu. TecZone Bend znovu importuje geometrii CAD
+a znovu sestaví díl.</p>
+</li>
+<li>
+<p>Můžete se také rozhodnout přestat sledovat původní geometrii CAD. To může být
+ užitečné například v případě, že původní soubor CAD existuje na vyměnitelném médiu nebo na vzdáleném disku, který nemusí být v budoucnu přístupný.
+  Chcete-li to provést, klikněte na pomocnou ikonu přerušení odkazu poblíž uzlu zdrojového dílu. Zobrazí se výzva k zastavení sledování zdrojového
+ souboru:<br>
+<span class="image"><img src="img/srcfiletrack2.png" alt="Source File Disconnect" width="508"></span></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_souhrn">Souhrn<a id="h000540"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Zde je stručné shrnutí zásad v panelu Workflow.</p>
+</div>
+<div id="h000541" class="ulist">
+<ul>
+<li>
+<p>Panel Workflow zobrazuje uzly představující různé pohledy na díly (například
+ laserový díl, ohýbaný díl) a uzly představující různé procesy (například
+složit do 3D, přiřadit laserové nastrojení).</p>
+</li>
+<li>
+<p>Procesní uzly, které jsou k dispozici (dosud neprovedené), jsou znázorněny jako
+13cípé hvězdy se znakem <span class="icon"><i class="fa fa-plus-circle"></i></span> uvnitř. Procesní uzly, které jsou
+již dokončeny, jsou znázorněny hvězdičkami se značkou <span class="icon"><i class="fa fa-check-circle"></i></span> uvnitř.</p>
+</li>
+<li>
+<p>Kliknutím na dostupný procesní uzel se spustí daný proces s výchozím
+nastavením. <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> na dostupných procesních uzlech nejprve vyvolá editor
+pro úpravu nastavení procesu a poté proces spustí.</p>
+</li>
+<li>
+<p>Kliknutím na dokončený procesní uzel můžete upravit nastavení procesu a znovu použít zpracování. <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> na dokončeném procesním uzlu
+odstraní zpracovávaná data.</p>
+</li>
+<li>
+<p>Malé pomocné ikony poblíž uzlu procesu nebo uzlu částečného pohledu umožňují
+změnit některé důležité parametry daného uzlu procesu (např.
+cílový stroj nebo velikost plechu optimálního rozmístění).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_panel_workflow">Panel Workflow</a>
+  </li>
+  <li level="2">
+   <a href="#_rozbalování_uzlů_workflow_stádium_1">Rozbalování uzlů Workflow: Stádium 1</a>
+  </li>
+  <li level="2">
+   <a href="#_rozbalování_uzlů_workflow_stádium_2">Rozbalování uzlů Workflow: Stádium 2</a>
+  </li>
+  <li level="1">
+   <a href="#_navigace_v_panelu_workflow">Navigace v panelu Workflow</a>
+  </li>
+  <li level="2">
+   <a href="#_dostupné_procesní_uzly">Dostupné procesní uzly</a>
+  </li>
+  <li level="2">
+   <a href="#_dokončené_procesní_uzly">Dokončené procesní uzly</a>
+  </li>
+  <li level="1">
+   <a href="#_pomocné_příkazy">Pomocné příkazy</a>
+  </li>
+  <li level="1">
+   <a href="#_sledování_zdrojového_souboru">Sledování zdrojového souboru</a>
+  </li>
+  <li level="1">
+   <a href="#_souhrn">Souhrn</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="clarity.html">Uživatelské rozhraní</a></span>
+ <span class="next"><a href="../cad/index.html">CAD</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

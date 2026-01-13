@@ -1,0 +1,785 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>Zobrazení skládání</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Vítejte v TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">Úvod</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">Instalace softwaru</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">Uživatelské rozhraní</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">Workflow dílu</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">Import 2D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">2D vyčištění</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">Import 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">Import 3D modelu</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">Import konstrukční skupiny</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">Rozpoznání tvarů</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">Rozpoznání součástí</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">Úprava geometrie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Řezání laserem</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Workflow dílu</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Editační panely</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Laserový řez</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Najetí</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Zpětný pohyb</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Mikrospoj</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Pokročilé</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Kontura</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Řezání šrotu</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Díl</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Opracování rohů</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Rychlé optimální rozmístění</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Workflow úlohy</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Panel úloh</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Karta Plechy</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Karta Díly</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Karta Rozvržení</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Karta Souhrn</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Úprava rozložení</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Režimy optimálního rozmístění</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Panel Umístění</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Sekvencování</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Krájení plechu</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Šikmý řez</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Otevřené kontury</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Variabilní zkosení</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Různé</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Pokročilé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Pravidla dokončení</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">Úprava LTT</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Strategie</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Mikrospoje</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Další nastavení</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Ohraňovací lis</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Vytvoření parametrů ohýbání</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Navigátor ohýbání</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Úprava parametrů ohýbání</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Upravit ohyb</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Úprava montáže nástroje</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Úprava nastavení ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Úprava dorazových palců</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Úprava měření úhlu</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Tabulka ohybů</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Změna pořadí</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Přidávání nastavení a stanic</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Pokročilé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Měření úhlu</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Dávkový proces</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Přepočet řešení</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Kontrola tonáže</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Navigátor ohýbání</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Vyzvednutí dílů</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Vyzvednutí z palety</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Vyzvednutí z dávkovače</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Robotické ohýbání</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Vkládání</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Ohýbání</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Vyjmutí</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../bcell/regrip/index.html">Přeuchopení</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Výklopné ohýbání</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="createfolddata.html">Vytvoření dat skládání</a></li>
+    <li><button class="tree blank"></button><a class="active" href="foldview.html">Zobrazení skládání</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="editing/index.html">Úprava dat skládání</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="editing/editbend.html">Upravit ohyb</a></li>
+      <li><button class="tree blank"></button><a href="editing/editside.html">Úprava strany/sekce</a></li>
+      <li><button class="tree blank"></button><a href="editing/editseq.html">Změna pořadí</a></li>
+      <li><button class="tree blank"></button><a href="editing/editbh.html">Úprava přidržovačů</a></li>
+      <li><button class="tree blank"></button><a href="editing/editgauge.html">Úprava dorážení</a></li>
+      <li><button class="tree blank"></button><a href="editing/editblade.html">Úprava nožů</a></li>
+      <li><button class="tree blank"></button><a href="editing/editload.html">Úprava zakládání</a></li>
+      <li><button class="tree blank"></button><a href="editing/editunload.html">Úprava vykládání</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="toolinventory.html">Stav nástrojů</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="advanced/index.html">Pokročilé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="advanced/airgaptables.html">Vlastní tabulky vzduchových mezer</a></li>
+      <li><button class="tree blank"></button><a href="advanced/manualbend.html">Ruční dokončení ohybu</a></li>
+      <li><button class="tree blank"></button><a href="advanced/minflangelength.html">Požadovaná délka ramene</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Nastavení</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Výkres</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Vrstvy</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Rozměry</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Zobrazení</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Ohýbání CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Výchozí nastavení stroje</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Výstupy ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Zobrazení ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Ohýbací buňka</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Řezání CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Rozložení</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Nastavení optimálního rozmístění</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Plech</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Manipulace s plechem</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Řezy skeletu</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Podpora práce</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">Laserové CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Pořadí</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Výstupy řezání</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Zobrazení řezání</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Otočné ohýbání</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Výchozí</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">Nosiče ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Výstupy</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Reporty</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Výchozí nastavení položek</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Import/Export</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Prostředí</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Databáze</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Materiály</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Stroje</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Ohýbací nástroje</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Ohýbací upínače</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Tvary/součásti</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Reporty</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Pole, obrázky a tabulky</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Pásy (podřízené reporty)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Štítky, bitmapy a tvary</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../appendix/index.html">Příloha</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Podporované 3D formáty</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">DXF oddělovacího plechu</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Ohýbací nástroje DXF</a></li>
+   </ul>
+  </li>
+  <li><button class="tree blank"></button><a href="../impressum.html">Tiráž</a></li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Výklopné ohýbání</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="foldview.html">Zobrazení skládání</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Zobrazení skládání</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Po přepnutí do režimu Skládání CAM se v pracovním prostoru zobrazí <em>pohled na skládání</em>.
+Zobrazuje 3D obraz stroje s výkyvným ohýbáním s obrobkem. Takto by to vypadalo
+u stroje <strong>TBC-5030</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/mcisometric.png" alt="Fold View" width="490">
+</div>
+</div>
+<div class="paragraph">
+<p>Stroj s výkyvným ohýbáním je velký stroj se stolem, který je obvykle delší než 3
+metry. Zobrazení celého stroje by zakrylo obrobek a ztížilo
+vizualizaci procesu ohýbání. Zobrazení ohybu
+tak zobrazuje <em>zkrácený pohled</em> na stroj. Různé prvky, jako jsou
+skládací nože a spodní držáky surového materiálu, jsou zobrazeny pouze v délkách
+potřebných k pokrytí <em>oblasti zájmu</em>. Zobrazují se pouze části
+přidržovačů, které se skutečně používají ke zpracování. Zobrazeny jsou pouze
+některé nosníky podpůrného stolu a některé manipulátory s díly. Tento zkrácený pohled usnadňuje sledování skutečného
+zpracování.</p>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/mcsideview.png" alt="C-Frame" width="235">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>C-rám</strong>, na kterém jsou namontovány nože, se obvykle nezobrazuje v 3D
+pohledu, protože by zakrýval většinu pohledu na skládací operace.
+Pokud však otočíte 3D zobrazení tak, aby bylo zarovnáno s orientací na konec,
+C-rám se zobrazí jako obrys (viz obrázek vedle). Díky tomu
+je snadné vidět, jak geometrie dílu zapadá do C-rámu.
+Při otočení 3D zobrazení do jiné orientace se C-rám skryje.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fold-navigator">Navigátor skládání<a id="h000429"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>V <em>zobrazení skládání</em> se panel <strong>Navigátor skládání</strong> zobrazí podél horního
+okraje okna TecZone Fold. Tento navigátor poskytuje rychlý způsob navigace mezi
+různými procesy ohýbání a také okamžitý přehled různých kontrol stavů pro každé ohýbání.
+Poskytuje také ovládací prvky pro zobrazení nebo zastavení simulace skládání. Zde je příklad toho, jak vypadá navigátor skládání:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/foldnavigator.png" alt="Navigator" width="550">
+</div>
+</div>
+<div class="paragraph">
+<p>Navigátor zobrazuje různé barvy pro ohyby, které obsahují varování nebo chyby. Aktuální ohyb je zobrazen obrysem rámečku a silné
+tmavé čáry mezi některými ohyby představují boční hranice (kde
+musí operátor díl otočit, aby mohl pokračovat ve zpracování).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ovládací_prvky_simulace">Ovládací prvky simulace<a id="h000430"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Když přiblížíte myš k navigátoru skládání, zobrazí se <strong>ovládací prvky simulace</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/simcontrols.png" alt="Controls" width="550">
+</div>
+</div>
+<div id="h000431" class="ulist">
+<ul>
+<li>
+<p><strong>Posuvný regulátor</strong> lze použít k přesunu aktuálního ohybu v různých fázích
+skládací operace (přesun dílu do ohýbací polohy, upnutí pomocí
+přidržovače, přesun skládacího nože atd.). Při posouvání posuvného regulátoru se v popisku zobrazuje aktuální fáze skládání
+ a v simulaci se pohybují různé části stroje. Pokud
+ dojde ke kolizi, jsou tyto části zbarveny červeně, aby byla kolize jasně zvýrazněna.</p>
+</li>
+<li>
+<p><strong>Ovládací prvky</strong> vlevo slouží ke spuštění simulace, jejímu zastavení
+nebo přetočení na začátek. (<strong>Tip</strong>: Můžete také stisknout <kbd>Space</kbd> pro spuštění nebo zastavení simulace skládání).</p>
+</li>
+<li>
+<p>Tlačítko přehrát jeden lze použít k přehrání pouze jednoho ohybu; opakovaným stisknutím tohoto tlačítka
+si můžete prohlédnout simulaci všech ohybů. (<strong>Tip</strong>: můžete stisknout
+<span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Space</kbd></span> pro přehrání pouze jednoho ohybu).</p>
+</li>
+<li>
+<p>Šipka ukazující dolů slouží k rozbalení navigátoru skládání, kde se zobrazí
+podrobnější informace o chybách a varováních pro různé ohyby. (<strong>Tip</strong>: Můžete také stisknout <kbd>Z</kbd> pro rozbalení/sbalení zobrazení navigátoru skládání).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_navigátor_skládání_rozšířené_zobrazení">Navigátor skládání: rozšířené zobrazení<a id="h000435"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Když otevřete navigátor skládání kliknutím na tlačítko Otevřít nebo stisknutím klávesy <kbd>Z</kbd>,
+ vypadá to takto:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/navexpanded.png" alt="Navigator Open" width="700">
+</div>
+</div>
+<div class="paragraph">
+<p>Pro každý ohyb navigátor nyní zobrazuje sadu ikon stavu. Každá barevná
+ikona představuje chybu nebo varování. Při najetí myší na barevnou buňku se zobrazí
+další informace o tom, o jakou chybu nebo varování se jedná (jak
+můžete vidět na obrázku výše).</p>
+</div>
+<div class="paragraph">
+<p>Kliknutím na buňku, která zobrazuje polohy chyby, se simulace posune tak, že chyba je
+okamžitě zřejmá. Například kliknutím na buňku, která zobrazuje chybu <strong>nárazu nože</strong>,
+ se simulace přesune do fáze simulace, kdy nůž naráží do obrobku.</p>
+</div>
+<div class="sect2">
+<h3 id="_ikony_stavu">Ikony stavu<a id="h000436"></a></h3>
+<div class="paragraph">
+<p>V různých řádcích navigátoru skládání se zobrazuje několik různých ikon stavu. Níže uvedené sekce vysvětlují význam těchto ikon. Všimněte si, že
+další informace o významu ikony můžete vždy získat pouhým přesunutím myši nad
+ikonu.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_řádek_příruba">Řádek <strong>Příruba</strong><a id="h000437"></a></h3>
+<div class="paragraph">
+<p>Řádek Příruba v navigátoru skládání zobrazuje informace o kolizích uvnitř dílu
+(kolize jedné příruby modelu s jinou). TecZone Fold zkusí
+tomuto zabránit, pokud to bude možné, změnou pořadí. Toto jsou ikony,
+ které můžete vidět v řádku Příruba:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Ikona</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Význam</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Žádná chyba, stav OK</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Při ohýbání dochází ke kolizi příruby s přírubou</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/skipped-bend.png" alt="skipped bend" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tento ohyb byl přeskočen (žádné zpracování pro tento ohyb)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_řádek_dorážení">Řádek <strong>Dorážení</strong><a id="h000438"></a></h3>
+<div class="paragraph">
+<p>Řádek <em>Dorážení</em> v navigátoru skládání zobrazuje stav dorážení. Vzhledem k tomu, že dorážení
+se používá pouze pro první ohyb na straně, všechny ostatní ohyby na straně
+budou zobrazovat ikonu dutého kruhu (což znamená, že tento ohyb nevyžaduje
+dorážení).</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Ikona</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Význam</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Žádná chyba, dorážení správně vypočítáno</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Chyba</strong>: Dorazový palec při dorážení koliduje s dílem</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/exclaim.png" alt="exclaim" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Chyba</strong>: Pro tuto stranu nebylo možné vypočítat dorážení</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/missing.png" alt="missing" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Informace</strong>: Toto není první ohyb na této straně;
+ nevyžaduje dorážení</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_řádek_přidržovač">Řádek <strong>Přidržovač</strong><a id="h000439"></a></h3>
+<div class="paragraph">
+<p>Tento řádek navigátoru skládání zobrazuje informace o stavu
+přidržovače. Toto jsou možné ikony chyb nebo varování, které se mohou zobrazit
+v tomto sloupci. Některé ikony se používají jak pro chyby, tak pro varování, přičemž
+rozdíl mezi nimi je dán barvou pozadí buňky
+(žlutá pro varování, oranžovo-červená pro chyby).</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Ikona</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Význam</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Žádná chyba – přidržovač je správně vypočítán a
+nemá žádné kolize</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Chyba</strong>: Díl koliduje s přidržovačem<br>
+<strong>Varování</strong>: Při nadměrném ohýbání dochází ke kolizi dílu s přidržovačem</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/span-short.png" alt="span short" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Chyba</strong>: Rozpětí přidržovače je příliš krátké (
+ přesah linie ohybu za přidržovačem je větší než 10 mm).<br>
+<strong>Varování</strong>: Rozpětí přidržovače je trochu krátké (přesah linie ohybu za přidržovačem je 5 až 10 mm)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/enw-tool.png" alt="enw tool" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Informace</strong>: Tento ohyb používá nástroj ENW
+(přesunutím myši nad buňku se zobrazí další podrobnosti)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_řádek_nůž">Řádek <strong>Nůž</strong><a id="h000440"></a></h3>
+<div class="paragraph">
+<p>Tento řádek poskytuje informace o skládacím noži použitém pro tento ohyb. Níže uvedený
+seznam obsahuje možné ikony, které se mohou v tomto sloupci zobrazit:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Ikona</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Význam</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Žádná chyba – skládací nůž je správně
+ vypočítán a nedochází k žádné kolizi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Chyba</strong>: Díl koliduje se skládacím nožem</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/span-short.png" alt="span short" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Chyba</strong>: Rozpětí délky nože je příliš krátké (
+ přesah linie ohybu za nožem je větší než 10 mm).
+  K tomu dochází pouze při použití nože ZBW.<br>
+<strong>Varování</strong>: Rozpětí délky nože je trochu krátké (přesah linie ohybu za nožem je 5 až 10 mm).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/airgap.png" alt="airgap" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*Varován*í: K zabránění
+ kolizi nože se používá nestandardní vzduchová mezera</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/overtravel.png" alt="overtravel" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Chyba</strong>: Překročení omezení os nosiče ZBW</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/overload.png" alt="overload" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Chyba</strong>: Přetížení – požadovaná lisovací síla je
+ příliš vysoká (možná bude nutné zvětšit vzduchovou mezeru)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_řádek_manipulace_s_díly">Řádek <strong>Manipulace s díly</strong><a id="h000441"></a></h3>
+<div class="paragraph">
+<p>Tento řádek zobrazuje informace o stavu manipulace s díly pomocí upínačů s přísavkami nebo magnetických upínačů. Toto jsou ikony, které by se mohly zobrazit
+zde:</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Ikona</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Význam</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/correct.png" alt="correct" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Při manipulaci s díly nebyly zaznamenány žádné problémy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/explosion.png" alt="explosion" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Chyba</strong>: Díl koliduje s podpůrným stolem
+(například je zde dolní příruba, která by vyčnívala dolů do podpůrného stolu)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/front-grip.png" alt="front grip" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Informace</strong>: Díl je uchopen
+ přední stranou upínače</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/bottom-grip.png" alt="bottom grip" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Informace</strong>: Díl je uchopen
+ spodní stranou upínače</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/weak-grip.png" alt="weak grip" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Varování</strong>: Upínač může mít pouze minimální
+ překrytí s dílem</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/invalid-grip.png" alt="invalid grip" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Chyba</strong>: Nelze vypočítat upnutí – na povrchu dílu nebylo žádné místo vhodné pro umístění upínače</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/flip-vertical.png" alt="flip vertical" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Varování</strong>: Díl musí být na začátku této strany
+otočen obsluhou</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../img/icons/hand.png" alt="hand" width="50%"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Díl je třeba na konci této strany vyjmout ručně
+ (automatické vyjmutí pomocí upínače není možné, protože
+ se díl dotýká přidržovače)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Při provádění změn v konfiguraci přidržovače, nožů, upínače nebo dorazového palce se
+navigátor skládání okamžitě aktualizuje podle nového stavu. Díky této okamžité zpětné vazbě
+je velmi snadné experimentovat s různými konfiguracemi, aniž byste museli pokaždé vydávat příkaz k <strong>přepočítávání</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#fold-navigator">Navigátor skládání</a>
+  </li>
+  <li level="1">
+   <a href="#_ovládací_prvky_simulace">Ovládací prvky simulace</a>
+  </li>
+  <li level="1">
+   <a href="#_navigátor_skládání_rozšířené_zobrazení">Navigátor skládání: rozšířené zobrazení</a>
+  </li>
+  <li level="2">
+   <a href="#_ikony_stavu">Ikony stavu</a>
+  </li>
+  <li level="2">
+   <a href="#_řádek_příruba">Řádek <strong>Příruba</strong></a>
+  </li>
+  <li level="2">
+   <a href="#_řádek_dorážení">Řádek <strong>Dorážení</strong></a>
+  </li>
+  <li level="2">
+   <a href="#_řádek_přidržovač">Řádek <strong>Přidržovač</strong></a>
+  </li>
+  <li level="2">
+   <a href="#_řádek_nůž">Řádek <strong>Nůž</strong></a>
+  </li>
+  <li level="2">
+   <a href="#_řádek_manipulace_s_díly">Řádek <strong>Manipulace s díly</strong></a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="createfolddata.html">Vytvoření dat skládání</a></span>
+ <span class="next"><a href="editing/index.html">Úprava dat skládání</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>
