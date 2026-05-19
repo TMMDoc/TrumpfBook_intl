@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,6 +54,7 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -197,7 +199,44 @@
       <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Udtagning</a></li>
      </ul>
     </li>
-    <li><button class="tree blank"></button><a href="../../bcell/regrip/index.html">Omgribning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Aflejringsmønstertyper</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../bcell/advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
    </ul>
   </li>
   <li>
@@ -308,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -329,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -363,37 +403,55 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>TecZone Laser bruger et system af <strong>Finishing rules</strong> til at bestemme, hvad der skal gøres, når skæringen af et hul eller en del er fuldført. Når disse huller og dele løsner sig fra pladen (ved laserskæring), kan der ske forskellige ting:</p>
+<p>TecZone Laser bruger et system af <strong>Finishing rules</strong> til at bestemme, hvad
+der skal gøres, når skæringen af et hul eller en del er fuldført. Når disse
+huller og dele løsner sig fra pladen (ved laserskæring), kan der ske forskellige
+ting:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Meget små stanseklumper kan falde gennem spalterne mellem <em>stifterne</em> (eller <em>oplægningsskinnerne</em>), der støtter pladen (det er fint og forårsager ingen problemer).</p>
+<p>Meget små stanseklumper kan falde gennem spalterne mellem <em>stifterne</em> (eller
+<em>oplægningsskinnerne</em>), der støtter pladen (det er fint og forårsager ingen
+problemer).</p>
 </li>
 <li>
-<p>Meget små <em>dele</em> kan ligeledes falde gennem stifterne, og dette er ikke ønskeligt (da disse dele skal hentes). Ideelt set er disse <em>ledningsforbundet</em> til pladen, så de kan hentes ud med pladen.</p>
+<p>Meget små <em>dele</em> kan ligeledes falde gennem stifterne, og dette er ikke
+ønskeligt (da disse dele skal hentes). Ideelt set er disse <em>ledningsforbundet</em>
+til pladen, så de kan hentes ud med pladen.</p>
 </li>
 <li>
-<p>Store stanseklumper og dele vil blive understøttet af et tilstrækkeligt antal stifter, så de forbliver stabile på maskinbordet (det er fint).</p>
+<p>Store stanseklumper og dele vil blive understøttet af et tilstrækkeligt antal
+stifter, så de forbliver stabile på maskinbordet (det er fint).</p>
 </li>
 <li>
-<p>Stanseklumper eller dele af mellemstørrelse kan forårsage problemer, fordi de muligvis ikke er tilstrækkeligt understøttet og kan <em>vippe</em>, og den hævede del af delen kan kollidere med laserhovedet, når den bevæger sig hen over hovedet.</p>
+<p>Stanseklumper eller dele af mellemstørrelse kan forårsage problemer, fordi de
+muligvis ikke er tilstrækkeligt understøttet og kan <em>vippe</em>, og den hævede del
+af delen kan kollidere med laserhovedet, når den bevæger sig hen over hovedet.</p>
 </li>
 <li>
-<p>Selv hvis delen synes tilstrækkeligt understøttet af stifterne, kan dyseskæring tæt på den forårsage problemer på grund af det tryk, der udøves af <em>gasblæsningen</em> fra dysen. Dette dynamiske tryk kan få delen til at vippe, hvilket forårsager en kollision.</p>
+<p>Selv hvis delen synes tilstrækkeligt understøttet af stifterne, kan
+dyseskæring tæt på den forårsage problemer på grund af det tryk, der udøves af
+<em>gasblæsningen</em> fra dysen. Dette dynamiske tryk kan få delen til at vippe,
+hvilket forårsager en kollision.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Finish-regler bruges til at undgå disse problemer. Når en del eller stanseklump bestemmes som værende ustabil eller udgøre en kollisionsfare, er der nogle optioner:</p>
+<p>Finish-regler bruges til at undgå disse problemer. Når en del eller stanseklump
+bestemmes som værende ustabil eller udgøre en kollisionsfare, er der nogle
+optioner:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>En eller flere <em>mikroforbindelser</em> kan tilføjes for at holde delen eller stansaklumpen bundet til pladen. Disse vil senere blive afbrudt som et efterbearbejdningstrin efter pladen fjernes fra lasermaskinen.</p>
+<p>En eller flere <em>mikroforbindelser</em> kan tilføjes for at holde delen eller
+stansaklumpen bundet til pladen. Disse vil senere blive afbrudt som et
+efterbearbejdningstrin efter pladen fjernes fra lasermaskinen.</p>
 </li>
 <li>
-<p>Stanseklumper kan <em>skæres op</em> i mindre stykker, der alle vil falde gennem spalterne mellem oplægningsskinnerne.</p>
+<p>Stanseklumper kan <em>skæres op</em> i mindre stykker, der alle vil falde gennem
+spalterne mellem oplægningsskinnerne.</p>
 </li>
 </ul>
 </div>
@@ -412,51 +470,73 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Hver regel specificerer en <em>type kontur</em>, en <em>størrelse</em> og den <em>handling</em>, der skal udføres, når der sker et match. Disse reglers rækkefølge er vigtig. I takt med TecZone Laser afslutter bearbejdningen af hver kontur, gennemgår den disse regler og anvender den første, der matcher. Generelt betyder det, at der skal skrives mere specifikke regler først, eller der skal bruges mindre størrelser først. (Knapperne
-<strong>Foroven</strong> og <strong>Forneden</strong> ved siden af reglerne kan bruges til at blande dem op og ned).</p>
+<p>Hver regel specificerer en <em>type kontur</em>, en <em>størrelse</em> og den <em>handling</em>, der
+skal udføres, når der sker et match. Disse reglers rækkefølge er vigtig. I takt
+med TecZone Laser afslutter bearbejdningen af hver kontur, gennemgår den disse regler
+og anvender den første, der matcher. Generelt betyder det, at der skal skrives
+mere specifikke regler først, eller der skal bruges mindre størrelser først.
+(Knapperne <strong>Up</strong> og
+<strong>Down</strong> ved siden af reglerne kan bruges til at
+blande dem op og ned).</p>
 </div>
 <div class="sect2">
 <h3 id="_konturtyper">Konturtyper</h3>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>All</strong> matcher alle konturer (huller eller ydre konturer).</p>
+<p><strong>All</strong> matcher alle konturer (huller eller
+ydre konturer).</p>
 </li>
 <li>
-<p><strong>Stable</strong> matcher alle konturer, der vil forblive stabile på oplægningsskinnerne eller stifterne.</p>
+<p><strong>Stable</strong> matcher alle konturer, der vil
+forblive stabile på oplægningsskinnerne eller stifterne.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Stable inner</strong> er sættet af <em>indre</em> konturer, der er stabile.</p>
+<p><strong>Stable inner</strong> er sættet af <em>indre</em>
+konturer, der er stabile.</p>
 </li>
 <li>
-<p><strong>Stable outer</strong> er sættet af _ydre_konturer, der er stabile.</p>
+<p><strong>Stable outer</strong> er sættet af
+_ydre_konturer, der er stabile.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Unstable</strong> matcher alle konturer, der enten vil <em>vippe</em>, eller vil <em>falde gennem</em> stifterne.</p>
+<p><strong>Unstable</strong> matcher alle konturer, der
+enten vil <em>vippe</em>, eller vil <em>falde gennem</em> stifterne.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Unstable inner</strong> er det sæt af <em>indre</em> konturer, der er ustabile.</p>
+<p><strong>Unstable inner</strong> er det sæt af
+<em>indre</em> konturer, der er ustabile.</p>
 </li>
 <li>
-<p><strong>Unstable outer</strong> er det sæt af <em>ydre</em> konturer, der er ustabile.</p>
+<p><strong>Unstable outer</strong> er det sæt af
+<em>ydre</em> konturer, der er ustabile.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Colliding</strong> matcher alle konturer, der er ustabile, og også er tæt på en anden kontur på delen. Når en ustabil <em>indre</em> kontur er tæt på en anden ustabil <em>indre</em> kontur, markeres begge som værende potentielt kolliderende, da det ikke er fastlagt, hvilken af dem der vil blive skåret først (og denne rækkefølge kan ændres, når delen placeres i et layout). Når en ustabil <em>indre</em> kontur er tæt på en ustabil <em>ydre</em> kontur, markeres kun den indre kontur som værende kolliderende (da den altid vil blive skåret før den anden).</p>
+<p><strong>Colliding</strong> matcher alle konturer, der
+er ustabile, og også er tæt på en anden kontur på delen. Når en ustabil <em>indre</em>
+kontur er tæt på en anden ustabil <em>indre</em> kontur, markeres begge som værende
+potentielt kolliderende, da det ikke er fastlagt, hvilken af dem der vil blive
+skåret først (og denne rækkefølge kan ændres, når delen placeres i et layout).
+Når en ustabil <em>indre</em> kontur er tæt på en ustabil <em>ydre</em> kontur, markeres kun
+den indre kontur som værende kolliderende (da den altid vil blive skåret før den
+anden).</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Colliding inner</strong> er sættet af <em>indre</em> konturer, der er klassificeret som værende kolliderende.</p>
+<p><strong>Colliding inner</strong> er sættet af
+<em>indre</em> konturer, der er klassificeret som værende kolliderende.</p>
 </li>
 <li>
-<p><strong>Colliding outer</strong> er sættet af <em>ydre</em> konturer, der er klassificeret som værende kolliderende.</p>
+<p><strong>Colliding outer</strong> er sættet af
+<em>ydre</em> konturer, der er klassificeret som værende kolliderende.</p>
 </li>
 </ul>
 </div>
@@ -479,22 +559,31 @@
 <div class="sect2">
 <h3 id="_handlinger">Handlinger</h3>
 <div class="paragraph">
-<p><strong>Konturtypen</strong> og <strong>Filstørrelse</strong> bruges til at opsætte kriterierne mod hvilken hver kontur kontrolleres, efterhånden som den klargøres. Når en match er fundet (med de regler, der evalueres i rækkefølge), udføres den tilsvarende <strong>Action</strong> på denne kontur.</p>
+<p><strong>Konturtypen</strong> og <strong>Size</strong> bruges til at opsætte kriterierne mod
+hvilken hver kontur kontrolleres, efterhånden som den klargøres. Når en match er
+fundet (med de regler, der evalueres i rækkefølge), udføres den tilsvarende
+<strong>Action</strong> på denne kontur.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Fra</strong>: Der træffes ingen særlige foranstaltninger.</p>
+<p><strong>None</strong>: Der træffes ingen særlige foranstaltninger.</p>
 </li>
 <li>
-<p><strong>Auto microjoint</strong>: Anvender en eller flere mikrosamlinger på konturen. Antallet af nødvendige mikrosamlinger bestemmes automatisk (se afsnittet <strong>Stabilitetsberegning</strong> nedenfor).</p>
+<p><strong>Auto microjoint</strong>: Anvender en eller flere
+mikrosamlinger på konturen. Antallet af nødvendige mikrosamlinger bestemmes
+automatisk (se afsnittet <strong>Stabilitetsberegning</strong> nedenfor).</p>
 </li>
 <li>
-<p><strong>Cut up scrap</strong>: Skærer stanseklumper fra huller op i mindre stykker, der vil falde gennem oplægningsskinnerne. Størrelsen af skrottet er angivet på siden <a href="../../settings/cutcam/index.html">Cut CAM</a> i
+<p><strong>Cut up scrap</strong>: Skærer stanseklumper fra huller op i
+mindre stykker, der vil falde gennem oplægningsskinnerne. Størrelsen af skrottet
+er angivet på siden <a href="../../settings/cutcam/index.html">Cut CAM</a> i
 <strong>dialogen Settings</strong>.</p>
 </li>
 <li>
-<p><strong>One microjoint</strong>, <strong>Two microjoints</strong> og <strong>Three microjoints</strong>: Opret et præcist antal mikrosamlinger på konturen.</p>
+<p><strong>One microjoint</strong>, <strong>Two microjoints</strong> og
+<strong>Three microjoints</strong>: Opret et præcist antal mikrosamlinger
+på konturen.</p>
 </li>
 </ul>
 </div>
@@ -505,7 +594,9 @@
 <h2 id="_stabilitetsberegning">Stabilitetsberegning</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Beregningerne af <strong>hældningsstabilitet</strong> afhænger af konturernes position i forhold til maskinens støttestifter. For at forstå resultaterne af denne analyse, er det nyttigt at tænde for displayet af støttestifterne fra
+<p>Beregningerne af <strong>hældningsstabilitet</strong> afhænger af konturernes position i forhold
+til maskinens støttestifter. For at forstå resultaterne af denne analyse,
+er det nyttigt at tænde for displayet af støttestifterne fra
 <strong>siden Cut View</strong> i indstillingsdialogen:</p>
 </div>
 <div class="imageblock">
@@ -514,9 +605,10 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Softwaren genkender automatisk, hvorvidt en del kunne vippe på et layout.
-Muligt vippende/ustabile dele vil blive markeret med rødtfarvede konturer på layoutet, hvilket giver mulighed for justering af finish-reglerne før bearbejdning
-af jobbet.</p>
+<p>Softwaren genkender automatisk, hvorvidt en del kunne vippe på et layout. Muligt
+vippende/ustabile dele vil blive markeret med rødtfarvede konturer på layoutet,
+hvilket giver mulighed for justering af finish-reglerne før bearbejdning af
+jobbet.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -526,7 +618,11 @@ af jobbet.</p>
 <div class="sect2">
 <h3 id="_tilføjelse_af_mikrosamlinger">Tilføjelse af mikrosamlinger</h3>
 <div class="paragraph">
-<p>Her er et eksempel, hvor TecZone Laser har tilføjet mikrosamlinger til nogle huller, der er meget tæt på ydre konturer (eller tæt på andre huller). Når dysen passerer så tæt under skæring af de andre huller, er det muligt for denne stanseklump at vippe op på grund af gastrykket og forårsage en kollision. Så der tilføjes en mikrosamling.</p>
+<p>Her er et eksempel, hvor TecZone Laser har tilføjet mikrosamlinger til nogle huller,
+der er meget tæt på ydre konturer (eller tæt på andre huller). Når dysen
+passerer så tæt under skæring af de andre huller, er det muligt for denne
+stanseklump at vippe op på grund af gastrykket og forårsage en kollision. Så der
+tilføjes en mikrosamling.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -534,7 +630,8 @@ af jobbet.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Bemærk, at der ikke var behov for en mikrosamling til det endnu mindre hul i nærheden, da det er lille nok til sikkert at falde gennem spalterne i stifterne.</p>
+<p>Bemærk, at der ikke var behov for en mikrosamling til det endnu mindre hul i
+nærheden, da det er lille nok til sikkert at falde gennem spalterne i stifterne.</p>
 </div>
 </div>
 <div class="sect2">
@@ -548,7 +645,12 @@ af jobbet.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Som forklaret på billedet, at når hovedet bevæger sig over den lange fremspring nær konturens bund, kan det deraf resulterende moment på mikrosamlingen (på grund af den lange håndtagsarm) få den til at knække af, og yderligere mikrosamlinger kan automatisk tilføjes for at modvirke det, hvis <strong>Auto microjoint</strong> handlingen er specificeret i finish-reglen, der gælder for denne kontur.</p>
+<p>Som forklaret på billedet, at når hovedet bevæger sig over den lange fremspring
+nær konturens bund, kan det deraf resulterende moment på mikrosamlingen (på
+grund af den lange håndtagsarm) få den til at knække af, og yderligere
+mikrosamlinger kan automatisk tilføjes for at modvirke det, hvis
+<strong>Auto microjoint</strong> handlingen er specificeret i
+finish-reglen, der gælder for denne kontur.</p>
 </div>
 </div>
 <div class="sect2">
@@ -559,13 +661,18 @@ af jobbet.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Nogle gange kan valg af et andet tilgangspunkt ændre en ustabil kontur til en stabil kontur, som vist ovenfor. TecZone Laser registrerer sådanne situationer og justerer automatisk tilgangspunktet.</p>
+<p>Nogle gange kan valg af et andet tilgangspunkt ændre en ustabil kontur til en
+stabil kontur, som vist ovenfor. TecZone Laser registrerer sådanne situationer og
+justerer automatisk tilgangspunktet.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_del_i_del_indlejring">Del-i-del indlejring</h3>
 <div class="paragraph">
-<p>En stor indre hulkontur kan støttes af et tilstrækkeligt antal stifter og kunne bedømmes <strong>Stable</strong>. Der må ikke anvendes nogen særlig afslutningshandling for dette hul, da stanseklumper ville hvile stabilt på stifterne (som vist på billedet nedenfor til venstre):</p>
+<p>En stor indre hulkontur kan støttes af et tilstrækkeligt antal stifter og kunne
+bedømmes <strong>Stable</strong>. Der må ikke anvendes
+nogen særlig afslutningshandling for dette hul, da stanseklumper ville hvile
+stabilt på stifterne (som vist på billedet nedenfor til venstre):</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -573,10 +680,15 @@ af jobbet.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>I et layout kan en mindre del være indlejret i dette hul for at forbedre pladeudnyttelsen, og på det punkt understøttes den indre kontur muligvis ikke med nok stifter til at blive betragtet som stabil. TecZone Laser vil tilføje en mikrosamling for at stabilisere konturen, som vist på billedet ovenfor til højre.</p>
+<p>I et layout kan en mindre del være indlejret i dette hul for at forbedre
+pladeudnyttelsen, og på det punkt understøttes den indre kontur muligvis ikke
+med nok stifter til at blive betragtet som stabil. TecZone Laser vil tilføje en
+mikrosamling for at stabilisere konturen, som vist på billedet ovenfor til
+højre.</p>
 </div>
 <div class="paragraph">
-<p>Hvis den mindre del indlejret i det hul efterfølgende fjernes, forsvinder mikrosamlingen også.</p>
+<p>Hvis den mindre del indlejret i det hul efterfølgende fjernes, forsvinder
+mikrosamlingen også.</p>
 </div>
 </div>
 </div>
@@ -630,7 +742,7 @@ af jobbet.</p>
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

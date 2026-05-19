@@ -1,0 +1,618 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../res/bento.css">
+  <link rel="stylesheet" href="../../../res/site.css">
+  <link rel="stylesheet" href="../../../res/tree.css">
+  <link rel="stylesheet" href="../../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../../img/trumpf-icon.png">
+  <title>Skapa ett grepp</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Förhandsversion)</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../../index.html">Välkommen till TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../intro/index.html">Inledning</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../intro/install.html">Installera programvaran</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/clarity.html">Användarsnittstället</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/workflow.html">Delarbetsflöde</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/2dimport/index.html">2D-import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/2dimport/2dcleanup.html">2D-rensning</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/3dimport/index.html">3D-import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prep3dmodel.html">Importera 3D-modell</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prepassembly.html">Importera modul</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/formdetect.html">Formdetektering</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/componentdetect.html">Komponentdetektering</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../cad/sketch.html">Ändra geometrin</a></li>
+    <li><button class="tree blank"></button><a href="../../../cad/attachments.html">Bilagor</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cut/index.html">Laserskärning</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/partworkflow/index.html">Delarbetsflöde</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/partworkflow/panels/index.html">Redigeringspaneler</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../../cut/partworkflow/panels/lasercut/index.html">Laserskärning</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/approach.html">Framkörning</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/withdrawal.html">Retur</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/advanced.html">Avancerat</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/scrapcut.html">Skrotkapning</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/part.html">Del</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/cornertreatment.html">Hörnbehandling</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/partworkflow/quicknest.html">Quick-Nest</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/jobworkflow/index.html">Arbetsflöde</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/jobpanel/index.html">Jobbpanel</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/sheets.html">Fliken Plåtar</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/parts.html">Fliken Delar</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/layouts.html">Fliken Layouter</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/summary.html">Fliken Sammanfattning</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/editlayout/index.html">Redigera layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/nestingmodes.html">Nestinglägen</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/placementpanel.html">Placeringspanel</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/sequencing.html">Sekvensering</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/slicesheet.html">Skiva plåt</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/bevelcut/index.html">Fassnitt</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/opencontours.html">Öppna konturer</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/variablebevel.html">Variabel fas</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/miscellaneous.html">Diverse</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/advanced/index.html">Avancerat</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/finishingrules.html">Efterbehandlingsregler</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/editltt.html">Redigera LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/strategies.html">Strategi</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/microjoints.html">Microjoints</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/stability.html">Ytterligare inställningar</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bend/index.html">Kantpressar</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">Skapa bockningsdata</a></li>
+    <li><button class="tree blank"></button><a href="../../../bend/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/editing/index.html">Redigera bockningsdata</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editbend.html">Redigera en bockning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editmount.html">Redigera ett verktygsfäste</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editsetup.html">Redigera en bockningsinställning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editgauge.html">Redigera anslagsfingrarna</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editacb.html">Redigera vinkelmätning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/bendsheet.html">Kalkylblad för bockningar</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/sequencing.html">Ändra sekvensen</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/addsetup.html">Lägga till inställningar och stationer</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/advanced/index.html">Avancerat</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/anglemeasurement.html">Vinkelmätning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/batchprocess.html">Batchbearbetning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/recompute.html">Beräkna lösning på nytt</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">Kontroll av belastning</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../bend/bendingaids.html">Bockningshjälpmedel</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../../index.html">BendMaster CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../../navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../pickup/index.html">Upplockning av delar</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../pickup/frompallet.html">Upplockning från palett</a></li>
+      <li><button class="tree blank"></button><a href="../../pickup/fromdispenser.html">Upplockning från matare</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bending/index.html">Robotbockning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bending/insertion.html">Insättning</a></li>
+      <li><button class="tree blank"></button><a href="../../bending/bending.html">Bockning</a></li>
+      <li><button class="tree blank"></button><a href="../../bending/extraction.html">Uttag</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../regrip/index.html">Omgrepp</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../regrip/regrippanel.html">Omgreppspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/addregrip.html">Lägga till omgrepp</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/editregrip.html">Bearbeta omgrepp</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/jawregrip.html">Omgrepp med käft</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/rgstationpanel.html">Panel för RG-stationer</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../deposit/index.html">Delav sättning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../deposit/deposit.html">Deposit-panelen</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/repeat.html">Upprepa och sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/separatorsheet.html">Lägg till separatorark</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/lockpartrest.html">Lås del-vila</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/patterns.html">Typer av avsättningsmönster</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="../index.html">Avancerat</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="../waypoints.html">Vägpunkter</a></li>
+      <li><button class="tree blank"></button><a href="../cellconfig.html">Cellkonfiguration</a></li>
+      <li>
+       <button class="tree open"></button>
+       <a href="index.html">Grepp databas</a>
+       <ul>
+        <li><button class="tree blank"></button><a class="active" href="creategripper.html">Skapa ett grepp</a></li>
+        <li><button class="tree blank"></button><a href="importgripper.html">Importera grepp från DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../fold/index.html">Svängbockning</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../fold/createfolddata.html">Skapa vikdata</a></li>
+    <li><button class="tree blank"></button><a href="../../../fold/foldview.html">Vikningsvyn</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/editing/index.html">Redigera vikningsdata</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbend.html">Redigera en bockning</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editside.html">Redigera en sida/ett avsnitt</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editseq.html">Ändra sekvensen</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbh.html">Redigera blankpresshållarna</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editgauge.html">Redigera anslagen</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editblade.html">Redigera knivarna</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editload.html">Redigera inlastningen</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editunload.html">Redigera utlastningen</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../fold/toolinventory.html">Verktygsbestånd</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/advanced/index.html">Avancerat</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/airgaptables.html">Anpassade luftspalttabeller</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/manualbend.html">Slutförande av manuell bockning</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/minflangelength.html">Erforderlig skänkellängd</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../settings/index.html">Inställningar</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/drawing/index.html">Ritning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/layers.html">Lager</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/dimensions.html">Mått</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/view.html">Vy</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/benddefaults.html">Maskinens standardinställningar</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendoutputs.html">Bend Outputs</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendview.html">Bockningsvy</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendcell.html">Bockcell</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/layout/index.html">Layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/nesting.html">Inställningar för nesting</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheet.html">Plåt</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheethandling.html">Plåthantering</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/skeletoncuts.html">Skeleton Cuts</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/worksupport.html">Arbetsstöd</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/lasercam/sequence.html">Sekvens</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutoutputs.html">Cut Outputs</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutview.html">Skärvy</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/foldcam/index.html">Svängbockning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/defaults.html">Standardinställningar</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/zbwcarriers.html">ZBW-bärare</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/foldoutputs.html">Utdata</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/reports/index.html">Rapporter</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/reports/itemdefaults.html">Standardinställningar för objekt</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../settings/importexport.html">Importera/exportera</a></li>
+    <li><button class="tree blank"></button><a href="../../../settings/environment.html">Miljö</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../database/index.html">Databas</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../database/materials.html">Material</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/machines.html">Maskiner</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendtools.html">Bockningsverktyg</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/benddeductions.html">Bend deductions</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">Bockningsgripdon</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Former och komponenter</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../report/index.html">Rapporter</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../report/designer.html">Rapportdesigner</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/fields.html">Fält, bilder och tabeller</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/bands.html">Band (delrapporter)</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/labels.html">Etiketter, bitmappar och former</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../appendix/index.html">Bilaga</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">3D-format som stöds</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">Separatorplåt DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">Bockningsverktyg DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/adaptgeometry.html">Funktionen Anpassa geometri</a></li>
+   </ul>
+  </li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../../index.html">BendMaster CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="../index.html">Avancerat</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Grepp databas</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="creategripper.html">Skapa ett grepp</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Skapa ett grepp</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sättet på vilket greppet håller delen kan behöva ändras mellan
+vissa böjningar. Bend-databasen innehåller ett stort antal böjgrepp, som
+kan användas för den automatiserade böjningsprocessen. Om det behövs är det möjligt att
+skapa egna grepp anpassade till respektive delgeometri.</p>
+</div>
+<div class="paragraph">
+<p>För att skapa ett grepp behövs information om handleden, valfri basplatta,
+suggplatta och sugkoppar, tillsammans med deras respektive positioner.</p>
+</div>
+<div class="paragraph">
+<p>För detta ändamål måste en DXF-fil, inklusive respektive geometri och parametrar
+skapas.</p>
+</div>
+<div class="paragraph">
+<p>Skapa din egen greppgeometri med önskade sugkoppar, med hjälp av
+ritmodulen.</p>
+</div>
+<div class="paragraph">
+<p>För att skapa ett nytt grepp:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öppna en ny ritning i TecZone Bend och välj skissalternativet.</p>
+<div class="paragraph">
+<p><span class="image"><img src="img/sketch.png" alt="Sketch" width="654"></span></p>
+</div>
+</li>
+<li>
+<p>Skapa en ritning av greppet med handled, basplatta och sugkoppsplatta
+(alternativt, öppna en befintlig DXF-ritning och anpassa den efter behov).</p>
+</li>
+<li>
+<p>Applicera en annan färg (t.ex. grön) på konturen av basplattan.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/related.png" alt="Related" width="571">
+</div>
+</div>
+</li>
+<li>
+<p>För en korrekt grafisk visning av den valfria basplattan måste den vara i ett
+separat lager. Välj basplattans rektangel och välj lagret som
+BASEPLATE. Lagrets färg ändras till grön.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/applylayer.png" alt="Apply layer" width="689">
+</div>
+</div>
+</li>
+<li>
+<p>Se till att handledens centrum är vid ritningens nollpunkt och skriv de nödvändiga
+textentiteterna för parametrarna.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/textentities.png" alt="Text entities" width="752">
+</div>
+</div>
+</li>
+<li>
+<p>Många av inställningarna för detta grepp kommer från textentiteter som har formen KEY=VALUE.
+Här är de möjliga nycklarna, med deras betydelser</p>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>nyckel</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Betydelse</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Namnet på greppet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Weight</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vikt på greppet, i kg.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>WRISTDIA</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Handledens diameter (måste vara 120/180 motsvarande BM60/BM150)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>WRISTTHICKNESS</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tjockleken i Z av handledscylindern nedanför. Handledscylindern
+  sträcker sig från Z=0 till detta värde</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PLATEEXTENT</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Z-utsträckningen (i formen ZMIN:ZMAX) av plattan. Vanligtvis sätter man ZMIN
+  samma som WRISTTHICKNESS, så att plattan börjar där handledscylindern slutar.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>BASEPLATEEXTENT</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Z-utsträckningen av basplattan (se avsnittet nedan om tvålagers grepp)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CUPNAME</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Typen av sugkopp som används för detta grepp (som SAXM50)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CUPS</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Antalet sugkoppar</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CUP1POS</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Positionen för den första sugkoppen i formen X,Y</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CUP2POS</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Positionen för den andra sugkoppen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CUPNPOS</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Positionen för den N:te sugkoppen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CUPDIA</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kan användas istället för CUPNAME för att specificera en sugkopp (rekommenderas inte).</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Exportera som DXF-fil under den nedan nämnda sökvägen efter uppdatering av textparametrarna från
+ritmodulen.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/exportgripper.png" alt="Export gripper" width="784">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sugkoppstyper">Sugkoppstyper</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I Bend-databasen finns det olika typer av sugkoppar tillgängliga, som kan användas vid
+konfigurering av ett nytt grepp.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/suctioncup.png" alt="Suction cup">
+</div>
+<div class="title">Figure 1. Sugkoppsdatabas</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/gripperdrawing.png" alt="Example gripper" width="1000">
+</div>
+<div class="title">Figure 2. Exempel på grepp från databasen</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_sugkoppstyper">Sugkoppstyper</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="index.html">Grepp databas</a></span>
+ <span class="next"><a href="importgripper.html">Importera grepp från DXF</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../../res/index.js"></script>
+    <script src="../../../res/files.js"></script>
+    <script src="../../../res/site.js"></script>
+
+    
+</body>
+</html>

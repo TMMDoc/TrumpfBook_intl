@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,6 +54,7 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -197,7 +199,44 @@
       <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Udtagning</a></li>
      </ul>
     </li>
-    <li><button class="tree blank"></button><a href="../bcell/regrip/index.html">Omgribning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Aflejringsmønstertyper</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../bcell/advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
    </ul>
   </li>
   <li>
@@ -308,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -329,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -355,14 +395,21 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ud over at generere NC-programmer, kan TecZone Bend også generere forskellige <em>rapporter</em> for en del, afhængigt af de installerede moduler. Når der for eksempel arbejdes med Bukningsteknologi, er det nyttigt at generere en <em>opsætningsplade</em>, der viser de værktøjer, der skal monteres, og giver detaljer om <em>bukningsrækkefølgen</em>.</p>
+<p>Ud over at generere NC-programmer, kan TecZone Bend også generere forskellige
+<em>rapporter</em> for en del, afhængigt af de installerede moduler. Når der for
+eksempel arbejdes med Bukningsteknologi, er det nyttigt at generere en
+<em>opsætningsplade</em>, der viser de værktøjer, der skal monteres, og giver detaljer
+om <em>bukningsrækkefølgen</em>.</p>
 </div>
 <div class="paragraph">
-<p><a href="designer.html">Rapportdesigneren</a> i TecZone Bend hjælper med til at designe indhold og stil i sådanne rapporter. Når først en rapport err designet, kan rapporten udskrives som PDF eller HTML.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> formater. Sådan ser rapportdesigneren ud, når den er åben:</p>
+<p><a href="designer.html">Rapportdesigneren</a> i TecZone Bend hjælper med til at designe indhold
+og stil i sådanne rapporter. Når først en rapport err designet, kan rapporten
+udskrives som PDF eller HTML.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>
+formater. Sådan ser rapportdesigneren ud, når den er åben:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="img/report-editor.png" alt="Report Designer" width="781">
+<img src="img/reporteditor.png" alt="Report Designer" width="781">
 </div>
 </div>
 </div>
@@ -371,38 +418,59 @@
 <h2 id="_brug_af_en_rapport">Brug af en rapport</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>En rapport kan åbnes til redigering ved at vælge menuen <strong>Fil/åbn</strong> og vælge en rapportskabelonfil (disse er filer med filudvidelsen <strong>.ftrep</strong>). Der kan findes nogle eksempler på rapportskabeloner i mappen <strong>Eksempler</strong> på Jeres TecZone Bend installation.</p>
+<p>En rapport kan åbnes til redigering ved at vælge menuen <strong>Fil/åbn</strong> og vælge en
+rapportskabelonfil (disse er filer med filudvidelsen <strong>.ftrep</strong>). Der kan findes
+nogle eksempler på rapportskabeloner i mappen <strong>Eksempler</strong> på Jeres TecZone Bend
+installation.</p>
 </div>
 <div class="paragraph">
-<p>Før man kan åbne en rapportskabelon for at arbejde med den, skal der først være en del åben, og delen skal være bearbejdet til fuldførelse (der bør genereres de relevante data for teknologierne Bukning/Skæring/Falsning). Dette skyldes, at rapportdesigneren arbejder med <em>live-data</em>; den viser faktiske data fra delen, mens rapporten designes, så man med det samme kan se, hvordan det endelige, trykte resultat vil se ud.</p>
+<p>Før man kan åbne en rapportskabelon for at arbejde med den, skal der først være
+en del åben, og delen skal være bearbejdet til fuldførelse (der bør genereres de
+relevante data for teknologierne Bukning/Skæring/Falsning). Dette skyldes, at
+rapportdesigneren arbejder med <em>live-data</em>; den viser faktiske data fra delen,
+mens rapporten designes, så man med det samme kan se, hvordan det endelige,
+trykte resultat vil se ud.</p>
 </div>
 <div class="paragraph">
-<p>Man kan også starte med en tom rapport ved at vælge menuen <strong>Fil/Ny/Rapportskabelon</strong>.
-Man kan derefter udfylde rapporten ved at tilføje forskellige <em>rapportelementer</em> (tekstfelter, billeder, etiketter etc.) og derefter gemme den.</p>
+<p>Man kan også starte med en tom rapport ved at vælge menuen
+<strong>Fil/Ny/Rapportskabelon</strong>. Man kan derefter udfylde rapporten ved at tilføje
+forskellige <em>rapportelementer</em> (tekstfelter, billeder, etiketter etc.) og
+derefter gemme den.</p>
 </div>
 <div class="paragraph">
-<p>Når man har en rapportskabelon åben, kan man bruge kommandoerne <strong>Fil/Eksportér til PDF</strong> eller
-<strong>Fil/Eksportér til HTML</strong> for at <em>konvertere</em> rapporten til PDF-format eller til HTML-format.
-Rapporten udskrives ved hjælp af data fra den del, der aktuelt er åben og aktiv.
-Man kan også skifte rapporten mellem <em>live-datavisning</em> (standard) og en <em>designvisning</em>, der viser de underliggende udtryk, der bruges til at udfylde forskellige felter i rapporten.</p>
+<p>Når man har en rapportskabelon åben, kan man bruge kommandoerne <strong>Fil/Eksportér
+til PDF</strong> eller <strong>Fil/Eksportér til HTML</strong> for at <em>konvertere</em> rapporten til
+PDF-format eller til HTML-format. Rapporten udskrives ved hjælp af data fra den
+del, der aktuelt er åben og aktiv. Man kan også skifte rapporten mellem
+<em>live-datavisning</em> (standard) og en <em>designvisning</em>, der viser de underliggende
+udtryk, der bruges til at udfylde forskellige felter i rapporten.</p>
 </div>
-<div class="paragraph">
-<p>Automatisk udskrevne rapporter:</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_automatisk_udskrevne_rapporter">Automatisk udskrevne rapporter</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>TecZone Bend kan indstilles til automatisk at udskrive en bukningsrapport, når der genereres en bukningsløsning (ligesom den kan generere et NC-program automatisk, når løsningen er beregnet). Brug indstillingssiden <em>outputs</em> fra Bukningsteknologimodulet til at konfigurere dette.</p>
+<p>TecZone Bend kan indstilles til automatisk at udskrive en bukningsrapport, når der
+genereres en bukningsløsning (ligesom den kan generere et NC-program automatisk,
+når løsningen er beregnet). Brug indstillingssiden <em>outputs</em> fra
+Bukningsteknologimodulet til at konfigurere dette.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="img/auto-gen.png" alt="Report Settings" width="643">
+<img src="img/autogen.png" alt="Report Settings" width="643">
 </div>
 </div>
 <div class="paragraph">
-<p>I eksemplet ovenfor er automatisk generering af rapporter slået til. Rapportskabelonen er indstillet til <strong>lib:Report/bend.ftrep</strong>, som er <em>standard</em> rapportskabelon til buknings CAM (den installeres som del af hver TecZone Bend installation).
-Hvis man opretter en anden rapportskabelon ved brug af rapportdesigneren, kan denne skabelon specificeres her.</p>
+<p>I eksemplet ovenfor er automatisk generering af rapporter slået til.
+Rapportskabelonen er indstillet til <strong>lib:Report/bend.ftrep</strong>, som er <em>standard</em>
+rapportskabelon til buknings CAM (den installeres som del af hver TecZone Bend
+installation). Hvis man opretter en anden rapportskabelon ved brug af
+rapportdesigneren, kan denne skabelon specificeres her.</p>
 </div>
 <div class="paragraph">
-<p>Indstillingerne giver også mulighed for at styre den mappe, som rapporten genereres til og det format (HTML eller PDF), rapporten er skrevet i.</p>
+<p>Indstillingerne giver også mulighed for at styre den mappe, som rapporten
+genereres til og det format (HTML eller PDF), rapporten er skrevet i.</p>
 </div>
 </div>
 </div>
@@ -422,13 +490,16 @@ Hvis man opretter en anden rapportskabelon ved brug af rapportdesigneren, kan de
   <li level="1">
    <a href="#_brug_af_en_rapport">Brug af en rapport</a>
   </li>
+  <li level="1">
+   <a href="#_automatisk_udskrevne_rapporter">Automatisk udskrevne rapporter</a>
+  </li>
  </ul>
 </aside>
 
                 </div>
             </div>
             <nav class="pagination">
- <span class="prev"><a href="../database/formscomponents.html">Forme/komponenter</a></span>
+ <span class="prev"><a href="../database/formscomponents.html">Forme og komponenter</a></span>
  <span class="next"><a href="designer.html">Rapportdesigner</a></span>
 </nav>
 
@@ -440,7 +511,7 @@ Hvis man opretter en anden rapportskabelon ved brug af rapportdesigneren, kan de
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

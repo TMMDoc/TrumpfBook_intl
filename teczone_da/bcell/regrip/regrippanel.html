@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,11 +54,12 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../cut/index.html">Laser CAM</a>
+   <a href="../../cut/index.html">Laserskæring</a>
    <ul class="hide">
     <li>
      <button class="tree closed"></button>
@@ -145,7 +146,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../bend/index.html">Bukning CAM</a>
+   <a href="../../bend/index.html">Afkantningsmaskine</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">Opret bukningsdata</a></li>
     <li><button class="tree blank"></button><a href="../../bend/navigator.html">Bukningsnavigator</a></li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -212,9 +214,11 @@
      <button class="tree closed"></button>
      <a href="../deposit/index.html">Delaflejring</a>
      <ul class="hide">
-      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Aflejringsmønstre</a></li>
-      <li><button class="tree blank"></button><a href="../deposit/repeat.html">Gentagelse og rækkefølge</a></li>
-      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Separatorplade</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Aflejringsmønstertyper</a></li>
      </ul>
     </li>
     <li>
@@ -223,8 +227,14 @@
      <ul class="hide">
       <li><button class="tree blank"></button><a href="../advanced/waypoints.html">Waypoints</a></li>
       <li><button class="tree blank"></button><a href="../advanced/cellconfig.html">Cellekonfiguration</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/gripperdb.html">Griberdatabase</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/reports.html">Rapporter</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
      </ul>
     </li>
    </ul>
@@ -337,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -358,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -389,14 +400,214 @@
                 <div id="site-toc-left">
                     <article id="article">
                         <h1>Omgribningspanel</h1>
-
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/regrippanel1.png" alt="Omgribningspanel" width="144">
+</div>
+</div>
+<div class="paragraph">
+<p>Et typisk Omgribningspanel vises ved siden:</p>
+</div>
+<div class="paragraph">
+<p>For at få adgang til omgribningspanelet:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Klik to gange på <strong>R1</strong> cellen i bend-navigatoren.</p>
+</li>
+<li>
+<p>Alternativt, klik på delen holdt af BendMaster griberen ved omgribningspositionen.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_method_af_omgribning">Method af omgribning</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>De fem metoder til omgribning af en del er:</p>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/regripmethod.png" alt="Omgribningsmetode" width="126">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Clamp</p>
+</li>
+<li>
+<p>Clamp+Station</p>
+</li>
+<li>
+<p>During Bend</p>
+</li>
+<li>
+<p>Station</p>
+</li>
+<li>
+<p>Post-Bend</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_clamp">Clamp</h3>
+<div class="paragraph">
+<p>Når du vælger <strong>Clamp</strong> metoden, stoler griberen på
+bukningsværktøjet (stempel og dyse) til at holde delen, fuldføre svingsekvensen
+og derefter gengriber fra den anden side af delen.</p>
+</div>
+<div class="paragraph">
+<p><strong>Insert part first</strong> og <strong>BG: Z before X</strong>
+er allerede forklaret i <a href="../bending/insertion.html">Insertion strategy</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/clamp.png" alt="Clamp" width="500">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_clampstation">Clamp+Station</h3>
+<div class="paragraph">
+<p>Når du vælger <strong>Clamp+Station</strong> metoden, sker
+omgribningen ved klemningspunktet, men også på <strong>RG-Stationerne</strong>, der
+understøtter delen.</p>
+</div>
+<div class="paragraph">
+<p>Denne metode er nyttig, når der bukkes lange overhængende dele.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/clampstation.png" alt="Clamp+Station" width="500">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_during_bend">During Bend</h3>
+<div class="paragraph">
+<p>I <strong>During Bend</strong> metoden, så snart
+bukningsoperationen starter, begynder griberen at svinge samtidigt (hvis det er
+nødvendigt) og udfører omgribningen nøjagtigt ved slutningen af
+bukningsoperationen.</p>
+</div>
+<div class="paragraph">
+<p>Åbningen af stemplet starter kun, når delen er fast holdt af robot griberen.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/duringbend.png" alt="During bend" width="600">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_station">Station</h3>
+<div class="paragraph">
+<p>Når du vælger <strong>Station</strong> metoden, sker omgribningen
+med RG-Stationerne, der understøtter delen.</p>
+</div>
+<div class="paragraph">
+<p>Denne metode er essentiel ved håndtering af dele med store dimensioner.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/station.png" alt="Clamp" width="600">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_post_bend">Post-Bend</h3>
+<div class="paragraph">
+<p>Når du vælger <strong>Post-Bend</strong> metoden, sker
+omgribningen efter bukningsprocessen med delen stadig ved klemningspunktet.</p>
+</div>
+<div class="paragraph">
+<p>I denne metode vil robot griberen assistere delen under bukningsoperationen. Når
+bukningsoperationen er afsluttet med forventede resultater, vil
+omgribningsoperationen starte.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/postbend.png" alt="Post bend" width="600">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_swivel">Swivel</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Under omgribningsoperationen placerer robot griberen delen enten mellem
+bukværktøjet eller på RG-Stationernes griber og flytter derefter til den anden
+side af delen for at udføre omgribning.</p>
+</div>
+<div class="paragraph">
+<p>For at forhindre kollision trækkes robot griberen lidt væk fra delen, bøjede
+værktøjer og RG-Stationerne og udfører derefter en svingbevægelse. Denne
+udtrækning og svingbevægelse sker på tre måder:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Front</p>
+</li>
+<li>
+<p>Left</p>
+</li>
+<li>
+<p>Right</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Billedet nedenfor viser udtrækningen af griberen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/swivel.png" alt="Swivel" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Efter denne bevægelse svinger griberen og bevæger sig til bunden af delen og
+udfører en omgribning.</p>
+</div>
+</div>
+</div>
 
                     </article>
                 </div>
                 <div id="site-toc-holder">
                     <aside id="site-toc">
  <h3>Contents</h3>
- <ul></ul>
+ <ul>
+  <li level="1">
+   <a href="#_method_af_omgribning">Method af omgribning</a>
+  </li>
+  <li level="2">
+   <a href="#_clamp">Clamp</a>
+  </li>
+  <li level="2">
+   <a href="#_clampstation">Clamp+Station</a>
+  </li>
+  <li level="2">
+   <a href="#_during_bend">During Bend</a>
+  </li>
+  <li level="2">
+   <a href="#_station">Station</a>
+  </li>
+  <li level="2">
+   <a href="#_post_bend">Post-Bend</a>
+  </li>
+  <li level="1">
+   <a href="#_swivel">Swivel</a>
+  </li>
+ </ul>
 </aside>
 
                 </div>
@@ -414,7 +625,7 @@
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

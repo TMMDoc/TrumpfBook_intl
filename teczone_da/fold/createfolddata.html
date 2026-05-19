@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,6 +54,7 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -197,7 +199,44 @@
       <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Udtagning</a></li>
      </ul>
     </li>
-    <li><button class="tree blank"></button><a href="../bcell/regrip/index.html">Omgribning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Aflejringsmønstertyper</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../bcell/advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
    </ul>
   </li>
   <li>
@@ -308,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -329,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -359,7 +399,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Der kan oprettes <em>Falseteknilogidata</em> til en plademetaldel ved brug af modulet <strong>Falsning</strong>. Lad os antage, at der allerede er <a href="../database/machines.html">installeret en maskine</a>, og at der er importeret en <a href="../cad/index.html">CAD-del</a> (2D eller 3D):</p>
+<p>Der kan oprettes <em>Falseteknilogidata</em> til en plademetaldel ved
+brug af modulet <strong>Falsning</strong>. Lad os antage, at der allerede er
+<a href="../database/machines.html">installeret en maskine</a>, og at der er importeret en
+<a href="../cad/index.html">CAD-del</a> (2D eller 3D):</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -372,8 +415,12 @@
 <h2 id="_skift_til_drejebukning">Skift til Drejebukning</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Nu kan delen klargøres til en drejebukkemaskine ved blot at trykke på tasten <kbd>F</kbd>.
-TecZone Fold åbner en menu, hvor der kan vælges en af de drejebukkemaskiner, der er installeret. Delen klargøres derefter til denne maskine. Bukningsrækkefølgen, emneholderens sammensætning, måling og eventuelle valgfrie ZBW- eller ENW-værktøjer beregnes alle, og man burde se et resultat som dette:</p>
+<p>Nu kan delen klargøres til en drejebukkemaskine ved blot at trykke på tasten
+<kbd>F</kbd>. TecZone Fold åbner en menu, hvor der kan vælges en af de
+drejebukkemaskiner, der er installeret. Delen klargøres derefter til denne
+maskine. Bukningsrækkefølgen, emneholderens sammensætning, måling og eventuelle
+valgfrie ZBW- eller ENW-værktøjer beregnes alle, og man burde se et resultat som
+dette:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -381,7 +428,8 @@ TecZone Fold åbner en menu, hvor der kan vælges en af de drejebukkemaskiner, d
 </div>
 </div>
 <div class="paragraph">
-<p>Hvis der ikke er nogen fejl, genereres NC-programmet for delen og gemmes i den udgangsmappe, der er indstillet til denne maskine.</p>
+<p>Hvis der ikke er nogen fejl, genereres NC-programmet for delen og gemmes i den
+udgangsmappe, der er indstillet til denne maskine.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -395,7 +443,10 @@ TecZone Fold åbner en menu, hvor der kan vælges en af de drejebukkemaskiner, d
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Se også panelet <a href="../intro/workflow.html">Arbejdsgang</a>, som kan tilgås ved at trykke på tasten <kbd>W</kbd>. Dette giver mere kontrol over at oprette bukningsteknologidata og optioner for at dirigere delen gennem laser CAM, indlejring etc.
+Se også panelet <a href="../intro/workflow.html">Arbejdsgang</a>, som kan tilgås ved at
+trykke på tasten <kbd>W</kbd>. Dette giver mere kontrol over at oprette
+bukningsteknologidata og optioner for at dirigere delen gennem laser CAM,
+indlejring etc.
 </td>
 </tr>
 </table>
@@ -406,30 +457,44 @@ Se også panelet <a href="../intro/workflow.html">Arbejdsgang</a>, som kan tilg�
 <h2 id="_yderligere_arbejdsgange">Yderligere arbejdsgange</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Her er en hurtig oversigt over nogle af de arbejdsgange, der kan udføres, når en del er blevet klargjort til bukning. De følgende sider i denne vejledning giver flere detaljer om hver af disse arbejdsgange.</p>
+<p>Her er en hurtig oversigt over nogle af de arbejdsgange, der kan udføres, når en
+del er blevet klargjort til bukning. De følgende sider i denne vejledning giver
+flere detaljer om hver af disse arbejdsgange.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Klikkes der på <kbd>Spacebar</kbd>, starter en drejebukkemaskinesimulering. Der kan også bruges simuleringskontroller på Falsenavigator for at starte, stoppe eller spole simuleringen tilbage:<br>
+<p>Klikkes der på <kbd>Spacebar</kbd>, starter en drejebukkemaskinesimulering. Der kan
+også bruges simuleringskontroller på Falsenavigator for at starte, stoppe eller
+spole simuleringen tilbage:<br>
 <span class="image"><img src="img/playsimulation.png" alt="Simulation Controls" width="273"></span></p>
 </li>
 <li>
-<p>Hvis der er advarsler eller fejl, vises de i <a href="foldview.html#fold-navigator">Falsenavigator</a>, og de kan ses og løses ved at klikke på de tilsvarende celler.</p>
+<p>Hvis der er advarsler eller fejl, vises de i
+<a href="foldview.html#fold-navigator">Falsenavigator</a>, og de kan ses og løses ved at
+klikke på de tilsvarende celler.</p>
 </li>
 <li>
-<p>Man kan <a href="editing/index.html">redigere</a> falseklargøringen (emneholdere, måling, ENW- og ZBW-værktøjer, gribere).</p>
+<p>Man kan <a href="editing/index.html">redigere</a> falseklargøringen (emneholdere, måling,
+ENW- og ZBW-værktøjer, gribere).</p>
 </li>
 <li>
-<p>Der kan ændres maskine ved at klikke på maskinnavnet i fanen under delen, og vælge en anden maskine:<br>
+<p>Der kan ændres maskine ved at klikke på maskinnavnet i fanen under delen, og
+vælge en anden maskine:<br>
 <span class="image"><img src="img/changemachine.png" alt="Change Machine" width="493"></span></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Når der oprettes en falseløsning, genereres del NC-programmet, hvis der ikke er nogen fejl.
-Denne adfærd kan styres (hvorvidt NC-programmet genereres automatisk) fra siden <a href="../settings/foldcam/foldoutputs.html">Falseudgange</a> i dialogen Indstillinger.
-Hvis koden er genereret, er knappen <strong>nc-kode</strong> i venstre værktøjslinje tonet grå:</p>
+<p>Når der oprettes en falseløsning, genereres del NC-programmet, hvis der ikke er
+nogen fejl.</p>
+</div>
+<div class="paragraph">
+<p>Denne adfærd kan styres (hvorvidt NC-programmet genereres automatisk) fra siden
+<a href="../settings/foldcam/foldoutputs.html">Falseudgange</a> i dialogen Indstillinger.</p>
+</div>
+<div class="paragraph">
+<p>Hvis koden er genereret, er knappen <strong>nc-kode</strong> i venstre værktøjslinje tonet grå:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -437,7 +502,9 @@ Hvis koden er genereret, er knappen <strong>nc-kode</strong> i venstre værktøj
 </div>
 </div>
 <div class="paragraph">
-<p>Når der foretagea ændringer i delen, bliver denne knap aktiveret igen, og NC-programmet kan genereres igen ved at klikke på dette ikon påny (eller ved at trykke på tasten <kbd>C</kbd>).</p>
+<p>Når der foretagea ændringer i delen, bliver denne knap aktiveret igen, og
+NC-programmet kan genereres igen ved at klikke på dette ikon påny (eller ved at
+trykke på tasten <kbd>C</kbd>).</p>
 </div>
 </div>
 </div>
@@ -472,7 +539,7 @@ Hvis koden er genereret, er knappen <strong>nc-kode</strong> i venstre værktøj
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

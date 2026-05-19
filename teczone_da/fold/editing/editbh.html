@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,6 +54,7 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -197,7 +199,44 @@
       <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Udtagning</a></li>
      </ul>
     </li>
-    <li><button class="tree blank"></button><a href="../../bcell/regrip/index.html">Omgribning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Aflejringsmønstertyper</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../bcell/advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
    </ul>
   </li>
   <li>
@@ -308,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -329,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -360,38 +400,203 @@
                 <div id="site-toc-left">
                     <article id="article">
                         <h1>Redigér nedholderne</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>Ved klik på nedholderen, vises <strong>BH-panelet</strong> (nedholderpanelet). Nedholderpanelet har følgende indstillinger:</p>
+<p>Under automatisk værktøjsmontering genererer TecZone Fold en nedholdersammensætning, så
+mange bukninger som muligt kan bearbejdes med den indledende sammensætning. Nedholder-
+sammensætning kan også justeres manuelt for at imødekomme forskellige del-
+geometrier og bukningskrav.</p>
 </div>
-<div class="imageblock right">
-<div class="content">
-<img src="img/edit-bh.png" alt="Edit BH" width="166">
 </div>
+</div>
+<div class="sect1">
+<h2 id="_nedholderpanel_bh">Nedholderpanel (BH)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Klik på den øverste nedholder for at åbne <strong>BH</strong>-panelet. Dette panel giver dig mulighed for at
+redigere nedholderegenskaberne (for en valgt bukning), herunder ændring af nedholder-
+sammensætning, brug af ENW-værktøj, ændring af typen af ENW-værktøj osv.</p>
+</div>
+<div class="paragraph">
+<p>Klik på rullemenuen <strong>Blank-holder</strong> for at ændre nedholdertypen:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/enwtool.png" alt="ENW tool" width="136"></span><span class="image"><img src="img/corecomp.png" alt="Core composition" width="152"></span><span class="image"><img src="img/fz23.png" alt="Tool Change (FZ23)" width="160"></span></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Længde</strong> bruges til at vælge forskellige sammensætninger af nedholder længde (dette vises, hvis denne side bruger en delt nedholdersammensætning).</p>
+<p><strong>ENW tool</strong> - Denne mulighed bruges til at vælge typen af ENW-værktøj til en specifik
+bukning. Informationen vises i bukningsnavigatorcellen.</p>
 </li>
 <li>
-<p>Feltet <strong>Brug ENW-værktøj</strong> bruges til at aktivere et ENW-værktøj til bearbejdning af denne bukning.</p>
+<p><strong>Core composition</strong> - Den indledende nedholdersammensætning, som er
+standardnedholderen uden yderligere værktøjer.</p>
 </li>
 <li>
-<p>Hvis indstillingen <strong>Brug ENW værktøj</strong> er slået til, så kan denne liste bruges til at vælge et af de tilgængelige ENW-værktøjer. Dette er en delbred indstilling, da forskellige ENW-værktøjer kan ikke bruges til forskellige bukninger.</p>
-</li>
-<li>
-<p>Knappen <strong>Forrige</strong> og <strong>Næste</strong> bruges til at skifte mellem de forskellige bukninger i delen.</p>
+<p><strong>Tool Change (FZ23)</strong> - Programmér en ny nedholdersammensætning ved hjælp af FZ23-
+funktionen.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Når der eksperimenteres med forskellige ENW-værktøjer, vil TecZone Fold straks beregne kollisionsstatus for den pågældende nedholdersammensætning for alle bukninger i delen og opdatere falsenavigatorens status. Således er det meget enkelt at vælge et passende ENW-værktøj ved at scrolle gennem denne liste, da der er øjeblikkelig tilbagemelding om, hvorvidt eventuelle bukninger har problemer med det valgte værktøj.</p>
+<p><strong>Part-Z</strong>: Brug denne mulighed til at flytte delen langs Z-aksen. Dette er nyttigt til
+justering af delens position i maskinen langs bukningslinjen.</p>
+</div>
+<div class="paragraph">
+<p><strong>Length</strong>: Redigér nedholderlængden. TecZone genererer automatisk en
+nedholdersammensætning, der matcher den angivne længdeværdi.</p>
+</div>
+<div class="paragraph">
+<p><strong>Z-offset</strong>: Denne mulighed bruges til at forskyde <strong>ENW-værktøjet</strong> langs Z-aksen.</p>
+</div>
+<div class="paragraph">
+<p><strong>Horns</strong>: Vælg hvilke hornstykker, der skal inkluderes i nedholdersammensætningen.
+Du kan vælge <em>venstre</em>, <em>højre</em> eller <em>begge</em> horn.</p>
+</div>
+<div class="paragraph">
+<p><strong>Offset</strong>: Dette er afstanden mellem maskinens center og center af
+nedholderen.</p>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/editbh.png" alt="Edit BH" width="153">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Split</strong>: Længden af afstanden mellem højre kant af kernesammensætningen
+og det første ubrugte stykke (gråtonet) til højre for nedholderen.</p>
+</div>
+<div class="sect2">
+<h3 id="_avanceret">Avanceret</h3>
+<div class="paragraph">
+<p><strong>Horn Retract</strong>: Vælg <em>None</em> for at deaktivere horn retract. Horn retract kan
+aktiveres ved at vælge enten <em>venstre, højre eller begge</em> horn.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_split_pack_og_extra_split_pack">Split / Pack og Extra Split / Pack</h3>
+<div class="paragraph">
+<p>Disse muligheder kan bruges til at opdele og pakke stykker i nedholder-
+sammensætningen. Split bruges til at skabe en afstand mellem værktøjer, mens Pack bruges til at
+lukke en afstand mellem værktøjer.</p>
+</div>
+<div class="paragraph">
+<p>Mulighederne <strong>Split/Pack</strong> og <strong>Extra Split/Pack</strong> bruges til at justere afstandene
+mellem værktøjerne.</p>
+</div>
+<div class="paragraph">
+<p>For at skabe en split flyttes værktøjer udad; for at pakke dem flyttes de
+indad.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Kun én eller to split for hver side af nedholderen understøttes (for
+eksempel er det ikke muligt at have tre split på venstre side og en på højre
+side). Maksimalt fire split i alt er mulige: to på hver side.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Bredden af en standardnedholder er 160 mm, og bredden af en nedholder
+med horn er 199 mm.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="Splitpack">Split / Pack</h4>
+<div class="paragraph">
+<p><strong>Left eller Right</strong>:
+Vælg siden (venstre eller højre) for split/pack-operationen.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Valg af <strong>0</strong> vil aktivere en Split / Pack i slutningen af kernesammensætningen.</p>
+</li>
+<li>
+<p>Valg af en negativ værdi (for eksempel -160) vil tilføje en afstand mellem
+kernesammensætningen.</p>
+</li>
+<li>
+<p>Valg af en positiv værdi (for eksempel +199) vil tilføje et nyt stykke i slutningen
+af kernesammensætningen.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Left eller Right gap</strong>: Redigér mængden af standardafstand for det valgte venstre/højre
+stykke af nedholderen.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_extra_split_pack">Extra Split / Pack</h4>
+<div class="paragraph">
+<p><strong>Left1 eller Right1</strong>: Vælg standardstykket, efter hvilket den ekstra afstand
+introduceres. Normalt er der otte standardstykker tilgængelige ekskl. en horn-
+nedholder.</p>
+</div>
+<div class="paragraph">
+<p><strong>Left Gap1 eller Right Gap1</strong>:</p>
+</div>
+<div class="paragraph">
+<p>Redigér mængden af ekstra afstand efter standardstykkerne.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Hvis ekstra afstand er aktiveret her, kan standardafstand i <a href="#Splitpack">Split / Pack</a> ikke
+redigeres længere.</p>
+</div>
+<div class="paragraph">
+<p>Denne mulighed er ikke tilgængelig for nedholdertypen <strong>Tool Change (FZ23)</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
 </div>
 
                     </article>
                 </div>
                 <div id="site-toc-holder">
-                    <aside id="site-toc"></aside>
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_nedholderpanel_bh">Nedholderpanel (BH)</a>
+  </li>
+  <li level="2">
+   <a href="#_avanceret">Avanceret</a>
+  </li>
+  <li level="2">
+   <a href="#_split_pack_og_extra_split_pack">Split / Pack og Extra Split / Pack</a>
+  </li>
+ </ul>
+</aside>
+
                 </div>
             </div>
             <nav class="pagination">
@@ -407,7 +612,7 @@
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

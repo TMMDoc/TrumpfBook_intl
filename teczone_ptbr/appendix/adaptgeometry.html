@@ -1,0 +1,648 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>O recurso Adaptar Geometria</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Versão de pré-lançamento)</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Bem-vindo ao TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">Introdução</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">Instalando o software</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">A interface do usuário</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">Fluxograma da peça</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">Importação 2D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">Limpeza 2D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">Importação 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">Importar modelo 3D</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">Importar Montagem</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">Detecção de formas</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">Detecção de Componentes</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">Modificando a geometria</a></li>
+    <li><button class="tree blank"></button><a href="../cad/attachments.html">Anexos</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Corte a Laser</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Fluxograma da peça</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Painéis de Edição</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Corte a laser</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Aproximação</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Retirada</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Avançado</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Contorno</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Corte de refugo</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Peça</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Tratamento de cantos</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Nesting rápido</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Fluxograma da tarefa</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Painel de Tarefas</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Aba Chapas</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Aba Peças</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Aba Layout</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Aba Resumo</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Editar layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Modos de nesting</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Painel de Colocação</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Sequenciamento</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Fatiar chapa</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Corte oblíquo</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Contornos Abertos</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Chanfro Variável</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Miscelâneo</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Avançado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Regras de acabamento</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">Editar a LTT</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Estratégia</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Microjoints</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Outras configurações</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Prensa-dobradeira</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Criar dados de dobra</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Navegador de dobras</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Editar dados de dobra</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Editar uma dobra</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Editar um suporte de ferramenta</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Editar uma configuração de dobra</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Editar os encostos traseiros</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Editar medição de ângulo</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Planilha de dobras</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Alterando a sequência</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Adicionando configurações e estações</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Avançado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Medição de ângulo</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Processo em lote</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Recalcular solução</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Verificação de tonelagem</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../bend/bendingaids.html">Bending Aids</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Coleta de peças</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Coleta do palete</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Coleta no distribuidor</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Dobra Robótica</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Inserção</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Processo de dobra</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Extração</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Remanipulação</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Painel de remanipulação</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Adicionar Remanipulação</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Editar Remanipulação</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Remanipulação com mordente</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Painel de estações RG</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Depósito de peças</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/deposit.html">Painel Deposit</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Repetir e sequência</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Adicionar folhas separadoras</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/lockpartrest.html">Travar repouso da peça</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Tipos de padrão de depósito</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Avançado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Pontos de passagem</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Configuração da célula</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../bcell/advanced/gripperdb/index.html">Banco de dados de garras</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/creategripper.html">Criar uma garra</a></li>
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/importgripper.html">Importar garra do DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">Dobra oscilante</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Criar dados de dobra</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">A visualização Dobrar</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Editando dados de dobra</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Editar uma dobra</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Editar um lado/seção</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">Alterar a sequência</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">Editar os porta-blanques</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Editar os encostos</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">Editar as lâminas</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Editar o carregamento</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Editar o descarregamento</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Inventário de ferramentas</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Avançado</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Tabelas de lacunas personalizadas</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Conclusão de dobra manual</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Comprimento de flange necessário</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Ajustes</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Desenho</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Camadas</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Dimensões</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Vista</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Dobrar CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Padrões da máquina</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Saídas de dobra</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Vista de Dobra</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Célula de dobra</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Corte CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Layout</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Ajustes de nesting</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Chapa</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Manuseio da chapa</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Cortes do esqueleto</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Suporte do trabalho</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Sequência</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Cortar saídas</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Cortar vistas</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Dobra oscilante</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Padrões</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">Suportes ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Resultados</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Relatórios</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Padrões de item</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Importação/Exportação</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Ambiente</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Base de dados</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Materiais</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Máquinas</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Ferramentas de Dobra</a></li>
+    <li><button class="tree blank"></button><a href="../database/benddeductions.html">Bend deductions</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Pinças de Dobra</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Formas e Componentes</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Relatórios</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Designer de Relatórios</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Campos, Imagens e Tabelas</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Bandas (sub-relatórios)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Etiquetas, Bitmaps e Formas</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Apêndice</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="3dformats.html">Formatos 3D suportados</a></li>
+    <li><button class="tree blank"></button><a href="bseparatordxf.html">Chapa de separação DXF</a></li>
+    <li><button class="tree blank"></button><a href="bendtooldxf.html">Ferramenta de dobra DXF</a></li>
+    <li><button class="tree blank"></button><a class="active" href="adaptgeometry.html">O recurso Adaptar Geometria</a></li>
+   </ul>
+  </li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Apêndice</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="adaptgeometry.html">O recurso Adaptar Geometria</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>O recurso Adaptar Geometria</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Este documento explica as três opções de processo diferentes disponíveis com o
+recurso Adaptar Geometria:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom.png" alt="Adapt Geometry Dialog" width="550">
+</div>
+</div>
+<div class="paragraph">
+<p>A função Adaptar Geometria é acionada quando a peça de entrada não corresponde
+às condições reais do processo. Um ou ambos os problemas a seguir podem existir
+na peça:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>O raio interno das dobras pode ser muito pequeno. Cada processo (como dobra em painel ou
+dobra a ar em prensa dobradeira) terá um raio interno mínimo possível para esse
+processo. Se o raio de projeto da peça for menor que isso, a peça não poderá ser
+fabricada conforme projetada; o raio precisará ser alterado.</p>
+</li>
+<li>
+<p>O K-factor da linha de dobra pode estar incorreto. A máquina de processo (dobradeira de painel vs
+prensa dobradeira) e as ferramentas ou condições do processo (punção/matriz/lâmina de dobra/espaço de ar) todos
+se combinam para determinar qual será o K-factor real da dobra. A dobra pode ser projetada
+com um K-factor diferente.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Vamos pegar uma peça 2-D simples que tenha tanto um raio incorreto quanto um
+K-factor incorreto, e ver como a função Adaptar Geometria modifica esta peça.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom2.png" alt="2D Part" width="550">
+</div>
+<div class="title">Figure 1. Peça 2D</div>
+</div>
+<div class="paragraph">
+<p>A peça 2D de entrada é mostrada acima - é um retângulo simples com uma linha de dobra exatamente
+no meio. A largura da peça é 96,75 mm. A espessura do material é 2,5mm.</p>
+</div>
+<div class="paragraph">
+<p>A linha de dobra foi <em>projetada</em> com um raio interno de 0,5 e um K-factor de 0,5. A
+largura plana (comprimento da linha neutra) é, portanto:</p>
+</div>
+<div class="paragraph">
+<p><em>ângulo * (raioInterno + kFactor * espessura) = PI/2 * (0,5 + 0,5 * 2,5)</em> = <strong>2,75</strong> mm</p>
+</div>
+<div class="paragraph">
+<p>Como esta é uma dobra de 90 graus, a dedução de dobra é simplesmente:</p>
+</div>
+<div class="paragraph">
+<p><em>2 * espessura - larguraPlana = 2 * 3 - 2,75</em> = <strong>3,25</strong> mm</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_não_alterar_nada">Não Alterar Nada</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Quando dobrada <em>sem qualquer processamento de Adaptar Geometria</em>, isso cria uma peça com
+estas dimensões:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom3.png" alt="Dont Change Anything" width="500">
+</div>
+<div class="title">Figure 2. Não Alterar Nada</div>
+</div>
+<div class="paragraph">
+<p>Este também é exatamente o resultado que obtemos com a opção <strong>Não Alterar Nada</strong>.
+Nem o K-factor nem o raio foram alterados, resultando em uma peça 3D que corresponde
+exatamente à intenção de projeto do desenho 2D. Se isso for definido para fabricação, a
+peça fabricada resultante não corresponderá realmente a essas dimensões, principalmente porque a
+dobra produzida na máquina variará tanto em raio quanto em K-factor efetivo em relação à dobra
+que foi projetada. Neste caso, você acabará com uma peça um pouco menor que
+50x50 após a fabricação.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_manter_tamanho_plano">Manter Tamanho Plano</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Se esta opção for escolhida, o TecZone manterá o tamanho do plano inalterado, mas anotará as
+linhas de dobra com o raio de dobra e K-factor corretos. Vamos supor que o raio de dobra correto
+seja 2,5mm e o K-Factor seja 0,46 mm. A peça agora seria primeiro alterada
+internamente para isto:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom4.png" alt="Retain Flat Size" width="550">
+</div>
+<div class="title">Figure 3. Manter Tamanho Plano</div>
+</div>
+<div class="paragraph">
+<p>Observe como o tamanho geral da peça está inalterado (ainda 96,75 mm) e a posição da linha de
+dobra está inalterada. No entanto, a dobra agora tem raio 2,5 e K-factor 0,46, o que significa
+que a largura plana da dobra aumentou para 5,73. Isso agora é dobrado para resultar no
+seguinte:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom5.png" alt="Retain Flat Size2" width="500">
+</div>
+<div class="title">Figure 4. Manter Tamanho Plano2</div>
+</div>
+<div class="paragraph">
+<p>Como você pode ver, a dimensão 2D da peça está inalterada, mas a dimensão 3-D mudou
+para 50,51 x 50,51 (da dimensão de projeto inicial de 50 x 50).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_manter_dimensão_3_d">Manter Dimensão 3-D</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Se esta opção for escolhida, a dimensão 3D da peça permanece inalterada, mas como os raios de dobra
+e K-factors são alterados, a peça desdobrada mudará. Ao começar com um plano 2-D
+(como neste exemplo), o TecZone segue as seguintes etapas.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Dobrar o modelo para 3D, usando a intenção de projeto inicial de raio e K-Factor. Isso
+resultará em um modelo 3D que parece idêntico ao da Figura 2.</p>
+</li>
+<li>
+<p>Agora, alterar o raio para o raio alvo de 2,5mm e o K-factor para o alvo de
+0,46. Isso resultará em um modelo 3D como o abaixo:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom6.png" alt="Retain 3D" width="500">
+</div>
+<div class="title">Figure 5. Manter 3D</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Este modelo é então desdobrado (usando um K-factor de 0,46 para a dobra) para
+resultar no seguinte plano:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom7.png" alt="Retain 3D2" width="550">
+</div>
+<div class="title">Figure 6. Manter 3D2</div>
+</div>
+<div class="paragraph">
+<p>Com esta opção, a dimensão 3D é mantida na dimensão de projeto de 50x50. A
+largura da peça desdobrada mudou de 96,75 para 95,73 mm.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_summary">Summary</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>If the flat has not yet been produced, the best option is typically <strong>Retain
+3-D Dimension</strong></p>
+</li>
+<li>
+<p>If the flat has been produced and cannot be modified, the best option is
+<strong>Retain Flat Size</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Both these options will result in parts where the final manufactured result
+should match the 3D data as seen in the TecZone window. In contrast, the <strong>Don&#8217;t
+Change Anything</strong> option will result in a final manufactured part that will <em>not</em>
+match the 3D data seen in TecZone, since the actual bend radii and K-factors are
+not modeled correctly in the design.</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Observe que isso normalmente é um problema apenas com peças 2-D. As peças 3-D têm um raio de dobra associado a cada dobra, mas ainda não definem um K-factor. É apenas durante o processo de desdobramento que um K-factor precisa ser definido, ditando assim a 'tolerância de dobra' de cada dobra à medida que é desdobrada para o plano.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_não_alterar_nada">Não Alterar Nada</a>
+  </li>
+  <li level="1">
+   <a href="#_manter_tamanho_plano">Manter Tamanho Plano</a>
+  </li>
+  <li level="1">
+   <a href="#_manter_dimensão_3_d">Manter Dimensão 3-D</a>
+  </li>
+  <li level="1">
+   <a href="#_summary">Summary</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="bendtooldxf.html">Ferramenta de dobra DXF</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,11 +54,12 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../cut/index.html">Laser CAM</a>
+   <a href="../../cut/index.html">Laserskæring</a>
    <ul class="hide">
     <li>
      <button class="tree closed"></button>
@@ -145,7 +146,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../bend/index.html">Bukning CAM</a>
+   <a href="../../bend/index.html">Afkantningsmaskine</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">Opret bukningsdata</a></li>
     <li><button class="tree blank"></button><a href="../../bend/navigator.html">Bukningsnavigator</a></li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -212,9 +214,11 @@
      <button class="tree closed"></button>
      <a href="../deposit/index.html">Delaflejring</a>
      <ul class="hide">
-      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Aflejringsmønstre</a></li>
-      <li><button class="tree blank"></button><a href="../deposit/repeat.html">Gentagelse og rækkefølge</a></li>
-      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Separatorplade</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Aflejringsmønstertyper</a></li>
      </ul>
     </li>
     <li>
@@ -223,8 +227,14 @@
      <ul class="hide">
       <li><button class="tree blank"></button><a href="../advanced/waypoints.html">Waypoints</a></li>
       <li><button class="tree blank"></button><a href="../advanced/cellconfig.html">Cellekonfiguration</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/gripperdb.html">Griberdatabase</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/reports.html">Rapporter</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
      </ul>
     </li>
    </ul>
@@ -337,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -358,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -389,16 +400,147 @@
                 <div id="site-toc-left">
                     <article id="article">
                         <h1>Omgribestationspanel</h1>
-
+<div class="paragraph">
+<p>Omgribningsstationer omtales som <strong>RG-Stations</strong> i TecZone.
+<strong>RG-Station</strong> panelet bruges til at konfigurere omgribningsstationerne for en
+bend-cellemaskine.</p>
+</div>
+<div class="paragraph">
+<p>For at få adgang til RG-Stations panelet:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Klik på <strong>RG-Stations</strong> linket fra Pickup panel, Bend panel, Regrip panel eller Deposit panel.</p>
+</li>
+<li>
+<p>Alternativt, klik direkte på en omgribningsstation.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Afhængigt af bukningsoperationen og stationernes positioner viser RG-Stations
+panelet en alfabetindikator (<strong>P, R1, #1, D,</strong> osv.) inden for panelet.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/bendnav.png" alt="Bend navigator" width="510"></span>
+<span class="image"><img src="img/regripstation.png" alt="Omgribningsstation" width="490"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>Flip Part</strong> afkrydsningsfeltet i <strong>Pickup</strong> panelet bruges til at placere delen med vrangen opad i forhold til den nuværende position. Nogle gange er dette nyttigt for at undgå kollisioner mellem nedadvendte flanger og omgribningsstationsarmene. TecZone vil øjeblikkeligt genberegne en ny robotvej, når du vender delen.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Når en omgribningsstation ikke bruges, ser panelet simpelt ud, da delens position ikke kan styres (det afhænger af klemningspositionen for delen mellem stempel og dyse).
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Stations</strong> bruges til at vælge en af stationerne eller til at deaktivere eller aktivere begge stationer.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/stations.png" alt="Stationer" width="128">
+</div>
+</div>
+</li>
+<li>
+<p>Brug <strong>Positions</strong> indstillingerne til at justere stationens positioner på maskinens bundskinner. I billedet vist nedenfor, til venstre er stationerne ikke placeret under delen i begyndelsen.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/rgposition.png" alt="RG-Station position">
+</div>
+</div>
+<div class="paragraph">
+<p>Efter ændring af værdierne i Positions indstillingen er begge stationer placeret, så sugekopperne på RG-Stationen er placeret under delen.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/suction.png" alt="Suge" width="146">
+</div>
+</div>
+<div class="paragraph">
+<p>Indstillingerne i <strong>Suction</strong> sektionen bruges til at konfigurere sugearmene.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Brug <strong>Type</strong> vælgeren til at ændre sugekoptype.</p>
+</li>
+<li>
+<p>Brug <strong>Arm</strong> vælgeren til at vælge en eller alle sugearme. Når den er valgt, identificeres hver arm med dens etiket (A, B, C, osv.).</p>
+</li>
+<li>
+<p>Brug <strong>Angle</strong> indstillingen til at rotere armen rundt (i 5° trin).</p>
+</li>
+<li>
+<p>Brug <strong>Grid</strong> indstillingen til at udvide/trække armen tilbage (i 10 mm trin).</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/sliders.png" alt="Skydere" width="172">
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Du kan også interaktivt ændre vinklen og gitteret ved at trække skyderne individuelt. Sving over en sugearm for at se vinkel- og gitter-skydere.</p>
+</div>
+<div class="paragraph">
+<p>Når <strong>All</strong> arme er valgt, er det ikke muligt at ændre vinklen og gitteret interaktivt.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Vælg sugearmens drifts <strong>state</strong> til <em>off, on,</em> eller <em>removed</em>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/state.png" alt="Tilstand">
+</div>
+</div>
+</li>
+<li>
+<p>Efter at have afsluttet sugeindstillingen, kan du bruge <strong>Copy Right</strong> indstillingen til at bruge den samme opsætning for den anden side af RG-Stationen.</p>
+</li>
+<li>
+<p><strong>Prev</strong> og <strong>Next</strong> linkene vises, hvis der er flere omgribningsoperationer i denne del, og bruges til at navigere mellem dem.</p>
+</li>
+<li>
+<p><strong>Regrip R1</strong> linket bruges til at redigere hvilepositionen af delen på omgribningsstationerne.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Når du rekonfigurerer omgribningsstationen, kontrollerer TecZone for
+kollisioner med delen, robotten, griberen i realtid og opdaterer
+statusindikatorerne øjeblikkeligt.</p>
+</div>
 
                     </article>
                 </div>
                 <div id="site-toc-holder">
-                    <aside id="site-toc">
- <h3>Contents</h3>
- <ul></ul>
-</aside>
-
+                    <aside id="site-toc"></aside>
                 </div>
             </div>
             <nav class="pagination">
@@ -414,7 +556,7 @@
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

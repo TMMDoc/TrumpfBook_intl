@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,6 +54,7 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -197,7 +199,44 @@
       <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Udtagning</a></li>
      </ul>
     </li>
-    <li><button class="tree blank"></button><a href="../bcell/regrip/index.html">Omgribning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Aflejringsmønstertyper</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../bcell/advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
    </ul>
   </li>
   <li>
@@ -308,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -329,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -359,8 +399,11 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Der kan oprettes <em>Bukningsteknologidata</em> for en plademetaldel ved brug af bukningsmodulet.
-Dette kaldes også at <em>klargøre delen til bukning</em>. Lad os antage, at der allerede er <a href="../database/machines.html">installeret en maskine</a>, og at <a href="../database/bendtools.html">værktøjslageret</a>, er konfigureret, og at der er importeret en <a href="../cad/index.html"> CAD-del</a> (2D eller 3D):</p>
+<p>Der kan oprettes <em>Bukningsteknologidata</em> for en plademetaldel ved brug af
+bukningsmodulet. Dette kaldes også at <em>klargøre delen til bukning</em>. Lad os
+antage, at der allerede er <a href="../database/machines.html">installeret en maskine</a>,
+og at <a href="../database/bendtools.html">værktøjslageret</a>, er konfigureret, og at der
+er importeret en <a href="../cad/index.html"> CAD-del</a> (2D eller 3D):</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -373,7 +416,10 @@ Dette kaldes også at <em>klargøre delen til bukning</em>. Lad os antage, at de
 <h2 id="_skift_til_buknings_cam">Skift til buknings-CAM</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Nu kan delen klargøres til bukning ved blot at trykke på tasten <kbd>B</kbd>. Delen er klargjort med <em>standard</em> bukkemaskinen, som er den senest brugte afkantningsmaskine. En klargøringsrækkefølge, bukningsopssætning og målepositioner beregnes alle, og man skulle se et resultat som dette:</p>
+<p>Nu kan delen klargøres til bukning ved blot at trykke på tasten <kbd>B</kbd>. Delen
+er klargjort med <em>standard</em> bukkemaskinen, som er den senest brugte
+afkantningsmaskine. En klargøringsrækkefølge, bukningsopssætning og
+målepositioner beregnes alle, og man skulle se et resultat som dette:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -381,12 +427,14 @@ Dette kaldes også at <em>klargøre delen til bukning</em>. Lad os antage, at de
 </div>
 </div>
 <div class="paragraph">
-<p>Hvis der ikke er fejl, genereres NC-programmet (og muligvis opsætningspladen) til delen også, og gemmes i den output-mappe, der er oprettet til denne maskine.
-Her er et afsnit fra en typisk delopsætning sheet<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> (også kendt som en <em>bukningsrapport</em>).</p>
+<p>Hvis der ikke er fejl, genereres NC-programmet (og muligvis opsætningspladen)
+til delen også, og gemmes i den output-mappe, der er oprettet til denne maskine.
+Her er et afsnit fra en typisk delopsætning
+sheet<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> (også kendt som en <em>bukningsrapport</em>).</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="img/bend-report.png" alt="Bend Report" width="441">
+<img src="img/bendreport.png" alt="Bend Report" width="441">
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -396,7 +444,10 @@ Her er et afsnit fra en typisk delopsætning sheet<sup class="footnote">[<a id="
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Se også panelet <a href="../intro/workflow.html">Arbejdsgang</a>, som kan tilgås ved at trykke på tasten <kbd>W</kbd>. Dette giver mere kontrol over oprettelse af bukningsteknologidata og optioner for at føre delen gennem laser CAM eller nesting.
+Se også panelet <a href="../intro/workflow.html">Arbejdsgang</a>, som kan tilgås ved at
+trykke på tasten <kbd>W</kbd>. Dette giver mere kontrol over oprettelse af
+bukningsteknologidata og optioner for at føre delen gennem laser CAM eller
+nesting.
 </td>
 </tr>
 </table>
@@ -407,42 +458,63 @@ Se også panelet <a href="../intro/workflow.html">Arbejdsgang</a>, som kan tilg�
 <h2 id="_yderligere_arbejdsgange">Yderligere arbejdsgange</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Her er en hurtig oversigt over nogle af de arbejdsgange, der kan udføres, når en del er blevet klargjort til bukning.</p>
+<p>Her er en hurtig oversigt over nogle af de arbejdsgange, der kan udføres, når en
+del er blevet klargjort til bukning.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Klikkes der på<kbd>Spacebar</kbd>, starter en bukningssimulering. Der kan også bruges simuleringskontroller på <strong>Bend Navigator</strong> for at starte, stoppe eller spole simuleringen tilbage:<br>
+<p>Klikkes der på<kbd>Spacebar</kbd>, starter en bukningssimulering. Der kan også
+bruges simuleringskontroller på <strong>Bend Navigator</strong> for at starte, stoppe eller
+spole simuleringen tilbage:<br>
 <span class="image"><img src="img/playsimulation.png" alt="Simulation Controls" width="266"></span></p>
 </li>
 <li>
-<p>Hvis der er nogen advarsler eller fejl, vises de i <a href="navigator.html">Bend Navigator</a>, og man kan se dem og løse dem ved at klikke på de tilsvarende celler:<br>
-<span class="image"><img src="img/die-span.png" alt="Die Span" width="317"></span></p>
+<p>Hvis der er nogen advarsler eller fejl, vises de i <a href="navigator.html">Bend
+Navigator</a>, og man kan se dem og løse dem ved at klikke på de tilsvarende
+celler:<br>
+<span class="image"><img src="img/diespan.png" alt="Die Span" width="317"></span></p>
 </li>
 <li>
-<p>Bukningsværktøjet (stanser og matricer), måleopsætningen eller vinkelmålingsopsætningen kan <a href="editing/index.html">redigeres</a> ved blot at klikke direkte på det pågældende objekt i simuleringsvisningen:<br>
-<span class="image"><img src="img/edit-die.png" alt="Edit Die" width="326"></span></p>
+<p>Bukningsværktøjet (stanser og matricer), måleopsætningen eller
+vinkelmålingsopsætningen kan <a href="editing/index.html">redigeres</a> ved blot at klikke
+direkte på det pågældende objekt i simuleringsvisningen:<br>
+<span class="image"><img src="img/editdie.png" alt="Edit Die" width="326"></span></p>
 </li>
 <li>
-<p>Der kan ændres maskine ved at klikke på maskinnavnet i fanen under delen, og vælge en anden maskine:<br>
+<p>Der kan ændres maskine ved at klikke på maskinnavnet i fanen under delen, og
+vælge en anden maskine:<br>
 <span class="image"><img src="img/changemachine.png" alt="Change Machine" width="598"></span></p>
 </li>
 <li>
-<p>Klik på ikonet <strong>Indstillinger</strong> <span class="image"><img src="img/settings.png" alt="Settings" width="16"></span> på værktøjslinjen til venstre for at redigere yderligere <a href="editing/bendsheet.html">indstillinger</a> for hver bukning (eller for at redigere standardindstillingerne brugt til denne bukkemaskine, eller for hele TecZone Bend applikationen).</p>
+<p>Klik på ikonet <strong>Settings</strong> <span class="image"><img src="img/settings.png" alt="Settings" width="16"></span>
+på værktøjslinjen til venstre for at redigere yderligere
+<a href="editing/bendsheet.html">indstillinger</a> for hver bukning (eller for at redigere
+standardindstillingerne brugt til denne bukkemaskine, eller for hele TecZone Bend
+applikationen).</p>
 </li>
 <li>
-<p>Klik på ikonet <strong>Visning</strong> <span class="image"><img src="img/camera.png" alt="Display" width="16"></span> på venstre værktøjslinje for at redigere visningen af maskinen - der kan tændes eller slukkes for visningen af yderligere komponenter som matriceskinnen, bukningsbjælken og anslagsfingersystemet. Forskellige komponenter kan også gøres <em>gennemsigtige</em>.</p>
+<p>Klik på ikonet <strong>Display</strong> <span class="image"><img src="img/camera.png" alt="Display" width="16"></span> på
+venstre værktøjslinje for at redigere visningen af maskinen - der kan tændes
+eller slukkes for visningen af yderligere komponenter som matriceskinnen,
+bukningsbjælken og anslagsfingersystemet. Forskellige komponenter kan også gøres
+<em>gennemsigtige</em>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Når en bukningsløsning oprettes uden fejl, genereres delens NC-program og en <em>opsætningsplade</em> til bukningen automatisk.</p>
+<p>Når en bukningsløsning oprettes uden fejl, genereres delens NC-program og en
+<em>opsætningsplade</em> til bukningen automatisk.</p>
 </div>
 <div class="paragraph">
-<p>Man kan bruge indstillingssiden <a href="../settings/bendcam/bendoutputs.html">Bend Outputs</a> til at indstille, om delens NC-program og opsætningspladen genereres automatisk, samt til at konfigurere destinationen for disse udgange og formatet for rapporterne.</p>
+<p>Man kan bruge indstillingssiden <a href="../settings/bendcam/bendoutputs.html">Bend
+Outputs</a> til at indstille, om delens NC-program og opsætningspladen genereres
+automatisk, samt til at konfigurere destinationen for disse udgange og formatet
+for rapporterne.</p>
 </div>
 <div class="paragraph">
-<p>Hvis der er genereret kode, er knappen <strong>nc-kode</strong> i venstre værktøjslinje tonet grå:</p>
+<p>Hvis der er genereret kode, er knappen <strong>nc-kode</strong> i venstre værktøjslinje tonet
+grå:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -450,7 +522,9 @@ Se også panelet <a href="../intro/workflow.html">Arbejdsgang</a>, som kan tilg�
 </div>
 </div>
 <div class="paragraph">
-<p>Når der foretages ændringer i delen, bliver denne knap <em>aktiveret</em> igen, NC-programmet kan genereres igen ved at klikke på dette ikon igen (eller ved at trykke på tasten <kbd>C</kbd>).</p>
+<p>Når der foretages ændringer i delen, bliver denne knap <em>aktiveret</em> igen,
+NC-programmet kan genereres igen ved at klikke på dette ikon igen (eller ved at
+trykke på tasten <kbd>C</kbd>).</p>
 </div>
 </div>
 </div>
@@ -491,7 +565,7 @@ Se også panelet <a href="../intro/workflow.html">Arbejdsgang</a>, som kan tilg�
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

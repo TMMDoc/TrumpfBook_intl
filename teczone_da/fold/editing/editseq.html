@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,6 +54,7 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -197,7 +199,44 @@
       <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Udtagning</a></li>
      </ul>
     </li>
-    <li><button class="tree blank"></button><a href="../../bcell/regrip/index.html">Omgribning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Aflejringsmønstertyper</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../bcell/advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
    </ul>
   </li>
   <li>
@@ -308,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -329,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -361,29 +401,58 @@
                     <article id="article">
                         <h1>Ændring af rækkefølgen</h1>
 <div class="paragraph">
-<p>Der er to måder at ændre rækkefølgen, hvorpå sider bearbejdes. En måde er at bruge knappen <strong>Redigér rækkefølge</strong> i <a href="editside.html">Sidepanelet</a> som forklaret ovenfor. Den anden mere enkle metode er simpelthen at trække afsnittet til en ny placering i Falsenavigator.</p>
+<p>Der er to måder at ændre rækkefølgen, hvorpå sider bearbejdes. En måde er at
+bruge knappen <strong>Redigér rækkefølge</strong> i <a href="editside.html">Sidepanelet</a> som forklaret
+ovenfor. Den anden mere enkle metode er simpelthen at trække afsnittet til en ny
+placering i Falsenavigator.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Klik på et falsetal i falsenavigatoren, og træk det for at ændre rækkefølgen. Den side, der klikkes på, definerer det nøjagtige sæt bukninger, der trækkes. Lad os overveje en del som den nedenfor, der har to korte sider og to lange sider. Rækkefølgen i dette tilfælde er L1 L2 C1 C2:<br>
+<p>Klik på et falsetal i falsenavigatoren, og træk det for at ændre rækkefølgen.
+Den side, der klikkes på, definerer det nøjagtige sæt bukninger, der trækkes.
+Lad os overveje en del som den nedenfor, der har to korte sider og to lange
+sider. Rækkefølgen i dette tilfælde er L1 L2 C1 C2:<br>
 <span class="image"><img src="img/sequence1.png" alt="Seq1" width="346"></span></p>
 </li>
 <li>
-<p>Hvis der klikkes på en af bukningerne i side C1 eller side L1, så trækkes hele den <em>korte side</em> eller hele sættet af <em>lange sider</em>. Så hvis man klikker på bukningerne 1 eller 2 (del af L1) eller bukningerne 5 eller 6 (del af C1), så trækker man 4 bukninger. Her er et billede nedenfor, der viser et træk initieret fra bukning 5; vi trækker nu siderne C1 og C2 (bemærk, hvordan bukningerne 5, 6, 7 og 8 er tonet lidt grå og bevæger sig sammen med musen). Vi kan nu droppe dette før siderne L1 og L2, og dermed ændre rækkefølgen til C1 C2 L1 L2.<br>
+<p>Hvis der klikkes på en af bukningerne i side C1 eller side L1, så trækkes hele
+den <em>korte side</em> eller hele sættet af <em>lange sider</em>. Så hvis man klikker på
+bukningerne 1 eller 2 (del af L1) eller bukningerne 5 eller 6 (del af C1), så
+trækker man 4 bukninger. Her er et billede nedenfor, der viser et træk initieret
+fra bukning 5; vi trækker nu siderne C1 og C2 (bemærk, hvordan bukningerne 5, 6,
+7 og 8 er tonet lidt grå og bevæger sig sammen med musen). Vi kan nu droppe
+dette før siderne L1 og L2, og dermed ændre rækkefølgen til C1 C2 L1 L2.<br>
 <span class="image"><img src="img/sequence2.png" alt="Seq2" width="333"></span></p>
 </li>
 <li>
-<p>Hvis vi begynder at trække siderne L2 eller C2, så trækkes kun den side, og vi kunne bruge dette til at blande de to sider C1 og C2 eller siderne L2 og L2. Vi kunne endda bruge dette til at ændre rækkefølgen til noget som L1 C1 C2 L2 (hvilket som regel ikke vil fungere, men kan være nyttigt i nogle særlige tilfælde). Her er et eksempel, hvor vi trækker siden L2 (bemærk, hvordan bukning 3 og 4 er tonet lidt grå, og bevæger sig sammen med musen):<br>
+<p>Hvis vi begynder at trække siderne L2 eller C2, så trækkes kun den side, og vi
+kunne bruge dette til at blande de to sider C1 og C2 eller siderne L2 og L2. Vi
+kunne endda bruge dette til at ændre rækkefølgen til noget som L1 C1 C2 L2
+(hvilket som regel ikke vil fungere, men kan være nyttigt i nogle særlige
+tilfælde). Her er et eksempel, hvor vi trækker siden L2 (bemærk, hvordan bukning
+3 og 4 er tonet lidt grå, og bevæger sig sammen med musen):<br>
 <span class="image"><img src="img/sequence3.png" alt="Seq3" width="333"></span></p>
 </li>
 <li>
-<p>Trækket er designet til at muliggøre det almindelige tilfælde med nem ombytning af de lange og korte sider (CCLL &lt;&#8594; LLCC), samtidig med at det stadig er muligt at ændre rækkefølgen mellem de enkelte sider som C1 og C2. Når rækkefølgen er ændret, beregner TecZone Fold opdateret klargøring, klinger, anslag etc. Det er sandsynligt, at ændringen i rækkefølgen nu kan nødvendiggøre, at ZBW-klinger og ENW-værktøjer skal implementeres (eller det kan medføre, at disse ikke længere er nødvendige). Alle disse ændringer beregnes automatisk.</p>
+<p>Trækket er designet til at muliggøre det almindelige tilfælde med nem
+ombytning af de lange og korte sider (CCLL &lt;&#8594; LLCC), samtidig med at det stadig
+er muligt at ændre rækkefølgen mellem de enkelte sider som C1 og C2. Når
+rækkefølgen er ændret, beregner TecZone Fold opdateret klargøring, klinger, anslag
+etc. Det er sandsynligt, at ændringen i rækkefølgen nu kan nødvendiggøre, at
+ZBW-klinger og ENW-værktøjer skal implementeres (eller det kan medføre, at disse
+ikke længere er nødvendige). Alle disse ændringer beregnes automatisk.</p>
 </li>
 <li>
-<p>Til tider er rækkefølgen valgt på denne måde måske ikke gennemførlig. Overvej for eksempel nedenstående del med 6 bukninger. Bukningerne 1 og 2 er sammensatte bukninger lavet af flere kollineære segmenter. Hvis vi behandler bukninger 4 eller 6 først, så kan vi ikke behandle bukninger 1 eller 2, da enkelte segmenter vil ikke længere være kollineære.<br>
+<p>Til tider er rækkefølgen valgt på denne måde måske ikke gennemførlig. Overvej
+for eksempel nedenstående del med 6 bukninger. Bukningerne 1 og 2 er sammensatte
+bukninger lavet af flere kollineære segmenter. Hvis vi behandler bukninger 4
+eller 6 først, så kan vi ikke behandle bukninger 1 eller 2, da enkelte segmenter
+vil ikke længere være kollineære.<br>
 <span class="image"><img src="img/sequence4.png" alt="Seq4" width="620"></span><br>
-  Hvis man forsøger at ændre rækkefølgen på en sådan måde, at der oprettes en <em>umulig</em> rækkefølge, TecZone Fold ændrer det ikke rækkefølgen, men vil i stedet vise en fejl:<br>
+Hvis man forsøger at ændre rækkefølgen på en sådan måde, at der oprettes en
+<em>umulig</em> rækkefølge, TecZone Fold ændrer det ikke rækkefølgen, men vil i stedet
+vise en fejl:<br>
 <span class="image"><img src="img/sequence5.png" alt="Seq5" width="384"></span></p>
 </li>
 </ul>
@@ -408,7 +477,7 @@
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

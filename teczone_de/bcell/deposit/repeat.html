@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Vorabversion)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -45,7 +45,7 @@
     </li>
     <li>
      <button class="tree closed"></button>
-     <a href="../../cad/3dimport/index.html">3-D-Import</a>
+     <a href="../../cad/3dimport/index.html">3-D Import</a>
      <ul class="hide">
       <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">3D-Modell importieren</a></li>
       <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Baugruppe importieren</a></li>
@@ -54,11 +54,12 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../cad/sketch.html">Ändern der Geometrie</a></li>
+    <li><button class="tree blank"></button><a href="../../cad/attachments.html">Anhänge</a></li>
    </ul>
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../cut/index.html">Laser CAM</a>
+   <a href="../../cut/index.html">Laserschneiden</a>
    <ul class="hide">
     <li>
      <button class="tree closed"></button>
@@ -145,7 +146,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../bend/index.html">Biege-CAM</a>
+   <a href="../../bend/index.html">Abkantpresse</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">Biegeparameter erstellen</a></li>
     <li><button class="tree blank"></button><a href="../../bend/navigator.html">Biegenavigator</a></li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Tonnagekontrolle</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../bend/bendingaids.html">Biegehilfen</a></li>
    </ul>
   </li>
   <li>
@@ -212,9 +214,11 @@
      <button class="tree open"></button>
      <a href="index.html">Teilablage</a>
      <ul>
-      <li><button class="tree blank"></button><a href="patterns.html">Ablagemuster</a></li>
+      <li><button class="tree blank"></button><a href="deposit.html">Ablage-Panel</a></li>
       <li><button class="tree blank"></button><a class="active" href="repeat.html">Wiederholung und Reihenfolge</a></li>
-      <li><button class="tree blank"></button><a href="separatorsheet.html">Separator-Blech</a></li>
+      <li><button class="tree blank"></button><a href="separatorsheet.html">Separator-Bleche hinzufügen</a></li>
+      <li><button class="tree blank"></button><a href="lockpartrest.html">Teil-Ruhelage sperren</a></li>
+      <li><button class="tree blank"></button><a href="patterns.html">Ablagemustertypen</a></li>
      </ul>
     </li>
     <li>
@@ -223,8 +227,14 @@
      <ul class="hide">
       <li><button class="tree blank"></button><a href="../advanced/waypoints.html">Wegpunkte</a></li>
       <li><button class="tree blank"></button><a href="../advanced/cellconfig.html">Zellenkonfiguration</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/gripperdb.html">Greiferdatenbank</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/reports.html">Berichte</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../advanced/gripperdb/index.html">Greiferdatenbank</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../advanced/gripperdb/creategripper.html">Einen Greifer erstellen</a></li>
+        <li><button class="tree blank"></button><a href="../advanced/gripperdb/importgripper.html">Greifer aus DXF importieren</a></li>
+       </ul>
+      </li>
      </ul>
     </li>
    </ul>
@@ -337,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../database/materials.html">Materialien</a></li>
     <li><button class="tree blank"></button><a href="../../database/machines.html">Maschinen</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendtools.html">Biegewerkzeuge</a></li>
+    <li><button class="tree blank"></button><a href="../../database/benddeductions.html">Biegeabzüge</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Biegegreifer</a></li>
-    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Umformungen/Komponenten</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Umformungen und Komponenten</a></li>
    </ul>
   </li>
   <li>
@@ -358,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Unterstützte 3D-Formate</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separator-Blech-DXF</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Biegewerkzeug DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/adaptgeometry.html">Die Funktion „Geometrie anpassen"</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
  </ul>
 </div>
 
@@ -389,21 +400,122 @@
                 <div id="site-toc-left">
                     <article id="article">
                         <h1>Wiederholung und Reihenfolge</h1>
-
+<div class="sect1">
+<h2 id="_wiederholungsraster">Wiederholungsraster</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die oben gezeigten Registerkarten <strong>D1</strong> und <strong>D2</strong> werden verwendet, um die Ausrichtung des
+ersten Teils der Ablage anzugeben. Dann werden die Einstellungen auf der Registerkarte
+Wiederholen verwendet, um dies in ein Raster aus Zeilen (Z), Spalten (X) und Schichten (R)
+zu replizieren. Das nebenstehende Bild zeigt eine Ablage, bei der viele dieser Einstellungen
+von den Standardwerten geändert wurden.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/repeat.png" alt="Repeat">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die <strong>Raster</strong>-Einstellungen werden verwendet, um die Anzahl der Spalten und Zeilen in der
+Ablage festzulegen.</p>
+</li>
+<li>
+<p>Die Einstellung <strong>Layers</strong> gibt an, wie viele Teile in jedem Stapel
+übereinander gestapelt werden.</p>
+</li>
+<li>
+<p>Die Einstellungen <strong>Gap (Z, X)</strong> werden verwendet, um den Abstand zwischen
+aufeinanderfolgenden Spalten oder aufeinanderfolgenden Zeilen anzugeben. Wenn Sie dies auf 0
+setzen, berühren sich die Zeilen oder Spalten genau.</p>
+</li>
+<li>
+<p>Die Einstellungen <strong>Stack shift</strong> werden verwendet, um den
+gesamten Stapel aller Teile von der Mitte der Palette weg zu verschieben.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ablagereihenfolge">Ablagereihenfolge</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="img/sequence.png" alt="Deposit sequence" width="663"></span></p>
+</div>
+<div class="paragraph">
+<p>Die Registerkarte <strong>Reihenfolge</strong> wird verwendet, um die Reihenfolge zu steuern, in der die Teile
+abgelegt werden. Die Einstellungen auf dieser Registerkarte Reihenfolge sind nebenstehend dargestellt.
+In diesem Beispiel gibt es zwei Ablageausrichtungen D1 und D2, und es gibt entsprechend zwei Sätze
+von Reihenfolgeneinstellungen (dies bedeutet, dass Sie D1-Schichten von einer Ecke aus starten können,
+während D2-Schichten von einer anderen Ecke aus starten können).</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Einstellung <strong>Stack</strong> hat zwei Optionen: <strong>By Layer</strong> oder
+<strong>By Pile</strong>. Beim Stapeln nach Schicht würden in diesem Beispiel beide benachbarten
+Stapel gleichzeitig aufgebaut - dies bedeutet, dass aufeinanderfolgende Ablagen in Stapel 1,
+Stapel 2, Stapel 1, Stapel 2 usw. erfolgen würden. Somit steigen beide Stapel gemeinsam in die
+Höhe. Beim Stapeln nach Stapel werden zuerst alle Teile des linken Stapels abgelegt, bevor mit
+dem Platzieren von Teilen im rechten Stapel begonnen wird.</p>
+</li>
+<li>
+<p>Die Einstellungen <strong>Start</strong>-Ecke und <strong>Path</strong> werden
+verwendet, wenn es mehrere Zeilen oder Spalten gibt, und entscheiden, von welcher Ecke aus
+das Stapeln beginnt und ob das Stapeln dann zeilenweise oder spaltenweise fortgesetzt wird.
+Dies kann besonders bei einem außermittigen Greifer nützlich sein, da eine andere Startecke
+eine Kollision zwischen dem Greifer und dem zuvor bereits abgelegten Teil verursachen kann.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/startpath.png" alt="Rear right" width="711"></span> <span class="image"><img src="img/startpath1.png" alt="Rear left" width="711"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Das Bild zeigt ein Beispiel, bei dem wir von der hinteren rechten Ecke aus starten und
+zuerst X ablegen (die Zahlen 1, 2, 3, 4 zeigen die Reihenfolge der Ablagen innerhalb dieser
+Schicht). Wenn wir diese Ablage von der unteren vorderen linken Ecke aus starten würden
+(die Standardeinstellung), hätten wir die Situation, dass beim Ablegen des zweiten Teils in
+der Schicht der Greifer mit dem vorherigen Teil kollidieren würde (da er außermittig über
+die Teilgrenzen hinausragt).</p>
+</li>
+<li>
+<p>Die <strong>Simulieren</strong>-Einstellungen (sowohl das Zahlen-Drehfeld als auch der Schieberegler) können
+verwendet werden, um durch die Ablagen zu blättern und die Reihenfolge zu sehen, in der sie auf
+der Palette erfolgen. Dies ist besonders nützlich beim Anpassen der Startecke und der
+Pfadeinstellungen. Im obigen Bild sehen wir die Ablage von Teil 17 (von 20). Wenn wir den
+Schieberegler nach rechts bewegen (oder den Wert im Eingabefeld Simulieren anpassen), können
+Sie den Greifer in der Position für die Ablagen 18, 19 und 20 anzeigen.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 
                     </article>
                 </div>
                 <div id="site-toc-holder">
                     <aside id="site-toc">
  <h3>Contents</h3>
- <ul></ul>
+ <ul>
+  <li level="1">
+   <a href="#_wiederholungsraster">Wiederholungsraster</a>
+  </li>
+  <li level="1">
+   <a href="#_ablagereihenfolge">Ablagereihenfolge</a>
+  </li>
+ </ul>
 </aside>
 
                 </div>
             </div>
             <nav class="pagination">
- <span class="prev"><a href="patterns.html">Ablagemuster</a></span>
- <span class="next"><a href="separatorsheet.html">Separator-Blech</a></span>
+ <span class="prev"><a href="deposit.html">Ablage-Panel</a></span>
+ <span class="next"><a href="separatorsheet.html">Separator-Bleche hinzufügen</a></span>
 </nav>
 
         </div>
@@ -414,7 +526,7 @@
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

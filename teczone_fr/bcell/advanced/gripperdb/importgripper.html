@@ -1,0 +1,769 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../res/bento.css">
+  <link rel="stylesheet" href="../../../res/site.css">
+  <link rel="stylesheet" href="../../../res/tree.css">
+  <link rel="stylesheet" href="../../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../../img/trumpf-icon.png">
+  <title>Importer un préhenseur depuis DXF</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Version préliminaire)</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../../index.html">Bienvenue dans TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../intro/index.html">Introduction</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../intro/install.html">Installation du logiciel</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/clarity.html">L'interface utilisateur</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/workflow.html">Flux de travail de la pièce</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cad/index.html">CAO</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/2dimport/index.html">Importation 2D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/2dimport/2dcleanup.html">Nettoyage 2D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/3dimport/index.html">Importation 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prep3dmodel.html">Importer un modèle 3D</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prepassembly.html">Importer un assemblage</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/formdetect.html">Identification des formes</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/componentdetect.html">Identification de composants</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../cad/sketch.html">Modification de la géométrie</a></li>
+    <li><button class="tree blank"></button><a href="../../../cad/attachments.html">Pièces jointes</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cut/index.html">Découpe laser</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/partworkflow/index.html">Flux de travail de la pièce</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/partworkflow/panels/index.html">Modification des panneaux</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../../cut/partworkflow/panels/lasercut/index.html">Découpe laser</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/approach.html">Approche</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/withdrawal.html">Retour</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/microjoint.html">Microjonction</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/advanced.html">Avancé</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/contour.html">Contour</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/scrapcut.html">Coupe de chutes</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/part.html">Pièce</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/cornertreatment.html">Usinage d'angle</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/partworkflow/quicknest.html">Imbrication rapide</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/jobworkflow/index.html">Flux de travail de la tâche</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/jobpanel/index.html">Panneau Tâches</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/sheets.html">Onglet Tôles</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/parts.html">Onglet Pièces</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/layouts.html">Onglet Agencements</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/summary.html">Onglet Synthèse</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/editlayout/index.html">Modification de l'agencement</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/nestingmodes.html">Modes d'imbrication</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/placementpanel.html">Panneau Placement</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/sequencing.html">Séquençage</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/slicesheet.html">Tôle en tranches</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/bevelcut/index.html">Coupe biaise</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/opencontours.html">Contours ouverts</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/variablebevel.html">Vague de coupe variable</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/miscellaneous.html">Divers</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/advanced/index.html">Avancé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/finishingrules.html">Règles d'usinage de finition</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/editltt.html">Modification du TTL</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/strategies.html">Stratégie</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/microjoints.html">Microjonctions</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/stability.html">Réglages supplémentaires</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bend/index.html">Presse plieuse</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">Création de paramètres de pliage</a></li>
+    <li><button class="tree blank"></button><a href="../../../bend/navigator.html">Navigateur de pliage</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/editing/index.html">Modification des paramètres de pliage</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editbend.html">Modification d'un pliage</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editmount.html">Modification d'un support d'outil</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editsetup.html">Modification d'une configuration de pliage</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editgauge.html">Modification des doigts de butée</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editacb.html">Modification de la mesure de l'angle</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/bendsheet.html">Feuille de calcul de pliages</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/sequencing.html">Modification de la phase</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/addsetup.html">Ajout de configurations et de stations</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/advanced/index.html">Avancé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/anglemeasurement.html">Mesure de l'angle</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/batchprocess.html">Usinage de lots</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/recompute.html">Recalcul du programme</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">Contrôle du tonnage</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../bend/bendingaids.html">Aides au pliage</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../../index.html">BendMaster CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../../navigator.html">Navigateur de pliage</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../pickup/index.html">Prélèvement de pièces</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../pickup/frompallet.html">Préhension depuis une palette</a></li>
+      <li><button class="tree blank"></button><a href="../../pickup/fromdispenser.html">Prélèvement depuis le distributeur</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bending/index.html">Pliage robotisé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bending/insertion.html">Insertion</a></li>
+      <li><button class="tree blank"></button><a href="../../bending/bending.html">Pliage</a></li>
+      <li><button class="tree blank"></button><a href="../../bending/extraction.html">Extraction</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../regrip/index.html">Reprise de la pièce</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../regrip/regrippanel.html">Panneau de reprise</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/addregrip.html">Ajouter une reprise</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/editregrip.html">Éditer la reprise</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/jawregrip.html">Reprise avec mors</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/rgstationpanel.html">Panneau Stations RG</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../deposit/index.html">Dépôt de pièce</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../deposit/deposit.html">Panneau de dépôt</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/repeat.html">Répétition et séquence</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/separatorsheet.html">Ajouter des tôles de séparation</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/lockpartrest.html">Verrouiller le repos de la pièce</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/patterns.html">Types de modèles de dépôt</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="../index.html">Avancé</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="../waypoints.html">Points de passage</a></li>
+      <li><button class="tree blank"></button><a href="../cellconfig.html">Configuration de cellule</a></li>
+      <li>
+       <button class="tree open"></button>
+       <a href="index.html">Base de données des préhenseurs</a>
+       <ul>
+        <li><button class="tree blank"></button><a href="creategripper.html">Créer un préhenseur</a></li>
+        <li><button class="tree blank"></button><a class="active" href="importgripper.html">Importer un préhenseur depuis DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../fold/index.html">Pliage à plat</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../fold/createfolddata.html">Création de données de plis écrasés</a></li>
+    <li><button class="tree blank"></button><a href="../../../fold/foldview.html">La vue Pli écrasé</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/editing/index.html">Modification des données de pliage</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbend.html">Modification d'un pliage</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editside.html">Modification d'un bord de pli / d'une section</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editseq.html">Modification de la séquence</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbh.html">Modification des serre-flans supérieurs</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editgauge.html">Modification du jaugeage</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editblade.html">Modification des lames</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editload.html">Modification du chargement</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editunload.html">Modification du déchargement</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../fold/toolinventory.html">Stock d'outils</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/advanced/index.html">Avancé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/airgaptables.html">Tableaux d'entrefer personnalisés</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/manualbend.html">Réalisation du pliage manuel</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/minflangelength.html">Longueur de côté requis</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../settings/index.html">Réglages</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/drawing/index.html">Dessin</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/layers.html">Calques</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/dimensions.html">Dimensions</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/view.html">Vue</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/benddefaults.html">Réglages par défaut de la machine</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendoutputs.html">Sorties de pliage</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendview.html">Vue de pliage</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendcell.html">Cellule de pliage</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/layout/index.html">Agencement</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/nesting.html">Réglages d'imbrication</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheet.html">Tôle</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheethandling.html">Manutention des tôles</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/skeletoncuts.html">Coupes de squelettes</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/worksupport.html">Support de travail</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/lasercam/sequence.html">Séquence</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutoutputs.html">Sorties de coupe</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutview.html">Affichage de coupe</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/foldcam/index.html">Pliage à plat</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/defaults.html">Réglages par défaut</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/zbwcarriers.html">Supports d'outils de pliage supplémentaires</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/foldoutputs.html">Sorties</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/reports/index.html">Rapports</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/reports/itemdefaults.html">Valeurs par défaut des éléments</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../settings/importexport.html">Importation/exportation</a></li>
+    <li><button class="tree blank"></button><a href="../../../settings/environment.html">Environnement</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../database/index.html">Base de données</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../database/materials.html">Matériaux</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/machines.html">Machines</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendtools.html">Outils de pliage</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/benddeductions.html">Déductions de pliage</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">Préhenseurs de pliage</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Formes et composants</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../report/index.html">Rapports</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../report/designer.html">Concepteur de rapports</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/fields.html">Champs, images et tableaux</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/bands.html">Sections (sous-rapports)</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/labels.html">Labels, bitmaps et formes</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../appendix/index.html">Annexe</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">Formats 3D pris en charge</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">Tôle de séparation DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">Outil de pliage DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/adaptgeometry.html">La fonctionnalité Adapter la géométrie</a></li>
+   </ul>
+  </li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../../index.html">BendMaster CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="../index.html">Avancé</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Base de données des préhenseurs</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="importgripper.html">Importer un préhenseur depuis DXF</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Importer un préhenseur depuis DXF</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Un préhenseur à ventouses pour les machines BendMaster peut être importé depuis
+un fichier DXF. Le fichier DXF représente la vue de <strong>dessus</strong> du préhenseur (vue
+de dessus signifie depuis les ventouses, PAS depuis le BendMaster). Les entités
+POLYLINE dans le fichier DXF fournissent la forme de la plaque du préhenseur et
+les entités TEXT fournissent des informations supplémentaires sur le préhenseur
+(comme son nom, son épaisseur et le placement des ventouses).</p>
+</div>
+<div class="paragraph">
+<p>Les fichiers au format requis (DXF, ARV ou GEO) peuvent être importés dans la
+base de données de pliage.</p>
+</div>
+<div class="paragraph">
+<p>Pour importer un préhenseur :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ouvrez la <strong>Database</strong> dans TecZone Bend.</p>
+</li>
+<li>
+<p>Sélectionnez l&#8217;option <strong>Bend Grippers</strong> dans la liste.</p>
+</li>
+<li>
+<p>Cliquez sur l&#8217;option <strong>Import&#8230;&#8203;</strong> et sélectionnez un préhenseur en tant que fichier <strong>DXF</strong> depuis le répertoire.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/importgripper.png" alt="Import du préhenseur">
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Voici à quoi ressemble ce préhenseur après l&#8217;importation (montré en deux vues
+depuis le dessous et le dessus).</p>
+</div>
+<div class="paragraph">
+<p><span class="image left"><img src="img/importgripper1.png" alt="Aperçu du préhenseur" width="345"></span><span class="image"><img src="img/importgripper2.png" alt="Aperçu du préhenseur" width="485"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_préhenseur_de_base">Préhenseur de base</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consultez le dessin simple illustré ci-dessous, qui définit un préhenseur et
+peut être enregistré en tant que fichier DXF pour être réimporté dans
+l'<strong>inventaire des préhenseurs</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/basicgripper.png" alt="Préhenseur de base" width="537">
+</div>
+</div>
+<div class="paragraph">
+<p>Voici quelques points importants sur la façon dont le DXF est dessiné :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>L&#8217;origine du dessin (0,0) correspond au centre du poignet du robot. Vous pouvez
+voir cela représenté par un point et un cercle dans la figure. (Le point et le
+cercle ne sont pas vraiment nécessaires pour l&#8217;importation du préhenseur, car le centre du préhenseur est
+implicitement toujours à l&#8217;origine).</p>
+</li>
+<li>
+<p>Ce dessin contient également des entités POINT représentant chacun des emplacements des ventouses.
+Encore une fois, ceux-ci sont principalement pour rendre le dessin plus clair et ne sont
+pas réellement utilisés par l&#8217;importateur de préhenseur (les positions des ventouses sont spécifiées
+par des entités de texte).</p>
+</li>
+<li>
+<p>La forme réelle de la plaque est dessinée sous forme d&#8217;entités POLYLINE fermées. Si vous avez d&#8217;autres
+polylignes à l&#8217;intérieur de celle extérieure, elles deviennent des <strong>trous</strong> dans la plaque.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image left"><img src="img/basicgripper1.png" alt="Aperçu du préhenseur de base" width="350"></span>
+<span class="image"><img src="img/basicgripper2.png" alt="Aperçu du préhenseur de base" width="480"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_préhenseur_à_deux_couches">Préhenseur à deux couches</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Des préhenseurs légèrement plus complexes peuvent être modélisés en utilisant un
+calque <strong>BASEPLATE</strong> séparé. Créez un calque nommé <strong>BASEPLATE</strong> dans le fichier
+DXF, et dessinez des formes POLYLINE fermées dans ce calque. Ensuite, ce calque
+peut avoir des limites d&#8217;extrusion <strong>Z</strong> séparées spécifiées par la clé
+BASEPLATEEXTENT. Les outils nécessaires pour créer et modifier des calques sont
+maintenant ajoutés.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Cliquez sur <strong>Related</strong> lorsqu&#8217;un dessin est en cours de modification.</p>
+</li>
+<li>
+<p>Sélectionnez le menu <strong>Layers</strong> pour ajouter de nouveaux calques, les renommer, définir des couleurs
+et modifier les styles de lignes.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/related.png" alt="Lié" width="571">
+</div>
+</div>
+</li>
+<li>
+<p>Dans le dessin, cliquer sur une entité vous permet de changer le calque de cette entité.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/layer.png" alt="Calque" width="148">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Le calque apparaît dans le panneau des entités uniquement s&#8217;il existe plusieurs calques dans le dessin.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Après avoir modifié le dessin à l&#8217;aide de ces outils, enregistrez le dessin au format DXF. Voici
+un DXF dessiné en utilisant un tel calque <strong>BASEPLATE</strong> (affiché en vert dans l&#8217;image).</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/twolayered.png" alt="Préhenseur à deux couches" width="537">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Pour ce préhenseur, le poignet s&#8217;étend de Z=0 à Z=23. Ensuite, la <strong>plaque de base</strong> (vert)
+s&#8217;étend de Z=23 à Z=40, comme indiqué par la clé <strong>BASEPLATEEXTENT</strong>. Enfin, la
+plaque du préhenseur réelle (tenant les ventouses) s&#8217;étend de Z=40 à Z=63, comme indiqué par la
+clé <strong>PLATEEXTENT</strong>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+La plaque du préhenseur comporte également des trous hexagonaux.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Lorsqu&#8217;il est importé, ce préhenseur ressemble à l&#8217;image ci-dessous :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/twolayered1.png" alt="Aperçu du préhenseur à deux couches" width="500">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_préhenseur_multicouche">Préhenseur multicouche</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Les <strong>Préhenseurs multicouches</strong> sont une version mise à jour du <strong>Préhenseur à
+deux couches</strong> dans laquelle plus de deux couches peuvent être créées et
+importées en utilisant TecZone Bend. Pour utiliser un préhenseur multicouche, le
+DXF devra inclure le texte <strong>VERSION = 2</strong>. Un exemple de préhenseur multicouche
+est montré ci-dessous :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multilayered.png" alt="Préhenseur multicouche" width="537">
+</div>
+</div>
+<div class="paragraph">
+<p>Chaque couche doit être définie avec ses étendues comme <strong>LAYER_1 = 23 : 35</strong>. Les entités
+dans ce calque seront ajoutées à ces étendues. De même, les ventouses sont définies sous la
+forme, <strong>CupNo = X pos, Y pos, [Type de ventouse, Hauteur de montage, Groupe de ventouse]</strong>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Les positions <strong>X</strong> et <strong>Y</strong> sont obligatoires.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Différentes définitions possibles pour les ventouses sont expliquées ci-dessous :</p>
+</div>
+<div class="paragraph">
+<p>CupNo = X pos, Y pos avec le nom de la ventouse spécifié dans CUPNAME comme dans la version précédente<br>
+CupNo = X pos, Y pos, Type de ventouse, où chaque type de ventouse est défini séparément (pour les
+ ventouses ovales, les noms varient avec l&#8217;angle)<br>
+CupNo = X pos, Y pos, Type de ventouse, Hauteur de montage<br>
+CupNo = X pos, Y pos, Type de ventouse, Hauteur de montage, Groupe de ventouse</p>
+</div>
+<div class="paragraph">
+<div class="title">Exemple</div>
+<p><strong>CUP1 = 275, 314, SAOB60x30_90grad_ged, 72, 2</strong></p>
+</div>
+<div class="paragraph">
+<p>Si la hauteur de montage n&#8217;est pas spécifiée, l&#8217;étendue maximale de la plaque
+est considérée par défaut. De même, le groupe de ventouses sera défini sur 1,
+s&#8217;il n&#8217;est pas défini.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Pour le moment, TecZone Bend ne prend pas en charge différentes hauteurs de
+montage pour les ventouses.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Lorsqu&#8217;il est importé, un exemple de préhenseur ressemble à l&#8217;image ci-dessous :</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/multilayer.png" alt="Aperçu du préhenseur multicouche" width="411"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/multilayer1.png" alt="Aperçu du préhenseur multicouche" width="894"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_préhenseur_multicircuit">Préhenseur multicircuit</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vous pouvez créer un préhenseur multicircuit (un préhenseur qui a plusieurs
+circuits de vide indépendants). Pour un tel préhenseur, chaque ventouse se voit
+attribuer un <strong>numéro de groupe</strong> non nul.</p>
+</div>
+<div class="paragraph">
+<p>Attribuez des groupes de ventouses en utilisant un format spécial pour CUP1POS,
+CUP2POS, etc. comme indiqué ci-dessous :</p>
+</div>
+<div class="paragraph">
+<p><strong>CUP1POS = 340,120 #6</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>CUP2POS = 420,140 #8</strong></p>
+</div>
+<div class="paragraph">
+<p>La valeur après le <strong>#</strong> est le numéro de groupe de ventouse pour la ventouse.
+Dans cet exemple, la ventouse 1 est assignée au groupe de ventouse 6, la
+ventouse 2 est assignée au groupe de ventouse 8, et ainsi de suite.</p>
+</div>
+<div class="paragraph">
+<p>Pour qu&#8217;un préhenseur multicircuit soit correctement configuré, <strong>chaque</strong>
+ventouse doit être assignée à un numéro de groupe de ventouse de cette manière.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Le nombre maximum de ventouses pouvant être utilisées dans un préhenseur
+est limité à 100. Si vous importez un préhenseur avec plus de 100 ventouses,
+TecZone affichera un message d&#8217;erreur d&#8217;échec d&#8217;importation.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>L&#8217;image ci-dessous montre quelques exemples de préhenseurs dans la
+base de données <strong>Bend Grippers</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multicircuit.png" alt="Préhenseur multicircuit" width="803">
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_préhenseur_de_base">Préhenseur de base</a>
+  </li>
+  <li level="1">
+   <a href="#_préhenseur_à_deux_couches">Préhenseur à deux couches</a>
+  </li>
+  <li level="1">
+   <a href="#_préhenseur_multicouche">Préhenseur multicouche</a>
+  </li>
+  <li level="1">
+   <a href="#_préhenseur_multicircuit">Préhenseur multicircuit</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="creategripper.html">Créer un préhenseur</a></span>
+ <span class="next"><a href="../../../fold/index.html">Pliage à plat</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../../res/index.js"></script>
+    <script src="../../../res/files.js"></script>
+    <script src="../../../res/site.js"></script>
+
+    
+</body>
+</html>

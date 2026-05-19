@@ -1,0 +1,653 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>De Adapt Geometry-functie</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Voorlopige versie)</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Welkom bij TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">Inleiding</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">De software installeren</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">De gebruikersinterface</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">Stuk-workflow</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">2D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">2D opruimen</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">3-D Import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">3D-model importeren</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">Module importeren</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">Vormdetectie</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">Componentdetectie</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">De geometrie wijzigen</a></li>
+    <li><button class="tree blank"></button><a href="../cad/attachments.html">Bijlagen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Lasersnijden</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Stuk-workflow</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Bewerkingsvensters</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Lasersnijden</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Aanlopen</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Terugslag</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Microjoint</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Geavanceerd</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Contour</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Schrootsnede</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Stuk</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Hoekbehandeling</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Snel nesten</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Job-workflow</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Venster Job</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Tabblad Platen</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Tabblad Stukken</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Tabblad Lay-outs</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Tabblad Overzicht</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Lay-out bewerken</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Nestingmodi</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Plaatsingsvenster</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Volgorde bepalen</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Plaat slicen</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Afschuiningssnede</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Open contouren</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Variabele afschuining</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Diverse</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Geavanceerd</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Afwerkingsregels</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">LTT bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Strategie</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Microjoints</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Verdere instellingen</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Kantbank</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Buigparameters aanmaken</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Buignavigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Buigparameters bewerken</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Een buiging bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Een gereedschapshouder bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Een buigopspanning bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">De achteraanslagen bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Hoekmeting bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Spreadsheet Buigingen</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">De volgorde wijzigen</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Opspanningen en stations toevoegen</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Geavanceerd</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Hoekmeting</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Batchbewerking</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Oplossing opnieuw berekenen</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Tonnagecontrole</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../bend/bendingaids.html">Bending Aids</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Buignavigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Stuk ophalen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Ophalen van pallet</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Ophalen bij houder</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Robotbuigen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Inleggen</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Buigen</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Extractie</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Omgrijpen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Venster Omgrijpen</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Omgrijpen toevoegen</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Omgrijpen bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Omgrijpen met klauw</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Venster RG-stations</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Onderdeel depositie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/deposit.html">Deposit paneel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Herhaling en volgorde</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Scheidingsplaten toevoegen</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/lockpartrest.html">Vergrendel onderdeel-rust</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Depositie patroontypen</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Geavanceerd</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Waypunten</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Celconfiguratie</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../bcell/advanced/gripperdb/index.html">Grijperdatabase</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/creategripper.html">Een grijper maken</a></li>
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/importgripper.html">Grijper importeren vanuit DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">Zwenkbuigen</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Felsgegevens aanmaken</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">De felsweergave</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Felsgegevens bewerken</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Een buiging bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Een zijde/sectie bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">De volgorde wijzigen</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">De blanco-houders bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">De aanslag bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">De messen bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Het laden bewerken</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Het ontladen bewerken</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Gereedschapsvoorraad</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Geavanceerd</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Aangepaste luchtspleettabellen</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Handmatige buiging voltooien</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Vereiste beenlengte</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Instellingen</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Tekening</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Lagen</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Afmetingen</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Weergave</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Buig CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Standaard instellingen van de machine</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Buiguitvoeren</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Buigweergave</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Buigcel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Snij CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Lay-out</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Nestingsinstellingen</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Plaat</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Plaatbehandeling</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Resterende plaatsneden</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Werkondersteuning</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Volgorde</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Snij-uitvoeren</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Snijweergave</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Zwenkbuigen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Standaard instellingen</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">ZBW-dragers</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Uitvoeren</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Rapporten</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Standaard instellingen voor items</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Importeren/exporteren</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Omgeving</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Database</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Materialen</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Machines</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Buiggereedschappen</a></li>
+    <li><button class="tree blank"></button><a href="../database/benddeductions.html">Bend deductions</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Buiggrijpers</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Vormen en componenten</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Rapporten</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Rapportontwerper</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Velden, afbeeldingen en tabellen</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Banden (subrapporten)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Labels, bitmaps en vormen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Bijlage</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="3dformats.html">Ondersteunde 3D-formaten</a></li>
+    <li><button class="tree blank"></button><a href="bseparatordxf.html">Separatorplaat DXF</a></li>
+    <li><button class="tree blank"></button><a href="bendtooldxf.html">Buiggereedschap DXF</a></li>
+    <li><button class="tree blank"></button><a class="active" href="adaptgeometry.html">De Adapt Geometry-functie</a></li>
+   </ul>
+  </li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Bijlage</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="adaptgeometry.html">De Adapt Geometry-functie</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>De Adapt Geometry-functie</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dit document legt de drie verschillende procesopties uit die beschikbaar zijn met de
+Adapt Geometry-functie:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom.png" alt="Adapt Geometry Dialog" width="550">
+</div>
+</div>
+<div class="paragraph">
+<p>De Adapt Geometry-functie wordt aangeroepen wanneer het invoeronderdeel niet
+overeenkomt met de werkelijke procesomstandigheden. Een of beide van deze
+problemen kunnen bestaan met het onderdeel:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>De binnenstraal van de buigingen kan te klein zijn. Elk proces (zoals paneel-buigen of
+kantpers-luchtbuigen) heeft een minimale binnenstraal die mogelijk is met dat
+proces. Als de ontwerpstraal van het onderdeel kleiner is dan dit, kan het onderdeel niet
+worden vervaardigd zoals ontworpen; de straal moet worden gewijzigd.</p>
+</li>
+<li>
+<p>De K-factor van de buiglijn kan onjuist zijn. De procesmachine (paneel-buiger vs
+kantpers) en de procesgereedschappen of -omstandigheden (stempel/matrijs/vouwmes/luchtspeling) bepalen samen
+wat de werkelijke K-factor van de buiging zal zijn. De buiging kan zijn ontworpen
+met een andere K-factor.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Laten we een eenvoudig 2-D onderdeel nemen dat zowel een onjuiste straal als een
+onjuiste K-factor heeft, en kijken hoe de Adapt Geometry-functie dit onderdeel wijzigt.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom2.png" alt="2D Part" width="550">
+</div>
+<div class="title">Figure 1. 2D Part</div>
+</div>
+<div class="paragraph">
+<p>Het 2D-invoeronderdeel wordt hierboven getoond - het is een eenvoudige rechthoek
+met één buiglijn precies in het midden. De onderdeelbreedte is 96,75 mm.
+Materiaaldikte is 2,5 mm.</p>
+</div>
+<div class="paragraph">
+<p>De buiglijn is <em>ontworpen</em> met een binnenstraal van 0,5 en een K-factor van 0,5. De
+platte breedte (lengte van de neutrale lijn) is daarom:</p>
+</div>
+<div class="paragraph">
+<p><em>hoek * (binnenstraal + kFactor * dikte) = PI/2 * (0,5 + 0,5 * 2,5)</em> = <strong>2,75</strong> mm</p>
+</div>
+<div class="paragraph">
+<p>Omdat dit een buiging van 90 graden is, is de buigaftrek eenvoudigweg:</p>
+</div>
+<div class="paragraph">
+<p><em>2 * dikte - platteBreedte = 2 * 3 - 2,75</em> = <strong>3,25</strong> mm</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_niets_wijzigen">Niets wijzigen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wanneer opgevouwen <em>zonder enige Adapt Geometry</em>-verwerking, creëert dit daarom
+een onderdeel met deze afmetingen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom3.png" alt="Dont Change Anything" width="500">
+</div>
+<div class="title">Figure 2. Don&#8217;t Change Anything</div>
+</div>
+<div class="paragraph">
+<p>Dit is ook precies het resultaat dat we krijgen met de optie <strong>Niets wijzigen</strong>.
+Noch de K-factor noch de straal werden gewijzigd, wat resulteert in een
+3D-onderdeel dat precies overeenkomt met het ontwerpvoornemen van de
+2D-tekening. Als dit is ingesteld voor fabricage, zal het resulterende
+gefabriceerde onderdeel niet daadwerkelijk overeenkomen met deze afmetingen,
+voornamelijk omdat de buiging die op de machine wordt geproduceerd zowel in
+straal als effectieve K-factor zal variëren ten opzichte van de buiging die is
+ontworpen. In dit geval eindigt u met een onderdeel dat iets kleiner is dan
+50x50 na fabricage.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_platte_maat_behouden">Platte maat behouden</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Als deze optie wordt gekozen, zal TecZone de grootte van het platte onderdeel
+ongewijzigd houden, maar zal de buiglijnen annoteren met de juiste buigstraal en
+K-factor. Laten we aannemen dat de juiste buigstraal 2,5 mm is en de K-factor
+0,46 mm. Het onderdeel zou nu eerst intern worden gewijzigd in dit:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom4.png" alt="Retain Flat Size" width="550">
+</div>
+<div class="title">Figure 3. Retain Flat Size</div>
+</div>
+<div class="paragraph">
+<p>Merk op hoe de totale onderdeelgrootte ongewijzigd is (nog steeds 96,75 mm) en
+de positie van de buiglijn ongewijzigd is. De buiging heeft nu echter een straal
+van 2,5 en K-factor 0,46, wat betekent dat de platte breedte van de buiging is
+toegenomen tot 5,73. Dit wordt nu opgevouwen om te resulteren in het volgende:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom5.png" alt="Retain Flat Size2" width="500">
+</div>
+<div class="title">Figure 4. Retain Flat Size2</div>
+</div>
+<div class="paragraph">
+<p>Zoals u kunt zien, is de 2D-afmeting van het onderdeel ongewijzigd, maar de
+3-D-afmeting is veranderd in 50,51 x 50,51 (van de oorspronkelijke
+ontwerpafmeting van 50 x 50).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_d_afmeting_behouden">3-D-afmeting behouden</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Als deze optie wordt gekozen, blijft de 3D-afmeting van het onderdeel
+ongewijzigd, maar omdat de buigstralen en K-factoren worden gewijzigd, zal het
+ontvouwen onderdeel veranderen. Bij het beginnen met een 2-D plat (zoals in dit
+voorbeeld), volgt TecZone de volgende stappen.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Vouw het model op naar 3D, met gebruikmaking van het oorspronkelijke
+ontwerpvoornemen van straal en K-factor. Dit zal resulteren in een 3D-model dat
+er identiek uitziet als het model in figuur 2.</p>
+</li>
+<li>
+<p>Wijzig nu de straal naar de doelstraal van 2,5 mm en de K-factor naar de doel van
+0,46. Dit zal resulteren in een 3D-model zoals hieronder:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom6.png" alt="Retain 3D" width="500">
+</div>
+<div class="title">Figure 5. Retain 3D</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Dit model wordt vervolgens ontvouwen (met een K-factor van 0,46 voor de buiging) om te resulteren in het
+volgende platte:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom7.png" alt="Retain 3D2" width="550">
+</div>
+<div class="title">Figure 6. Retain 3D2</div>
+</div>
+<div class="paragraph">
+<p>Met deze optie blijft de 3D-afmeting behouden op de ontwerpafmeting van 50x50. De
+ontvouwen onderdeelbreedte is veranderd van 96,75 naar 95,73 mm.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_samenvatting">Samenvatting</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Als het platte onderdeel nog niet is geproduceerd, is de beste optie doorgaans <strong>3-D-afmeting behouden</strong></p>
+</li>
+<li>
+<p>Als het platte onderdeel is geproduceerd en niet kan worden gewijzigd, is de beste optie <strong>Platte maat behouden</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Beide opties zullen resulteren in onderdelen waarbij het uiteindelijke
+gefabriceerde resultaat moet overeenkomen met de 3D-gegevens zoals te zien in
+het TecZone-venster. Daarentegen zal de optie <strong>Niets wijzigen</strong> resulteren in een
+uiteindelijk gefabriceerd onderdeel dat <em>niet</em> overeenkomt met de 3D-gegevens
+die in TecZone te zien zijn, omdat de werkelijke buigstralen en K-factoren niet
+correct zijn gemodelleerd in het ontwerp.</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Merk op dat dit doorgaans alleen een probleem is bij 2-D onderdelen. 3-D onderdelen hebben een buigstraal die aan elke buiging is gekoppeld, maar definiëren nog geen K-factor. Het is pas tijdens het ontvouwproces dat een K-factor moet worden ingesteld, waarmee de 'buigtoeslag' van elke buiging wordt bepaald terwijl deze naar het vlakke wordt ontvouwd.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_niets_wijzigen">Niets wijzigen</a>
+  </li>
+  <li level="1">
+   <a href="#_platte_maat_behouden">Platte maat behouden</a>
+  </li>
+  <li level="1">
+   <a href="#_3_d_afmeting_behouden">3-D-afmeting behouden</a>
+  </li>
+  <li level="1">
+   <a href="#_samenvatting">Samenvatting</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="bendtooldxf.html">Buiggereedschap DXF</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

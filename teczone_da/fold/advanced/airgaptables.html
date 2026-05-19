@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,6 +54,7 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -197,7 +199,44 @@
       <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Udtagning</a></li>
      </ul>
     </li>
-    <li><button class="tree blank"></button><a href="../../bcell/regrip/index.html">Omgribning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Aflejringsmønstertyper</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../bcell/advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
    </ul>
   </li>
   <li>
@@ -308,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -329,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -361,8 +401,12 @@
                     <article id="article">
                         <h1>Brugertilpassede luftspaltetabeller</h1>
 <div class="paragraph">
-<p>Luftspaltetabellen til en drejebukkemaskine kortlægger en bestemt pladetykkelse til den standardluftspalte, der anvendes under bearbejdningen. Dette er indbygget i hver af de forskellige drejebukkemaskiner, men kan tilsidesættes ved at levere en brugertilpasset luftspaltetabel i form af en JSON-fil.
-Denne JSON-fil er betegnet air-gap-tables.json og er placeret i <code>C:\ProgramData\Trumpf{APPNAME}\Data\System</code>.</p>
+<p>Luftspaltetabellen til en drejebukkemaskine kortlægger en bestemt pladetykkelse
+til den standardluftspalte, der anvendes under bearbejdningen. Dette er
+indbygget i hver af de forskellige drejebukkemaskiner, men kan tilsidesættes ved
+at levere en brugertilpasset luftspaltetabel i form af en JSON-fil. Denne
+JSON-fil er betegnet air-gap-tables.json og er placeret i
+<code>C:\ProgramData\Trumpf{APPNAME}\Data\System</code>.</p>
 </div>
 <div class="paragraph">
 <p>Nedenfor er der en typisk air-gap-tables.json-fil:</p>
@@ -423,16 +467,30 @@ Denne JSON-fil er betegnet air-gap-tables.json og er placeret i <code>C:\Program
 <div class="ulist">
 <ul>
 <li>
-<p>Filen indeholder en samling luftspalteværdier. Hver tabel har en maskine og materialetast, der fungerer som vælgere.</p>
+<p>Filen indeholder en samling luftspalteværdier. Hver tabel har en maskine og
+materialetast, der fungerer som vælgere.</p>
 </li>
 <li>
-<p>Disse taster er enten indstillet til * (stjerne) for at angive et jokertegn (matcher alt), eller de er en kommasepareret liste over maskin- eller materialeværdier.</p>
+<p>Disse taster er enten indstillet til * (stjerne) for at angive et jokertegn
+(matcher alt), eller de er en kommasepareret liste over maskin- eller
+materialeværdier.</p>
 </li>
 <li>
-<p>I eksemplet ovenfor er der tre tabeller. Den første bruges til maskinerne 112001 eller 112003, kun for materialet DC01. Den anden bruges til alle materialer, tik maskinen 112003, og den tredje bruges til alle maskiner, til materialet Alluminio.Hvis flere tabeller eventuelt matcher delens maskin-/materialekombination, anvendes den første matchende tabel. Så for maskinen 112003, materiale DC01, bruges den første tabel (selvom den anden også passer).</p>
+<p>I eksemplet ovenfor er der tre tabeller. Den første bruges til maskinerne
+112001 eller 112003, kun for materialet DC01. Den anden bruges til alle
+materialer, tik maskinen 112003, og den tredje bruges til alle maskiner, til
+materialet Alluminio.Hvis flere tabeller eventuelt matcher delens
+maskin-/materialekombination, anvendes den første matchende tabel. Så for
+maskinen 112003, materiale DC01, bruges den første tabel (selvom den anden også
+passer).</p>
 </li>
 <li>
-<p>Hver tabel består af et simpelt udvalg af tykkelsestaster med de tilsvarende luftspalteværdier. For eksempel bør den første indtastning ovenfor fortolkes som: Hvis tykkelsen er mindre end eller lig med 0,75 mm, brug en spalte på 2,5 mm. Tykkelsestasterne skal være i stigende rækkefølge. Hvis ingen af tabellerne i denne fil matcher den aktuelle dels materiale- og tykkelsekombination, vil standard luftspaltetabel for maskinen blive brugt.</p>
+<p>Hver tabel består af et simpelt udvalg af tykkelsestaster med de tilsvarende
+luftspalteværdier. For eksempel bør den første indtastning ovenfor fortolkes
+som: Hvis tykkelsen er mindre end eller lig med 0,75 mm, brug en spalte på 2,5
+mm. Tykkelsestasterne skal være i stigende rækkefølge. Hvis ingen af tabellerne
+i denne fil matcher den aktuelle dels materiale- og tykkelsekombination, vil
+standard luftspaltetabel for maskinen blive brugt.</p>
 </li>
 </ul>
 </div>
@@ -443,7 +501,8 @@ Denne JSON-fil er betegnet air-gap-tables.json og er placeret i <code>C:\Program
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Hvis der foretages ændringer i filen air-gap-tables.json, skal TecZone Fold genstartes, før disse ændringer træder i kraft.
+Hvis der foretages ændringer i filen air-gap-tables.json, skal TecZone Fold
+genstartes, før disse ændringer træder i kraft.
 </td>
 </tr>
 </table>
@@ -455,7 +514,9 @@ Hvis der foretages ændringer i filen air-gap-tables.json, skal TecZone Fold gen
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Hvis JSON-filen er fejlbehæftet, vil der blive vist en fejl, når man forsøger at bearbejde en drejebukkemaskinedel, men TecZone Fold vil derefter vende tilbage til at bruge standard luftspaltetabellen for maskinen, og vil fortsætte.
+Hvis JSON-filen er fejlbehæftet, vil der blive vist en fejl, når man
+forsøger at bearbejde en drejebukkemaskinedel, men TecZone Fold vil derefter vende
+tilbage til at bruge standard luftspaltetabellen for maskinen, og vil fortsætte.
 </td>
 </tr>
 </table>
@@ -480,7 +541,7 @@ Hvis JSON-filen er fejlbehæftet, vil der blive vist en fejl, når man forsøger
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

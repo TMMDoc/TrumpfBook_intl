@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,6 +54,7 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../../../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -197,7 +199,44 @@
       <li><button class="tree blank"></button><a href="../../../bcell/bending/extraction.html">Udtagning</a></li>
      </ul>
     </li>
-    <li><button class="tree blank"></button><a href="../../../bcell/regrip/index.html">Omgribning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/patterns.html">Aflejringsmønstertyper</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../bcell/advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
    </ul>
   </li>
   <li>
@@ -308,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../../../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -329,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -367,13 +407,24 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Når en laserdel klargøres (se <a href="../../partworkflow/index.html">Delarbejdsgang</a>), beregner TecZone Laser en <strong>Bukningsfølge</strong> i hvilken klargøringen til delen skal skæres. På et grundlæggende niveau skal huller i delen skæres ud først, før den udvendige kontur skæres.</p>
+<p>Når en laserdel klargøres (se <a href="../../partworkflow/index.html">Delarbejdsgang</a>),
+beregner TecZone Laser en <strong>sequence</strong> i hvilken klargøringen til
+delen skal skæres. På et grundlæggende niveau skal huller i delen skæres ud
+først, før den udvendige kontur skæres.</p>
 </div>
 <div class="paragraph">
-<p>Når et layout sammensættes enten af indlejringsmaskinen eller interaktivt ved at tilføje eller redigere dele i et layout, beregner TecZone Laser en rækkefølge, i hvilken al klargøring på tværs af alle dele i layoutet bearbejdes. En almindelig option er, at klargøring bearbejdes <em>del for del</em> (den indre klargøring og den udvendige kontur af en del skæres, før man går videre til næste del). Der er ligeledes andre rækkefølgeoptioner, og disse kan kontrolleres ved brug af indstillingerne <a href="../../../settings/cutcam/lasercam/sequence.html">Laserrækkefølge</a>.</p>
+<p>Når et layout sammensættes enten af indlejringsmaskinen eller interaktivt ved at
+tilføje eller redigere dele i et layout, beregner TecZone Laser en rækkefølge, i
+hvilken al klargøring på tværs af alle dele i layoutet bearbejdes. En almindelig
+option er, at klargøring bearbejdes <em>del for del</em> (den indre klargøring og den
+udvendige kontur af en del skæres, før man går videre til næste del). Der er
+ligeledes andre rækkefølgeoptioner, og disse kan kontrolleres ved brug af
+indstillingerne
+<a href="../../../settings/cutcam/lasercam/sequence.html">Laserrækkefølge</a>.</p>
 </div>
 <div class="paragraph">
-<p>Denne automatisk beregnede rækkefølge (enten for en del eller for et layout) kan inspiceres eller ændres ved brug af <strong>Rækkefølgenavigator</strong>.</p>
+<p>Denne automatisk beregnede rækkefølge (enten for en del eller for et layout) kan
+inspiceres eller ændres ved brug af <strong>Rækkefølgenavigator</strong>.</p>
 </div>
 </div>
 </div>
@@ -381,7 +432,9 @@
 <h2 id="_rækkefølgenavigator">Rækkefølgenavigator</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Rækkefølgenavigator</strong> vises langs højre kant af TecZone Laser vinduet, når der arbejdes med en laserdel eller et layout. Den kan skiftes mellem åben og lukket med tasten <kbd>Z</kbd>.</p>
+<p><strong>Rækkefølgenavigator</strong> vises langs højre kant af TecZone Laser vinduet, når der
+arbejdes med en laserdel eller et layout. Den kan skiftes mellem åben og lukket
+med tasten <kbd>Z</kbd>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -389,21 +442,35 @@
 </div>
 </div>
 <div class="paragraph">
-<p>På dette billede bruges rækkefølgenavigatoren til at redigere rækkefølgen af et layout. Her er der beregnet en del for del rækkefølge, og man kan se den rækkefølge i hvilken delene skal bearbejdes.</p>
+<p>På dette billede bruges rækkefølgenavigatoren til at redigere rækkefølgen af et
+layout. Her er der beregnet en del for del rækkefølge, og man kan se den
+rækkefølge i hvilken delene skal bearbejdes.</p>
 </div>
 <div class="paragraph">
-<p>Man kan <em>åbne</em> en af disse delknuder (som <strong>1 (lyly) 4</strong> knuden er blevet åbnet), og man kan derefter se de individuelle laserkæringer inden for den del. Laserskæringen, der er klikket på (markeret med rækkefølgenummer <strong>66</strong> på billedet), er fremhævet med blåt. Al den klargøring, hvor der er udført skæring, vises udfyldt i hvidt eller lyserødt (de lyserøde udfyldninger indikerer, at klargøringen er ustabil og kan falde gennem oplægningsskinnerne).</p>
+<p>Man kan <em>åbne</em> en af disse delknuder (som <strong>1 (lyly) 4</strong> knuden er blevet åbnet),
+og man kan derefter se de individuelle laserkæringer inden for den del.
+Laserskæringen, der er klikket på (markeret med rækkefølgenummer <strong>66</strong> på
+billedet), er fremhævet med blåt. Al den klargøring, hvor der er udført skæring,
+vises udfyldt i hvidt eller lyserødt (de lyserøde udfyldninger indikerer, at
+klargøringen er ustabil og kan falde gennem oplægningsskinnerne).</p>
 </div>
 <div class="paragraph">
-<p>Skæringslinjen fra den <em>forrige</em> klargøring til den valgte, og også gennemgangslinjen fra denne klargøring til den <em>næste</em> vises begge for kontekst.</p>
+<p>Skæringslinjen fra den <em>forrige</em> klargøring til den valgte, og også
+gennemgangslinjen fra denne klargøring til den <em>næste</em> vises begge for kontekst.</p>
 </div>
 <div class="sect2">
 <h3 id="_omarrangering_af_klargøring">Omarrangering af klargøring</h3>
 <div class="paragraph">
-<p>Der kan klikkes på en knude, der repræsenterer en fuld del, eller en knude, der repræsenterer en individuel laserskæring og trække den op eller ned for at omarrangere klargøringen. Når det gøres, beregnes og opdateres <strong>Traverse time</strong> med det samme, og vises nederst i rækkefølgenavigatoren. Man kan vende tilbage til den originale rækkefølge ved at klikke på ikonet <strong>Revert all changes</strong> i rækkefølgenavigatoren.</p>
+<p>Der kan klikkes på en knude, der repræsenterer en fuld del, eller en knude, der
+repræsenterer en individuel laserskæring og trække den op eller ned for at
+omarrangere klargøringen. Når det gøres, beregnes og opdateres <strong>Traverse time</strong>
+med det samme, og vises nederst i rækkefølgenavigatoren. Man kan vende tilbage
+til den originale rækkefølge ved at klikke på ikonet <strong>Revert all changes</strong>
+i rækkefølgenavigatoren.</p>
 </div>
 <div class="paragraph">
-<p>Knappen <strong>Interaktiv rækkefølge</strong> kan også bruges til at ændre rækkefølgen af klargøringen:</p>
+<p>Knappen <strong>Interaktiv rækkefølge</strong> kan også bruges til at ændre rækkefølgen af
+klargøringen:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -411,7 +478,11 @@
 </div>
 </div>
 <div class="paragraph">
-<p>For at oprette en rækkefølge skal der blot laves et <strong><kbd>Ctrl</kbd>+Klik</strong> på tallene i den rækkefølge, i hvilken de skal bearbejdes. Ofte skal der ændres en lokaliseret del af rækkefølgen, og det er også muligt. I illustrationen nedenfor ønskes rækkefølgen bevaret indtil element 8 og derefter kun ændre den del, der kommer efter.</p>
+<p>For at oprette en rækkefølge skal der blot laves et <strong><kbd>Ctrl</kbd>+Klik</strong> på tallene
+i den rækkefølge, i hvilken de skal bearbejdes. Ofte skal der ændres en
+lokaliseret del af rækkefølgen, og det er også muligt. I illustrationen nedenfor
+ønskes rækkefølgen bevaret indtil element 8 og derefter kun ændre den del, der
+kommer efter.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -419,10 +490,17 @@
 </div>
 </div>
 <div class="paragraph">
-<p>For at gøre det nemt, kan der først klikkes på <strong>8</strong> (uden at holde <kbd>Ctrl</kbd> nede) og rækkefølgen indtil det punkt accepteres (vist som grå cirkler). Derefter laves der et <kbd>Ctrl</kbd>+Klik på efterfølgende numre for at tilføje dem til rækkefølgen i den orden. Man kan se en modificeret rækkefølge blive indstillet af de efterfølgende klik ovenfor.</p>
+<p>For at gøre det nemt, kan der først klikkes på <strong>8</strong> (uden at holde <kbd>Ctrl</kbd>
+nede) og rækkefølgen indtil det punkt accepteres (vist som grå cirkler).
+Derefter laves der et <kbd>Ctrl</kbd>+Klik på efterfølgende numre for at tilføje dem
+til rækkefølgen i den orden. Man kan se en modificeret rækkefølge blive
+indstillet af de efterfølgende klik ovenfor.</p>
 </div>
 <div class="paragraph">
-<p>Man kan også blot tegne en grov linje, der angiver den omtrentlige <em>gennemstrømning</em> langs hvilken delene skal skæres. For at gøre dette laves der et <kbd>Alt</kbd>+Klik på pladen og musen trækkes for at oprette en kurve (vist på billedet nedenfor til venstre).</p>
+<p>Man kan også blot tegne en grov linje, der angiver den omtrentlige
+<em>gennemstrømning</em> langs hvilken delene skal skæres. For at gøre dette laves der
+et <kbd>Alt</kbd>+Klik på pladen og musen trækkes for at oprette en kurve (vist på
+billedet nedenfor til venstre).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -430,7 +508,9 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Efter rækkefølgekurven er tegnet færdig, klik endnu en gang, og delene vil derefter blive ordnet i rækkefølge for at følge det spor, der er tegnet (som vist på billedet ovenfor til højre).</p>
+<p>Efter rækkefølgekurven er tegnet færdig, klik endnu en gang, og delene vil
+derefter blive ordnet i rækkefølge for at følge det spor, der er tegnet (som
+vist på billedet ovenfor til højre).</p>
 </div>
 </div>
 <div class="sect2">
@@ -441,13 +521,18 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Indikatoren <strong>Advarsler</strong> nederst vises, hvis der er nogen advarsler. Klik på denne indikator gentagne gange for at fremhæve hver af advarslerne.</p>
+<p>Indikatoren <strong>Warnings</strong> nederst vises, hvis der er nogen advarsler. Klik
+på denne indikator gentagne gange for at fremhæve hver af advarslerne.</p>
 </div>
 <div class="paragraph">
-<p>Indikatoren for <strong>vippekonturer</strong> viser de konturer, der muligvis kan falde gennem oplægningsskinnerne. Klik på denne indikator gentagne gange for at fremhæve alle konturer, der kan vippe.</p>
+<p>Indikatoren for <strong>vippekonturer</strong> viser de konturer, der muligvis kan falde gennem
+oplægningsskinnerne. Klik på denne indikator gentagne gange for at fremhæve alle
+konturer, der kan vippe.</p>
 </div>
 <div class="paragraph">
-<p>Her er de andre symboler, der vises i rækkefølgenavigatoren. De bruges til at justere den hierarkiske visning af klargøringselementer, simulere rækkefølgen og justere den på andre måder.</p>
+<p>Her er de andre symboler, der vises i rækkefølgenavigatoren. De bruges til at
+justere den hierarkiske visning af klargøringselementer, simulere rækkefølgen og
+justere den på andre måder.</p>
 </div>
 <table class="tableblock frame-all grid-all fit-content">
 <colgroup>
@@ -590,7 +675,7 @@
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

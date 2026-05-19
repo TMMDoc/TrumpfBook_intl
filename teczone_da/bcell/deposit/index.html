@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,11 +54,12 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../cut/index.html">Laser CAM</a>
+   <a href="../../cut/index.html">Laserskæring</a>
    <ul class="hide">
     <li>
      <button class="tree closed"></button>
@@ -145,7 +146,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../bend/index.html">Bukning CAM</a>
+   <a href="../../bend/index.html">Afkantningsmaskine</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">Opret bukningsdata</a></li>
     <li><button class="tree blank"></button><a href="../../bend/navigator.html">Bukningsnavigator</a></li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -212,9 +214,11 @@
      <button class="tree open"></button>
      <a class="active" href="index.html">Delaflejring</a>
      <ul>
-      <li><button class="tree blank"></button><a href="patterns.html">Aflejringsmønstre</a></li>
-      <li><button class="tree blank"></button><a href="repeat.html">Gentagelse og rækkefølge</a></li>
-      <li><button class="tree blank"></button><a href="separatorsheet.html">Separatorplade</a></li>
+      <li><button class="tree blank"></button><a href="deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="patterns.html">Aflejringsmønstertyper</a></li>
      </ul>
     </li>
     <li>
@@ -223,8 +227,14 @@
      <ul class="hide">
       <li><button class="tree blank"></button><a href="../advanced/waypoints.html">Waypoints</a></li>
       <li><button class="tree blank"></button><a href="../advanced/cellconfig.html">Cellekonfiguration</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/gripperdb.html">Griberdatabase</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/reports.html">Rapporter</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
      </ul>
     </li>
    </ul>
@@ -337,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -358,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -385,21 +396,85 @@
                 <div id="site-toc-left">
                     <article id="article">
                         <h1>Delaflejring</h1>
-
+<div class="paragraph">
+<p>Efter bukningen er afsluttet, aflejres den færdige del på en palle eller
+transportør, eller kastes i en kurv. Forskellige indstillinger bruges til at
+styre denne aflejringsoperation:</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="img/depositpallet.png" alt="Aflejringspanel" width="350"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Positionen, typen og orienteringen af aflejringspallen</p>
+</li>
+<li>
+<p>Gitteret af dele på pallen (rækker, kolonner, lag)</p>
+</li>
+<li>
+<p>Orienteringen af delen på pallen</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Disse indstillinger styres hovedsageligt fra <strong>Deposit</strong> panelet og
+også fra <strong>Pallet</strong> panelet, der understøtter aflejringen. Her er hvordan
+disse paneler tilgås:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Klik på aflejringspallen (eller transportør, eller kurv) for at åbne <strong>Pallet</strong> panelet og navigere <span class="icon"><i class="fa fa-arrow-up"></i></span> til <strong>Deposit D1</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/bendnav.png" alt="Bend navigator" width="200">
+</div>
+</div>
+</li>
+<li>
+<p>Klik to gange på cellerne som <strong>D1</strong>, <strong>D2</strong> osv. på <strong>bend navigator</strong> for at åbne <strong>Deposit</strong> panelet.</p>
+</li>
+<li>
+<p>Klik på en af de færdige dele, der ligger på aflejringspallen, for at åbne <strong>Deposit</strong> panelet.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Derudover har disse to paneler navigationslinks (<span class="icon"><i class="fa fa-arrow-left"></i></span> <span class="icon"><i class="fa fa-arrow-up"></i></span> <span class="icon"><i class="fa fa-arrow-down"></i></span> <span class="icon"><i class="fa fa-arrow-right"></i></span>), der fører til hinanden.</p>
+</div>
+<div class="paragraph">
+<p>Vi vil yderligere diskutere delaflejringsindstillingerne, der bruges fra emnerne nedenfor:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="deposit.html">Aflejringspanel</a></p>
+</li>
+<li>
+<p><a href="repeat.html">Gentagelse og sekvens</a></p>
+</li>
+<li>
+<p><a href="separatorsheet.html">Tilføj separatorplader</a></p>
+</li>
+<li>
+<p><a href="lockpartrest.html">Lås del-hvile</a></p>
+</li>
+<li>
+<p><a href="patterns.html">Aflejringsmønstertyper</a></p>
+</li>
+</ul>
+</div>
 
                     </article>
                 </div>
                 <div id="site-toc-holder">
-                    <aside id="site-toc">
- <h3>Contents</h3>
- <ul></ul>
-</aside>
-
+                    <aside id="site-toc"></aside>
                 </div>
             </div>
             <nav class="pagination">
  <span class="prev"><a href="../regrip/rgstationpanel.html">Omgribestationspanel</a></span>
- <span class="next"><a href="patterns.html">Aflejringsmønstre</a></span>
+ <span class="next"><a href="deposit.html">Aflejringspanel</a></span>
 </nav>
 
         </div>
@@ -410,7 +485,7 @@
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

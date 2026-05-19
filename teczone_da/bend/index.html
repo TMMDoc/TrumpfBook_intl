@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,6 +54,7 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -197,7 +199,44 @@
       <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Udtagning</a></li>
      </ul>
     </li>
-    <li><button class="tree blank"></button><a href="../bcell/regrip/index.html">Omgribning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Aflejringsmønstertyper</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../bcell/advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
    </ul>
   </li>
   <li>
@@ -308,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -329,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -352,25 +392,35 @@
                 <div id="site-toc-left">
                     <article id="article">
                         <h1>Afkantningsmaskine</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>En metalplade <em>flad</em> kan bukkes til dens endelige form ved brug af en afkantningsmaskine. Her er nogle af de opgaver TecZone Bend gør, når den bruges til at programmere disse maskiner:</p>
+<p>En metalplade <em>flad</em> kan bukkes til dens endelige form ved brug af en
+afkantningsmaskine. Her er nogle af de opgaver TecZone Bend gør, når den bruges til
+at programmere disse maskiner:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Beregn en gennemførlig og optimal <strong>bukningsfølge</strong>, der undgår kollisioner, og minimerer deles omdrejninger eller vendinger.</p>
+<p>Beregn en gennemførlig og optimal <strong>bukningsfølge</strong>, der undgår kollisioner, og
+minimerer deles omdrejninger eller vendinger.</p>
 </li>
 <li>
-<p>Sammensæt <strong>værktøjsstationer</strong> til bukning fra den tilgængelige beholdning af bukningsværktøjer ved brug af stanser, matricer, adaptere og forlængere efter behov.</p>
+<p>Sammensæt <strong>værktøjsstationer</strong> til bukning fra den tilgængelige beholdning af
+bukningsværktøjer ved brug af stanser, matricer, adaptere og forlængere efter
+behov.</p>
 </li>
 <li>
-<p>Beregn <strong>målesteder</strong>, hvor anslagsfingre kan positioneres for at justere delen til bukning.</p>
+<p>Beregn <strong>målesteder</strong>, hvor anslagsfingre kan positioneres for at justere delen
+til bukning.</p>
 </li>
 <li>
-<p>Konfigurér specielt udstyr som <strong>vinkelmåling</strong> eller <strong>bukningsstøttehjælp</strong>, som afkantningsmaskinen kan være udstyret med.</p>
+<p>Konfigurér specielt udstyr som <strong>vinkelmåling</strong> eller <strong>bukningsstøttehjælp</strong>, som
+afkantningsmaskinen kan være udstyret med.</p>
 </li>
 <li>
-<p>Generér et <strong>NC-program</strong>, der kan overføres til afkantningsmaskinen til bearbejdning.</p>
+<p>Generér et <strong>NC-program</strong>, der kan overføres til afkantningsmaskinen til
+bearbejdning.</p>
 </li>
 <li>
 <p>Generer rapporter såsom (<strong>Opsætningsplader</strong>) til bukningsprocessen.</p>
@@ -378,13 +428,25 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>I tillæg hertil har TecZone Bend også modulet <a href="../fold/index.html">Falsning</a>, der understøtter drejebukkemaskiner, og modulet <a href="../bcell/index.html">Robotstyret bukning</a>, der understøtter robotstyrede afkantningsmaskiner (hvor en robot bruges til at udføre delhåndteringen).</p>
+<p>I tillæg hertil har TecZone Bend også modulet <a href="../fold/index.html">Falsning</a>, der
+understøtter drejebukkemaskiner, og modulet <a href="../bcell/index.html">Robotstyret
+bukning</a>, der understøtter robotstyrede afkantningsmaskiner (hvor en robot
+bruges til at udføre delhåndteringen).</p>
 </div>
 <div class="paragraph">
-<p>TecZone Bend inkorporerer algoritmer og heuristik til automatisk beregning af bukningsløsningen, og i de fleste tilfælde bør der kræves lidt eller ingen indgriben. Dog byder TecZone Bend også på et rigt sæt værktøjer og arbejdsgange til interaktivt at ændre bukningsfølgen, værktøjsopsætninger, målepositioner og hver parameter i bukningsprocessen.</p>
+<p>TecZone Bend inkorporerer algoritmer og heuristik til automatisk beregning af
+bukningsløsningen, og i de fleste tilfælde bør der kræves lidt eller ingen
+indgriben. Dog byder TecZone Bend også på et rigt sæt værktøjer og arbejdsgange til
+interaktivt at ændre bukningsfølgen, værktøjsopsætninger, målepositioner og hver
+parameter i bukningsprocessen.</p>
 </div>
 <div class="paragraph">
-<p>I takt med disse redigeringer foretages, udføres forskellige kontroller (inklusive en hel række kontroller af kollisioner og gennemførlighed) i realtid, og resultaterne af redigeringerne kan altid ses, mens der arbejdes, uden der skal anmodes om en <em>genberegning</em>.</p>
+<p>I takt med disse redigeringer foretages, udføres forskellige kontroller
+(inklusive en hel række kontroller af kollisioner og gennemførlighed) i realtid,
+og resultaterne af redigeringerne kan altid ses, mens der arbejdes, uden der
+skal anmodes om en <em>genberegning</em>.</p>
+</div>
+</div>
 </div>
 <div class="sect1">
 <h2 id="_kom_godt_i_gang">Kom godt i gang</h2>
@@ -396,16 +458,30 @@
 <ul>
 <li>
 <p>Alle moduler i TecZone Bend deler en brugerinteraktionsmodel kaldet <strong>Clarity</strong> interface.
-Gennemgå afsnittet om <a href="../intro/clarity.html">Clarity interface</a>, når der startes op med TecZone Bend.</p>
+Gennemgå afsnittet om <a href="../intro/clarity.html">Clarity interface</a>, når der
+startes op med TecZone Bend.</p>
 </li>
 <li>
-<p>Der kan installeres bukningsmaskiner fra <a href="../database/machines.html">Maskindatabasen</a>, og de kan <em>konfigureres</em> til at matche de faktiske maskiner, der er tilgængelige på værkstedsgulvet.</p>
+<p>Der kan installeres bukningsmaskiner fra
+<a href="../database/machines.html">Maskindatabasen</a>, og de kan <em>konfigureres</em> til at
+matche de faktiske maskiner, der er tilgængelige på værkstedsgulvet.</p>
 </li>
 <li>
-<p>Man kan bruge databasen <a href="../database/bendtools.html">Bukningsværktøjer</a> til at installere <em>værktøjskataloger</em>, importere specialværktøjer og konfigurere lagerbeholdningen af bukningsværktøjer, så det matcher det, der faktisk er tilgængeligt på værkstedsgulvet.</p>
+<p>Man kan bruge databasen <a href="../database/bendtools.html">Bukningsværktøjer</a> til at
+installere <em>værktøjskataloger</em>, importere specialværktøjer og konfigurere
+lagerbeholdningen af bukningsværktøjer, så det matcher det, der faktisk er
+tilgængeligt på værkstedsgulvet.</p>
 </li>
 <li>
-<p>Udgangspunktet for alle CAM-moduler er <a href="../cad/index.html">CAD-data</a>, og man kan få disse CAD-filer ved at importere 2D- eller 3D-data, eller endda ved at <em>tegne</em> dem ved brug af værktøjerne <a href="../cad/sketch.html">Skitse</a>, der er integreret i TecZone Bend.</p>
+<p>Udgangspunktet for alle CAM-moduler er <a href="../cad/index.html">CAD-data</a>, og man
+kan få disse CAD-filer ved at importere 2D- eller 3D-data, eller endda ved at
+<em>tegne</em> dem ved brug af værktøjerne <a href="../cad/sketch.html">Skitse</a>, der er
+integreret i TecZone Bend.</p>
+</li>
+<li>
+<p>Man kan bruge databasen <a href="../database/bendtools.html">Bukningsværktøjer</a> til at
+importere <em>specialværktøjer</em>, og til at konfigurere lagerbeholdningen af disse
+værktøjer, så det matcher det, der faktisk er tilgængeligt på værkstedsgulvet.</p>
 </li>
 </ul>
 </div>
@@ -415,13 +491,19 @@ Gennemgå afsnittet om <a href="../intro/clarity.html">Clarity interface</a>, n�
 <div class="ulist">
 <ul>
 <li>
-<p>Man kan bruge de forskellige <a href="editing/index.html">Redigeringspaneler</a> til direkte at klikke på og redigere attributter såsom værktøjsindstilling eller måling.</p>
+<p>Man kan bruge de forskellige <a href="editing/index.html">Redigeringspaneler</a> til
+direkte at klikke på og redigere attributter såsom værktøjsindstilling eller
+måling.</p>
 </li>
 <li>
-<p><a href="navigator.html">Bend Navigator</a> kan bruges som et <em>dashboard</em> til hurtigt at se og redigere status for hele bukningen. Klik på en advarsels- eller fejlcelle her fører til kilden til problemet, hvilket derefter kan rettes interaktivt.</p>
+<p><a href="navigator.html">Bend Navigator</a> kan bruges som et <em>dashboard</em> til hurtigt at
+se og redigere status for hele bukningen. Klik på en advarsels- eller fejlcelle
+her fører til kilden til problemet, hvilket derefter kan rettes interaktivt.</p>
 </li>
 <li>
-<p>Afsnittet <a href="advanced/index.html">Avanceret</a> beskriver yderligere arbejdsgange for bukningsteknologien, herunder <strong>Genberegning</strong> af løsningen med modificerede indstillinger og <strong>Batchbearbejdning</strong>.</p>
+<p>Afsnittet <a href="advanced/index.html">Avanceret</a> beskriver yderligere arbejdsgange
+for bukningsteknologien, herunder <strong>Genberegning</strong> af løsningen med modificerede
+indstillinger og <strong>Batchbearbejdning</strong>.</p>
 </li>
 </ul>
 </div>
@@ -455,7 +537,7 @@ Gennemgå afsnittet om <a href="../intro/clarity.html">Clarity interface</a>, n�
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

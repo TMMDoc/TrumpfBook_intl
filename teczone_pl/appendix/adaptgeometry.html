@@ -1,0 +1,651 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>Funkcja Adapt Geometry</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Wersja wstępna)</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Witamy w TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">Wstęp</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">Instalowanie oprogramowania</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">Interfejs użytkownika</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">Przepływ pracy dla detalu</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">Import 2-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">Czyszczenie 2-D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">Import 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">Importuj model 3D</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">Importuj zespół</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">Wykrywanie formy</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">Wykrywanie podzespołów</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">Modyfikowanie geometrii</a></li>
+    <li><button class="tree blank"></button><a href="../cad/attachments.html">Załączniki</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Cięcie laserowe</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Przepływ pracy dla detalu</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Edycja paneli</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Cięcie laserowe</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Najazd</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Wycofanie</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Mikropołączenie</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Zagadnienia zaawansowane</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Cięcie wióru</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Detal</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Wykańczanie narożników</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Szybkie układanie</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Przepływ pracy w ramach zadania</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Panel zadań</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Zakładka Arkusze</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Zakładka Detale</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Zakładka Układy</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Karta Podsumowanie</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Edytuj układ</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Tryby układania</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Panel rozmieszczenia</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Sekwencjonowanie</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Wycinek arkusza</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Ukosowanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Otwarte kontury</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Ukos zmienny</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Informacje różne</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Reguły wykańczania</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">Edytuj LTT</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Strategia</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Mikropołączenia</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Dalsze ustawienia</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">Wykrywanie linii (DetectLine)</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Prasa krawędziowa</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Utwórz dane gięcia</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Nawigator gięcia</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Edycja danych gięcia</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Edycja gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Edycja uchwytu narzędziowego</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Edycja konfiguracji gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Edycja tylnych zderzaków</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Edycja pomiaru kąta</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Arkusz gięć</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Zmiana kolejności</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Dodawanie ustawień i stacji</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Pomiar kąta</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Proces obróbki partii</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Przelicz dane rozwiązania</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Kontrola tonażu</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../bend/bendingaids.html">Bending Aids</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Nawigator gięcia</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Odbiór detalu</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Odbiór z palety</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Odbiór z dozownika</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Gięcie zrobotyzowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Wkładanie</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Gięcie</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Ekstrakcja</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Przechwytywanie</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Panel przechwytów</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Dodaj przechwyt</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Edytuj przechwyt</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Przechwyt za pomocą szczęki</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Panel stacji RG</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Składowanie części</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/deposit.html">Panel Deposit</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Powtarzanie i sekwencja</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Dodawanie arkuszy separacyjnych</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/lockpartrest.html">Zablokuj spoczynek części</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Typy wzorców odkładania</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Punkty trasy</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Konfiguracja komórki</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../bcell/advanced/gripperdb/index.html">Baza danych chwytaków</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/creategripper.html">Utwórz chwytak</a></li>
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/importgripper.html">Importuj chwytak z DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">Gięcie na zaginarce</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Utwórz dane składania</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">Widok Składanie</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Edycja danych składania</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Edycja gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Edycja boku/sekcji</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">Zmiana kolejności w sekwencji</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">Edycja dociskaczy półfabrykatu</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Edycja przymiaru</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">Edycja noży</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Edytuj ładowanie</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Edycja rozładunku</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Magazyn narzędzi</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Zagadnienia zaawansowane</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Niestandardowe tabele szczelin powietrznych</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Zakończenie gięcia ręcznego</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Wymagana długość kołnierza</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Ustawienia</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Rysunek</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Warstwy</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Wymiary</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Widok</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Gięcie CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Ustawienia domyślne maszyny</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Dane wyjściowe gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Widok gięcia</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Komórka gięcia</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Cięcie CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Układ</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Ustawienia gniazda</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Arkusz</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Obsługa arkuszy</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Cięcia w szkielecie</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Wsparcie pracy</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Sekwencja</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Dane wyjściowe cięcia</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Widok cięcia</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Gięcie na zaginarce</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Ustawienia domyślne</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">Podajniki ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Dane wyjściowe</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Raporty</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Wartości domyślne pozycji</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Importowanie/Eksportowanie</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Otoczenie</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Baza danych</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Materiały</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Maszyny</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Narzędzia do gięcia</a></li>
+    <li><button class="tree blank"></button><a href="../database/benddeductions.html">Bend deductions</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Chwytaki do gięcia</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Formy i komponenty</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Raporty</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Projektant raportów</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Pola, zdjęcia i tabele</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Raporty szczegółowe</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Etykiety, mapy bitowe i kształty</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Załącznik</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="3dformats.html">Obsługiwane formaty 3D</a></li>
+    <li><button class="tree blank"></button><a href="bseparatordxf.html">DXF arkusza separatora</a></li>
+    <li><button class="tree blank"></button><a href="bendtooldxf.html">Narzędzie do gięcia DXF</a></li>
+    <li><button class="tree blank"></button><a class="active" href="adaptgeometry.html">Funkcja Adapt Geometry</a></li>
+   </ul>
+  </li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Załącznik</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="adaptgeometry.html">Funkcja Adapt Geometry</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Funkcja Adapt Geometry</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Niniejszy dokument wyjaśnia trzy różne opcje procesu dostępne w funkcji Adapt
+Geometry:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom.png" alt="Adapt Geometry Dialog" width="550">
+</div>
+</div>
+<div class="paragraph">
+<p>Funkcja Adapt Geometry jest wywoływana, gdy część wejściowa nie odpowiada
+rzeczywistym warunkom procesu. Z częścią mogą wystąpić jeden lub oba z tych
+problemów:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Promień wewnętrzny gięć może być zbyt mały. Każdy proces (taki jak gięcie panelowe lub
+gięcie powietrzne na prasie krawędziowej) będzie miał minimalny promień wewnętrzny, który jest możliwy przy tym
+procesie. Jeśli promień projektowy części jest mniejszy niż ten, część nie może zostać
+wyprodukowana zgodnie z projektem; promień będzie musiał zostać zmieniony.</p>
+</li>
+<li>
+<p>Współczynnik K linii gięcia może być nieprawidłowy. Maszyna procesowa (giętarka panelowa vs
+prasa krawędziowa) oraz narzędzia lub warunki procesu (stempel/matryca/nóż do składania/szczelina powietrzna)
+łącznie dyktują, jaki będzie rzeczywisty współczynnik K gięcia. Gięcie może być zaprojektowane
+z innym współczynnikiem K.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Weźmy prostą część 2-D, która ma zarówno nieprawidłowy promień, jak i
+nieprawidłowy współczynnik K, i zobaczmy, jak funkcja Adapt Geometry modyfikuje tę część.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom2.png" alt="2D Part" width="550">
+</div>
+<div class="title">Figure 1. 2D Part</div>
+</div>
+<div class="paragraph">
+<p>Część wejściowa 2D jest pokazana powyżej - jest to prosty prostokąt z jedną linią gięcia dokładnie
+w środku. Szerokość części wynosi 96,75 mm. Grubość materiału wynosi 2,5 mm</p>
+</div>
+<div class="paragraph">
+<p>Linia gięcia została <em>zaprojektowana</em> z promieniem wewnętrznym 0,5 i współczynnikiem K 0,5.
+szerokość płaska (długość linii neutralnej) wynosi zatem:</p>
+</div>
+<div class="paragraph">
+<p><em>kąt * (promieniWewnętrzny + kFactor * grubość) = PI/2 * (0,5 + 0,5 * 2,5)</em> = <strong>2,75</strong> mm</p>
+</div>
+<div class="paragraph">
+<p>Ponieważ jest to gięcie o 90 stopni, odliczenie gięcia wynosi po prostu:</p>
+</div>
+<div class="paragraph">
+<p><em>2 * grubość - szerokośćPłaska = 2 * 3 - 2,75</em> = <strong>3,25</strong> mm</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_nie_zmieniaj_niczego">Nie zmieniaj niczego</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Po złożeniu <em>bez żadnego przetwarzania Adapt Geometry</em> tworzy to zatem część o
+tych wymiarach:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom3.png" alt="Dont Change Anything" width="500">
+</div>
+<div class="title">Figure 2. Don&#8217;t Change Anything</div>
+</div>
+<div class="paragraph">
+<p>To jest również dokładnie wynik, który otrzymujemy z opcją <strong>Nie zmieniaj
+niczego</strong>. Ani współczynnik K, ani promień nie zostały zmienione, co skutkuje
+częścią 3D, która odpowiada dokładnie zamierzonemu projektowi rysunku 2D. Jeśli
+zostanie to ustawione do produkcji, wynikowa wyprodukowana część nie będzie
+faktycznie odpowiadać tym wymiarom, głównie dlatego, że gięcie wykonane na
+maszynie będzie się różnić zarówno promieniem, jak i efektywnym współczynnikiem
+K od gięcia, które zostało zaprojektowane. W tym przypadku skończysz z częścią,
+która jest nieco mniejsza niż 50x50 po produkcji.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_zachowaj_rozmiar_płaski">Zachowaj rozmiar płaski</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Jeśli ta opcja zostanie wybrana, TecZone zachowa niezmieniony rozmiar części
+płaskiej, ale oznaczy linie gięcia prawidłowym promieniem gięcia i
+współczynnikiem K. Załóżmy, że prawidłowy promień gięcia wynosi 2,5 mm, a
+współczynnik K wynosi 0,46 mm. Część zostanie teraz najpierw zmieniona
+wewnętrznie na to:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom4.png" alt="Retain Flat Size" width="550">
+</div>
+<div class="title">Figure 3. Retain Flat Size</div>
+</div>
+<div class="paragraph">
+<p>Zwróć uwagę, jak całkowity rozmiar części jest niezmieniony (nadal 96,75 mm), a
+pozycja linii gięcia jest niezmieniona. Jednak gięcie ma teraz promień 2,5 i
+współczynnik K 0,46, co oznacza, że szerokość płaska gięcia wzrosła do 5,73.
+Jest to teraz składane, aby uzyskać następujący wynik:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom5.png" alt="Retain Flat Size2" width="500">
+</div>
+<div class="title">Figure 4. Retain Flat Size2</div>
+</div>
+<div class="paragraph">
+<p>Jak widać, wymiar 2D części jest niezmieniony, ale wymiar 3-D zmienił się na
+50,51 x 50,51 (z początkowego wymiaru projektowego 50 x 50).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_zachowaj_wymiar_3_d">Zachowaj wymiar 3-D</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Jeśli ta opcja zostanie wybrana, wymiar 3D części jest niezmieniony, ale
+ponieważ promienie gięcia i współczynniki K zostały zmienione, rozłożona część
+ulegnie zmianie. Zaczynając od płaskiej części 2-D (jak w tym przykładzie), TecZone
+wykonuje następujące kroki.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Złóż model do 3D, używając początkowego zamiaru projektowego promienia i współczynnika K. Spowoduje to
+powstanie modelu 3D, który wygląda identycznie jak ten na rysunku 2.</p>
+</li>
+<li>
+<p>Teraz zmień promień na docelowy promień 2,5 mm i współczynnik K na docelowy
+0,46. Spowoduje to powstanie modelu 3D takiego jak poniżej:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom6.png" alt="Retain 3D" width="500">
+</div>
+<div class="title">Figure 5. Retain 3D</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ten model jest następnie rozkładany (przy użyciu współczynnika K 0,46 dla gięcia), aby uzyskać
+następną płaską część:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom7.png" alt="Retain 3D2" width="550">
+</div>
+<div class="title">Figure 6. Retain 3D2</div>
+</div>
+<div class="paragraph">
+<p>Przy tej opcji wymiar 3D jest zachowany na wymiarze projektowym 50x50.
+szerokość rozłożonej części zmieniła się z 96,75 na 95,73 mm.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_podsumowanie">Podsumowanie</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Jeśli część płaska nie została jeszcze wyprodukowana, najlepszą opcją jest
+zazwyczaj <strong>Zachowaj wymiar 3-D</strong></p>
+</li>
+<li>
+<p>Jeśli część płaska została wyprodukowana i nie może zostać zmodyfikowana,
+najlepszą opcją jest <strong>Zachowaj rozmiar płaski</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Obie te opcje spowodują powstanie części, w których końcowy wyprodukowany wynik
+powinien odpowiadać danym 3D widocznym w oknie TecZone. W przeciwieństwie do tego,
+opcja <strong>Nie zmieniaj niczego</strong> spowoduje powstanie końcowej wyprodukowanej części,
+która <em>nie</em> będzie odpowiadać danym 3D widocznym w TecZone, ponieważ rzeczywiste
+promienie gięcia i współczynniki K nie są poprawnie zamodelowane w projekcie.</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Należy zauważyć, że jest to zazwyczaj problem tylko w przypadku części 2-D. Części 3-D mają promień gięcia związany z każdym gięciem, ale nie definiują jeszcze współczynnika K. Dopiero podczas procesu rozkładania należy ustawić współczynnik K, dyktując w ten sposób „naddatek na gięcie" każdego gięcia w miarę rozkładania go na płasko.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_nie_zmieniaj_niczego">Nie zmieniaj niczego</a>
+  </li>
+  <li level="1">
+   <a href="#_zachowaj_rozmiar_płaski">Zachowaj rozmiar płaski</a>
+  </li>
+  <li level="1">
+   <a href="#_zachowaj_wymiar_3_d">Zachowaj wymiar 3-D</a>
+  </li>
+  <li level="1">
+   <a href="#_podsumowanie">Podsumowanie</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="bendtooldxf.html">Narzędzie do gięcia DXF</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

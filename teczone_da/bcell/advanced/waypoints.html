@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,11 +54,12 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../cut/index.html">Laser CAM</a>
+   <a href="../../cut/index.html">Laserskæring</a>
    <ul class="hide">
     <li>
      <button class="tree closed"></button>
@@ -145,7 +146,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../bend/index.html">Bukning CAM</a>
+   <a href="../../bend/index.html">Afkantningsmaskine</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">Opret bukningsdata</a></li>
     <li><button class="tree blank"></button><a href="../../bend/navigator.html">Bukningsnavigator</a></li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -212,9 +214,11 @@
      <button class="tree closed"></button>
      <a href="../deposit/index.html">Delaflejring</a>
      <ul class="hide">
-      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Aflejringsmønstre</a></li>
-      <li><button class="tree blank"></button><a href="../deposit/repeat.html">Gentagelse og rækkefølge</a></li>
-      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Separatorplade</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Aflejringsmønstertyper</a></li>
      </ul>
     </li>
     <li>
@@ -223,8 +227,14 @@
      <ul>
       <li><button class="tree blank"></button><a class="active" href="waypoints.html">Waypoints</a></li>
       <li><button class="tree blank"></button><a href="cellconfig.html">Cellekonfiguration</a></li>
-      <li><button class="tree blank"></button><a href="gripperdb.html">Griberdatabase</a></li>
-      <li><button class="tree blank"></button><a href="reports.html">Rapporter</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
      </ul>
     </li>
    </ul>
@@ -337,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -358,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -389,14 +400,366 @@
                 <div id="site-toc-left">
                     <article id="article">
                         <h1>Waypoints</h1>
-
+<div class="sect1">
+<h2 id="_oversigt">Oversigt</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hver bevægelse af BendMaster består af <strong>waypoints</strong>, som
+passeres en efter den anden. Alle waypoints for en bevægelse bestemmes af
+TecZone, men de fleste af dem kan justeres. Punkter, der er direkte relateret
+til sporingen under bukningsprocessen, kan ikke ændres. Forskellige
+indstillinger, der bruges til at styre waypoints, er angivet nedenfor:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Skift positionen af et waypoint</p>
+</li>
+<li>
+<p>Indsæt et nyt waypoint eller fjern et eksisterende waypoint</p>
+</li>
+<li>
+<p>Juster bevægelsesegenskaber såsom hastighed og interpolation</p>
+</li>
+<li>
+<p>Tilføj et nyt waypoint på ønsket position</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For at få adgang til Waypoints panelet:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Klik direkte på robotskinnen</p>
+</li>
+<li>
+<p>Klik på <strong>Waypoints</strong> linket fra Pickup panel, Bend panel, Regrip panel eller Deposit panel.</p>
+</li>
+<li>
+<p>Klik på waypoints linket i enhver af RG-Stations panelet</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/waypointspanel.png" alt="Waypoints Panel" width="483">
+</div>
+<div class="title">Figure 1. Waypoint panel</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bendnav.png" alt="Bend navigator" width="588">
+</div>
+<div class="title">Figure 2. Bend navigator paneler</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/waypointrg.png" alt="RG-station" width="318">
+</div>
+<div class="title">Figure 3. RG-Stations panel</div>
+</div>
+<h2 id="_waypoints_panel" class="discrete">Waypoints panel</h2>
+<div class="imageblock right">
+<div class="content">
+<img src="img/waypoints.png" alt="Waypoints" width="150">
+</div>
+</div>
+<div class="paragraph">
+<p>Et typisk waypoints panel vises ved siden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Phase</strong> skyderen viser trin-for-trin bevægelsen af et waypoint. Hver fase afspejler en bestemt robotoperation som pickup, bend, regrip og deposit.</p>
+</li>
+<li>
+<p>Brug <strong>Display</strong> indstillingen til at se:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>grip point</p>
+</li>
+<li>
+<p>wrist point</p>
+</li>
+<li>
+<p>robot axes.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Positionen og vinklen af håndleddet eller griberen vises og kan redigeres. Hvis robotakserne er valgt, vises robotaksernes værdier og kan redigeres.</p>
+</li>
+<li>
+<p>Det gule spor viser stien fra det tidligere trin til dette, og fra dette trin til det næste (se billede nedenfor). De 3 små trekanter angiver de lokale X og Y koordinater for robotten (håndled eller griber).</p>
+</li>
+<li>
+<p><strong>Simulate</strong> skyderen bruges til at flytte simuleringen fra den tidligere fase til den næste fase. Hvis denne er i midten, er det den faktiske fase, vi redigerer.</p>
+</li>
+<li>
+<p><strong>Interpolate</strong> indstillingen bruges til at skifte mellem lineær og akseorienterede interpolationer.</p>
+</li>
+<li>
+<p><strong>Speed</strong> og <strong>Rounding</strong> indstillingerne bruges til at redigere hastigheden og nøjagtighedsindstillingen for dette trin.</p>
+</li>
+<li>
+<p><strong>Regrip stations</strong> feltet bruges til at ændre positionen af regrip-stationer langs dens akse.</p>
+</li>
+<li>
+<p><strong>Insert</strong> indstillingen bruges til at oprette et nyt waypoint ved at indtaste nye værdier. Nyligt tilføjede waypoints kan fjernes ved <strong>Remove</strong> indstillingen.</p>
+</li>
+<li>
+<p>Brug <strong>Prev</strong> og <strong>Next</strong> knapperne til at gå til de
+næste eller tidligere trin (eller du kan også bruge Venstre og Højre
+piletasterne). Klik på <strong>Next</strong> knappen vil vise hvert trin i en
+fase. I slutningen af fasen vises det næste tilsvarende waypoint panel.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_egenskaber_for_waypoints">Egenskaber for waypoints</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Afhængigt af processens tilstand gives hvert waypoint et sæt attributter
+vedrørende typen af interpolation, hastigheden og bevægelsens præcision. Om
+nødvendigt kan disse attributter ændres.</p>
+</div>
+<div class="paragraph">
+<p>Disse indstillinger styres i den avancerede sektion af waypoint panelet.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 1. Interpolate</caption>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Interpolate type</th>
+<th class="tableblock halign-left valign-top">Beskrivelse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linear</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lineær bevægelse af TCP langs en sti</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Axis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bevægelsen fra startpositionen til slutpositionen er så hurtig som muligt, uanset stien.<br>
+Ingen TCP lineær bevægelse.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 2. Speed</caption>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Speed type</th>
+<th class="tableblock halign-left valign-top">Beskrivelse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimal hastighed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fast</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">75% af maksimal hastighed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">50% af maksimal hastighed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reduced</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30% af maksimal hastighed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Slow</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20% af maksimal hastighed</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 3. Rounding</caption>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Rounding type</th>
+<th class="tableblock halign-left valign-top">Beskrivelse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Afrunding starter ved 50% af den kortere stilængde</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Large</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Afrunding starter ved 35% af den kortere stilængde</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Afrunding starter ved 20% af den kortere stilængde</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reduced</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Afrunding starter ved 10% af den kortere stilængde</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Afrunding starter ved 5% af den kortere stilængde</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exact</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kalibreringspunktet nærmes nøjagtigt uden overlejring</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="img/waypointpath.png" alt="Waypoint sti" width="300">
+</div>
+</div>
+<div class="olist callouts">
+<ol class="callouts">
+<li>
+<p>Stilængde mellem waypoint-punktet og slutpunktet</p>
+</li>
+<li>
+<p>Udført længde</p>
+</li>
+<li>
+<p>Stilængde mellem startpunktet og waypoint</p>
+</li>
+<li>
+<p>Waypoint 3 (slutpunkt)</p>
+</li>
+<li>
+<p>Waypoint 2 (afrundingspunkt)</p>
+</li>
+<li>
+<p>Waypoint 1 (startpunkt)</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vis_waypoints">Vis waypoints</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Når en bukkningsdel er værktøjet, beregnes alle waypoints automatisk for hver
+bevægelsesfase. Disse punkter kan simuleres fase for fase med en tilsvarende
+beskrivelse.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/displaywaypoint1.png" alt="Waypoints fase" width="326">
+</div>
+</div>
+<div class="paragraph">
+<p>Nedenfor viser billeder waypoint-faserne for den første bukningsoperation (i
+sidevisning):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/displaywaypoint.png" alt="Waypoints fase" width="871">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_modificer_waypoints">Modificer waypoints</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Et waypoints placering kan ændres, hvis det er nødvendigt, for eksempel for at
+forhindre at gå over aksen.</p>
+</div>
+<div class="paragraph">
+<p>Blandt andre aspekter vedrørende kollisions undgåelse kan uønskede waypoints
+elimineres, eller nye waypoints kan tilføjes.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Når en eksisterende waypoint-position ændres, viser TecZone en advarselsmeddelelse. Klik <strong>OK</strong> for at fortsætte med at ændre waypoint.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/waypointcaution.png" alt="Waypoint advarsel" width="542">
+</div>
+</div>
+</li>
+<li>
+<p>Klik på Insert-knappen vil tilføje nye waypoints.</p>
+<div class="paragraph">
+<p><span class="image"><img src="img/modifywaypoint1.png" alt="Ændr waypoint" width="399"></span> <span class="image"><img src="img/modifywaypoint2.png" alt="Tilføj fjern waypoint" width="393"></span></p>
+</div>
+</li>
+<li>
+<p>Nyligt tilføjede waypoints er angivet med +1,+2, osv., i fasenavnet som vist nedenfor:</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/modifywaypoint3.png" alt="Modificer waypoints" width="316">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_simulér_waypoints">Simulér waypoints</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Som standard er simulate skyderen i midterpositionen.
+Bevægelsen af robotten fra et waypoint til det andet simuleres problemfrit ved
+hjælp af denne skyder.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/simulatewaypoint1.png" alt="Simulér" width="200">
+</div>
+</div>
+</div>
+</div>
 
                     </article>
                 </div>
                 <div id="site-toc-holder">
                     <aside id="site-toc">
  <h3>Contents</h3>
- <ul></ul>
+ <ul>
+  <li level="1">
+   <a href="#_oversigt">Oversigt</a>
+  </li>
+  <li level="1">
+   <a href="#_egenskaber_for_waypoints">Egenskaber for waypoints</a>
+  </li>
+  <li level="1">
+   <a href="#_vis_waypoints">Vis waypoints</a>
+  </li>
+  <li level="1">
+   <a href="#_modificer_waypoints">Modificer waypoints</a>
+  </li>
+  <li level="1">
+   <a href="#_simulér_waypoints">Simulér waypoints</a>
+  </li>
+ </ul>
 </aside>
 
                 </div>
@@ -414,7 +777,7 @@
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

@@ -1,0 +1,755 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../res/bento.css">
+  <link rel="stylesheet" href="../../../res/site.css">
+  <link rel="stylesheet" href="../../../res/tree.css">
+  <link rel="stylesheet" href="../../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../../img/trumpf-icon.png">
+  <title>DXF에서 그리퍼 가져오기</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/사전 출시 버전)</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../../index.html">TecZone 애플리케이션에 오신 것을 환영합니다</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../intro/index.html">소개</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../intro/install.html">소프트웨어 설치하기</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/clarity.html">사용자 인터페이스</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/workflow.html">파트 워크플로</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/2dimport/index.html">2D 가져오기</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/2dimport/2dcleanup.html">2D 정리</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/3dimport/index.html">3D 가져오기</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prep3dmodel.html">3D 모델 가져오기</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prepassembly.html">조립품 가져오기</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/formdetect.html">성형부 인식</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/componentdetect.html">부품 인식</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../cad/sketch.html">형상 변경하기</a></li>
+    <li><button class="tree blank"></button><a href="../../../cad/attachments.html">첨부 파일</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cut/index.html">레이저 절단</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/partworkflow/index.html">파트 워크플로</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/partworkflow/panels/index.html">편집 패널</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../../cut/partworkflow/panels/lasercut/index.html">레이저 절단</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/approach.html">접근</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/withdrawal.html">후진</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/microjoint.html">마이크로조인트</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/advanced.html">고급</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/contour.html">컨투어</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/scrapcut.html">스크랩 절단</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/part.html">파트</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/cornertreatment.html">코너 처리</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/partworkflow/quicknest.html">퀵 네스팅</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/jobworkflow/index.html">통합 작업 워크플로</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/jobpanel/index.html">통합 작업 패널</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/sheets.html">시트 탭</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/parts.html">파트 탭</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/layouts.html">레이아웃 탭</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/summary.html">요약 탭</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/editlayout/index.html">레이아웃 편집</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/nestingmodes.html">네스팅 모드</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/placementpanel.html">배치하기 패널</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/sequencing.html">시퀀싱</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/slicesheet.html">슬라이스 시트</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/bevelcut/index.html">베벨 절단</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/opencontours.html">열린 컨투어</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/variablebevel.html">가변 베벨</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/miscellaneous.html">기타 내용</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/advanced/index.html">고급</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/finishingrules.html">종료 가공 기준</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/editltt.html">LTT 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/strategies.html">전략</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/microjoints.html">마이크로조인트</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/stability.html">추가 설정</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bend/index.html">프레스 브레이크</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">벤딩 파라미터 생성</a></li>
+    <li><button class="tree blank"></button><a href="../../../bend/navigator.html">Bend Navigator</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/editing/index.html">벤딩 파라미터 편집</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editbend.html">벤딩부 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editmount.html">툴 마운트 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editsetup.html">벤딩 셋업 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editgauge.html">백게이지 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editacb.html">각도 측정 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/bendsheet.html">벤딩부 스프레드시트</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/sequencing.html">시퀀스 변경하기</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/addsetup.html">셋업 및 스테이션 추가하기</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/advanced/index.html">고급</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/anglemeasurement.html">각도 측정</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/batchprocess.html">배치 처리</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/recompute.html">재계산 솔루션</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">톤수 점검</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../bend/bendingaids.html">Bending Aids</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../../index.html">BendMaster CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../../navigator.html">벤딩 네비게이터</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../pickup/index.html">파트 픽업</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../pickup/frompallet.html">팔레트에서 픽업</a></li>
+      <li><button class="tree blank"></button><a href="../../pickup/fromdispenser.html">디스펜서에서 픽업</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bending/index.html">로봇 벤딩</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bending/insertion.html">삽입 :imagesdir: img</a></li>
+      <li><button class="tree blank"></button><a href="../../bending/bending.html">벤딩</a></li>
+      <li><button class="tree blank"></button><a href="../../bending/extraction.html">반출</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../regrip/index.html">파지 작업</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../regrip/regrippanel.html">Regrip 패널</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/addregrip.html">재그립 추가</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/editregrip.html">재그립 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/jawregrip.html">조 그립으로 재그립</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/rgstationpanel.html">RG-스테이션 패널</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../deposit/index.html">파트 적재</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../deposit/deposit.html">Deposit 패널</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/repeat.html">반복 및 시퀀스</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/separatorsheet.html">분리 시트 추가</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/lockpartrest.html">파트 안착 잠금</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/patterns.html">적재 패턴 유형</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="../index.html">고급</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="../waypoints.html">웨이포인트</a></li>
+      <li><button class="tree blank"></button><a href="../cellconfig.html">셀 구성</a></li>
+      <li>
+       <button class="tree open"></button>
+       <a href="index.html">그리퍼 데이터베이스</a>
+       <ul>
+        <li><button class="tree blank"></button><a href="creategripper.html">그리퍼 생성</a></li>
+        <li><button class="tree blank"></button><a class="active" href="importgripper.html">DXF에서 그리퍼 가져오기</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../fold/index.html">스위블 벤딩</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../fold/createfolddata.html">폴딩 데이터 생성</a></li>
+    <li><button class="tree blank"></button><a href="../../../fold/foldview.html">폴딩 보기</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/editing/index.html">폴딩 데이터 편집하기</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbend.html">벤딩부 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editside.html">측면/섹션 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editseq.html">시퀀스 변경</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbh.html">블랭크 홀더 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editgauge.html">게이징 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editblade.html">블레이드 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editload.html">로딩 편집</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editunload.html">언로딩 편집</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../fold/toolinventory.html">툴 재고</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/advanced/index.html">고급</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/airgaptables.html">사용자 정의 에어갭 테이블</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/manualbend.html">수동으로 벤딩 완료</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/minflangelength.html">필요한 플랜지 길이</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../settings/index.html">설정 내용</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/drawing/index.html">도면</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/layers.html">레이어</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/dimensions.html">치수</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/view.html">보기</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/benddefaults.html">기계 기본값</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendoutputs.html">벤딩 출력물</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendview.html">벤드 뷰</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendcell.html">벤드 셀</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/layout/index.html">레이아웃</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/nesting.html">네스팅 설정</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheet.html">시트</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheethandling.html">판재 핸들링</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/skeletoncuts.html">잔재 그리드 절단부</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/worksupport.html">작업 서포트</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/lasercam/index.html">레이저 CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/lasercam/sequence.html">시퀀스</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutoutputs.html">절단 출력물</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutview.html">Cut 보기</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/foldcam/index.html">스위블 벤딩</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/defaults.html">기본값</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/zbwcarriers.html">ZBW 지지부품</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/foldoutputs.html">출력물</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/reports/index.html">보고서</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/reports/itemdefaults.html">항목 기본값</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../settings/importexport.html">가져오기/내보내기</a></li>
+    <li><button class="tree blank"></button><a href="../../../settings/environment.html">환경</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../database/index.html">데이터베이스</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../database/materials.html">재료</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/machines.html">기계</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendtools.html">Bend 툴</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/benddeductions.html">Bend Deductions</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">Bend 그리퍼</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">성형부/부품</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../report/index.html">보고서</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../report/designer.html">보고서 디자이너</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/fields.html">필드, 사진 및 테이블</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/bands.html">Bands(하위 보고서)</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/labels.html">레이블, 비트맵 및 모양</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../appendix/index.html">부록</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">지원되는 3D 형식</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">세퍼레이터 시트 DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">벤딩 툴 DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/adaptgeometry.html">형상 조정 기능</a></li>
+   </ul>
+  </li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../../index.html">BendMaster CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="../index.html">고급</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">그리퍼 데이터베이스</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="importgripper.html">DXF에서 그리퍼 가져오기</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>DXF에서 그리퍼 가져오기</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>BendMaster 기계용 진공 석션 그리퍼는 DXF 파일에서 가져올 수 있습니다.
+DXF 파일은 그리퍼의 <strong>상단</strong> 뷰를 나타냅니다(상단 뷰는 석션 컵에서 본 것이며
+BendMaster에서 본 것이 아닙니다). DXF 파일의 POLYLINE 엔티티는 그리퍼 플레이트의
+모양을 제공하고 TEXT 엔티티는 그리퍼에 대한 추가 정보(예: 이름, 두께 및 석션 컵 배치)를
+제공합니다.</p>
+</div>
+<div class="paragraph">
+<p>필요한 형식(DXF, ARV 또는 GEO)의 파일을 Bend 데이터베이스로 가져올 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>그리퍼를 가져오려면:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>TecZone Bend 내에서 <strong>Database</strong>를 엽니다.</p>
+</li>
+<li>
+<p>목록에서 <strong>Bend Grippers</strong> 옵션을 선택합니다.</p>
+</li>
+<li>
+<p><strong>Import&#8230;&#8203;</strong> 옵션을 클릭하고 디렉토리에서 <strong>DXF</strong> 파일로 그리퍼를 선택합니다.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/importgripper.png" alt="Gripper import">
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>가져온 후 이 그리퍼가 어떻게 보이는지 보여줍니다(아래와 위의 두 가지 뷰로 표시).</p>
+</div>
+<div class="paragraph">
+<p><span class="image left"><img src="img/importgripper1.png" alt="Gripper preview" width="345"></span><span class="image"><img src="img/importgripper2.png" alt="Gripper preview" width="485"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_기본_그리퍼">기본 그리퍼</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>아래에 표시된 간단한 드로잉을 참조하십시오. 이는 그리퍼를 정의하며
+<strong>Gripper inventory</strong>로 다시 가져오기 위해 DXF 파일로 저장할 수 있습니다.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/basicgripper.png" alt="Basic gripper" width="537">
+</div>
+</div>
+<div class="paragraph">
+<p>DXF가 그려지는 방법에 대한 몇 가지 중요한 사항은 다음과 같습니다:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>드로잉의 원점(0,0)은 로봇의 손목 중심에 해당합니다. 그림에서 포인트와
+원으로 나타낸 것을 볼 수 있습니다. (그리퍼 중심은 암시적으로 항상 원점에 있으므로
+포인트와 원 모두 그리퍼 가져오기에 실제로 필요하지 않습니다).</p>
+</li>
+<li>
+<p>이 드로잉에는 각 석션 컵 위치를 나타내는 일부 POINT 엔티티도 있습니다.
+이들은 주로 드로잉을 더 명확하게 하기 위한 것이며 그리퍼 임포터에서
+실제로 사용되지 않습니다(석션 컵 위치는 텍스트 엔티티로 지정됨).</p>
+</li>
+<li>
+<p>실제 플레이트 모양은 닫힌 POLYLINE 엔티티로 그려집니다. 외부 폴리라인 내부에
+다른 폴리라인이 있으면 플레이트의 *구멍*이 됩니다.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image left"><img src="img/basicgripper1.png" alt="Basic gripper preview" width="350"></span>
+<span class="image"><img src="img/basicgripper2.png" alt="Basic gripper preview" width="480"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2층_그리퍼">2층 그리퍼</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>별도의 <strong>BASEPLATE</strong> 레이어를 사용하여 약간 더 복잡한 그리퍼를 모델링할 수 있습니다.
+DXF 파일에 <strong>BASEPLATE*라는 레이어를 생성하고 해당 레이어에 닫힌 POLYLINE 모양을
+그립니다. 그런 다음 이 레이어는 BASEPLATEEXTENT 키로 지정된 별도의 *Z</strong> 돌출 제한을
+가질 수 있습니다. 레이어를 생성하고 편집하는 데 필요한 도구가 이제 추가되었습니다.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>드로잉을 편집할 때 <strong>Related</strong>를 클릭합니다.</p>
+</li>
+<li>
+<p><strong>Layers</strong> 메뉴를 선택하여 새 레이어를 추가하고, 이름을 바꾸고, 색상을 설정하고
+선 스타일을 변경합니다.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/related.png" alt="Related" width="571">
+</div>
+</div>
+</li>
+<li>
+<p>드로잉에서 엔티티를 클릭하면 해당 엔티티의 레이어를 변경할 수 있습니다.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/layer.png" alt="Layer" width="148">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+드로잉에 여러 레이어가 있는 경우에만 레이어가 엔티티 패널에 나타납니다.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>이러한 도구를 사용하여 드로잉을 편집한 후 드로잉을 DXF 형식으로 저장합니다.
+다음은 이러한 <strong>BASEPLATE</strong> 레이어를 사용하여 그린 DXF입니다(이미지에서 녹색으로 표시됨).</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/twolayered.png" alt="Two-layered gripper" width="537">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+이 그리퍼의 경우 손목은 Z=0에서 Z=23까지 확장됩니다. 그런 다음
+<strong>BASEPLATEEXTENT</strong> 키로 표시된 대로 <strong>base plate</strong>(녹색)가 Z=23에서 Z=40까지 확장됩니다.
+마지막으로 <strong>PLATEEXTENT</strong> 키로 표시된 대로 실제 그리퍼 플레이트(석션 컵 보유)가
+Z=40에서 Z=63까지 확장됩니다.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+그리퍼 플레이트에는 육각형 구멍도 있습니다.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>가져오면 이 그리퍼는 아래 이미지와 같이 보입니다:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/twolayered1.png" alt="Two-layered gripper preview" width="500">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_다층_그리퍼">다층 그리퍼</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Multi-Layered Grippers</strong>는 <strong>Two Layered Gripper</strong>의 업데이트된 버전으로,
+TecZone Bend를 사용하여 2개 이상의 레이어를 생성하고 가져올 수 있습니다.
+다층 그리퍼를 사용하려면 DXF에 텍스트 <strong>VERSION = 2</strong>가 포함되어야 합니다.
+샘플 다층 그리퍼는 아래와 같습니다:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multilayered.png" alt="Multi-layered gripper" width="537">
+</div>
+</div>
+<div class="paragraph">
+<p>각 레이어는 <strong>LAYER_1 = 23 : 35*와 같이 범위로 정의되어야 합니다.
+이 레이어의 엔티티는 이러한 범위에 추가됩니다. 마찬가지로 컵은
+*CupNo = X pos, Y pos, [Cup type, Mounting height, Cup group]</strong> 형식으로 정의됩니다.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<strong>X</strong> 및 <strong>Y</strong> 위치는 필수입니다.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>석션 컵에 대한 다양한 가능한 정의는 아래에 설명되어 있습니다:</p>
+</div>
+<div class="paragraph">
+<p>CupNo = X pos, Y pos (이전 버전과 같이 CUPNAME에 지정된 컵 이름 사용)<br>
+CupNo = X pos, Y pos, Cup type (각 컵 타입이 개별적으로 정의됨,
+ 타원형 컵의 경우 이름은 각도에 따라 다름)<br>
+CupNo = X pos, Y pos, Cup type, Mounting Height<br>
+CupNo = X pos, Y pos, Cup type, Mounting Height, Cup Group</p>
+</div>
+<div class="paragraph">
+<div class="title">예</div>
+<p><strong>CUP1 = 275, 314, SAOB60x30_90grad_ged, 72, 2</strong></p>
+</div>
+<div class="paragraph">
+<p>장착 높이가 지정되지 않은 경우 기본적으로 최대 플레이트 범위가 고려됩니다.
+마찬가지로 석션 컵 그룹이 정의되지 않은 경우 1로 설정됩니다.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+현재 TecZone Bend는 석션 컵에 대한 다양한 장착 높이를 지원하지 않습니다.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>가져오면 샘플 그리퍼는 아래 이미지와 같이 보입니다:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/multilayer.png" alt="Multi-layered gripper preview" width="411"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/multilayer1.png" alt="Multi-layered gripper preview" width="894"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_다회로_그리퍼">다회로 그리퍼</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>다회로 그리퍼(여러 독립적인 진공 회로가 있는 그리퍼)를 생성할 수 있습니다.
+이러한 그리퍼의 경우 각 석션 컵에 0이 아닌 <strong>그룹 번호</strong>가 할당됩니다.</p>
+</div>
+<div class="paragraph">
+<p>아래와 같이 CUP1POS, CUP2POS 등에 대한 특수 형식을 사용하여 석션 그룹을 할당합니다:</p>
+</div>
+<div class="paragraph">
+<p><strong>CUP1POS = 340,120 #6</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>CUP2POS = 420,140 #8</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>#</strong> 뒤의 값은 컵의 석션 그룹 번호입니다. 이 예에서 Cup 1은 석션 그룹 6에 할당되고
+Cup 2는 석션 그룹 8에 할당되는 식입니다.</p>
+</div>
+<div class="paragraph">
+<p>다회로 그리퍼가 올바르게 구성되려면 <strong>모든</strong> 컵이 이러한 방식으로
+석션 그룹 번호를 할당받아야 합니다.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+그리퍼에 사용할 수 있는 석션 컵의 최대 수는 100개로 제한됩니다.
+100개가 넘는 석션 컵이 있는 그리퍼를 가져오면 TecZone에서
+가져오기 실패 오류 메시지가 표시됩니다.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>아래 이미지는 bend <strong>Bend Grippers</strong> 데이터베이스 내부의
+일부 샘플 그리퍼를 보여줍니다.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multicircuit.png" alt="Multi-circuit gripper" width="803">
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_기본_그리퍼">기본 그리퍼</a>
+  </li>
+  <li level="1">
+   <a href="#_2층_그리퍼">2층 그리퍼</a>
+  </li>
+  <li level="1">
+   <a href="#_다층_그리퍼">다층 그리퍼</a>
+  </li>
+  <li level="1">
+   <a href="#_다회로_그리퍼">다회로 그리퍼</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="creategripper.html">그리퍼 생성</a></span>
+ <span class="next"><a href="../../../fold/index.html">스위블 벤딩</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../../res/index.js"></script>
+    <script src="../../../res/files.js"></script>
+    <script src="../../../res/site.js"></script>
+
+    
+</body>
+</html>

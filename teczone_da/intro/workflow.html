@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,6 +54,7 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -197,7 +199,44 @@
       <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Udtagning</a></li>
      </ul>
     </li>
-    <li><button class="tree blank"></button><a href="../bcell/regrip/index.html">Omgribning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Aflejringsmønstertyper</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../bcell/advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
    </ul>
   </li>
   <li>
@@ -308,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -329,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -359,31 +399,39 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Da TecZone Bend har mange integrerede moduler, er der ofte flere <em>stier</em>, gennem hvilke data om dele kan bevæge sig.</p>
+<p>Da TecZone Bend har mange integrerede moduler, er der ofte flere <em>stier</em>, gennem
+hvilke data om dele kan bevæge sig.</p>
 </div>
 <div class="paragraph">
-<p><strong>Eksempel 1</strong>: Når der indlæses flade deldata (fra en GEO-fil eller DXF-fil), kan man vælge at</p>
+<p><strong>Eksempel 1</strong>: Når der indlæses flade deldata (fra en GEO-fil eller DXF-fil), kan
+man vælge at</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Tildele laserværktøj til delen, så den kan placeres på en plade og skæres, sammen med andre dele.</p>
+<p>Tildele laserværktøj til delen, så den kan placeres på en plade og skæres,
+sammen med andre dele.</p>
 </li>
 <li>
-<p>Fals delen langs bukninglinjerne til en 3-D del, så den kan bearbejdes, og en bukningsrækkefølge kan beregnes til en afkantningsmaskine.</p>
+<p>Fals delen langs bukninglinjerne til en 3-D del, så den kan bearbejdes, og en
+bukningsrækkefølge kan beregnes til en afkantningsmaskine.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Eksempel 2</strong>: Når der importeres en 3D-overflademodel (fra en IGES- eller STEP-FIL), kan man vælge at</p>
+<p><strong>Eksempel 2</strong>: Når der importeres en 3D-overflademodel (fra en IGES- eller
+STEP-FIL), kan man vælge at</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Analysér overfladerne og placér 5-akset laser CAM klargøring langs de huller, der skal skæres.</p>
+<p>Analysér overfladerne og placér 5-akset laser CAM klargøring langs de huller,
+der skal skæres.</p>
 </li>
 <li>
-<p>Lav en funktionsgenkendelse, konvertér overflademodellen til en plademetalmodel, og fold den ud til et fladt mønster til stansning med en stanse.</p>
+<p>Lav en funktionsgenkendelse, konvertér overflademodellen til en
+plademetalmodel, og fold den ud til et fladt mønster til stansning med en
+stanse.</p>
 </li>
 </ul>
 </div>
@@ -398,20 +446,27 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Panelet <strong>Workflow</strong> er som et centralt knudepunkt, hvorfra alle disse bevægelser kan styres. Når man har en del åben, kan arbejdsgangpanelet altid hentes frem ved blot at trykke på <kbd>W</kbd>, eller klikke på arbejdsgangikonet i kommandolinjen til venstre. Lad os undersøge arbejdsgangspanelet; start med at importere en 2D-del med bukningsinformation (for eksempel en GEO-fil).
-At åbne arbejdsgangspanelet på dette tidspunkt viser dette:</p>
+<p>Panelet <strong>Workflow</strong> er som et centralt knudepunkt, hvorfra alle
+disse bevægelser kan styres. Når man har en del åben, kan arbejdsgangpanelet
+altid hentes frem ved blot at trykke på <kbd>W</kbd>, eller klikke på
+arbejdsgangikonet i kommandolinjen til venstre. Lad os undersøge
+arbejdsgangspanelet; start med at importere en 2D-del med bukningsinformation
+(for eksempel en GEO-fil). At åbne arbejdsgangspanelet på dette tidspunkt viser
+dette:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Vi startede med Bend_28.geo, importeret og bragt i orden for at skabe en 2D- plademetaldel (deledimensionerne vises)</p>
+<p>Vi startede med Bend_28.geo, importeret og bragt i orden for at skabe en 2D-
+plademetaldel (deledimensionerne vises)</p>
 </li>
 <li>
 <p>Der er så en gren i arbejdsgangen.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Vi kunne tildele Laser Tech til delen (dette betyder simpelthen tildeling af laserskærestier til delkonturerne).</p>
+<p>Vi kunne tildele Laser Tech til delen (dette betyder simpelthen tildeling af
+laserskærestier til delkonturerne).</p>
 </li>
 <li>
 <p>Vi kunne folde den flade del til 3D (der registreres 9 bukninger).</p>
@@ -424,7 +479,10 @@ At åbne arbejdsgangspanelet på dette tidspunkt viser dette:</p>
 <div class="sect2">
 <h3 id="_udvidelse_af_arbejdsgangsknudepunkter_fase_1">Udvidelse af arbejdsgangsknudepunkter: Fase 1</h3>
 <div class="paragraph">
-<p>Klik på Laser Tech-ikonet for at tildele laserværktøj til delen. Man vil se, at delen straks analyseres, og laserværktøj tilføjes til den. Klik derefter på ikonet Fold til 3D for at folde den flade del til 3D. Sådan ser arbejdsgangspanelet ud efter disse trin:</p>
+<p>Klik på Laser Tech-ikonet for at tildele laserværktøj til delen. Man vil se, at
+delen straks analyseres, og laserværktøj tilføjes til den. Klik derefter på
+ikonet Fold til 3D for at folde den flade del til 3D. Sådan ser
+arbejdsgangspanelet ud efter disse trin:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -432,43 +490,67 @@ At åbne arbejdsgangspanelet på dette tidspunkt viser dette:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Som annoteringerne viser, er der forskellige typer knudepunkter i arbejdsgangsdiagrammet.</p>
+<p>Som annoteringerne viser, er der forskellige typer knudepunkter i
+arbejdsgangsdiagrammet.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Der er Part View-noder, der repræsenterer de forskellige typer af bearbejdning, man kan udføre på delen. Ved klik på disse noder skiftes delen til den <em>visning</em>, og sættet af handlinger tilgængelige på delen er repræsentative for denne visning. I visningen Laserdel kan man for eksempel se og redigere laserklardøringen tildelt delen.</p>
+<p>Der er Part View-noder, der repræsenterer de forskellige typer af
+bearbejdning, man kan udføre på delen. Ved klik på disse noder skiftes delen til
+den <em>visning</em>, og sættet af handlinger tilgængelige på delen er repræsentative
+for denne visning. I visningen Laserdel kan man for eksempel se og redigere
+laserklardøringen tildelt delen.</p>
 </li>
 <li>
-<p>Der kan skiftes mellem disse visninger ved at klikke på disse ikoner. Alle disse forskellige delvisninger har også genvejstaster, der kan ses, hvis man bare peger med musen ved et af visningsikonerne. Lær disse genvejstaster at kende for hurtigt at  navigere gennem arbejdsgangen. Så efter en tid vil man bruge tastekombinationer som <kbd>W</kbd>
-<kbd>B</kbd>
-<kbd>Esc</kbd> til at åbne arbejdsgangspanelet, skift til del til bukningsvisning, og derefter lukke arbejdsgangspanelet.</p>
+<p>Der kan skiftes mellem disse visninger ved at klikke på disse ikoner. Alle
+disse forskellige delvisninger har også genvejstaster, der kan ses, hvis man
+bare peger med musen ved et af visningsikonerne. Lær disse genvejstaster at
+kende for hurtigt at  navigere gennem arbejdsgangen. Så efter en tid vil man
+bruge tastekombinationer som <kbd>W</kbd> <kbd>B</kbd> <kbd>Esc</kbd> til at åbne
+arbejdsgangspanelet, skift til del til bukningsvisning, og derefter lukke
+arbejdsgangspanelet.</p>
 </li>
 <li>
-<p>Deldataene skubbes mellem disse noder af forskellige processer, og disse processer er repræsenteret i arbejdsgangspanelet ved brug af de 13-takkede stjerneikoner. For eksempel flytter man fra 2D-delvisning til laserdelvisningen i kraft af Laser Tech-processen (som analyserer 2D-delen og tildeler laserklargøring til den).</p>
+<p>Deldataene skubbes mellem disse noder af forskellige processer, og disse
+processer er repræsenteret i arbejdsgangspanelet ved brug af de 13-takkede
+stjerneikoner. For eksempel flytter man fra 2D-delvisning til laserdelvisningen
+i kraft af Laser Tech-processen (som analyserer 2D-delen og tildeler
+laserklargøring til den).</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Processer, der er gennemført, har et flueben, der vises inde i dem. Processer, der stadig ikke er gennemført (men som er tilgængelige), har et kryds vist indeni. Der kan klikkes på disse procesnoder for at fuldføre processen.</p>
+<p>Processer, der er gennemført, har et flueben, der vises inde i dem. Processer,
+der stadig ikke er gennemført (men som er tilgængelige), har et kryds vist
+indeni. Der kan klikkes på disse procesnoder for at fuldføre processen.</p>
 </div>
 <div class="paragraph">
-<p>Lad os opsummere, hvad der kan ses på dette stadium af arbejdsgangen for denne del:</p>
+<p>Lad os opsummere, hvad der kan ses på dette stadium af arbejdsgangen for denne
+del:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Der er nu 3 tilgængelige visninger af delen (2D-delen, laserdelen og 3D-modellen, der kan skiftes imellem).</p>
+<p>Der er nu 3 tilgængelige visninger af delen (2D-delen, laserdelen og
+3D-modellen, der kan skiftes imellem).</p>
 </li>
 <li>
 <p>Der er fire yderligere processer til rådighed:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Vi kunne efterbearbejde den flade del (dette genererer en rapport om den flade del, der ville  være nyttig for en laser- eller stanseoperatør; det ville typisk inkludere laserskæretider, klargøringsopsætning til stansepresser og andre særlige klargøringskrav til denne del).</p>
+<p>Vi kunne efterbearbejde den flade del (dette genererer en rapport om den
+flade del, der ville  være nyttig for en laser- eller stanseoperatør; det
+ville typisk inkludere laserskæretider, klargøringsopsætning til stansepresser
+og andre særlige klargøringskrav til denne del).</p>
 </li>
 <li>
-<p>Vi kunne lave en hurtig indlejring (en hurtig indlejring er en indlejring, der kun indeholder én type del) og generer en fuld plade pakket med denne del. Denne kunne bruges til at fremstille en plade fyldt med netop denne del, eller til at hjælpe med at lave et hurtigt omkostnings- eller tidsoverslag for denne del.</p>
+<p>Vi kunne lave en hurtig indlejring (en hurtig indlejring er en indlejring,
+der kun indeholder én type del) og generer en fuld plade pakket med denne del.
+Denne kunne bruges til at fremstille en plade fyldt med netop denne del, eller
+til at hjælpe med at lave et hurtigt omkostnings- eller tidsoverslag for denne
+del.</p>
 </li>
 <li>
 <p>Vi kunne tildele Bend Tech (afkantningsmaskinværktøj) til delen.</p>
@@ -485,7 +567,9 @@ At åbne arbejdsgangspanelet på dette tidspunkt viser dette:</p>
 <div class="sect2">
 <h3 id="_udvidelse_af_arbejdsgangsknudepunkter_fase_2">Udvidelse af arbejdsgangsknudepunkter: Fase 2</h3>
 <div class="paragraph">
-<p>Lad os gå videre: Klik på alle de tilgængelige procesnoder én ad gangen, og se, hvordan arbejdsgangspanelet udvides. Fortsæt, indtil der ikke er flere noder tilbage. Sådan skal det se ud efter disse processer:</p>
+<p>Lad os gå videre: Klik på alle de tilgængelige procesnoder én ad gangen, og se,
+hvordan arbejdsgangspanelet udvides. Fortsæt, indtil der ikke er flere noder
+tilbage. Sådan skal det se ud efter disse processer:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -493,7 +577,11 @@ At åbne arbejdsgangspanelet på dette tidspunkt viser dette:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>I denne fuldt udvidede tilstand gør arbejdsgangspanelet det nemt øjeblikkeligt at skifte mellem seks forskellige visninger af delen i forskellige bearbejdningsmoduler. Man kan også se og sende eller udskrive alle de forskellige outputs genereret af disse moduler. (Outputs kunne være rapporter, NC-kode eller tidsundersøgelser).</p>
+<p>I denne fuldt udvidede tilstand gør arbejdsgangspanelet det nemt øjeblikkeligt
+at skifte mellem seks forskellige visninger af delen i forskellige
+bearbejdningsmoduler. Man kan også se og sende eller udskrive alle de
+forskellige outputs genereret af disse moduler. (Outputs kunne være rapporter,
+NC-kode eller tidsundersøgelser).</p>
 </div>
 </div>
 </div>
@@ -502,12 +590,18 @@ At åbne arbejdsgangspanelet på dette tidspunkt viser dette:</p>
 <h2 id="_navigation_i_arbejdsgangspanelet">Navigation i arbejdsgangspanelet</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Arbejdsgangspanelet repræsenterer en masse information og handlinger i en kompakt, grafisk form. Meget af tiden vil dette fungere som et centralt knudepunkt, idet der arbejdes med dele. Lad os se lidt nærmere på nogle af ikonerne i arbejdsgangspanelet for at forstå, hvordan de kan bruges.</p>
+<p>Arbejdsgangspanelet repræsenterer en masse information og handlinger i en
+kompakt, grafisk form. Meget af tiden vil dette fungere som et centralt
+knudepunkt, idet der arbejdes med dele. Lad os se lidt nærmere på nogle af
+ikonerne i arbejdsgangspanelet for at forstå, hvordan de kan bruges.</p>
 </div>
 <div class="sect2">
 <h3 id="_tilgængelige_procesknuder">Tilgængelige procesknuder</h3>
 <div class="paragraph">
-<p>En 13-takket stjerne med et + indeni repræsenterer et bearbejdningstrin, der nu er tilgængeligt. For eksempel kan det være foldning af en flad 2-D til en 3-D-del eller tildeling af laserteknologisk klargøring. Hold musen over sådan en knude for at få vist et værktøjstip, der forklarer, hvad knuden vil gøre.</p>
+<p>En 13-takket stjerne med et + indeni repræsenterer et bearbejdningstrin, der nu
+er tilgængeligt. For eksempel kan det være foldning af en flad 2-D til en
+3-D-del eller tildeling af laserteknologisk klargøring. Hold musen over sådan en
+knude for at få vist et værktøjstip, der forklarer, hvad knuden vil gøre.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -515,7 +609,11 @@ At åbne arbejdsgangspanelet på dette tidspunkt viser dette:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Dette følger et typisk mønster for mange tilgængelige procesknuder. Klik på knuden vil udføre processen med standardindstillinger. Et <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> på knuden åbner først en indstillingsside, og når indstillingerne er gennemgået/redigeret, udføres processen. Her er for eksempel hvad der dukker op, når der laves en <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> på indlejringsknuden:</p>
+<p>Dette følger et typisk mønster for mange tilgængelige procesknuder. Klik på
+knuden vil udføre processen med standardindstillinger. Et <kbd>Ctrl</kbd>+click på
+knuden åbner først en indstillingsside, og når indstillingerne er
+gennemgået/redigeret, udføres processen. Her er for eksempel hvad der dukker op,
+når der laves en <kbd>Ctrl</kbd>+click på indlejringsknuden:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -523,13 +621,16 @@ At åbne arbejdsgangspanelet på dette tidspunkt viser dette:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Indstillingerne for hurtig indlejring vises, så de kan redigers, før indlejringen foretages.</p>
+<p>Indstillingerne for hurtig indlejring vises, så de kan redigers, før
+indlejringen foretages.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_afsluttede_procesknuder">Afsluttede procesknuder</h3>
 <div class="paragraph">
-<p>Når først en proces er afsluttet, skifter knuden fra en tilgængelig procesknude til en afsluttet procesknude; symbolet bliver en stjerne med et flueben indeni. På dette tidspunkt ændres de tilgængelige optioner for den pågældende knude.</p>
+<p>Når først en proces er afsluttet, skifter knuden fra en tilgængelig procesknude
+til en afsluttet procesknude; symbolet bliver en stjerne med et flueben indeni.
+På dette tidspunkt ændres de tilgængelige optioner for den pågældende knude.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -537,7 +638,12 @@ At åbne arbejdsgangspanelet på dette tidspunkt viser dette:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Dette er et typisk sæt optoner, der er tilgængelige på en afsluttet procesknude. Klik på knuden åbner procesindstillingerne igen, så de kan justeres og prøve bearbejdningen igen. Optionen<span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> er også normalt tilgængelig til at slette procesdataene. Vælges denne option, bedes der om bekræftelse, før sletningen udføres. Her er for eksempel, hvad der sker, når der laves en <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> på 3D-model knuden, for en fuldt bearbejdet del:</p>
+<p>Dette er et typisk sæt optoner, der er tilgængelige på en afsluttet procesknude.
+Klik på knuden åbner procesindstillingerne igen, så de kan justeres og prøve
+bearbejdningen igen. Optionen<kbd>Ctrl</kbd>+click er også normalt tilgængelig til at
+slette procesdataene. Vælges denne option, bedes der om bekræftelse, før
+sletningen udføres. Her er for eksempel, hvad der sker, når der laves en
+<kbd>Ctrl</kbd>+click på 3D-model knuden, for en fuldt bearbejdet del:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -551,19 +657,24 @@ At åbne arbejdsgangspanelet på dette tidspunkt viser dette:</p>
 <h2 id="_hjælpekommandoer">Hjælpekommandoer</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Mange knuder har små ikoner i nærheden af dem, hvilket vll sige hjælpekommandoer. Disse kommandoer giver nogle funktioner, der er relateret til den knude. Her er nogle eksempler.</p>
+<p>Mange knuder har små ikoner i nærheden af dem, hvilket vll sige
+hjælpekommandoer. Disse kommandoer giver nogle funktioner, der er relateret til
+den knude. Her er nogle eksempler.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Hjælpeikonerne i nærheden af hver teknologiknude giver typisk mulighed for valg af en anden maskine og klargøring til den maskine.<br>
+<p>Hjælpeikonerne i nærheden af hver teknologiknude giver typisk mulighed for
+valg af en anden maskine og klargøring til den maskine.<br>
 <span class="image"><img src="img/workflow8.png" alt="Workflow 8" width="440"></span></p>
 </li>
 <li>
-<p>Ikonet i nærheden af hurtig indlejring knuden giver mulighed for at indlejre i en anden pladestørrelse.</p>
+<p>Ikonet i nærheden af hurtig indlejring knuden giver mulighed for at indlejre i
+en anden pladestørrelse.</p>
 </li>
 <li>
-<p>Ikoner nær outputknuderne giver mulighed for at se de forskellige outputs fra en bearbejdningsknude (rapporter, NC-programmer eller tidsundersøgelser).<br>
+<p>Ikoner nær outputknuderne giver mulighed for at se de forskellige outputs fra
+en bearbejdningsknude (rapporter, NC-programmer eller tidsundersøgelser).<br>
 <span class="image"><img src="img/workflow9.png" alt="Workflow 9" width="324"></span></p>
 </li>
 </ul>
@@ -579,16 +690,26 @@ At åbne arbejdsgangspanelet på dette tidspunkt viser dette:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Det meste af bearbejdningen i TecZone Bend starter med at importere CAD-data (enten 2-D eller 3-D). De TecZone Bend dele, der er bygget fra disse CAD-data, kan fortsætte med at spore disse kildedele. Når en del åbnes, kan TecZone Bend kontrollere, om den originale CAD-fil, fra hvilken den blev oprettet, i mellemtiden er blevet ændret. Hvis det er tilfældet, er delen nu forældet, og dette kan ses i arbejdsgangspanelet.</p>
+<p>Det meste af bearbejdningen i TecZone Bend starter med at importere CAD-data (enten
+2-D eller 3-D). De TecZone Bend dele, der er bygget fra disse CAD-data, kan
+fortsætte med at spore disse kildedele. Når en del åbnes, kan TecZone Bend
+kontrollere, om den originale CAD-fil, fra hvilken den blev oprettet, i
+mellemtiden er blevet ændret. Hvis det er tilfældet, er delen nu forældet, og
+dette kan ses i arbejdsgangspanelet.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Man kan vælge at opdatere delen ved at klikke på hjælpeikonet til delopdatering nær kildeknuden. TecZone Bend vil genimportere CAD-geometrien og genopbygge delen.</p>
+<p>Man kan vælge at opdatere delen ved at klikke på hjælpeikonet til
+delopdatering nær kildeknuden. TecZone Bend vil genimportere CAD-geometrien og
+genopbygge delen.</p>
 </li>
 <li>
-<p>Man kan også vælge at stoppe med at spore den originale CAD-geometri. Dette kan for eksempel være nyttigt, hvis den originale CAD-fil findes på et flytbart medie eller på et eksternt drev, der måske ikke er tilgængeligt i fremtiden.
-  For at gøre dette skal der klikkes på hjælpeikonet til brydning af link nær kildedelknuden. Dette åbne en prompt om at stoppe med at spore kildefilen:<br>
+<p>Man kan også vælge at stoppe med at spore den originale CAD-geometri. Dette
+kan for eksempel være nyttigt, hvis den originale CAD-fil findes på et flytbart
+medie eller på et eksternt drev, der måske ikke er tilgængeligt i fremtiden. For
+at gøre dette skal der klikkes på hjælpeikonet til brydning af link nær
+kildedelknuden. Dette åbne en prompt om at stoppe med at spore kildefilen:<br>
 <span class="image"><img src="img/srcfiletrack2.png" alt="Source File Disconnect" width="508"></span></p>
 </li>
 </ul>
@@ -604,19 +725,31 @@ At åbne arbejdsgangspanelet på dette tidspunkt viser dette:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Arbejdsgangspanelet viser knuder, der repræsenterer forskellige visninger af dele (såsom laserdel, bukningsdel) og knuder, der repræsenterer forskellige processer (som f.eks. fold til 3D, tildel laserklargøring).</p>
+<p>Arbejdsgangspanelet viser knuder, der repræsenterer forskellige visninger af
+dele (såsom laserdel, bukningsdel) og knuder, der repræsenterer forskellige
+processer (som f.eks. fold til 3D, tildel laserklargøring).</p>
 </li>
 <li>
-<p>Procesknuder, der er tilgængelige (endnu ikke udført), er repræsenteret som 13-takkede stjerner med et <span class="icon"><i class="fa fa-plus-circle"></i></span> tegn indeni. Procesknuder, der allerede er afsluttet, er repræsenteret af stjerner med et <span class="icon"><i class="fa fa-check-circle"></i></span> mærke indeni.</p>
+<p>Procesknuder, der er tilgængelige (endnu ikke udført), er repræsenteret som
+13-takkede stjerner med et <span class="icon"><i class="fa fa-plus-circle"></i></span> tegn indeni. Procesknuder, der
+allerede er afsluttet, er repræsenteret af stjerner med et <span class="icon"><i class="fa fa-check-circle"></i></span>
+mærke indeni.</p>
 </li>
 <li>
-<p>Klikkes der på en tilgængelig procesknude, kaldes den proces med standardindstillinger. Et <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> på en tilgængelig procesknude åbner en editor til først at redigere procesindstillingerne, og derefter kalde processen.</p>
+<p>Klikkes der på en tilgængelig procesknude, kaldes den proces med
+standardindstillinger. Et <kbd>Ctrl</kbd>+click på en tilgængelig procesknude åbner
+en editor til først at redigere procesindstillingerne, og derefter kalde
+processen.</p>
 </li>
 <li>
-<p>Ved klik på en afsluttet procesknude kan procesindstillingerne justeres og bearbejdningen anvendes igen. Et <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Click</kbd></span> på en afsluttet procesknude fjerner bearbejdningsdataene.</p>
+<p>Ved klik på en afsluttet procesknude kan procesindstillingerne justeres og
+bearbejdningen anvendes igen. Et <kbd>Ctrl</kbd>+click på en afsluttet procesknude
+fjerner bearbejdningsdataene.</p>
 </li>
 <li>
-<p>De små hjælpeikoner nær en procesknude eller en delvisningsknude giver kontrol til at ændre nogle vigtige parametre for den pågældende procesknude (såsom målmaskine eller størrelsen på indlejringspladen).</p>
+<p>De små hjælpeikoner nær en procesknude eller en delvisningsknude giver kontrol
+til at ændre nogle vigtige parametre for den pågældende procesknude (såsom
+målmaskine eller størrelsen på indlejringspladen).</p>
 </li>
 </ul>
 </div>
@@ -674,7 +807,7 @@ At åbne arbejdsgangspanelet på dette tidspunkt viser dette:</p>
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

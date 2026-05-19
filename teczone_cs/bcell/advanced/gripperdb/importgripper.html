@@ -1,0 +1,757 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../res/bento.css">
+  <link rel="stylesheet" href="../../../res/site.css">
+  <link rel="stylesheet" href="../../../res/tree.css">
+  <link rel="stylesheet" href="../../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../../img/trumpf-icon.png">
+  <title>Import uchopovače z DXF</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Předběžná verze)</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../../index.html">Vítejte ve TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../intro/index.html">Úvod</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../intro/install.html">Instalace softwaru</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/clarity.html">Uživatelské rozhraní</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/workflow.html">Workflow dílu</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/2dimport/index.html">Import 2D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/2dimport/2dcleanup.html">2D vyčištění</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/3dimport/index.html">Import 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prep3dmodel.html">Import 3D modelu</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prepassembly.html">Import konstrukční skupiny</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/formdetect.html">Rozpoznání tvarů</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/componentdetect.html">Rozpoznání součástí</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../cad/sketch.html">Úprava geometrie</a></li>
+    <li><button class="tree blank"></button><a href="../../../cad/attachments.html">Přílohy</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cut/index.html">Řezání laserem</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/partworkflow/index.html">Workflow dílu</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/partworkflow/panels/index.html">Editační panely</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../../cut/partworkflow/panels/lasercut/index.html">Laserový řez</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/approach.html">Najetí</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/withdrawal.html">Zpětný pohyb</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/microjoint.html">Mikrospoj</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/advanced.html">Pokročilé</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/contour.html">Kontura</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/scrapcut.html">Řezání šrotu</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/part.html">Díl</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/cornertreatment.html">Opracování rohů</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/partworkflow/quicknest.html">Rychlé optimální rozmístění</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/jobworkflow/index.html">Workflow úlohy</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/jobpanel/index.html">Panel úloh</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/sheets.html">Karta Plechy</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/parts.html">Karta Díly</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/layouts.html">Karta Rozvržení</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/summary.html">Karta Souhrn</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/editlayout/index.html">Úprava rozložení</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/nestingmodes.html">Režimy optimálního rozmístění</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/placementpanel.html">Panel Umístění</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/sequencing.html">Sekvencování</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/slicesheet.html">Krájení plechu</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/bevelcut/index.html">Šikmý řez</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/opencontours.html">Otevřené kontury</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/variablebevel.html">Variabilní zkosení</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/miscellaneous.html">Různé</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/advanced/index.html">Pokročilé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/finishingrules.html">Pravidla dokončení</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/editltt.html">Úprava LTT</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/strategies.html">Strategie</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/microjoints.html">Mikrospoje</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/stability.html">Další nastavení</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bend/index.html">Ohraňovací lis</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">Vytvoření parametrů ohýbání</a></li>
+    <li><button class="tree blank"></button><a href="../../../bend/navigator.html">Navigátor ohýbání</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/editing/index.html">Úprava parametrů ohýbání</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editbend.html">Upravit ohyb</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editmount.html">Úprava montáže nástroje</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editsetup.html">Úprava nastavení ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editgauge.html">Úprava dorazových palců</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editacb.html">Úprava měření úhlu</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/bendsheet.html">Tabulka ohybů</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/sequencing.html">Změna pořadí</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/addsetup.html">Přidávání nastavení a stanic</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/advanced/index.html">Pokročilé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/anglemeasurement.html">Měření úhlu</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/batchprocess.html">Dávkový proces</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/recompute.html">Přepočet řešení</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">Kontrola tonáže</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../bend/bendingaids.html">Pomůcky pro ohýbání</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../../index.html">BendMaster CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../../navigator.html">Navigátor ohýbání</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../pickup/index.html">Vyzvednutí dílů</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../pickup/frompallet.html">Vyzvednutí z palety</a></li>
+      <li><button class="tree blank"></button><a href="../../pickup/fromdispenser.html">Vyzvednutí z dávkovače</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bending/index.html">Robotické ohýbání</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bending/insertion.html">Vkládání</a></li>
+      <li><button class="tree blank"></button><a href="../../bending/bending.html">Ohýbání</a></li>
+      <li><button class="tree blank"></button><a href="../../bending/extraction.html">Vyjmutí</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../regrip/index.html">Přeuchopení</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../regrip/regrippanel.html">Panel Přeuchopení</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/addregrip.html">Přidat přeuchopení</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/editregrip.html">Upravit přeuchopení</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/jawregrip.html">Přeuchopení čelistí</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/rgstationpanel.html">Panel Přehmatávací stanice</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../deposit/index.html">Uložení dílů</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../deposit/deposit.html">Panel uložení</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/repeat.html">Opakování a sekvence</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/separatorsheet.html">Přidání oddělovacích plechů</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/lockpartrest.html">Uzamčení polohy dílu</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/patterns.html">Typy vzorů uložení</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="../index.html">Pokročilé</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="../waypoints.html">Body trasy</a></li>
+      <li><button class="tree blank"></button><a href="../cellconfig.html">Konfigurace buňky</a></li>
+      <li>
+       <button class="tree open"></button>
+       <a href="index.html">Databáze uchopovačů</a>
+       <ul>
+        <li><button class="tree blank"></button><a href="creategripper.html">Vytvoření uchopovače</a></li>
+        <li><button class="tree blank"></button><a class="active" href="importgripper.html">Import uchopovače z DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../fold/index.html">Výklopné ohýbání</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../fold/createfolddata.html">Vytvoření dat skládání</a></li>
+    <li><button class="tree blank"></button><a href="../../../fold/foldview.html">Zobrazení skládání</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/editing/index.html">Úprava dat skládání</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbend.html">Upravit ohyb</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editside.html">Úprava strany/sekce</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editseq.html">Změna pořadí</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbh.html">Úprava přidržovačů</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editgauge.html">Úprava dorážení</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editblade.html">Úprava nožů</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editload.html">Úprava zakládání</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editunload.html">Úprava vykládání</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../fold/toolinventory.html">Stav nástrojů</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/advanced/index.html">Pokročilé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/airgaptables.html">Vlastní tabulky vzduchových mezer</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/manualbend.html">Ruční dokončení ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/minflangelength.html">Požadovaná délka ramene</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../settings/index.html">Nastavení</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/drawing/index.html">Výkres</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/layers.html">Vrstvy</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/dimensions.html">Rozměry</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/view.html">Zobrazení</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/bendcam/index.html">Ohýbání CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/benddefaults.html">Výchozí nastavení stroje</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendoutputs.html">Výstupy ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendview.html">Zobrazení ohybu</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendcell.html">Ohýbací buňka</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/cutcam/index.html">Řezání CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/layout/index.html">Rozložení</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/nesting.html">Nastavení optimálního rozmístění</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheet.html">Plech</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheethandling.html">Manipulace s plechem</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/skeletoncuts.html">Řezy skeletu</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/worksupport.html">Podpora práce</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/lasercam/index.html">Laserové CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/lasercam/sequence.html">Pořadí</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutoutputs.html">Výstupy řezání</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutview.html">Zobrazení řezání</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/foldcam/index.html">Otočné ohýbání</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/defaults.html">Výchozí</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/zbwcarriers.html">Nosiče ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/foldoutputs.html">Výstupy</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/reports/index.html">Reporty</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/reports/itemdefaults.html">Výchozí nastavení položek</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../settings/importexport.html">Import/Export</a></li>
+    <li><button class="tree blank"></button><a href="../../../settings/environment.html">Prostředí</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../database/index.html">Databáze</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../database/materials.html">Materiály</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/machines.html">Stroje</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendtools.html">Ohýbací nástroje</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/benddeductions.html">Ohýbací srážky</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">Ohýbací upínače</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Tvary a komponenty</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../report/index.html">Reporty</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../report/designer.html">Report Designer</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/fields.html">Pole, obrázky a tabulky</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/bands.html">Pásy (podřízené reporty)</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/labels.html">Štítky, bitmapy a tvary</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../appendix/index.html">Příloha</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">Podporované 3D formáty</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">DXF oddělovacího plechu</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">Ohýbací nástroje DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/adaptgeometry.html">Funkce Přizpůsobit geometrii</a></li>
+   </ul>
+  </li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../../index.html">BendMaster CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="../index.html">Pokročilé</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Databáze uchopovačů</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="importgripper.html">Import uchopovače z DXF</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Import uchopovače z DXF</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vakuový sací uchopovač pro stroje BendMaster lze importovat ze souboru DXF.
+Soubor DXF představuje <strong>horní</strong> pohled na uchopovač (horní pohled znamená ze sacích
+misek, NE ze stroje BendMaster). Entity POLYLINE v souboru DXF poskytují tvar
+desky uchopovače a entity TEXT poskytují další informace o uchopovači
+(jako je jeho název, tloušťka a umístění sacích misek).</p>
+</div>
+<div class="paragraph">
+<p>Soubory v požadovaném formátu (DXF, ARV nebo GEO) lze importovat do databáze ohýbání.</p>
+</div>
+<div class="paragraph">
+<p>Import uchopovače:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Otevřete <strong>Database</strong> uvnitř TecZone Bend.</p>
+</li>
+<li>
+<p>Vyberte možnost <strong>Bend Grippers</strong> ze seznamu.</p>
+</li>
+<li>
+<p>Klikněte na možnost <strong>Import&#8230;&#8203;</strong> a vyberte uchopovač jako soubor <strong>DXF</strong> z adresáře.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/importgripper.png" alt="Import uchopovače">
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Zde je ukázka, jak tento uchopovač vypadá po importu (zobrazen ve dvou pohledech zespodu a shora).</p>
+</div>
+<div class="paragraph">
+<p><span class="image left"><img src="img/importgripper1.png" alt="Náhled uchopovače" width="345"></span><span class="image"><img src="img/importgripper2.png" alt="Náhled uchopovače" width="485"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_základní_uchopovač">Základní uchopovač</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Viz jednoduchý výkres zobrazený níže, který definuje uchopovač a může být uložen jako
+soubor DXF pro zpětný import do <strong>inventáře uchopovačů</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/basicgripper.png" alt="Základní uchopovač" width="537">
+</div>
+</div>
+<div class="paragraph">
+<p>Zde je několik důležitých bodů o tom, jak je DXF nakreslen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Počátek výkresu (0,0) odpovídá středu zápěstí robotu. Můžete
+to vidět reprezentované bodem a kruhem na obrázku. (Jak bod, tak
+kruh nejsou ve skutečnosti potřebné pro import uchopovače, protože střed uchopovače je
+implicitně vždy v počátku).</p>
+</li>
+<li>
+<p>Tento výkres má také několik entit POINT představujících každou ze sacích misek
+umístění. Opět, ty jsou primárně pro zpřehlednění výkresu a nejsou
+skutečně používány importérem uchopovačů (polohy sacích misek jsou specifikovány
+textovými entitami).</p>
+</li>
+<li>
+<p>Skutečný tvar desky je nakreslen jako uzavřené entity POLYLINE. Pokud máte další
+polyčáry uvnitř vnější, stanou se <strong>otvory</strong> v desce.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image left"><img src="img/basicgripper1.png" alt="Náhled základního uchopovače" width="350"></span>
+<span class="image"><img src="img/basicgripper2.png" alt="Náhled základního uchopovače" width="480"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dvouvrstvý_uchopovač">Dvouvrstvý uchopovač</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Mírně složitější uchopovače lze modelovat pomocí samostatné vrstvy <strong>BASEPLATE</strong>. Vytvořte
+vrstvu s názvem <strong>BASEPLATE</strong> v souboru DXF a nakreslete některé uzavřené tvary POLYLINE v
+této vrstvě. Tato vrstva pak může mít samostatné limity extruzí <strong>Z</strong> specifikované klíčem
+BASEPLATEEXTENT. Nyní jsou přidány nástroje potřebné k vytvoření a úpravě vrstev.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Klikněte na <strong>Related</strong> když je výkres upravován.</p>
+</li>
+<li>
+<p>Vyberte menu <strong>Layers</strong> pro přidání nových vrstev, jejich přejmenování, nastavení barev
+a změnu stylů čar.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/related.png" alt="Související" width="571">
+</div>
+</div>
+</li>
+<li>
+<p>Ve výkresu kliknutím na entitu můžete změnit vrstvu této entity.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/layer.png" alt="Vrstva" width="148">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Vrstva se zobrazí v panelu entity pouze v případě, že ve výkresu existuje více vrstev.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Po úpravě výkresu pomocí těchto nástrojů uložte výkres ve formátu DXF. Zde je
+DXF nakreslený pomocí takové vrstvy <strong>BASEPLATE</strong> (zobrazeno zeleně na obrázku).</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/twolayered.png" alt="Dvouvrstvý uchopovač" width="537">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Pro tento uchopovač se zápěstí rozprostírá od Z=0 do Z=23. Potom se <strong>základní deska</strong> (zelená)
+rozprostírá od Z=23 do Z=40, jak je označeno klíčem <strong>BASEPLATEEXTENT</strong>. Nakonec se skutečná
+deska uchopovače (držící sací misky) rozprostírá od Z=40 do Z=63, jak je označeno klíčem
+<strong>PLATEEXTENT</strong>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Deska uchopovače má také některé šestihranné otvory.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Po importu vypadá tento uchopovač jako obrázek níže:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/twolayered1.png" alt="Náhled dvouvrstvého uchopovače" width="500">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vícevrstvý_uchopovač">Vícevrstvý uchopovač</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Vícevrstvé uchopovače</strong> jsou aktualizovanou verzí <strong>dvouvrstvých uchopovačů</strong>, ve kterých lze
+vytvořit a importovat více než dvě vrstvy pomocí TecZone Bend. Pro použití vícevrstvého
+uchopovače musí DXF obsahovat text <strong>VERSION = 2</strong>. Ukázkový vícevrstvý
+uchopovač je zobrazen níže:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multilayered.png" alt="Vícevrstvý uchopovač" width="537">
+</div>
+</div>
+<div class="paragraph">
+<p>Každá vrstva musí být definována se svými rozsahy jako <strong>LAYER_1 = 23 : 35</strong>. Entity
+v této vrstvě budou přidány do těchto rozsahů. Podobně jsou mísy definovány ve
+formě <strong>CupNo = X pos, Y pos, [Cup type, Mounting height, Cup group]</strong>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Pozice <strong>X</strong> a <strong>Y</strong> jsou povinné.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Různé možné definice pro sací misky jsou vysvětleny níže:</p>
+</div>
+<div class="paragraph">
+<p>CupNo = X pos, Y pos s názvem mísy specifikovaným v CUPNAME jako v předchozí verzi<br>
+CupNo = X pos, Y pos, Cup type, přičemž každý typ mísy je definován samostatně (pro oválné
+ misky se názvy liší s úhlem)<br>
+CupNo = X pos, Y pos, Cup type, Mounting Height<br>
+CupNo = X pos, Y pos, Cup type, Mounting Height, Cup Group</p>
+</div>
+<div class="paragraph">
+<div class="title">Příklad</div>
+<p><strong>CUP1 = 275, 314, SAOB60x30_90grad_ged, 72, 2</strong></p>
+</div>
+<div class="paragraph">
+<p>Pokud výška montáže není specifikována, je ve výchozím nastavení uvažován maximální rozsah desky.
+Podobně bude skupina sací mísy nastavena na 1, pokud není definována.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+V současné době TecZone Bend nepodporuje různé výšky montáže pro sací misky.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Po importu vypadá ukázkový uchopovač jako obrázek níže:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/multilayer.png" alt="Náhled vícevrstvého uchopovače" width="411"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/multilayer1.png" alt="Náhled vícevrstvého uchopovače" width="894"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vícesvodový_uchopovač">Vícesvodový uchopovač</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Můžete vytvořit vícesvodový uchopovač (uchopovač, který má několik nezávislých vakuových
+svodů). Pro takový uchopovač je každé sací míse přiřazeno nenulové <strong>číslo skupiny</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Přiřaďte skupiny sacích misek pomocí speciálního formátu pro CUP1POS, CUP2POS atd., jak je zobrazeno níže:</p>
+</div>
+<div class="paragraph">
+<p><strong>CUP1POS = 340,120 #6</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>CUP2POS = 420,140 #8</strong></p>
+</div>
+<div class="paragraph">
+<p>Hodnota po <strong>#</strong> je číslo skupiny sacích misek pro mísu. V tomto příkladu
+je mísa 1 přiřazena ke skupině sacích misek 6, mísa 2 je přiřazena ke skupině sacích misek 8 atd.</p>
+</div>
+<div class="paragraph">
+<p>Pro správnou konfiguraci vícesvodového uchopovače musí být <strong>každé</strong> míse přiřazeno
+číslo skupiny sacích misek tímto způsobem.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Maximální počet sacích misek, které lze použít v uchopovači, je
+omezen na 100. Pokud importujete uchopovač s více než 100 sacími mísami,
+TecZone zobrazí chybovou zprávu o selhání importu.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Níže uvedený obrázek ukazuje některé ukázkové uchopovače uvnitř databáze
+<strong>Bend Grippers</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multicircuit.png" alt="Vícesvodový uchopovač" width="803">
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_základní_uchopovač">Základní uchopovač</a>
+  </li>
+  <li level="1">
+   <a href="#_dvouvrstvý_uchopovač">Dvouvrstvý uchopovač</a>
+  </li>
+  <li level="1">
+   <a href="#_vícevrstvý_uchopovač">Vícevrstvý uchopovač</a>
+  </li>
+  <li level="1">
+   <a href="#_vícesvodový_uchopovač">Vícesvodový uchopovač</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="creategripper.html">Vytvoření uchopovače</a></span>
+ <span class="next"><a href="../../../fold/index.html">Výklopné ohýbání</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../../res/index.js"></script>
+    <script src="../../../res/files.js"></script>
+    <script src="../../../res/site.js"></script>
+
+    
+</body>
+</html>

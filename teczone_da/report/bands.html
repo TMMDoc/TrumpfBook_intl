@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,6 +54,7 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -197,7 +199,44 @@
       <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Udtagning</a></li>
      </ul>
     </li>
-    <li><button class="tree blank"></button><a href="../bcell/regrip/index.html">Omgribning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Aflejringsmønstertyper</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../bcell/advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
    </ul>
   </li>
   <li>
@@ -308,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -329,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -357,8 +397,14 @@
                     <article id="article">
                         <h1>Bånd (underrapporter)</h1>
 <div class="paragraph">
-<p>En tabel er nyttig til nogle typer gentagne data. Men nogle gange kan der være brug for at vise ikke kun noget tekst eller numeriske værdier i kolonner, men der kan være brug for en mere udførlig visning for hvert element i tabellen (for eksempel kan der være brug for et billede eller endda en undertabel). Til sådanne situationer er det mere nyttigt at oprette et <strong>Bånd</strong> (dette kaldes nogle gange en
-<strong>underrapport</strong>). Når der klikkes på en datakilde, der kan repræsenteres som enten en tabel eller et bånd, vil TecZone Bend spørge, om der skal indsættes et bånd eller en tabel:</p>
+<p>En tabel er nyttig til nogle typer gentagne data. Men nogle gange kan der være
+brug for at vise ikke kun noget tekst eller numeriske værdier i kolonner, men
+der kan være brug for en mere udførlig visning for hvert element i tabellen (for
+eksempel kan der være brug for et billede eller endda en undertabel). Til
+sådanne situationer er det mere nyttigt at oprette et <strong>Bånd</strong> (dette kaldes nogle
+gange en <strong>underrapport</strong>). Når der klikkes på en datakilde, der kan repræsenteres
+som enten en tabel eller et bånd, vil TecZone Bend spørge, om der skal indsættes et
+bånd eller en tabel:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -366,7 +412,9 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Hvis man vælger at indsætte et bånd, indsættes der et tomt bånd (det skraverede område vist nedenfor), og sættet af alle de mulige felter, billeder og tabeller, der kunne tilføjes til båndet, vises til højre.</p>
+<p>Hvis man vælger at indsætte et bånd, indsættes der et tomt bånd (det skraverede
+område vist nedenfor), og sættet af alle de mulige felter, billeder og tabeller,
+der kunne tilføjes til båndet, vises til højre.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -374,7 +422,13 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Der kan nu sammensættes data i båndet ved at tilføje felter, tabeller og billeder fra højre. Ud over disse kan der også tilføjes etiketter, statiske bitmaps eller former (såsom adskillerlinjer) ved at vælge fra datakilden <strong>Sys</strong>. I dette eksempel har vi oprettet et bånd til Del &gt; Bukning &gt; Opsætning &gt; Monteringsdata, så hvert bånd viser felter, billeder og tabeller relateret til et bukningsmontering. Efter at have tilføjet nogle elementer til båndet, kan båndet endelig se sådan ud:</p>
+<p>Der kan nu sammensættes data i båndet ved at tilføje felter, tabeller og
+billeder fra højre. Ud over disse kan der også tilføjes etiketter, statiske
+bitmaps eller former (såsom adskillerlinjer) ved at vælge fra datakilden <strong>Sys</strong>.
+I dette eksempel har vi oprettet et bånd til Del &gt; Bukning &gt; Opsætning &gt;
+Monteringsdata, så hvert bånd viser felter, billeder og tabeller relateret til
+et bukningsmontering. Efter at have tilføjet nogle elementer til båndet, kan
+båndet endelig se sådan ud:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -382,11 +436,17 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Vi sammensatte dette bånd ved at vælge nogle felter (position, længde, vendt etc.). Vi tilføjede også feltet <strong>Navn</strong> øverst og ændrede det til at bruge en større skrifttype. Derefter tilføjede vi et billede (værktøjstværsnittet) og en tabel (sættet af segmenter i denne montering).
-Når vi tilføjer disse elementer, viser båndet live-data for alle disse, men kun for den første montering i opsætningen.</p>
+<p>Båndet er sammensat ved at vælge felter som position, længde og vendt.
+Feltet <strong>Name</strong> tilføjes øverst, og dets skriftstørrelse er
+øget. Der indsættes derefter et billede af værktøjets tværsnit sammen med en
+tabel, der viser sættet af segmenter i denne montering. Efterhånden som disse elementer tilføjes,
+viser båndet live-data for alle disse, men kun for den første montering
+i opsætningen.</p>
 </div>
 <div class="paragraph">
-<p>Senere, når rapporten rent faktisk udskrives, vil hele båndet (med felter, billeder og tabeller) gentages for hver montering i rapporten. Her er et gengivet eksempel:</p>
+<p>Senere, når rapporten rent faktisk udskrives, vil hele båndet (med felter,
+billeder og tabeller) gentages for hver montering i rapporten. Her er et
+gengivet eksempel:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -413,7 +473,7 @@ Når vi tilføjer disse elementer, viser båndet live-data for alle disse, men k
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

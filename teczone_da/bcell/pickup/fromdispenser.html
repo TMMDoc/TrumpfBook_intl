@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,6 +54,7 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -197,7 +199,44 @@
       <li><button class="tree blank"></button><a href="../bending/extraction.html">Udtagning</a></li>
      </ul>
     </li>
-    <li><button class="tree blank"></button><a href="../regrip/index.html">Omgribning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Aflejringsmønstertyper</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
    </ul>
   </li>
   <li>
@@ -308,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -329,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -363,7 +403,11 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Små dele håndteres ved hjælp af en <em>mekanisk griber</em>, også kendt i TecZone Bend som en <em>kæbegriber</em>. Hvis delen er mindre end ca. A4-størrelse, vil TecZone Bend automatisk skifte til at bruge en kæbegriber. Denne griber kan kun samle dele op fra en <em>dispenseringsstation</em> (også kendt som <em>emnedispenser</em>). Disse parametre påvirker denne opsamlingsproces:</p>
+<p>Små dele håndteres ved hjælp af en <em>mekanisk griber</em>, også kendt i TecZone Bend som
+en <em>kæbegriber</em>. Hvis delen er mindre end ca. A4-størrelse, vil TecZone Bend
+automatisk skifte til at bruge en kæbegriber. Denne griber kan kun samle dele op
+fra en <em>dispenseringsstation</em> (også kendt som <em>emnedispenser</em>). Disse parametre
+påvirker denne opsamlingsproces:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -379,7 +423,9 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>De paneler, der bruges til at redigere alle disse indstillinger, vises nedenfor - de er alle sammenkoblet med op-/ned-navigationslinks, der fører til andre paneler i en logisk rækkefølge:</p>
+<p>De paneler, der bruges til at redigere alle disse indstillinger, vises nedenfor
+- de er alle sammenkoblet med op-/ned-navigationslinks, der fører til andre
+paneler i en logisk rækkefølge:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -387,7 +433,8 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Som billedet ovenfor viser, kan disse paneler også nemt tilgås ved blot at klikke på forskellige genstande i simuleringen:</p>
+<p>Som billedet ovenfor viser, kan disse paneler også nemt tilgås ved blot at
+klikke på forskellige genstande i simuleringen:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -395,7 +442,9 @@
 <p>For at åbne panelet <strong>Dispenser</strong>, klik på dispenseren.</p>
 </li>
 <li>
-<p>For at ændre delens retning på dispenseren, klik på det tomme pladeenme, der ligger på dispenseren (indstil først aktuelt trin til <strong>Opsamling</strong> ved at klikke på kolonnen <strong>P</strong> i navigatoren).</p>
+<p>For at ændre delens retning på dispenseren, klik på det tomme pladeenme, der
+ligger på dispenseren (indstil først aktuelt trin til <strong>Opsamling</strong> ved at klikke
+på kolonnen <strong>P</strong> i navigatoren).</p>
 </li>
 <li>
 <p>For at redigere optagelsespositionen for <strong>Griber</strong> på delen, klik på griberen.</p>
@@ -408,7 +457,10 @@
 <h2 id="_dispenserpanel">Dispenserpanel</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Klik på dispenseren for at åbne panelet <strong>Dispenser</strong>. TecZone Bend placerer delen ved dispenserens <em>justeringshjørne</em> og placerer sugegriberarmene ved delens hjørner. Armkonfigurationen og dispenserens placering kan redigeres ved brug af dette panel.</p>
+<p>Klik på dispenseren for at åbne panelet <strong>Dispenser</strong>. TecZone Bend placerer delen
+ved dispenserens <em>justeringshjørne</em> og placerer sugegriberarmene ved delens
+hjørner. Armkonfigurationen og dispenserens placering kan redigeres ved brug af
+dette panel.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -418,7 +470,9 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Brug indstillingerne <strong>Position</strong>, <strong>VINKEL</strong> og <strong>Løft op</strong> til at indstille dispenserens position og retning for at få den til at matche den faktiske position i cellen.</p>
+<p>Brug indstillingerne <strong>Position</strong>, <strong>Angle</strong> og
+<strong>Lift</strong> til at indstille dispenserens position og retning for at få
+den til at matche den faktiske position i cellen.</p>
 </li>
 </ul>
 </div>
@@ -426,15 +480,21 @@
 <h3 id="_sugekonfiguration">Sugekonfiguration</h3>
 <div class="paragraph">
 <p>Indstillingerne i indstillingen <strong>Sugning</strong> bruges til at konfigurere sugearmene.
-Disse indstillinger er kun vejledende og er ikke kritiske, da de ikke overføres til maskinen i NC-programmet. Operatøren på maskinen skal opsætte armene manuelt (måske ved at lave reference til opsætningspladen, der følger med NC-programmet).</p>
+Disse indstillinger er kun vejledende og er ikke kritiske, da de ikke overføres
+til maskinen i NC-programmet. Operatøren på maskinen skal opsætte armene manuelt
+(måske ved at lave reference til opsætningspladen, der følger med
+NC-programmet).</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Vælg en <strong>Arm</strong> og redigér indstillingerne <strong>VINKEL</strong> og <strong>Længde</strong> for at dreje og forlænge armen, indtil sugekopperne er placeret på delen.</p>
+<p>Vælg en <strong>Arm</strong> og redigér indstillingerne <strong>Angle</strong> og
+<strong>Length</strong> for at dreje og forlænge armen, indtil sugekopperne er
+placeret på delen.</p>
 </li>
 <li>
-<p>Brug indstillingen <strong>Type</strong> til at ændre sugekopperne monteret på dispenseren.</p>
+<p>Brug indstillingen <strong>Type</strong> til at ændre sugekopperne monteret på
+dispenseren.</p>
 </li>
 </ul>
 </div>
@@ -445,7 +505,9 @@ Disse indstillinger er kun vejledende og er ikke kritiske, da de ikke overføres
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Da vinkel- og længdekonfigurationen af armene ikke er en del af NC-programmet genereret af TecZone Bend, kontrollerer den faktisk ikke, om armene ikke krydser eller skærer hinanden.
+Da vinkel- og længdekonfigurationen af armene ikke er en del af
+NC-programmet genereret af TecZone Bend, kontrollerer den faktisk ikke, om armene
+ikke krydser eller skærer hinanden.
 </td>
 </tr>
 </table>
@@ -457,9 +519,10 @@ Da vinkel- og længdekonfigurationen af armene ikke er en del af NC-programmet g
 <h2 id="_opsamlingspanel">Opsamlingspanel</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Panelet <strong>Opsamling</strong> bruges til at indstille delens retning på dispenseren.
-Når delen drejes eller vendes, vil TecZone Bend markere et passende <em>plan</em> hvormed delen holdes (da griberen altid kun kan komme ind fra én retning).
-Dette panel kan åbnes ved at klikke på emnet, der ligger på dispenseren.</p>
+<p>Panelet <strong>Opsamling</strong> bruges til at indstille delens retning på dispenseren. Når
+delen drejes eller vendes, vil TecZone Bend markere et passende <em>plan</em> hvormed
+delen holdes (da griberen altid kun kan komme ind fra én retning). Dette panel
+kan åbnes ved at klikke på emnet, der ligger på dispenseren.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -469,12 +532,14 @@ Dette panel kan åbnes ved at klikke på emnet, der ligger på dispenseren.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Knappen <strong>Manipulér del</strong> bruges til at dreje delen 90 grader.
-  På billedet ovenfor er delen ikke i en ideel retning til referentiering til dispenserens hjørne. Her er et bedre resultat efter et par <em>drejninger</em>:<br>
+<p>Knappen <strong>Rotate Part</strong> bruges til at dreje delen 90 grader.
+  På billedet ovenfor er delen ikke i en ideel retning til referentiering til
+  dispenserens hjørne. Her er et bedre resultat efter et par <em>drejninger</em>:<br>
 <span class="image"><img src="img/afterrotate.png" alt="After Rotate" width="324"></span></p>
 </li>
 <li>
-<p>Hvis emnerne på dispenseren vippes den anden vej rundt, kan knappen <strong>Vend emne</strong> bruges til at vende modellen for at matche:<br>
+<p>Hvis emnerne på dispenseren vippes den anden vej rundt, kan knappen
+<strong>Flip Part</strong> bruges til at vende modellen for at matche:<br>
 <span class="image"><img src="img/afterflip.png" alt="After Flip" width="255"></span></p>
 </li>
 </ul>
@@ -482,7 +547,9 @@ Dette panel kan åbnes ved at klikke på emnet, der ligger på dispenseren.</p>
 <div class="sect2">
 <h3 id="_justér_enhver_kant">Justér enhver kant</h3>
 <div class="paragraph">
-<p>Nogle gange er disse 90° rotationer muligvis ikke tilstrækkelige. Antag målkanten skulle justeres (angivet på billedet nedenfor) med Z-referencen på dispenseren:</p>
+<p>Nogle gange er disse 90° rotationer muligvis ikke tilstrækkelige. Antag
+målkanten skulle justeres (angivet på billedet nedenfor) med Z-referencen på
+dispenseren:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -490,9 +557,11 @@ Dette panel kan åbnes ved at klikke på emnet, der ligger på dispenseren.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Klik på <strong>Kant justeres</strong> og vælg optionen <strong>Justering i Z</strong> på den menu, der dukker op. Klik derefter på den del nær målkanten.
-Denne kant bliver nu justeret med dispenserreferencen. Resultatet vises
-below<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>, efter nogle justeringer af griberens position og retning, der passer bedre til denne nye justering):</p>
+<p>Klik på <strong>Align Edge</strong> og vælg optionen <strong>ui:AlignWithX[Align with
+Z]</strong> på den menu, der dukker op. Klik derefter på den del nær målkanten. Denne
+kant bliver nu justeret med dispenserreferencen. Resultatet vises
+below<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>, efter nogle justeringer af
+griberens position og retning, der passer bedre til denne nye justering):</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -506,7 +575,9 @@ below<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_foot
 <h2 id="_griberpanel">Griberpanel</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Panelet <strong>Griber</strong> bruges til at placere griberen på delen, skifte til en anden griber, og til at konfigurere griberens dreje- og glideakser, når den samler delen op.</p>
+<p>Panelet <strong>Griber</strong> bruges til at placere griberen på delen, skifte til en anden
+griber, og til at konfigurere griberens dreje- og glideakser, når den samler
+delen op.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -516,26 +587,40 @@ below<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_foot
 <div class="ulist">
 <ul>
 <li>
-<p>Brug listen <strong>Navn</strong> til at vælge en ny griber fra listen over kæbegribere tilgængelige til denne maskine. Ved gennemsyn af navnene i listen, vises der et miniaturebillede af griberen:<br>
+<p>Brug listen <strong>Name</strong> til at vælge en ny griber fra listen over
+kæbegribere tilgængelige til denne maskine. Ved gennemsyn af navnene i listen,
+vises der et miniaturebillede af griberen:<br>
 <span class="image"><img src="img/jawgripperthumbnail.png" alt="Jaw Gripper Thumbnail" width="294"></span></p>
 </li>
 <li>
-<p>Brug indstillingerne <strong>Position</strong> og <strong>VINKEL</strong> til at positionere og rette griberen ind i forhold til <em>gribeplanets</em> midtpunkt. Dette midtpunkt er angivet af de dobbelte cirkler på billedet ovenfor. Her er den samme griber set ovenfra efter position og vinkel er justeret:<br>
+<p>Brug indstillingerne <strong>Position</strong> og <strong>Angle</strong> til at
+positionere og rette griberen ind i forhold til <em>gribeplanets</em> midtpunkt. Dette
+midtpunkt er angivet af de dobbelte cirkler på billedet ovenfor. Her er den
+samme griber set ovenfra efter position og vinkel er justeret:<br>
 <span class="image"><img src="img/adjustjawpos.png" alt="Adjust Jaw Position" width="406"></span></p>
 </li>
 <li>
-<p>Knapperne <strong>Kæber vendes</strong> og <strong>Forskyd</strong> bruges til at ændre griberens hals- og glidekonfiguration. Her er resultaterne af at starte fra den første konfiguration ovenfor og anvende disse arbejdsgange:<br>
+<p>Knapperne <strong>Swivel Neck</strong> og <strong>Slide Gripper</strong> bruges
+til at ændre griberens hals- og glidekonfiguration. Her er resultaterne af at
+starte fra den første konfiguration ovenfor og anvende disse arbejdsgange:<br>
 <span class="image"><img src="img/afterswivelslide.png" alt="After Swivel and Slide" width="802"></span></p>
 </li>
 <li>
-<p>Knappen <strong>Benyt vakuumgriber</strong> skifter delen til brug med vakuumgriber. Dette er reelt en fuldstændig <em>genberegning</em> af delen. Dispenseren bruges ikke længere, og delen opsamles fra en palle i stedet. Bukningsfølgen, omgribningsaktiviteten og aflejringsmønstret bliver alle genberegnet for at gøre dem mere egnede til en vakuumgriber.</p>
+<p>Knappen <strong>Use Vacuum Grip</strong> skifter delen til brug med
+vakuumgriber. Dette er reelt en fuldstændig <em>genberegning</em> af delen. Dispenseren
+bruges ikke længere, og delen opsamles fra en palle i stedet. Bukningsfølgen,
+omgribningsaktiviteten og aflejringsmønstret bliver alle genberegnet for at gøre
+dem mere egnede til en vakuumgriber.</p>
 </li>
 </ul>
 </div>
 <div class="sect2">
 <h3 id="_ændring_af_gribeplanet">Ændring af gribeplanet</h3>
 <div class="paragraph">
-<p>Kommandoen <strong>Vælg gribeflade</strong> bruges til at gribe delen i et andet plan. Klik på denne knap, og flyt så over det plan griberen skal flyttes til. Når dette gøres, tegnes et kryds på det plan for at indikere, at det er valgt:</p>
+<p>Kommandoen <strong>Set Grip Plane</strong> bruges til at gribe delen i et
+andet plan. Klik på denne knap, og flyt så over det plan griberen skal flyttes
+til. Når dette gøres, tegnes et kryds på det plan for at indikere, at det er
+valgt:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -544,7 +629,8 @@ below<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_foot
 </div>
 <div class="paragraph">
 <p>Et klik på planet flytter griberen til det plan, som vist på billedet nedenfor.
-Typisk vil sådanne ændringer i gribeplanet også kræve nogle ændringer i bukningrækkefølgen, ændringer i omgribningsaktiviteterne etc.</p>
+Typisk vil sådanne ændringer i gribeplanet også kræve nogle ændringer i
+bukningrækkefølgen, ændringer i omgribningsaktiviteterne etc.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -603,7 +689,7 @@ Typisk vil sådanne ændringer i gribeplanet også kræve nogle ændringer i buk
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

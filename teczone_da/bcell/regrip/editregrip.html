@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,11 +54,12 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../cut/index.html">Laser CAM</a>
+   <a href="../../cut/index.html">Laserskæring</a>
    <ul class="hide">
     <li>
      <button class="tree closed"></button>
@@ -145,7 +146,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../bend/index.html">Bukning CAM</a>
+   <a href="../../bend/index.html">Afkantningsmaskine</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">Opret bukningsdata</a></li>
     <li><button class="tree blank"></button><a href="../../bend/navigator.html">Bukningsnavigator</a></li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -212,9 +214,11 @@
      <button class="tree closed"></button>
      <a href="../deposit/index.html">Delaflejring</a>
      <ul class="hide">
-      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Aflejringsmønstre</a></li>
-      <li><button class="tree blank"></button><a href="../deposit/repeat.html">Gentagelse og rækkefølge</a></li>
-      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Separatorplade</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Aflejringsmønstertyper</a></li>
      </ul>
     </li>
     <li>
@@ -223,8 +227,14 @@
      <ul class="hide">
       <li><button class="tree blank"></button><a href="../advanced/waypoints.html">Waypoints</a></li>
       <li><button class="tree blank"></button><a href="../advanced/cellconfig.html">Cellekonfiguration</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/gripperdb.html">Griberdatabase</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/reports.html">Rapporter</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
      </ul>
     </li>
    </ul>
@@ -337,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -358,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -389,14 +400,173 @@
                 <div id="site-toc-left">
                     <article id="article">
                         <h1>Redigér omgribning</h1>
-
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Efter omgribning kan den endelige position af griberen stadig justeres ved hjælp
+af <strong>Gripper</strong> panelet. Denne position bibeholdes derefter til den kommende
+bukningsproces, eller indtil en ny gribning udføres.</p>
+</div>
+<div class="paragraph">
+<p>Redigering af en omgribningsposition udføres ved hjælp af <strong>Gripper</strong> panelet.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/editgripper.png" alt="Redigér griberposition" width="677">
+</div>
+</div>
+<div class="paragraph">
+<p>For at få adgang til et Gripper panel:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Klik direkte på robot griberen.</p>
+</li>
+<li>
+<p>Klik på <strong>Gripper</strong> indstillingen fra Regrip panel navigationsmenuen.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_griberpanel">Griberpanel</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ved hjælp af Gripper panelet kan positionen og orienteringen af robot griberen
+modificeres. Også typen af griber og afstanden mellem hvert sugepunkt (kop) kan
+konfigureres.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Brug <strong>Name</strong> feltet til at vælge gribertypen.</p>
+</li>
+<li>
+<p>Vælg <strong>Filtered</strong> afkrydsningsfeltet for at se kun den
+gældende griber for en given bukningsoperation.</p>
+</li>
+<li>
+<p>Brug <strong>Position</strong> og <strong>Angle</strong> feltet til at ændre positionen og orienteringen af griberen over en del.</p>
+<div class="paragraph">
+<p>Følgende er de tilgængelige griber <strong>Actions&#8230;&#8203;</strong>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/gripaction.png" alt="Griberhandlinger" width="236">
+</div>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/grippername.png" alt="Gribernavn" width="286">
+</div>
+</div>
+</li>
+<li>
+<p>Klik <strong>Configure</strong> indstilling for at ændre positionen af individuel griber. Dette vil åbne et nyt griberpanel med navn på det.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Arm</p>
+</li>
+<li>
+<p>Slide</p>
+</li>
+<li>
+<p>Stretch</p>
+</li>
+<li>
+<p>Symmetry</p>
+</li>
+<li>
+<p>Presets</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Small</p>
+</li>
+<li>
+<p>Large</p>
+</li>
+<li>
+<p>Wide</p>
+</li>
+<li>
+<p>Tall</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Import&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Brug <strong>Set Grip Plane</strong> til at vælge en anden plan at gribe. Når denne indstilling er valgt, vil musemarkøren ændre sig til en blå farve plus symbol. Sving rundt for at se plus symbolet vise forskellige planorienteringer og vælg en ønsket plan. Billedet nedenfor viser de mulige gribeplan for en given del:</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/setgripplane.png" alt="Indstil gribeplan" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>Griberen vil snappe til det valgte plan, og griberens position og orientering vil blive opdateret tilsvarende.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sugepanel">Sugepanel</h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="img/suctionpanel.png" alt="Sugepanel" width="136">
+</div>
+</div>
+<div class="paragraph">
+<p>Et typisk Sugepanel vises ved siden.</p>
+</div>
+<div class="paragraph">
+<p>For at få adgang til Sugepanelet:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Klik på <strong>Suction</strong> navigationsmenuen fra Gripper panelet.</p>
+</li>
+<li>
+<p>Klik direkte på enhver sugekop i robot griberen.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Brug <strong>Group #</strong> indstillingen til at vælge en bestemt sugekop
+blandt alle de tilgængelige kopper. Brug <strong>State</strong>
+indstillingen til at ændre operationel tilstand til <em>on, off eller removed</em>.
+Vælg <strong>Type</strong> af sugekop fra den tilgængelige liste. Vælg
+<strong>Change All</strong> afkrydsningsfeltet for at erstatte alle
+sugekopperne på én gang.</p>
+</div>
+</div>
+</div>
 
                     </article>
                 </div>
                 <div id="site-toc-holder">
                     <aside id="site-toc">
  <h3>Contents</h3>
- <ul></ul>
+ <ul>
+  <li level="1">
+   <a href="#_griberpanel">Griberpanel</a>
+  </li>
+  <li level="1">
+   <a href="#_sugepanel">Sugepanel</a>
+  </li>
+ </ul>
 </aside>
 
                 </div>
@@ -414,7 +584,7 @@
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

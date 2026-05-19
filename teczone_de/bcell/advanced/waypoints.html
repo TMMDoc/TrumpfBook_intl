@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Vorabversion)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -45,7 +45,7 @@
     </li>
     <li>
      <button class="tree closed"></button>
-     <a href="../../cad/3dimport/index.html">3-D-Import</a>
+     <a href="../../cad/3dimport/index.html">3-D Import</a>
      <ul class="hide">
       <li><button class="tree blank"></button><a href="../../cad/3dimport/prep3dmodel.html">3D-Modell importieren</a></li>
       <li><button class="tree blank"></button><a href="../../cad/3dimport/prepassembly.html">Baugruppe importieren</a></li>
@@ -54,11 +54,12 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../cad/sketch.html">Ändern der Geometrie</a></li>
+    <li><button class="tree blank"></button><a href="../../cad/attachments.html">Anhänge</a></li>
    </ul>
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../cut/index.html">Laser CAM</a>
+   <a href="../../cut/index.html">Laserschneiden</a>
    <ul class="hide">
     <li>
      <button class="tree closed"></button>
@@ -145,7 +146,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../bend/index.html">Biege-CAM</a>
+   <a href="../../bend/index.html">Abkantpresse</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">Biegeparameter erstellen</a></li>
     <li><button class="tree blank"></button><a href="../../bend/navigator.html">Biegenavigator</a></li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Tonnagekontrolle</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../bend/bendingaids.html">Biegehilfen</a></li>
    </ul>
   </li>
   <li>
@@ -212,9 +214,11 @@
      <button class="tree closed"></button>
      <a href="../deposit/index.html">Teilablage</a>
      <ul class="hide">
-      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Ablagemuster</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/deposit.html">Ablage-Panel</a></li>
       <li><button class="tree blank"></button><a href="../deposit/repeat.html">Wiederholung und Reihenfolge</a></li>
-      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Separator-Blech</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Separator-Bleche hinzufügen</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/lockpartrest.html">Teil-Ruhelage sperren</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Ablagemustertypen</a></li>
      </ul>
     </li>
     <li>
@@ -223,8 +227,14 @@
      <ul>
       <li><button class="tree blank"></button><a class="active" href="waypoints.html">Wegpunkte</a></li>
       <li><button class="tree blank"></button><a href="cellconfig.html">Zellenkonfiguration</a></li>
-      <li><button class="tree blank"></button><a href="gripperdb.html">Greiferdatenbank</a></li>
-      <li><button class="tree blank"></button><a href="reports.html">Berichte</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="gripperdb/index.html">Greiferdatenbank</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="gripperdb/creategripper.html">Einen Greifer erstellen</a></li>
+        <li><button class="tree blank"></button><a href="gripperdb/importgripper.html">Greifer aus DXF importieren</a></li>
+       </ul>
+      </li>
      </ul>
     </li>
    </ul>
@@ -337,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../database/materials.html">Materialien</a></li>
     <li><button class="tree blank"></button><a href="../../database/machines.html">Maschinen</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendtools.html">Biegewerkzeuge</a></li>
+    <li><button class="tree blank"></button><a href="../../database/benddeductions.html">Biegeabzüge</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Biegegreifer</a></li>
-    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Umformungen/Komponenten</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Umformungen und Komponenten</a></li>
    </ul>
   </li>
   <li>
@@ -358,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Unterstützte 3D-Formate</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separator-Blech-DXF</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Biegewerkzeug DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/adaptgeometry.html">Die Funktion „Geometrie anpassen"</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../impressum.html">Impressum</a></li>
  </ul>
 </div>
 
@@ -389,14 +400,379 @@
                 <div id="site-toc-left">
                     <article id="article">
                         <h1>Wegpunkte</h1>
-
+<div class="sect1">
+<h2 id="_überblick">Überblick</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Jede Bewegung des BendMasters besteht aus <strong>Wegpunkten</strong>, die
+nacheinander durchlaufen werden. Alle Wegpunkte einer Bewegung werden von TecZone
+bestimmt, aber die meisten von ihnen können angepasst werden. Punkte, die direkt mit
+der Nachführung während des Biegeprozesses zusammenhängen, können nicht geändert werden.
+Verschiedene Einstellungen zur Steuerung der Wegpunkte sind unten aufgeführt:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Position eines Wegpunkts ändern</p>
+</li>
+<li>
+<p>Neuen Wegpunkt einfügen oder vorhandenen Wegpunkt entfernen</p>
+</li>
+<li>
+<p>Bewegungseigenschaften wie Geschwindigkeit und Interpolation anpassen</p>
+</li>
+<li>
+<p>Neuen Wegpunkt an gewünschter Position hinzufügen</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>So greifen Sie auf das Panel Wegpunkte zu:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Klicken Sie direkt auf die Roboterschiene</p>
+</li>
+<li>
+<p>Klicken Sie auf den Link <strong>Wegpunkte</strong> im Panel Aufnahme, Biegen, Umgreifen
+oder Ablage.</p>
+</li>
+<li>
+<p>Klicken Sie auf den Wegpunkte-Link in einem der RG-Stations-Panels</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/waypointspanel.png" alt="Wegpunkt-Panel" width="483">
+</div>
+<div class="title">Figure 1. Wegpunkt-Panel</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/bendnav.png" alt="Biegenavigator" width="588">
+</div>
+<div class="title">Figure 2. Biegenavigator-Panels</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/waypointrg.png" alt="RG-Station" width="318">
+</div>
+<div class="title">Figure 3. RG-Stations-Panel</div>
+</div>
+<h2 id="_panel_wegpunkte" class="discrete">Panel Wegpunkte</h2>
+<div class="imageblock right">
+<div class="content">
+<img src="img/waypoints.png" alt="Wegpunkte" width="150">
+</div>
+</div>
+<div class="paragraph">
+<p>Ein typisches Wegpunkte-Panel ist daneben dargestellt:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Der <strong>Phase</strong>-Schieberegler zeigt die schrittweise Bewegung eines Wegpunkts.
+Jede Phase spiegelt eine bestimmte Roboter operation wie Aufnahme, Biegen, Umgreifen und Ablage wider.</p>
+</li>
+<li>
+<p>Verwenden Sie die Option <strong>Anzeige</strong>, um anzuzeigen:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Greifpunkt</p>
+</li>
+<li>
+<p>Handgelenkpunkt</p>
+</li>
+<li>
+<p>Roboterachsen.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Die Position und der Winkel des Handgelenks oder Greifers werden angezeigt und können
+bearbeitet werden. Wenn die Roboterachsen ausgewählt sind, werden die Roboterachsenwerte
+angezeigt und können bearbeitet werden.</p>
+</li>
+<li>
+<p>Die gelbe Spur zeigt den Pfad vom vorherigen Schritt zu diesem und von diesem Schritt zum
+nächsten (siehe Bild unten). Die 3 kleinen Dreiecke zeigen die lokalen X- und Y-Koordinaten
+des Roboters (Handgelenk oder Greifer) an.</p>
+</li>
+<li>
+<p>Der <strong>Simulieren</strong>-Schieberegler wird verwendet, um die Simulation von der
+vorherigen Phase zur nächsten Phase zu bewegen. Wenn dieser in der Mitte ist, ist das die
+tatsächliche Phase, die wir bearbeiten.</p>
+</li>
+<li>
+<p>Die Einstellung <strong>Interpolieren</strong> wird verwendet, um zwischen linearer
+und achsenorientierter Interpolation umzuschalten.</p>
+</li>
+<li>
+<p>Die Einstellungen <strong>Geschwindigkeit</strong> und <strong>Rundung</strong>
+werden verwendet, um die Geschwindigkeits- und Genauigkeitseinstellung für diesen Schritt zu bearbeiten.</p>
+</li>
+<li>
+<p>Das Feld <strong>Umgreif-Stationen</strong> wird verwendet, um die Position der Umgreif-Stationen entlang
+ihrer Achse zu ändern.</p>
+</li>
+<li>
+<p>Die Option <strong>Einfügen</strong> wird verwendet, um neue Wegpunkte durch
+Eingabe neuer Werte zu erstellen. Neu hinzugefügte Wegpunkte können durch die Option
+<strong>Entfernen</strong> entfernt werden.</p>
+</li>
+<li>
+<p>Verwenden Sie die Schaltflächen <strong>Zurück</strong> und <strong>Weiter</strong>, um zum
+nächsten oder vorherigen Schritt zu gehen (oder Sie können auch die linke und rechte Pfeiltaste
+verwenden). Durch Klicken auf die Schaltfläche <strong>Weiter</strong> wird jeder Schritt in
+einer Phase angezeigt. Am Ende der Phase wird das nächste entsprechende Wegpunkt-Panel angezeigt.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_eigenschaften_von_wegpunkten">Eigenschaften von Wegpunkten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Abhängig vom Prozesszustand erhält jeder Wegpunkt eine Reihe von Attributen bezüglich der
+Art der Interpolation, der Geschwindigkeit und der Bewegungspräzision. Bei Bedarf können
+diese Attribute geändert werden.</p>
+</div>
+<div class="paragraph">
+<p>Diese Einstellungen werden im Abschnitt Erweitert des Wegpunkt-Panels gesteuert.</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 1. Interpolieren</caption>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Interpolieren Typ</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linear</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lineare Bewegung des TCP entlang eines Pfades</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Achse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Bewegung von der Startposition zur Endposition ist so schnell
+wie möglich, unabhängig vom Pfad.<br>
+Keine lineare TCP-Bewegung.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 2. Geschwindigkeit</caption>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Geschwindigkeit Typ</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximale Geschwindigkeit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Schnell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">75 % der Maximalgeschwindigkeit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mittel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">50 % der Maximalgeschwindigkeit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reduziert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30 % der Maximalgeschwindigkeit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Langsam</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20 % der Maximalgeschwindigkeit</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 3. Rundung</caption>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Rundung Typ</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rundung beginnt bei 50 % der kürzeren Pfadlänge</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Groß</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rundung beginnt bei 35 % der kürzeren Pfadlänge</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mittel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rundung beginnt bei 20 % der kürzeren Pfadlänge</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reduziert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rundung beginnt bei 10 % der kürzeren Pfadlänge</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fein</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rundung beginnt bei 5 % der kürzeren Pfadlänge</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exakt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Kalibrierungspunkt wird exakt ohne Überlagerung angefahren</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="img/waypointpath.png" alt="Wegpunktpfad" width="300">
+</div>
+</div>
+<div class="olist callouts">
+<ol class="callouts">
+<li>
+<p>Pfadlänge zwischen dem Wegpunkt und dem Endpunkt</p>
+</li>
+<li>
+<p>Ausgeführte Länge</p>
+</li>
+<li>
+<p>Pfadlänge zwischen dem Startpunkt und dem Wegpunkt</p>
+</li>
+<li>
+<p>Wegpunkt 3 (Endpunkt)</p>
+</li>
+<li>
+<p>Wegpunkt 2 (Rundungspunkt)</p>
+</li>
+<li>
+<p>Wegpunkt 1 (Startpunkt)</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wegpunkte_anzeigen">Wegpunkte anzeigen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wenn ein Biegeteil gewerkzeugt ist, werden alle Wegpunkte automatisch für jede Bewegungsphase
+berechnet. Diese Punkte können phasenweise mit einer entsprechenden Beschreibung simuliert werden.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/displaywaypoint1.png" alt="Wegpunkt-Phase" width="326">
+</div>
+</div>
+<div class="paragraph">
+<p>Die folgenden Bilder zeigen die Wegpunktphasen der ersten Biegeoperation (in Seitenansicht):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/displaywaypoint.png" alt="Wegpunkt-Phase" width="871">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wegpunkte_ändern">Wegpunkte ändern</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Position eines Wegpunkts kann bei Bedarf geändert werden, zum Beispiel um zu verhindern,
+dass über die Achse gefahren wird.</p>
+</div>
+<div class="paragraph">
+<p>Neben anderen Aspekten zur Kollisionsvermeidung können unerwünschte Wegpunkte eliminiert oder
+neue Wegpunkte hinzugefügt werden.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Wenn die Position eines vorhandenen Wegpunkts geändert wird, zeigt TecZone eine Warnmeldung an.
+Klicken Sie auf <strong>OK</strong>, um mit der Änderung des Wegpunkts fortzufahren.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/waypointcaution.png" alt="Wegpunkt-Warnung" width="542">
+</div>
+</div>
+</li>
+<li>
+<p>Durch Klicken auf die Schaltfläche Einfügen werden neue Wegpunkte hinzugefügt.</p>
+<div class="paragraph">
+<p><span class="image"><img src="img/modifywaypoint1.png" alt="Wegpunkt ändern" width="399"></span> <span class="image"><img src="img/modifywaypoint2.png" alt="Wegpunkt hinzufügen entfernen" width="393"></span></p>
+</div>
+</li>
+<li>
+<p>Neu hinzugefügte Wegpunkte werden im Phasennamen durch +1,+2 usw. gekennzeichnet, wie unten gezeigt:</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/modifywaypoint3.png" alt="Wegpunkte ändern" width="316">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wegpunkte_simulieren">Wegpunkte simulieren</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Standardmäßig befindet sich der Schieberegler Simulieren in der Mittelposition.
+Die Bewegung des Roboters von einem Wegpunkt zum anderen wird nahtlos mit diesem Schieberegler
+simuliert.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/simulatewaypoint1.png" alt="Simulieren" width="200">
+</div>
+</div>
+</div>
+</div>
 
                     </article>
                 </div>
                 <div id="site-toc-holder">
                     <aside id="site-toc">
  <h3>Contents</h3>
- <ul></ul>
+ <ul>
+  <li level="1">
+   <a href="#_überblick">Überblick</a>
+  </li>
+  <li level="1">
+   <a href="#_eigenschaften_von_wegpunkten">Eigenschaften von Wegpunkten</a>
+  </li>
+  <li level="1">
+   <a href="#_wegpunkte_anzeigen">Wegpunkte anzeigen</a>
+  </li>
+  <li level="1">
+   <a href="#_wegpunkte_ändern">Wegpunkte ändern</a>
+  </li>
+  <li level="1">
+   <a href="#_wegpunkte_simulieren">Wegpunkte simulieren</a>
+  </li>
+ </ul>
 </aside>
 
                 </div>
@@ -414,7 +790,7 @@
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

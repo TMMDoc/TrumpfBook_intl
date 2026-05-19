@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,6 +54,7 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -197,7 +199,44 @@
       <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Udtagning</a></li>
      </ul>
     </li>
-    <li><button class="tree blank"></button><a href="../../bcell/regrip/index.html">Omgribning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Aflejringsmønstertyper</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../bcell/advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
    </ul>
   </li>
   <li>
@@ -308,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -329,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -361,11 +401,16 @@
                     <article id="article">
                         <h1>Komponentregistrering</h1>
 <div class="paragraph">
-<p>Komponenter som møtrikker, skruer etc. kræver normalt ikke nogen yderligere bearbejdning i denne software. Det er dog nyttigt at indsamle, registrere og bruge sådanne komponenter til at generere en mulig stykliste over materiale af yderligere indkøbte artikler, der er nødvendige for at sammensætte monteringen.</p>
+<p>Komponenter som møtrikker, skruer etc. kræver normalt ikke nogen yderligere
+bearbejdning i denne software. Det er dog nyttigt at indsamle, registrere og
+bruge sådanne komponenter til at generere en mulig stykliste over materiale af
+yderligere indkøbte artikler, der er nødvendige for at sammensætte monteringen.</p>
 </div>
 <div class="paragraph">
-<p>I praksis er der store forskelle på, hvordan selv en standardkomponent som en skrue af typen <strong>M8</strong> faktisk tegnes. Softwaren bruger et læringssystem, der lærer sådanne komponentnavne baseret på eksemplet.
-I begyndelsen kender TecZone Bend ikke til nogen standardkomponenter, og de vises i gult (ikke identificeret).</p>
+<p>I praksis er der store forskelle på, hvordan selv en standardkomponent som en
+skrue af typen <strong>M8</strong> faktisk tegnes. Softwaren bruger et læringssystem, der lærer
+sådanne komponentnavne baseret på eksemplet. I begyndelsen kender TecZone Bend ikke
+til nogen standardkomponenter, og de vises i gult (ikke identificeret).</p>
 </div>
 <div class="paragraph">
 <p>Sådan registreres komponenten:</p>
@@ -374,102 +419,76 @@ I begyndelsen kender TecZone Bend ikke til nogen standardkomponenter, og de vise
 <ol class="arabic">
 <li>
 <p>Importér en monteringsdel.</p>
-</li>
-</ol>
-</div>
 <div class="imageblock">
 <div class="content">
-<img src="img/importassembly.png" alt="importassembly">
+<img src="img/importassembly.png" alt="Import assembly">
 </div>
 </div>
-<div class="olist arabic">
-<ol class="arabic" start="2">
-<li>
-<p>Klik på ikonet <strong>Workflow</strong> og vælg modulet <strong>Opløs</strong>.</p>
 </li>
-</ol>
-</div>
+<li>
+<p>Klik på ikonet <strong>Workflow</strong> og vælg modulet <strong>Explode</strong>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="img/explode.png" alt="Explode" width="550">
 </div>
 </div>
-<div class="olist arabic">
-<ol class="arabic" start="3">
+</li>
 <li>
 <p>Alle komponenter i monteringen åbnes som separate 3D-filer.</p>
-</li>
-</ol>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="img/subparts.png" alt="Separate files">
 </div>
 </div>
-<div class="olist arabic">
-<ol class="arabic" start="4">
-<li>
-<p>Klik på en gul komponent på dets overflade for at få adgang til panelet <strong>Gribeposition</strong>.</p>
 </li>
-</ol>
-</div>
+<li>
+<p>Klik på en gul komponent på dets overflade for at få adgang til panelet <strong>Surface</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="img/surface.png" alt="surface">
+<img src="img/surface.png" alt="Identity" width="90">
 </div>
-<div class="title">Figure 1. Overfladepanel</div>
 </div>
-<div class="olist arabic">
-<ol class="arabic" start="5">
-<li>
-<p>Klik på <strong>Identificer&#8230;&#8203;</strong> for at få adgang til <strong>Komponent tilføjet</strong> panelet.</p>
 </li>
-</ol>
-</div>
+<li>
+<p>Klik på <strong>Identificer&#8230;&#8203;</strong> for at få adgang til <strong>Add Component</strong> panelet.</p>
 <div class="imageblock">
 <div class="content">
-<img src="img/addcomp.png" alt="addcomp">
+<img src="img/addcomp.png" alt="Add component" width="500">
 </div>
-<div class="title">Figure 2. Tilføj komponent</div>
 </div>
-<div class="olist arabic">
-<ol class="arabic" start="6">
+</li>
 <li>
 <p>Justér indstillingerne efter behov:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><strong>Vis:</strong> Alle andre komponenter, der allerede er defineret, vises også her. Denne komponent kan vises som reference ved klik på et navn For at vende tilbage til at tilføje den nye komponent, skal der klikkes på <strong>NY</strong> øverst på listen.</p>
+<p><strong>Show:</strong> Alle andre komponenter, der allerede er defineret, vises også her. Denne komponent kan vises som reference ved klik på et navn For at vende tilbage til at tilføje den nye komponent, skal der klikkes på <strong>NY</strong> øverst på listen.</p>
 </li>
 <li>
-<p><strong>Oversigtsbillede:</strong> Viser en forhåndsvisning af den valgte komponent..</p>
+<p><strong>Preview:</strong> Viser en forhåndsvisning af den valgte komponent..</p>
 </li>
 <li>
-<p><strong>Varianter:</strong> Det samme navn som navnet på en eksisterende komponent kan anvendes Det er almindeligt, at der er forskellige måder, hvorpå for eksempel den samme M8-skrue er udformet. Tilføjes de flere komponenter med samme navn, bliver de til varianter. Komponenter med flere varianter har deres antal angivet efter deres navn (f.eks.: x4).
+<p><strong>Variants:</strong> Det samme navn som navnet på en eksisterende komponent kan anvendes Det er almindeligt, at der er forskellige måder, hvorpå for eksempel den samme M8-skrue er udformet. Tilføjes de flere komponenter med samme navn, bliver de til varianter. Komponenter med flere varianter har deres antal angivet efter deres navn (f.eks.: x4).
 Hvis en af disse komponenter vælges, kan alle forskellige varianter vises.</p>
 </li>
 <li>
-<p><strong>Navn:</strong> Dette navn bruges til at vise komponenten.</p>
+<p><strong>Name:</strong> Dette navn bruges til at vise komponenten.</p>
 </li>
 <li>
-<p><strong>Identificerer:</strong> Et ID kan indtastes her.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
+<p><strong>Identifier:</strong> Et ID kan indtastes her.</p>
 <div class="paragraph">
 <p>Alle disse forskellige varianter har samme navn og samme ID. De er kun afbildet af forskellige 3D-modeller. Hvis softwaren registrerer en af disse 3D-modeller i en montering, vil denne komponent blive markeret med dette navn og denne ID.
-Det er muligt, at to forskellige komponenter med samme navn er blevet grupperet forkert. I en sådan situation kan knappen <strong>Klip</strong> bruges til at adskille de specifikke varianter med et nyt navn.</p>
+Det er muligt, at to forskellige komponenter med samme navn er blevet grupperet forkert. I en sådan situation kan knappen <strong>Separate</strong> bruges til at adskille de specifikke varianter med et nyt navn.</p>
 </div>
 <div class="paragraph">
 <p>Omvendt, hvis der skal ske en gruppering af to komponenter, der oprindeligt havde forskellige navne, vælg ganske enkelt en af dem og omdøb den, så den koordinerer med den anden. Begge er grupperet sammen som varianter af den samme komponent.</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic" start="7">
+</li>
+</ol>
+</div>
+</li>
 <li>
-<p>Klik på knappen <strong>Tilføj</strong> for at gemme komponenten i databasen til senere brug.</p>
+<p>Klik på knappen <strong>Add</strong> for at gemme komponenten i databasen til senere brug.</p>
 </li>
 </ol>
 </div>
@@ -493,7 +512,7 @@ Det er muligt, at to forskellige komponenter med samme navn er blevet grupperet 
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,11 +54,12 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../cut/index.html">Laser CAM</a>
+   <a href="../../cut/index.html">Laserskæring</a>
    <ul class="hide">
     <li>
      <button class="tree closed"></button>
@@ -145,7 +146,7 @@
   </li>
   <li>
    <button class="tree closed"></button>
-   <a href="../../bend/index.html">Bukning CAM</a>
+   <a href="../../bend/index.html">Afkantningsmaskine</a>
    <ul class="hide">
     <li><button class="tree blank"></button><a href="../../bend/createbenddata.html">Opret bukningsdata</a></li>
     <li><button class="tree blank"></button><a href="../../bend/navigator.html">Bukningsnavigator</a></li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -212,9 +214,11 @@
      <button class="tree closed"></button>
      <a href="../deposit/index.html">Delaflejring</a>
      <ul class="hide">
-      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Aflejringsmønstre</a></li>
-      <li><button class="tree blank"></button><a href="../deposit/repeat.html">Gentagelse og rækkefølge</a></li>
-      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Separatorplade</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../deposit/patterns.html">Aflejringsmønstertyper</a></li>
      </ul>
     </li>
     <li>
@@ -223,8 +227,14 @@
      <ul class="hide">
       <li><button class="tree blank"></button><a href="../advanced/waypoints.html">Waypoints</a></li>
       <li><button class="tree blank"></button><a href="../advanced/cellconfig.html">Cellekonfiguration</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/gripperdb.html">Griberdatabase</a></li>
-      <li><button class="tree blank"></button><a href="../advanced/reports.html">Rapporter</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
      </ul>
     </li>
    </ul>
@@ -337,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -358,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -389,14 +400,95 @@
                 <div id="site-toc-left">
                     <article id="article">
                         <h1>Tilføj omgribning</h1>
-
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Tilføjelse af en omgribning mellem bukningscyklusser kan forhindre
+kollisionsfejl. For at tilføje en omgribning, klik to gange på en bukkningscelle
+i bend-navigatoren og vælg <strong>Add Regrip</strong> indstillingen.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/addregrip.png" alt="Tilføj omgribning" width="368"></span> <span class="image"><img src="img/addregrip1.png" alt="Omgribningspanel" width="158"></span></p>
+</div>
+<div class="paragraph">
+<p>Når du klikker på <strong>Add Regrip</strong>, ser du følgende indstillinger:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>During (Parallel)</strong> - En ny omgribningssekvens (<strong>1R</strong>)
+introduceres med <strong>During Bend</strong> <em>Metode</em> valgt
+som standard.</p>
+</li>
+<li>
+<p><strong>After (Post- Bend)</strong> - Dette vil tilføje en ny omgribningscelle efter den valgte bukningscelle i navigatoren. Også her får vi <strong>Post-Bend</strong> <em>Metode</em> valgt som standard.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Kontrollér altid for eventuelle kollisionsfejl under tilføjelsen af omgribning.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><em>Metode</em> for omgribning kan ændres til enhver tid.</p>
+</div>
+</li>
+<li>
+<p><strong>After (Station)</strong> - Denne indstilling vil tilføje
+omgribningen efter omgribningsstationerne kommer på plads under delen for at
+holde (mens robot griberen svinger rundt om delen for at gribe den fra den anden
+side ved hjælp af <strong>Swivel</strong> indstillingen).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Når en omgribning tilføjes efter den første bukning (fra bukning 2 eller 3),
+vises yderligere indstillinger:</p>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="img/removeregrip.png" alt="Fjern omgribning" width="173">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/addregrip2.png" alt="Yderligere omgribning" width="397">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fjern_omgribning">Fjern omgribning</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Brug <strong>Remove Regrip</strong> indstillingen til at fjerne en
+nyligt tilføjet eller en eksisterende omgribning. Denne indstilling vises kun i
+tilfælde, hvor det kan være muligt at fjerne en omgribningsoperation. Generelt
+kan en omgribningsoperation ikke fjernes, hvis delen skal holdes fra den anden
+side for at fortsætte bukningsoperationen.</p>
+</div>
+<div class="paragraph">
+<p>En eksisterende omgribning kan fjernes, hvilket kan forårsage kollisioner under
+bukningsprocessen.</p>
+</div>
+</div>
+</div>
 
                     </article>
                 </div>
                 <div id="site-toc-holder">
                     <aside id="site-toc">
  <h3>Contents</h3>
- <ul></ul>
+ <ul>
+  <li level="1">
+   <a href="#_fjern_omgribning">Fjern omgribning</a>
+  </li>
+ </ul>
 </aside>
 
                 </div>
@@ -414,7 +506,7 @@
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

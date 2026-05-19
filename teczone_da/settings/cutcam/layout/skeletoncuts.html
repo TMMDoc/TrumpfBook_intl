@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,6 +54,7 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../../../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -197,7 +199,44 @@
       <li><button class="tree blank"></button><a href="../../../bcell/bending/extraction.html">Udtagning</a></li>
      </ul>
     </li>
-    <li><button class="tree blank"></button><a href="../../../bcell/regrip/index.html">Omgribning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/patterns.html">Aflejringsmønstertyper</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../bcell/advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
    </ul>
   </li>
   <li>
@@ -308,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../../../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -329,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -369,30 +409,47 @@
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="img/skeletoncuts.png" alt="skeletoncuts" width="700">
+<img src="img/sheetcuttingrules.png" alt="Sheet cutting rules" width="925">
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Slice sheet skeleton</strong>: Hvis denne option aktiveres, vil TecZone Laser automatisk tilføje rummelige vandrette og lodrette skæringer til layoutet. Snitlinjer tilføjes fra nederste venstre hjørne af pladen. Hvis en snitlinje passerer gennem nogle dele, registrerer TecZone Laser automatisk dette og tilføjer flere snitlinjer for kun at skære skeletpladen efterladt mellem delene.</p>
+<p><strong>Slice sheet skeleton</strong>: Hvis denne option aktiveres, vil
+TecZone Laser automatisk tilføje rummelige vandrette og lodrette skæringer til
+layoutet. Snitlinjer tilføjes fra nederste venstre hjørne af pladen. Hvis en
+snitlinje passerer gennem nogle dele, registrerer TecZone Laser automatisk dette og
+tilføjer flere snitlinjer for kun at skære skeletpladen efterladt mellem delene.</p>
 </div>
 <div class="paragraph">
-<p><strong>X spacing between vertical sheet cuts</strong>: Dette er afstanden mellem lodrette snitlinjer.</p>
+<p><strong>X spacing between vertical sheet cuts</strong>: Dette er
+afstanden mellem lodrette snitlinjer.</p>
 </div>
 <div class="paragraph">
-<p><strong>Y spacing between horizontal sheet cuts</strong>: Dette er afstanden mellem vandrette snitlinjer.</p>
+<p><strong>Y spacing between horizontal sheet cuts</strong>: Dette er
+afstanden mellem vandrette snitlinjer.</p>
 </div>
 <div class="paragraph">
-<p><strong>Create remainder sheet</strong>: En resterende plade skaber en ren skæring til at adskille den resterende plade fra skelettet.</p>
+<p><strong>Create remainder sheet</strong>: En resterende plade skaber
+en ren skæring til at adskille den resterende plade fra skelettet.</p>
 </div>
 <div class="paragraph">
-<p><strong>Minimum remainder sheet width</strong>: Selv hvis ovenstående er kontrolleret, vil der kun blive tilføjet en endelig skæring, når bredden af den ubrugte plade skabt af skæringen er større end eller lig med denne værdi.</p>
+<p><strong>Minimum remainder sheet width</strong>: Selv hvis
+ovenstående er kontrolleret, vil der kun blive tilføjet en endelig skæring, når
+bredden af den ubrugte plade skabt af skæringen er større end eller lig med
+denne værdi.</p>
 </div>
 <div class="paragraph">
-<p><strong>Final cut X offset</strong>: Dette er afstanden fra højre, mest ydre delklargøring til den endelige, lodrette skæring, der skaber den resterende plade.</p>
+<p><strong>Final cut X offset</strong>: Dette er afstanden fra højre, mest
+ydre delklargøring til den endelige, lodrette skæring, der skaber den resterende
+plade.</p>
 </div>
 <div class="paragraph">
-<p><strong>Microjoint spacing on long cuts (0 = no internal microjoints)</strong>: TecZone Laser har kapaciteten til at oprette microjoints på pladeskæringer automatisk. Bruger kan specificere afstanden for microjoints under <strong>Sheet cutting rules</strong> i indstillingerne.
-Microjoints vil blive indsat i enhver kæring, der er længere end denne længde. Som standard er denne indstilling sat til 0 mm, hvilket betyder, at microjoints ikke er påkrævet på pladeskæringer,</p>
+<p><strong>Microjoint spacing on long cuts (0 = no internal microjoints)</strong>:
+TecZone Laser har kapaciteten til at oprette microjoints på pladeskæringer
+automatisk. Bruger kan specificere afstanden for microjoints under
+<strong>Sheet cutting rules</strong> i indstillingerne. Microjoints vil blive indsat i
+enhver kæring, der er længere end denne længde. Som standard er denne
+indstilling sat til 0 mm, hvilket betyder, at microjoints ikke er påkrævet på
+pladeskæringer,</p>
 </div>
 <div class="paragraph">
 <p>To slags microjoints er mulige på pladeskæring; <strong>hårde</strong> og <strong>nano</strong>.</p>
@@ -410,23 +467,46 @@ Som standard oprettes hårde microjoints, medmindre nano foretrækkes.
 </table>
 </div>
 <div class="paragraph">
-<p>Selv for hårde microjoints vil der ske piercing på linjen. Der vil ikke være nogen tilgangsbane. Men hvis LTT anbefaler en reduceret hastighedstilgang, så vil en del af linjen blive skåret ved reduceret hastighed efter microjoint.</p>
+<p>Selv for hårde microjoints vil der ske piercing på linjen. Der vil ikke være
+nogen tilgangsbane. Men hvis LTT anbefaler en reduceret hastighedstilgang, så
+vil en del af linjen blive skåret ved reduceret hastighed efter microjoint.</p>
 </div>
 <div class="paragraph">
-<p><strong>Mark remainder sheet with size, material &amp; thickness</strong>: TecZone Laser kan markere den resterende plade med materialets navn, tykkelse og størrelse.</p>
+<p><strong>Mark remainder sheet with size, material &amp; thickness</strong>:
+TecZone Laser kan markere den resterende plade med materialets navn, tykkelse og
+størrelse.</p>
 </div>
 <div class="paragraph">
-<p>Hvis denne option vælges, tilføjes der markering, hvis der er resterende pladeskæring(er) på layoutet. Hvis den resterende pladeskæring fjernes på grund af en ændring i indstillingerne, vil markeringen også blive fjernet. Markeringen vil altid være justeret langs pladeskæringen, positioneret ved dens midte. Hvis der ikke er nok plads til at indsætte teksten, vil TecZone Laser automatisk mindske tekststørrelsen eller ændre retningen af den markerede tekst.</p>
+<p>Hvis denne option vælges, tilføjes der markering, hvis der er resterende
+pladeskæring(er) på layoutet. Hvis den resterende pladeskæring fjernes på grund
+af en ændring i indstillingerne, vil markeringen også blive fjernet. Markeringen
+vil altid være justeret langs pladeskæringen, positioneret ved dens midte. Hvis
+der ikke er nok plads til at indsætte teksten, vil TecZone Laser automatisk mindske
+tekststørrelsen eller ændre retningen af den markerede tekst.</p>
 </div>
 <div class="paragraph">
-<p>Markering kan også redigeres ved at bruge indstillingerne <strong>Laser Text</strong>.
-Ændringer anvendt på tekst, højde og vinkel huskes, men positionen genberegnes hver gang positionen af resterende skæring(er) ændres.</p>
+<p>Markering kan også redigeres ved at bruge indstillingerne
+<strong>Laser Text</strong>. Ændringer anvendt på tekst, højde og vinkel
+huskes, men positionen genberegnes hver gang positionen af resterende
+skæring(er) ændres.</p>
 </div>
 <div class="paragraph">
-<p><strong>Prefer remainder sheet along the longer dimension</strong>: This option will be turned on by default. <strong>til</strong> som standard. Hvis denne option er aktiveret, vil indlejringsmaskinen vælge mønsteret med dele skubbet langs den større dimension, medmindre mønsteret med dele skubbet langs den kortere dimension sparer 50% mere plade end førstnævnte. Hvis denne option er deaktiveret, vil indlejringsmaskinen vælge det mønster, der producerer bedre resterende plade (baseret på størrelsen af den resterende plade) uanset indlejringsretningen.</p>
+<p><strong>Prefer remainder sheet along the longer dimension</strong>:
+This option will be turned on by default. <strong>til</strong> som standard. Hvis denne option
+er aktiveret, vil indlejringsmaskinen vælge mønsteret med dele skubbet langs den
+større dimension, medmindre mønsteret med dele skubbet langs den kortere
+dimension sparer 50% mere plade end førstnævnte. Hvis denne option er
+deaktiveret, vil indlejringsmaskinen vælge det mønster, der producerer bedre
+resterende plade (baseret på størrelsen af den resterende plade) uanset
+indlejringsretningen.</p>
 </div>
 <div class="paragraph">
-<p><strong>Process sheet cuts after all parts</strong>: Som standard ved rækkefølgeopdeling vil TecZone Laserbearbejde skiveskæringen før klargøring af delene bearbejdes. Dette er normalt en god idé, da laserhovedet frit kan strejfe rundt om den uskårne plade, mens skiveskæringen laves. Men hvis skiveskæringerne skal bearbejdes til sidst, efter alle dele er bearbejdet, så kontrollér denne option. Følgende parametre påvirker, hvordan hvert enkelt skiveskæring er programmeret.</p>
+<p><strong>Process sheet cuts after all parts</strong>: Som standard ved
+rækkefølgeopdeling vil TecZone Laserbearbejde skiveskæringen før klargøring af delene
+bearbejdes. Dette er normalt en god idé, da laserhovedet frit kan strejfe rundt
+om den uskårne plade, mens skiveskæringen laves. Men hvis skiveskæringerne skal
+bearbejdes til sidst, efter alle dele er bearbejdet, så kontrollér denne option.
+Følgende parametre påvirker, hvordan hvert enkelt skiveskæring er programmeret.</p>
 </div>
 </div>
 </div>
@@ -435,32 +515,60 @@ Som standard oprettes hårde microjoints, medmindre nano foretrækkes.
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="img/sheetpara.png" alt="sheetpara" width="600">
+<img src="img/sheetcutparam.png" alt="Sheet cut parameters" width="925">
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Microjoint gap at sheet edge</strong>: Indstil dem til en værdi, der er større end nul, hvis der skal være et lille mellemstykke tilbage på de punkter, hvor skiveskæringen rører pladens kant.</p>
+<p><strong>Microjoint gap at sheet edge</strong>: Indstil dem til en
+værdi, der er større end nul, hvis der skal være et lille mellemstykke tilbage
+på de punkter, hvor skiveskæringen rører pladens kant.</p>
 </div>
 <div class="paragraph">
-<p><strong>Microjoint gap at part edge</strong>: Indstil dem til en værdi, der er større end nul, hvis der skal være et lille mellemstykke tilbage på de punkter, hvor skiveskæringen rører delens kant.</p>
+<p><strong>Microjoint gap at part edge</strong>: Indstil dem til en
+værdi, der er større end nul, hvis der skal være et lille mellemstykke tilbage
+på de punkter, hvor skiveskæringen rører delens kant.</p>
 </div>
 <div class="paragraph">
-<p><strong>Pierce distance from part edge</strong>: Dette er afstanden mellem piercingpunktet og delens kant. Hvis det er en værdi, der ikke er nul, vil TecZone Laser lave en piercing af denne afstand væk fra kanten og derefter bevæge sig mod kanten, før den drejer 180 grader til højre ved kanten og spore den tilgang, den lavede, for at afslutte den primære skæring.</p>
+<p><strong>Pierce distance from part edge</strong>: Dette er
+afstanden mellem piercingpunktet og delens kant. Hvis det er en værdi, der ikke
+er nul, vil TecZone Laser lave en piercing af denne afstand væk fra kanten og
+derefter bevæge sig mod kanten, før den drejer 180 grader til højre ved kanten
+og spore den tilgang, den lavede, for at afslutte den primære skæring.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="img/ne45.bmp" alt="image" width="267" height="85">
+<img src="img/pierecedistance.png" alt="Pierce distance from sheet edge" width="343">
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Measuring distance from sheet edge</strong>: Hvis der ikke oprettes en wirejoint ved pladekanten, betyder det, at maskinen skal skære pladen hele vejen til enden. Men det kan ikke gøres med højdereguleringen aktiveret, da det vil udgøre en risiko for, at maskinhovedet kollapser ind i maskinfundamentet efter pladen. Denne parameter identificerer afstanden før pladens kant, hvor laserhovedets højde er låst, og afstandsreguleringen er deaktiveret. Når der startes en skæring ved pladens kant, vil maskinen faktisk nå det målepunkt, der er defineret af denne parameter, måle pladens højde, låse dens Z-position, bevæge sig ud af pladen, starte laseren op og derefter begynde at skære med afstandsreguleringen deaktiveret, indtil den igen når det samme målepunkt.</p>
+<p><strong>Measuring distance from sheet edge</strong>: Hvis der ikke
+oprettes en wirejoint ved pladekanten, betyder det, at maskinen skal skære
+pladen hele vejen til enden. Men det kan ikke gøres med højdereguleringen
+aktiveret, da det vil udgøre en risiko for, at maskinhovedet kollapser ind i
+maskinfundamentet efter pladen. Denne parameter identificerer afstanden før
+pladens kant, hvor laserhovedets højde er låst, og afstandsreguleringen er
+deaktiveret. Når der startes en skæring ved pladens kant, vil maskinen faktisk
+nå det målepunkt, der er defineret af denne parameter, måle pladens højde, låse
+dens Z-position, bevæge sig ud af pladen, starte laseren op og derefter begynde
+at skære med afstandsreguleringen deaktiveret, indtil den igen når det samme
+målepunkt.</p>
 </div>
 <div class="paragraph">
-<p><strong>Overtravel after sheet edge</strong>: Dette er den værdi, med hvilken maskinhovedet bevæger sig ud over pladens kant med laseren tændt, men afstandsreguleringen slået fra. Det er muligt at give overkørselsafstand for venstre, nederste, højre og øverste pladekanter individuelt.</p>
+<p><strong>Overtravel after sheet edge</strong>: Dette er den værdi, med
+hvilken maskinhovedet bevæger sig ud over pladens kant med laseren tændt, men
+afstandsreguleringen slået fra. Det er muligt at give overkørselsafstand for
+venstre, nederste, højre og øverste pladekanter individuelt.</p>
 </div>
 <div class="paragraph">
-<p><strong>Start by piercing on sheet</strong>: Ved skæring af en plade sænkes dysen ned i overkørselsbanen. Hvis laserhovedet ikke er hævet tilbage og op, før det kommer ind i pladen, kan det smadre ind i pladen og beskadige dysen. Aktivering af
-<strong>afkrydsningsfeltet Start by piercing on sheet</strong> forhindrer dyseskader. Som standard vil denne option være deaktiveret. Hvis denne aktiveres, når der udføres en skiveskæring fra pladens kant, vil der laves piercing på det af pladen, der er tættere på kanten, bortset fra låsning af laserhovedet på det punkt. Dette forhindrer dysebeskadigelse.</p>
+<p><strong>Start by piercing on sheet</strong>:
+Ved skæring af en plade sænkes dysen ned i overkørselsbanen. Hvis laserhovedet
+ikke er hævet tilbage og op, før det kommer ind i pladen, kan det smadre ind i
+pladen og beskadige dysen. Aktivering af afkrydsningsfeltet
+<strong>Start by piercing on sheet</strong> forhindrer
+dyseskader. Som standard vil denne option være deaktiveret. Hvis denne
+aktiveres, når der udføres en skiveskæring fra pladens kant, vil der laves
+piercing på det af pladen, der er tættere på kanten, bortset fra låsning af
+laserhovedet på det punkt. Dette forhindrer dysebeskadigelse.</p>
 </div>
 </div>
 </div>
@@ -495,7 +603,7 @@ Som standard oprettes hårde microjoints, medmindre nano foretrækkes.
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

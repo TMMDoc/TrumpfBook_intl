@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,6 +54,7 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a class="active" href="tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -197,7 +199,44 @@
       <li><button class="tree blank"></button><a href="../../bcell/bending/extraction.html">Udtagning</a></li>
      </ul>
     </li>
-    <li><button class="tree blank"></button><a href="../../bcell/regrip/index.html">Omgribning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/deposit/patterns.html">Aflejringsmønstertyper</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../bcell/advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../../bcell/advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
    </ul>
   </li>
   <li>
@@ -308,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -329,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -361,10 +401,13 @@
                     <article id="article">
                         <h1>Kontrol af tonnage</h1>
 <div class="paragraph">
-<p>TecZone Bend
-computes<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>
-trykkraften påkrævet for at bearbejde hvert enkelt bukning, og derefter bruges denne til at kontrollere, at de anvendte stanser, matricer og adaptere til bukningen ikke er overbelastet.
-Typisk specificeres tonnage for bukningsværktøjer som kN/m (kilonewton pr. meter) eller tons pr. meter. TecZone Bend beregner den lineære tonnage påkrævet til en bukning og kontrollerer, om denne grænse ligger inden for værktøjets grænsebelastning. Når dette overtrædes, vises der fejl:</p>
+<p>TecZone Bend computes<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> trykkraften påkrævet for at bearbejde hvert enkelt bukning,
+og derefter bruges denne til at kontrollere, at de anvendte stanser, matricer og
+adaptere til bukningen ikke er overbelastet. Typisk specificeres tonnage for
+bukningsværktøjer som kN/m (kilonewton pr. meter) eller tons pr. meter.
+TecZone Bend beregner den lineære tonnage påkrævet til en bukning og kontrollerer,
+om denne grænse ligger inden for værktøjets grænsebelastning. Når dette
+overtrædes, vises der fejl:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -372,10 +415,13 @@ Typisk specificeres tonnage for bukningsværktøjer som kN/m (kilonewton pr. met
 </div>
 </div>
 <div class="paragraph">
-<p>Derudover kontrolleres den samlede tonnage påkrævet til bukningen mod den tonnage, som maskinen kan generere, og når maskinen er overbelastet, vises en fejl i rækken <strong>Ram</strong> i bukningsnavigator.</p>
+<p>Derudover kontrolleres den samlede tonnage påkrævet til bukningen mod den
+tonnage, som maskinen kan generere, og når maskinen er overbelastet, vises en
+fejl i rækken <strong>Ram</strong> i bukningsnavigator.</p>
 </div>
 <div class="paragraph">
-<p>Den værktøjsspids, der genereres til en stanse eller matrice, viser den lineære tonnage værktøjet er i stand til at håndtere:</p>
+<p>Den værktøjsspids, der genereres til en stanse eller matrice, viser den lineære
+tonnage værktøjet er i stand til at håndtere:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -383,7 +429,8 @@ Typisk specificeres tonnage for bukningsværktøjer som kN/m (kilonewton pr. met
 </div>
 </div>
 <div class="paragraph">
-<p>Værktøjsspidsen til en bukning viser den samlede tonnage påkrævet til at fuldføre bukningen:</p>
+<p>Værktøjsspidsen til en bukning viser den samlede tonnage påkrævet til at
+fuldføre bukningen:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -405,7 +452,7 @@ Typisk specificeres tonnage for bukningsværktøjer som kN/m (kilonewton pr. met
             </div>
             <nav class="pagination">
  <span class="prev"><a href="recompute.html">Genberegn løsning</a></span>
- <span class="next"><a href="../../bcell/index.html">BendMaster CAM</a></span>
+ <span class="next"><a href="../bendingaids.html">Bukningshjælpemidler</a></span>
 </nav>
 
         </div>
@@ -416,7 +463,7 @@ Typisk specificeres tonnage for bukningsværktøjer som kN/m (kilonewton pr. met
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

@@ -16,7 +16,7 @@
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
         <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
-        <div><p>TecZone Reference Manual</p></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Foreløbig version)</p></div>
     </header>
     <div id="site-main">
         <nav id="site-nav">
@@ -54,6 +54,7 @@
      </ul>
     </li>
     <li><button class="tree blank"></button><a href="../../../cad/sketch.html">Ændring af geometrien</a></li>
+    <li><button class="tree blank"></button><a href="../../../cad/attachments.html">Vedhæftninger</a></li>
    </ul>
   </li>
   <li>
@@ -173,6 +174,7 @@
       <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">Kontrol af tonnage</a></li>
      </ul>
     </li>
+    <li><button class="tree blank"></button><a href="../../../bend/bendingaids.html">Bukningshjælpemidler</a></li>
    </ul>
   </li>
   <li>
@@ -197,7 +199,44 @@
       <li><button class="tree blank"></button><a href="../../../bcell/bending/extraction.html">Udtagning</a></li>
      </ul>
     </li>
-    <li><button class="tree blank"></button><a href="../../../bcell/regrip/index.html">Omgribning</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/regrip/index.html">Omgribning</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/regrippanel.html">Omgribningspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/addregrip.html">Tilføj omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/editregrip.html">Redigér omgribning</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/jawregrip.html">Omgribning med kæbe</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/regrip/rgstationpanel.html">Omgribestationspanel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/deposit/index.html">Delaflejring</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/deposit.html">Aflejringspanel</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/repeat.html">Gentagelse og sekvens</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/separatorsheet.html">Tilføj separatorplader</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/lockpartrest.html">Lås del-hvile</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/deposit/patterns.html">Aflejringsmønstertyper</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bcell/advanced/index.html">Avanceret</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../../../bcell/advanced/cellconfig.html">Cellekonfiguration</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../bcell/advanced/gripperdb/index.html">Griber-database</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb/creategripper.html">Opret en griber</a></li>
+        <li><button class="tree blank"></button><a href="../../../bcell/advanced/gripperdb/importgripper.html">Importér griber fra DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
    </ul>
   </li>
   <li>
@@ -308,8 +347,9 @@
     <li><button class="tree blank"></button><a href="../../../database/materials.html">Materialer</a></li>
     <li><button class="tree blank"></button><a href="../../../database/machines.html">Maskiner</a></li>
     <li><button class="tree blank"></button><a href="../../../database/bendtools.html">Bukningsværktøjer</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/benddeductions.html">Bukningsfradrag</a></li>
     <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">Bukningsgribere</a></li>
-    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Forme/komponenter</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Forme og komponenter</a></li>
    </ul>
   </li>
   <li>
@@ -329,9 +369,9 @@
     <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">Understøttede 3D-formater</a></li>
     <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">Separatorplade DXF</a></li>
     <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">Bukningsværktøj dxf</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/adaptgeometry.html">Funktionen Tilpas geometri</a></li>
    </ul>
   </li>
-  <li><button class="tree blank"></button><a href="../../../impressum.html">Juridisk meddelelse</a></li>
  </ul>
 </div>
 
@@ -372,36 +412,52 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Panelet <strong>Contour</strong> bruges til arbejdsgange på <em>alle</em> laserskæringer på en bestemt kontur. For eksempel kan der tilføjes microjoints for at opdele en laserskæring i to, eller joints kan fjernes for at kombinere to på hinanden følgende laserskæringer på den samme kontur til én.</p>
+<p>Panelet <strong>Contour</strong> bruges til arbejdsgange på <em>alle</em> laserskæringer på
+en bestemt kontur. For eksempel kan der tilføjes microjoints for at opdele en
+laserskæring i to, eller joints kan fjernes for at kombinere to på hinanden
+følgende laserskæringer på den samme kontur til én.</p>
 </div>
 <div class="paragraph">
 <p>For at få adgang til denne panel, klik på en laserskæring for at få vist
-<strong>panelet Laser Cut</strong>, og klik derefter på navigationsknappen <strong>Contour</strong> nær bunden for at åbne konturpanelet.</p>
+<strong>panelet Laser Cut</strong>, og klik derefter på navigationsknappen
+<strong>Contour</strong> nær bunden for at åbne konturpanelet.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Slet</strong>: Slet alle laserskæringer på denne kontur.</p>
+<p><strong>Delete</strong>: Slet alle laserskæringer på denne kontur.</p>
 </li>
 <li>
-<p><strong>Copy Tooling</strong>: Kopierer laserskæringerne på denne kontur til andre lignende konturer.</p>
+<p><strong>Copy Tooling</strong>: Kopierer laserskæringerne på denne
+kontur til andre lignende konturer.</p>
 </li>
 <li>
-<p><strong>Microjoint</strong>: Indstillingerne i dette afsnit bruges for at tilføje eller fjerne microjoints på konturen.</p>
+<p><strong>Microjoint</strong>: Indstillingerne i dette afsnit bruges
+for at tilføje eller fjerne microjoints på konturen.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Tilføj</strong>: Klik her for at tilføje flere microjoints på konturen. Hver gang der tilføjes en microjoint, flyttes de eksisterende joints for at gøre alle laserskæringer omtrent lige lange. Billedet nedenfor viser resultaterne efter gentagne klik på knappen <strong>Tilføj</strong>. (Bemærk, at mellem første og anden option er antallet af laserskæringer ikke øget, men der er tilføjet en microjoint i slutningen af skæringen).<br>
+<p><strong>Add</strong>: Klik her for at tilføje flere microjoints på
+konturen. Hver gang der tilføjes en microjoint, flyttes de eksisterende joints
+for at gøre alle laserskæringer omtrent lige lange. Billedet nedenfor viser
+resultaterne efter gentagne klik på knappen <strong>Add</strong>.
+(Bemærk, at mellem første og anden option er antallet af laserskæringer ikke
+øget, men der er tilføjet en microjoint i slutningen af skæringen).<br>
 <span class="image"><img src="img/addjoints.png" alt="Add Joints" width="408"></span></p>
 </li>
 <li>
-<p><strong>Reduce</strong>: Reducér antallet af microjoints ved at kombinere to laserskæringer sammen.</p>
+<p><strong>Reduce</strong>: Reducér antallet af microjoints ved at
+kombinere to laserskæringer sammen.</p>
 </li>
 <li>
-<p><strong>Remove All</strong>: Fjerner alle microjoints på denne kontur (hvilket resulterer i en enkelt laserskæring, der skærer hele konturen).</p>
+<p><strong>Remove All</strong>: Fjerner alle microjoints på denne
+kontur (hvilket resulterer i en enkelt laserskæring, der skærer hele konturen).</p>
 </li>
 <li>
-<p><strong>Scrap</strong>: Dette afsnit vises, hvis et hul inspiceres (indvendig kontur), og bruges til at tilføje <a href="scrapcut.html">Skrotskæringer</a> for at skære stanseklumpen skabt af hullet, eller for at fjerne skrotskæringer, hvis de er blevet tilføjet tidligere.</p>
+<p><strong>Scrap</strong>: Dette afsnit vises, hvis et hul inspiceres (indvendig
+kontur), og bruges til at tilføje <a href="scrapcut.html">Skrotskæringer</a> for at skære
+stanseklumpen skabt af hullet, eller for at fjerne skrotskæringer, hvis de er
+blevet tilføjet tidligere.</p>
 </li>
 </ul>
 </div>
@@ -419,24 +475,31 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Ved klik på <strong>Split Tooling</strong> skifter dette panel til en specialtilstand, hvor laserskæringer kan opdeles eller to på hinanden følgende laserskæringer kan flettes sammen interaktivt.</p>
+<p>Ved klik på <strong>Split Tooling</strong> skifter dette panel til en
+specialtilstand, hvor laserskæringer kan opdeles eller to på hinanden følgende
+laserskæringer kan flettes sammen interaktivt.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Corner offset</strong>: Indtast en værdi her for at oprette en opdeling i en præcis afstand fra et hjørne. Ved bevægelse mod dette punkt, fremkommer der en snapindikator for at hjælpe med at placere opdelingen.<br>
+<p><strong>Corner offset</strong>: Indtast en værdi her for at oprette en
+opdeling i en præcis afstand fra et hjørne. Ved bevægelse mod dette punkt,
+fremkommer der en snapindikator for at hjælpe med at placere opdelingen.<br>
 <span class="image"><img src="img/split1.png" alt="Corner Offset" width="431"></span></p>
 </li>
 <li>
-<p><strong>Microjoint</strong>: Hvis denne er aktiveret, oprettes der en microjoint ved opdelingspunktet hver gang der laves en ny laserskæring. Her er et eksempel på en microjoint, der tilføjes (da vi er ved et hjørne,
-<strong>vises der en corner joint</strong> snapindikator).<br>
+<p><strong>Microjoint</strong>: Hvis denne er aktiveret, oprettes der
+en microjoint ved opdelingspunktet hver gang der laves en ny laserskæring. Her
+er et eksempel på en microjoint, der tilføjes (da vi er ved et hjørne, <strong>vises
+der en corner joint</strong> snapindikator).<br>
 <span class="image"><img src="img/split2.png" alt="Corner Joint" width="455"></span></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Musen kan flyttes over en microjoint mellem to skæringer, og snapindikatoren skifter til <strong>merge</strong>. Klik vil nu fjerne denne joint og flette to tilstødende laserskæringer sammen til en enkelt.<br>
-<span class="image"><img src="img/merge.png" alt="Merge" width="429"></span></p>
+<p>Musen kan flyttes over en microjoint mellem to skæringer, og snapindikatoren
+skifter til <strong>merge</strong>. Klik vil nu fjerne denne joint og flette to
+tilstødende laserskæringer sammen til en enkelt. + <span class="image"><img src="img/merge.png" alt="Merge" width="429"></span></p>
 </div>
 </div>
 </div>
@@ -468,7 +531,7 @@
     </div>
     <footer id="site-footer">
         <div class="left">
-            <p>&nbsp;&nbsp;Copyright &copy; 2025 by TRUMPF SE + Co.KG. All rights reserved.</p>
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
         </div>
         <div class="middle"></div>
         <div class="right">

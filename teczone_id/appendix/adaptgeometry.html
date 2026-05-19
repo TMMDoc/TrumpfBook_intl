@@ -1,0 +1,649 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>Fitur Adapt Geometry</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Versi pra-rilis)</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Selamat datang di TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">Pengantar</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">Menginstal Perangkat Lunak</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">Antarmuka Pengguna</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">Alur Kerja Komponen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">Impor 2-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">Pembersihan 2-D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">Impor 3-D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">Impor Model 3D</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">Impor modul</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">Deteksi Bentuk</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">Deteksi Komponen</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">Memodifikasi Geometri</a></li>
+    <li><button class="tree blank"></button><a href="../cad/attachments.html">Lampiran</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Pemotongan laser</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Alur Kerja Komponen</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Panel Pengeditan</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Pemotongan Laser</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Pendekatan</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Mundur</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Sambungan mikro</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Lanjutan</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Kontur</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Pemotongan Scrap</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Komponen</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Penanganan Sudut</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Nesting Cepat</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Alur Kerja Nesting</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Panel Nesting</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Tab Lembaran</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Tab Komponen</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Tab Rancangan</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Tab Ringkasan</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Edit Rancangan</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Mode Nesting</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Panel Penempatan</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Urutan</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Lembar Irisan</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Pemotongan Bevel</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Kontur Terbuka</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Bevel Variabel</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Lain-lain</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Aturan Penyelesaian</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">Edit LTT</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Strategi</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Sambungan mikro</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Pengaturan lebih lanjut</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Mesin tekuk</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Buat parameter tekukan</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Navigator penekukan</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Edit parameter tekukan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Edit penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Edit pemasangan alat</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Edit pengaturan penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Edit backgauge finger</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Edit pengukuran sudut</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Lembar Kerja Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Mengubah urutan</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Menambahkan pengaturan dan stasiun</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Pengukuran sudut</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Proses batch</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Solusi Perhitungan Ulang</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Pemeriksaan tonase</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../bend/bendingaids.html">Bending Aids</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Navigator Penekukan</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Pengambilan Komponen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Pengambilan dari Palet</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Pengambilan dari Dispenser</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Penekukan Robotik</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Penyisipan</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Ekstraksi</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Pencengkeraman Ulang</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Panel Regrip</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Tambahkan regrip</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Edit regrip</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Regrip dengan jaw</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Panel RG-Stations</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Deposit komponen</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/deposit.html">Panel Deposit</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Repeat dan sequence</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Tambahkan separator sheet</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/lockpartrest.html">Lock part-rest</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Tipe pola deposit</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Waypoints</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Konfigurasi sel</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../bcell/advanced/gripperdb/index.html">Database gripper</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/creategripper.html">Buat gripper</a></li>
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/importgripper.html">Impor gripper dari DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">Pembengkokan panel</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Buat data lipat</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">Tampilan Lipat</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Mengedit data Lipat</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Edit penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Edit sisi/area</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">Ubah urutan</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">Edit penahan lembaran kosong</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Edit stopper</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">Edit pisau</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Edit pemuatan</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Edit pembuangan</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Inventaris alat</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Lanjutan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Tabel celah udara khusus</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Penyelesaian penekukan manual</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Panjang Sisi Tekukan yang Diperlukan</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Pengaturan</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Diagram</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Layer</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Dimensi</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Tampilan</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">CAM Penekukan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Machine defaults</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Output Penekukan</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Bend view</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Bend cell</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">CAM Pemotongan</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Rancangan</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Pengaturan Nesting</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Lembar</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Penanganan Lembaran</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Pemotongan Sisa Rangka</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Penyangga Kerja</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">CAM Laser</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Urutan</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Output Pemotongan</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Tampilan Pemotongan</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Pembengkokan panel</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Default</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">Pembawa ZBW</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Output</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Laporan</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Pengaturan default item</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Impor/Ekspor</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Lingkungan</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Database</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Materials</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Mesin</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Alat Tekuk</a></li>
+    <li><button class="tree blank"></button><a href="../database/benddeductions.html">Bend deductions</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Bend grippers</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Forms dan Komponen</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Laporan</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Perancang Laporan</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Bidang, Gambar, dan Tabel</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Band (sublaporan)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Stiker, Bitmap, dan Bentuk</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Lampiran</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="3dformats.html">Format 3D yang Didukung</a></li>
+    <li><button class="tree blank"></button><a href="bseparatordxf.html">Lembar Pemisah DXF</a></li>
+    <li><button class="tree blank"></button><a href="bendtooldxf.html">Alat Tekuk DXF</a></li>
+    <li><button class="tree blank"></button><a class="active" href="adaptgeometry.html">Fitur Adapt Geometry</a></li>
+   </ul>
+  </li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Lampiran</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="adaptgeometry.html">Fitur Adapt Geometry</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Fitur Adapt Geometry</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dokumen ini menjelaskan tiga opsi proses berbeda yang tersedia dengan fitur
+Adapt Geometry:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom.png" alt="Adapt Geometry Dialog" width="550">
+</div>
+</div>
+<div class="paragraph">
+<p>Fungsi Adapt Geometry dipanggil ketika bagian input tidak sesuai dengan kondisi
+proses aktual. Satu atau kedua masalah ini mungkin ada pada bagian:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Radius dalam dari lekukan mungkin terlalu kecil. Setiap proses (seperti
+panel-bending, atau press-brake air-bending) akan memiliki radius dalam minimum
+yang mungkin dengan proses tersebut. Jika radius desain bagian lebih kecil dari
+ini, bagian tidak dapat diproduksi sesuai desain; radius perlu diubah.</p>
+</li>
+<li>
+<p>K-factor dari garis lekuk mungkin salah. Mesin proses (panel-bender vs
+press-brake) dan alat atau kondisi proses (punch/die/folding blade/air-gap)
+semuanya berkombinasi untuk menentukan K-factor aktual dari lekukan. Lekukan
+mungkin dirancang dengan K factor yang berbeda.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Mari kita ambil bagian 2-D sederhana yang me.miliki radius yang salah dan
+K-factor yang salah, dan lihat bagaimana fungsi Adapt Geometry memodifikasi
+bagian ini.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom2.png" alt="2D Part" width="550">
+</div>
+<div class="title">Figure 1. Bagian 2D</div>
+</div>
+<div class="paragraph">
+<p>Bagian 2D input ditunjukkan di atas - ini adalah persegi panjang sederhana
+dengan satu garis lekuk tepat di tengah. Lebar bagian adalah 96.75 mm. Ketebalan
+material adalah 2.5mm.</p>
+</div>
+<div class="paragraph">
+<p>Garis lekuk telah <em>dirancang</em> dengan radius dalam 0.5, dan K-factor 0.5. Lebar
+datar (panjang garis netral) oleh karena itu:</p>
+</div>
+<div class="paragraph">
+<p><em>angle * (innerRadius + kFactor * thickness) = PI/2 * (0.5 + 0.5 * 2.5)</em> = <strong>2.75</strong> mm</p>
+</div>
+<div class="paragraph">
+<p>Karena ini adalah lekukan 90 derajat, pengurangan lekukan adalah:</p>
+</div>
+<div class="paragraph">
+<p><em>2 * thickness - flatWidth = 2 * 3 - 2.75</em> = <strong>3.25</strong> mm</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dont_change_anything">Don&#8217;t Change Anything</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ketika dilipat <em>tanpa pemrosesan Adapt Geometry</em> apa pun, ini oleh karena itu
+menciptakan bagian dengan dimensi ini:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom3.png" alt="Dont Change Anything" width="500">
+</div>
+<div class="title">Figure 2. Don&#8217;t Change Anything</div>
+</div>
+<div class="paragraph">
+<p>Ini juga persis hasil yang kita dapatkan dengan opsi <strong>Don&#8217;t Change Anything</strong>.
+Baik K-factor maupun radius tidak diubah, menghasilkan bagian 3D yang sesuai
+persis dengan maksud desain gambar 2D. Jika ini diatur untuk pembuatan, bagian
+yang diproduksi tidak akan benar-benar sesuai dengan dimensi ini, terutama
+karena lekukan yang dihasilkan pada mesin akan bervariasi baik dalam radius
+maupun K-factor efektif daripada lekukan yang dirancang. Dalam hal ini, Anda
+akan mendapatkan bagian yang sedikit lebih kecil dari 50x50 setelah pembuatan.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_retain_flat_size">Retain Flat Size</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Jika opsi ini dipilih, TecZone akan menjaga ukuran datar tidak berubah, tetapi akan
+memberi anotasi pada garis lekuk dengan radius lekuk dan K-factor yang benar.
+Mari kita asumsikan bahwa radius lekuk yang benar adalah 2.5mm dan K-Factor
+adalah 0.46 mm. Bagian sekarang pertama-tama akan diubah secara internal menjadi
+ini:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom4.png" alt="Retain Flat Size" width="550">
+</div>
+<div class="title">Figure 3. Retain Flat Size</div>
+</div>
+<div class="paragraph">
+<p>Perhatikan bagaimana ukuran bagian keseluruhan tidak berubah (masih 96.75 mm),
+dan posisi garis lekuk tidak berubah. Namun, lekukan sekarang berradius 2.5, dan
+K-factor 0.46, yang berarti lebar datar lekukan telah meningkat menjadi 5.73.
+Ini sekarang dilipat untuk menghasilkan berikut ini:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom5.png" alt="Retain Flat Size2" width="500">
+</div>
+<div class="title">Figure 4. Retain Flat Size2</div>
+</div>
+<div class="paragraph">
+<p>Seperti yang Anda lihat, dimensi 2D dari bagian tidak berubah, tetapi dimensi
+3-D telah berubah menjadi 50.51 x 50.51 (dari dimensi desain awal 50 x 50).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_retain_3_d_dimension">Retain 3-D Dimension</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Jika opsi ini dipilih, dimensi 3D bagian tidak berubah, tetapi karena radius
+lekuk dan K-factor diubah, bagian yang dibuka lipatannya akan berubah. Ketika
+memulai dengan datar 2-D (seperti dalam contoh ini), TecZone mengikuti
+langkah-langkah berikut.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lipat model ke 3D, menggunakan maksud desain awal radius dan K-Factor. Ini
+akan menghasilkan model 3D yang terlihat identik dengan yang ada di Gambar 2.</p>
+</li>
+<li>
+<p>Sekarang, ubah radius ke radius target 2.5mm dan K-factor ke target 0.46. Ini
+akan menghasilkan model 3D seperti yang di bawah ini:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom6.png" alt="Retain 3D" width="500">
+</div>
+<div class="title">Figure 5. Retain 3D</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Model ini kemudian dibuka lipatannya (menggunakan K-factor 0.46 untuk lekukan)
+untuk menghasilkan datar berikut:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom7.png" alt="Retain 3D2" width="550">
+</div>
+<div class="title">Figure 6. Retain 3D2</div>
+</div>
+<div class="paragraph">
+<p>Dengan opsi ini, dimensi 3D dipertahankan pada dimensi desain 50x50. Lebar
+bagian yang dibuka lipatan telah berubah dari 96.75 menjadi 95.73 mm.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ringkasan">Ringkasan</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Jika datar belum diproduksi, opsi terbaik biasanya adalah <strong>Retain 3-D Dimension</strong></p>
+</li>
+<li>
+<p>Jika datar telah diproduksi dan tidak dapat dimodifikasi, opsi terbaik adalah <strong>Retain Flat Size</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Kedua opsi ini akan menghasilkan bagian di mana hasil manufaktur akhir harus
+sesuai dengan data 3D seperti yang terlihat di jendela TecZone. Sebaliknya, opsi
+<strong>Don&#8217;t Change Anything</strong> akan menghasilkan bagian manufaktur akhir yang <em>tidak</em>
+akan sesuai dengan data 3D yang terlihat di TecZone, karena radius lekuk aktual dan
+K-factor tidak dimodelkan dengan benar dalam desain.</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Perhatikan bahwa ini biasanya menjadi masalah hanya dengan bagian 2-D. Bagian 3-D memiliki bend-radius yang terkait dengan setiap lekukan, tetapi belum mendefinisikan K-factor. Hanya selama proses pembukaan lipatan bahwa K-factor perlu diatur, dengan demikian menentukan 'bending allowance' dari setiap lekukan saat dibuka ke bentuk datar.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_dont_change_anything">Don&#8217;t Change Anything</a>
+  </li>
+  <li level="1">
+   <a href="#_retain_flat_size">Retain Flat Size</a>
+  </li>
+  <li level="1">
+   <a href="#_retain_3_d_dimension">Retain 3-D Dimension</a>
+  </li>
+  <li level="1">
+   <a href="#_ringkasan">Ringkasan</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="bendtooldxf.html">Alat Tekuk DXF</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

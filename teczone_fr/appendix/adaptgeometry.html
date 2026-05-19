@@ -1,0 +1,659 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../img/trumpf-icon.png">
+  <title>La fonctionnalité Adapter la géométrie</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Version préliminaire)</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../index.html">Bienvenue dans TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../intro/index.html">Introduction</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../intro/install.html">Installation du logiciel</a></li>
+    <li><button class="tree blank"></button><a href="../intro/clarity.html">L'interface utilisateur</a></li>
+    <li><button class="tree blank"></button><a href="../intro/workflow.html">Flux de travail de la pièce</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cad/index.html">CAO</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/2dimport/index.html">Importation 2D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/2dimport/2dcleanup.html">Nettoyage 2D</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cad/3dimport/index.html">Importation 3D</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prep3dmodel.html">Importer un modèle 3D</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/prepassembly.html">Importer un assemblage</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/formdetect.html">Identification des formes</a></li>
+      <li><button class="tree blank"></button><a href="../cad/3dimport/componentdetect.html">Identification de composants</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../cad/sketch.html">Modification de la géométrie</a></li>
+    <li><button class="tree blank"></button><a href="../cad/attachments.html">Pièces jointes</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../cut/index.html">Découpe laser</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/partworkflow/index.html">Flux de travail de la pièce</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/partworkflow/panels/index.html">Modification des panneaux</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../cut/partworkflow/panels/lasercut/index.html">Découpe laser</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/approach.html">Approche</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/withdrawal.html">Retour</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/microjoint.html">Microjonction</a></li>
+          <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/lasercut/advanced.html">Avancé</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/contour.html">Contour</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/scrapcut.html">Coupe de chutes</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/part.html">Pièce</a></li>
+        <li><button class="tree blank"></button><a href="../cut/partworkflow/panels/cornertreatment.html">Usinage d'angle</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/partworkflow/quicknest.html">Imbrication rapide</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/jobworkflow/index.html">Flux de travail de la tâche</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/jobpanel/index.html">Panneau Tâches</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/sheets.html">Onglet Tôles</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/parts.html">Onglet Pièces</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/layouts.html">Onglet Agencements</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/jobpanel/summary.html">Onglet Synthèse</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/jobworkflow/editlayout/index.html">Modification de l'agencement</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/nestingmodes.html">Modes d'imbrication</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/placementpanel.html">Panneau Placement</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/sequencing.html">Séquençage</a></li>
+        <li><button class="tree blank"></button><a href="../cut/jobworkflow/editlayout/slicesheet.html">Tôle en tranches</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/bevelcut/index.html">Coupe biaise</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/opencontours.html">Contours ouverts</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/variablebevel.html">Vague de coupe variable</a></li>
+      <li><button class="tree blank"></button><a href="../cut/bevelcut/miscellaneous.html">Divers</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../cut/advanced/index.html">Avancé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../cut/advanced/finishingrules.html">Règles d'usinage de finition</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/editltt.html">Modification du TTL</a></li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/flyline.html">FlyLine</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/strategies.html">Stratégie</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/microjoints.html">Microjonctions</a></li>
+        <li><button class="tree blank"></button><a href="../cut/advanced/twinline/stability.html">Réglages supplémentaires</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bend/index.html">Presse plieuse</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bend/createbenddata.html">Création de paramètres de pliage</a></li>
+    <li><button class="tree blank"></button><a href="../bend/navigator.html">Navigateur de pliage</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/editing/index.html">Modification des paramètres de pliage</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/editing/editbend.html">Modification d'un pliage</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editmount.html">Modification d'un support d'outil</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editsetup.html">Modification d'une configuration de pliage</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editgauge.html">Modification des doigts de butée</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/editacb.html">Modification de la mesure de l'angle</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/bendsheet.html">Feuille de calcul de pliages</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/sequencing.html">Modification de la phase</a></li>
+      <li><button class="tree blank"></button><a href="../bend/editing/addsetup.html">Ajout de configurations et de stations</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bend/advanced/index.html">Avancé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bend/advanced/anglemeasurement.html">Mesure de l'angle</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/batchprocess.html">Usinage de lots</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/recompute.html">Recalcul du programme</a></li>
+      <li><button class="tree blank"></button><a href="../bend/advanced/tonnage.html">Contrôle du tonnage</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../bend/bendingaids.html">Aides au pliage</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../bcell/index.html">BendMaster CAM</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../bcell/navigator.html">Navigateur de pliage</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/pickup/index.html">Prélèvement de pièces</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/pickup/frompallet.html">Préhension depuis une palette</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/pickup/fromdispenser.html">Prélèvement depuis le distributeur</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/bending/index.html">Pliage robotisé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/bending/insertion.html">Insertion</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/bending.html">Pliage</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/bending/extraction.html">Extraction</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/regrip/index.html">Reprise de la pièce</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/regrip/regrippanel.html">Panneau de reprise</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/addregrip.html">Ajouter une reprise</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/editregrip.html">Éditer la reprise</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/jawregrip.html">Reprise avec mors</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/regrip/rgstationpanel.html">Panneau Stations RG</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/deposit/index.html">Dépôt de pièce</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/deposit/deposit.html">Panneau de dépôt</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/repeat.html">Répétition et séquence</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/separatorsheet.html">Ajouter des tôles de séparation</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/lockpartrest.html">Verrouiller le repos de la pièce</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/deposit/patterns.html">Types de modèles de dépôt</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../bcell/advanced/index.html">Avancé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../bcell/advanced/waypoints.html">Points de passage</a></li>
+      <li><button class="tree blank"></button><a href="../bcell/advanced/cellconfig.html">Configuration de cellule</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../bcell/advanced/gripperdb/index.html">Base de données des préhenseurs</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/creategripper.html">Créer un préhenseur</a></li>
+        <li><button class="tree blank"></button><a href="../bcell/advanced/gripperdb/importgripper.html">Importer un préhenseur depuis DXF</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../fold/index.html">Pliage à plat</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../fold/createfolddata.html">Création de données de plis écrasés</a></li>
+    <li><button class="tree blank"></button><a href="../fold/foldview.html">La vue Pli écrasé</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/editing/index.html">Modification des données de pliage</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/editing/editbend.html">Modification d'un pliage</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editside.html">Modification d'un bord de pli / d'une section</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editseq.html">Modification de la séquence</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editbh.html">Modification des serre-flans supérieurs</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editgauge.html">Modification du jaugeage</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editblade.html">Modification des lames</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editload.html">Modification du chargement</a></li>
+      <li><button class="tree blank"></button><a href="../fold/editing/editunload.html">Modification du déchargement</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../fold/toolinventory.html">Stock d'outils</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../fold/advanced/index.html">Avancé</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../fold/advanced/airgaptables.html">Tableaux d'entrefer personnalisés</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/manualbend.html">Réalisation du pliage manuel</a></li>
+      <li><button class="tree blank"></button><a href="../fold/advanced/minflangelength.html">Longueur de côté requis</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../settings/index.html">Réglages</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/drawing/index.html">Dessin</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/drawing/layers.html">Calques</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/dimensions.html">Dimensions</a></li>
+      <li><button class="tree blank"></button><a href="../settings/drawing/view.html">Vue</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/bendcam/index.html">Bend CAM</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/bendcam/benddefaults.html">Réglages par défaut de la machine</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendoutputs.html">Sorties de pliage</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendview.html">Vue de pliage</a></li>
+      <li><button class="tree blank"></button><a href="../settings/bendcam/bendcell.html">Cellule de pliage</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/cutcam/index.html">Cut CAM</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/layout/index.html">Agencement</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/nesting.html">Réglages d'imbrication</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheet.html">Tôle</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/sheethandling.html">Manutention des tôles</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/skeletoncuts.html">Coupes de squelettes</a></li>
+        <li><button class="tree blank"></button><a href="../settings/cutcam/layout/worksupport.html">Support de travail</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../settings/cutcam/lasercam/index.html">Laser CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../settings/cutcam/lasercam/sequence.html">Séquence</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutoutputs.html">Sorties de coupe</a></li>
+      <li><button class="tree blank"></button><a href="../settings/cutcam/cutview.html">Affichage de coupe</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/foldcam/index.html">Pliage à plat</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/foldcam/defaults.html">Réglages par défaut</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/zbwcarriers.html">Supports d'outils de pliage supplémentaires</a></li>
+      <li><button class="tree blank"></button><a href="../settings/foldcam/foldoutputs.html">Sorties</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../settings/reports/index.html">Rapports</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../settings/reports/itemdefaults.html">Valeurs par défaut des éléments</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../settings/importexport.html">Importation/exportation</a></li>
+    <li><button class="tree blank"></button><a href="../settings/environment.html">Environnement</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../database/index.html">Base de données</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../database/materials.html">Matériaux</a></li>
+    <li><button class="tree blank"></button><a href="../database/machines.html">Machines</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendtools.html">Outils de pliage</a></li>
+    <li><button class="tree blank"></button><a href="../database/benddeductions.html">Déductions de pliage</a></li>
+    <li><button class="tree blank"></button><a href="../database/bendgrippers.html">Préhenseurs de pliage</a></li>
+    <li><button class="tree blank"></button><a href="../database/formscomponents.html">Formes et composants</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../report/index.html">Rapports</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../report/designer.html">Concepteur de rapports</a></li>
+    <li><button class="tree blank"></button><a href="../report/fields.html">Champs, images et tableaux</a></li>
+    <li><button class="tree blank"></button><a href="../report/bands.html">Sections (sous-rapports)</a></li>
+    <li><button class="tree blank"></button><a href="../report/labels.html">Labels, bitmaps et formes</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="index.html">Annexe</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="3dformats.html">Formats 3D pris en charge</a></li>
+    <li><button class="tree blank"></button><a href="bseparatordxf.html">Tôle de séparation DXF</a></li>
+    <li><button class="tree blank"></button><a href="bendtooldxf.html">Outil de pliage DXF</a></li>
+    <li><button class="tree blank"></button><a class="active" href="adaptgeometry.html">La fonctionnalité Adapter la géométrie</a></li>
+   </ul>
+  </li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="index.html">Annexe</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="adaptgeometry.html">La fonctionnalité Adapter la géométrie</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>La fonctionnalité Adapter la géométrie</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ce document explique les trois options de traitement différentes disponibles
+avec la fonctionnalité Adapter la géométrie :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom.png" alt="Dialogue Adapter la géométrie" width="550">
+</div>
+</div>
+<div class="paragraph">
+<p>La fonction Adapter la géométrie est appelée lorsque la pièce d&#8217;entrée ne
+correspond pas aux conditions de traitement réelles. Un ou les deux problèmes
+suivants peuvent exister avec la pièce :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Le rayon intérieur des plis peut être trop petit. Chaque processus (comme le pliage sur panneuse ou
+le pliage à l&#8217;air sur presse plieuse) aura un rayon intérieur minimum
+possible avec ce processus. Si le rayon de conception de la pièce est
+inférieur à ce minimum, la pièce ne peut pas être fabriquée comme conçue ; le
+rayon devra être modifié.</p>
+</li>
+<li>
+<p>Le facteur K de la ligne de pliage peut être incorrect. La machine de traitement (panneuse vs
+presse plieuse) et les outils ou conditions de traitement
+(poinçon/matrice/lame de pliage/entrefer) se combinent tous pour dicter quel
+sera le facteur K réel du pli. Le pli peut être conçu avec un facteur K
+différent.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Prenons une simple pièce 2D qui a à la fois un rayon incorrect et un facteur K
+incorrect, et voyons comment la fonction Adapter la géométrie modifie cette
+pièce.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom2.png" alt="Pièce 2D" width="550">
+</div>
+<div class="title">Figure 1. Pièce 2D</div>
+</div>
+<div class="paragraph">
+<p>La pièce 2D d&#8217;entrée est montrée ci-dessus - c&#8217;est un simple rectangle avec une
+ligne de pliage exactement au milieu. La largeur de la pièce est de 96,75 mm.
+L&#8217;épaisseur du matériau est de 2,5 mm.</p>
+</div>
+<div class="paragraph">
+<p>La ligne de pliage a été <em>conçue</em> avec un rayon intérieur de 0,5 et un facteur K
+de 0,5. La largeur à plat (longueur de la ligne neutre) est donc :</p>
+</div>
+<div class="paragraph">
+<p><em>angle * (rayonIntérieur + facteurK * épaisseur) = PI/2 * (0,5 + 0,5 * 2,5)</em> = <strong>2,75</strong> mm</p>
+</div>
+<div class="paragraph">
+<p>Puisqu&#8217;il s&#8217;agit d&#8217;un pli à 90 degrés, la déduction de pliage est simplement :</p>
+</div>
+<div class="paragraph">
+<p><em>2 * épaisseur - largeurÀPlat = 2 * 3 - 2,75</em> = <strong>3,25</strong> mm</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ne_rien_changer">Ne rien changer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Lorsqu&#8217;elle est pliée <em>sans aucun traitement Adapter la géométrie</em>, cela crée
+donc une pièce avec ces dimensions :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom3.png" alt="Ne rien changer" width="500">
+</div>
+<div class="title">Figure 2. Ne rien changer</div>
+</div>
+<div class="paragraph">
+<p>C&#8217;est aussi exactement le résultat que nous obtenons avec l&#8217;option <strong>Ne rien
+changer</strong>. Ni le facteur K ni le rayon n&#8217;ont été modifiés, ce qui donne une pièce
+3D qui correspond exactement à l&#8217;intention de conception du dessin 2D. Si cela
+est défini pour la fabrication, la pièce fabriquée résultante ne correspondra en
+fait pas à ces dimensions, principalement parce que le pli produit sur la
+machine variera à la fois en rayon et en facteur K effectif par rapport au pli
+qui a été conçu. Dans ce cas, vous vous retrouverez avec une pièce qui est un
+peu plus petite que 50x50 après fabrication.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conserver_la_taille_à_plat">Conserver la taille à plat</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Si cette option est choisie, TecZone conservera la taille de la pièce à plat
+inchangée, mais annotera les lignes de pliage avec le rayon de pliage et le
+facteur K corrects. Supposons que le rayon de pliage correct soit de 2,5 mm et
+que le facteur K soit de 0,46 mm. La pièce serait maintenant d&#8217;abord modifiée
+intérieurement comme ceci :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom4.png" alt="Conserver la taille à plat" width="550">
+</div>
+<div class="title">Figure 3. Conserver la taille à plat</div>
+</div>
+<div class="paragraph">
+<p>Notez comment la taille globale de la pièce est inchangée (toujours 96,75 mm),
+et la position de la ligne de pliage est inchangée. Cependant, le pli a
+maintenant un rayon de 2,5 et un facteur K de 0,46, ce qui signifie que la
+largeur à plat du pli a augmenté à 5,73. Ceci est maintenant plié pour donner le
+résultat suivant :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom5.png" alt="Conserver la taille à plat2" width="500">
+</div>
+<div class="title">Figure 4. Conserver la taille à plat2</div>
+</div>
+<div class="paragraph">
+<p>Comme vous pouvez le voir, la dimension 2D de la pièce est inchangée, mais la
+dimension 3D a changé à 50,51 x 50,51 (par rapport à la dimension de conception
+initiale de 50 x 50).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conserver_la_dimension_3d">Conserver la dimension 3D</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Si cette option est choisie, la dimension 3D de la pièce est inchangée, mais
+puisque les rayons de pliage et les facteurs K sont modifiés, la pièce dépliée
+changera. Lorsqu&#8217;on commence avec une pièce 2D à plat (comme dans cet exemple),
+TecZone suit les étapes suivantes.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pliez le modèle en 3D, en utilisant l&#8217;intention de conception initiale du rayon et du facteur K. Cela
+résultera en un modèle 3D qui ressemble de manière identique à celui de la
+figure 2.</p>
+</li>
+<li>
+<p>Maintenant, changez le rayon pour le rayon cible de 2,5 mm et le facteur K pour la cible de
+0,46. Cela aboutira à un modèle 3D comme celui ci-dessous :</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom6.png" alt="Conserver la 3D" width="500">
+</div>
+<div class="title">Figure 5. Conserver la 3D</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ce modèle est ensuite déplié (en utilisant un facteur K de 0,46 pour le pli)
+pour donner la pièce à plat suivante :</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/adaptgeom7.png" alt="Conserver la 3D2" width="550">
+</div>
+<div class="title">Figure 6. Conserver la 3D2</div>
+</div>
+<div class="paragraph">
+<p>Avec cette option, la dimension 3D est conservée à la dimension de conception de
+50x50. La largeur de la pièce dépliée est passée de 96,75 à 95,73 mm.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_résumé">Résumé</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Si la pièce à plat n&#8217;a pas encore été produite, la meilleure option est
+généralement <strong>Conserver la dimension 3D</strong></p>
+</li>
+<li>
+<p>Si la pièce à plat a été produite et ne peut pas être modifiée, la meilleure
+option est <strong>Conserver la taille à plat</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ces deux options donneront des pièces où le résultat fabriqué final devrait
+correspondre aux données 3D telles qu&#8217;elles apparaissent dans la fenêtre TecZone.
+En revanche, l&#8217;option <strong>Ne rien changer</strong> aboutira à une pièce fabriquée finale
+qui ne correspondra <em>pas</em> aux données 3D vues dans TecZone, puisque les rayons de
+pliage et les facteurs K réels ne sont pas modélisés correctement dans la
+conception.</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Notez que c&#8217;est typiquement un problème uniquement avec les pièces 2D. Les pièces 3D ont un rayon de pliage associé à chaque pli, mais ne définissent pas encore de facteur K. C&#8217;est seulement pendant le processus de dépliage qu&#8217;un facteur K doit être défini, dictant ainsi l''indemnité de cintrage' de chaque pli lorsqu&#8217;il est déplié à plat.
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_ne_rien_changer">Ne rien changer</a>
+  </li>
+  <li level="1">
+   <a href="#_conserver_la_taille_à_plat">Conserver la taille à plat</a>
+  </li>
+  <li level="1">
+   <a href="#_conserver_la_dimension_3d">Conserver la dimension 3D</a>
+  </li>
+  <li level="1">
+   <a href="#_résumé">Résumé</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="bendtooldxf.html">Outil de pliage DXF</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

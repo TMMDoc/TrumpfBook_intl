@@ -1,0 +1,763 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../res/bento.css">
+  <link rel="stylesheet" href="../../../res/site.css">
+  <link rel="stylesheet" href="../../../res/tree.css">
+  <link rel="stylesheet" href="../../../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="../../../img/trumpf-icon.png">
+  <title>Gripper importálása DXF-ből</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../../../img/logo.trumpf.png" width="120" height="40" /></div>
+        <div><p>TecZone Reference Manual  (Pre-release version/Előzetes verzió)</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+ <ul>
+  <li><button class="tree blank"></button><a href="../../../index.html">Üdvözöljük itt: TecZone</a></li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../intro/index.html">Bevezetés</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../intro/install.html">A szoftver telepítése</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/clarity.html">A kezelőfelület</a></li>
+    <li><button class="tree blank"></button><a href="../../../intro/workflow.html">Alkatrész munkafolyamat</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cad/index.html">CAD</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/2dimport/index.html">2-D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/2dimport/2dcleanup.html">2-D tisztítás</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cad/3dimport/index.html">3-D import</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prep3dmodel.html">3D modell importálása</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/prepassembly.html">Részegység importálása</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/formdetect.html">Forma felismerése</a></li>
+      <li><button class="tree blank"></button><a href="../../../cad/3dimport/componentdetect.html">Komponens felismerése</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../cad/sketch.html">A geometria módosítása</a></li>
+    <li><button class="tree blank"></button><a href="../../../cad/attachments.html">Mellékletek</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../cut/index.html">Lézervágás</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/partworkflow/index.html">Alkatrész munkafolyamat</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/partworkflow/panels/index.html">Szerkesztőpanelek</a>
+       <ul class="hide">
+        <li>
+         <button class="tree closed"></button>
+         <a href="../../../cut/partworkflow/panels/lasercut/index.html">Lézervágás</a>
+         <ul class="hide">
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/approach.html">Indítás</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/withdrawal.html">Visszahúzódás</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/microjoint.html">Mikrohíd</a></li>
+          <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/lasercut/advanced.html">Speciális</a></li>
+         </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/contour.html">Kontúr</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/scrapcut.html">Hulladékvágás</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/part.html">Alkatrész</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/partworkflow/panels/cornertreatment.html">Sarokmegmunkálás</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/partworkflow/quicknest.html">Gyors táblásítás</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/jobworkflow/index.html">A feladat munkafolyamata</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/jobpanel/index.html">Feladat panel</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/sheets.html">Lemeztáblák fül</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/parts.html">Alkatrészek fül</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/layouts.html">Elrendezések fül</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/jobpanel/summary.html">Összegzés fül</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/jobworkflow/editlayout/index.html">Elrendezés szerkesztése</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/nestingmodes.html">Táblásítási üzemmódok</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/placementpanel.html">Elhelyezés panel</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/sequencing.html">Sorrendbe állítás</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/jobworkflow/editlayout/slicesheet.html">Lemeztábla szelet</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/bevelcut/index.html">Ferde vágás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/opencontours.html">Nyitott kontúrok</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/variablebevel.html">Változtatható ferde vágás</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/bevelcut/miscellaneous.html">Egyéb</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../cut/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/finishingrules.html">Befejezési szabályok</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/editltt.html">Vágási táblázat szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/flyline.html">Flyline</a></li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../cut/advanced/twinline/index.html">TwinLine</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/strategies.html">Stratégia</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/microjoints.html">Mikrohidak</a></li>
+        <li><button class="tree blank"></button><a href="../../../cut/advanced/twinline/stability.html">További beállítások</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../cut/advanced/detectline.html">DetectLine</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../bend/index.html">Élhajlítógép</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../bend/createbenddata.html">Hajlítási adatok létrehozása</a></li>
+    <li><button class="tree blank"></button><a href="../../../bend/navigator.html">Hajlítás navigátor</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/editing/index.html">Hajlítási adatok szerkesztése</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editbend.html">Hajlítás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editmount.html">Szerszámtartó szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editsetup.html">Hajlítási beállítás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editgauge.html">Az ütközőujjak szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/editacb.html">Szögmérés szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/bendsheet.html">Hajlítások táblázata</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/sequencing.html">A sorrend módosítása</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/editing/addsetup.html">Beállítások és állomások hozzáadása</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../bend/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/anglemeasurement.html">Szögmérés</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/batchprocess.html">Kötegelt megmunkálás</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/recompute.html">Újraszámítási megoldás</a></li>
+      <li><button class="tree blank"></button><a href="../../../bend/advanced/tonnage.html">Terhelésellenőrzés</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../bend/bendingaids.html">Hajlítási segédeszközök</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree open"></button>
+   <a href="../../index.html">BendMaster CAM</a>
+   <ul>
+    <li><button class="tree blank"></button><a href="../../navigator.html">Hajlítás navigátor</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../pickup/index.html">Alkatrész felvétele</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../pickup/frompallet.html">Felvétel raklapról</a></li>
+      <li><button class="tree blank"></button><a href="../../pickup/fromdispenser.html">Felvétel adagolóból</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../bending/index.html">Robotizált hajlítás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../bending/insertion.html">Behelyezés</a></li>
+      <li><button class="tree blank"></button><a href="../../bending/bending.html">Hajlítás</a></li>
+      <li><button class="tree blank"></button><a href="../../bending/extraction.html">Kihúzás</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../regrip/index.html">Újrafogás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../regrip/regrippanel.html">Újrafogás panel</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/addregrip.html">Újrafogás hozzáadása</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/editregrip.html">Újrafogás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/jawregrip.html">Újrafogás pofás megfogóval</a></li>
+      <li><button class="tree blank"></button><a href="../../regrip/rgstationpanel.html">RG-Stations panel</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../deposit/index.html">Alkatrész lerakása</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../deposit/deposit.html">Deposit panel</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/repeat.html">Ismétlés és szekvencia</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/separatorsheet.html">Szétválasztó lapok hozzáadása</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/lockpartrest.html">Lock part-rest</a></li>
+      <li><button class="tree blank"></button><a href="../../deposit/patterns.html">Lerakási mintázat típusok</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree open"></button>
+     <a href="../index.html">Speciális</a>
+     <ul>
+      <li><button class="tree blank"></button><a href="../waypoints.html">Útvonalpontok</a></li>
+      <li><button class="tree blank"></button><a href="../cellconfig.html">Cella konfiguráció</a></li>
+      <li>
+       <button class="tree open"></button>
+       <a href="index.html">Gripper adatbázis</a>
+       <ul>
+        <li><button class="tree blank"></button><a href="creategripper.html">Gripper létrehozása</a></li>
+        <li><button class="tree blank"></button><a class="active" href="importgripper.html">Gripper importálása DXF-ből</a></li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../fold/index.html">Lengőhajlítás</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../fold/createfolddata.html">Lengőhajlítási adatok létrehozása</a></li>
+    <li><button class="tree blank"></button><a href="../../../fold/foldview.html">A Lengőhajlítás nézet</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/editing/index.html">Lengőhajlítási adatok szerkesztése</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbend.html">Hajlítás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editside.html">Szár/szakasz szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editseq.html">A sorrend módosítása</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editbh.html">A leszorítók szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editgauge.html">Az ütközők szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editblade.html">A hajlítóélek szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editload.html">A felrakás szerkesztése</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/editing/editunload.html">A leszedés szerkesztése</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../fold/toolinventory.html">Szerszámállomány</a></li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../fold/advanced/index.html">Speciális</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/airgaptables.html">Egyedi légrés táblázatok</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/manualbend.html">A manuális hajlítás befejezése</a></li>
+      <li><button class="tree blank"></button><a href="../../../fold/advanced/minflangelength.html">Szükséges peremhossz</a></li>
+     </ul>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../settings/index.html">Beállítások</a>
+   <ul class="hide">
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/drawing/index.html">Rajzolás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/layers.html">Rétegek</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/dimensions.html">Méretek</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/drawing/view.html">Nézet</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/bendcam/index.html">Hajlítás CAM alkalmazásával</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/benddefaults.html">Gép alapértelmezett beállításai</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendoutputs.html">Hajlítási kimenetek</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendview.html">Hajlítás nézet</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/bendcam/bendcell.html">Hajlítócella</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/cutcam/index.html">Vágás CAM alkalmazásával</a>
+     <ul class="hide">
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/layout/index.html">Elrendezés</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/nesting.html">Táblaterv beállítások</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheet.html">Lemeztábla</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/sheethandling.html">Lemeztábla kezelése</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/skeletoncuts.html">Maradékrács-vágások</a></li>
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/layout/worksupport.html">Munkatámasz</a></li>
+       </ul>
+      </li>
+      <li>
+       <button class="tree closed"></button>
+       <a href="../../../settings/cutcam/lasercam/index.html">Lézer CAM</a>
+       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../../../settings/cutcam/lasercam/sequence.html">Sorrend</a></li>
+       </ul>
+      </li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutoutputs.html">Vágás kimenő adatok</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/cutcam/cutview.html">Vágás nézet</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/foldcam/index.html">Lengőhajlítás</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/defaults.html">Alapértelmezett értékek</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/zbwcarriers.html">Kiegészítő hajlítószerszám tartódarabok</a></li>
+      <li><button class="tree blank"></button><a href="../../../settings/foldcam/foldoutputs.html">Kimenetek</a></li>
+     </ul>
+    </li>
+    <li>
+     <button class="tree closed"></button>
+     <a href="../../../settings/reports/index.html">Jelentések</a>
+     <ul class="hide">
+      <li><button class="tree blank"></button><a href="../../../settings/reports/itemdefaults.html">Elemek alapértelmezett értékei</a></li>
+     </ul>
+    </li>
+    <li><button class="tree blank"></button><a href="../../../settings/importexport.html">Importálás/exportálás</a></li>
+    <li><button class="tree blank"></button><a href="../../../settings/environment.html">Környezet</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../database/index.html">Adatbázis</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../database/materials.html">Anyagok</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/machines.html">Gépek</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendtools.html">Hajlítószerszámok</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/benddeductions.html">Hajlítási levonások</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/bendgrippers.html">Hajlító megfogók</a></li>
+    <li><button class="tree blank"></button><a href="../../../database/formscomponents.html">Formázások és részegységek</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../report/index.html">Jelentések</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../report/designer.html">Jelentéstervező</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/fields.html">Mezők, ábrák és táblázatok</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/bands.html">Sávok (részjelentések)</a></li>
+    <li><button class="tree blank"></button><a href="../../../report/labels.html">Címkék, bittérképek és alakzatok</a></li>
+   </ul>
+  </li>
+  <li>
+   <button class="tree closed"></button>
+   <a href="../../../appendix/index.html">Függelék</a>
+   <ul class="hide">
+    <li><button class="tree blank"></button><a href="../../../appendix/3dformats.html">Támogatott 3D formátumok</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bseparatordxf.html">Szétválasztó lemeztábla DXF</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/bendtooldxf.html">DXF hajlítószerszám</a></li>
+    <li><button class="tree blank"></button><a href="../../../appendix/adaptgeometry.html">Az Adapt Geometry funkció</a></li>
+   </ul>
+  </li>
+ </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+ <div>
+  <button>
+   <img src="../../../res/home.png">
+  </button>
+ </div>
+ <div>
+  <a href="../../index.html">BendMaster CAM</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="../index.html">Speciális</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="index.html">Gripper adatbázis</a>
+ </div>
+ <div>/</div>
+ <div>
+  <a href="importgripper.html">Gripper importálása DXF-ből</a>
+ </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Gripper importálása DXF-ből</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vákuumos szívó gripper a BendMaster gépekhez importálható DXF fájlból. A DXF
+fájl a gripper <strong>felső</strong> nézetét ábrázolja (felső nézet a szívó kupáktól néz, NEM
+a BendMaster-től). A DXF fájlban található POLYLINE entitások biztosítják a
+gripper lap alakját, a TEXT entitások pedig további információkat nyújtanak a
+gripperről (mint a neve, vastagsága és szívókupa elhelyezése).</p>
+</div>
+<div class="paragraph">
+<p>A szükséges formátumú fájlok (DXF, ARV vagy GEO) importálhatók a Bend
+adatbázisba.</p>
+</div>
+<div class="paragraph">
+<p>Gripper importálásához:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Nyissa meg a <strong>Database</strong>-t a TecZone Bend-ban.</p>
+</li>
+<li>
+<p>Válassza a <strong>Bend Grippers</strong> opciót a listából.</p>
+</li>
+<li>
+<p>Kattintson az <strong>Import&#8230;&#8203;</strong> opcióra és válasszon ki egy grippert <strong>DXF</strong> fájlként a könyvtárból.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/importgripper.png" alt="Gripper import">
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Így néz ki ez a gripper importálás után (két nézetben, alulról és felülről látható).</p>
+</div>
+<div class="paragraph">
+<p><span class="image left"><img src="img/importgripper1.png" alt="Gripper előnézet" width="345"></span><span class="image"><img src="img/importgripper2.png" alt="Gripper előnézet" width="485"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_alapvető_gripper">Alapvető gripper</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Lásd az alább látható egyszerű rajzot, amely egy grippert határoz meg és menthető
+DXF fájlként, hogy visszaimportálható legyen a <strong>Gripper készletbe</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/basicgripper.png" alt="Alapvető gripper" width="537">
+</div>
+</div>
+<div class="paragraph">
+<p>Itt találhatók néhány fontos pontok arról, hogyan van megrajzolva a DXF:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A rajz origója (0,0) megfelel a robot csuklópontjának középpontjának. Ezt
+egy pont és egy kör reprezentálja az ábrán. (Mind a pont, mind a
+kör nem igazán szükséges a gripper importhoz, mivel a gripper középpontja
+implicitesen mindig az origóban van).</p>
+</li>
+<li>
+<p>Ez a rajz néhány POINT entitást is tartalmaz, amelyek az egyes szívókupa
+helyzeteket ábrázolják. Ezek ismét elsősorban a rajz érthetőbbé tételét szolgálják és
+valójában nem használja a gripper importáló (a szívókupa pozíciók
+szöveges entitásokkal vannak megadva).</p>
+</li>
+<li>
+<p>A tényleges lap alakja zárt POLYLINE entitásokként van megrajzolva. Ha más
+polilineái vannak a külső belsejében, azok <strong>lyukakká</strong> válnak a lapon.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image left"><img src="img/basicgripper1.png" alt="Alapvető gripper előnézet" width="350"></span>
+<span class="image"><img src="img/basicgripper2.png" alt="Alapvető gripper előnézet" width="480"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_két_rétegű_gripper">Két rétegű gripper</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Kissé összetettebb gripperek modellezhetők külön <strong>BASEPLATE</strong> réteg
+használatával. Hozzon létre egy <strong>BASEPLATE</strong> nevű réteget a DXF fájlban, és
+rajzoljon néhány zárt POLYLINE alakzatot abban a rétegben. Ezután ez a réteg
+külön <strong>Z</strong> extrudálási határokkal rendelkezhet, amelyeket a BASEPLATEEXTENT kulcs
+határoz meg. A rétegek létrehozásához és szerkesztéséhez szükséges eszközök most
+hozzá vannak adva.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Kattintson az <strong>Related</strong> gombra, amikor egy rajzot szerkeszt.</p>
+</li>
+<li>
+<p>Válassza a <strong>Layers</strong> menüt új rétegek hozzáadásához, átnevezéséhez, színek
+beállításához és vonalstílusok módosításához.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/related.png" alt="Related" width="571">
+</div>
+</div>
+</li>
+<li>
+<p>A rajzban egy entitásra kattintva megváltoztathatja annak rétegét.</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/layer.png" alt="Layer" width="148">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A réteg csak akkor jelenik meg az entitás panelen, ha több réteg van a rajzban.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>A rajz szerkesztése után ezekkel az eszközökkel mentse el a rajzot DXF formátumban. Itt van
+egy ilyen <strong>BASEPLATE</strong> réteget használó DXF (a képen zöld színnel látható).</p>
+<div class="imageblock">
+<div class="content">
+<img src="img/twolayered.png" alt="Két rétegű gripper" width="537">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Ennél a grippernél a csuklópont Z=0-tól Z=23-ig terjed. Aztán az <strong>alaplap</strong> (zöld)
+Z=23-tól Z=40-ig terjed, ahogy a <strong>BASEPLATEEXTENT</strong> kulcs jelzi. Végül a tényleges
+gripper lap (amely tartja a szívókupákat) Z=40-től Z=63-ig terjed, ahogy a
+<strong>PLATEEXTENT</strong> kulcs jelzi.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A gripper lap néhány hatszögletű lyukat is tartalmaz.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Importálás után ez a gripper így néz ki:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/twolayered1.png" alt="Két rétegű gripper előnézet" width="500">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_több_rétegű_gripper">Több rétegű gripper</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A <strong>Több rétegű gripperek</strong> a <strong>Két rétegű gripper</strong> frissített verziója, amelyben
+több mint két réteg hozható létre és importálható a TecZone Bend használatával.
+Több rétegű gripper használatához a DXF-nek tartalmaznia kell a <strong>VERSION = 2</strong>
+szöveget. Egy minta több rétegű gripper az alábbiakban látható:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multilayered.png" alt="Több rétegű gripper" width="537">
+</div>
+</div>
+<div class="paragraph">
+<p>Minden réteget meg kell határozni a kiterjedésével, mint <strong>LAYER_1 = 23 : 35</strong>. Az
+ebben a rétegben található entitások hozzáadódnak ezekhez a kiterjedésekhez.
+Hasonlóképpen, a kupák a következő formában vannak meghatározva: <strong>CupNo = X pos,
+Y pos, [Cup type, Mounting height, Cup group]</strong>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Az <strong>X</strong> és <strong>Y</strong> pozíciók kötelezőek.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>A szívókupák különböző lehetséges meghatározásai az alábbiakban találhatók:</p>
+</div>
+<div class="paragraph">
+<p>CupNo = X pos, Y pos, ahol a kupa neve a CUPNAME-ben van megadva, mint az előző verzióban<br>
+CupNo = X pos, Y pos, Cup type, ahol minden kupatípus külön van meghatározva (ovális
+ kupák esetén a nevek változnak a szöggel)<br>
+CupNo = X pos, Y pos, Cup type, Mounting Height<br>
+CupNo = X pos, Y pos, Cup type, Mounting Height, Cup Group</p>
+</div>
+<div class="paragraph">
+<div class="title">Példa</div>
+<p><strong>CUP1 = 275, 314, SAOB60x30_90grad_ged, 72, 2</strong></p>
+</div>
+<div class="paragraph">
+<p>Ha a szerelési magasság nincs megadva, alapértelmezés szerint a maximális lap
+kiterjedés kerül figyelembe vételre. Hasonlóképpen, a szívókupa csoport 1-re
+lesz beállítva, ha nincs meghatározva.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Jelenleg a TecZone Bend nem támogatja a különböző szerelési magasságokat a szívókupák számára.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Importálás után egy minta gripper így néz ki:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/multilayer.png" alt="Több rétegű gripper előnézet" width="411"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/multilayer1.png" alt="Több rétegű gripper előnézet" width="894"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_több_áramkörös_gripper">Több áramkörös gripper</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Létrehozhat több áramkörös grippert (egy grippert, amely több független vákuum
+áramkörrel rendelkezik). Egy ilyen grippernél minden szívókupának nem nulla
+<strong>csoportszám</strong> van hozzárendelve.</p>
+</div>
+<div class="paragraph">
+<p>Rendeljen szívócsoportokat speciális formátumot használva a CUP1POS, CUP2POS
+stb. számára, ahogy az alábbiakban látható:</p>
+</div>
+<div class="paragraph">
+<p><strong>CUP1POS = 340,120 #6</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>CUP2POS = 420,140 #8</strong></p>
+</div>
+<div class="paragraph">
+<p>A <strong>#</strong> utáni érték a kupa szívócsoport száma. Ebben a példában a Cup 1 a 6-os
+szívócsoporthoz van rendelve, a Cup 2 a 8-as szívócsoporthoz, és így tovább.</p>
+</div>
+<div class="paragraph">
+<p>Ahhoz, hogy egy több áramkörös gripper helyesen legyen konfigurálva, <strong>minden</strong>
+kupához hozzá kell rendelni egy szívócsoport számot ezen a módon.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Az egy gripperben használható szívókupák maximális száma 100-ra
+korlátozódik. Ha több mint 100 szívókupával rendelkező grippert importál, a
+TecZone importálási hiba üzenetet fog megjeleníteni.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Az alábbi kép néhány minta grippert mutat a bend <strong>Bend Grippers</strong> adatbázisban.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/multicircuit.png" alt="Több áramkörös gripper" width="803">
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+ <h3>Contents</h3>
+ <ul>
+  <li level="1">
+   <a href="#_alapvető_gripper">Alapvető gripper</a>
+  </li>
+  <li level="1">
+   <a href="#_két_rétegű_gripper">Két rétegű gripper</a>
+  </li>
+  <li level="1">
+   <a href="#_több_rétegű_gripper">Több rétegű gripper</a>
+  </li>
+  <li level="1">
+   <a href="#_több_áramkörös_gripper">Több áramkörös gripper</a>
+  </li>
+ </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+ <span class="prev"><a href="creategripper.html">Gripper létrehozása</a></span>
+ <span class="next"><a href="../../../fold/index.html">Lengőhajlítás</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2026 by TRUMPF SE + Co.KG. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../../../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../../../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../../../res/index.js"></script>
+    <script src="../../../res/files.js"></script>
+    <script src="../../../res/site.js"></script>
+
+    
+</body>
+</html>
